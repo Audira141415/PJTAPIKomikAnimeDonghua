@@ -18,6 +18,7 @@ const otakudesuRoutes  = require('../modules/otakudesu/otakudesu.routes');
 const jobsRoutes       = require('../modules/jobs/jobs.routes');
 const trendingRoutes = require('../modules/trending/trending.routes');
 const collectionRoutes = require('../modules/collection/collection.routes');
+const comicRoutes = require('../modules/comic/comic.routes');
 const collectionController = require('../modules/collection/collection.controller');
 
 // Controllers needed for convenience nested routes
@@ -44,6 +45,7 @@ router.use('/donghua',   donghuaRoutes);
 router.use('/anime',     otakudesuRoutes);
 router.use('/jobs',      jobsRoutes);
 router.use('/collections', collectionRoutes);
+router.use('/comic',       comicRoutes);   // ← /api/v1/comic/* unified comic endpoints
 router.use('/',          trendingRoutes); // ← Trending routes at root (/)
 
 router.get(

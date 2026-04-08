@@ -1,5 +1,5 @@
 const catchAsync = require('../../shared/utils/catchAsync');
-const { sendSuccess, sendCreated } = require('../../shared/utils/response');
+const { success } = require('../../shared/utils/response');
 const tagService = require('./tag.service');
 const { createTag: createSchema, updateTag: updateSchema, listTags: listSchema } = require('./tag.validation');
 
@@ -10,7 +10,7 @@ const { createTag: createSchema, updateTag: updateSchema, listTags: listSchema }
 const list = catchAsync(async (req, res) => {
   const opts = listSchema.parse(req.query);
   const data = await tagService.listTags(opts);
-  sendSuccess(res, data);
+  success(res, data);
 });
 
 /**
@@ -18,7 +18,7 @@ const list = catchAsync(async (req, res) => {
  */
 const getBySlug = catchAsync(async (req, res) => {
   const tag = await tagService.getTag(req.params.slug);
-  sendSuccess(res, { tag });
+  success(res, { data: tag });
 });
 
 /**
@@ -27,7 +27,7 @@ const getBySlug = catchAsync(async (req, res) => {
 const create = catchAsync(async (req, res) => {
   const data = createSchema.parse(req.body);
   const tag = await tagService.createTag(data);
-  sendCreated(res, { tag });
+  success(res, { statusCode: 201, data: tag });
 });
 
 /**
@@ -36,7 +36,7 @@ const create = catchAsync(async (req, res) => {
 const update = catchAsync(async (req, res) => {
   const data = updateSchema.parse(req.body);
   const tag = await tagService.updateTag(req.params.id, data);
-  sendSuccess(res, { tag });
+  success(res, { data: tag });
 });
 
 /**
@@ -44,7 +44,7 @@ const update = catchAsync(async (req, res) => {
  */
 const remove = catchAsync(async (req, res) => {
   await tagService.deleteTag(req.params.id);
-  sendSuccess(res, null, 'Tag deleted');
+  success(res, { data: null });
 });
 
 module.exports = { list, getBySlug, create, update, remove };
