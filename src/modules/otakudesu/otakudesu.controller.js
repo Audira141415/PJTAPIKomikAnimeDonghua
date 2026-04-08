@@ -3,6 +3,7 @@
 const otakudesuService = require('./otakudesu.service');
 const catchAsync       = require('../../shared/utils/catchAsync');
 const { success }      = require('../../shared/utils/response');
+const { pageQuery }    = require('./otakudesu.validation');
 
 // GET /anime/home
 const home = catchAsync(async (req, res) => {
@@ -18,15 +19,15 @@ const schedule = catchAsync(async (req, res) => {
 
 // GET /anime/complete-anime?page=1
 const completeAnime = catchAsync(async (req, res) => {
-  const { page = 1 } = req.query;
-  const { pagination, ...rest } = await otakudesuService.getCompleteAnime({ page: Number(page) });
+  const { page } = pageQuery.parse(req.query);
+  const { pagination, ...rest } = await otakudesuService.getCompleteAnime({ page });
   success(res, { data: rest, pagination });
 });
 
 // GET /anime/ongoing-anime?page=1
 const ongoingAnime = catchAsync(async (req, res) => {
-  const { page = 1 } = req.query;
-  const { pagination, ...rest } = await otakudesuService.getOngoingAnime({ page: Number(page) });
+  const { page } = pageQuery.parse(req.query);
+  const { pagination, ...rest } = await otakudesuService.getOngoingAnime({ page });
   success(res, { data: rest, pagination });
 });
 
@@ -39,8 +40,8 @@ const allGenres = catchAsync(async (req, res) => {
 // GET /anime/genre/:slug?page=1
 const byGenre = catchAsync(async (req, res) => {
   const { slug } = req.params;
-  const { page = 1 } = req.query;
-  const { pagination, ...rest } = await otakudesuService.getByGenre(slug, { page: Number(page) });
+  const { page } = pageQuery.parse(req.query);
+  const { pagination, ...rest } = await otakudesuService.getByGenre(slug, { page });
   success(res, { data: rest, pagination });
 });
 

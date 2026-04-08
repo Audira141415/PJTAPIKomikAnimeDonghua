@@ -1,7 +1,7 @@
 const { ZodError } = require('zod');
-const ApiError = require('../utils/ApiError');
+const ApiError = require('../shared/errors/ApiError');
 const logger = require('../config/logger');
-const { error: errorResponse } = require('../utils/response');
+const { error: errorResponse } = require('../shared/utils/response');
 
 // eslint-disable-next-line no-unused-vars
 const errorHandler = (err, req, res, _next) => {

@@ -1,23 +1,12 @@
 'use strict';
 
-const { z } = require('zod');
 const { Manga } = require('../../models');
 const cache = require('../../shared/utils/cache');
 const catchAsync = require('../../shared/utils/catchAsync');
 const { success } = require('../../shared/utils/response');
 const ApiError = require('../../shared/errors/ApiError');
 const { paginate, paginateMeta } = require('../../shared/utils/paginate');
-
-const searchQuerySchema = z.object({
-  q:         z.string().min(1, 'Search query is required').max(200),
-  type:      z.enum(['manga','manhwa','manhua','anime','donghua','movie','ona']).optional(),
-  genre:     z.string().optional(), // Single genre filter
-  status:    z.enum(['ongoing', 'completed', 'hiatus', 'cancelled', 'upcoming']).optional(),
-  year_from: z.coerce.number().int().min(1900).optional(),
-  year_to:   z.coerce.number().int().max(2100).optional(),
-  page:      z.coerce.number().int().min(1).default(1),
-  limit:     z.coerce.number().int().min(1).max(50).default(10),
-});
+const { searchQuery: searchQuerySchema } = require('./search.validation');
 
 const search = catchAsync(async (req, res) => {
   const { q, type, genre, status, year_from, year_to, page, limit: limitVal } = searchQuerySchema.parse(req.query);

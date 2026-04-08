@@ -1,5 +1,5 @@
-const catchAsync = require('../../utils/catchAsync');
-const { sendSuccess, sendCreated } = require('../../utils/response');
+const catchAsync = require('../../shared/utils/catchAsync');
+const { sendSuccess, sendCreated } = require('../../shared/utils/response');
 const tagService = require('./tag.service');
 const { createTag: createSchema, updateTag: updateSchema, listTags: listSchema } = require('./tag.validation');
 

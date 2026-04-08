@@ -1,19 +1,13 @@
-const { z } = require('zod');
 const userService      = require('./user.service');
 const catchAsync       = require('../../shared/utils/catchAsync');
 const { success }      = require('../../shared/utils/response');
 const { coverFileUrl } = require('../../middlewares/upload.middleware');
 const ApiError         = require('../../shared/errors/ApiError');
+const { updateProfile: updateProfileSchema, publicFeedQuery: publicReviewFeedQuerySchema, publicCommentFeedQuery: publicCommentFeedQuerySchema } = require('./user.validation');
 
 const getMe = catchAsync(async (req, res) => {
   const user = await userService.getProfile(req.user.id);
   success(res, { data: user });
-});
-
-const updateProfileSchema = z.object({
-  username:    z.string().min(3).max(30).trim().optional(),
-  bio:         z.string().max(500).optional(),
-  displayName: z.string().max(50).trim().optional(),
 });
 
 const updateMe = catchAsync(async (req, res) => {
@@ -27,18 +21,6 @@ const updateAvatar = catchAsync(async (req, res) => {
   const avatarUrl = coverFileUrl(req.file);
   const user = await userService.updateAvatar(req.user.id, avatarUrl);
   success(res, { message: 'Avatar updated', data: user });
-});
-
-const publicReviewFeedQuerySchema = z.object({
-  page: z.coerce.number().int().positive().max(500).optional().default(1),
-  limit: z.coerce.number().int().positive().max(100).optional().default(20),
-  sort: z.enum(['latest', 'top']).optional().default('latest'),
-});
-
-const publicCommentFeedQuerySchema = z.object({
-  page: z.coerce.number().int().positive().max(500).optional().default(1),
-  limit: z.coerce.number().int().positive().max(100).optional().default(20),
-  sort: z.enum(['latest', 'most_liked']).optional().default('latest'),
 });
 
 const getPublicProfile = catchAsync(async (req, res) => {

@@ -1,6 +1,7 @@
 const bookmarkService = require('./bookmark.service');
 const catchAsync = require('../../shared/utils/catchAsync');
 const { success } = require('../../shared/utils/response');
+const { listBookmarks: listSchema } = require('./bookmark.validation');
 
 const toggle = catchAsync(async (req, res) => {
   const result = await bookmarkService.toggleBookmark(req.user.id, req.params.mangaId);
@@ -9,7 +10,8 @@ const toggle = catchAsync(async (req, res) => {
 });
 
 const getAll = catchAsync(async (req, res) => {
-  const result = await bookmarkService.getBookmarks(req.user.id, req.query);
+  const query = listSchema.parse(req.query);
+  const result = await bookmarkService.getBookmarks(req.user.id, query);
   success(res, { data: result.bookmarks, meta: result.meta });
 });
 

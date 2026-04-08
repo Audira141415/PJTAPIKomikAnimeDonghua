@@ -1,7 +1,7 @@
 const multer = require('multer');
 const path = require('path');
 const fs = require('fs');
-const ApiError = require('../utils/ApiError');
+const ApiError = require('../shared/errors/ApiError');
 const { env } = require('../config/env');
 
 const ALLOWED_MIMES = ['image/jpeg', 'image/png', 'image/webp', 'image/gif'];

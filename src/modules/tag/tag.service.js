@@ -1,5 +1,5 @@
 const tagRepo = require('../../repositories/tag.repository');
-const ApiError = require('../../utils/ApiError');
+const ApiError = require('../../shared/errors/ApiError');
 
 /**
  * List tags with optional prefix filter and pagination.
