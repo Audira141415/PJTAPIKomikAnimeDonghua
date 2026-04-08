@@ -1,0 +1,12 @@
+node_modules
+npm-debug.log*
+.env
+.env.*
+!.env.example
+logs/
+uploads/
+coverage/
+.nyc_output
+dist/
+.DS_Store
+*.log

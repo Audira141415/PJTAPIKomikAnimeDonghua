@@ -1,0 +1,370 @@
+{
+  "info": {
+    "name": "Comic Platform API",
+    "description": "Complete API collection for manga/manhwa/manhua platform",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    { "key": "baseUrl", "value": "http://localhost:5000/api" },
+    { "key": "accessToken", "value": "" },
+    { "key": "refreshToken", "value": "" },
+    { "key": "mangaId", "value": "" },
+    { "key": "mangaSlug", "value": "" },
+    { "key": "chapterId", "value": "" }
+  ],
+  "item": [
+    {
+      "name": "Auth",
+      "item": [
+        {
+          "name": "Register",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": { "raw": "{{baseUrl}}/auth/register", "host": ["{{baseUrl}}"], "path": ["auth", "register"] },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"username\": \"testuser\",\n  \"email\": \"test@example.com\",\n  \"password\": \"password123\"\n}"
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "const res = pm.response.json();",
+                  "if (res.data) {",
+                  "  pm.collectionVariables.set('accessToken', res.data.accessToken);",
+                  "  pm.collectionVariables.set('refreshToken', res.data.refreshToken);",
+                  "}"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Login (Admin)",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": { "raw": "{{baseUrl}}/auth/login", "host": ["{{baseUrl}}"], "path": ["auth", "login"] },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"admin@comic.com\",\n  \"password\": \"admin123\"\n}"
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "const res = pm.response.json();",
+                  "if (res.data) {",
+                  "  pm.collectionVariables.set('accessToken', res.data.accessToken);",
+                  "  pm.collectionVariables.set('refreshToken', res.data.refreshToken);",
+                  "}"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Login (Reader)",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": { "raw": "{{baseUrl}}/auth/login", "host": ["{{baseUrl}}"], "path": ["auth", "login"] },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"reader@comic.com\",\n  \"password\": \"reader123\"\n}"
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "const res = pm.response.json();",
+                  "if (res.data) {",
+                  "  pm.collectionVariables.set('accessToken', res.data.accessToken);",
+                  "  pm.collectionVariables.set('refreshToken', res.data.refreshToken);",
+                  "}"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Refresh Token",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": { "raw": "{{baseUrl}}/auth/refresh", "host": ["{{baseUrl}}"], "path": ["auth", "refresh"] },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"refreshToken\": \"{{refreshToken}}\"\n}"
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "const res = pm.response.json();",
+                  "if (res.data) {",
+                  "  pm.collectionVariables.set('accessToken', res.data.accessToken);",
+                  "  pm.collectionVariables.set('refreshToken', res.data.refreshToken);",
+                  "}"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Logout",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": { "raw": "{{baseUrl}}/auth/logout", "host": ["{{baseUrl}}"], "path": ["auth", "logout"] },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"refreshToken\": \"{{refreshToken}}\"\n}"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "User",
+      "item": [
+        {
+          "name": "Get My Profile",
+          "request": {
+            "method": "GET",
+            "header": [{ "key": "Authorization", "value": "Bearer {{accessToken}}" }],
+            "url": { "raw": "{{baseUrl}}/users/me", "host": ["{{baseUrl}}"], "path": ["users", "me"] }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Manga",
+      "item": [
+        {
+          "name": "Create Manga (Admin)",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Authorization", "value": "Bearer {{accessToken}}" },
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "url": { "raw": "{{baseUrl}}/manga", "host": ["{{baseUrl}}"], "path": ["manga"] },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Test Manga\",\n  \"description\": \"A test manga for API testing\",\n  \"type\": \"manga\",\n  \"genres\": [\"Action\", \"Fantasy\"],\n  \"author\": \"Test Author\",\n  \"artist\": \"Test Artist\",\n  \"status\": \"ongoing\"\n}"
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "const res = pm.response.json();",
+                  "if (res.data) {",
+                  "  pm.collectionVariables.set('mangaId', res.data._id);",
+                  "  pm.collectionVariables.set('mangaSlug', res.data.slug);",
+                  "}"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Get All Manga",
+          "request": {
+            "method": "GET",
+            "url": { "raw": "{{baseUrl}}/manga?page=1&limit=10", "host": ["{{baseUrl}}"], "path": ["manga"], "query": [{ "key": "page", "value": "1" }, { "key": "limit", "value": "10" }] }
+          }
+        },
+        {
+          "name": "Get All Manga (With Filters)",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/manga?type=manhwa&genre=Action&status=ongoing&sortBy=rating&order=desc",
+              "host": ["{{baseUrl}}"],
+              "path": ["manga"],
+              "query": [
+                { "key": "type", "value": "manhwa" },
+                { "key": "genre", "value": "Action" },
+                { "key": "status", "value": "ongoing" },
+                { "key": "sortBy", "value": "rating" },
+                { "key": "order", "value": "desc" }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Search Manga",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/manga?search=shadow",
+              "host": ["{{baseUrl}}"],
+              "path": ["manga"],
+              "query": [{ "key": "search", "value": "shadow" }]
+            }
+          }
+        },
+        {
+          "name": "Get Manga by Slug",
+          "request": {
+            "method": "GET",
+            "url": { "raw": "{{baseUrl}}/manga/{{mangaSlug}}", "host": ["{{baseUrl}}"], "path": ["manga", "{{mangaSlug}}"] }
+          }
+        },
+        {
+          "name": "Update Manga (Admin)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              { "key": "Authorization", "value": "Bearer {{accessToken}}" },
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "url": { "raw": "{{baseUrl}}/manga/{{mangaId}}", "host": ["{{baseUrl}}"], "path": ["manga", "{{mangaId}}"] },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"description\": \"Updated description\",\n  \"rating\": 8.5\n}"
+            }
+          }
+        },
+        {
+          "name": "Delete Manga (Admin)",
+          "request": {
+            "method": "DELETE",
+            "header": [{ "key": "Authorization", "value": "Bearer {{accessToken}}" }],
+            "url": { "raw": "{{baseUrl}}/manga/{{mangaId}}", "host": ["{{baseUrl}}"], "path": ["manga", "{{mangaId}}"] }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Chapter",
+      "item": [
+        {
+          "name": "Create Chapter (Admin)",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Authorization", "value": "Bearer {{accessToken}}" }],
+            "url": { "raw": "{{baseUrl}}/chapter", "host": ["{{baseUrl}}"], "path": ["chapter"] },
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                { "key": "chapterNumber", "value": "1", "type": "text" },
+                { "key": "title", "value": "The Beginning", "type": "text" },
+                { "key": "mangaId", "value": "{{mangaId}}", "type": "text" },
+                { "key": "images", "type": "file", "src": [], "description": "Select chapter page images" }
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "const res = pm.response.json();",
+                  "if (res.data) {",
+                  "  pm.collectionVariables.set('chapterId', res.data._id);",
+                  "}"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Get Chapters by Manga",
+          "request": {
+            "method": "GET",
+            "url": { "raw": "{{baseUrl}}/manga/{{mangaId}}/chapters?page=1&limit=50", "host": ["{{baseUrl}}"], "path": ["manga", "{{mangaId}}", "chapters"], "query": [{ "key": "page", "value": "1" }, { "key": "limit", "value": "50" }] }
+          }
+        },
+        {
+          "name": "Get Chapter by ID",
+          "request": {
+            "method": "GET",
+            "url": { "raw": "{{baseUrl}}/chapter/{{chapterId}}", "host": ["{{baseUrl}}"], "path": ["chapter", "{{chapterId}}"] }
+          }
+        },
+        {
+          "name": "Delete Chapter (Admin)",
+          "request": {
+            "method": "DELETE",
+            "header": [{ "key": "Authorization", "value": "Bearer {{accessToken}}" }],
+            "url": { "raw": "{{baseUrl}}/chapter/{{chapterId}}", "host": ["{{baseUrl}}"], "path": ["chapter", "{{chapterId}}"] }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Bookmark",
+      "item": [
+        {
+          "name": "Toggle Bookmark",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Authorization", "value": "Bearer {{accessToken}}" }],
+            "url": { "raw": "{{baseUrl}}/bookmark/{{mangaId}}", "host": ["{{baseUrl}}"], "path": ["bookmark", "{{mangaId}}"] }
+          }
+        },
+        {
+          "name": "Get My Bookmarks",
+          "request": {
+            "method": "GET",
+            "header": [{ "key": "Authorization", "value": "Bearer {{accessToken}}" }],
+            "url": { "raw": "{{baseUrl}}/bookmark?page=1&limit=20", "host": ["{{baseUrl}}"], "path": ["bookmark"], "query": [{ "key": "page", "value": "1" }, { "key": "limit", "value": "20" }] }
+          }
+        }
+      ]
+    },
+    {
+      "name": "History",
+      "item": [
+        {
+          "name": "Add Reading History",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Authorization", "value": "Bearer {{accessToken}}" },
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "url": { "raw": "{{baseUrl}}/history", "host": ["{{baseUrl}}"], "path": ["history"] },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"mangaId\": \"{{mangaId}}\",\n  \"chapterId\": \"{{chapterId}}\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Get My History",
+          "request": {
+            "method": "GET",
+            "header": [{ "key": "Authorization", "value": "Bearer {{accessToken}}" }],
+            "url": { "raw": "{{baseUrl}}/history?page=1&limit=20", "host": ["{{baseUrl}}"], "path": ["history"], "query": [{ "key": "page", "value": "1" }, { "key": "limit", "value": "20" }] }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Health",
+      "item": [
+        {
+          "name": "Health Check",
+          "request": {
+            "method": "GET",
+            "url": { "raw": "http://localhost:5000/health", "protocol": "http", "host": ["localhost"], "port": "5000", "path": ["health"] }
+          }
+        }
+      ]
+    }
+  ]
+}

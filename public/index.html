@@ -1,0 +1,1281 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Comic & Animation Platform API</title>
+  <style>
+    :root {
+      --bg: #0f1117;
+      --card: #1a1d27;
+      --card-hover: #1f2335;
+      --border: #2a2d3e;
+      --text: #e2e8f0;
+      --muted: #94a3b8;
+      --accent: #6366f1;
+      --accent2: #8b5cf6;
+      --green: #10b981;
+      --yellow: #f59e0b;
+      --red: #ef4444;
+      --blue: #3b82f6;
+      --pink: #ec4899;
+      --orange: #f97316;
+      --teal: #14b8a6;
+      --cyan: #06b6d4;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      min-height: 100vh;
+      padding-bottom: 60px;
+    }
+
+    /* ── Hero ── */
+    .hero {
+      background: linear-gradient(135deg, #1a1d27 0%, #12141f 100%);
+      border-bottom: 1px solid var(--border);
+      padding: 48px 24px 40px;
+      text-align: center;
+    }
+    .hero-emoji { font-size: 48px; margin-bottom: 12px; }
+    .hero h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, #a5b4fc, #818cf8, #c084fc);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 8px;
+    }
+    .hero p {
+      color: var(--muted);
+      font-size: 0.95rem;
+      max-width: 580px;
+      margin: 0 auto 20px;
+      line-height: 1.6;
+    }
+    .hero-links { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    .hero-links a {
+      padding: 8px 20px;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: opacity .2s;
+    }
+    .hero-links a:hover { opacity: .8; }
+    .btn-primary { background: var(--accent); color: #fff; }
+    .btn-ghost { background: transparent; border: 1px solid var(--border); color: var(--text); }
+
+    /* ── Stats bar ── */
+    .stats-bar {
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+      padding: 20px 24px;
+      background: #12141f;
+      border-bottom: 1px solid var(--border);
+      flex-wrap: wrap;
+    }
+    .stat { text-align: center; }
+    .stat-num { font-size: 1.4rem; font-weight: 700; color: #a5b4fc; }
+    .stat-label { font-size: 0.72rem; color: var(--muted); margin-top: 2px; text-transform: uppercase; letter-spacing: .05em; }
+
+    /* ── Section ── */
+    .section {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 36px 24px 0;
+    }
+    .section-title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .section-title::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    /* ── Grid ── */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    /* ── Card ── */
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+      transition: background .2s, border-color .2s, transform .15s;
+      position: relative;
+      overflow: hidden;
+    }
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--card-accent, #6366f1), transparent);
+      opacity: 0;
+      transition: opacity .2s;
+    }
+    .card:hover {
+      background: var(--card-hover);
+      border-color: #3a3d55;
+      transform: translateY(-2px);
+    }
+    .card:hover::before { opacity: 1; }
+
+    .card-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      margin-bottom: 10px;
+      gap: 8px;
+    }
+    .card-icon { font-size: 1.1rem; margin-top: 2px; flex-shrink: 0; }
+    .card-title { font-size: 0.9rem; font-weight: 700; color: var(--text); flex: 1; }
+
+    /* ── Badge / status ── */
+    .badge {
+      font-size: 0.62rem;
+      font-weight: 800;
+      padding: 3px 8px;
+      border-radius: 20px;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+      flex-shrink: 0;
+    }
+    .badge-green  { background: rgba(16,185,129,.15); color: #34d399; border: 1px solid rgba(16,185,129,.3); }
+    .badge-yellow { background: rgba(245,158,11,.15); color: #fbbf24; border: 1px solid rgba(245,158,11,.3); }
+    .badge-blue   { background: rgba(59,130,246,.15); color: #60a5fa; border: 1px solid rgba(59,130,246,.3); }
+    .badge-red    { background: rgba(239,68,68,.15);  color: #f87171; border: 1px solid rgba(239,68,68,.3); }
+    .badge-purple { background: rgba(139,92,246,.15); color: #a78bfa; border: 1px solid rgba(139,92,246,.3); }
+
+    /* ── Endpoint pill ── */
+    .endpoint-wrapper {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      margin-bottom: 10px;
+      flex-wrap: wrap;
+    }
+
+    .endpoint {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background: #0d0f1a;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 5px 10px;
+      font-size: 0.76rem;
+      font-family: 'Cascadia Code', 'Fira Code', 'Consolas', monospace;
+      color: #c4b5fd;
+      word-break: break-all;
+    }
+
+    .endpoint-copy-btn {
+      flex-shrink: 0;
+      white-space: nowrap;
+      align-self: center;
+    }
+
+    .method {
+      font-size: 0.65rem;
+      font-weight: 800;
+      padding: 2px 6px;
+      border-radius: 4px;
+      flex-shrink: 0;
+    }
+    .get  { background: rgba(16,185,129,.2); color: #34d399; }
+    .post { background: rgba(59,130,246,.2); color: #60a5fa; }
+    .patch{ background: rgba(245,158,11,.2); color: #fbbf24; }
+    .del  { background: rgba(239,68,68,.2);  color: #f87171; }
+
+    .card-desc {
+      font-size: 0.8rem;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    /* ── Auth required marker ── */
+    .auth-note {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 0.7rem;
+      color: #94a3b8;
+      margin-top: 8px;
+    }
+    .auth-note::before { content: '🔒'; font-size: .7rem; }
+
+    /* ── Footer ── */
+    footer {
+      text-align: center;
+      padding: 32px 24px;
+      color: var(--muted);
+      font-size: 0.8rem;
+      border-top: 1px solid var(--border);
+      margin-top: 40px;
+    }
+    footer a { color: var(--accent); text-decoration: none; }
+
+    /* ── Search filter ── */
+    .search-bar {
+      max-width: 480px;
+      margin: 0 auto 32px;
+      position: relative;
+    }
+    .search-bar input {
+      width: 100%;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 10px 16px 10px 40px;
+      color: var(--text);
+      font-size: 0.9rem;
+      outline: none;
+      transition: border-color .2s;
+    }
+    .search-bar input:focus { border-color: var(--accent); }
+    .search-bar::before {
+      content: '🔍';
+      position: absolute;
+      left: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: .85rem;
+    }
+
+    .hidden { display: none !important; }
+
+    .ops-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 16px;
+      margin: 26px auto 0;
+      max-width: 1280px;
+      padding: 0 24px;
+    }
+
+    .panel {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 18px;
+    }
+
+    .panel h2 {
+      font-size: .95rem;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: #cbd5e1;
+      margin-bottom: 14px;
+    }
+
+    .health-list {
+      display: grid;
+      gap: 10px;
+    }
+
+    .health-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--text);
+      font-size: .85rem;
+      padding: 8px 10px;
+      border: 1px solid #2c3146;
+      border-radius: 10px;
+      background: #131625;
+    }
+
+    .health-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .health-dot.ok { background: #22c55e; }
+    .health-dot.warn { background: #f59e0b; }
+    .health-dot.down { background: #ef4444; }
+
+    .mini-stats {
+      margin-top: 12px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+
+    .mini-stats div {
+      border: 1px solid #2c3146;
+      border-radius: 10px;
+      background: #121526;
+      padding: 10px;
+    }
+
+    .mini-stats p {
+      font-size: .7rem;
+      color: var(--muted);
+      margin-bottom: 4px;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+    }
+
+    .mini-stats strong {
+      font-size: .95rem;
+      color: #ddd6fe;
+    }
+
+    .offline-banner {
+      margin-top: 12px;
+      background: rgba(245, 158, 11, .12);
+      border: 1px solid rgba(245, 158, 11, .35);
+      color: #facc15;
+      border-radius: 10px;
+      padding: 10px 12px;
+      font-size: .8rem;
+    }
+
+    .playground-form {
+      display: grid;
+      gap: 10px;
+    }
+
+    .playground-row {
+      display: grid;
+      grid-template-columns: 90px 1fr;
+      gap: 8px;
+    }
+
+    .preset-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+
+    .panel input,
+    .panel textarea,
+    .panel select {
+      width: 100%;
+      border: 1px solid #303652;
+      background: #0e1220;
+      color: #e2e8f0;
+      border-radius: 8px;
+      padding: 9px 10px;
+      font-size: .82rem;
+      font-family: inherit;
+    }
+
+    .panel textarea {
+      min-height: 90px;
+      resize: vertical;
+      font-family: 'Cascadia Code', 'Consolas', monospace;
+    }
+
+    .panel button {
+      border: 0;
+      border-radius: 10px;
+      background: linear-gradient(135deg, #2563eb, #4f46e5);
+      color: #fff;
+      padding: 10px 12px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .response-meta {
+      margin-top: 10px;
+      color: #93c5fd;
+      font-size: .78rem;
+    }
+
+    .response-tools {
+      margin-top: 8px;
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .response-box {
+      margin-top: 8px;
+      background: #0a0f1c;
+      border: 1px solid #2c3146;
+      border-radius: 10px;
+      padding: 10px;
+      max-height: 180px;
+      overflow: auto;
+      white-space: pre-wrap;
+      font-size: .76rem;
+      font-family: 'Cascadia Code', 'Consolas', monospace;
+      color: #cbd5e1;
+    }
+
+    .activity-wrap {
+      max-width: 1280px;
+      margin: 16px auto 0;
+      padding: 0 24px;
+    }
+
+    .activity-table-wrap {
+      overflow: auto;
+      border: 1px solid #2c3146;
+      border-radius: 12px;
+      background: #111524;
+    }
+
+    .activity-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: .8rem;
+    }
+
+    .activity-table th,
+    .activity-table td {
+      text-align: left;
+      padding: 10px;
+      border-bottom: 1px solid #23273d;
+    }
+
+    .activity-table th {
+      color: #94a3b8;
+      font-size: .72rem;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      background: #0d1120;
+    }
+
+    .method-chip,
+    .status-chip {
+      display: inline-block;
+      padding: 2px 7px;
+      border-radius: 999px;
+      font-size: .68rem;
+      font-weight: 800;
+      margin-right: 6px;
+      border: 1px solid transparent;
+    }
+
+    .method-chip { background: #1f2937; color: #e2e8f0; border-color: #334155; }
+    .status-chip.ok { background: rgba(34, 197, 94, .14); color: #4ade80; border-color: rgba(34, 197, 94, .32); }
+    .status-chip.warn { background: rgba(245, 158, 11, .14); color: #fbbf24; border-color: rgba(245, 158, 11, .32); }
+    .status-chip.err { background: rgba(239, 68, 68, .16); color: #f87171; border-color: rgba(239, 68, 68, .34); }
+
+    .empty-state {
+      text-align: center;
+      color: var(--muted);
+      padding: 16px;
+      font-size: .8rem;
+    }
+
+    .demo-carousel {
+      max-width: 1280px;
+      margin: 16px auto 0;
+      padding: 0 24px;
+    }
+
+    .carousel-toolbar {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      margin-bottom: 10px;
+      gap: 8px;
+    }
+
+    .carousel-toolbar label {
+      font-size: .78rem;
+      color: #94a3b8;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+    }
+
+    .carousel-toolbar select {
+      border: 1px solid #303652;
+      background: #0e1220;
+      color: #e2e8f0;
+      border-radius: 8px;
+      padding: 7px 10px;
+      font-size: .78rem;
+      min-width: 180px;
+    }
+
+    .carousel-shell {
+      position: relative;
+      border: 1px solid #2d334f;
+      border-radius: 16px;
+      overflow: hidden;
+      background: #0f1324;
+    }
+
+    .track {
+      display: flex;
+      transition: transform .45s ease;
+    }
+
+    .slide {
+      min-width: 100%;
+      min-height: 220px;
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: flex-end;
+    }
+
+    .overlay {
+      width: 100%;
+      padding: 18px;
+      background: linear-gradient(180deg, rgba(15,17,23,0) 0%, rgba(15,17,23,.86) 70%);
+    }
+
+    .overlay h3 { font-size: 1.1rem; margin-bottom: 6px; }
+    .overlay p { font-size: .82rem; color: #d1d5db; margin-bottom: 8px; }
+    .overlay span {
+      font-size: .74rem;
+      color: #c4b5fd;
+      border: 1px solid #4c1d95;
+      padding: 3px 8px;
+      border-radius: 999px;
+    }
+
+    .slide-kicker {
+      font-size: .68rem;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      color: #93c5fd;
+      margin-bottom: 8px;
+    }
+
+    .dots {
+      position: absolute;
+      right: 14px;
+      bottom: 14px;
+      display: flex;
+      gap: 7px;
+    }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      border: 0;
+      background: rgba(226,232,240,.4);
+      cursor: pointer;
+    }
+
+    .dot.active { background: #a5b4fc; }
+
+    .example-box {
+      margin-top: 10px;
+      border: 1px solid #313a57;
+      border-radius: 10px;
+      background: #111528;
+      padding: 8px;
+    }
+
+    .example-box summary {
+      cursor: pointer;
+      font-size: .76rem;
+      color: #c7d2fe;
+      font-weight: 700;
+      list-style: none;
+    }
+
+    .example-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 8px;
+      margin-top: 8px;
+    }
+
+    .example-block-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      margin-bottom: 4px;
+    }
+
+    .copy-btn {
+      border: 1px solid #374069;
+      background: #131b31;
+      color: #c7d2fe;
+      font-size: .68rem;
+      font-weight: 700;
+      border-radius: 6px;
+      padding: 4px 8px;
+      cursor: pointer;
+    }
+
+    .copy-btn:hover {
+      background: #1b2645;
+    }
+
+    .example-label {
+      font-size: .7rem;
+      color: #94a3b8;
+      margin-bottom: 4px;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+    }
+
+    .example-grid pre {
+      background: #0b1020;
+      border: 1px solid #27304b;
+      border-radius: 8px;
+      padding: 8px;
+      font-size: .72rem;
+      color: #dbeafe;
+      overflow: auto;
+      max-height: 145px;
+    }
+
+    @media (max-width: 980px) {
+      .ops-grid {
+        grid-template-columns: 1fr;
+      }
+      .playground-row {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── Hero ───────────────────────────────────────────────────── -->
+<div class="hero">
+  <div class="hero-emoji">📚</div>
+  <h1>Comic &amp; Animation Platform API</h1>
+  <p>REST API untuk manga, manhwa, manhua, anime &amp; donghua. Mendukung komik (chapters) dan animasi (seasons + episodes). Semua endpoint siap pakai.</p>
+  <div class="hero-links">
+    <a href="/api/v1/docs" class="btn-primary">📖 Swagger Docs</a>
+    <a href="/health" class="btn-ghost">💓 Health Check</a>
+    <a href="/api/v1/mangas" class="btn-ghost">🚀 Try API</a>
+  </div>
+</div>
+
+<!-- ── Stats bar ─────────────────────────────────────────────── -->
+<div class="stats-bar">
+  <div class="stat"><div class="stat-num">50+</div><div class="stat-label">Endpoints</div></div>
+  <div class="stat"><div class="stat-num">REST</div><div class="stat-label">API Style</div></div>
+  <div class="stat"><div class="stat-num">JWT</div><div class="stat-label">Auth</div></div>
+  <div class="stat"><div class="stat-num">Redis</div><div class="stat-label">Cache</div></div>
+  <div class="stat"><div class="stat-num">v1</div><div class="stat-label">Version</div></div>
+</div>
+
+<section class="ops-grid">
+  <article class="panel">
+    <h2>System Status / Health Panel</h2>
+    <div class="health-list">
+      <div class="health-item"><span class="health-dot warn" id="serverDot"></span><span id="serverText">Server: Checking...</span></div>
+      <div class="health-item"><span class="health-dot warn" id="mongoDot"></span><span id="mongoText">MongoDB: Checking...</span></div>
+      <div class="health-item"><span class="health-dot warn" id="redisDot"></span><span id="redisText">Redis: Checking...</span></div>
+    </div>
+    <div class="mini-stats">
+      <div><p>Uptime</p><strong id="uptimeValue">-</strong></div>
+      <div><p>Memory</p><strong id="memValue">-</strong></div>
+    </div>
+    <div id="dbOfflineBanner" class="offline-banner hidden">Database sedang offline. Dashboard menampilkan demo carousel agar frontend tetap bisa dipreview.</div>
+  </article>
+
+  <article class="panel">
+    <h2>API Tester / Playground</h2>
+    <form id="playgroundForm" class="playground-form">
+      <div class="playground-row">
+        <select id="playMethod">
+          <option>GET</option>
+          <option>POST</option>
+          <option>PATCH</option>
+          <option>DELETE</option>
+        </select>
+        <input id="playPath" type="text" value="/donghua/home" placeholder="/donghua/home" />
+      </div>
+      <div class="preset-row">
+        <select id="presetCategory">
+          <option value="">Preset Category...</option>
+        </select>
+        <select id="presetEndpoint" disabled>
+          <option value="">Preset Endpoint...</option>
+        </select>
+      </div>
+      <input id="playToken" type="password" placeholder="Bearer token (optional, hidden)" autocomplete="off" />
+      <textarea id="playBody" placeholder='Body JSON (optional), contoh: {"title":"Example"}'></textarea>
+      <button type="submit">Run Request</button>
+    </form>
+    <div id="responseMeta" class="response-meta">Ready</div>
+    <div class="response-tools">
+      <button id="copyPlaygroundResponse" type="button" class="copy-btn">Copy Response</button>
+    </div>
+    <pre id="responseBox" class="response-box">Response akan tampil di sini...</pre>
+  </article>
+</section>
+
+<section id="demoCarousel" class="demo-carousel hidden">
+  <div class="carousel-toolbar">
+    <label for="carouselCategory">Carousel Filter</label>
+    <select id="carouselCategory">
+      <option value="all">Semua Kategori</option>
+    </select>
+  </div>
+  <div class="carousel-shell">
+    <div id="demoTrack" class="track"></div>
+    <div id="demoDots" class="dots"></div>
+  </div>
+</section>
+
+<section class="activity-wrap">
+  <article class="panel">
+    <h2>Live Activity Log</h2>
+    <div class="activity-table-wrap">
+      <table class="activity-table">
+        <thead>
+          <tr>
+            <th>Time</th>
+            <th>Request</th>
+            <th>Status</th>
+            <th>Latency</th>
+          </tr>
+        </thead>
+        <tbody id="activityBody"></tbody>
+      </table>
+      <div id="activityEmpty" class="empty-state">Belum ada traffic masuk. Coba akses endpoint dari browser atau Postman.</div>
+    </div>
+  </article>
+</section>
+
+<!-- ── Main content ───────────────────────────────────────────── -->
+<div class="section">
+
+  <!-- Search -->
+  <div class="search-bar" style="padding-top:8px;">
+    <input type="text" id="searchInput" placeholder="Cari endpoint... (contoh: manga, donghua, search)" />
+  </div>
+
+  <!-- ── DISCOVERY ────────────────────────────────────────────── -->
+  <div class="section-title">🔥 Discovery &amp; Trending</div>
+  <div class="grid" id="discovery">
+
+    <div class="card" style="--card-accent:#f97316" data-tags="trending popular">
+      <div class="card-header">
+        <span class="card-icon">🔥</span>
+        <span class="card-title">Trending Manga</span>
+        <span class="badge badge-green">Working</span>
+      </div>
+      <div class="endpoint"><span class="method get">GET</span>/api/v1/trending?period=week&limit=10</div>
+      <div class="card-desc">Manga/manhwa trending berdasarkan bookmark dalam periode waktu. Period: <code>day</code>, <code>week</code>, <code>month</code>, <code>all</code>.</div>
+    </div>
+
+    <div class="card" style="--card-accent:#ec4899" data-tags="popular views ratings">
+      <div class="card-header">
+        <span class="card-icon">⭐</span>
+        <span class="card-title">Popular Content</span>
+        <span class="badge badge-green">Working</span>
+      </div>
+      <div class="endpoint"><span class="method get">GET</span>/api/v1/popular?metric=bookmarks&limit=10</div>
+      <div class="card-desc">Konten populer berdasarkan metric. Metric: <code>bookmarks</code>, <code>views</code>, <code>ratings</code>, <code>avg_rating</code>.</div>
+    </div>
+
+    <div class="card" style="--card-accent:#6366f1" data-tags="latest newest manga">
+      <div class="card-header">
+        <span class="card-icon">🆕</span>
+        <span class="card-title">Latest Manga</span>
+        <span class="badge badge-green">Working</span>
+      </div>
+      <div class="endpoint"><span class="method get">GET</span>/api/v1/latest?limit=20</div>
+      <div class="card-desc">Manga/manhwa terbaru yang ditambahkan ke platform, diurutkan berdasarkan tanggal tambah.</div>
+    </div>
+
+  </div>
+
+  <!-- ── MANGA / KOMIK ─────────────────────────────────────────── -->
+  <div class="section-title">📖 Manga / Komik</div>
+  <div class="grid" id="manga">
+
+    <div class="card" style="--card-accent:#6366f1" data-tags="manga list semua">
+      <div class="card-header">
+        <span class="card-icon">📚</span>
+        <span class="card-title">Semua Manga</span>
+        <span class="badge badge-green">Working</span>
+      </div>
+      <div class="endpoint"><span class="method get">GET</span>/api/v1/mangas?page=1&limit=20&type=manga</div>
+      <div class="card-desc">Daftar semua manga/manhwa/manhua dengan filter <code>type</code>, <code>status</code>, <code>genre</code>, <code>tags</code>, sortir <code>rating</code>, <code>views</code>, dll.</div>
+    </div>
+
+    <div class="card" style="--card-accent:#8b5cf6" data-tags="manga detail slug">
+      <div class="card-header">
+        <span class="card-icon">🔎</span>
+        <span class="card-title">Detail Manga</span>
+        <span class="badge badge-green">Working</span>
+      </div>
+      <div class="endpoint"><span class="method get">GET</span>/api/v1/mangas/:slug</div>
+      <div class="card-desc">Detail lengkap manga berdasarkan slug. Termasuk daftar chapter, rating, tags, dan metadata.</div>
+    </div>
+
+    <div class="card" style="--card-accent:#10b981" data-tags="manga create buat">
+      <div class="card-header">
+        <span class="card-icon">➕</span>
+        <span class="card-title">Tambah Manga</span>
+        <span class="badge badge-purple">Admin</span>
+      </div>
+      <div class="endpoint"><span class="method post">POST</span>/api/v1/mangas</div>
+      <div class="card-desc">Tambah manga baru ke platform. Butuh autentikasi role admin/moderator.</div>
+      <div class="auth-note">Butuh Bearer Token (admin)</div>
+    </div>
+
+    <div class="card" style="--card-accent:#f59e0b" data-tags="manga rating bintang">
+      <div class="card-header">
+        <span class="card-icon">⭐</span>
+        <span class="card-title">Rating Manga</span>
+        <span class="badge badge-green">Working</span>
+      </div>
+      <div class="endpoint"><span class="method post">POST</span>/api/v1/mangas/:id/rate</div>
+      <div class="card-desc">Beri rating 1-10 untuk manga. Satu user satu rating, bisa diupdate.</div>
+      <div class="auth-note">Butuh Bearer Token</div>
+    </div>
+
+    <div class="card" style="--card-accent:#3b82f6" data-tags="chapter daftar manga">
+      <div class="card-header">
+        <span class="card-icon">📄</span>
+        <span class="card-title">Chapter List</span>
+        <span class="badge badge-green">Working</span>
+      </div>
+      <div class="endpoint"><span class="method get">GET</span>/api/v1/mangas/:id/chapters</div>
+      <div class="card-desc">Daftar semua chapter untuk manga tertentu. Diurutkan berdasarkan nomor chapter.</div>
+    </div>
+
+  </div>
+
+  <!-- ── CHAPTERS ───────────────────────────────────────────────── -->
+  <div class="section-title">📄 Chapters &amp; Baca</div>
+  <div class="grid" id="chapters">
+
+    <div class="card" style="--card-accent:#06b6d4" data-tags="chapter baca gambar read">
+      <div class="card-header">
+        <span class="card-icon">📖</span>
+        <span class="card-title">Baca Chapter</span>
+        <span class="badge badge-green">Working</span>
+      </div>
+      <div class="endpoint"><span class="method get">GET</span>/api/v1/chapters/:slug</div>
+      <div class="card-desc">Gambar-gambar chapter untuk dibaca. Mengembalikan array URL gambar / server mirror.</div>
+    </div>
+
+    <div class="card" style="--card-accent:#8b5cf6" data-tags="chapter navigasi prev next">
+      <div class="card-header">
+        <span class="card-icon">⬅️</span>
+        <span class="card-title">Navigasi Chapter</span>
+        <span class="badge badge-green">Working</span>
+      </div>
+      <div class="endpoint"><span class="method get">GET</span>/api/v1/chapters/:slug/navigation</div>
+      <div class="card-desc">Navigasi prev/next chapter untuk manga. Memudahkan implementasi tombol lanjut/kembali.</div>
+    </div>
+
+    <div class="card" style="--card-accent:#10b981" data-tags="chapter tambah buat">
+      <div class="card-header">
+        <span class="card-icon">➕</span>
+        <span class="card-title">Tambah Chapter</span>
+        <span class="badge badge-purple">Admin</span>
+      </div>
+      <div class="endpoint"><span class="method post">POST</span>/api/v1/chapters</div>
+      <div class="card-desc">Tambah chapter baru dengan gambar-gambar. Mendukung upload multi-file.</div>
+      <div class="auth-note">Butuh Bearer Token (admin)</div>
+    </div>
+
+  </div>
+
+  <!-- ── DONGHUA ────────────────────────────────────────────────── -->
+  <div class="section-title">🎬 Donghua API</div>
+  <div class="grid" id="donghua">
+
+    <div class="card" style="--card-accent:#ec4899" data-tags="donghua home beranda">
+      <div class="card-header">
+        <span class="card-icon">🏠</span>
+        <span class="card-title">Home Donghua</span>
+        <span class="badge badge-green">Working</span>
+      </div>
+      <div class="endpoint"><span class="method get">GET</span>/api/v1/donghua/home</div>
+      <div class="card-desc">Data beranda Donghua: <code>latest_release</code> (20 episode terbaru) + <code>completed_donghua</code> (20 series tamat).</div>
+    </div>
+
+    <div class="card" style="--card-accent:#f97316" data-tags="donghua ongoing sedang tayang">
+      <div class="card-header">
+        <span class="card-icon">▶️</span>
+        <span class="card-title">Ongoing Donghua</span>
+        <span class="badge badge-green">Working</span>
+      </div>
+      <div class="endpoint"><span class="method get">GET</span>/api/v1/donghua/ongoing?page=1&limit=20</div>
+      <div class="card-desc">Daftar donghua yang sedang tayang (status ongoing) dengan pagination.</div>
+    </div>
+
+    <div class="card" style="--card-accent:#10b981" data-tags="donghua completed selesai tamat">
+      <div class="card-header">
+        <span class="card-icon">✅</span>
+        <span class="card-title">Completed Donghua</span>
+        <span class="badge badge-green">Working</span>
+      </div>
+      <div class="endpoint"><span class="method get">GET</span>/api/v1/donghua/completed?page=1&limit=20</div>
+      <div class="card-desc">Daftar donghua yang sudah selesai/tamat dengan pagination.</div>
+    </div>
+
+    <div class="card" style="--card-accent:#6366f1" data-tags="donghua search cari pencarian">
+      <div class="card-header">
+        <span class="card-icon">🔍</span>
+        <span class="card-title">Pencarian Donghua</span>
+        <span class="badge badge-green">Working</span>
+      </div>
+      <div class="endpoint"><span class="method get">GET</span>/api/v1/donghua/search?q=battle+through</div>
+      <div class="card-desc">Cari donghua berdasarkan judul menggunakan full-text search MongoDB dengan ranking relevance.</div>
+    </div>
+
+    <div class="card" style="--card-accent:#14b8a6" data-tags="donghua detail slug">
+      <div class="card-header">
+        <span class="card-icon">🎞️</span>
+        <span class="card-title">Detail Donghua</span>
+        <span class="badge badge-green">Working</span>
+      </div>
+      <div class="endpoint"><span class="method get">GET</span>/api/v1/donghua/:slug</div>
+      <div class="card-desc">Detail lengkap donghua: synopsis, genre, seasons, daftar episode, rating, studio, dan navigasi.</div>
+    </div>
+
+    <div class="card" style="--card-accent:#f59e0b" data-tags="donghua episode nonton tonton">
+      <div class="card-header">
+        <span class="card-icon">🍿</span>
+        <span class="card-title">Nonton Episode</span>
+        <span class="badge badge-green">Working</span>
+      </div>
+      <div class="endpoint"><span class="method get">GET</span>/api/v1/donghua/episode/:episodeSlug</div>
+      <div class="card-desc">Data streaming episode donghua. Termasuk navigasi prev/next episode dan info series.</div>
+    </div>
+
+    <div class="card" style="--card-accent:#3b82f6" data-tags="donghua genre daftar list">
+      <div class="card-header">
+        <span class="card-icon">🏷️</span>
+        <span class="card-title">Daftar Genre</span>
+        <span class="badge badge-green">Working</span>
+      </div>
+      <div class="endpoint"><span class="method get">GET</span>/api/v1/donghua/genres</div>
+      <div class="card-desc">Semua genre donghua yang tersedia beserta slug untuk digunakan di filter.</div>
+    </div>
+
+    <div class="card" style="--card-accent:#8b5cf6" data-tags="donghua genre filter by">
+      <div class="card-header">
+        <span class="card-icon">🗂️</span>
+        <span class="card-title">By Genre</span>
+        <span class="badge badge-green">Working</span>
+      </div>
+      <div class="endpoint"><span class="method get">GET</span>/api/v1/donghua/genre/:genre?page=1</div>
+      <div class="card-desc">Donghua berdasarkan genre tertentu (slug atau nama). Contoh: <code>/genre/action</code>, <code>/genre/fantasy</code>.</div>
+    </div>
+
+    <div class="card" style="--card-accent:#06b6d4" data-tags="donghua year tahun season">
+      <div class="card-header">
+        <span class="card-icon">📅</span>
+        <span class="card-title">By Season / Tahun</span>
+        <span class="badge badge-green">Working</span>
+      </div>
+      <div class="endpoint"><span class="method get">GET</span>/api/v1/donghua/year/:year?page=1</div>
+      <div class="card-desc">Donghua berdasarkan tahun rilis season. Contoh: <code>/year/2024</code>, <code>/year/2023</code>.</div>
+    </div>
+
+  </div>
+
+  <!-- ── EPISODES & SEASONS ───────────────────────────────────── -->
+  <div class="section-title">🎬 Episodes &amp; Seasons (Animasi)</div>
+  <div class="grid" id="episodes">
+
+    <div class="card" style="--card-accent:#ec4899" data-tags="season daftar list">
+      <div class="card-header">
+        <span class="card-icon">🗓️</span>
+        <span class="card-title">Daftar Season</span>
+        <span class="badge badge-green">Working</span>
+      </div>
+      <div class="endpoint"><span class="method get">GET</span>/api/v1/mangas/:id/seasons</div>
+      <div class="card-desc">Semua season untuk satu series animasi, diurutkan berdasarkan nomor season.</div>
+    </div>
+
+    <div class="card" style="--card-accent:#f97316" data-tags="episode daftar list by series">
+      <div class="card-header">
+        <span class="card-icon">📺</span>
+        <span class="card-title">Daftar Episode</span>
+        <span class="badge badge-green">Working</span>
+      </div>
+      <div class="endpoint"><span class="method get">GET</span>/api/v1/mangas/:id/episodes?seasonId=</div>
+      <div class="card-desc">Semua episode untuk series animasi. Optional filter <code>?seasonId=</code> untuk season tertentu.</div>
+    </div>
+
+    <div class="card" style="--card-accent:#6366f1" data-tags="episode detail watch">
+      <div class="card-header">
+        <span class="card-icon">▶️</span>
+        <span class="card-title">Detail Episode</span>
+        <span class="badge badge-green">Working</span>
+      </div>
+      <div class="endpoint"><span class="method get">GET</span>/api/v1/episodes/:id</div>
+      <div class="card-desc">Detail episode animasi termasuk URL video/streaming, navigasi prev/next, dan info series.</div>
+    </div>
+
+  </div>
+
+  <!-- ── SEARCH ─────────────────────────────────────────────────── -->
+  <div class="section-title">🔍 Search</div>
+  <div class="grid" id="search">
+
+    <div class="card" style="--card-accent:#6366f1" data-tags="search cari global semua">
+      <div class="card-header">
+        <span class="card-icon">🔍</span>
+        <span class="card-title">Global Search</span>
+        <span class="badge badge-green">Working</span>
+      </div>
+      <div class="endpoint"><span class="method get">GET</span>/api/v1/search?q=naruto&type=manga</div>
+      <div class="card-desc">Pencarian global dengan 3 method fallback: full-text → regex → fallback. Filter <code>type</code>: manga, manhwa, manhua, donghua.</div>
+    </div>
+
+  </div>
+
+  <!-- ── USER & AUTH ────────────────────────────────────────────── -->
+  <div class="section-title">👤 Auth &amp; User</div>
+  <div class="grid" id="auth">
+
+    <div class="card" style="--card-accent:#10b981" data-tags="auth register daftar">
+      <div class="card-header">
+        <span class="card-icon">📝</span>
+        <span class="card-title">Register</span>
+        <span class="badge badge-green">Working</span>
+      </div>
+      <div class="endpoint"><span class="method post">POST</span>/api/v1/auth/register</div>
+      <div class="card-desc">Daftarkan akun baru. Body: <code>username</code>, <code>email</code>, <code>password</code>. Kirim email verifikasi otomatis.</div>
+    </div>
+
+    <div class="card" style="--card-accent:#3b82f6" data-tags="auth login masuk token">
+      <div class="card-header">
+        <span class="card-icon">🔑</span>
+        <span class="card-title">Login</span>
+        <span class="badge badge-green">Working</span>
+      </div>
+      <div class="endpoint"><span class="method post">POST</span>/api/v1/auth/login</div>
+      <div class="card-desc">Login dan dapatkan <code>accessToken</code> + <code>refreshToken</code>. Access token berlaku 15 menit.</div>
+    </div>
+
+    <div class="card" style="--card-accent:#8b5cf6" data-tags="auth refresh token renew">
+      <div class="card-header">
+        <span class="card-icon">🔄</span>
+        <span class="card-title">Refresh Token</span>
+        <span class="badge badge-green">Working</span>
+      </div>
+      <div class="endpoint"><span class="method post">POST</span>/api/v1/auth/refresh</div>
+      <div class="card-desc">Perbarui access token menggunakan refresh token. Tidak perlu login ulang.</div>
+    </div>
+
+    <div class="card" style="--card-accent:#f59e0b" data-tags="user profil profile me">
+      <div class="card-header">
+        <span class="card-icon">👤</span>
+        <span class="card-title">Profil Saya</span>
+        <span class="badge badge-green">Working</span>
+      </div>
+      <div class="endpoint"><span class="method get">GET</span>/api/v1/users/me</div>
+      <div class="card-desc">Data profil user yang sedang login. Termasuk statistik bookmark, reading history, dsb.</div>
+      <div class="auth-note">Butuh Bearer Token</div>
+    </div>
+
+    <div class="card" style="--card-accent:#06b6d4" data-tags="user public profil publik">
+      <div class="card-header">
+        <span class="card-icon">🌐</span>
+        <span class="card-title">Public User Profile</span>
+        <span class="badge badge-green">Working</span>
+      </div>
+      <div class="endpoint"><span class="method get">GET</span>/api/v1/users/:userId/public</div>
+      <div class="card-desc">Profil publik user lain: username, bio, avatar, stats. Data sensitif disembunyikan.</div>
+    </div>
+
+  </div>
+
+  <!-- ── BOOKMARKS ──────────────────────────────────────────────── -->
+  <div class="section-title">🔖 Bookmarks &amp; History</div>
+  <div class="grid" id="bookmarks">
+
+    <div class="card" style="--card-accent:#ec4899" data-tags="bookmark koleksi list saya">
+      <div class="card-header">
+        <span class="card-icon">🔖</span>
+        <span class="card-title">Bookmark Saya</span>
+        <span class="badge badge-green">Working</span>
+      </div>
+      <div class="endpoint"><span class="method get">GET</span>/api/v1/bookmarks?page=1&limit=20</div>
+      <div class="card-desc">Daftar manga yang di-bookmark user. Support filter <code>status</code> dan pagination.</div>
+      <div class="auth-note">Butuh Bearer Token</div>
+    </div>
+
+    <div class="card" style="--card-accent:#f97316" data-tags="bookmark toggle tambah hapus">
+      <div class="card-header">
+        <span class="card-icon">➕</span>
+        <span class="card-title">Toggle Bookmark</span>
+        <span class="badge badge-green">Working</span>
+      </div>
+      <div class="endpoint"><span class="method post">POST</span>/api/v1/bookmarks/:mangaId</div>
+      <div class="card-desc">Toggle bookmark manga — tambah jika belum ada, hapus jika sudah ada. Auto-invalidate trending cache.</div>
+      <div class="auth-note">Butuh Bearer Token</div>
+    </div>
+
+    <div class="card" style="--card-accent:#6366f1" data-tags="history riwayat baca">
+      <div class="card-header">
+        <span class="card-icon">📜</span>
+        <span class="card-title">Reading History</span>
+        <span class="badge badge-green">Working</span>
+      </div>
+      <div class="endpoint"><span class="method get">GET</span>/api/v1/histories?page=1&limit=20</div>
+      <div class="card-desc">Riwayat chapter yang sudah dibaca user, diurutkan dari yang paling baru.</div>
+      <div class="auth-note">Butuh Bearer Token</div>
+    </div>
+
+  </div>
+
+  <!-- ── COLLECTIONS ────────────────────────────────────────────── -->
+  <div class="section-title">📁 Collections</div>
+  <div class="grid" id="collections">
+
+    <div class="card" style="--card-accent:#14b8a6" data-tags="collection list daftar">
+      <div class="card-header">
+        <span class="card-icon">📁</span>
+        <span class="card-title">Koleksi Saya</span>
+        <span class="badge badge-green">Working</span>
+      </div>
+      <div class="endpoint"><span class="method get">GET</span>/api/v1/collections?page=1&limit=20</div>
+      <div class="card-desc">Daftar koleksi yang dibuat user. Bisa private atau public.</div>
+      <div class="auth-note">Butuh Bearer Token</div>
+    </div>
+
+    <div class="card" style="--card-accent:#8b5cf6" data-tags="collection buat create baru">
+      <div class="card-header">
+        <span class="card-icon">📂</span>
+        <span class="card-title">Buat Koleksi</span>
+        <span class="badge badge-green">Working</span>
+      </div>
+      <div class="endpoint"><span class="method post">POST</span>/api/v1/collections</div>
+      <div class="card-desc">Buat koleksi baru. Body: <code>name</code>, <code>description</code>, <code>visibility</code> (private/public).</div>
+      <div class="auth-note">Butuh Bearer Token</div>
+    </div>
+
+    <div class="card" style="--card-accent:#f59e0b" data-tags="collection public trending discovery">
+      <div class="card-header">
+        <span class="card-icon">📊</span>
+        <span class="card-title">Trending Collections</span>
+        <span class="badge badge-green">Working</span>
+      </div>
+      <div class="endpoint"><span class="method get">GET</span>/api/v1/collections/public/trending</div>
+      <div class="card-desc">Koleksi publik paling populer berdasarkan jumlah item dan view count.</div>
+    </div>
+
+  </div>
+
+  <!-- ── COMMENTS & REVIEWS ─────────────────────────────────────── -->
+  <div class="section-title">💬 Comments &amp; Reviews</div>
+  <div class="grid" id="comments">
+
+    <div class="card" style="--card-accent:#3b82f6" data-tags="comment komentar manga">
+      <div class="card-header">
+        <span class="card-icon">💬</span>
+        <span class="card-title">Komentar Manga</span>
+        <span class="badge badge-green">Working</span>
+      </div>
+      <div class="endpoint"><span class="method get">GET</span>/api/v1/comments/manga/:mangaId?page=1</div>
+      <div class="card-desc">Daftar komentar untuk manga tertentu. Support pagination dan sortir.</div>
+    </div>
+
+    <div class="card" style="--card-accent:#10b981" data-tags="comment tambah tulis post">
+      <div class="card-header">
+        <span class="card-icon">✍️</span>
+        <span class="card-title">Tulis Komentar</span>
+        <span class="badge badge-green">Working</span>
+      </div>
+      <div class="endpoint"><span class="method post">POST</span>/api/v1/comments</div>
+      <div class="card-desc">Tambah komentar baru untuk manga. Mendukung reply (nested comment).</div>
+      <div class="auth-note">Butuh Bearer Token</div>
+    </div>
+
+    <div class="card" style="--card-accent:#ec4899" data-tags="review ulasan manga rating">
+      <div class="card-header">
+        <span class="card-icon">📝</span>
+        <span class="card-title">Reviews Manga</span>
+        <span class="badge badge-green">Working</span>
+      </div>
+      <div class="endpoint"><span class="method get">GET</span>/api/v1/reviews/manga/:mangaId?page=1</div>
+      <div class="card-desc">Ulasan panjang (review) untuk manga tertentu. Berbeda dari komentar singkat.</div>
+    </div>
+
+  </div>
+
+  <!-- ── TAGS ───────────────────────────────────────────────────── -->
+  <div class="section-title">🏷️ Tags</div>
+  <div class="grid" id="tags">
+
+    <div class="card" style="--card-accent:#06b6d4" data-tags="tag genre daftar list">
+      <div class="card-header">
+        <span class="card-icon">🏷️</span>
+        <span class="card-title">Daftar Tag</span>
+        <span class="badge badge-green">Working</span>
+      </div>
+      <div class="endpoint"><span class="method get">GET</span>/api/v1/tags?page=1&limit=50</div>
+      <div class="card-desc">Semua tag yang tersedia di platform. Bisa digunakan untuk filter manga.</div>
+    </div>
+
+  </div>
+
+  <!-- ── INFO ───────────────────────────────────────────────────── -->
+  <div class="section-title">ℹ️ Info &amp; Dokumentasi</div>
+  <div class="grid">
+
+    <div class="card" style="--card-accent:#6366f1" data-tags="docs swagger dokumentasi">
+      <div class="card-header">
+        <span class="card-icon">📖</span>
+        <span class="card-title">Swagger / OpenAPI Docs</span>
+        <span class="badge badge-blue">Interactive</span>
+      </div>
+      <div class="endpoint"><span class="method get">GET</span>/api/v1/docs</div>
+      <div class="card-desc">Dokumentasi API interaktif dengan Swagger UI. Bisa langsung mencoba endpoint dari browser.</div>
+    </div>
+
+    <div class="card" style="--card-accent:#10b981" data-tags="health status server">
+      <div class="card-header">
+        <span class="card-icon">💓</span>
+        <span class="card-title">Health Check</span>
+        <span class="badge badge-green">Working</span>
+      </div>
+      <div class="endpoint"><span class="method get">GET</span>/health</div>
+      <div class="card-desc">Cek status server. Mengembalikan <code>status: ok</code>, versi API, dan timestamp.</div>
+    </div>
+
+    <div class="card" style="--card-accent:#f59e0b" data-tags="base url endpoint api root">
+      <div class="card-header">
+        <span class="card-icon">🌐</span>
+        <span class="card-title">Base URL</span>
+        <span class="badge badge-yellow">Info</span>
+      </div>
+      <div class="endpoint"><span class="method get">GET</span>/api/v1/</div>
+      <div class="card-desc">Semua endpoint menggunakan prefix <code>/api/v1/</code>. Auth menggunakan header <code>Authorization: Bearer &lt;token&gt;</code>.</div>
+    </div>
+
+  </div>
+</div><!-- /section -->
+
+<!-- ── Footer ────────────────────────────────────────────────── -->
+<footer>
+  <p>Comic &amp; Animation Platform API &nbsp;·&nbsp; <a href="/api/v1/docs">Swagger Docs</a> &nbsp;·&nbsp; <a href="/health">Health</a></p>
+  <p style="margin-top:6px; color:#475569;">Base URL: <code style="color:#a5b4fc">/api/v1/</code> &nbsp;·&nbsp; Auth: <code style="color:#a5b4fc">Authorization: Bearer &lt;token&gt;</code></p>
+</footer>
+
+<script src="/dashboard.js"></script>
+</body>
+</html>

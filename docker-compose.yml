@@ -1,0 +1,152 @@
+version: '3.9'
+
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: comic-api
+    restart: unless-stopped
+    ports:
+      - '5000:5000'
+    env_file:
+      - .env
+    environment:
+      NODE_ENV: production
+      MONGO_URI: ${MONGO_URI_DOCKER:-mongodb://${MONGO_ROOT_USER:-admin}:${MONGO_ROOT_PASS:-change_me}@mongo:27017/comic_platform?authSource=admin}
+      REDIS_URL: ${REDIS_URL_DOCKER:-redis://redis:6379}
+    volumes:
+      - uploads_data:/app/uploads
+      - logs_data:/app/logs
+    depends_on:
+      mongo:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    networks:
+      - comic-net
+
+  mongo:
+    image: mongo:7.0
+    container_name: comic-mongo
+    restart: unless-stopped
+    ports:
+      - '127.0.0.1:27017:27017'
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_ROOT_USER:-admin}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_ROOT_PASS:-change_me}
+      MONGO_INITDB_DATABASE: comic_platform
+    volumes:
+      - mongo_data:/data/db
+    healthcheck:
+      test: ["CMD", "mongosh", "--eval", "db.adminCommand('ping')"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - comic-net
+
+  redis:
+    image: redis:7-alpine
+    container_name: comic-redis
+    restart: unless-stopped
+    command: redis-server --appendonly yes
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 3s
+      retries: 5
+    networks:
+      - comic-net
+
+  # ── Anichin Auto-Scheduler ────────────────────────────────────────────────
+  scheduler:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: comic-scheduler
+    restart: unless-stopped
+    command: ["node", "scripts/scheduler.js"]
+    env_file:
+      - .env
+    environment:
+      NODE_ENV: production
+      MONGO_URI: ${MONGO_URI_DOCKER:-mongodb://${MONGO_ROOT_USER:-admin}:${MONGO_ROOT_PASS:-change_me}@mongo:27017/comic_platform?authSource=admin}
+      REDIS_URL: ${REDIS_URL_DOCKER:-redis://redis:6379}
+      # Jadwal (cron syntax)
+      SCRAPER_SERIES_CRON: "0 3 * * *"      # Series sync: tiap hari jam 03:00 WIB
+      SCRAPER_EPISODE_CRON: "0 */6 * * *"   # Episode sync: tiap 6 jam
+      SCRAPER_FULL_EPISODE_CRON: "0 1 * * 0" # Full sync: Minggu 01:00 WIB
+      SCRAPER_TZ: "Asia/Jakarta"
+      SCRAPER_DELAY_MS: "1000"
+      SCRAPER_RUN_ON_STARTUP: "true"
+    depends_on:
+      mongo:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    networks:
+      - comic-net
+
+  worker:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: comic-worker
+    restart: unless-stopped
+    command: ["node", "src/jobs/worker.js"]
+    env_file:
+      - .env
+    environment:
+      NODE_ENV: production
+      MONGO_URI: ${MONGO_URI_DOCKER:-mongodb://${MONGO_ROOT_USER:-admin}:${MONGO_ROOT_PASS:-change_me}@mongo:27017/comic_platform?authSource=admin}
+      REDIS_URL: ${REDIS_URL_DOCKER:-redis://redis:6379}
+      SCRAPER_JOB_TIMEOUT_MS: "3600000"
+      SCRAPER_WORKER_CONCURRENCY: "1"
+    depends_on:
+      mongo:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    networks:
+      - comic-net
+
+  # ── Local dev only ─────────────────────────────────────────────────────────
+  api-dev:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: comic-api-dev
+    restart: unless-stopped
+    ports:
+      - '5001:5000'
+    env_file:
+      - .env
+    environment:
+      NODE_ENV: development
+      MONGO_URI: ${MONGO_URI_DOCKER:-mongodb://${MONGO_ROOT_USER:-admin}:${MONGO_ROOT_PASS:-change_me}@mongo:27017/comic_platform?authSource=admin}
+      REDIS_URL: ${REDIS_URL_DOCKER:-redis://redis:6379}
+    volumes:
+      - ./src:/app/src:ro
+      - uploads_data:/app/uploads
+    depends_on:
+      mongo:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    networks:
+      - comic-net
+    profiles:
+      - dev
+
+volumes:
+  mongo_data:
+  redis_data:
+  uploads_data:
+  logs_data:
+
+networks:
+  comic-net:
+    driver: bridge

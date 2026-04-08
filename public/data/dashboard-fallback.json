@@ -1,0 +1,140 @@
+{
+  "categories": [
+    {
+      "key": "donghua",
+      "label": "Donghua Highlights",
+      "slides": [
+        {
+          "title": "Trending Donghua Hari Ini",
+          "subtitle": "Mode demo saat MongoDB offline",
+          "image": "https://images.unsplash.com/photo-1578632767115-351597cf2477?auto=format&fit=crop&w=1280&q=80",
+          "metric": "12.4k views"
+        },
+        {
+          "title": "Ongoing Donghua Favorit",
+          "subtitle": "Siap dipakai untuk blok homepage app",
+          "image": "https://images.unsplash.com/photo-1588497859490-85d1c17db96d?auto=format&fit=crop&w=1280&q=80",
+          "metric": "37 series"
+        }
+      ]
+    },
+    {
+      "key": "manga",
+      "label": "Manga Highlights",
+      "slides": [
+        {
+          "title": "Top Manga Mingguan",
+          "subtitle": "Data fallback kategori manga",
+          "image": "https://images.unsplash.com/photo-1618336753974-aae8e04506aa?auto=format&fit=crop&w=1280&q=80",
+          "metric": "8.9k bookmarks"
+        },
+        {
+          "title": "Chapter Update Terbaru",
+          "subtitle": "Contoh panel latest release",
+          "image": "https://images.unsplash.com/photo-1513745405825-efaf9cafff3f?auto=format&fit=crop&w=1280&q=80",
+          "metric": "126 chapter"
+        }
+      ]
+    },
+    {
+      "key": "anime",
+      "label": "Episode Highlights",
+      "slides": [
+        {
+          "title": "Episode Rilis Terbaru",
+          "subtitle": "Fallback untuk section episode",
+          "image": "https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=1280&q=80",
+          "metric": "26 episode"
+        },
+        {
+          "title": "Popular Watchlist",
+          "subtitle": "Rekomendasi konten untuk user baru",
+          "image": "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=1280&q=80",
+          "metric": "5.1k watchlist"
+        }
+      ]
+    },
+    {
+      "key": "auth",
+      "label": "Auth Highlights",
+      "slides": [
+        {
+          "title": "Login & Session Flow",
+          "subtitle": "Preview modul autentikasi saat backend data offline",
+          "image": "https://images.unsplash.com/photo-1633265486501-77e9a7f8fd2d?auto=format&fit=crop&w=1280&q=80",
+          "metric": "JWT + Refresh"
+        },
+        {
+          "title": "Secure Account Journey",
+          "subtitle": "Register, verify, dan profile flow siap diintegrasi",
+          "image": "https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1280&q=80",
+          "metric": "3 auth endpoints"
+        }
+      ]
+    }
+  ],
+  "testerPresets": [
+    {
+      "key": "donghua",
+      "label": "Donghua",
+      "items": [
+        {
+          "name": "Home Donghua",
+          "method": "GET",
+          "path": "/donghua/home"
+        },
+        {
+          "name": "Ongoing Donghua",
+          "method": "GET",
+          "path": "/donghua/ongoing?page=1&limit=20"
+        },
+        {
+          "name": "Search Donghua",
+          "method": "GET",
+          "path": "/donghua/search?q=battle"
+        }
+      ]
+    },
+    {
+      "key": "manga",
+      "label": "Manga",
+      "items": [
+        {
+          "name": "List Manga",
+          "method": "GET",
+          "path": "/mangas?page=1&limit=20"
+        },
+        {
+          "name": "Trending",
+          "method": "GET",
+          "path": "/trending?period=week&limit=10"
+        }
+      ]
+    },
+    {
+      "key": "auth",
+      "label": "Auth",
+      "items": [
+        {
+          "name": "Login",
+          "method": "POST",
+          "path": "/auth/login",
+          "body": {
+            "email": "user@example.com",
+            "password": "CHANGEME_DEMO_ONLY"
+          }
+        },
+        {
+          "name": "Register",
+          "method": "POST",
+          "path": "/auth/register",
+          "body": {
+            "username": "newuser",
+            "email": "new@example.com",
+            "password": "CHANGEME_DEMO_ONLY"
+          }
+        }
+      ]
+    }
+  ]
+}

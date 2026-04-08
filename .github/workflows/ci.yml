@@ -1,0 +1,99 @@
+name: CI Security Gate
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main, develop]
+
+jobs:
+  test:
+    name: Test + Coverage (Node ${{ matrix.node-version }})
+    runs-on: ubuntu-latest
+
+    services:
+      mongo:
+        image: mongo:7
+        ports:
+          - 27017:27017
+        options: >-
+          --health-cmd "mongosh --eval \"db.adminCommand('ping')\""
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+      redis:
+        image: redis:7-alpine
+        ports:
+          - 6379:6379
+        options: >-
+          --health-cmd "redis-cli ping"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
+    strategy:
+      matrix:
+        node-version: [20.x, 22.x]
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run tests with coverage gate
+        env:
+          NODE_ENV: test
+          JWT_ACCESS_SECRET: ci-access-secret-32-chars-long!!
+          JWT_REFRESH_SECRET: ci-refresh-secret-32-chars-long!
+          MONGO_URI: mongodb://127.0.0.1:27017/comic-test
+          REDIS_URL: redis://127.0.0.1:6379
+        run: npm run test:coverage
+
+      - name: Upload coverage report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: coverage-node-${{ matrix.node-version }}
+          path: coverage/
+
+  lint:
+    name: Syntax Gate
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20.x
+          cache: npm
+      - run: npm ci
+      - name: Check app boot syntax
+        env:
+          JWT_ACCESS_SECRET: ci-access-secret-32-chars-long!!
+          JWT_REFRESH_SECRET: ci-refresh-secret-32-chars-long!
+          MONGO_URI: mongodb://127.0.0.1:27017/comic-test
+        run: npm run lint:syntax
+
+  security:
+    name: Security Scan
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22.x
+          cache: npm
+      - run: npm ci
+      - name: Dependency vulnerability scan
+        run: npm run security:audit
+      - name: Secret scan (gitleaks)
+        uses: gitleaks/gitleaks-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
