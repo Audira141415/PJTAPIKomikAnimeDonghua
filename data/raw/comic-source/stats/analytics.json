@@ -1,0 +1,216 @@
+{
+  "creator": "Sanka Vollerei",
+  "api_info": {
+    "version": "2.0.0",
+    "total_endpoints": 34,
+    "cache_enabled": true,
+    "rate_limiting": true
+  },
+  "performance": {
+    "uptime_seconds": 87350,
+    "memory_usage": {
+      "used": "133 MB",
+      "total": "258 MB",
+      "percentage": 52
+    },
+    "cache_stats": {
+      "total_entries": 342,
+      "hit_rate": "Not tracked yet"
+    }
+  },
+  "endpoints": [
+    {
+      "path": "/api/genre/:genre",
+      "status": "active",
+      "cache": "none",
+      "method": "GET"
+    },
+    {
+      "path": "/comic",
+      "status": "active",
+      "cache": "none",
+      "method": "GET"
+    },
+    {
+      "path": "/comic/advanced-search",
+      "status": "active",
+      "cache": "none",
+      "method": "GET"
+    },
+    {
+      "path": "/comic/analytics",
+      "status": "active",
+      "cache": "none",
+      "method": "GET"
+    },
+    {
+      "path": "/comic/berwarna",
+      "status": "active",
+      "cache": "none",
+      "method": "GET"
+    },
+    {
+      "path": "/comic/berwarna/:page",
+      "status": "active",
+      "cache": "none",
+      "method": "GET"
+    },
+    {
+      "path": "/comic/browse",
+      "status": "active",
+      "cache": "none",
+      "method": "GET"
+    },
+    {
+      "path": "/comic/cache/clear",
+      "status": "active",
+      "cache": "none",
+      "method": "POST"
+    },
+    {
+      "path": "/comic/chapter/:segment",
+      "status": "active",
+      "cache": "none",
+      "method": "GET"
+    },
+    {
+      "path": "/comic/chapter/:segment/navigation",
+      "status": "active",
+      "cache": "none",
+      "method": "GET"
+    },
+    {
+      "path": "/comic/comic/:slug",
+      "status": "active",
+      "cache": "none",
+      "method": "GET"
+    },
+    {
+      "path": "/comic/comparison",
+      "status": "active",
+      "cache": "none",
+      "method": "GET"
+    },
+    {
+      "path": "/comic/docs",
+      "status": "active",
+      "cache": "none",
+      "method": "GET"
+    },
+    {
+      "path": "/comic/favorites",
+      "status": "active",
+      "cache": "none",
+      "method": "GET"
+    },
+    {
+      "path": "/comic/fullstats",
+      "status": "active",
+      "cache": "none",
+      "method": "GET"
+    },
+    {
+      "path": "/comic/genres",
+      "status": "active",
+      "cache": "none",
+      "method": "GET"
+    },
+    {
+      "path": "/comic/health",
+      "status": "active",
+      "cache": "none",
+      "method": "GET"
+    },
+    {
+      "path": "/comic/homepage",
+      "status": "active",
+      "cache": "none",
+      "method": "GET"
+    },
+    {
+      "path": "/comic/infinite",
+      "status": "active",
+      "cache": "file-based",
+      "method": "GET"
+    },
+    {
+      "path": "/comic/populer",
+      "status": "active",
+      "cache": "none",
+      "method": "GET"
+    },
+    {
+      "path": "/comic/pustaka",
+      "status": "active",
+      "cache": "none",
+      "method": "GET"
+    },
+    {
+      "path": "/comic/pustaka/:page",
+      "status": "active",
+      "cache": "none",
+      "method": "GET"
+    },
+    {
+      "path": "/comic/random",
+      "status": "active",
+      "cache": "none",
+      "method": "GET"
+    },
+    {
+      "path": "/comic/realtime",
+      "status": "active",
+      "cache": "none",
+      "method": "GET"
+    },
+    {
+      "path": "/comic/recommendations",
+      "status": "active",
+      "cache": "none",
+      "method": "GET"
+    },
+    {
+      "path": "/comic/scroll",
+      "status": "active",
+      "cache": "none",
+      "method": "GET"
+    },
+    {
+      "path": "/comic/search",
+      "status": "active",
+      "cache": "none",
+      "method": "GET"
+    },
+    {
+      "path": "/comic/stats",
+      "status": "active",
+      "cache": "none",
+      "method": "GET"
+    },
+    {
+      "path": "/comic/terbaru",
+      "status": "active",
+      "cache": "none",
+      "method": "GET"
+    },
+    {
+      "path": "/comic/trending",
+      "status": "active",
+      "cache": "none",
+      "method": "GET"
+    },
+    {
+      "path": "/comic/type/:type",
+      "status": "active",
+      "cache": "none",
+      "method": "GET"
+    },
+    {
+      "path": "/comic/unlimited",
+      "status": "active",
+      "cache": "file-based",
+      "method": "GET"
+    }
+  ],
+  "last_updated": "2026-04-09T04:25:23.320Z"
+}

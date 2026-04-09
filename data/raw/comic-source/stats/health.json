@@ -1,0 +1,15 @@
+{
+  "creator": "Sanka Vollerei",
+  "server": "OK",
+  "timestamp": "2026-04-09T04:25:41.129Z",
+  "uptime": "87367 seconds",
+  "memory": {
+    "used": "153 MB",
+    "total": "269 MB"
+  },
+  "endpoints_status": {
+    "basic": "OK",
+    "cache": "OK",
+    "rate_limit": "OK"
+  }
+}

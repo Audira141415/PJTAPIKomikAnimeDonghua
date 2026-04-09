@@ -1,0 +1,50 @@
+{
+  "status": true,
+  "creator": "Sanka Vollerei",
+  "message": "Berhasil mendapatkan hasil pencarian",
+  "q": "naruto",
+  "url": "https://komiku.org/?s=naruto&post_type=manga",
+  "total": 4,
+  "data": [
+    {
+      "title": "Naruto: Konoha’s Story—The Steam Ninja Scrolls",
+      "altTitle": null,
+      "slug": "naruto-konohas-story-the-steam-ninja-scrolls",
+      "href": "/detail-komik/naruto-konohas-story-the-steam-ninja-scrolls/",
+      "thumbnail": "https://thumbnail.komiku.org/uploads/manga/naruto-konohas-story-the-steam-ninja-scrolls/manga_thumbnail-Manga-Naruto-Konohas-Story-The-Steam-Ninja-Scrolls.jpg?resize=450,235&quality=60",
+      "type": "Manga",
+      "genre": "Aksi",
+      "description": "Update 11 bulan lalu."
+    },
+    {
+      "title": "Renge to Naruto!",
+      "altTitle": null,
+      "slug": "renge-to-naruto",
+      "href": "/detail-komik/renge-to-naruto/",
+      "thumbnail": "https://thumbnail.komiku.org/uploads/manga/renge-to-naruto/manga_thumbnail-A2-Renge-to-Naruto.png?resize=450,235&quality=60",
+      "type": "Manga",
+      "genre": "Komedi",
+      "description": "Update 12 bulan lalu."
+    },
+    {
+      "title": "Naruto",
+      "altTitle": null,
+      "slug": "naruto",
+      "href": "/detail-komik/naruto/",
+      "thumbnail": "https://thumbnail.komiku.org/uploads/manga/naruto/manga_thumbnail-Manga-Naruto.jpg?resize=450,235&quality=60",
+      "type": "Manga",
+      "genre": "Aksi",
+      "description": "Update 12 bulan lalu."
+    },
+    {
+      "title": "Naruto Sasuke’s Story The Uchiha And The Heavenly Stardust",
+      "altTitle": null,
+      "slug": "naruto-sasukes-story-the-uchiha-and-the-heavenly-stardust",
+      "href": "/detail-komik/naruto-sasukes-story-the-uchiha-and-the-heavenly-stardust/",
+      "thumbnail": "https://thumbnail.komiku.org/uploads/manga/naruto-sasukes-story-the-uchiha-and-the-heavenly-stardust/manga_thumbnail-Manga-Naruto-Sasukes-Story-The-Uchiha-And-The-Heavenly-Stardust.jpg?resize=450,235&quality=60",
+      "type": "Manga",
+      "genre": "Aksi",
+      "description": "Update 12 bulan lalu."
+    }
+  ]
+}

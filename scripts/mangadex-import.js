@@ -41,6 +41,9 @@ const SEARCH_TITLE    = getArg('--title');
 const SINGLE_ID       = getArg('--id');
 const IMPORT_CHAPTERS = args.includes('--chapters');
 const IMPORT_ALL      = args.includes('--all');   // ambil semua halaman
+const DO_UPDATE       = args.includes('--update'); // update record yang sudah ada
+const LANG            = getArg('--lang') || 'id';  // --lang en = tanpa filter bahasa Indonesia
+const NO_LANG_FILTER  = LANG === 'any' || LANG === 'all'; // --lang any = tanpa filter bahasa
 const BATCH_SIZE      = 100;                       // max per request MangaDex
 
 // ── Helpers ───────────────────────────────────────────────────────────────────
@@ -82,10 +85,18 @@ async function get(url, params = {}, retries = 4) {
 }
 
 // ── Map MangaDex type → tipe kita ────────────────────────────────────────────
+// MangaDex menggunakan originalLanguage code: 'ja'=manga, 'ko'=manhwa, 'zh'/'zh-ro'/'zh-hk'=manhua
+// Kadang field-nya juga berisi tipe langsung: 'manga', 'manhwa', 'manhua'
 function mapType(mangadexType) {
-  // MangaDex: manga, manhwa, manhua, one_shot, doujinshi, novel, oel
-  const map = { manga: 'manga', manhwa: 'manhwa', manhua: 'manhua' };
-  return map[mangadexType] || 'manga';
+  // originalLanguage language codes
+  const langMap = {
+    ja: 'manga', 'ja-ro': 'manga',
+    ko: 'manhwa', 'ko-ro': 'manhwa',
+    zh: 'manhua', 'zh-hk': 'manhua', 'zh-ro': 'manhua',
+  };
+  // type string langsung
+  const typeMap = { manga: 'manga', manhwa: 'manhwa', manhua: 'manhua' };
+  return langMap[mangadexType] || typeMap[mangadexType] || 'manga';
 }
 
 // ── Ambil URL cover ───────────────────────────────────────────────────────────
@@ -169,7 +180,17 @@ async function importManga(mangaData, adminId) {
   const slug = slugify(title, { lower: true, strict: true });
   const existing = await Manga.findOne({ slug });
   if (existing) {
-    console.log(`  ⏭  Skip "${title}" — sudah ada di database`);
+    if (DO_UPDATE) {
+      // Update type jika berbeda
+      if (existing.type !== type) {
+        await Manga.updateOne({ _id: existing._id }, { type });
+        console.log(`  🔄 Update type "${title}": ${existing.type} → ${type}`);
+        return { ...existing.toObject(), type };
+      }
+      console.log(`  ⏭  Skip "${title}" — sudah ada, tipe sama (${type})`);
+    } else {
+      console.log(`  ⏭  Skip "${title}" — sudah ada di database`);
+    }
     return existing;
   }
 
@@ -274,15 +295,17 @@ async function main() {
 
   // ── Mode: cari by judul ──────────────────────────────────────────────────
   } else if (SEARCH_TITLE) {
-    console.log(`🔍 Mencari: "${SEARCH_TITLE}" dengan bahasa Indonesia tersedia...`);
-    const data = await get('/manga', {
-      title:                               SEARCH_TITLE,
-      'availableTranslatedLanguage[]':     'id',
-      limit:                               LIMIT,
-      'includes[]':                        ['cover_art', 'author', 'artist'],
-      'order[followedCount]':              'desc',
-      'contentRating[]':                   ['safe', 'suggestive'],
-    });
+    const langNote = NO_LANG_FILTER ? 'semua bahasa' : `bahasa ${LANG.toUpperCase()}${LANG==='id'?' (Indonesia)':''}`;
+    console.log(`🔍 Mencari: "${SEARCH_TITLE}" — ${langNote}...`);
+    const params = {
+      title:                  SEARCH_TITLE,
+      limit:                  LIMIT,
+      'includes[]':           ['cover_art', 'author', 'artist'],
+      'order[followedCount]': 'desc',
+      'contentRating[]':      ['safe', 'suggestive'],
+    };
+    if (!NO_LANG_FILTER) params['availableTranslatedLanguage[]'] = LANG;
+    const data = await get('/manga', params);
     mangaList = data?.data || [];
 
   // ── Mode: ambil SEMUA (paginasi) ─────────────────────────────────────────
@@ -320,16 +343,18 @@ async function main() {
     }
     console.log(`\n\n📦 Total ditemukan: ${mangaList.length} manga. Mulai import...\n`);
 
-  // ── Mode: populer dengan bahasa Indonesia (default) ──────────────────────
+  // ── Mode: populer (default) ─────────────────────────────────────────────
   } else {
-    console.log(`🔍 Mengambil ${LIMIT} manga populer dengan bahasa Indonesia tersedia...`);
-    const data = await get('/manga', {
-      'availableTranslatedLanguage[]':  'id',
-      limit:                            LIMIT,
-      'includes[]':                     ['cover_art', 'author', 'artist'],
-      'order[followedCount]':           'desc',
-      'contentRating[]':                ['safe', 'suggestive'],
-    });
+    const langNote = NO_LANG_FILTER ? 'semua bahasa' : `bahasa ${LANG.toUpperCase()}`;
+    console.log(`🔍 Mengambil ${LIMIT} manga populer — ${langNote}...`);
+    const params = {
+      limit:                  LIMIT,
+      'includes[]':           ['cover_art', 'author', 'artist'],
+      'order[followedCount]': 'desc',
+      'contentRating[]':      ['safe', 'suggestive'],
+    };
+    if (!NO_LANG_FILTER) params['availableTranslatedLanguage[]'] = LANG;
+    const data = await get('/manga', params);
     mangaList = data?.data || [];
   }
 

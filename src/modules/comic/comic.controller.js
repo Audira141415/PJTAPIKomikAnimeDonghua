@@ -7,9 +7,11 @@ const ApiError = require('../../shared/errors/ApiError');
 const cache = require('../../shared/utils/cache');
 const { paginate, paginateMeta } = require('../../shared/utils/paginate');
 const mangaService = require('../manga/manga.service');
+const mangaValidation = require('../manga/manga.validation');
 const trendingService = require('../trending/trending.service');
 const tagService = require('../tag/tag.service');
 const chapterRepo = require('../../repositories/chapter.repository');
+const { coverFileUrl } = require('../../middlewares/upload.middleware');
 const { z } = require('zod');
 
 // ── Shared query schemas ──────────────────────────────────────────────────────
@@ -263,8 +265,14 @@ const byGenre = catchAsync(async (req, res) => {
 //  GET /comic/genres  — Daftar semua genre/tag
 // ============================================================================
 const genres = catchAsync(async (req, res) => {
-  const data = await tagService.listTags({ limit: 200 });
-  return success(res, data);
+  const Manga = require('../../models/Manga');
+  const result = await Manga.aggregate([
+    { $unwind: '$genres' },
+    { $group: { _id: '$genres', count: { $sum: 1 } } },
+    { $sort: { count: -1 } },
+    { $project: { _id: 0, name: '$_id', count: 1, slug: { $toLower: { $replaceAll: { input: '$_id', find: ' ', replacement: '-' } } } } },
+  ]);
+  return success(res, { data: result });
 });
 
 // ============================================================================
@@ -661,6 +669,43 @@ const health = catchAsync(async (req, res) => {
   });
 });
 
+// ============================================================================
+//  POST /comic  — Buat komik baru (admin only)
+// ============================================================================
+const create = catchAsync(async (req, res) => {
+  const data = mangaValidation.createManga.parse(req.body);
+  if (req.file) data.coverImage = coverFileUrl(req.file);
+  const manga = await mangaService.createManga(data, req.user.id);
+  return success(res, { statusCode: 201, message: 'Comic created', data: manga });
+});
+
+// ============================================================================
+//  PUT /comic/:id  — Update komik (admin only)
+// ============================================================================
+const update = catchAsync(async (req, res) => {
+  const data = mangaValidation.updateManga.parse(req.body);
+  if (req.file) data.coverImage = coverFileUrl(req.file);
+  const manga = await mangaService.updateManga(req.params.id, data);
+  return success(res, { message: 'Comic updated', data: manga });
+});
+
+// ============================================================================
+//  DELETE /comic/:id  — Hapus komik beserta semua relasinya (admin only)
+// ============================================================================
+const remove = catchAsync(async (req, res) => {
+  await mangaService.deleteManga(req.params.id);
+  return success(res, { message: 'Comic deleted' });
+});
+
+// ============================================================================
+//  PATCH /comic/:id/rate  — Beri rating 1–10 (user login, rate-limited)
+// ============================================================================
+const rate = catchAsync(async (req, res) => {
+  const { score } = mangaValidation.rateManga.parse(req.body);
+  const result = await mangaService.rateContent(req.params.id, req.user.id, score);
+  return success(res, { message: 'Rating submitted', data: result });
+});
+
 module.exports = {
   terbaru, populer, trending, latest,
   search, advancedSearch, browse,
@@ -671,4 +716,6 @@ module.exports = {
   homepage, recommendations,
   stats, fullstats, analytics,
   realtime, comparison, health,
+  // ── Admin CRUD ──────────────────────────────────────────────────────────────
+  create, update, remove, rate,
 };

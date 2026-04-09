@@ -1,0 +1,48 @@
+{
+  "meta": {
+    "source": "internal",
+    "version": "1.0",
+    "description": "Contoh format data komik untuk diimpor via comic-seed.js"
+  },
+  "data": [
+    {
+      "title": "Naruto",
+      "alterTitle": "NARUTO -ナルト-",
+      "type": "manga",
+      "status": "completed",
+      "genres": ["Action", "Adventure", "Fantasy", "Shounen"],
+      "description": "Naruto Uzumaki adalah ninja muda dari Desa Konohagakure yang memiliki rubah sembilan ekor tersegel di tubuhnya.",
+      "author": "Masashi Kishimoto",
+      "artist": "Masashi Kishimoto",
+      "coverImage": null,
+      "releasedOn": "1999-09-21",
+      "totalEpisodes": null
+    },
+    {
+      "title": "Solo Leveling",
+      "alterTitle": "나 혼자만 레벨업",
+      "type": "manhwa",
+      "status": "completed",
+      "genres": ["Action", "Adventure", "Fantasy"],
+      "description": "Sung Jin-Woo adalah hunter E-rank termiskin di Korea. Setelah hampir mati di sebuah dungeon berbahaya, ia mendapatkan sistem level-up yang membuatnya bisa terus berkembang.",
+      "author": "Chugong",
+      "artist": "DUBU (Redice Studio)",
+      "coverImage": null,
+      "releasedOn": "2018-03-04",
+      "totalEpisodes": 179
+    },
+    {
+      "title": "Battle Through the Heavens",
+      "alterTitle": "斗破苍穹",
+      "type": "manhua",
+      "status": "ongoing",
+      "genres": ["Action", "Adventure", "Fantasy", "Martial Arts"],
+      "description": "Xiao Yan adalah pemuda berbakat yang kehilangan seluruh kekuatannya. Dengan bantuan roh misterius dalam cincinnya, ia memulai perjalanan untuk mendapatkan kembali kekuatannya.",
+      "author": "Tian Can Tu Dou",
+      "artist": "Various",
+      "coverImage": null,
+      "releasedOn": "2015-01-01",
+      "totalEpisodes": null
+    }
+  ]
+}

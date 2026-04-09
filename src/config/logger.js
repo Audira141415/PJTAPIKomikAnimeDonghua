@@ -20,7 +20,7 @@ const logger = winston.createLogger({
     winston.format.errors({ stack: true }),
     winston.format.json()
   ),
-  defaultMeta: { service: 'comic-platform' },
+  defaultMeta: { service: 'audira-comic-api' },
   transports: [
     new winston.transports.File({
       filename: path.join('logs', 'error.log'),

@@ -1,0 +1,176 @@
+{
+  "creator": "Sanka Vollerei",
+  "title": "Komik API Documentation",
+  "version": "1.0.0",
+  "description": "RESTful API untuk mengakses ribuan komik dari Komiku.org",
+  "base_url": "https://www.sankavollerei.com/comic",
+  "endpoints": {
+    "basic_endpoints": [
+      {
+        "path": "/comic/terbaru",
+        "method": "GET",
+        "description": "Mengambil daftar komik terbaru",
+        "parameters": {
+          "page": "nomor halaman (optional, default: 1)",
+          "limit": "jumlah item per halaman (optional, default: 20, max: 50)"
+        },
+        "cache": "3 minutes"
+      },
+      {
+        "path": "/comic/populer",
+        "method": "GET",
+        "description": "Mengambil daftar komik populer",
+        "parameters": {
+          "page": "nomor halaman (optional, default: 1)",
+          "limit": "jumlah item per halaman (optional, default: 20, max: 50)"
+        },
+        "cache": "5 minutes"
+      },
+      {
+        "path": "/comic/search",
+        "method": "GET",
+        "description": "Mencari komik berdasarkan kata kunci",
+        "parameters": {
+          "q": "kata kunci pencarian (required)",
+          "page": "nomor halaman (optional, default: 1)",
+          "limit": "jumlah item per halaman (optional, default: 20, max: 50)"
+        }
+      },
+      {
+        "path": "/comic/comic/:slug",
+        "method": "GET",
+        "description": "Mengambil detail komik berdasarkan slug",
+        "parameters": {
+          "slug": "slug komik (required)"
+        }
+      },
+      {
+        "path": "/comic/chapter/:segment",
+        "method": "GET",
+        "description": "Mengambil gambar-gambar chapter",
+        "parameters": {
+          "segment": "segment link chapter (required)"
+        }
+      },
+      {
+        "path": "/comic/berwarna",
+        "method": "GET",
+        "description": "Mengambil Informasi Comic Berwarna",
+        "parameters": {
+          "segment": "/berwarna/:page (untuk ke page selanjutnya)"
+        }
+      },
+      {
+        "path": "/comic/pustaka",
+        "method": "GET",
+        "description": "Mengambil Informasi Pustaka Comic",
+        "parameters": {
+          "segment": "/pustaka/:page (untuk ke page selanjutnya)"
+        }
+      }
+    ],
+    "advanced_endpoints": [
+      {
+        "path": "/comic/unlimited",
+        "method": "GET",
+        "description": "Akses maksimum ke ribuan komik dengan deep crawling",
+        "parameters": {
+          "type": "tipe komik (optional, default: 'all')",
+          "max_pages": "maksimal halaman untuk crawl (optional, default: 3, max: 6)",
+          "aggressive": "mode agresif untuk lebih banyak data (optional, default: false)"
+        }
+      },
+      {
+        "path": "/comic/realtime",
+        "method": "GET",
+        "description": "Data real-time dengan parallel fetching",
+        "parameters": {
+          "count": "jumlah komik (optional, default: 48, max: 100)",
+          "fresh": "hanya data terbaru (optional, default: false)",
+          "categories": "kategori komik (optional, default: 'all')",
+          "randomize": "acak urutan (optional, default: false)"
+        }
+      },
+      {
+        "path": "/comic/scroll",
+        "method": "GET",
+        "description": "Simulasi infinite scroll dengan offset pagination",
+        "parameters": {
+          "offset": "offset data (optional, default: 0)",
+          "batch_size": "ukuran batch (optional, default: 20, max: 50)",
+          "seed": "seed untuk randomize (optional)",
+          "type": "tipe data (optional, default: 'mixed')"
+        }
+      },
+      {
+        "path": "/comic/genre/:genre",
+        "method": "GET",
+        "description": "Mengambil komik berdasarkan genre",
+        "parameters": {
+          "genre": "nama genre (required)",
+          "page": "nomor halaman (optional, default: 1)",
+          "limit": "jumlah item per halaman (optional, default: 20, max: 50)"
+        }
+      },
+      {
+        "path": "/comic/advanced-search",
+        "method": "GET",
+        "description": "Pencarian lanjutan dengan filter",
+        "parameters": {
+          "q": "kata kunci (required)",
+          "type": "tipe komik (optional, default: 'all')",
+          "status": "status komik (optional, default: 'all')",
+          "genre": "genre komik (optional, default: 'all')",
+          "year": "tahun rilis (optional, default: 'all')",
+          "sort": "urutan hasil (optional, default: 'relevance')",
+          "page": "nomor halaman (optional, default: 1)",
+          "limit": "jumlah item per halaman (optional, default: 20, max: 50)"
+        }
+      }
+    ],
+    "utility_endpoints": [
+      {
+        "path": "/comic/health",
+        "method": "GET",
+        "description": "Health check dan monitoring status"
+      },
+      {
+        "path": "/comic/analytics",
+        "method": "GET",
+        "description": "Analytics dan statistik detail API"
+      },
+      {
+        "path": "/comic/stats",
+        "method": "GET",
+        "description": "Statistik umum API"
+      },
+      {
+        "path": "/comic/recommendations",
+        "method": "GET",
+        "description": "Rekomendasi komik",
+        "parameters": {
+          "based_on": "basis rekomendasi (optional)",
+          "limit": "jumlah rekomendasi (optional, default: 10, max: 20)"
+        }
+      },
+      {
+        "path": "/comic/favorites",
+        "method": "GET",
+        "description": "Endpoint untuk favorites (memerlukan implementasi database)"
+      }
+    ]
+  },
+  "rate_limiting": {
+    "enabled": true,
+    "max_requests": 100,
+    "window": "60 seconds"
+  },
+  "caching": {
+    "enabled": true,
+    "default_duration": "5 minutes",
+    "endpoints_with_cache": [
+      "/comic/terbaru",
+      "/comic/populer"
+    ]
+  }
+}

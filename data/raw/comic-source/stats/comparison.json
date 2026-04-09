@@ -1,0 +1,68 @@
+{
+  "creator": "Sanka Vollerei",
+  "website_scroll": {
+    "method": "Manual scroll simulation",
+    "data_count": 20,
+    "limitation": "Limited by infinite scroll behavior",
+    "sample": [
+      {
+        "title": "Fantasy Enlistment Squad",
+        "link": "/manga/fantasy-enlistment-squad/"
+      },
+      {
+        "title": "I Became a Munchkin Skill Thief",
+        "link": "/manga/i-became-a-munchkin-skill-thief/"
+      },
+      {
+        "title": "7-Nin no Nemuri Hime",
+        "link": "/manga/7-nin-no-nemuri-hime/"
+      },
+      {
+        "title": "The Mirror Legacy",
+        "link": "/manga/the-mirror-legacy/"
+      },
+      {
+        "title": "How to Live as an Illegal Healer",
+        "link": "/manga/how-to-live-as-an-illegal-healer/"
+      }
+    ]
+  },
+  "api_unlimited": {
+    "method": "Deep crawling aggregation",
+    "data_count": 6744,
+    "advantage": "Access to complete database",
+    "sample": [
+      {
+        "title": "-50kg Cinderella",
+        "link": "https://komiku.org/manga/50kg-cinderella/"
+      },
+      {
+        "title": "-Aoppella!?- Hajimari no Playlist",
+        "link": "https://komiku.org/manga/aoppella-hajimari-no-playlist/"
+      },
+      {
+        "title": "-PIQUANT-",
+        "link": "https://komiku.org/manga/piquant/"
+      },
+      {
+        "title": ".hack//G.U.+",
+        "link": "https://komiku.org/manga/hack-g-u/"
+      },
+      {
+        "title": "“Bijin de Okane Mochi no Kanojo ga Hoshii” to Ittara, Wake Ari Joshi ga Yattekita Ken",
+        "link": "https://komiku.org/manga/bijin-de-okane-mochi-no-kanojo-ga-hoshii-to-ittara-wake-ari-joshi-ga-yattekita-ken/"
+      }
+    ]
+  },
+  "performance_ratio": {
+    "improvement": "33720%",
+    "data_multiplier": "337x more data",
+    "conclusion": "API provides significantly more data than manual scrolling"
+  },
+  "recommendation": {
+    "for_infinite_scroll": "Use /comic/scroll with offset pagination",
+    "for_maximum_data": "Use /comic/unlimited with aggressive=true",
+    "for_real_time": "Use /comic/realtime with fresh=true",
+    "for_specific_types": "Use /comic/unlimited?type=manga/manhwa/manhua"
+  }
+}

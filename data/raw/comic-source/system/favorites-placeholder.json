@@ -1,0 +1,14 @@
+{
+  "creator": "Sanka Vollerei",
+  "message": "Favorites endpoint ready",
+  "note": "This endpoint requires user authentication and database integration",
+  "example_usage": "POST /comic/favorites with comic data to add favorites",
+  "sample_data": [
+    {
+      "title": "Sample Favorite Comic",
+      "link": "/manga/sample-comic/",
+      "image": "https://komiku.org/asset/img/sample.jpg",
+      "added_date": "2026-04-09T04:24:46.982Z"
+    }
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "creator": "Sanka Vollerei",
+  "based_on": "popular_comics",
+  "recommendations": [
+    {
+      "title": "Fantasy Enlistment Squad",
+      "link": "/manga/fantasy-enlistment-squad/",
+      "image": "https://thumbnail.komiku.org/img/upload/fantasy_enlistment_squad/img_6985980b1c65f6.26793661.jpg?resize=240,171",
+      "chapter": "Chapter 18",
+      "recommendation_score": 9.920175640039103,
+      "reason": "Popular comic"
+    },
+    {
+      "title": "The Knight King Who Returned with a God",
+      "link": "/manga/the-knight-king-who-returned-with-a-god/",
+      "image": "https://thumbnail.komiku.org/uploads/manga/the-knight-king-who-returned-with-a-god/manga_img_horizontal-Back-The-Knight-King-Who-Returned-with-a-God.jpg?resize=240,171",
+      "chapter": "Chapter 158",
+      "recommendation_score": 0.9828620710250313,
+      "reason": "Popular comic"
+    },
+    {
+      "title": "7-Nin no Nemuri Hime",
+      "link": "/manga/7-nin-no-nemuri-hime/",
+      "image": "https://thumbnail.komiku.org/uploads/manga/7-nin-no-nemuri-hime/manga_img_horizontal-Back-7-Nin-no-Nemuri-Hime.jpg?resize=240,171",
+      "chapter": "Chapter 50",
+      "recommendation_score": 8.658874957334413,
+      "reason": "Popular comic"
+    },
+    {
+      "title": "Komiku Plus APK",
+      "link": "/plus/",
+      "image": "/asset/img/komikuplus2.jpg",
+      "chapter": "Download APK",
+      "recommendation_score": 9.972201160621033,
+      "reason": "Popular comic"
+    },
+    {
+      "title": "Tyrant of the Otherworld: My Shadow Can Evolve Infinitely",
+      "link": "/manga/tyrant-of-the-otherworld-my-shadow-can-evolve-infinitely/",
+      "image": "https://thumbnail.komiku.org/img/upload/tyrant_of_the_otherworld__my_shadow_can_evolve_infinitely/img_686630d7cf7eb5.16053677.jpg?resize=240,171",
+      "chapter": "Chapter 77",
+      "recommendation_score": 7.106379291921109,
+      "reason": "Popular comic"
+    },
+    {
+      "title": "The Tutorial is Too Hard",
+      "link": "/manga/the-tutorial-is-too-hard/",
+      "image": "https://thumbnail.komiku.org/uploads/manga/the-tutorial-is-too-hard/manga_img_horizontal-Komik-The-Tutorial-is-Too-Hard.jpg?resize=240,171",
+      "chapter": "Chapter 251",
+      "recommendation_score": 5.98340553371409,
+      "reason": "Popular comic"
+    },
+    {
+      "title": "Librale of Reincarnation",
+      "link": "/manga/librale-of-reincarnation/",
+      "image": "https://thumbnail.komiku.org/new/img/images/2026/03/28/20260328054834_30825547ea134d09_4afe0775.jpg?resize=240,171",
+      "chapter": "Chapter 8",
+      "recommendation_score": 6.137654130623556,
+      "reason": "Popular comic"
+    },
+    {
+      "title": "The Mirror Legacy",
+      "link": "/manga/the-mirror-legacy/",
+      "image": "https://thumbnail.komiku.org/new/img/images/2026/03/19/20260319232609_9d92196c428cb498_a6e5d1d0.jpg?resize=240,171",
+      "chapter": "Chapter 13",
+      "recommendation_score": 6.100695914377125,
+      "reason": "Popular comic"
+    },
+    {
+      "title": "The Black-Haired British Doctor",
+      "link": "/manga/the-black-haired-british-doctor/",
+      "image": "https://thumbnail.komiku.org/img/upload/the_black-haired_british_doctor/img_683165e00fdfc3.37245142.jpg?resize=240,171",
+      "chapter": "Chapter 51",
+      "recommendation_score": 0.05314408860449871,
+      "reason": "Popular comic"
+    },
+    {
+      "title": "I’m Really Not The Demon God’s Lackey",
+      "link": "/manga/im-really-not-the-demon-gods-lackey/",
+      "image": "https://thumbnail.komiku.org/uploads/manga/im-really-not-the-demon-gods-lackey/manga_img_horizontal-Komik-Im-Really-Not-The-Demon-Gods-Lackey.jpg?resize=240,171",
+      "chapter": "Chapter 175",
+      "recommendation_score": 1.7341692988966728,
+      "reason": "Popular comic"
+    }
+  ],
+  "count": 10,
+  "generated_at": "2026-04-09T04:24:51.244Z"
+}

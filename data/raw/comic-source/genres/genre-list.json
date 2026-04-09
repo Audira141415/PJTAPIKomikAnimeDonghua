@@ -1,0 +1,99 @@
+{
+  "0": {
+    "value": "action",
+    "name": "Action"
+  },
+  "1": {
+    "value": "adventure",
+    "name": "Adventure"
+  },
+  "2": {
+    "value": "comedy",
+    "name": "Comedy"
+  },
+  "3": {
+    "value": "drama",
+    "name": "Drama"
+  },
+  "4": {
+    "value": "ecchi",
+    "name": "Ecchi"
+  },
+  "5": {
+    "value": "fantasy",
+    "name": "Fantasy"
+  },
+  "6": {
+    "value": "harem",
+    "name": "Harem"
+  },
+  "7": {
+    "value": "historical",
+    "name": "Historical"
+  },
+  "8": {
+    "value": "horror",
+    "name": "Horror"
+  },
+  "9": {
+    "value": "isekai",
+    "name": "Isekai"
+  },
+  "10": {
+    "value": "martial-arts",
+    "name": "Martial Arts"
+  },
+  "11": {
+    "value": "mecha",
+    "name": "Mecha"
+  },
+  "12": {
+    "value": "mystery",
+    "name": "Mystery"
+  },
+  "13": {
+    "value": "psychological",
+    "name": "Psychological"
+  },
+  "14": {
+    "value": "romance",
+    "name": "Romance"
+  },
+  "15": {
+    "value": "school-life",
+    "name": "School Life"
+  },
+  "16": {
+    "value": "sci-fi",
+    "name": "Sci-fi"
+  },
+  "17": {
+    "value": "seinen",
+    "name": "Seinen"
+  },
+  "18": {
+    "value": "shoujo",
+    "name": "Shoujo"
+  },
+  "19": {
+    "value": "shounen",
+    "name": "Shounen"
+  },
+  "20": {
+    "value": "slice-of-life",
+    "name": "Slice of Life"
+  },
+  "21": {
+    "value": "sports",
+    "name": "Sports"
+  },
+  "22": {
+    "value": "supernatural",
+    "name": "Supernatural"
+  },
+  "23": {
+    "value": "thriller",
+    "name": "Thriller"
+  },
+  "creator": "Sanka Vollerei"
+}

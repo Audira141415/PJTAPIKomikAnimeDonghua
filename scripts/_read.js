@@ -1,0 +1,10 @@
+'use strict';
+const fs = require('fs');
+const data = fs.readFileSync('scripts/_html_komikindo-detail.html', 'utf-8');
+const start = data.indexOf('class="thumb"');
+console.log(data.slice(start, start + 800));
+console.log('\n--- listeps/chapter area ---');
+const chStart = data.indexOf('listeps');
+if (chStart > -1) console.log(data.slice(chStart, chStart + 600));
+const infox = data.indexOf('infox');
+if (infox > -1) console.log('\n--- infox area ---\n', data.slice(infox, infox + 1000));

@@ -1,6 +1,6 @@
 'use strict';
 
-const CREATOR = 'Audira';
+const CREATOR = process.env.SITE_CREATOR || 'Audira';
 
 const STATUS_MESSAGES = {
   200: 'OK',

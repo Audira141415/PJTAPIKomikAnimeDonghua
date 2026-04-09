@@ -1,0 +1,21 @@
+{
+  "creator": "Sanka Vollerei",
+  "totalComics": 7009,
+  "totalChapters": 0,
+  "lastUpdated": "2026-04-09T04:24:19.567Z",
+  "availableEndpoints": [
+    "/comic/terbaru",
+    "/comic/populer",
+    "/comic/homepage",
+    "/comic/search",
+    "/comic/type/:type",
+    "/comic/comic/:slug",
+    "/comic/chapter/:segment",
+    "/comic/chapter/:segment/navigation",
+    "/comic/genres",
+    "/comic/random",
+    "/comic/stats",
+    "/comic/infinite"
+  ],
+  "currentlyDisplayed": 21
+}

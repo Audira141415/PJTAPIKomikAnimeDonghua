@@ -38,7 +38,7 @@ const sendMail = async ({ to, subject, text, html }) => {
 
   try {
     await transport.sendMail({
-      from: env.SMTP_FROM || `"Comic Platform" <no-reply@comic-platform.app>`,
+      from: env.SMTP_FROM || `"Audira Comic" <no-reply@audira-comic.app>`,
       to,
       subject,
       text,

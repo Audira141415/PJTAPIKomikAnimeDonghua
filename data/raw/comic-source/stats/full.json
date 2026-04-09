@@ -1,0 +1,43 @@
+{
+  "creator": "Sanka Vollerei",
+  "server_status": "running",
+  "endpoints_tested": 6,
+  "working_endpoints": 0,
+  "failed_endpoints": 6,
+  "total_available_endpoints": 15,
+  "test_results": {
+    "terbaru": {
+      "status": "error",
+      "error": ""
+    },
+    "populer": {
+      "status": "error",
+      "error": ""
+    },
+    "infinite": {
+      "status": "error",
+      "error": ""
+    },
+    "realtime": {
+      "status": "error",
+      "error": ""
+    },
+    "trending": {
+      "status": "error",
+      "error": ""
+    },
+    "browse": {
+      "status": "error",
+      "error": ""
+    }
+  },
+  "last_check": "2026-04-09T04:23:30.603Z",
+  "uptime": 87237.4439193,
+  "memory_usage": {
+    "rss": 826961920,
+    "heapTotal": 262033408,
+    "heapUsed": 127479208,
+    "external": 27435950,
+    "arrayBuffers": 3063994
+  }
+}

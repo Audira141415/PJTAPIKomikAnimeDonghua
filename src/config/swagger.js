@@ -6,11 +6,11 @@ const { env } = require('./env');
 const definition = {
   openapi: '3.0.3',
   info: {
-    title: 'Comic & Animation Platform API',
+    title: 'Audira Comic API',
     version: '1.0.0',
     description:
-      'REST API for manga, manhwa, manhua, anime, and donghua platform. Supports comics (chapters) and animation (seasons + episodes).',
-    contact: { name: 'API Support' },
+      'REST API milik Audira untuk platform komik, manhwa, manhua, anime, dan donghua. Mendukung komik (chapters) dan animasi (seasons + episodes).',
+    contact: { name: 'Audira' },
   },
   servers: [
     {

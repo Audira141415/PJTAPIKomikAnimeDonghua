@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Comic & Animation Platform API</title>
+  <title>Audira Comic API</title>
   <style>
     :root {
       --bg: #0f1117;
@@ -661,8 +661,8 @@
 <!-- ── Hero ───────────────────────────────────────────────────── -->
 <div class="hero">
   <div class="hero-emoji">📚</div>
-  <h1>Comic &amp; Animation Platform API</h1>
-  <p>REST API untuk manga, manhwa, manhua, anime &amp; donghua. Mendukung komik (chapters) dan animasi (seasons + episodes). Semua endpoint siap pakai.</p>
+  <h1>Audira Comic API</h1>
+  <p>REST API milik Audira untuk manga, manhwa, manhua, anime &amp; donghua. Mendukung komik (chapters) dan animasi (seasons + episodes). Semua endpoint siap pakai.</p>
   <div class="hero-links">
     <a href="/api/v1/docs" class="btn-primary">📖 Swagger Docs</a>
     <a href="/health" class="btn-ghost">💓 Health Check</a>
@@ -672,11 +672,12 @@
 
 <!-- ── Stats bar ─────────────────────────────────────────────── -->
 <div class="stats-bar">
-  <div class="stat"><div class="stat-num">50+</div><div class="stat-label">Endpoints</div></div>
-  <div class="stat"><div class="stat-num">REST</div><div class="stat-label">API Style</div></div>
-  <div class="stat"><div class="stat-num">JWT</div><div class="stat-label">Auth</div></div>
-  <div class="stat"><div class="stat-num">Redis</div><div class="stat-label">Cache</div></div>
-  <div class="stat"><div class="stat-num">v1</div><div class="stat-label">Version</div></div>
+  <div class="stat"><div class="stat-num" id="statTotal">...</div><div class="stat-label">Total Konten</div></div>
+  <div class="stat"><div class="stat-num" id="statDonghua">...</div><div class="stat-label">Donghua</div></div>
+  <div class="stat"><div class="stat-num" id="statManga">...</div><div class="stat-label">Manga</div></div>
+  <div class="stat"><div class="stat-num" id="statManhwa">...</div><div class="stat-label">Manhwa</div></div>
+  <div class="stat"><div class="stat-num" id="statManhua">...</div><div class="stat-label">Manhua</div></div>
+  <div class="stat"><div class="stat-num" id="statOna">...</div><div class="stat-label">ONA / Anime</div></div>
 </div>
 
 <section class="ops-grid">
@@ -1272,7 +1273,7 @@
 
 <!-- ── Footer ────────────────────────────────────────────────── -->
 <footer>
-  <p>Comic &amp; Animation Platform API &nbsp;·&nbsp; <a href="/api/v1/docs">Swagger Docs</a> &nbsp;·&nbsp; <a href="/health">Health</a></p>
+  <p>Audira Comic API &nbsp;&copy; Audira&nbsp;&nbsp;·&nbsp;&nbsp;<a href="/api/v1/docs">Swagger Docs</a> &nbsp;·&nbsp; <a href="/health">Health</a></p>
   <p style="margin-top:6px; color:#475569;">Base URL: <code style="color:#a5b4fc">/api/v1/</code> &nbsp;·&nbsp; Auth: <code style="color:#a5b4fc">Authorization: Bearer &lt;token&gt;</code></p>
 </footer>
 

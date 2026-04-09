@@ -2,9 +2,30 @@
 
 const { Router } = require('express');
 const c = require('./comic.controller');
-const { authenticate } = require('../auth/auth.middleware');
+const { authenticate, authorize } = require('../auth/auth.middleware');
+const { uploadCover } = require('../../middlewares/upload.middleware');
+const { validateObjectId } = require('../../middlewares/validateObjectId.middleware');
+const { userActionLimiter } = require('../../middlewares/rateLimiter.middleware');
 
 const router = Router();
+
+// ── Aggregator (all sources unified) ─────────────────────────────────────────
+router.use('/aggregator',   require('./scrapers/aggregator/aggregator.routes'));
+
+// ── Scrapers (external sources) ───────────────────────────────────────────────
+router.use('/bacakomik',    require('./scrapers/bacakomik/bacakomik.routes'));
+router.use('/komikstation', require('./scrapers/komikstation/komikstation.routes'));
+router.use('/mangakita',    require('./scrapers/mangakita/mangakita.routes'));
+router.use('/maid',         require('./scrapers/maid/maid.routes'));
+router.use('/komikindo',    require('./scrapers/komikindo/komikindo.routes'));
+router.use('/soulscan',     require('./scrapers/soulscan/soulscan.routes'));
+router.use('/bacaman',      require('./scrapers/bacaman/bacaman.routes'));
+router.use('/meganei',      require('./scrapers/meganei/meganei.routes'));
+router.use('/softkomik',    require('./scrapers/softkomik/softkomik.routes'));
+router.use('/westmanga',    require('./scrapers/westmanga/westmanga.routes'));
+router.use('/mangasusuku',  require('./scrapers/mangasusuku/mangasusuku.routes'));
+router.use('/kiryuu',       require('./scrapers/kiryuu/kiryuu.routes'));
+router.use('/cosmic',       require('./scrapers/cosmic/cosmic.routes'));
 
 // ── Discovery & listing ───────────────────────────────────────────────────────
 router.get('/terbaru',        c.terbaru);          // GET /comic/terbaru
@@ -47,5 +68,11 @@ router.get('/health',      c.health);     // GET /comic/health
 
 // ── Auth-required (demo) ──────────────────────────────────────────────────────
 router.get('/favorites', authenticate, c.recommendations); // GET /comic/favorites (needs auth)
+
+// ── Admin CRUD ────────────────────────────────────────────────────────────────
+router.post('/',          authenticate, authorize('admin'), uploadCover, c.create);                        // POST   /comic
+router.put('/:id',        authenticate, authorize('admin'), validateObjectId('id'), uploadCover, c.update); // PUT    /comic/:id
+router.delete('/:id',     authenticate, authorize('admin'), validateObjectId('id'), c.remove);              // DELETE /comic/:id
+router.patch('/:id/rate', authenticate, userActionLimiter,  validateObjectId('id'), c.rate);                // PATCH  /comic/:id/rate
 
 module.exports = router;

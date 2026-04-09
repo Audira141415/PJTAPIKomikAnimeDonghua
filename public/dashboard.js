@@ -869,6 +869,28 @@ const loadDashboardData = async () => {
   carouselSlides = buildCarouselSlides(dashboardData.categories, 'all');
 };
 
+const loadContentStats = async () => {
+  try {
+    const res = await fetch(`${API_BASE}/comic/stats`);
+    const json = await res.json();
+    const d = json?.data;
+    if (!d) return;
+    const byType = d.byType || {};
+    const set = (id, val) => {
+      const el = document.getElementById(id);
+      if (el) el.textContent = val ?? '0';
+    };
+    set('statTotal',   d.total);
+    set('statDonghua', (byType.donghua || 0) + (byType.movie || 0));
+    set('statManga',   byType.manga   || 0);
+    set('statManhwa',  byType.manhwa  || 0);
+    set('statManhua',  byType.manhua  || 0);
+    set('statOna',     byType.ona     || 0);
+  } catch {
+    // gagal fetch stats — biarkan ... tetap tampil
+  }
+};
+
 const boot = async () => {
   await loadDashboardData();
 
@@ -890,9 +912,11 @@ const boot = async () => {
 
   await loadStatus();
   await loadActivity();
+  await loadContentStats();
 
   setInterval(loadStatus, 9000);
   setInterval(loadActivity, 3000);
+  setInterval(loadContentStats, 30000);
 };
 
 boot();

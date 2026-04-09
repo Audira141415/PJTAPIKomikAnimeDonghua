@@ -1,0 +1,107 @@
+{
+  "creator": "Sanka Vollerei",
+  "genre": "action",
+  "comics": [
+    {
+      "title": "The Mirror Legacy",
+      "link": "https://komiku.org/manga/the-mirror-legacy/",
+      "image": "https://thumbnail.komiku.org/new/img/images/2026/03/19/20260319232609_9d92196c428cb498_a6e5d1d0.jpg?resize=450,235&quality=60",
+      "chapter": "Chapter 13",
+      "status": null,
+      "rating": null,
+      "genre": "action"
+    },
+    {
+      "title": "How to Live as an Illegal Healer",
+      "link": "https://komiku.org/manga/how-to-live-as-an-illegal-healer/",
+      "image": "https://thumbnail.komiku.org/uploads/manga/how-to-live-as-an-illegal-healer/manga_img_horizontal-Back-How-to-Live-as-an-Illegal-Healer.jpg?resize=450,235&quality=60",
+      "chapter": "Chapter 137",
+      "status": null,
+      "rating": null,
+      "genre": "action"
+    },
+    {
+      "title": "The Undefeatable Swordsman",
+      "link": "https://komiku.org/manga/the-undefeatable-swordsman/",
+      "image": "https://thumbnail.komiku.org/uploads/manga/the-undefeatable-swordsman/manga_img_horizontal-Manhwa-The-Undefeatable-Swordsman.jpg?resize=450,235&quality=60",
+      "chapter": "Chapter 289",
+      "status": null,
+      "rating": null,
+      "genre": "action"
+    },
+    {
+      "title": "The Vehement Emperor of Steel",
+      "link": "https://komiku.org/manga/the-vehement-emperor-of-steel/",
+      "image": "https://thumbnail.komiku.org/img/upload/the_vehement_emperor_of_steel/img_693d21f00284d7.35343113.jpg?resize=450,235&quality=60",
+      "chapter": "Chapter 42",
+      "status": null,
+      "rating": null,
+      "genre": "action"
+    },
+    {
+      "title": "The Knight King Who Returned with a God",
+      "link": "https://komiku.org/manga/the-knight-king-who-returned-with-a-god/",
+      "image": "https://thumbnail.komiku.org/uploads/manga/the-knight-king-who-returned-with-a-god/manga_img_horizontal-Back-The-Knight-King-Who-Returned-with-a-God.jpg?resize=450,235&quality=60",
+      "chapter": "Chapter 158",
+      "status": null,
+      "rating": null,
+      "genre": "action"
+    },
+    {
+      "title": "The Tutorial is Too Hard",
+      "link": "https://komiku.org/manga/the-tutorial-is-too-hard/",
+      "image": "https://thumbnail.komiku.org/uploads/manga/the-tutorial-is-too-hard/manga_img_horizontal-Komik-The-Tutorial-is-Too-Hard.jpg?resize=450,235&quality=60",
+      "chapter": "Chapter 251",
+      "status": null,
+      "rating": null,
+      "genre": "action"
+    },
+    {
+      "title": "Librale of Reincarnation",
+      "link": "https://komiku.org/manga/librale-of-reincarnation/",
+      "image": "https://thumbnail.komiku.org/new/img/images/2026/03/28/20260328054834_30825547ea134d09_4afe0775.jpg?resize=450,235&quality=60",
+      "chapter": "Chapter 8",
+      "status": null,
+      "rating": null,
+      "genre": "action"
+    },
+    {
+      "title": "I’m Really Not The Demon God’s Lackey",
+      "link": "https://komiku.org/manga/im-really-not-the-demon-gods-lackey/",
+      "image": "https://thumbnail.komiku.org/uploads/manga/im-really-not-the-demon-gods-lackey/manga_img_horizontal-Komik-Im-Really-Not-The-Demon-Gods-Lackey.jpg?resize=450,235&quality=60",
+      "chapter": "Chapter 175",
+      "status": null,
+      "rating": null,
+      "genre": "action"
+    },
+    {
+      "title": "Tyrant of the Otherworld: My Shadow Can Evolve Infinitely",
+      "link": "https://komiku.org/manga/tyrant-of-the-otherworld-my-shadow-can-evolve-infinitely/",
+      "image": "https://thumbnail.komiku.org/img/upload/tyrant_of_the_otherworld__my_shadow_can_evolve_infinitely/img_686630d7cf7eb5.16053677.jpg?resize=450,235&quality=60",
+      "chapter": "Chapter 77",
+      "status": null,
+      "rating": null,
+      "genre": "action"
+    },
+    {
+      "title": "Reborn on the Demonic Cult Battlefield",
+      "link": "https://komiku.org/manga/reborn-on-the-demonic-cult-battlefield/",
+      "image": "https://thumbnail.komiku.org/img/upload/reborn_on_the_demonic_cult_battlefield/img_68c14888889015.23474500.jpg?resize=450,235&quality=60",
+      "chapter": "Chapter 34",
+      "status": null,
+      "rating": null,
+      "genre": "action"
+    }
+  ],
+  "pagination": {
+    "current_page": 1,
+    "per_page": 20,
+    "total": 10,
+    "has_more": false
+  },
+  "metadata": {
+    "total_found": 10,
+    "returned": 10,
+    "cache_enabled": true
+  }
+}

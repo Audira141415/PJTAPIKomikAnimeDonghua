@@ -1,7 +1,8 @@
 {
-  "name": "comic-platform-api",
+  "name": "audira-comic-api",
   "version": "1.0.0",
-  "description": "Production-ready backend for manga/manhwa/manhua comic platform",
+  "description": "Audira Comic API — Backend untuk platform komik, manhwa, manhua, anime, dan donghua milik Audira",
+  "author": "Audira",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
@@ -12,6 +13,8 @@
     "import:anichin": "node scripts/anichin-import.js",
     "scrape:anichin": "node scripts/anichin-scraper.js",
     "scrape:anichin:episodes": "node scripts/anichin-scraper.js --episodes",
+    "seed:comic": "node scripts/comic-seed.js",
+    "seed:comic:dryrun": "node scripts/comic-seed.js --dry-run",
     "scheduler": "node scripts/scheduler.js",
     "worker": "node src/jobs/worker.js",
     "worker:dev": "nodemon src/jobs/worker.js",

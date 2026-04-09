@@ -28,6 +28,7 @@ const env = {
   // App public URL — used in email links
   APP_URL: process.env.APP_URL || 'http://localhost:5000',
   // Site branding — returned in API responses
+  APP_NAME: process.env.APP_NAME || 'Audira Comic API',
   SITE_CREATOR: process.env.SITE_CREATOR || 'Audira',
 };
 
