@@ -891,11 +891,274 @@ const loadContentStats = async () => {
   }
 };
 
+const QUICK_LINKS = [
+  {
+    group: '🌐 Sistem & Halaman',
+    items: [
+      { tag: 'PAGE', tagClass: 'ql-page', label: 'Dashboard / Admin Panel', path: '/' },
+      { tag: 'DOCS', tagClass: 'ql-docs', label: 'Swagger API Docs', path: '/api/v1/docs' },
+      { tag: 'GET',  tagClass: 'ql-get',  label: 'Health Check (JSON)',  path: '/health' },
+    ],
+  },
+  {
+    group: '🔥 Discovery & Trending',
+    items: [
+      { tag: 'GET', tagClass: 'ql-get', label: 'Trending Manga (week)',  path: '/api/v1/trending?period=week&limit=10' },
+      { tag: 'GET', tagClass: 'ql-get', label: 'Popular (bookmarks)',    path: '/api/v1/popular?metric=bookmarks&limit=10' },
+      { tag: 'GET', tagClass: 'ql-get', label: 'Latest Manga',          path: '/api/v1/latest?limit=20' },
+      { tag: 'GET', tagClass: 'ql-get', label: 'Search "naruto"',       path: '/api/v1/search?q=naruto' },
+    ],
+  },
+  {
+    group: '📚 Manga / Komik',
+    items: [
+      { tag: 'GET', tagClass: 'ql-get', label: 'Daftar Manga (page 1)',         path: '/api/v1/mangas?page=1&limit=20' },
+      { tag: 'GET', tagClass: 'ql-get', label: 'Filter Manhwa',                 path: '/api/v1/mangas?type=manhwa&page=1' },
+      { tag: 'GET', tagClass: 'ql-get', label: 'Detail Manga (solo-leveling)',  path: '/api/v1/mangas/solo-leveling' },
+      { tag: 'GET', tagClass: 'ql-get', label: 'Comic Stats',                   path: '/api/v1/comic/stats' },
+    ],
+  },
+  {
+    group: '🎬 Donghua',
+    items: [
+      { tag: 'GET', tagClass: 'ql-get', label: 'Donghua Home',           path: '/api/v1/donghua/home' },
+      { tag: 'GET', tagClass: 'ql-get', label: 'Donghua Ongoing',        path: '/api/v1/donghua/ongoing?page=1' },
+      { tag: 'GET', tagClass: 'ql-get', label: 'Donghua Completed',      path: '/api/v1/donghua/completed?page=1' },
+      { tag: 'GET', tagClass: 'ql-get', label: 'Donghua Genres',         path: '/api/v1/donghua/genres' },
+      { tag: 'GET', tagClass: 'ql-get', label: 'Search Donghua (battle)',path: '/api/v1/donghua/search?q=battle+through' },
+      { tag: 'GET', tagClass: 'ql-get', label: 'Donghua By Year 2024',   path: '/api/v1/donghua/year/2024?page=1' },
+    ],
+  },
+  {
+    group: '👤 Auth & User',
+    items: [
+      { tag: 'GET', tagClass: 'ql-get', label: 'Profil Saya (auth required)', path: '/api/v1/users/me' },
+      { tag: 'GET', tagClass: 'ql-get', label: 'Semua Tags',                  path: '/api/v1/tags?page=1&limit=50' },
+    ],
+  },
+  {
+    group: '📡 Proxy: Samehadaku',
+    items: [
+      { tag: 'PROXY', tagClass: 'ql-proxy', label: 'Home',               path: '/api/v1/samehadaku/home' },
+      { tag: 'PROXY', tagClass: 'ql-proxy', label: 'Recent',             path: '/api/v1/samehadaku/recent' },
+      { tag: 'PROXY', tagClass: 'ql-proxy', label: 'Popular',            path: '/api/v1/samehadaku/popular' },
+      { tag: 'PROXY', tagClass: 'ql-proxy', label: 'Ongoing',            path: '/api/v1/samehadaku/ongoing?page=1' },
+      { tag: 'PROXY', tagClass: 'ql-proxy', label: 'Movies',             path: '/api/v1/samehadaku/movies' },
+      { tag: 'PROXY', tagClass: 'ql-proxy', label: 'Schedule',           path: '/api/v1/samehadaku/schedule' },
+      { tag: 'PROXY', tagClass: 'ql-proxy', label: 'Genres',             path: '/api/v1/samehadaku/genres' },
+      { tag: 'PROXY', tagClass: 'ql-proxy', label: 'Search "naruto"',    path: '/api/v1/samehadaku/search?q=naruto' },
+    ],
+  },
+  {
+    group: '📡 Proxy: Animasu',
+    items: [
+      { tag: 'PROXY', tagClass: 'ql-proxy', label: 'Home',               path: '/api/v1/animasu/home' },
+      { tag: 'PROXY', tagClass: 'ql-proxy', label: 'Latest',             path: '/api/v1/animasu/latest' },
+      { tag: 'PROXY', tagClass: 'ql-proxy', label: 'Popular',            path: '/api/v1/animasu/popular' },
+      { tag: 'PROXY', tagClass: 'ql-proxy', label: 'Movies',             path: '/api/v1/animasu/movies' },
+      { tag: 'PROXY', tagClass: 'ql-proxy', label: 'Schedule',           path: '/api/v1/animasu/schedule' },
+      { tag: 'PROXY', tagClass: 'ql-proxy', label: 'Genres',             path: '/api/v1/animasu/genres' },
+    ],
+  },
+  {
+    group: '📡 Proxy: Kusonime',
+    items: [
+      { tag: 'PROXY', tagClass: 'ql-proxy', label: 'Latest',             path: '/api/v1/kusonime/latest' },
+      { tag: 'PROXY', tagClass: 'ql-proxy', label: 'All Anime',          path: '/api/v1/kusonime/all-anime' },
+      { tag: 'PROXY', tagClass: 'ql-proxy', label: 'Movies',             path: '/api/v1/kusonime/movie' },
+      { tag: 'PROXY', tagClass: 'ql-proxy', label: 'All Genres',         path: '/api/v1/kusonime/all-genres' },
+      { tag: 'PROXY', tagClass: 'ql-proxy', label: 'All Seasons',        path: '/api/v1/kusonime/all-seasons' },
+      { tag: 'PROXY', tagClass: 'ql-proxy', label: 'Search "naruto"',    path: '/api/v1/kusonime/search/naruto' },
+    ],
+  },
+  {
+    group: '📡 Proxy: Anoboy',
+    items: [
+      { tag: 'PROXY', tagClass: 'ql-proxy', label: 'Home',               path: '/api/v1/anoboy/home' },
+      { tag: 'PROXY', tagClass: 'ql-proxy', label: 'AZ List',            path: '/api/v1/anoboy/az-list' },
+      { tag: 'PROXY', tagClass: 'ql-proxy', label: 'Genres',             path: '/api/v1/anoboy/genres' },
+      { tag: 'PROXY', tagClass: 'ql-proxy', label: 'Search "naruto"',    path: '/api/v1/anoboy/search/naruto' },
+    ],
+  },
+  {
+    group: '📡 Proxy: AnimeSail',
+    items: [
+      { tag: 'PROXY', tagClass: 'ql-proxy', label: 'Home',               path: '/api/v1/animesail/home' },
+      { tag: 'PROXY', tagClass: 'ql-proxy', label: 'Terbaru',            path: '/api/v1/animesail/terbaru' },
+      { tag: 'PROXY', tagClass: 'ql-proxy', label: 'Donghua',            path: '/api/v1/animesail/donghua' },
+      { tag: 'PROXY', tagClass: 'ql-proxy', label: 'Movies',             path: '/api/v1/animesail/movie' },
+      { tag: 'PROXY', tagClass: 'ql-proxy', label: 'Schedule',           path: '/api/v1/animesail/schedule' },
+      { tag: 'PROXY', tagClass: 'ql-proxy', label: 'Genres',             path: '/api/v1/animesail/genres' },
+      { tag: 'PROXY', tagClass: 'ql-proxy', label: 'Search "naruto"',    path: '/api/v1/animesail/search/naruto' },
+    ],
+  },
+  {
+    group: '📡 Proxy: Oploverz',
+    items: [
+      { tag: 'PROXY', tagClass: 'ql-proxy', label: 'Home',               path: '/api/v1/oploverz/home' },
+      { tag: 'PROXY', tagClass: 'ql-proxy', label: 'Ongoing',            path: '/api/v1/oploverz/ongoing?page=1' },
+      { tag: 'PROXY', tagClass: 'ql-proxy', label: 'Completed',          path: '/api/v1/oploverz/completed?page=1' },
+      { tag: 'PROXY', tagClass: 'ql-proxy', label: 'Schedule',           path: '/api/v1/oploverz/schedule' },
+      { tag: 'PROXY', tagClass: 'ql-proxy', label: 'Search "naruto"',    path: '/api/v1/oploverz/search/naruto' },
+    ],
+  },
+  {
+    group: '📡 Proxy: Stream',
+    items: [
+      { tag: 'PROXY', tagClass: 'ql-proxy', label: 'Latest',             path: '/api/v1/stream/latest' },
+      { tag: 'PROXY', tagClass: 'ql-proxy', label: 'Popular',            path: '/api/v1/stream/popular' },
+      { tag: 'PROXY', tagClass: 'ql-proxy', label: 'Movies',             path: '/api/v1/stream/movie' },
+      { tag: 'PROXY', tagClass: 'ql-proxy', label: 'Genres',             path: '/api/v1/stream/genres' },
+      { tag: 'PROXY', tagClass: 'ql-proxy', label: 'Search "naruto"',    path: '/api/v1/stream/search/naruto' },
+    ],
+  },
+  {
+    group: '📡 Proxy: Animekuindo',
+    items: [
+      { tag: 'PROXY', tagClass: 'ql-proxy', label: 'Home',               path: '/api/v1/animekuindo/home' },
+      { tag: 'PROXY', tagClass: 'ql-proxy', label: 'Latest',             path: '/api/v1/animekuindo/latest' },
+      { tag: 'PROXY', tagClass: 'ql-proxy', label: 'Popular',            path: '/api/v1/animekuindo/popular' },
+      { tag: 'PROXY', tagClass: 'ql-proxy', label: 'Schedule',           path: '/api/v1/animekuindo/schedule' },
+      { tag: 'PROXY', tagClass: 'ql-proxy', label: 'Genres',             path: '/api/v1/animekuindo/genres' },
+      { tag: 'PROXY', tagClass: 'ql-proxy', label: 'Search "naruto"',    path: '/api/v1/animekuindo/search/naruto' },
+    ],
+  },
+  {
+    group: '📡 Proxy: Nimegami',
+    items: [
+      { tag: 'PROXY', tagClass: 'ql-proxy', label: 'Home',               path: '/api/v1/nimegami/home' },
+      { tag: 'PROXY', tagClass: 'ql-proxy', label: 'Anime List',         path: '/api/v1/nimegami/anime-list' },
+      { tag: 'PROXY', tagClass: 'ql-proxy', label: 'J-Drama',            path: '/api/v1/nimegami/j-drama' },
+      { tag: 'PROXY', tagClass: 'ql-proxy', label: 'Live Action',        path: '/api/v1/nimegami/live-action' },
+      { tag: 'PROXY', tagClass: 'ql-proxy', label: 'Genre List',         path: '/api/v1/nimegami/genre/list' },
+      { tag: 'PROXY', tagClass: 'ql-proxy', label: 'Search "naruto"',    path: '/api/v1/nimegami/search/naruto' },
+    ],
+  },
+  {
+    group: '📡 Proxy: Alqanime',
+    items: [
+      { tag: 'PROXY', tagClass: 'ql-proxy', label: 'Home',               path: '/api/v1/alqanime/home' },
+      { tag: 'PROXY', tagClass: 'ql-proxy', label: 'Ongoing',            path: '/api/v1/alqanime/ongoing' },
+      { tag: 'PROXY', tagClass: 'ql-proxy', label: 'Completed',          path: '/api/v1/alqanime/completed' },
+      { tag: 'PROXY', tagClass: 'ql-proxy', label: 'Popular',            path: '/api/v1/alqanime/popular' },
+      { tag: 'PROXY', tagClass: 'ql-proxy', label: 'Schedule',           path: '/api/v1/alqanime/schedule' },
+      { tag: 'PROXY', tagClass: 'ql-proxy', label: 'Search "naruto"',    path: '/api/v1/alqanime/search/naruto' },
+    ],
+  },
+  {
+    group: '📡 Proxy: Donghub',
+    items: [
+      { tag: 'PROXY', tagClass: 'ql-proxy', label: 'Home',               path: '/api/v1/donghub/home' },
+      { tag: 'PROXY', tagClass: 'ql-proxy', label: 'Latest',             path: '/api/v1/donghub/latest' },
+      { tag: 'PROXY', tagClass: 'ql-proxy', label: 'Popular',            path: '/api/v1/donghub/popular' },
+      { tag: 'PROXY', tagClass: 'ql-proxy', label: 'Schedule',           path: '/api/v1/donghub/schedule' },
+      { tag: 'PROXY', tagClass: 'ql-proxy', label: 'Search "naruto"',    path: '/api/v1/donghub/search/naruto' },
+    ],
+  },
+  {
+    group: '📡 Proxy: Winbu',
+    items: [
+      { tag: 'PROXY', tagClass: 'ql-proxy', label: 'Home',               path: '/api/v1/winbu/home' },
+      { tag: 'PROXY', tagClass: 'ql-proxy', label: 'Latest',             path: '/api/v1/winbu/latest' },
+      { tag: 'PROXY', tagClass: 'ql-proxy', label: 'Ongoing',            path: '/api/v1/winbu/ongoing' },
+      { tag: 'PROXY', tagClass: 'ql-proxy', label: 'Genres',             path: '/api/v1/winbu/genres' },
+      { tag: 'PROXY', tagClass: 'ql-proxy', label: 'Search',             path: '/api/v1/winbu/search?q=naruto' },
+    ],
+  },
+  {
+    group: '📡 Proxy: Kuramanime',
+    items: [
+      { tag: 'PROXY', tagClass: 'ql-proxy', label: 'Home',               path: '/api/v1/kura/home' },
+      { tag: 'PROXY', tagClass: 'ql-proxy', label: 'Anime List',         path: '/api/v1/kura/anime-list?page=1' },
+      { tag: 'PROXY', tagClass: 'ql-proxy', label: 'Schedule',           path: '/api/v1/kura/schedule' },
+      { tag: 'PROXY', tagClass: 'ql-proxy', label: 'Search "naruto"',    path: '/api/v1/kura/search/naruto' },
+    ],
+  },
+  {
+    group: '📡 Proxy: Dramabox',
+    items: [
+      { tag: 'PROXY', tagClass: 'ql-proxy', label: 'Latest',             path: '/api/v1/dramabox/latest?page=1' },
+      { tag: 'PROXY', tagClass: 'ql-proxy', label: 'Trending',           path: '/api/v1/dramabox/trending' },
+      { tag: 'PROXY', tagClass: 'ql-proxy', label: 'Search "love"',      path: '/api/v1/dramabox/search?q=love' },
+    ],
+  },
+  {
+    group: '📡 Proxy: Drachin',
+    items: [
+      { tag: 'PROXY', tagClass: 'ql-proxy', label: 'Home',               path: '/api/v1/drachin/home' },
+      { tag: 'PROXY', tagClass: 'ql-proxy', label: 'Latest',             path: '/api/v1/drachin/latest?page=1' },
+      { tag: 'PROXY', tagClass: 'ql-proxy', label: 'Popular',            path: '/api/v1/drachin/popular?page=1' },
+      { tag: 'PROXY', tagClass: 'ql-proxy', label: 'Search "naruto"',    path: '/api/v1/drachin/search/naruto' },
+    ],
+  },
+];
+
+const renderQuickLinks = () => {
+  const grid = document.getElementById('quickLinksGrid');
+  const baseEl = document.getElementById('qlBaseUrl');
+  if (!grid) return;
+
+  const origin = window.location.origin;
+  if (baseEl) baseEl.textContent = origin;
+
+  grid.innerHTML = '';
+
+  QUICK_LINKS.forEach((group) => {
+    const groupEl = document.createElement('div');
+    groupEl.className = 'ql-group';
+
+    const titleEl = document.createElement('div');
+    titleEl.className = 'ql-group-title';
+    titleEl.textContent = group.group;
+    groupEl.appendChild(titleEl);
+
+    const itemsEl = document.createElement('div');
+    itemsEl.className = 'ql-items';
+
+    group.items.forEach((item) => {
+      const fullUrl = `${origin}${item.path}`;
+
+      const row = document.createElement('div');
+      row.className = 'ql-item';
+      row.title = fullUrl;
+
+      const tag = document.createElement('span');
+      tag.className = `ql-tag ${item.tagClass}`;
+      tag.textContent = item.tag;
+
+      const label = document.createElement('a');
+      label.className = 'ql-label';
+      label.href = fullUrl;
+      label.target = '_blank';
+      label.rel = 'noopener noreferrer';
+      label.textContent = item.label;
+
+      const copyBtn = document.createElement('button');
+      copyBtn.type = 'button';
+      copyBtn.className = 'ql-copy-btn';
+      copyBtn.textContent = 'Copy';
+      copyBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        copyText(fullUrl, copyBtn);
+      });
+
+      row.appendChild(tag);
+      row.appendChild(label);
+      row.appendChild(copyBtn);
+      itemsEl.appendChild(row);
+    });
+
+    groupEl.appendChild(itemsEl);
+    grid.appendChild(groupEl);
+  });
+};
+
 const boot = async () => {
   await loadDashboardData();
 
   attachExamplesToCards();
   attachEndpointCopyButtons();
+  renderQuickLinks();
   initCarouselFilter();
   renderCarousel();
   startCarousel();

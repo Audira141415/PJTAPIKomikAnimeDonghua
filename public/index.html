@@ -654,6 +654,127 @@
         grid-template-columns: 1fr;
       }
     }
+
+    /* ── Quick Links ── */
+    .quick-links-wrap {
+      max-width: 1280px;
+      margin: 28px auto 0;
+      padding: 0 24px;
+    }
+    .quick-links-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+    }
+    .quick-links-head-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .quick-links-head-left span {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #cbd5e1;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+    .quick-links-head-left small {
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+    .ql-base-badge {
+      font-size: 0.72rem;
+      color: #a5b4fc;
+      background: rgba(99,102,241,.15);
+      border: 1px solid rgba(99,102,241,.3);
+      border-radius: 6px;
+      padding: 4px 10px;
+      font-family: 'Cascadia Code','Fira Code','Consolas',monospace;
+    }
+    .quick-links-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+      gap: 14px;
+    }
+    .ql-group {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 14px;
+      display: flex;
+      flex-direction: column;
+    }
+    .ql-group-title {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: #a5b4fc;
+      text-transform: uppercase;
+      letter-spacing: .07em;
+      margin-bottom: 10px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--border);
+    }
+    .ql-items {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .ql-item {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      padding: 6px 8px;
+      border-radius: 7px;
+      border: 1px solid transparent;
+      text-decoration: none;
+      transition: background .15s, border-color .15s;
+    }
+    .ql-item:hover {
+      background: #1f2335;
+      border-color: #3a3d55;
+    }
+    .ql-label {
+      font-size: 0.78rem;
+      color: var(--text);
+      flex: 1;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      min-width: 0;
+    }
+    .ql-tag {
+      font-size: 0.6rem;
+      font-weight: 800;
+      padding: 2px 6px;
+      border-radius: 4px;
+      flex-shrink: 0;
+      text-transform: uppercase;
+      letter-spacing: .03em;
+    }
+    .ql-page   { background: rgba(99,102,241,.2);  color: #a78bfa; }
+    .ql-docs   { background: rgba(59,130,246,.2);  color: #60a5fa; }
+    .ql-get    { background: rgba(16,185,129,.2);  color: #34d399; }
+    .ql-proxy  { background: rgba(249,115,22,.2);  color: #fb923c; }
+    .ql-sys    { background: rgba(139,92,246,.2);  color: #a78bfa; }
+    .ql-copy-btn {
+      flex-shrink: 0;
+      border: 1px solid #374069;
+      background: #131b31;
+      color: #c7d2fe;
+      font-size: 0.6rem;
+      font-weight: 700;
+      border-radius: 5px;
+      padding: 3px 7px;
+      cursor: pointer;
+      transition: background .15s;
+      white-space: nowrap;
+    }
+    .ql-copy-btn:hover { background: #1b2645; }
   </style>
 </head>
 <body>
@@ -680,8 +801,21 @@
   <div class="stat"><div class="stat-num" id="statOna">...</div><div class="stat-label">ONA / Anime</div></div>
 </div>
 
+<!-- ── Quick Links ───────────────────────────────────────────── -->
+<section class="quick-links-wrap" id="quickLinksSection">
+  <div class="quick-links-head">
+    <div class="quick-links-head-left">
+      <span>🔗 Quick Links</span>
+      <small>Semua alamat URL yang tersedia — klik untuk buka, atau salin</small>
+    </div>
+    <span class="ql-base-badge" id="qlBaseUrl">http://localhost:5000</span>
+  </div>
+  <div class="quick-links-grid" id="quickLinksGrid">
+    <!-- Rendered by dashboard.js → renderQuickLinks() -->
+  </div>
+</section>
+
 <section class="ops-grid">
-  <article class="panel">
     <h2>System Status / Health Panel</h2>
     <div class="health-list">
       <div class="health-item"><span class="health-dot warn" id="serverDot"></span><span id="serverText">Server: Checking...</span></div>
