@@ -174,8 +174,8 @@ describe('Donghua API - Integration Tests', () => {
       expect(res.body.meta).toBeDefined();
       expect(res.body.meta.total).toBe(1);
       expect(donghuaService.getOngoing).toHaveBeenCalledWith({
-        page: undefined,
-        limit: undefined,
+        page: 1,
+        limit: 20,
       });
     });
 
@@ -192,8 +192,8 @@ describe('Donghua API - Integration Tests', () => {
         .expect(200);
 
       expect(donghuaService.getOngoing).toHaveBeenCalledWith({
-        page: '2',
-        limit: '10',
+        page: 2,
+        limit: 10,
       });
     });
 
@@ -219,8 +219,8 @@ describe('Donghua API - Integration Tests', () => {
       expect(res.body.data).toBeInstanceOf(Array);
       expect(res.body.meta).toBeDefined();
       expect(donghuaService.getCompleted).toHaveBeenCalledWith({
-        page: undefined,
-        limit: undefined,
+        page: 1,
+        limit: 20,
       });
     });
 
@@ -237,8 +237,8 @@ describe('Donghua API - Integration Tests', () => {
         .expect(200);
 
       expect(donghuaService.getCompleted).toHaveBeenCalledWith({
-        page: '3',
-        limit: '5',
+        page: 3,
+        limit: 5,
       });
     });
 
@@ -270,26 +270,18 @@ describe('Donghua API - Integration Tests', () => {
       expect(res.body.message).toContain('battle through');
       expect(donghuaService.search).toHaveBeenCalledWith({
         q: 'battle through',
-        page: undefined,
-        limit: undefined,
+        page: 1,
+        limit: 20,
       });
     });
 
     it('returns 400 when q param is missing', async () => {
-      donghuaService.search.mockRejectedValueOnce(
-        new ApiError(400, 'Query parameter "q" is required')
-      );
-
       const res = await request(app).get('/api/v1/donghua/search').expect(400);
 
       expect(res.body.success).toBe(false);
     });
 
     it('returns 400 when q param is whitespace-only', async () => {
-      donghuaService.search.mockRejectedValueOnce(
-        new ApiError(400, 'Query parameter "q" is required')
-      );
-
       const res = await request(app)
         .get('/api/v1/donghua/search')
         .query({ q: '   ' })
@@ -313,8 +305,8 @@ describe('Donghua API - Integration Tests', () => {
 
       expect(donghuaService.search).toHaveBeenCalledWith({
         q: 'soul land',
-        page: '2',
-        limit: '5',
+        page: 2,
+        limit: 5,
       });
     });
 
@@ -385,8 +377,8 @@ describe('Donghua API - Integration Tests', () => {
       expect(res.body.meta).toBeDefined();
       expect(res.body.message).toContain('Action');
       expect(donghuaService.getByGenre).toHaveBeenCalledWith('action', {
-        page: undefined,
-        limit: undefined,
+        page: 1,
+        limit: 20,
       });
     });
 
@@ -404,8 +396,8 @@ describe('Donghua API - Integration Tests', () => {
         .expect(200);
 
       expect(donghuaService.getByGenre).toHaveBeenCalledWith('fantasy', {
-        page: '2',
-        limit: '10',
+        page: 2,
+        limit: 10,
       });
     });
 
@@ -441,8 +433,8 @@ describe('Donghua API - Integration Tests', () => {
       expect(res.body.meta).toBeDefined();
       expect(res.body.message).toContain('2024');
       expect(donghuaService.getByYear).toHaveBeenCalledWith('2024', {
-        page: undefined,
-        limit: undefined,
+        page: 1,
+        limit: 20,
       });
     });
 
@@ -460,8 +452,8 @@ describe('Donghua API - Integration Tests', () => {
         .expect(200);
 
       expect(donghuaService.getByYear).toHaveBeenCalledWith('2023', {
-        page: '2',
-        limit: '10',
+        page: 2,
+        limit: 10,
       });
     });
 

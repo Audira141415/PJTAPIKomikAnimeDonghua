@@ -1,0 +1,165 @@
+{
+  "status": "success",
+  "creator": "Sanka Vollerei",
+  "message": "TV Shows",
+  "data": [
+    {
+      "title": "The Secret Friends Club",
+      "id": "the-secret-friends-club",
+      "type": "series",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/76923_200x300.jpeg",
+      "episode": "Episode 10",
+      "time": "1 hari",
+      "views": "7\t\t\t\n            TV Show\n\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t5",
+      "rating": "-"
+    },
+    {
+      "title": "Curtain Up, Class!",
+      "id": "curtain-up-class",
+      "type": "series",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/76823_200x300.jpeg",
+      "episode": "Episode 7",
+      "time": "2 hari",
+      "views": "7\t\t\t\n            TV Show\n\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t22",
+      "rating": "-"
+    },
+    {
+      "title": "Chef and My Fridge Season 2",
+      "id": "chef-and-my-fridge-season-2",
+      "type": "series",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/76702_200x300.jpeg",
+      "episode": "Episode 61",
+      "time": "3 hari",
+      "views": "8.2\t\t\t\n            TV Show\n\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t25",
+      "rating": "-"
+    },
+    {
+      "title": "Bake Your Dream",
+      "id": "bake-your-dream",
+      "type": "series",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/76674_200x300.jpeg",
+      "episode": "Episode end",
+      "time": "3 hari",
+      "views": "7\t\t\t\n            TV Show\n\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t24",
+      "rating": "-"
+    },
+    {
+      "title": "Reply High School",
+      "id": "reply-high-school",
+      "type": "series",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/76611_200x300.jpeg",
+      "episode": "Episode 7",
+      "time": "4 hari",
+      "views": "7\t\t\t\n            TV Show\n\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t7",
+      "rating": "-"
+    },
+    {
+      "title": "The Village Barber",
+      "id": "the-village-barber",
+      "type": "series",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/76384_200x300.jpeg",
+      "episode": "Episode 8",
+      "time": "5 hari",
+      "views": "7\t\t\t\n            TV Show\n\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t20",
+      "rating": "-"
+    },
+    {
+      "title": "When Our Kids Fall In Love Season 2",
+      "id": "when-our-kids-fall-in-love-season-2",
+      "type": "series",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/76371_200x300.jpeg",
+      "episode": "Episode 6",
+      "time": "6 hari",
+      "views": "7\t\t\t\n            TV Show\n\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t12",
+      "rating": "-"
+    },
+    {
+      "title": "Whenever Possible Season 4",
+      "id": "whenever-possible-season-4",
+      "type": "series",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/76206_200x300.jpeg",
+      "episode": "Episode 15",
+      "time": "8 hari",
+      "views": "7\t\t\t\n            TV Show\n\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t23",
+      "rating": "-"
+    },
+    {
+      "title": "Ready or Not: Texas",
+      "id": "ready-or-not-texas",
+      "type": "series",
+      "image": "https://winbu.net/wp-content/uploads/2026/03/75772_200x300.jpeg",
+      "episode": "Episode end",
+      "time": "12 hari",
+      "views": "7.0\t\t\t\n            TV Show\n\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t17",
+      "rating": "-"
+    },
+    {
+      "title": "The Genius Paik Season 3",
+      "id": "the-genius-paik-season-3",
+      "type": "series",
+      "image": "https://winbu.net/wp-content/uploads/2026/03/75623_200x300.jpeg",
+      "episode": "Episode 7",
+      "time": "13 hari",
+      "views": "7\t\t\t\n            TV Show\n\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t126",
+      "rating": "-"
+    },
+    {
+      "title": "Cha’s Family",
+      "id": "chas-family",
+      "type": "series",
+      "image": "https://winbu.net/wp-content/uploads/2026/03/74253_200x300.jpeg",
+      "episode": "Episode 9",
+      "time": "1 bulan",
+      "views": "7\t\t\t\n            TV Show\n\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t41",
+      "rating": "-"
+    },
+    {
+      "title": "Battle of Fates",
+      "id": "battle-of-fates",
+      "type": "series",
+      "image": "https://winbu.net/wp-content/uploads/2026/03/73958_200x300.jpeg",
+      "episode": "Episode end",
+      "time": "1 bulan",
+      "views": "7\t\t\t\n            TV Show\n\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t337",
+      "rating": "-"
+    },
+    {
+      "title": "Agents of Mystery Season 2",
+      "id": "agents-of-mystery-season-2",
+      "type": "series",
+      "image": "https://winbu.net/wp-content/uploads/2026/02/73538_200x300.jpeg",
+      "episode": "Episode end",
+      "time": "1 bulan",
+      "views": "7\t\t\t\n            TV Show\n\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t124",
+      "rating": "-"
+    },
+    {
+      "title": "Reality Check: Inside America’s Next Top Model",
+      "id": "reality-check-inside-americas-next-top-model",
+      "type": "series",
+      "image": "https://winbu.net/wp-content/uploads/2026/02/72558_200x300.jpeg",
+      "episode": "Episode end",
+      "time": "1 bulan",
+      "views": "6.4\t\t\t\n            TV Show\n\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t61",
+      "rating": "-"
+    },
+    {
+      "title": "Single’s Inferno Reunion",
+      "id": "singles-inferno-reunion",
+      "type": "series",
+      "image": "https://winbu.net/wp-content/uploads/2026/02/72417_200x300.jpeg",
+      "episode": "Episode end",
+      "time": "1 bulan",
+      "views": "7.7\t\t\t\n            TV Show\n\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t300",
+      "rating": "-"
+    }
+  ],
+  "pagination": {
+    "current_page": 1,
+    "total_pages": 5,
+    "has_next_page": true,
+    "next_page": 2,
+    "prev_page": null,
+    "has_prev_page": false
+  }
+}

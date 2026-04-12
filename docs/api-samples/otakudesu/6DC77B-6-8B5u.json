@@ -1,0 +1,10 @@
+{
+  "status": "success",
+  "creator": "Sanka Vollerei",
+  "statusCode": 404,
+  "statusMessage": "Not Found",
+  "message": "data tidak ditemukan",
+  "ok": false,
+  "data": null,
+  "pagination": null
+}

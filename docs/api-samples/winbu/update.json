@@ -1,0 +1,195 @@
+{
+  "status": "success",
+  "creator": "Sanka Vollerei",
+  "message": "Anime Terbaru Animasu",
+  "data": [
+    {
+      "title": "Happiness 2021",
+      "id": "happiness-2021",
+      "type": "series",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/77056_200x300.jpeg",
+      "episode": "Episode 7",
+      "time": "9 menit",
+      "views": "1",
+      "rating": "-"
+    },
+    {
+      "title": "Awajima Hyakkei",
+      "id": "awajima-hyakkei",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/156361_200x300.jpeg",
+      "episode": "Episode 1",
+      "time": "5 jam",
+      "views": "74",
+      "rating": "-"
+    },
+    {
+      "title": "Haibara-kun no Tsuyokute Seishun New Game",
+      "id": "haibara-kun-no-tsuyokute-seishun-new-game",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/156048_200x300.jpeg",
+      "episode": "Episode 2",
+      "time": "5 jam",
+      "views": "79",
+      "rating": "-"
+    },
+    {
+      "title": "Mata Korosarete Shimatta no desu ne, Tantei-sama",
+      "id": "mata-korosarete-shimatta-no-desu-ne-tantei-sama",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/156152_200x300.jpeg",
+      "episode": "Episode 2",
+      "time": "5 jam",
+      "views": "164",
+      "rating": "-"
+    },
+    {
+      "title": "Love Beyond the Grave",
+      "id": "love-beyond-the-grave",
+      "type": "series",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/77033_200x300.jpeg",
+      "episode": "Episode 28",
+      "time": "10 jam",
+      "views": "28",
+      "rating": "-"
+    },
+    {
+      "title": "The Ramparts of Ice",
+      "id": "the-ramparts-of-ice",
+      "type": "series",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/77031_200x300.jpeg",
+      "episode": "Episode 2",
+      "time": "11 jam",
+      "views": "14",
+      "rating": "-"
+    },
+    {
+      "title": "Rebirth 2026",
+      "id": "rebirth-2026",
+      "type": "series",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/77029_200x300.jpeg",
+      "episode": "Episode 7",
+      "time": "14 jam",
+      "views": "18",
+      "rating": "-"
+    },
+    {
+      "title": "Mamonogurai no Boukensha: Ore dake Mamono wo Kuratte Tsuyoku Naru",
+      "id": "mamonogurai-no-boukensha-ore-dake-mamono-wo-kuratte-tsuyoku-naru",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/154990_200x300.jpeg",
+      "episode": "Episode 2",
+      "time": "14 jam",
+      "views": "1241",
+      "rating": "-"
+    },
+    {
+      "title": "Shrouding the Heavens",
+      "id": "shrouding-the-heavens",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2024/11/135727_200x300.jpeg",
+      "episode": "Episode 157",
+      "time": "15 jam",
+      "views": "72",
+      "rating": "-"
+    },
+    {
+      "title": "Kirio Fanclub",
+      "id": "kirio-fanclub",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/155831_200x300.jpeg",
+      "episode": "Episode 2",
+      "time": "15 jam",
+      "views": "287",
+      "rating": "-"
+    },
+    {
+      "title": "Reincarnation no Kaben",
+      "id": "reincarnation-no-kaben",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/155042_200x300.jpeg",
+      "episode": "Episode 2",
+      "time": "15 jam",
+      "views": "985",
+      "rating": "-"
+    },
+    {
+      "title": "Radioactive Emergency",
+      "id": "radioactive-emergency",
+      "type": "series",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/77005_200x300.jpeg",
+      "episode": "Episode end",
+      "time": "16 jam",
+      "views": "11",
+      "rating": "-"
+    },
+    {
+      "title": "Throne of Seal",
+      "id": "throne-of-seal",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2024/11/122162_200x300.jpeg",
+      "episode": "Episode 206",
+      "time": "16 jam",
+      "views": "97",
+      "rating": "-"
+    },
+    {
+      "title": "Perfect World",
+      "id": "perfect-world",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2024/11/137928_200x300.jpeg",
+      "episode": "Episode 263",
+      "time": "16 jam",
+      "views": "164",
+      "rating": "-"
+    },
+    {
+      "title": "Kujima Utaeba Ie Hororo",
+      "id": "kujima-utaeba-ie-hororo",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/155195_200x300.jpeg",
+      "episode": "Episode 1",
+      "time": "16 jam",
+      "views": "183",
+      "rating": "-"
+    },
+    {
+      "title": "Ganzo! Bandori-chan",
+      "id": "ganzo-bandori-chan",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2025/10/Ganzo-Bandori-chan-200x300-1_200x300.jpeg",
+      "episode": "Episode 28",
+      "time": "16 jam",
+      "views": "67",
+      "rating": "-"
+    },
+    {
+      "title": "Koala Enikki",
+      "id": "koala-enikki",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2025/10/152302_200x300.jpeg",
+      "episode": "Episode 28",
+      "time": "16 jam",
+      "views": "48",
+      "rating": "-"
+    },
+    {
+      "title": "Koori no Jouheki",
+      "id": "koori-no-jouheki",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/152301l_200x300.jpeg",
+      "episode": "Episode 2",
+      "time": "16 jam",
+      "views": "450",
+      "rating": "-"
+    }
+  ],
+  "pagination": {
+    "current_page": 1,
+    "total_pages": 5,
+    "has_next_page": true,
+    "next_page": 2,
+    "prev_page": null,
+    "has_prev_page": false
+  }
+}

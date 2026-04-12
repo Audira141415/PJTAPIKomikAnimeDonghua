@@ -144,6 +144,56 @@ const mangaSchema = new mongoose.Schema(
       default: null,
       trim: true,
     },
+    sourceKey: {
+      type: String,
+      default: null,
+      trim: true,
+      index: true,
+    },
+    sourceId: {
+      type: String,
+      default: null,
+      trim: true,
+      index: true,
+    },
+    externalRefs: {
+      type: [
+        new mongoose.Schema(
+          {
+            sourceKey: {
+              type: String,
+              required: true,
+              trim: true,
+            },
+            sourceId: {
+              type: String,
+              default: null,
+              trim: true,
+            },
+            url: {
+              type: String,
+              default: null,
+              trim: true,
+            },
+            kind: {
+              type: String,
+              default: 'series',
+              trim: true,
+            },
+          },
+          { _id: false }
+        ),
+      ],
+      default: [],
+    },
+    synopsis: {
+      type: mongoose.Schema.Types.Mixed,
+      default: null,
+    },
+    lastSyncedAt: {
+      type: Date,
+      default: null,
+    },
   },
   { timestamps: true }
 );
@@ -156,11 +206,21 @@ mangaSchema.index({ type: 1, rating: -1 });
 mangaSchema.index({ type: 1, views: -1 });
 mangaSchema.index({ status: 1, rating: -1 });
 mangaSchema.index({ contentCategory: 1, rating: -1 });
+mangaSchema.index(
+  { sourceKey: 1, sourceId: 1 },
+  {
+    unique: true,
+    partialFilterExpression: {
+      sourceKey: { $type: 'string' },
+      sourceId: { $type: 'string' },
+    },
+  }
+);
 
 const ANIMATION_TYPES = ['anime', 'donghua', 'movie', 'ona'];
 
 mangaSchema.pre('save', function (next) {
-  if (this.isModified('title')) {
+  if (this.isModified('title') && !this.slug) {
     this.slug = slugify(this.title, { lower: true, strict: true });
   }
   // Keep contentCategory in sync with type

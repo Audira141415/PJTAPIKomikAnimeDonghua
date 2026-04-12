@@ -1,0 +1,461 @@
+{
+  "status": "success",
+  "creator": "Sanka Vollerei",
+  "message": "",
+  "data": {
+    "recent": {
+      "href": "/samehadaku/recent",
+      "samehadakuUrl": "https://v2.samehadaku.how/anime-terbaru/",
+      "animeList": [
+        {
+          "title": "Mata Korosarete Shimatta no desu",
+          "poster": "https://v2.samehadaku.how/wp-content/uploads/2026/04/web-6.jpg",
+          "episodes": "2",
+          "releasedOn": "6 hours yang lalu",
+          "animeId": "mata-korosarete-shimatta-no-desu",
+          "href": "/samehadaku/anime/mata-korosarete-shimatta-no-desu",
+          "samehadakuUrl": "https://v2.samehadaku.how/anime/mata-korosarete-shimatta-no-desu/"
+        },
+        {
+          "title": "Haibara-kun no Tsuyokute Seishun",
+          "poster": "https://v2.samehadaku.how/wp-content/uploads/2026/04/Haibara-kun-no-Tsuyokute-Seishun-Episode-2.jpg",
+          "episodes": "2",
+          "releasedOn": "7 hours yang lalu",
+          "animeId": "haibara-kun-no-tsuyokute-seishun",
+          "href": "/samehadaku/anime/haibara-kun-no-tsuyokute-seishun",
+          "samehadakuUrl": "https://v2.samehadaku.how/anime/haibara-kun-no-tsuyokute-seishun/"
+        },
+        {
+          "title": "Monster Eater",
+          "poster": "https://v2.samehadaku.how/wp-content/uploads/2026/04/image-10.jpg",
+          "episodes": "2",
+          "releasedOn": "8 hours yang lalu",
+          "animeId": "monster-eater",
+          "href": "/samehadaku/anime/monster-eater",
+          "samehadakuUrl": "https://v2.samehadaku.how/anime/monster-eater/"
+        },
+        {
+          "title": "Reincarnation no Kaben",
+          "poster": "https://v2.samehadaku.how/wp-content/uploads/2026/04/Reincarnation-no-Kaben-Episode-2.jpg",
+          "episodes": "2",
+          "releasedOn": "9 hours yang lalu",
+          "animeId": "reincarnation-no-kaben",
+          "href": "/samehadaku/anime/reincarnation-no-kaben",
+          "samehadakuUrl": "https://v2.samehadaku.how/anime/reincarnation-no-kaben/"
+        },
+        {
+          "title": "Dr. Stone Season 4 Part 3",
+          "poster": "https://v2.samehadaku.how/wp-content/uploads/2026/04/Dr.-Stone-Season-4-Part-3-Episode-2.jpg",
+          "episodes": "2",
+          "releasedOn": "12 hours yang lalu",
+          "animeId": "dr-stone-season-4-part-3",
+          "href": "/samehadaku/anime/dr-stone-season-4-part-3",
+          "samehadakuUrl": "https://v2.samehadaku.how/anime/dr-stone-season-4-part-3/"
+        },
+        {
+          "title": "Himekishi wa Barbaroi no Yome",
+          "poster": "https://v2.samehadaku.how/wp-content/uploads/2026/04/web-5.jpg",
+          "episodes": "1",
+          "releasedOn": "12 hours yang lalu",
+          "animeId": "himekishi-wa-barbaroi-no-yome",
+          "href": "/samehadaku/anime/himekishi-wa-barbaroi-no-yome",
+          "samehadakuUrl": "https://v2.samehadaku.how/anime/himekishi-wa-barbaroi-no-yome/"
+        },
+        {
+          "title": "The Beginning After the End Season 2",
+          "poster": "https://v2.samehadaku.how/wp-content/uploads/2026/04/The-Beginning-After-the-End-Season-2-Episode-2.jpg",
+          "episodes": "2",
+          "releasedOn": "1 day yang lalu",
+          "animeId": "the-beginning-after-the-end-season-2",
+          "href": "/samehadaku/anime/the-beginning-after-the-end-season-2",
+          "samehadakuUrl": "https://v2.samehadaku.how/anime/the-beginning-after-the-end-season-2/"
+        },
+        {
+          "title": "Jidou Hanbaiki ni Umarekawatta Season 3",
+          "poster": "https://v2.samehadaku.how/wp-content/uploads/2026/04/Jidou-Hanbaiki-ni-Umarekawatta-Season-3-Episode-2.jpg",
+          "episodes": "2",
+          "releasedOn": "1 day yang lalu",
+          "animeId": "jidou-hanbaiki-ni-umarekawatta-season-3",
+          "href": "/samehadaku/anime/jidou-hanbaiki-ni-umarekawatta-season-3",
+          "samehadakuUrl": "https://v2.samehadaku.how/anime/jidou-hanbaiki-ni-umarekawatta-season-3/"
+        },
+        {
+          "title": "Kanojo Okarishimasu Season 5",
+          "poster": "https://v2.samehadaku.how/wp-content/uploads/2026/04/web-4.jpg",
+          "episodes": "1",
+          "releasedOn": "1 day yang lalu",
+          "animeId": "kanojo-okarishimasu-season-5",
+          "href": "/samehadaku/anime/kanojo-okarishimasu-season-5",
+          "samehadakuUrl": "https://v2.samehadaku.how/anime/kanojo-okarishimasu-season-5/"
+        },
+        {
+          "title": "Re:Zero kara Hajimeru Isekai Seikatsu Season 4",
+          "poster": "https://v2.samehadaku.how/wp-content/uploads/2026/04/Re-Zero-kara-Hajimeru-Isekai-Seikatsu-67-A.png",
+          "episodes": "1",
+          "releasedOn": "1 day yang lalu",
+          "animeId": "rezero-kara-hajimeru-isekai-seikatsu-season-4",
+          "href": "/samehadaku/anime/rezero-kara-hajimeru-isekai-seikatsu-season-4",
+          "samehadakuUrl": "https://v2.samehadaku.how/anime/rezero-kara-hajimeru-isekai-seikatsu-season-4/"
+        },
+        {
+          "title": "Classroom of the Elite Season 4",
+          "poster": "https://v2.samehadaku.how/wp-content/uploads/2026/04/Classroom-of-the-Elite-S4-Episode-5.jpg",
+          "episodes": "5",
+          "releasedOn": "1 day yang lalu",
+          "animeId": "classroom-of-the-elite-season-4",
+          "href": "/samehadaku/anime/classroom-of-the-elite-season-4",
+          "samehadakuUrl": "https://v2.samehadaku.how/anime/classroom-of-the-elite-season-4/"
+        },
+        {
+          "title": "Hidarikiki no Eren",
+          "poster": "https://v2.samehadaku.how/wp-content/uploads/2026/04/Hidarikiki-no-Eren-Episode-1.jpg",
+          "episodes": "1",
+          "releasedOn": "2 days yang lalu",
+          "animeId": "hidarikiki-no-eren",
+          "href": "/samehadaku/anime/hidarikiki-no-eren",
+          "samehadakuUrl": "https://v2.samehadaku.how/anime/hidarikiki-no-eren/"
+        },
+        {
+          "title": "Marriagetoxin",
+          "poster": "https://v2.samehadaku.how/wp-content/uploads/2026/04/Marriagetoxin-Episode-1.jpg",
+          "episodes": "1",
+          "releasedOn": "2 days yang lalu",
+          "animeId": "marriagetoxin",
+          "href": "/samehadaku/anime/marriagetoxin",
+          "samehadakuUrl": "https://v2.samehadaku.how/anime/marriagetoxin/"
+        },
+        {
+          "title": "Higeki no Genkyou to Naru Saikyou Season 2",
+          "poster": "https://v2.samehadaku.how/wp-content/uploads/2026/04/Higeki-no-Genkyou-to-Naru-Saikyou-Season-2-Episode-1.jpg",
+          "episodes": "1",
+          "releasedOn": "2 days yang lalu",
+          "animeId": "higeki-no-genkyou-to-naru-saikyou-season-2",
+          "href": "/samehadaku/anime/higeki-no-genkyou-to-naru-saikyou-season-2",
+          "samehadakuUrl": "https://v2.samehadaku.how/anime/higeki-no-genkyou-to-naru-saikyou-season-2/"
+        },
+        {
+          "title": "Liar Game",
+          "poster": "https://v2.samehadaku.how/wp-content/uploads/2026/04/web-3.jpg",
+          "episodes": "1",
+          "releasedOn": "3 days yang lalu",
+          "animeId": "liar-game",
+          "href": "/samehadaku/anime/liar-game",
+          "samehadakuUrl": "https://v2.samehadaku.how/anime/liar-game/"
+        },
+        {
+          "title": "Isekai Nonbiri Nouka Season 2",
+          "poster": "https://v2.samehadaku.how/wp-content/uploads/2026/04/image-4.jpg",
+          "episodes": "1",
+          "releasedOn": "3 days yang lalu",
+          "animeId": "isekai-nonbiri-nouka-season-2",
+          "href": "/samehadaku/anime/isekai-nonbiri-nouka-season-2",
+          "samehadakuUrl": "https://v2.samehadaku.how/anime/isekai-nonbiri-nouka-season-2/"
+        }
+      ]
+    },
+    "batch": {
+      "href": "/samehadaku/batch",
+      "samehadakuUrl": "https://v2.samehadaku.how",
+      "batchList": []
+    },
+    "movie": {
+      "href": "/samehadaku/movies",
+      "samehadakuUrl": "https://v2.samehadaku.how//anime-movie/",
+      "animeList": [
+        {
+          "title": "Kimetsu no Yaiba – The Movie: Infinity Castle – Part 1: Akaza Returns",
+          "poster": "https://v2.samehadaku.how/wp-content/uploads/2026/01/148216.jpg",
+          "releaseDate": "Jul 18, 2025",
+          "animeId": "kimetsu-no-yaiba-the-movie-infinity-castle-part-1-akaza-returns",
+          "href": "/samehadaku/anime/kimetsu-no-yaiba-the-movie-infinity-castle-part-1-akaza-returns",
+          "samehadakuUrl": "https://v2.samehadaku.how/anime/kimetsu-no-yaiba-the-movie-infinity-castle-part-1-akaza-returns/",
+          "genreList": [
+            {
+              "title": "Action",
+              "genreId": "action",
+              "href": "/samehadaku/genres/action",
+              "samehadakuUrl": "https://v2.samehadaku.how/genre/action/"
+            },
+            {
+              "title": "Historical",
+              "genreId": "historical",
+              "href": "/samehadaku/genres/historical",
+              "samehadakuUrl": "https://v2.samehadaku.how/genre/historical/"
+            },
+            {
+              "title": "Supernatural",
+              "genreId": "supernatural",
+              "href": "/samehadaku/genres/supernatural",
+              "samehadakuUrl": "https://v2.samehadaku.how/genre/supernatural/"
+            }
+          ]
+        },
+        {
+          "title": "Chainsaw Man Reze-hen",
+          "poster": "https://v2.samehadaku.how/wp-content/uploads/2025/12/bx171627-ZN9D7P46yHnw.png",
+          "releaseDate": "Sep 19, 2025",
+          "animeId": "chainsaw-man-reze-hen-index",
+          "href": "/samehadaku/anime/chainsaw-man-reze-hen-index",
+          "samehadakuUrl": "https://v2.samehadaku.how/anime/chainsaw-man-reze-hen-index/",
+          "genreList": [
+            {
+              "title": "Action",
+              "genreId": "action",
+              "href": "/samehadaku/genres/action",
+              "samehadakuUrl": "https://v2.samehadaku.how/genre/action/"
+            },
+            {
+              "title": "Fantasy",
+              "genreId": "fantasy",
+              "href": "/samehadaku/genres/fantasy",
+              "samehadakuUrl": "https://v2.samehadaku.how/genre/fantasy/"
+            },
+            {
+              "title": "Gore",
+              "genreId": "gore",
+              "href": "/samehadaku/genres/gore",
+              "samehadakuUrl": "https://v2.samehadaku.how/genre/gore/"
+            },
+            {
+              "title": "Shounen",
+              "genreId": "shounen",
+              "href": "/samehadaku/genres/shounen",
+              "samehadakuUrl": "https://v2.samehadaku.how/genre/shounen/"
+            },
+            {
+              "title": "Urban Fantasy",
+              "genreId": "urban-fantasy",
+              "href": "/samehadaku/genres/urban-fantasy",
+              "samehadakuUrl": "https://v2.samehadaku.how/genre/urban-fantasy/"
+            }
+          ]
+        },
+        {
+          "title": "Sidonia no Kishi Ai Tsumugu Hoshi",
+          "poster": "https://v2.samehadaku.how/wp-content/uploads/2025/07/108354.jpg",
+          "releaseDate": "Jun 4, 2021",
+          "animeId": "sidonia-no-kishi-ai-tsumugu-hoshi",
+          "href": "/samehadaku/anime/sidonia-no-kishi-ai-tsumugu-hoshi",
+          "samehadakuUrl": "https://v2.samehadaku.how/anime/sidonia-no-kishi-ai-tsumugu-hoshi/",
+          "genreList": [
+            {
+              "title": "Action",
+              "genreId": "action",
+              "href": "/samehadaku/genres/action",
+              "samehadakuUrl": "https://v2.samehadaku.how/genre/action/"
+            },
+            {
+              "title": "Sci-Fi",
+              "genreId": "sci-fi",
+              "href": "/samehadaku/genres/sci-fi",
+              "samehadakuUrl": "https://v2.samehadaku.how/genre/sci-fi/"
+            }
+          ]
+        },
+        {
+          "title": "Overlord Movie 3 Sei Oukoku hen",
+          "poster": "https://v2.samehadaku.how/wp-content/uploads/2025/04/144101.jpg",
+          "releaseDate": "Sep 20, 2024",
+          "animeId": "overlord-movie-3-sei-oukoku-hen",
+          "href": "/samehadaku/anime/overlord-movie-3-sei-oukoku-hen",
+          "samehadakuUrl": "https://v2.samehadaku.how/anime/overlord-movie-3-sei-oukoku-hen/",
+          "genreList": [
+            {
+              "title": "Action",
+              "genreId": "action",
+              "href": "/samehadaku/genres/action",
+              "samehadakuUrl": "https://v2.samehadaku.how/genre/action/"
+            },
+            {
+              "title": "Adventure",
+              "genreId": "adventure",
+              "href": "/samehadaku/genres/adventure",
+              "samehadakuUrl": "https://v2.samehadaku.how/genre/adventure/"
+            },
+            {
+              "title": "Fantasy",
+              "genreId": "fantasy",
+              "href": "/samehadaku/genres/fantasy",
+              "samehadakuUrl": "https://v2.samehadaku.how/genre/fantasy/"
+            }
+          ]
+        },
+        {
+          "title": "Boku no Hero Academia the Movie 4",
+          "poster": "https://v2.samehadaku.how/wp-content/uploads/2025/02/143549.jpg",
+          "releaseDate": "Aug 2, 2024",
+          "animeId": "boku-no-hero-academia-the-movie-4",
+          "href": "/samehadaku/anime/boku-no-hero-academia-the-movie-4",
+          "samehadakuUrl": "https://v2.samehadaku.how/anime/boku-no-hero-academia-the-movie-4/",
+          "genreList": [
+            {
+              "title": "Action",
+              "genreId": "action",
+              "href": "/samehadaku/genres/action",
+              "samehadakuUrl": "https://v2.samehadaku.how/genre/action/"
+            },
+            {
+              "title": "School",
+              "genreId": "school",
+              "href": "/samehadaku/genres/school",
+              "samehadakuUrl": "https://v2.samehadaku.how/genre/school/"
+            },
+            {
+              "title": "Super Power",
+              "genreId": "super-power",
+              "href": "/samehadaku/genres/super-power",
+              "samehadakuUrl": "https://v2.samehadaku.how/genre/super-power/"
+            }
+          ]
+        },
+        {
+          "title": "Haikyuu!! Movie: Gomisuteba no Kessen",
+          "poster": "https://v2.samehadaku.how/wp-content/uploads/2024/10/140360.jpg",
+          "releaseDate": "Feb 16, 2024",
+          "animeId": "haikyuu-movie-gomisuteba-no-kessen",
+          "href": "/samehadaku/anime/haikyuu-movie-gomisuteba-no-kessen",
+          "samehadakuUrl": "https://v2.samehadaku.how/anime/haikyuu-movie-gomisuteba-no-kessen/",
+          "genreList": [
+            {
+              "title": "School",
+              "genreId": "school",
+              "href": "/samehadaku/genres/school",
+              "samehadakuUrl": "https://v2.samehadaku.how/genre/school/"
+            },
+            {
+              "title": "Sports",
+              "genreId": "sports",
+              "href": "/samehadaku/genres/sports",
+              "samehadakuUrl": "https://v2.samehadaku.how/genre/sports/"
+            },
+            {
+              "title": "TeamSports",
+              "genreId": "teamsports",
+              "href": "/samehadaku/genres/teamsports",
+              "samehadakuUrl": "https://v2.samehadaku.how/genre/teamsports/"
+            }
+          ]
+        },
+        {
+          "title": "Blue Lock: Episode Nagi",
+          "poster": "https://v2.samehadaku.how/wp-content/uploads/2024/09/139928.jpg",
+          "releaseDate": "Apr 19, 2024",
+          "animeId": "blue-lock-episode-nagi",
+          "href": "/samehadaku/anime/blue-lock-episode-nagi",
+          "samehadakuUrl": "https://v2.samehadaku.how/anime/blue-lock-episode-nagi/",
+          "genreList": [
+            {
+              "title": "Sports",
+              "genreId": "sports",
+              "href": "/samehadaku/genres/sports",
+              "samehadakuUrl": "https://v2.samehadaku.how/genre/sports/"
+            },
+            {
+              "title": "Team",
+              "genreId": "team",
+              "href": "/samehadaku/genres/team",
+              "samehadakuUrl": "https://v2.samehadaku.how/genre/team/"
+            }
+          ]
+        }
+      ]
+    },
+    "top10": {
+      "href": "/samehadaku/top10",
+      "samehadakuUrl": "https://v2.samehadaku.how/",
+      "animeList": [
+        {
+          "rank": 1,
+          "title": "One Piece",
+          "poster": "https://v2.samehadaku.how/wp-content/uploads/2020/04/E5RxYkWX0AAwdGH.png.jpg",
+          "score": "8.73",
+          "animeId": "one-piece",
+          "href": "/samehadaku/anime/one-piece",
+          "samehadakuUrl": "https://v2.samehadaku.how/anime/one-piece/"
+        },
+        {
+          "rank": 2,
+          "title": "Tensei shitara Slime Datta Ken Season 4",
+          "poster": "https://v2.samehadaku.how/wp-content/uploads/2026/04/Tensei-shitara-Slime-Datta-Ken-Season-4.jpg",
+          "score": "",
+          "animeId": "tensei-shitara-slime-datta-ken-season-4",
+          "href": "/samehadaku/anime/tensei-shitara-slime-datta-ken-season-4",
+          "samehadakuUrl": "https://v2.samehadaku.how/anime/tensei-shitara-slime-datta-ken-season-4/"
+        },
+        {
+          "rank": 3,
+          "title": "Dr. Stone Season 4 Part 3",
+          "poster": "https://v2.samehadaku.how/wp-content/uploads/2026/04/Dr-Stone-Season-4-Part-3.jpg",
+          "score": "8.33",
+          "animeId": "dr-stone-season-4-part-3",
+          "href": "/samehadaku/anime/dr-stone-season-4-part-3",
+          "samehadakuUrl": "https://v2.samehadaku.how/anime/dr-stone-season-4-part-3/"
+        },
+        {
+          "rank": 4,
+          "title": "The Beginning After the End Season 2",
+          "poster": "https://v2.samehadaku.how/wp-content/uploads/2026/04/The-Beginning-After-the-End-S2.jpg",
+          "score": "6.13",
+          "animeId": "the-beginning-after-the-end-season-2",
+          "href": "/samehadaku/anime/the-beginning-after-the-end-season-2",
+          "samehadakuUrl": "https://v2.samehadaku.how/anime/the-beginning-after-the-end-season-2/"
+        },
+        {
+          "rank": 5,
+          "title": "Classroom of the Elite Season 4",
+          "poster": "https://v2.samehadaku.how/wp-content/uploads/2026/04/Classroom-of-the-Elite-S4.jpg",
+          "score": "8.25",
+          "animeId": "classroom-of-the-elite-season-4",
+          "href": "/samehadaku/anime/classroom-of-the-elite-season-4",
+          "samehadakuUrl": "https://v2.samehadaku.how/anime/classroom-of-the-elite-season-4/"
+        },
+        {
+          "rank": 6,
+          "title": "Yomi no Tsugai",
+          "poster": "https://v2.samehadaku.how/wp-content/uploads/2026/04/156397.jpg",
+          "score": "",
+          "animeId": "yomi-no-tsugai",
+          "href": "/samehadaku/anime/yomi-no-tsugai",
+          "samehadakuUrl": "https://v2.samehadaku.how/anime/yomi-no-tsugai/"
+        },
+        {
+          "rank": 7,
+          "title": "Reincarnation no Kaben",
+          "poster": "https://v2.samehadaku.how/wp-content/uploads/2026/04/Reincarnation-no-Kaben.jpg",
+          "score": "6.51",
+          "animeId": "reincarnation-no-kaben",
+          "href": "/samehadaku/anime/reincarnation-no-kaben",
+          "samehadakuUrl": "https://v2.samehadaku.how/anime/reincarnation-no-kaben/"
+        },
+        {
+          "rank": 8,
+          "title": "Fire Force Season 3 Part 2",
+          "poster": "https://v2.samehadaku.how/wp-content/uploads/2026/01/Fire-Force-Season-3-Part-2.jpg",
+          "score": "8.14",
+          "animeId": "fire-force-season-3-part-2",
+          "href": "/samehadaku/anime/fire-force-season-3-part-2",
+          "samehadakuUrl": "https://v2.samehadaku.how/anime/fire-force-season-3-part-2/"
+        },
+        {
+          "rank": 9,
+          "title": "Kanteishi",
+          "poster": "https://v2.samehadaku.how/wp-content/uploads/2026/04/bx200769-8WkFkoFxc2fw.jpg",
+          "score": "6.341",
+          "animeId": "kanteishi",
+          "href": "/samehadaku/anime/kanteishi",
+          "samehadakuUrl": "https://v2.samehadaku.how/anime/kanteishi/"
+        },
+        {
+          "rank": 10,
+          "title": "Monster Eater",
+          "poster": "https://v2.samehadaku.how/wp-content/uploads/2026/04/325085.jpg",
+          "score": "3.93",
+          "animeId": "monster-eater",
+          "href": "/samehadaku/anime/monster-eater",
+          "samehadakuUrl": "https://v2.samehadaku.how/anime/monster-eater/"
+        }
+      ]
+    }
+  },
+  "pagination": null
+}

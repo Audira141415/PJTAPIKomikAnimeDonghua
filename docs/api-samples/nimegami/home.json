@@ -1,0 +1,84 @@
+{
+  "status": "success",
+  "creator": "Sanka Vollerei",
+  "source": "Nimegami",
+  "anime_list": [
+    {
+      "title": "Evangelion: 3.0+1.0 Thrice Upon a Time",
+      "slug": "evangelion-3-01-0-thrice-upon-a-time-sub-indo",
+      "poster": "https://nimegami.id/wp-content/uploads/2026/03/Evangelion-3.01.0-Thrice-Upon-a-Time-Sub-Indo1.jpg",
+      "type": null,
+      "episode": null,
+      "status": null,
+      "nimegami_url": "https://nimegami.id/evangelion-3-01-0-thrice-upon-a-time-sub-indo/"
+    },
+    {
+      "title": "Gyokou no Nikuko-chan",
+      "slug": "gyokou-no-nikuko-chan-sub-indo",
+      "poster": "https://nimegami.id/wp-content/uploads/2026/02/Gyokou-no-Nikuko-chan-Sub-Indo1.jpg",
+      "type": null,
+      "episode": null,
+      "status": null,
+      "nimegami_url": "https://nimegami.id/gyokou-no-nikuko-chan-sub-indo/"
+    },
+    {
+      "title": "Trigun Stargaze",
+      "slug": "trigun-stargaze-sub-indo",
+      "poster": "https://nimegami.id/wp-content/uploads/2026/01/Trigun-Stargaze-Sub-Indo1.jpg",
+      "type": null,
+      "episode": null,
+      "status": null,
+      "nimegami_url": "https://nimegami.id/trigun-stargaze-sub-indo/"
+    },
+    {
+      "title": "Kaya-chan wa Kowakunai",
+      "slug": "kaya-chan-wa-kowakunai-sub-indo",
+      "poster": "https://nimegami.id/wp-content/uploads/2026/01/Kaya-chan-wa-Kowakunai-Sub-Indo1.jpg",
+      "type": null,
+      "episode": null,
+      "status": null,
+      "nimegami_url": "https://nimegami.id/kaya-chan-wa-kowakunai-sub-indo/"
+    },
+    {
+      "title": "Dark Moon: Tsuki no Saidan",
+      "slug": "dark-moon-tsuki-no-saidan-sub-indo",
+      "poster": "https://nimegami.id/wp-content/uploads/2026/01/Dark-Moon-Tsuki-no-Saidan-Sub-Indo1.jpg",
+      "type": null,
+      "episode": null,
+      "status": null,
+      "nimegami_url": "https://nimegami.id/dark-moon-tsuki-no-saidan-sub-indo/"
+    },
+    {
+      "title": "Uruwashi no Yoi no Tsuki",
+      "slug": "uruwashi-no-yoi-no-tsuki-sub-indo",
+      "poster": "https://nimegami.id/wp-content/uploads/2026/01/Uruwashi-no-Yoi-no-Tsuki-Sub-Indo1.jpg",
+      "type": null,
+      "episode": null,
+      "status": null,
+      "nimegami_url": "https://nimegami.id/uruwashi-no-yoi-no-tsuki-sub-indo/"
+    },
+    {
+      "title": "SI-VIS: The Sound of Heroes",
+      "slug": "si-vis-the-sound-of-heroes-sub-indo",
+      "poster": "https://nimegami.id/wp-content/uploads/2025/10/SI-VIS-The-Sound-of-Heroes-Sub-Indo1.jpg",
+      "type": null,
+      "episode": null,
+      "status": null,
+      "nimegami_url": "https://nimegami.id/si-vis-the-sound-of-heroes-sub-indo/"
+    },
+    {
+      "title": "Digimon Beatbreak",
+      "slug": "digimon-beatbreak-sub-indo",
+      "poster": "https://nimegami.id/wp-content/uploads/2025/10/Digimon-Beatbreak-Sub-Indo1.jpg",
+      "type": null,
+      "episode": null,
+      "status": null,
+      "nimegami_url": "https://nimegami.id/digimon-beatbreak-sub-indo/"
+    }
+  ],
+  "pagination": {
+    "hasNext": true,
+    "hasPrev": false,
+    "currentPage": 1
+  }
+}

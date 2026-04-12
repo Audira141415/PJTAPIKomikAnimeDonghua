@@ -1,0 +1,105 @@
+{
+  "status": "success",
+  "creator": "Sanka Vollerei",
+  "source": "Oploverz",
+  "schedule": {
+    "thursday": [
+      {
+        "title": "Kimetsu no Yaiba Movie: Mugen Jou-hen",
+        "slug": "kimetsu-no-yaiba-movie-mugen-jou-hen",
+        "episode_info": "at 17:01 (2)",
+        "oploverz_url": "https://oploverz.click/anime/kimetsu-no-yaiba-movie-mugen-jou-hen/"
+      },
+      {
+        "title": "JoJo’s Bizarre Adventure 6 : Steel Ball Run",
+        "slug": "jojos-bizarre-adventure-6-steel-ball-run",
+        "episode_info": "at 20:17 (2)",
+        "oploverz_url": "https://oploverz.click/anime/jojos-bizarre-adventure-6-steel-ball-run/"
+      },
+      {
+        "title": "Dr. Stone Season 4",
+        "slug": "dr-stone-season-4",
+        "episode_info": "released (26)",
+        "oploverz_url": "https://oploverz.click/anime/dr-stone-season-4/"
+      }
+    ],
+    "friday": [
+      {
+        "title": "Tensei shitara Slime Datta Ken Season 4",
+        "slug": "tensei-shitara-slime-datta-ken-season-4",
+        "episode_info": "at 17:23 (2)",
+        "oploverz_url": "https://oploverz.click/anime/tensei-shitara-slime-datta-ken-season-4/"
+      }
+    ],
+    "saturday": [
+      {
+        "title": "Fumetsu no Anata e S3",
+        "slug": "fumetsu-no-anata-e-s3",
+        "episode_info": "at 17:54 (22)",
+        "oploverz_url": "https://oploverz.click/anime/fumetsu-no-anata-e-s3/"
+      },
+      {
+        "title": "Yomi no Tsugai",
+        "slug": "yomi-no-tsugai",
+        "episode_info": "at 20:03 (2)",
+        "oploverz_url": "https://oploverz.click/anime/yomi-no-tsugai/"
+      }
+    ],
+    "sunday": [
+      {
+        "title": "Diamond no Ace Season 4: Act II Part 2",
+        "slug": "diamond-no-ace-season-4-act-ii-part-2",
+        "episode_info": "at 17:14 (2)",
+        "oploverz_url": "https://oploverz.click/anime/diamond-no-ace-season-4-act-ii-part-2/"
+      },
+      {
+        "title": "One Piece",
+        "slug": "one-piece",
+        "episode_info": "at 17:31 (1157)",
+        "oploverz_url": "https://oploverz.click/anime/one-piece/"
+      }
+    ],
+    "monday": [
+      {
+        "title": "Isekai Nonbiri Nouka Season 2",
+        "slug": "isekai-nonbiri-nouka-season-2",
+        "episode_info": "at 18:13 (2)",
+        "oploverz_url": "https://oploverz.click/anime/isekai-nonbiri-nouka-season-2/"
+      },
+      {
+        "title": "Witch Hat Atelier",
+        "slug": "witch-hat-atelier",
+        "episode_info": "at 19:16 (3)",
+        "oploverz_url": "https://oploverz.click/anime/witch-hat-atelier/"
+      }
+    ],
+    "tuesday": [
+      {
+        "title": "A Gatherer’s Adventure in Isekai",
+        "slug": "a-gatherers-adventure-in-isekai",
+        "episode_info": "at 05:51 (13)",
+        "oploverz_url": "https://oploverz.click/anime/a-gatherers-adventure-in-isekai/"
+      }
+    ],
+    "wednesday": [
+      {
+        "title": "Youkoso Jitsuryoku Shijou Shugi no Kyoushitsu e S4",
+        "slug": "youkoso-jitsuryoku-shijou-shugi-no-kyoushitsu-e-s4",
+        "episode_info": "at 15:31 (6)",
+        "oploverz_url": "https://oploverz.click/anime/youkoso-jitsuryoku-shijou-shugi-no-kyoushitsu-e-s4/"
+      },
+      {
+        "title": "Re: Zero Kara Hajimeru Isekai Seikatsu Season 4",
+        "slug": "re-zero-kara-hajimeru-isekai-seikatsu-season-4",
+        "episode_info": "at 15:36 (2)",
+        "oploverz_url": "https://oploverz.click/anime/re-zero-kara-hajimeru-isekai-seikatsu-season-4/"
+      },
+      {
+        "title": "The Beginning After the End Season 2",
+        "slug": "the-beginning-after-the-end-season-2",
+        "episode_info": "at 18:57 (3)",
+        "oploverz_url": "https://oploverz.click/anime/the-beginning-after-the-end-season-2/"
+      }
+    ]
+  }
+}

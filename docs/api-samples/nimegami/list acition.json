@@ -1,0 +1,62 @@
+{
+  "status": "success",
+  "creator": "Sanka Vollerei",
+  "source": "Nimegami",
+  "properties": [
+    {
+      "name": "Drama Movie",
+      "slug": "drama-movie",
+      "url": "https://nimegami.id/type/drama-movie/"
+    },
+    {
+      "name": "Drama Series",
+      "slug": "drama-series",
+      "url": "https://nimegami.id/type/drama-series/"
+    },
+    {
+      "name": "live",
+      "slug": "live",
+      "url": "https://nimegami.id/type/live/"
+    },
+    {
+      "name": "Live Action",
+      "slug": "live-action",
+      "url": "https://nimegami.id/type/live-action/"
+    },
+    {
+      "name": "Movie",
+      "slug": "movie",
+      "url": "https://nimegami.id/type/movie/"
+    },
+    {
+      "name": "Music",
+      "slug": "music",
+      "url": "https://nimegami.id/type/music/"
+    },
+    {
+      "name": "ONA",
+      "slug": "ona",
+      "url": "https://nimegami.id/type/ona/"
+    },
+    {
+      "name": "OVA",
+      "slug": "ova",
+      "url": "https://nimegami.id/type/ova/"
+    },
+    {
+      "name": "Special",
+      "slug": "special",
+      "url": "https://nimegami.id/type/special/"
+    },
+    {
+      "name": "TV",
+      "slug": "tv",
+      "url": "https://nimegami.id/type/tv/"
+    },
+    {
+      "name": "TV Special",
+      "slug": "tv-special",
+      "url": "https://nimegami.id/type/tv-special/"
+    }
+  ]
+}

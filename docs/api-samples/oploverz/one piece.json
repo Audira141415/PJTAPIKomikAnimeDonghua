@@ -1,0 +1,84 @@
+{
+  "status": "success",
+  "creator": "Sanka Vollerei",
+  "source": "Oploverz",
+  "anime_list": [
+    {
+      "title": "One Piece Live Action S2",
+      "slug": "anime",
+      "poster": "https://i1.wp.com/oploverz.click/wp-content/uploads/2026/03/3d8b2714-8d57-45fd-823e-6068dff66b3d.jpg",
+      "type": "Live Action",
+      "episode": "Completed",
+      "status": "Completed",
+      "oploverz_url": "https://oploverz.click/anime/one-piece-live-action-s2/"
+    },
+    {
+      "title": "One Piece Live Action",
+      "slug": "anime",
+      "poster": "https://i3.wp.com/oploverz.click/wp-content/uploads/2026/03/2e234d15-d75a-47ac-bf94-ef37781c3182.jpg",
+      "type": "Live Action",
+      "episode": "Completed",
+      "status": "Completed",
+      "oploverz_url": "https://oploverz.click/anime/one-piece-live-action/"
+    },
+    {
+      "title": "One Piece Special Edited Version",
+      "slug": "anime",
+      "poster": "https://i1.wp.com/oploverz.click/wp-content/uploads/2024/11/Screenshot_2688.png",
+      "type": "TV",
+      "episode": "Completed",
+      "status": "Completed",
+      "oploverz_url": "https://oploverz.click/anime/one-piece-special-edited-version/"
+    },
+    {
+      "title": "One Piece OVA",
+      "slug": "anime",
+      "poster": "https://i2.wp.com/oploverz.click/wp-content/uploads/manga-images/thumbnail/one-piece-ova.jpg",
+      "type": "OVA",
+      "episode": "Completed",
+      "status": "Completed",
+      "oploverz_url": "https://oploverz.click/anime/one-piece-ova/"
+    },
+    {
+      "title": "One Piece on Smartphone",
+      "slug": "anime",
+      "poster": "https://i3.wp.com/oploverz.click/wp-content/uploads/manga-images/thumbnail/one-piece-on-smartphone.jpg",
+      "type": "Special",
+      "episode": "Completed",
+      "status": "Completed",
+      "oploverz_url": "https://oploverz.click/anime/one-piece-on-smartphone/"
+    },
+    {
+      "title": "One Piece Movie",
+      "slug": "anime",
+      "poster": "https://i2.wp.com/oploverz.click/wp-content/uploads/2022/11/Screenshot_675.png",
+      "type": "Movie",
+      "episode": "Completed",
+      "status": "Completed",
+      "oploverz_url": "https://oploverz.click/anime/one-piece-movie/"
+    },
+    {
+      "title": "One Piece Episode Special",
+      "slug": "anime",
+      "poster": "https://i0.wp.com/oploverz.click/wp-content/uploads/2022/11/Screenshot_2678.png",
+      "type": "Special",
+      "episode": "Completed",
+      "status": "Completed",
+      "oploverz_url": "https://oploverz.click/anime/one-piece-episode-special/"
+    },
+    {
+      "title": "One Piece",
+      "slug": "anime",
+      "poster": "https://i3.wp.com/oploverz.click/wp-content/uploads/2022/11/Screenshot_800.png",
+      "type": "TV",
+      "episode": "Ongoing",
+      "status": null,
+      "oploverz_url": "https://oploverz.click/anime/one-piece/"
+    }
+  ],
+  "pagination": {
+    "hasNext": false,
+    "hasPrev": false,
+    "currentPage": 1
+  }
+}

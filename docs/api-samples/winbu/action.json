@@ -1,0 +1,315 @@
+{
+  "status": "success",
+  "creator": "Sanka Vollerei",
+  "genre": "action",
+  "data": [
+    {
+      "title": "Happiness 2021",
+      "id": "happiness-2021",
+      "type": "series",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/77056_200x300.jpeg",
+      "episode": "",
+      "time": "9 menit",
+      "views": "0",
+      "rating": "-"
+    },
+    {
+      "title": "The Madison Season 1",
+      "id": "the-madison-season-1",
+      "type": "series",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/76958_200x300.jpeg",
+      "episode": "",
+      "time": "22 jam",
+      "views": "0",
+      "rating": "-"
+    },
+    {
+      "title": "Papa Zola: The Movie (2025)",
+      "id": "papa-zola-the-movie-2025",
+      "type": "film",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/PZTM_200x300.jpeg",
+      "episode": "",
+      "time": "1 hari",
+      "views": "711",
+      "rating": "-"
+    },
+    {
+      "title": "The Boys Season 5",
+      "id": "the-boys-season-5",
+      "type": "series",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/76933_200x300.jpeg",
+      "episode": "",
+      "time": "1 hari",
+      "views": "0",
+      "rating": "-"
+    },
+    {
+      "title": "Rebirth 2026",
+      "id": "rebirth-2026",
+      "type": "series",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/77029_200x300.jpeg",
+      "episode": "",
+      "time": "14 jam",
+      "views": "0",
+      "rating": "-"
+    },
+    {
+      "title": "Marriagetoxin",
+      "id": "marriagetoxin",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/MT_200x300.jpeg",
+      "episode": "",
+      "time": "2 hari",
+      "views": "0",
+      "rating": "-"
+    },
+    {
+      "title": "Marshals Season 1",
+      "id": "marshals-season-1",
+      "type": "series",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/76812_200x300.jpeg",
+      "episode": "",
+      "time": "2 hari",
+      "views": "0",
+      "rating": "-"
+    },
+    {
+      "title": "Border 2 (2026)",
+      "id": "border-2-2026",
+      "type": "film",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/Brd2_200x300.jpeg",
+      "episode": "",
+      "time": "3 hari",
+      "views": "2448",
+      "rating": "-"
+    },
+    {
+      "title": "Star Wars: Maul – Shadow Lord Season 1",
+      "id": "star-wars-maul-shadow-lord-season-1",
+      "type": "series",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/76696_200x300.jpeg",
+      "episode": "",
+      "time": "3 hari",
+      "views": "0",
+      "rating": "-"
+    },
+    {
+      "title": "Bloodhounds",
+      "id": "bloodhounds",
+      "type": "series",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/76673_200x300.jpeg",
+      "episode": "",
+      "time": "3 hari",
+      "views": "0",
+      "rating": "-"
+    },
+    {
+      "title": "Ghost Concert: Missing Songs",
+      "id": "ghost-concert-missing-songs",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/155658_200x300.jpeg",
+      "episode": "",
+      "time": "4 hari",
+      "views": "0",
+      "rating": "-"
+    },
+    {
+      "title": "Vigilante (2026)",
+      "id": "vigilante-2026",
+      "type": "film",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/Vigil_200x300.jpeg",
+      "episode": "",
+      "time": "4 hari",
+      "views": "3679",
+      "rating": "-"
+    },
+    {
+      "title": "Humint (2026)",
+      "id": "humint-2026",
+      "type": "film",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/Hmint_200x300.jpeg",
+      "episode": "",
+      "time": "4 hari",
+      "views": "2944",
+      "rating": "-"
+    },
+    {
+      "title": "Tsue to Tsurugi no Wistoria Season 2",
+      "id": "tsue-to-tsurugi-no-wistoria-season-2",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/155788_200x300.jpeg",
+      "episode": "",
+      "time": "4 hari",
+      "views": "0",
+      "rating": "-"
+    },
+    {
+      "title": "Yomi no Tsugai",
+      "id": "yomi-no-tsugai",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/156397_200x300.jpeg",
+      "episode": "",
+      "time": "5 hari",
+      "views": "0",
+      "rating": "-"
+    },
+    {
+      "title": "That Time I Got Reincarnated as a Slime Season 4",
+      "id": "that-time-i-got-reincarnated-as-a-slime-season-4",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/76472_200x300.jpeg",
+      "episode": "",
+      "time": "5 hari",
+      "views": "0",
+      "rating": "-"
+    },
+    {
+      "title": "Daikenja Riddle no Jikan Gyakkou",
+      "id": "daikenja-riddle-no-jikan-gyakkou",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/155312_200x300.jpeg",
+      "episode": "",
+      "time": "5 hari",
+      "views": "0",
+      "rating": "-"
+    },
+    {
+      "title": "Bloodhounds Season 2",
+      "id": "bloodhounds-season-2",
+      "type": "series",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/76358_200x300.jpeg",
+      "episode": "",
+      "time": "6 hari",
+      "views": "0",
+      "rating": "-"
+    },
+    {
+      "title": "Mexicali (2026)",
+      "id": "mexicali-2026",
+      "type": "film",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/MXCA_200x300.jpeg",
+      "episode": "",
+      "time": "6 hari",
+      "views": "3509",
+      "rating": "-"
+    },
+    {
+      "title": "Tensei shitara Slime Datta Ken Season 4",
+      "id": "tensei-shitara-slime-datta-ken-season-4",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/156389_200x300.jpeg",
+      "episode": "",
+      "time": "6 hari",
+      "views": "0",
+      "rating": "-"
+    },
+    {
+      "title": "Mamonogurai no Boukensha: Ore dake Mamono wo Kuratte Tsuyoku Naru",
+      "id": "mamonogurai-no-boukensha-ore-dake-mamono-wo-kuratte-tsuyoku-naru",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/154990_200x300.jpeg",
+      "episode": "",
+      "time": "14 jam",
+      "views": "0",
+      "rating": "-"
+    },
+    {
+      "title": "Reincarnation no Kaben",
+      "id": "reincarnation-no-kaben",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/155042_200x300.jpeg",
+      "episode": "",
+      "time": "15 jam",
+      "views": "0",
+      "rating": "-"
+    },
+    {
+      "title": "The Beginning After the End Season 2",
+      "id": "the-beginning-after-the-end-season-2",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/76937_200x300.jpeg",
+      "episode": "",
+      "time": "1 hari",
+      "views": "0",
+      "rating": "-"
+    },
+    {
+      "title": "Agent Zero (2025)",
+      "id": "agent-zero-2025",
+      "type": "film",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/Agent_Zero_200x300.jpeg",
+      "episode": "",
+      "time": "8 hari",
+      "views": "6322",
+      "rating": "-"
+    },
+    {
+      "title": "Dorohedoro Season 2",
+      "id": "dorohedoro-season-2",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/DorohedoroS2_200x300.jpeg",
+      "episode": "",
+      "time": "1 hari",
+      "views": "0",
+      "rating": "-"
+    },
+    {
+      "title": "Martial God Asura 2",
+      "id": "martial-god-asura-2",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2026/03/155607l_200x300.jpeg",
+      "episode": "",
+      "time": "3 hari",
+      "views": "0",
+      "rating": "-"
+    },
+    {
+      "title": "Concrete Market (2025)",
+      "id": "concrete-market-2025",
+      "type": "film",
+      "image": "https://winbu.net/wp-content/uploads/2026/03/CM-1_200x300.jpeg",
+      "episode": "",
+      "time": "10 hari",
+      "views": "6334",
+      "rating": "-"
+    },
+    {
+      "title": "Isekai de Cheat Skill wo Te ni Shita Ore wa, Genjitsu Sekai wo mo Musou Suru: Level Up wa Jinsei wo Kaeta (TV Special)",
+      "id": "isekai-de-cheat-skill-wo-te-ni-shita-ore-wa-genjitsu-sekai-wo-mo-musou-suru-level-up-wa-jinsei-wo-kaeta-tv-special",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2026/03/155201_200x300.jpeg",
+      "episode": "",
+      "time": "11 hari",
+      "views": "0",
+      "rating": "-"
+    },
+    {
+      "title": "Swords of Legends: Doomsday (2026)",
+      "id": "swords-of-legends-doomsday-2026",
+      "type": "film",
+      "image": "https://winbu.net/wp-content/uploads/2026/03/SoL_D_200x300.jpeg",
+      "episode": "",
+      "time": "11 hari",
+      "views": "3749",
+      "rating": "-"
+    },
+    {
+      "title": "Akaal: The Unconquered (2025)",
+      "id": "akaal-the-unconquered-2025",
+      "type": "film",
+      "image": "https://winbu.net/wp-content/uploads/2026/03/ATU_200x300.jpeg",
+      "episode": "",
+      "time": "13 hari",
+      "views": "5315",
+      "rating": "-"
+    }
+  ],
+  "pagination": {
+    "current_page": 1,
+    "total_pages": 5,
+    "has_next_page": true,
+    "next_page": 2,
+    "prev_page": null,
+    "has_prev_page": false
+  }
+}

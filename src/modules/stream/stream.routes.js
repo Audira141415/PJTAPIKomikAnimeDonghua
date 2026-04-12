@@ -7,7 +7,7 @@ router.get('/latest',          ctrl.latest);
 router.get('/latest/:page',    ctrl.latest);
 router.get('/popular',         ctrl.popular);
 router.get('/search/:query',   ctrl.search);
-router.get('/anime/:slug',     ctrl.animeDetail);
+router.get('/anime/:slug',     ctrl.anime);
 router.get('/episode/:slug',   ctrl.episode);
 router.get('/movie',           ctrl.movies);
 router.get('/movie/:page',     ctrl.movies);

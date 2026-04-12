@@ -1,0 +1,92 @@
+{
+  "status": "success",
+  "creator": "Sanka Vollerei",
+  "source": "Animasu",
+  "animes": [
+    {
+      "title": "Purple River Season 2",
+      "slug": "purple-river-s2",
+      "poster": "https://i0.wp.com/v1.animasu.app/wp-content/uploads/2025/07/151163.jpg",
+      "episode": "Episode 40",
+      "status_or_day": "🔥🔥🔥",
+      "type": "ONA"
+    },
+    {
+      "title": "100.000 Years of Refining Qi [Lian Qi Shi Wan Nian]",
+      "slug": "100-000-years-of-refining-qi",
+      "poster": "https://i0.wp.com/v1.animasu.app/wp-content/uploads/2023/09/MV5BOTU0MzcyMTYtNzRmOS00MDUwLWI1.jpg",
+      "episode": "Episode 335",
+      "status_or_day": "🔥🔥🔥",
+      "type": "ONA"
+    },
+    {
+      "title": "Shrouding the Heavens [ Zhe Tian ]",
+      "slug": "shrouding-the-heavens",
+      "poster": "https://i2.wp.com/v1.animasu.app/wp-content/uploads/2023/07/hMPIFy9S8F3gpgpOiRqBvMj9Icg.jpg",
+      "episode": "Episode 157",
+      "status_or_day": "🔥🔥🔥",
+      "type": "ONA"
+    },
+    {
+      "title": "Mamonogurai no Boukensha: Ore dake Mamono wo Kuratte Tsuyoku Naru",
+      "slug": "mamonogurai-no-boukensha-ore-dake-mamono-wo-kuratte-tsuyoku-naru",
+      "poster": "https://i2.wp.com/v1.animasu.app/wp-content/uploads/2026/04/154990.jpg",
+      "episode": "Episode 2",
+      "status_or_day": "🔥🔥🔥",
+      "type": "TV"
+    },
+    {
+      "title": "Reincarnation no Kaben",
+      "slug": "reincarnation-no-kaben",
+      "poster": "https://i1.wp.com/v1.animasu.app/wp-content/uploads/2026/04/155042.jpg",
+      "episode": "Episode 2",
+      "status_or_day": "🔥🔥🔥",
+      "type": "TV"
+    },
+    {
+      "title": "Renegade Immortal [Xian Ni]",
+      "slug": "renegade-immortal",
+      "poster": "https://i0.wp.com/v1.animasu.app/wp-content/uploads/2023/10/photo.jpg",
+      "episode": "Episode 135",
+      "status_or_day": "🔥🔥🔥",
+      "type": "ONA"
+    },
+    {
+      "title": "Tales of Herding Gods",
+      "slug": "tales-of-herding-gods",
+      "poster": "https://i3.wp.com/v1.animasu.app/wp-content/uploads/2024/10/145764.jpg",
+      "episode": "Episode 77",
+      "status_or_day": "🔥🔥🔥",
+      "type": "ONA"
+    },
+    {
+      "title": "Beyond Time’s Gaze",
+      "slug": "beyond-times-gaze",
+      "poster": "https://i3.wp.com/v1.animasu.app/wp-content/uploads/2025/12/153418.jpg",
+      "episode": "Episode 16",
+      "status_or_day": "🔥🔥🔥",
+      "type": "ONA"
+    },
+    {
+      "title": "Shrouding the Heavens: The Imperial Path",
+      "slug": "shrouding-the-heavens-the-imperial-path",
+      "poster": "https://i0.wp.com/v1.animasu.app/wp-content/uploads/2026/04/156548.jpg",
+      "episode": "Movie",
+      "status_or_day": "Selesai ✓",
+      "type": "Movie"
+    },
+    {
+      "title": "B.King [ Spirit Master ]",
+      "slug": "spirit-master",
+      "poster": "https://i1.wp.com/v1.animasu.app/wp-content/uploads/2026/02/Picsart_23-10-02_22-14-56-008_101851-01-768x1150-1.jpg",
+      "episode": "Episode 8",
+      "status_or_day": "🔥🔥🔥",
+      "type": "ONA"
+    }
+  ],
+  "pagination": {
+    "hasNext": true,
+    "hasPrev": false,
+    "currentPage": 1
+  }
+}

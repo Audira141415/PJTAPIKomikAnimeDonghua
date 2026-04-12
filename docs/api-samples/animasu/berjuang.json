@@ -1,0 +1,92 @@
+{
+  "status": "success",
+  "creator": "Sanka Vollerei",
+  "source": "Animasu",
+  "animes": [
+    {
+      "title": "Enen no Shouboutai: San no Shou",
+      "slug": "enen-no-shouboutai-s3",
+      "poster": "https://i2.wp.com/v1.animasu.app/wp-content/uploads/2025/02/146836.jpg",
+      "episode": "12 Episode",
+      "status_or_day": "Selesai ✓",
+      "type": "TV"
+    },
+    {
+      "title": "Hazure Skill “Kinomi Master”: Skill no Mi (Tabetara Shinu) wo Mugen ni Taberareru You ni Natta Ken ni Tsuite",
+      "slug": "hazure-skill-kinomi-master-skill-no-mi-tabetara-shinu-wo-mugen-ni-taberareru-you-ni-natta-ken-ni-tsuite",
+      "poster": "https://i1.wp.com/v1.animasu.app/wp-content/uploads/2025/01/146128.jpg",
+      "episode": "12 Episode",
+      "status_or_day": "Selesai ✓",
+      "type": "TV"
+    },
+    {
+      "title": "Solo Leveling Season 2: Arise from the Shadow",
+      "slug": "solo-leveling-s2",
+      "poster": "https://i3.wp.com/v1.animasu.app/wp-content/uploads/2024/11/145502.jpg",
+      "episode": "13 Episode",
+      "status_or_day": "Selesai ✓",
+      "type": "TV"
+    },
+    {
+      "title": "Hazurewaku no “Joutai Ijou Skill” de Saikyou ni Natta Ore ga Subete wo Juurin suru made",
+      "slug": "hazurewaku-no-joutai-ijou-skill-de-saikyou-ni-natta-ore-ga-subete-wo-juurin-suru-made-sub-indo",
+      "poster": "https://i3.wp.com/v1.animasu.app/wp-content/uploads/2024/07/143630.jpg",
+      "episode": "12 Episode",
+      "status_or_day": "Selesai ✓",
+      "type": "TV"
+    },
+    {
+      "title": "Ore wa Subete wo “Parry” suru: Gyaku Kanchigai no Sekai Saikyou wa Boukensha ni Naritai",
+      "slug": "ore-wa-subete-wo-parry-suru-gyaku-kanchigai-no-sekai-saikyou-wa-boukensha-ni-naritai-sub-indo",
+      "poster": "https://i3.wp.com/v1.animasu.app/wp-content/uploads/2024/07/143101.jpg",
+      "episode": "12 Episode",
+      "status_or_day": "Selesai ✓",
+      "type": "TV"
+    },
+    {
+      "title": "Kimi to Boku no Saigo no Senjou, Aruiwa Sekai ga Hajimaru Seisen Season 2",
+      "slug": "kimi-to-boku-no-saigo-no-senjou-aruiwa-sekai-ga-hajimaru-seisen-s2",
+      "poster": "https://i1.wp.com/v1.animasu.app/wp-content/uploads/2024/04/139708.jpg",
+      "episode": "12 Episode",
+      "status_or_day": "Selesai ✓",
+      "type": "TV"
+    },
+    {
+      "title": "Re:Monster",
+      "slug": "remonster",
+      "poster": "https://i1.wp.com/v1.animasu.app/wp-content/uploads/2024/04/141680.jpg",
+      "episode": "12 Episode",
+      "status_or_day": "Selesai ✓",
+      "type": "TV"
+    },
+    {
+      "title": "Tensei Kizoku, Kantei Skill de Nariagaru",
+      "slug": "tensei-kizoku-kantei-skill-de-nariagaru",
+      "poster": "https://i2.wp.com/v1.animasu.app/wp-content/uploads/2024/02/139538.jpg",
+      "episode": "12 Episode",
+      "status_or_day": "Selesai ✓",
+      "type": "TV"
+    },
+    {
+      "title": "Kono Subarashii Sekai ni Shukufuku wo! Season 3",
+      "slug": "kono-subarashii-sekai-ni-shukufuku-wo-s3-sub-indonesia",
+      "poster": "https://i3.wp.com/v1.animasu.app/wp-content/uploads/2024/02/141268.jpg",
+      "episode": "11 Episode",
+      "status_or_day": "Selesai ✓",
+      "type": "TV"
+    },
+    {
+      "title": "Boku no Kokoro no Yabai Yatsu Season 2",
+      "slug": "boku-no-kokoro-no-yabai-yatsu-s2-sub-indo",
+      "poster": "https://i2.wp.com/v1.animasu.app/wp-content/uploads/2024/01/138581-1.jpg",
+      "episode": "13 Episode",
+      "status_or_day": "Selesai ✓",
+      "type": "TV"
+    }
+  ],
+  "pagination": {
+    "hasNext": true,
+    "hasPrev": false,
+    "currentPage": 1
+  }
+}

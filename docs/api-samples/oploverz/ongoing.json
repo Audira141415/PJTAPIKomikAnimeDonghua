@@ -1,0 +1,102 @@
+{
+  "status": "success",
+  "creator": "Sanka Vollerei",
+  "source": "Oploverz",
+  "anime_list": [
+    {
+      "title": "A Gatherer’s Adventure in Isekai",
+      "slug": "anime",
+      "poster": "https://i3.wp.com/oploverz.click/wp-content/uploads/2025/10/1759617936-5609-151136.jpg",
+      "type": "TV",
+      "episode": "Ongoing",
+      "status": null,
+      "oploverz_url": "https://oploverz.click/anime/a-gatherers-adventure-in-isekai/"
+    },
+    {
+      "title": "Alya Sometimes Hides Her Feelings in Russian",
+      "slug": "anime",
+      "poster": "https://i1.wp.com/oploverz.click/wp-content/uploads/2024/07/1721547391-8394-142258.jpg",
+      "type": "TV",
+      "episode": "Ongoing",
+      "status": null,
+      "oploverz_url": "https://oploverz.click/anime/alya-sometimes-hides-her-feelings-in-russian/"
+    },
+    {
+      "title": "Diamond no Ace Season 4: Act II Part 2",
+      "slug": "anime",
+      "poster": "https://i3.wp.com/oploverz.click/wp-content/uploads/2026/04/149820l.jpg",
+      "type": "TV",
+      "episode": "Ongoing",
+      "status": null,
+      "oploverz_url": "https://oploverz.click/anime/diamond-no-ace-season-4-act-ii-part-2/"
+    },
+    {
+      "title": "Dr. Stone Season 4",
+      "slug": "anime",
+      "poster": "https://i3.wp.com/oploverz.click/wp-content/uploads/2024/12/da5ee11a-7366-4d45-b1a8-1d841cfcf094.jpg",
+      "type": "TV",
+      "episode": "Ongoing",
+      "status": null,
+      "oploverz_url": "https://oploverz.click/anime/dr-stone-season-4/"
+    },
+    {
+      "title": "Fumetsu no Anata e S3",
+      "slug": "anime",
+      "poster": "https://i0.wp.com/oploverz.click/wp-content/uploads/2025/10/1760277595-5171-152364.jpg",
+      "type": "TV",
+      "episode": "Ongoing",
+      "status": null,
+      "oploverz_url": "https://oploverz.click/anime/fumetsu-no-anata-e-s3/"
+    },
+    {
+      "title": "Haikyu!! Movie: The Dumpster Battle",
+      "slug": "anime",
+      "poster": "https://i3.wp.com/oploverz.click/wp-content/uploads/2024/10/298261l.jpg",
+      "type": "Movie",
+      "episode": "Ongoing",
+      "status": null,
+      "oploverz_url": "https://oploverz.click/anime/haikyu-movie-the-dumpster-battle/"
+    },
+    {
+      "title": "Isekai Nonbiri Nouka Season 2",
+      "slug": "anime",
+      "poster": "https://i3.wp.com/oploverz.click/wp-content/uploads/2026/04/151683l.jpg",
+      "type": "TV",
+      "episode": "Ongoing",
+      "status": null,
+      "oploverz_url": "https://oploverz.click/anime/isekai-nonbiri-nouka-season-2/"
+    },
+    {
+      "title": "JoJo’s Bizarre Adventure 6 : Steel Ball Run",
+      "slug": "anime",
+      "poster": "https://i0.wp.com/oploverz.click/wp-content/uploads/2026/03/1773951143-8136-154111.jpg",
+      "type": "ONA",
+      "episode": "Ongoing",
+      "status": null,
+      "oploverz_url": "https://oploverz.click/anime/jojos-bizarre-adventure-6-steel-ball-run/"
+    },
+    {
+      "title": "Kimetsu no Yaiba Movie: Mugen Jou-hen",
+      "slug": "anime",
+      "poster": "https://i2.wp.com/oploverz.click/wp-content/uploads/2025/08/151557l.jpg",
+      "type": "Movie",
+      "episode": "Ongoing",
+      "status": null,
+      "oploverz_url": "https://oploverz.click/anime/kimetsu-no-yaiba-movie-mugen-jou-hen/"
+    },
+    {
+      "title": "Nageki no Bourei wa Intai shitai Part 2",
+      "slug": "anime",
+      "poster": "https://i0.wp.com/oploverz.click/wp-content/uploads/2025/11/1762620358-2255-152063.jpg",
+      "type": "TV",
+      "episode": "Ongoing",
+      "status": null,
+      "oploverz_url": "https://oploverz.click/anime/nageki-no-bourei-wa-intai-shitai-part-2/"
+    }
+  ],
+  "pagination": {
+    "hasNext": true,
+    "hasPrev": false,
+    "currentPage": 1
+  }
+}

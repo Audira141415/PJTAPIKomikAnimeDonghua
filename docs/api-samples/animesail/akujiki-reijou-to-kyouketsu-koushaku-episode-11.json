@@ -1,0 +1,18 @@
+{
+  "status": "success",
+  "creator": "Sanka Vollerei",
+  "source": "AnimeSail",
+  "data": {
+    "title": "",
+    "date": "",
+    "synopsis": "",
+    "genres": [],
+    "navigation": {
+      "prev_slug": null,
+      "next_slug": null,
+      "all_episodes_slug": null
+    },
+    "streams": [],
+    "downloads": []
+  }
+}

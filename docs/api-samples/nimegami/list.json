@@ -1,0 +1,517 @@
+{
+  "status": "success",
+  "creator": "Sanka Vollerei",
+  "source": "Nimegami",
+  "properties": [
+    {
+      "name": "Action",
+      "slug": "action",
+      "url": "https://nimegami.id/category/action/"
+    },
+    {
+      "name": "Adult Cast",
+      "slug": "adult-cast",
+      "url": "https://nimegami.id/category/adult-cast/"
+    },
+    {
+      "name": "Adventure",
+      "slug": "adventure",
+      "url": "https://nimegami.id/category/adventure/"
+    },
+    {
+      "name": "Anthropomorphic",
+      "slug": "anthropomorphic",
+      "url": "https://nimegami.id/category/anthropomorphic/"
+    },
+    {
+      "name": "Avant Garde",
+      "slug": "avant-garde",
+      "url": "https://nimegami.id/category/avant-garde/"
+    },
+    {
+      "name": "Award Winning",
+      "slug": "award-winning",
+      "url": "https://nimegami.id/category/award-winning/"
+    },
+    {
+      "name": "Boys Love",
+      "slug": "boys-love",
+      "url": "https://nimegami.id/category/boys-love/"
+    },
+    {
+      "name": "Business",
+      "slug": "business",
+      "url": "https://nimegami.id/category/business/"
+    },
+    {
+      "name": "Cars",
+      "slug": "cars",
+      "url": "https://nimegami.id/category/cars/"
+    },
+    {
+      "name": "CGDCT",
+      "slug": "cgdct",
+      "url": "https://nimegami.id/category/cgdct/"
+    },
+    {
+      "name": "Childcare",
+      "slug": "childcare",
+      "url": "https://nimegami.id/category/childcare/"
+    },
+    {
+      "name": "Combat Sports",
+      "slug": "combat-sports",
+      "url": "https://nimegami.id/category/combat-sports/"
+    },
+    {
+      "name": "Comedy",
+      "slug": "comedy",
+      "url": "https://nimegami.id/category/comedy/"
+    },
+    {
+      "name": "Crim",
+      "slug": "crim",
+      "url": "https://nimegami.id/category/crim/"
+    },
+    {
+      "name": "Crime",
+      "slug": "crime",
+      "url": "https://nimegami.id/category/crime/"
+    },
+    {
+      "name": "Crossdressing",
+      "slug": "crossdressing",
+      "url": "https://nimegami.id/category/crossdressing/"
+    },
+    {
+      "name": "Delinquents",
+      "slug": "delinquents",
+      "url": "https://nimegami.id/category/delinquents/"
+    },
+    {
+      "name": "Dementia",
+      "slug": "dementia",
+      "url": "https://nimegami.id/category/dementia/"
+    },
+    {
+      "name": "Demons",
+      "slug": "demons",
+      "url": "https://nimegami.id/category/demons/"
+    },
+    {
+      "name": "Detective",
+      "slug": "detective",
+      "url": "https://nimegami.id/category/detective/"
+    },
+    {
+      "name": "Drama",
+      "slug": "drama",
+      "url": "https://nimegami.id/category/drama/"
+    },
+    {
+      "name": "Ecchi",
+      "slug": "ecchi",
+      "url": "https://nimegami.id/category/ecchi/"
+    },
+    {
+      "name": "Educational",
+      "slug": "educational",
+      "url": "https://nimegami.id/category/educational/"
+    },
+    {
+      "name": "Erotica",
+      "slug": "erotica",
+      "url": "https://nimegami.id/category/erotica/"
+    },
+    {
+      "name": "Family",
+      "slug": "family",
+      "url": "https://nimegami.id/category/family/"
+    },
+    {
+      "name": "Fantasy",
+      "slug": "fantasy",
+      "url": "https://nimegami.id/category/fantasy/"
+    },
+    {
+      "name": "Frendship",
+      "slug": "frendship",
+      "url": "https://nimegami.id/category/frendship/"
+    },
+    {
+      "name": "Gag Humor",
+      "slug": "gag-humor",
+      "url": "https://nimegami.id/category/gag-humor/"
+    },
+    {
+      "name": "Game",
+      "slug": "game",
+      "url": "https://nimegami.id/category/game/"
+    },
+    {
+      "name": "Girls Love",
+      "slug": "girls-love",
+      "url": "https://nimegami.id/category/girls-love/"
+    },
+    {
+      "name": "Gore",
+      "slug": "gore",
+      "url": "https://nimegami.id/category/gore/"
+    },
+    {
+      "name": "Gourmet",
+      "slug": "gourmet",
+      "url": "https://nimegami.id/category/gourmet/"
+    },
+    {
+      "name": "Harem",
+      "slug": "harem",
+      "url": "https://nimegami.id/category/harem/"
+    },
+    {
+      "name": "Hentai",
+      "slug": "hentai",
+      "url": "https://nimegami.id/category/hentai/"
+    },
+    {
+      "name": "High Stakes Game",
+      "slug": "high-stakes-game",
+      "url": "https://nimegami.id/category/high-stakes-game/"
+    },
+    {
+      "name": "Historical",
+      "slug": "historical",
+      "url": "https://nimegami.id/category/historical/"
+    },
+    {
+      "name": "Horror",
+      "slug": "horror",
+      "url": "https://nimegami.id/category/horror/"
+    },
+    {
+      "name": "Idols",
+      "slug": "idols-female",
+      "url": "https://nimegami.id/category/idols-female/"
+    },
+    {
+      "name": "Idols",
+      "slug": "idols-male",
+      "url": "https://nimegami.id/category/idols-male/"
+    },
+    {
+      "name": "Investigation",
+      "slug": "investigation",
+      "url": "https://nimegami.id/category/investigation/"
+    },
+    {
+      "name": "Isekai",
+      "slug": "isekai",
+      "url": "https://nimegami.id/category/isekai/"
+    },
+    {
+      "name": "Iyashikei",
+      "slug": "iyashikei",
+      "url": "https://nimegami.id/category/iyashikei/"
+    },
+    {
+      "name": "Josei",
+      "slug": "josei",
+      "url": "https://nimegami.id/category/josei/"
+    },
+    {
+      "name": "Kids",
+      "slug": "kids",
+      "url": "https://nimegami.id/category/kids/"
+    },
+    {
+      "name": "Life",
+      "slug": "life",
+      "url": "https://nimegami.id/category/life/"
+    },
+    {
+      "name": "Love Polygon",
+      "slug": "love-polygon",
+      "url": "https://nimegami.id/category/love-polygon/"
+    },
+    {
+      "name": "Love Status Quo",
+      "slug": "love-status-quo",
+      "url": "https://nimegami.id/category/love-status-quo/"
+    },
+    {
+      "name": "Magic",
+      "slug": "magic",
+      "url": "https://nimegami.id/category/magic/"
+    },
+    {
+      "name": "Magical Sex Shift",
+      "slug": "magical-sex-shift",
+      "url": "https://nimegami.id/category/magical-sex-shift/"
+    },
+    {
+      "name": "Mahou Shoujo",
+      "slug": "mahou-shoujo",
+      "url": "https://nimegami.id/category/mahou-shoujo/"
+    },
+    {
+      "name": "Martial Arts",
+      "slug": "martial-arts",
+      "url": "https://nimegami.id/category/martial-arts/"
+    },
+    {
+      "name": "Mecha",
+      "slug": "mecha",
+      "url": "https://nimegami.id/category/mecha/"
+    },
+    {
+      "name": "Medical",
+      "slug": "medical",
+      "url": "https://nimegami.id/category/medical/"
+    },
+    {
+      "name": "Military",
+      "slug": "military",
+      "url": "https://nimegami.id/category/military/"
+    },
+    {
+      "name": "Music",
+      "slug": "music",
+      "url": "https://nimegami.id/category/music/"
+    },
+    {
+      "name": "Mystery",
+      "slug": "mystery",
+      "url": "https://nimegami.id/category/mystery/"
+    },
+    {
+      "name": "Mythology",
+      "slug": "mythology",
+      "url": "https://nimegami.id/category/mythology/"
+    },
+    {
+      "name": "Organized Crime",
+      "slug": "organized-crime",
+      "url": "https://nimegami.id/category/organized-crime/"
+    },
+    {
+      "name": "Otaku Culture",
+      "slug": "otaku-culture",
+      "url": "https://nimegami.id/category/otaku-culture/"
+    },
+    {
+      "name": "Parody",
+      "slug": "parody",
+      "url": "https://nimegami.id/category/parody/"
+    },
+    {
+      "name": "Performing Arts",
+      "slug": "performing-arts",
+      "url": "https://nimegami.id/category/performing-arts/"
+    },
+    {
+      "name": "Pets",
+      "slug": "pets",
+      "url": "https://nimegami.id/category/pets/"
+    },
+    {
+      "name": "Police",
+      "slug": "police",
+      "url": "https://nimegami.id/category/police/"
+    },
+    {
+      "name": "Psychological",
+      "slug": "psychological",
+      "url": "https://nimegami.id/category/psychological/"
+    },
+    {
+      "name": "Racing",
+      "slug": "racing",
+      "url": "https://nimegami.id/category/racing/"
+    },
+    {
+      "name": "Reincarnation",
+      "slug": "reincarnation",
+      "url": "https://nimegami.id/category/reincarnation/"
+    },
+    {
+      "name": "Reverse Harem",
+      "slug": "reverse-harem",
+      "url": "https://nimegami.id/category/reverse-harem/"
+    },
+    {
+      "name": "Romance",
+      "slug": "romance",
+      "url": "https://nimegami.id/category/romance/"
+    },
+    {
+      "name": "Romantic Subtext",
+      "slug": "romantic-subtext",
+      "url": "https://nimegami.id/category/romantic-subtext/"
+    },
+    {
+      "name": "Samurai",
+      "slug": "samurai",
+      "url": "https://nimegami.id/category/samurai/"
+    },
+    {
+      "name": "School",
+      "slug": "school",
+      "url": "https://nimegami.id/category/school/"
+    },
+    {
+      "name": "Sci-Fi",
+      "slug": "sci-fi",
+      "url": "https://nimegami.id/category/sci-fi/"
+    },
+    {
+      "name": "Seinen",
+      "slug": "seinen",
+      "url": "https://nimegami.id/category/seinen/"
+    },
+    {
+      "name": "Shoujo",
+      "slug": "shoujo",
+      "url": "https://nimegami.id/category/shoujo/"
+    },
+    {
+      "name": "Shoujo Ai",
+      "slug": "shoujo-ai",
+      "url": "https://nimegami.id/category/shoujo-ai/"
+    },
+    {
+      "name": "Shounen",
+      "slug": "shounen",
+      "url": "https://nimegami.id/category/shounen/"
+    },
+    {
+      "name": "Shounen Ai",
+      "slug": "shounen-ai",
+      "url": "https://nimegami.id/category/shounen-ai/"
+    },
+    {
+      "name": "Showbiz",
+      "slug": "showbiz",
+      "url": "https://nimegami.id/category/showbiz/"
+    },
+    {
+      "name": "Slice of Life",
+      "slug": "slice-of-life",
+      "url": "https://nimegami.id/category/slice-of-life/"
+    },
+    {
+      "name": "Space",
+      "slug": "space",
+      "url": "https://nimegami.id/category/space/"
+    },
+    {
+      "name": "Sports",
+      "slug": "sports",
+      "url": "https://nimegami.id/category/sports/"
+    },
+    {
+      "name": "Strategy Game",
+      "slug": "strategy-game",
+      "url": "https://nimegami.id/category/strategy-game/"
+    },
+    {
+      "name": "Super Power",
+      "slug": "super-power",
+      "url": "https://nimegami.id/category/super-power/"
+    },
+    {
+      "name": "Supernatural",
+      "slug": "supernatural",
+      "url": "https://nimegami.id/category/supernatural/"
+    },
+    {
+      "name": "Survival",
+      "slug": "survival",
+      "url": "https://nimegami.id/category/survival/"
+    },
+    {
+      "name": "Suspense",
+      "slug": "suspense",
+      "url": "https://nimegami.id/category/suspense/"
+    },
+    {
+      "name": "Team Sports",
+      "slug": "team-sports",
+      "url": "https://nimegami.id/category/team-sports/"
+    },
+    {
+      "name": "Teen",
+      "slug": "teen",
+      "url": "https://nimegami.id/category/teen/"
+    },
+    {
+      "name": "Thriller",
+      "slug": "thriller",
+      "url": "https://nimegami.id/category/thriller/"
+    },
+    {
+      "name": "Time Travel",
+      "slug": "time-travel",
+      "url": "https://nimegami.id/category/time-travel/"
+    },
+    {
+      "name": "Tokusatsu",
+      "slug": "tokusatsu",
+      "url": "https://nimegami.id/category/tokusatsu/"
+    },
+    {
+      "name": "Uncategorized",
+      "slug": "uncategorized",
+      "url": "https://nimegami.id/category/uncategorized/"
+    },
+    {
+      "name": "Urban Fantasy",
+      "slug": "urban-fantasy",
+      "url": "https://nimegami.id/category/urban-fantasy/"
+    },
+    {
+      "name": "Vampire",
+      "slug": "vampire",
+      "url": "https://nimegami.id/category/vampire/"
+    },
+    {
+      "name": "Video Game",
+      "slug": "video-game",
+      "url": "https://nimegami.id/category/video-game/"
+    },
+    {
+      "name": "Villainess",
+      "slug": "villainess",
+      "url": "https://nimegami.id/category/villainess/"
+    },
+    {
+      "name": "Visual Arts",
+      "slug": "visual-arts",
+      "url": "https://nimegami.id/category/visual-arts/"
+    },
+    {
+      "name": "Work Life",
+      "slug": "work-life",
+      "url": "https://nimegami.id/category/work-life/"
+    },
+    {
+      "name": "Workplace",
+      "slug": "workplace",
+      "url": "https://nimegami.id/category/workplace/"
+    },
+    {
+      "name": "Yaoi",
+      "slug": "yaoi",
+      "url": "https://nimegami.id/category/yaoi/"
+    },
+    {
+      "name": "Youth",
+      "slug": "youth",
+      "url": "https://nimegami.id/category/youth/"
+    },
+    {
+      "name": "Yuri",
+      "slug": "yuri",
+      "url": "https://nimegami.id/category/yuri/"
+    }
+  ]
+}

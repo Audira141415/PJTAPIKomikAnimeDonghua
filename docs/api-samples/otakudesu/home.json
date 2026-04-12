@@ -1,0 +1,273 @@
+{
+  "status": "success",
+  "creator": "Sanka Vollerei",
+  "statusCode": 200,
+  "statusMessage": "OK",
+  "message": "",
+  "ok": true,
+  "data": {
+    "ongoing": {
+      "href": "/anime/ongoing-anime",
+      "otakudesuUrl": "https://otakudesu.blog/ongoing-anime/",
+      "animeList": [
+        {
+          "title": "Haibara-kun no Tsuyokute Seishun New Game",
+          "poster": "https://otakudesu.blog/wp-content/uploads/2026/04/156048.jpg",
+          "episodes": 2,
+          "releaseDay": "Jumat",
+          "latestReleaseDate": "10 Apr",
+          "animeId": "haibara-tsuyokute-seishun-new-game-sub-indo",
+          "href": "/anime/anime/haibara-tsuyokute-seishun-new-game-sub-indo",
+          "otakudesuUrl": "https://otakudesu.blog/anime/haibara-tsuyokute-seishun-new-game-sub-indo/"
+        },
+        {
+          "title": "Mata Korosarete Shimatta no desu ne, Tantei-sama",
+          "poster": "https://otakudesu.blog/wp-content/uploads/2026/04/156152.jpg",
+          "episodes": 2,
+          "releaseDay": "Jumat",
+          "latestReleaseDate": "10 Apr",
+          "animeId": "mata-korosarete-shimatta-desu-sub-indo",
+          "href": "/anime/anime/mata-korosarete-shimatta-desu-sub-indo",
+          "otakudesuUrl": "https://otakudesu.blog/anime/mata-korosarete-shimatta-desu-sub-indo/"
+        },
+        {
+          "title": "Reincarnation no Kaben",
+          "poster": "https://otakudesu.blog/wp-content/uploads/2026/04/155042.jpg",
+          "episodes": 2,
+          "releaseDay": "Jumat",
+          "latestReleaseDate": "10 Apr",
+          "animeId": "reincarnation-kaben-sub-indo",
+          "href": "/anime/anime/reincarnation-kaben-sub-indo",
+          "otakudesuUrl": "https://otakudesu.blog/anime/reincarnation-kaben-sub-indo/"
+        },
+        {
+          "title": "Koori no Jouheki",
+          "poster": "https://otakudesu.blog/wp-content/uploads/2026/04/154933.jpg",
+          "episodes": 2,
+          "releaseDay": "Kamis",
+          "latestReleaseDate": "10 Apr",
+          "animeId": "koori-jouheki-sub-indo",
+          "href": "/anime/anime/koori-jouheki-sub-indo",
+          "otakudesuUrl": "https://otakudesu.blog/anime/koori-jouheki-sub-indo/"
+        },
+        {
+          "title": "Dr. Stone: Science Future Part 3",
+          "poster": "https://otakudesu.blog/wp-content/uploads/2026/04/155779.jpg",
+          "episodes": 2,
+          "releaseDay": "Kamis",
+          "latestReleaseDate": "09 Apr",
+          "animeId": "ds-future-part3-sub-indo",
+          "href": "/anime/anime/ds-future-part3-sub-indo",
+          "otakudesuUrl": "https://otakudesu.blog/anime/ds-future-part3-sub-indo/"
+        },
+        {
+          "title": "Himekishi wa Barbaroi no Yome",
+          "poster": "https://otakudesu.blog/wp-content/uploads/2026/04/Himekishi-wa-Barbaroi-no-Yom.jpg",
+          "episodes": 1,
+          "releaseDay": "Kamis",
+          "latestReleaseDate": "09 Apr",
+          "animeId": "himekishi-barbaroi-yome-sub-indo",
+          "href": "/anime/anime/himekishi-barbaroi-yome-sub-indo",
+          "otakudesuUrl": "https://otakudesu.blog/anime/himekishi-barbaroi-yome-sub-indo/"
+        },
+        {
+          "title": "Nigashita Sakana wa Ookikatta ga Tsuriageta Sakana ga Ookisugita Ken",
+          "poster": "https://otakudesu.blog/wp-content/uploads/2026/04/155068.jpg",
+          "episodes": 2,
+          "releaseDay": "Kamis",
+          "latestReleaseDate": "09 Apr",
+          "animeId": "nigashita-sakana-sub-indo",
+          "href": "/anime/anime/nigashita-sakana-sub-indo",
+          "otakudesuUrl": "https://otakudesu.blog/anime/nigashita-sakana-sub-indo/"
+        },
+        {
+          "title": "The Beginning After the End Season 2",
+          "poster": "https://otakudesu.blog/wp-content/uploads/2026/04/156028.jpg",
+          "episodes": 2,
+          "releaseDay": "Kamis",
+          "latestReleaseDate": "09 Apr",
+          "animeId": "saikyou-ousama-nidome-s2-sub-indo",
+          "href": "/anime/anime/saikyou-ousama-nidome-s2-sub-indo",
+          "otakudesuUrl": "https://otakudesu.blog/anime/saikyou-ousama-nidome-s2-sub-indo/"
+        },
+        {
+          "title": "Otaku ni Yasashii Gal wa Inai!?",
+          "poster": "https://otakudesu.blog/wp-content/uploads/2026/04/otaku-ni-yasashii-gal-wa-inai-0044e17a044b4096940344b888dc701e.jpg",
+          "episodes": 1,
+          "releaseDay": "Rabu",
+          "latestReleaseDate": "09 Apr",
+          "animeId": "otaku-yasashii-gal-inai-sub-indo",
+          "href": "/anime/anime/otaku-yasashii-gal-inai-sub-indo",
+          "otakudesuUrl": "https://otakudesu.blog/anime/otaku-yasashii-gal-inai-sub-indo/"
+        },
+        {
+          "title": "Jidou Hanbaiki ni Umarekawatta Ore wa Meikyuu wo Samayou Season 3",
+          "poster": "https://otakudesu.blog/wp-content/uploads/2026/04/156029.jpg",
+          "episodes": 2,
+          "releaseDay": "Rabu",
+          "latestReleaseDate": "09 Apr",
+          "animeId": "vending-machine-s3-sub-indo",
+          "href": "/anime/anime/vending-machine-s3-sub-indo",
+          "otakudesuUrl": "https://otakudesu.blog/anime/vending-machine-s3-sub-indo/"
+        },
+        {
+          "title": "Dorohedoro Season 2",
+          "poster": "https://otakudesu.blog/wp-content/uploads/2026/04/Dorohedoro-Season-2.jpg",
+          "episodes": 4,
+          "releaseDay": "Kamis",
+          "latestReleaseDate": "08 Apr",
+          "animeId": "dorohedo-s2-sub-indo",
+          "href": "/anime/anime/dorohedo-s2-sub-indo",
+          "otakudesuUrl": "https://otakudesu.blog/anime/dorohedo-s2-sub-indo/"
+        },
+        {
+          "title": "Re:Zero kara Hajimeru Isekai Seikatsu Season 4",
+          "poster": "https://otakudesu.blog/wp-content/uploads/2026/04/s4.jpg",
+          "episodes": 1,
+          "releaseDay": "Rabu",
+          "latestReleaseDate": "08 Apr",
+          "animeId": "re-zero-kara-s4-sub-indo",
+          "href": "/anime/anime/re-zero-kara-s4-sub-indo",
+          "otakudesuUrl": "https://otakudesu.blog/anime/re-zero-kara-s4-sub-indo/"
+        },
+        {
+          "title": "Kanojo, Okarishimasu Season 5",
+          "poster": "https://otakudesu.blog/wp-content/uploads/2026/04/Kanojo-Okarishimasu-Season-5-Sub.jpg",
+          "episodes": 1,
+          "releaseDay": "Rabu",
+          "latestReleaseDate": "08 Apr",
+          "animeId": "kanojo-no-okarishimasu-s5-sub-indo",
+          "href": "/anime/anime/kanojo-no-okarishimasu-s5-sub-indo",
+          "otakudesuUrl": "https://otakudesu.blog/anime/kanojo-no-okarishimasu-s5-sub-indo/"
+        },
+        {
+          "title": "Youkoso Jitsuryoku Shijou Shugi no Kyoushitsu e Season 4",
+          "poster": "https://otakudesu.blog/wp-content/uploads/2026/04/Youkoso-Jitsuryoku-Shijou-Shugi-no-Kyoushitsu-e-S4.jpg",
+          "episodes": 5,
+          "releaseDay": "Rabu",
+          "latestReleaseDate": "08 Apr",
+          "animeId": "youkoso-jitsuryoku-shijou-shugi-no-kyoushitsu-e-s4-sub-indo",
+          "href": "/anime/anime/youkoso-jitsuryoku-shijou-shugi-no-kyoushitsu-e-s4-sub-indo",
+          "otakudesuUrl": "https://otakudesu.blog/anime/youkoso-jitsuryoku-shijou-shugi-no-kyoushitsu-e-s4-sub-indo/"
+        },
+        {
+          "title": "Megami \"Isekai Tensei Nani ni Naritai desu ka\" Ore \"Yuusha no Rokkotsu de\"",
+          "poster": "https://otakudesu.blog/wp-content/uploads/2026/04/156005.jpg",
+          "episodes": 1,
+          "releaseDay": "None",
+          "latestReleaseDate": "08 Apr",
+          "animeId": "my-ribdiculous-reincarnation-sub-indo",
+          "href": "/anime/anime/my-ribdiculous-reincarnation-sub-indo",
+          "otakudesuUrl": "https://otakudesu.blog/anime/my-ribdiculous-reincarnation-sub-indo/"
+        }
+      ]
+    },
+    "completed": {
+      "href": "/anime/complete-anime",
+      "otakudesuUrl": "https://otakudesu.blog/complete-anime/",
+      "animeList": [
+        {
+          "title": "Isekai de Cheat Skill wo Te ni Shita Ore wa",
+          "poster": "https://otakudesu.blog/wp-content/uploads/2023/05/Isekai-de-Cheat-Skill-wo-Te-ni-Shita-Ore-wa-Sub-Indo.jpg",
+          "episodes": 13,
+          "score": "6.36",
+          "lastReleaseDate": "30 Mar",
+          "animeId": "iseleve-sub-indo",
+          "href": "/anime/anime/iseleve-sub-indo",
+          "otakudesuUrl": "https://otakudesu.blog/anime/iseleve-sub-indo/"
+        },
+        {
+          "title": "Shuumatsu Touring",
+          "poster": "https://otakudesu.blog/wp-content/uploads/2026/03/Shuumatsu-Touring-Sub-Indo.jpg",
+          "episodes": 12,
+          "score": "6.79",
+          "lastReleaseDate": "01 Mar",
+          "animeId": "shuumatsu-touring-sub-indo",
+          "href": "/anime/anime/shuumatsu-touring-sub-indo",
+          "otakudesuUrl": "https://otakudesu.blog/anime/shuumatsu-touring-sub-indo/"
+        },
+        {
+          "title": "Towa no Yuugure",
+          "poster": "https://otakudesu.blog/wp-content/uploads/2026/02/Towa-no-Yuugure-Sub-Indo.jpg",
+          "episodes": 12,
+          "score": "6.52",
+          "lastReleaseDate": "07 Feb",
+          "animeId": "towa-yuugure-sub-indo",
+          "href": "/anime/anime/towa-yuugure-sub-indo",
+          "otakudesuUrl": "https://otakudesu.blog/anime/towa-yuugure-sub-indo/"
+        },
+        {
+          "title": "Wandance",
+          "poster": "https://otakudesu.blog/wp-content/uploads/2026/01/Wandance-Sub-Indo.jpg",
+          "episodes": 12,
+          "score": "Fall 2025",
+          "lastReleaseDate": "25 Jan",
+          "animeId": "wandnce-sub-indo",
+          "href": "/anime/anime/wandnce-sub-indo",
+          "otakudesuUrl": "https://otakudesu.blog/anime/wandnce-sub-indo/"
+        },
+        {
+          "title": "Nageki no Bourei wa Intai shitai Season 2",
+          "poster": "https://otakudesu.blog/wp-content/uploads/2026/01/Nageki-no-Bourei-wa-Intai-shitai-Season-2-Sub-Indo.jpg",
+          "episodes": 11,
+          "score": "7.54",
+          "lastReleaseDate": "21 Jan",
+          "animeId": "ageki-bourei-intai-shitai-s2-sub-indo",
+          "href": "/anime/anime/ageki-bourei-intai-shitai-s2-sub-indo",
+          "otakudesuUrl": "https://otakudesu.blog/anime/ageki-bourei-intai-shitai-s2-sub-indo/"
+        },
+        {
+          "title": "Chichi wa Eiyuu, Haha wa Seirei, Musume no Watashi wa Tenseisha.",
+          "poster": "https://otakudesu.blog/wp-content/uploads/2026/01/Chichi-wa-Eiyuu-Haha-wa-Seirei-Musume-no-Watashi-wa-Tenseisha.-Sub-Indo.jpg",
+          "episodes": 12,
+          "score": "6.65",
+          "lastReleaseDate": "17 Jan",
+          "animeId": "chichi-haha-seirei-sub-indo",
+          "href": "/anime/anime/chichi-haha-seirei-sub-indo",
+          "otakudesuUrl": "https://otakudesu.blog/anime/chichi-haha-seirei-sub-indo/"
+        },
+        {
+          "title": "Mugen Gacha",
+          "poster": "https://otakudesu.blog/wp-content/uploads/2026/01/Mugen-Gacha-Sub-Indo.jpg",
+          "episodes": 12,
+          "score": "7.09",
+          "lastReleaseDate": "16 Jan",
+          "animeId": "mugen-gacha-sub-indo",
+          "href": "/anime/anime/mugen-gacha-sub-indo",
+          "otakudesuUrl": "https://otakudesu.blog/anime/mugen-gacha-sub-indo/"
+        },
+        {
+          "title": "Alma-chan wa Kazoku ni Naritai",
+          "poster": "https://otakudesu.blog/wp-content/uploads/2026/01/Alma-chan-wa-Kazoku-ni-Naritai-Sub-Indo.jpg",
+          "episodes": 11,
+          "score": "7.11",
+          "lastReleaseDate": "15 Jan",
+          "animeId": "alma-kazoku-naritai-sub-indo",
+          "href": "/anime/anime/alma-kazoku-naritai-sub-indo",
+          "otakudesuUrl": "https://otakudesu.blog/anime/alma-kazoku-naritai-sub-indo/"
+        },
+        {
+          "title": "Akujiki Reijou to Kyouketsu Koushaku",
+          "poster": "https://otakudesu.blog/wp-content/uploads/2026/01/Akujiki-Reijou-to-Kyouketsu-Koushaku-Sub-Indo.jpg",
+          "episodes": 12,
+          "score": "7.12",
+          "lastReleaseDate": "12 Jan",
+          "animeId": "akujiki-reijou-kyouketsu-koushaku-sub-indo",
+          "href": "/anime/anime/akujiki-reijou-kyouketsu-koushaku-sub-indo",
+          "otakudesuUrl": "https://otakudesu.blog/anime/akujiki-reijou-kyouketsu-koushaku-sub-indo/"
+        },
+        {
+          "title": "Yasei no Last Boss ga Arawareta!",
+          "poster": "https://otakudesu.blog/wp-content/uploads/2026/01/Yasei-no-Last-Boss-ga-Arawareta-Sub-Indo.jpg",
+          "episodes": 12,
+          "score": "7.49",
+          "lastReleaseDate": "09 Jan",
+          "animeId": "yasei-last-bos-sub-indo",
+          "href": "/anime/anime/yasei-last-bos-sub-indo",
+          "otakudesuUrl": "https://otakudesu.blog/anime/yasei-last-bos-sub-indo/"
+        }
+      ]
+    }
+  },
+  "pagination": null
+}

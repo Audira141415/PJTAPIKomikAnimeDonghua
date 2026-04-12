@@ -1,0 +1,287 @@
+{
+  "status": "success",
+  "creator": "Sanka Vollerei",
+  "message": "",
+  "data": {
+    "animeList": [
+      {
+        "title": "One Piece Season 2 Live Action",
+        "poster": "https://v2.samehadaku.how/wp-content/uploads/2026/03/ertBp0VKT9.jpg",
+        "type": "TV",
+        "score": "8.3",
+        "status": "Completed",
+        "animeId": "one-piece-season-2-live-action",
+        "href": "/samehadaku/anime/one-piece-season-2-live-action",
+        "samehadakuUrl": "https://v2.samehadaku.how/anime/one-piece-season-2-live-action/",
+        "genreList": [
+          {
+            "title": "Action",
+            "genreId": "action",
+            "href": "/samehadaku/genres/action",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/action/"
+          },
+          {
+            "title": "Adventure",
+            "genreId": "adventure",
+            "href": "/samehadaku/genres/adventure",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/adventure/"
+          },
+          {
+            "title": "Comedy",
+            "genreId": "comedy",
+            "href": "/samehadaku/genres/comedy",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/comedy/"
+          },
+          {
+            "title": "Drama",
+            "genreId": "drama",
+            "href": "/samehadaku/genres/drama",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/drama/"
+          }
+        ]
+      },
+      {
+        "title": "One Piece: Gyojin Tou-hen",
+        "poster": "https://v2.samehadaku.how/wp-content/uploads/2024/11/One-Piece-Gyojin-Tou-hen.jpg",
+        "type": "TV",
+        "score": "",
+        "status": "Completed",
+        "animeId": "one-piece-gyojin-tou-hen",
+        "href": "/samehadaku/anime/one-piece-gyojin-tou-hen",
+        "samehadakuUrl": "https://v2.samehadaku.how/anime/one-piece-gyojin-tou-hen/",
+        "genreList": [
+          {
+            "title": "Action",
+            "genreId": "action",
+            "href": "/samehadaku/genres/action",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/action/"
+          },
+          {
+            "title": "Adventure",
+            "genreId": "adventure",
+            "href": "/samehadaku/genres/adventure",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/adventure/"
+          },
+          {
+            "title": "Fantasy",
+            "genreId": "fantasy",
+            "href": "/samehadaku/genres/fantasy",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/fantasy/"
+          }
+        ]
+      },
+      {
+        "title": "One Piece Fan Letter",
+        "poster": "https://v2.samehadaku.how/wp-content/uploads/2024/10/One-Piece-Fan-Letter.jpg",
+        "type": "TV",
+        "score": "8.86",
+        "status": "Completed",
+        "animeId": "one-piece-fan-letter",
+        "href": "/samehadaku/anime/one-piece-fan-letter",
+        "samehadakuUrl": "https://v2.samehadaku.how/anime/one-piece-fan-letter/",
+        "genreList": [
+          {
+            "title": "Action",
+            "genreId": "action",
+            "href": "/samehadaku/genres/action",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/action/"
+          },
+          {
+            "title": "Adventure",
+            "genreId": "adventure",
+            "href": "/samehadaku/genres/adventure",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/adventure/"
+          },
+          {
+            "title": "Fantasy",
+            "genreId": "fantasy",
+            "href": "/samehadaku/genres/fantasy",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/fantasy/"
+          }
+        ]
+      },
+      {
+        "title": "One Piece Live Action",
+        "poster": "https://v2.samehadaku.how/wp-content/uploads/2023/08/One-Piece-Live-Action-Cover.jpg",
+        "type": "TV",
+        "score": "8.6",
+        "status": "Completed",
+        "animeId": "one-piece-live-action",
+        "href": "/samehadaku/anime/one-piece-live-action",
+        "samehadakuUrl": "https://v2.samehadaku.how/anime/one-piece-live-action/",
+        "genreList": [
+          {
+            "title": "Action",
+            "genreId": "action",
+            "href": "/samehadaku/genres/action",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/action/"
+          },
+          {
+            "title": "Adventure",
+            "genreId": "adventure",
+            "href": "/samehadaku/genres/adventure",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/adventure/"
+          },
+          {
+            "title": "Comedy",
+            "genreId": "comedy",
+            "href": "/samehadaku/genres/comedy",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/comedy/"
+          },
+          {
+            "title": "Drama",
+            "genreId": "drama",
+            "href": "/samehadaku/genres/drama",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/drama/"
+          },
+          {
+            "title": "Fantasy",
+            "genreId": "fantasy",
+            "href": "/samehadaku/genres/fantasy",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/fantasy/"
+          },
+          {
+            "title": "Super Power",
+            "genreId": "super-power",
+            "href": "/samehadaku/genres/super-power",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/super-power/"
+          }
+        ]
+      },
+      {
+        "title": "One Piece Film: Red",
+        "poster": "https://v2.samehadaku.how/wp-content/uploads/2022/11/OPFR-Cover.jpg",
+        "type": "Movie",
+        "score": "7.98",
+        "status": "Completed",
+        "animeId": "one-piece-film-red",
+        "href": "/samehadaku/anime/one-piece-film-red",
+        "samehadakuUrl": "https://v2.samehadaku.how/anime/one-piece-film-red/",
+        "genreList": [
+          {
+            "title": "Action",
+            "genreId": "action",
+            "href": "/samehadaku/genres/action",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/action/"
+          },
+          {
+            "title": "Adventure",
+            "genreId": "adventure",
+            "href": "/samehadaku/genres/adventure",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/adventure/"
+          },
+          {
+            "title": "Comedy",
+            "genreId": "comedy",
+            "href": "/samehadaku/genres/comedy",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/comedy/"
+          },
+          {
+            "title": "Drama",
+            "genreId": "drama",
+            "href": "/samehadaku/genres/drama",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/drama/"
+          },
+          {
+            "title": "Fantasy",
+            "genreId": "fantasy",
+            "href": "/samehadaku/genres/fantasy",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/fantasy/"
+          }
+        ]
+      },
+      {
+        "title": "One Piece",
+        "poster": "https://v2.samehadaku.how/wp-content/uploads/2020/04/E5RxYkWX0AAwdGH.png.jpg",
+        "type": "TV",
+        "score": "8.73",
+        "status": "Ongoing",
+        "animeId": "one-piece",
+        "href": "/samehadaku/anime/one-piece",
+        "samehadakuUrl": "https://v2.samehadaku.how/anime/one-piece/",
+        "genreList": [
+          {
+            "title": "Action",
+            "genreId": "action",
+            "href": "/samehadaku/genres/action",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/action/"
+          },
+          {
+            "title": "Adventure",
+            "genreId": "adventure",
+            "href": "/samehadaku/genres/adventure",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/adventure/"
+          },
+          {
+            "title": "Comedy",
+            "genreId": "comedy",
+            "href": "/samehadaku/genres/comedy",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/comedy/"
+          },
+          {
+            "title": "Drama",
+            "genreId": "drama",
+            "href": "/samehadaku/genres/drama",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/drama/"
+          },
+          {
+            "title": "Fantasy",
+            "genreId": "fantasy",
+            "href": "/samehadaku/genres/fantasy",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/fantasy/"
+          },
+          {
+            "title": "Shounen",
+            "genreId": "shounen",
+            "href": "/samehadaku/genres/shounen",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/shounen/"
+          },
+          {
+            "title": "Super Power",
+            "genreId": "super-power",
+            "href": "/samehadaku/genres/super-power",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/super-power/"
+          }
+        ]
+      },
+      {
+        "title": "Monsters: Ippyaku Sanjou Hiryuu Jigoku",
+        "poster": "https://v2.samehadaku.how/wp-content/uploads/2024/01/Monsters-Ippyaku-Sanjou-Hiryuu-Jigoku-Cover.jpg",
+        "type": "OVA",
+        "score": "7.70",
+        "status": "Completed",
+        "animeId": "monsters-ippyaku-sanjou-hiryuu-jigoku",
+        "href": "/samehadaku/anime/monsters-ippyaku-sanjou-hiryuu-jigoku",
+        "samehadakuUrl": "https://v2.samehadaku.how/anime/monsters-ippyaku-sanjou-hiryuu-jigoku/",
+        "genreList": [
+          {
+            "title": "Action",
+            "genreId": "action",
+            "href": "/samehadaku/genres/action",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/action/"
+          },
+          {
+            "title": "Fantasy",
+            "genreId": "fantasy",
+            "href": "/samehadaku/genres/fantasy",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/fantasy/"
+          },
+          {
+            "title": "Shounen",
+            "genreId": "shounen",
+            "href": "/samehadaku/genres/shounen",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/shounen/"
+          }
+        ]
+      }
+    ]
+  },
+  "pagination": {
+    "currentPage": 1,
+    "hasPrevPage": false,
+    "prevPage": null,
+    "hasNextPage": false,
+    "nextPage": null,
+    "totalPages": 1
+  }
+}

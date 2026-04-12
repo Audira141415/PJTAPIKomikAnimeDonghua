@@ -1,0 +1,533 @@
+{
+  "status": "success",
+  "creator": "Sanka Vollerei",
+  "message": "",
+  "data": {
+    "animeList": [
+      {
+        "title": "Marriagetoxin",
+        "poster": "https://v2.samehadaku.how/wp-content/uploads/2026/04/Marriagetoxin.jpg",
+        "type": "TV",
+        "score": "",
+        "status": "Ongoing",
+        "animeId": "marriagetoxin",
+        "href": "/samehadaku/anime/marriagetoxin",
+        "samehadakuUrl": "https://v2.samehadaku.how/anime/marriagetoxin/",
+        "genreList": [
+          {
+            "title": "Action",
+            "genreId": "action",
+            "href": "/samehadaku/genres/action",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/action/"
+          },
+          {
+            "title": "Adult Cast",
+            "genreId": "adult-cast",
+            "href": "/samehadaku/genres/adult-cast",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/adult-cast/"
+          },
+          {
+            "title": "Shounen",
+            "genreId": "shounen",
+            "href": "/samehadaku/genres/shounen",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/shounen/"
+          }
+        ]
+      },
+      {
+        "title": "Ghost Concert missing Songs",
+        "poster": "https://v2.samehadaku.how/wp-content/uploads/2026/04/GHOST-CONCERT-missing-Songs.jpg",
+        "type": "TV",
+        "score": "",
+        "status": "Ongoing",
+        "animeId": "ghost-concert-missing-songs",
+        "href": "/samehadaku/anime/ghost-concert-missing-songs",
+        "samehadakuUrl": "https://v2.samehadaku.how/anime/ghost-concert-missing-songs/",
+        "genreList": [
+          {
+            "title": "Action",
+            "genreId": "action",
+            "href": "/samehadaku/genres/action",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/action/"
+          },
+          {
+            "title": "Music",
+            "genreId": "music",
+            "href": "/samehadaku/genres/music",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/music/"
+          },
+          {
+            "title": "Sci-Fi",
+            "genreId": "sci-fi",
+            "href": "/samehadaku/genres/sci-fi",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/sci-fi/"
+          },
+          {
+            "title": "Supernatural",
+            "genreId": "supernatural",
+            "href": "/samehadaku/genres/supernatural",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/supernatural/"
+          }
+        ]
+      },
+      {
+        "title": "Yomi no Tsugai",
+        "poster": "https://v2.samehadaku.how/wp-content/uploads/2026/04/156397.jpg",
+        "type": "TV",
+        "score": "",
+        "status": "Ongoing",
+        "animeId": "yomi-no-tsugai",
+        "href": "/samehadaku/anime/yomi-no-tsugai",
+        "samehadakuUrl": "https://v2.samehadaku.how/anime/yomi-no-tsugai/",
+        "genreList": [
+          {
+            "title": "Action",
+            "genreId": "action",
+            "href": "/samehadaku/genres/action",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/action/"
+          },
+          {
+            "title": "Adventure",
+            "genreId": "adventure",
+            "href": "/samehadaku/genres/adventure",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/adventure/"
+          },
+          {
+            "title": "Fantasy",
+            "genreId": "fantasy",
+            "href": "/samehadaku/genres/fantasy",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/fantasy/"
+          }
+        ]
+      },
+      {
+        "title": "Tensei shitara Slime Datta Ken Season 4",
+        "poster": "https://v2.samehadaku.how/wp-content/uploads/2026/04/Tensei-shitara-Slime-Datta-Ken-Season-4.jpg",
+        "type": "TV",
+        "score": "",
+        "status": "Ongoing",
+        "animeId": "tensei-shitara-slime-datta-ken-season-4",
+        "href": "/samehadaku/anime/tensei-shitara-slime-datta-ken-season-4",
+        "samehadakuUrl": "https://v2.samehadaku.how/anime/tensei-shitara-slime-datta-ken-season-4/",
+        "genreList": [
+          {
+            "title": "Action",
+            "genreId": "action",
+            "href": "/samehadaku/genres/action",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/action/"
+          },
+          {
+            "title": "Comedy",
+            "genreId": "comedy",
+            "href": "/samehadaku/genres/comedy",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/comedy/"
+          },
+          {
+            "title": "Fantasy",
+            "genreId": "fantasy",
+            "href": "/samehadaku/genres/fantasy",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/fantasy/"
+          },
+          {
+            "title": "Isekai",
+            "genreId": "isekai",
+            "href": "/samehadaku/genres/isekai",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/isekai/"
+          },
+          {
+            "title": "Reincarnation",
+            "genreId": "reincarnation",
+            "href": "/samehadaku/genres/reincarnation",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/reincarnation/"
+          },
+          {
+            "title": "Shounen",
+            "genreId": "shounen",
+            "href": "/samehadaku/genres/shounen",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/shounen/"
+          }
+        ]
+      },
+      {
+        "title": "Reincarnation no Kaben",
+        "poster": "https://v2.samehadaku.how/wp-content/uploads/2026/04/Reincarnation-no-Kaben.jpg",
+        "type": "TV",
+        "score": "6.51",
+        "status": "Ongoing",
+        "animeId": "reincarnation-no-kaben",
+        "href": "/samehadaku/anime/reincarnation-no-kaben",
+        "samehadakuUrl": "https://v2.samehadaku.how/anime/reincarnation-no-kaben/",
+        "genreList": [
+          {
+            "title": "Action",
+            "genreId": "action",
+            "href": "/samehadaku/genres/action",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/action/"
+          },
+          {
+            "title": "Mystery",
+            "genreId": "mystery",
+            "href": "/samehadaku/genres/mystery",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/mystery/"
+          },
+          {
+            "title": "Reincarnation",
+            "genreId": "reincarnation",
+            "href": "/samehadaku/genres/reincarnation",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/reincarnation/"
+          },
+          {
+            "title": "Shounen",
+            "genreId": "shounen",
+            "href": "/samehadaku/genres/shounen",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/shounen/"
+          },
+          {
+            "title": "Supernatural",
+            "genreId": "supernatural",
+            "href": "/samehadaku/genres/supernatural",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/supernatural/"
+          }
+        ]
+      },
+      {
+        "title": "Monster Eater",
+        "poster": "https://v2.samehadaku.how/wp-content/uploads/2026/04/325085.jpg",
+        "type": "TV",
+        "score": "3.93",
+        "status": "Ongoing",
+        "animeId": "monster-eater",
+        "href": "/samehadaku/anime/monster-eater",
+        "samehadakuUrl": "https://v2.samehadaku.how/anime/monster-eater/",
+        "genreList": [
+          {
+            "title": "Action",
+            "genreId": "action",
+            "href": "/samehadaku/genres/action",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/action/"
+          },
+          {
+            "title": "Fantasy",
+            "genreId": "fantasy",
+            "href": "/samehadaku/genres/fantasy",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/fantasy/"
+          }
+        ]
+      },
+      {
+        "title": "Isekai de Cheat Skill wo Te ni Shita Ore wa, Genjitsu Sekai wo mo Musou Suru: Level Up wa Jinsei wo Kaeta TV Spesial",
+        "poster": "https://v2.samehadaku.how/wp-content/uploads/2026/03/bx170110-MzWm7RaFxAnu.png",
+        "type": "Special",
+        "score": "",
+        "status": "Completed",
+        "animeId": "iseleve-tv-spesial",
+        "href": "/samehadaku/anime/iseleve-tv-spesial",
+        "samehadakuUrl": "https://v2.samehadaku.how/anime/iseleve-tv-spesial/",
+        "genreList": [
+          {
+            "title": "Action",
+            "genreId": "action",
+            "href": "/samehadaku/genres/action",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/action/"
+          },
+          {
+            "title": "Adventure",
+            "genreId": "adventure",
+            "href": "/samehadaku/genres/adventure",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/adventure/"
+          },
+          {
+            "title": "Fantasy",
+            "genreId": "fantasy",
+            "href": "/samehadaku/genres/fantasy",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/fantasy/"
+          },
+          {
+            "title": "Isekai",
+            "genreId": "isekai",
+            "href": "/samehadaku/genres/isekai",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/isekai/"
+          },
+          {
+            "title": "School",
+            "genreId": "school",
+            "href": "/samehadaku/genres/school",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/school/"
+          }
+        ]
+      },
+      {
+        "title": "One Piece Season 2 Live Action",
+        "poster": "https://v2.samehadaku.how/wp-content/uploads/2026/03/ertBp0VKT9.jpg",
+        "type": "TV",
+        "score": "8.3",
+        "status": "Completed",
+        "animeId": "one-piece-season-2-live-action",
+        "href": "/samehadaku/anime/one-piece-season-2-live-action",
+        "samehadakuUrl": "https://v2.samehadaku.how/anime/one-piece-season-2-live-action/",
+        "genreList": [
+          {
+            "title": "Action",
+            "genreId": "action",
+            "href": "/samehadaku/genres/action",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/action/"
+          },
+          {
+            "title": "Adventure",
+            "genreId": "adventure",
+            "href": "/samehadaku/genres/adventure",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/adventure/"
+          },
+          {
+            "title": "Comedy",
+            "genreId": "comedy",
+            "href": "/samehadaku/genres/comedy",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/comedy/"
+          },
+          {
+            "title": "Drama",
+            "genreId": "drama",
+            "href": "/samehadaku/genres/drama",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/drama/"
+          }
+        ]
+      },
+      {
+        "title": "Jigokuraku Season 2",
+        "poster": "https://v2.samehadaku.how/wp-content/uploads/2026/01/154456.jpg",
+        "type": "TV",
+        "score": "8.2",
+        "status": "Completed",
+        "animeId": "jigokuraku-season-2",
+        "href": "/samehadaku/anime/jigokuraku-season-2",
+        "samehadakuUrl": "https://v2.samehadaku.how/anime/jigokuraku-season-2/",
+        "genreList": [
+          {
+            "title": "Action",
+            "genreId": "action",
+            "href": "/samehadaku/genres/action",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/action/"
+          },
+          {
+            "title": "Adventure",
+            "genreId": "adventure",
+            "href": "/samehadaku/genres/adventure",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/adventure/"
+          },
+          {
+            "title": "Gore",
+            "genreId": "gore",
+            "href": "/samehadaku/genres/gore",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/gore/"
+          },
+          {
+            "title": "Historical",
+            "genreId": "historical",
+            "href": "/samehadaku/genres/historical",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/historical/"
+          },
+          {
+            "title": "Samurai",
+            "genreId": "samurai",
+            "href": "/samehadaku/genres/samurai",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/samurai/"
+          },
+          {
+            "title": "Supernatural",
+            "genreId": "supernatural",
+            "href": "/samehadaku/genres/supernatural",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/supernatural/"
+          }
+        ]
+      },
+      {
+        "title": "Trigun Stargaze",
+        "poster": "https://v2.samehadaku.how/wp-content/uploads/2026/01/154541.jpg",
+        "type": "TV",
+        "score": "7.35",
+        "status": "Completed",
+        "animeId": "trigun-stargaze",
+        "href": "/samehadaku/anime/trigun-stargaze",
+        "samehadakuUrl": "https://v2.samehadaku.how/anime/trigun-stargaze/",
+        "genreList": [
+          {
+            "title": "Action",
+            "genreId": "action",
+            "href": "/samehadaku/genres/action",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/action/"
+          },
+          {
+            "title": "Adventure",
+            "genreId": "adventure",
+            "href": "/samehadaku/genres/adventure",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/adventure/"
+          },
+          {
+            "title": "Sci-Fi",
+            "genreId": "sci-fi",
+            "href": "/samehadaku/genres/sci-fi",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/sci-fi/"
+          }
+        ]
+      },
+      {
+        "title": "Tensei shitara Dragon no Tamago datta",
+        "poster": "https://v2.samehadaku.how/wp-content/uploads/2026/01/Tensei-shitara-Dragon-no-Tamago-datta.jpg",
+        "type": "TV",
+        "score": "6.42",
+        "status": "Completed",
+        "animeId": "tensei-shitara-dragon-no-tamago-datta",
+        "href": "/samehadaku/anime/tensei-shitara-dragon-no-tamago-datta",
+        "samehadakuUrl": "https://v2.samehadaku.how/anime/tensei-shitara-dragon-no-tamago-datta/",
+        "genreList": [
+          {
+            "title": "Action",
+            "genreId": "action",
+            "href": "/samehadaku/genres/action",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/action/"
+          },
+          {
+            "title": "Adventure",
+            "genreId": "adventure",
+            "href": "/samehadaku/genres/adventure",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/adventure/"
+          },
+          {
+            "title": "Fantasy",
+            "genreId": "fantasy",
+            "href": "/samehadaku/genres/fantasy",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/fantasy/"
+          },
+          {
+            "title": "Isekai",
+            "genreId": "isekai",
+            "href": "/samehadaku/genres/isekai",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/isekai/"
+          },
+          {
+            "title": "Reincarnation",
+            "genreId": "reincarnation",
+            "href": "/samehadaku/genres/reincarnation",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/reincarnation/"
+          }
+        ]
+      },
+      {
+        "title": "Dead Account",
+        "poster": "https://v2.samehadaku.how/wp-content/uploads/2026/01/154192.jpg",
+        "type": "TV",
+        "score": "6.6",
+        "status": "Completed",
+        "animeId": "dead-account",
+        "href": "/samehadaku/anime/dead-account",
+        "samehadakuUrl": "https://v2.samehadaku.how/anime/dead-account/",
+        "genreList": [
+          {
+            "title": "Action",
+            "genreId": "action",
+            "href": "/samehadaku/genres/action",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/action/"
+          },
+          {
+            "title": "Supernatural",
+            "genreId": "supernatural",
+            "href": "/samehadaku/genres/supernatural",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/supernatural/"
+          }
+        ]
+      },
+      {
+        "title": "Hell Mode Yarikomizuki no Gamer",
+        "poster": "https://v2.samehadaku.how/wp-content/uploads/2026/01/Hell-Mode-Yarikomizuki-no-Gamer.jpg",
+        "type": "TV",
+        "score": "7.17",
+        "status": "Completed",
+        "animeId": "hell-mode-yarikomizuki-no-gamer",
+        "href": "/samehadaku/anime/hell-mode-yarikomizuki-no-gamer",
+        "samehadakuUrl": "https://v2.samehadaku.how/anime/hell-mode-yarikomizuki-no-gamer/",
+        "genreList": [
+          {
+            "title": "Action",
+            "genreId": "action",
+            "href": "/samehadaku/genres/action",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/action/"
+          },
+          {
+            "title": "Adventure",
+            "genreId": "adventure",
+            "href": "/samehadaku/genres/adventure",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/adventure/"
+          },
+          {
+            "title": "Fantasy",
+            "genreId": "fantasy",
+            "href": "/samehadaku/genres/fantasy",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/fantasy/"
+          },
+          {
+            "title": "Isekai",
+            "genreId": "isekai",
+            "href": "/samehadaku/genres/isekai",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/isekai/"
+          },
+          {
+            "title": "Reincarnation",
+            "genreId": "reincarnation",
+            "href": "/samehadaku/genres/reincarnation",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/reincarnation/"
+          }
+        ]
+      },
+      {
+        "title": "Fire Force Season 3 Part 2",
+        "poster": "https://v2.samehadaku.how/wp-content/uploads/2026/01/Fire-Force-Season-3-Part-2.jpg",
+        "type": "TV",
+        "score": "8.14",
+        "status": "Completed",
+        "animeId": "fire-force-season-3-part-2",
+        "href": "/samehadaku/anime/fire-force-season-3-part-2",
+        "samehadakuUrl": "https://v2.samehadaku.how/anime/fire-force-season-3-part-2/",
+        "genreList": [
+          {
+            "title": "Action",
+            "genreId": "action",
+            "href": "/samehadaku/genres/action",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/action/"
+          },
+          {
+            "title": "Fantasy",
+            "genreId": "fantasy",
+            "href": "/samehadaku/genres/fantasy",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/fantasy/"
+          },
+          {
+            "title": "Sci-Fi",
+            "genreId": "sci-fi",
+            "href": "/samehadaku/genres/sci-fi",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/sci-fi/"
+          },
+          {
+            "title": "Shounen",
+            "genreId": "shounen",
+            "href": "/samehadaku/genres/shounen",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/shounen/"
+          },
+          {
+            "title": "Urban Fantasy",
+            "genreId": "urban-fantasy",
+            "href": "/samehadaku/genres/urban-fantasy",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/urban-fantasy/"
+          }
+        ]
+      }
+    ]
+  },
+  "pagination": {
+    "currentPage": 1,
+    "hasPrevPage": false,
+    "prevPage": null,
+    "hasNextPage": true,
+    "nextPage": 2,
+    "totalPages": 26
+  }
+}

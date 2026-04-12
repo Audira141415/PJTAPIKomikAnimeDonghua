@@ -1,0 +1,130 @@
+{
+  "status": "success",
+  "creator": "Sanka Vollerei",
+  "message": "",
+  "data": {
+    "genreList": [
+      {
+        "title": "Fantasy",
+        "genreId": "fantasy",
+        "href": "/samehadaku/genres/fantasy",
+        "samehadakuUrl": "https://v2.samehadaku.how/genre/fantasy"
+      },
+      {
+        "title": "Action",
+        "genreId": "action",
+        "href": "/samehadaku/genres/action",
+        "samehadakuUrl": "https://v2.samehadaku.how/genre/action"
+      },
+      {
+        "title": "Adventure",
+        "genreId": "adventure",
+        "href": "/samehadaku/genres/adventure",
+        "samehadakuUrl": "https://v2.samehadaku.how/genre/adventure"
+      },
+      {
+        "title": "Comedy",
+        "genreId": "comedy",
+        "href": "/samehadaku/genres/comedy",
+        "samehadakuUrl": "https://v2.samehadaku.how/genre/comedy"
+      },
+      {
+        "title": "Shounen",
+        "genreId": "shounen",
+        "href": "/samehadaku/genres/shounen",
+        "samehadakuUrl": "https://v2.samehadaku.how/genre/shounen"
+      },
+      {
+        "title": "School",
+        "genreId": "school",
+        "href": "/samehadaku/genres/school",
+        "samehadakuUrl": "https://v2.samehadaku.how/genre/school"
+      },
+      {
+        "title": "Romance",
+        "genreId": "romance",
+        "href": "/samehadaku/genres/romance",
+        "samehadakuUrl": "https://v2.samehadaku.how/genre/romance"
+      },
+      {
+        "title": "Drama",
+        "genreId": "drama",
+        "href": "/samehadaku/genres/drama",
+        "samehadakuUrl": "https://v2.samehadaku.how/genre/drama"
+      },
+      {
+        "title": "Supernatural",
+        "genreId": "supernatural",
+        "href": "/samehadaku/genres/supernatural",
+        "samehadakuUrl": "https://v2.samehadaku.how/genre/supernatural"
+      },
+      {
+        "title": "Isekai",
+        "genreId": "isekai",
+        "href": "/samehadaku/genres/isekai",
+        "samehadakuUrl": "https://v2.samehadaku.how/genre/isekai"
+      },
+      {
+        "title": "Sci-Fi",
+        "genreId": "sci-fi",
+        "href": "/samehadaku/genres/sci-fi",
+        "samehadakuUrl": "https://v2.samehadaku.how/genre/sci-fi"
+      },
+      {
+        "title": "Seinen",
+        "genreId": "seinen",
+        "href": "/samehadaku/genres/seinen",
+        "samehadakuUrl": "https://v2.samehadaku.how/genre/seinen"
+      },
+      {
+        "title": "Reincarnation",
+        "genreId": "reincarnation",
+        "href": "/samehadaku/genres/reincarnation",
+        "samehadakuUrl": "https://v2.samehadaku.how/genre/reincarnation"
+      },
+      {
+        "title": "Historical",
+        "genreId": "historical",
+        "href": "/samehadaku/genres/historical",
+        "samehadakuUrl": "https://v2.samehadaku.how/genre/historical"
+      },
+      {
+        "title": "Mystery",
+        "genreId": "mystery",
+        "href": "/samehadaku/genres/mystery",
+        "samehadakuUrl": "https://v2.samehadaku.how/genre/mystery"
+      },
+      {
+        "title": "Super Power",
+        "genreId": "super-power",
+        "href": "/samehadaku/genres/super-power",
+        "samehadakuUrl": "https://v2.samehadaku.how/genre/super-power"
+      },
+      {
+        "title": "Harem",
+        "genreId": "harem",
+        "href": "/samehadaku/genres/harem",
+        "samehadakuUrl": "https://v2.samehadaku.how/genre/harem"
+      },
+      {
+        "title": "Slice of Life",
+        "genreId": "slice-of-life",
+        "href": "/samehadaku/genres/slice-of-life",
+        "samehadakuUrl": "https://v2.samehadaku.how/genre/slice-of-life"
+      },
+      {
+        "title": "Ecchi",
+        "genreId": "ecchi",
+        "href": "/samehadaku/genres/ecchi",
+        "samehadakuUrl": "https://v2.samehadaku.how/genre/ecchi"
+      },
+      {
+        "title": "Sports",
+        "genreId": "sports",
+        "href": "/samehadaku/genres/sports",
+        "samehadakuUrl": "https://v2.samehadaku.how/genre/sports"
+      }
+    ]
+  },
+  "pagination": null
+}

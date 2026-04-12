@@ -1,0 +1,81 @@
+{
+  "status": "success",
+  "creator": "Sanka Vollerei",
+  "day": "senin",
+  "available_days": [
+    "senin",
+    "selasa",
+    "rabu",
+    "kamis",
+    "jumat",
+    "sabtu",
+    "minggu",
+    "acak",
+    "all"
+  ],
+  "data": [
+    {
+      "title": "Ingoku Danchi",
+      "id": "ingoku-danchi",
+      "type": "ONA",
+      "time": "",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/155741.jpg",
+      "score": "6",
+      "url": "https://winbu.net/anime/ingoku-danchi/"
+    },
+    {
+      "title": "Marika-chan no Koukando wa Bukkowareteiru",
+      "id": "marika-chan-no-koukando-wa-bukkowareteiru",
+      "type": "TV",
+      "time": "",
+      "image": null,
+      "score": "5.67",
+      "url": "https://winbu.net/anime/marika-chan-no-koukando-wa-bukkowareteiru/"
+    },
+    {
+      "title": "Starting With a King Account",
+      "id": "starting-with-a-king-account",
+      "type": "ONA",
+      "time": "",
+      "image": "https://winbu.net/wp-content/uploads/2026/02/152592.jpg",
+      "score": "-",
+      "url": "https://winbu.net/anime/starting-with-a-king-account/"
+    },
+    {
+      "title": "Isekai Nonbiri Nouka 2",
+      "id": "isekai-nonbiri-nouka-2",
+      "type": "TV",
+      "time": "22:30",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/156369.jpg",
+      "score": "7.3",
+      "url": "https://winbu.net/anime/isekai-nonbiri-nouka-2/"
+    },
+    {
+      "title": "Tongari Boushi no Atelier",
+      "id": "tongari-boushi-no-atelier",
+      "type": "TV",
+      "time": "23:00",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/155542.jpg",
+      "score": "7.3",
+      "url": "https://winbu.net/anime/tongari-boushi-no-atelier/"
+    },
+    {
+      "title": "Liar Game",
+      "id": "liar-game",
+      "type": "TV",
+      "time": "23:40",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/156078.jpg",
+      "score": "6.7",
+      "url": "https://winbu.net/anime/liar-game/"
+    },
+    {
+      "title": "Ponkotsu Fuuki Iin to Skirt-take ga Futekisetsu na JK no Hanashi",
+      "id": "ponkotsu-fuuki-iin-to-skirt-take-ga-futekisetsu-na-jk-no-hanashi",
+      "type": "TV",
+      "time": "23:45",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/155726.jpg",
+      "score": "7.48",
+      "url": "https://winbu.net/anime/ponkotsu-fuuki-iin-to-skirt-take-ga-futekisetsu-na-jk-no-hanashi/"
+    }
+  ]
+}

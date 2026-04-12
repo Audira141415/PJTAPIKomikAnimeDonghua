@@ -1,0 +1,288 @@
+{
+  "status": "success",
+  "creator": "Sanka Vollerei",
+  "message": "Completed Anime",
+  "data": [
+    {
+      "title": "Tensei Akujo no Kuro Rekishi OVA",
+      "id": "tensei-akujo-no-kuro-rekishi-ova",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/156597_200x300.jpeg",
+      "rating": "0",
+      "time": "5 hari",
+      "episode": ""
+    },
+    {
+      "title": "AnimeJapan Awards",
+      "id": "animejapan-awards",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2026/03/AnimeJapan-Awards-200x300-1_200x300.jpeg",
+      "rating": "0",
+      "time": "10 hari",
+      "episode": ""
+    },
+    {
+      "title": "Martial God Asura 2",
+      "id": "martial-god-asura-2",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2026/03/155607l_200x300.jpeg",
+      "rating": "0",
+      "time": "3 hari",
+      "episode": ""
+    },
+    {
+      "title": "Isekai de Cheat Skill wo Te ni Shita Ore wa, Genjitsu Sekai wo mo Musou Suru: Level Up wa Jinsei wo Kaeta (TV Special)",
+      "id": "isekai-de-cheat-skill-wo-te-ni-shita-ore-wa-genjitsu-sekai-wo-mo-musou-suru-level-up-wa-jinsei-wo-kaeta-tv-special",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2026/03/155201_200x300.jpeg",
+      "rating": "0",
+      "time": "11 hari",
+      "episode": ""
+    },
+    {
+      "title": "Baki-dou",
+      "id": "baki-dou",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2026/02/155148_200x300.jpeg",
+      "rating": "0",
+      "time": "1 bulan",
+      "episode": ""
+    },
+    {
+      "title": "Tensui no Sakuna-hime: Kokorowa Inasaku Nisshi",
+      "id": "tensui-no-sakuna-hime-kokorowa-inasaku-nisshi",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2026/02/155016_200x300.jpeg",
+      "rating": "0",
+      "time": "1 bulan",
+      "episode": ""
+    },
+    {
+      "title": "Medalist Season 2",
+      "id": "medalist-season-2",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2026/01/155038_200x300.jpeg",
+      "rating": "0",
+      "time": "19 hari",
+      "episode": ""
+    },
+    {
+      "title": "High School! Kimengumi (2026)",
+      "id": "high-school-kimengumi-2026",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2026/01/154507_200x300.jpeg",
+      "rating": "0",
+      "time": "12 hari",
+      "episode": ""
+    },
+    {
+      "title": "Android wa Keiken Ninzuu ni Hairimasu ka??",
+      "id": "android-wa-keiken-ninzuu-ni-hairimasu-ka",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2026/01/149783_200x300.jpeg",
+      "rating": "0",
+      "time": "1 bulan",
+      "episode": ""
+    },
+    {
+      "title": "Sousou no Frieren Season 2",
+      "id": "sousou-no-frieren-season-2",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2026/01/154528_200x300.jpeg",
+      "rating": "0",
+      "time": "13 hari",
+      "episode": ""
+    },
+    {
+      "title": "Himesama “Goumon” no Jikan desu Season 2",
+      "id": "himesama-goumon-no-jikan-desu-season-2",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2026/01/153326_200x300.jpeg",
+      "rating": "0",
+      "time": "10 hari",
+      "episode": ""
+    },
+    {
+      "title": "Jingai Kyoushitsu no Ningengirai Kyoushi",
+      "id": "jingai-kyoushitsu-no-ningengirai-kyoushi",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2026/01/154934_200x300.jpeg",
+      "rating": "0",
+      "time": "5 hari",
+      "episode": ""
+    },
+    {
+      "title": "Uruwashi no Yoi no Tsuki",
+      "id": "uruwashi-no-yoi-no-tsuki",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2026/01/154569_200x300.jpeg",
+      "rating": "0",
+      "time": "11 hari",
+      "episode": ""
+    },
+    {
+      "title": "Jigokuraku Season 2",
+      "id": "jigokuraku-season-2",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2026/01/154456_200x300.jpeg",
+      "rating": "0",
+      "time": "11 hari",
+      "episode": ""
+    },
+    {
+      "title": "Hikuidori: Ushuu Boro Tobi-gumi",
+      "id": "hikuidori-ushuu-boro-tobi-gumi",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2026/01/151615_200x300.jpeg",
+      "rating": "0",
+      "time": "11 hari",
+      "episode": ""
+    },
+    {
+      "title": "Akuyaku Reijou wa Ringoku no Outaishi ni Dekiai sareru",
+      "id": "akuyaku-reijou-wa-ringoku-no-outaishi-ni-dekiai-sareru",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2026/01/151284_200x300.jpeg",
+      "rating": "0",
+      "time": "11 hari",
+      "episode": ""
+    },
+    {
+      "title": "Seihantai na Kimi to Boku",
+      "id": "seihantai-na-kimi-to-boku",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2026/01/154457_200x300.jpeg",
+      "rating": "0",
+      "time": "11 hari",
+      "episode": ""
+    },
+    {
+      "title": "Kaya-chan wa Kowakunai",
+      "id": "kaya-chan-wa-kowakunai",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2026/01/153705_200x300.jpeg",
+      "rating": "0",
+      "time": "11 hari",
+      "episode": ""
+    },
+    {
+      "title": "Yuusha no Kuzu",
+      "id": "yuusha-no-kuzu",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2026/01/154043_200x300.jpeg",
+      "rating": "0",
+      "time": "12 hari",
+      "episode": ""
+    },
+    {
+      "title": "Trigun Stargaze",
+      "id": "trigun-stargaze",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2026/01/154541_200x300.jpeg",
+      "rating": "0",
+      "time": "12 hari",
+      "episode": ""
+    },
+    {
+      "title": "Tensei shitara Dragon no Tamago datta",
+      "id": "tensei-shitara-dragon-no-tamago-datta",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2026/01/154235_200x300.jpeg",
+      "rating": "0",
+      "time": "12 hari",
+      "episode": ""
+    },
+    {
+      "title": "Dead Account",
+      "id": "dead-account",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2026/01/154192_200x300.jpeg",
+      "rating": "0",
+      "time": "12 hari",
+      "episode": ""
+    },
+    {
+      "title": "Hell Mode: Yarikomizuki no Gamer wa Hai Settei no Isekai de Musou suru",
+      "id": "hell-mode-yarikomizuki-no-gamer-wa-hai-settei-no-isekai-de-musou-suru",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2026/01/152479_200x300.jpeg",
+      "rating": "0",
+      "time": "13 hari",
+      "episode": ""
+    },
+    {
+      "title": "Enen no Shouboutai: San no Shou Part 2",
+      "id": "enen-no-shouboutai-san-no-shou-part-2",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2026/01/152472_200x300.jpeg",
+      "rating": "0",
+      "time": "6 hari",
+      "episode": ""
+    },
+    {
+      "title": "Dark Moon: Tsuki no Saidan",
+      "id": "dark-moon-tsuki-no-saidan",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2026/01/154695_200x300.jpeg",
+      "rating": "0",
+      "time": "13 hari",
+      "episode": ""
+    },
+    {
+      "title": "Champignon no Majo",
+      "id": "champignon-no-majo",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2026/01/152613_200x300.jpeg",
+      "rating": "0",
+      "time": "21 hari",
+      "episode": ""
+    },
+    {
+      "title": "Douse, Koishite Shimaunda. Season 2",
+      "id": "douse-koishite-shimaunda-season-2",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2026/01/153719_200x300.jpeg",
+      "rating": "0",
+      "time": "14 hari",
+      "episode": ""
+    },
+    {
+      "title": "Jujutsu Kaisen Season 3",
+      "id": "jujutsu-kaisen-season-3",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2026/03/75693_200x300.jpeg",
+      "rating": "0",
+      "time": "13 hari",
+      "episode": ""
+    },
+    {
+      "title": "“Omae Gotoki ga Maou ni Kateru to Omouna” to Yuusha Party wo Tsuihou sareta node, Outo de Kimama ni Kurashitai",
+      "id": "omae-gotoki-ga-maou-ni-kateru-to-omouna-to-yuusha-party-wo-tsuihou-sareta-node-outo-de-kimama-ni-kurashitai",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2026/01/153435_200x300.jpeg",
+      "rating": "0",
+      "time": "14 hari",
+      "episode": ""
+    },
+    {
+      "title": "Mato Seihei no Slave 2",
+      "id": "mato-seihei-no-slave-2",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2026/01/148737_200x300.jpeg",
+      "rating": "0",
+      "time": "14 hari",
+      "episode": ""
+    }
+  ],
+  "pagination": {
+    "current_page": 1,
+    "total_pages": 5,
+    "has_next_page": true,
+    "next_page": 2,
+    "prev_page": null,
+    "has_prev_page": false
+  },
+  "filters": {
+    "status": "completed"
+  }
+}

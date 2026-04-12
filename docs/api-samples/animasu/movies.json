@@ -1,0 +1,92 @@
+{
+  "status": "success",
+  "creator": "Sanka Vollerei",
+  "source": "Animasu",
+  "animes": [
+    {
+      "title": "Shrouding the Heavens: The Imperial Path",
+      "slug": "shrouding-the-heavens-the-imperial-path",
+      "poster": "https://i0.wp.com/v1.animasu.app/wp-content/uploads/2026/04/156548.jpg",
+      "episode": "Apr 4, 2026",
+      "status_or_day": "",
+      "type": "★ N/A"
+    },
+    {
+      "title": "Komada Jouryuujo e Youkoso",
+      "slug": "komada-jouryuujo-e-youkoso",
+      "poster": "https://i2.wp.com/v1.animasu.app/wp-content/uploads/2026/03/138777.jpg",
+      "episode": "Nov 10, 2023",
+      "status_or_day": "",
+      "type": "★ 6.86"
+    },
+    {
+      "title": "Doraemon: Nobita’s Dinosaur",
+      "slug": "doraemon-nobitas-dinosaur-sub-indo",
+      "poster": "https://i1.wp.com/v1.animasu.app/wp-content/uploads/2023/09/72405.jpg",
+      "episode": "Mar 04, 2006",
+      "status_or_day": "",
+      "type": "★ 7.15"
+    },
+    {
+      "title": "Doraemon: Nobita and the Island of Miracles Animal Adventure",
+      "slug": "doraemon-nobita-and-the-island-of-miracles-animal-adventure-sub-indo",
+      "poster": "https://i1.wp.com/v1.animasu.app/wp-content/uploads/2023/09/Doraemon-_Nobita_and_the_Island_of_Miracles_movie_poster.jpg",
+      "episode": "Mar 04, 2006",
+      "status_or_day": "",
+      "type": "★ 7.15"
+    },
+    {
+      "title": "Kobayashi-san Chi no Maid Dragon: Samishigariya no Ryuu",
+      "slug": "kobayashi-san-chi-no-maid-dragon-samishigariya-no-ryuu",
+      "poster": "https://i1.wp.com/v1.animasu.app/wp-content/uploads/2026/01/148744.jpg",
+      "episode": "Jun 27, 2025",
+      "status_or_day": "",
+      "type": "★ 8.10"
+    },
+    {
+      "title": "Oomuro-ke: Dear Friends",
+      "slug": "oomuro-ke-dear-friends",
+      "poster": "https://i0.wp.com/v1.animasu.app/wp-content/uploads/2026/01/141223.jpg",
+      "episode": "Jun 21, 2024",
+      "status_or_day": "",
+      "type": "★ 7.77"
+    },
+    {
+      "title": "Project Sekai Movie: Kowareta Sekai to Utaenai Miku",
+      "slug": "project-sekai-movie-kowareta-sekai-to-utaenai-miku",
+      "poster": "https://i1.wp.com/v1.animasu.app/wp-content/uploads/2025/11/144526-1.jpg",
+      "episode": "Jan 17, 2025",
+      "status_or_day": "",
+      "type": "★ 7.66"
+    },
+    {
+      "title": "Jujutsu Kaisen: Kaigyoku/Gyokusetsu",
+      "slug": "jujutsu-kaisen-kaigyoku-gyokusetsu",
+      "poster": "https://i2.wp.com/v1.animasu.app/wp-content/uploads/2026/01/147023.jpg",
+      "episode": "Mei 30, 2025",
+      "status_or_day": "",
+      "type": "★ 8.11"
+    },
+    {
+      "title": "Hyakuemu.",
+      "slug": "hyakuemu",
+      "poster": "https://i0.wp.com/v1.animasu.app/wp-content/uploads/2025/12/151080.jpg",
+      "episode": "Sep 19, 2025",
+      "status_or_day": "",
+      "type": "★ 8.23"
+    },
+    {
+      "title": "Chainsaw Man Movie: Reze-hen",
+      "slug": "chainsaw-man-movie-reze-hen",
+      "poster": "https://i2.wp.com/v1.animasu.app/wp-content/uploads/2025/12/150638.jpg",
+      "episode": "Sep 19, 2025",
+      "status_or_day": "",
+      "type": "★ 9.18"
+    }
+  ],
+  "pagination": {
+    "hasNext": true,
+    "hasPrev": false,
+    "currentPage": 1
+  }
+}

@@ -1,0 +1,92 @@
+{
+  "status": "success",
+  "creator": "Sanka Vollerei",
+  "source": "Animasu",
+  "animes": [
+    {
+      "title": "One Piece Season 2 Live Action",
+      "slug": "one-piece-season-2-live-action",
+      "poster": "https://i2.wp.com/v1.animasu.app/wp-content/uploads/2026/03/One_Piece_Live_Action_Season_2_Now_Playing_Poster.jpg",
+      "episode": "8 Episode",
+      "status_or_day": "Selesai ✓",
+      "type": "Live Action"
+    },
+    {
+      "title": "One Piece: Mezase! Kaizoku Yakyuu Ou",
+      "slug": "one-piece-mezase-kaizoku-yakyuu-ou",
+      "poster": "https://i2.wp.com/v1.animasu.app/wp-content/uploads/2024/11/25413.jpg",
+      "episode": "1 Episode",
+      "status_or_day": "Selesai ✓",
+      "type": "Special"
+    },
+    {
+      "title": "One Piece: Gyojin Tou-hen",
+      "slug": "one-piece-gyojin-tou-hen",
+      "poster": "https://i2.wp.com/v1.animasu.app/wp-content/uploads/2024/11/146063.jpg",
+      "episode": "Episode 21",
+      "status_or_day": "🔥🔥🔥",
+      "type": "TV"
+    },
+    {
+      "title": "One Piece Fan Letter",
+      "slug": "one-piece-fan-letter",
+      "poster": "https://i2.wp.com/v1.animasu.app/wp-content/uploads/2024/10/145881.jpg",
+      "episode": "1 Episode",
+      "status_or_day": "Selesai ✓",
+      "type": "Special"
+    },
+    {
+      "title": "One Piece Remastered Batch",
+      "slug": "one-piece-remastered-batch",
+      "poster": "https://i2.wp.com/v1.animasu.app/wp-content/uploads/2024/01/100624l.jpg",
+      "episode": "Episode",
+      "status_or_day": "Selesai ✓",
+      "type": "TV"
+    },
+    {
+      "title": "One Piece: Dai Tokushuu! Momonosuke no Mei Shogun e no Michi",
+      "slug": "one-piece-dai-tokushuu-momonosuke-no-mei-shogun-e-no-michi",
+      "poster": "https://i1.wp.com/v1.animasu.app/wp-content/uploads/2023/12/360.jpg",
+      "episode": "1 Episode",
+      "status_or_day": "Selesai ✓",
+      "type": "Special"
+    },
+    {
+      "title": "One Piece Movie: Red",
+      "slug": "one-piece-movie-red-sub-indonesia",
+      "poster": "https://i3.wp.com/v1.animasu.app/wp-content/uploads/2021/12/125323-11zon.webp",
+      "episode": "Movie",
+      "status_or_day": "Selesai ✓",
+      "type": "Movie"
+    },
+    {
+      "title": "One Piece Movie 14: Stampede",
+      "slug": "one-piece-movie-14-stampede-sub-indonesia",
+      "poster": "https://i0.wp.com/v1.animasu.app/wp-content/uploads/2020/04/100550.jpg",
+      "episode": "Movie",
+      "status_or_day": "Selesai ✓",
+      "type": "Movie"
+    },
+    {
+      "title": "One Piece: Episode of Sorajima",
+      "slug": "one-piece-episode-of-sorajima-sub-indonesia",
+      "poster": "https://i3.wp.com/v1.animasu.app/wp-content/uploads/2020/04/92968.jpg",
+      "episode": "1 Episode",
+      "status_or_day": "Selesai ✓",
+      "type": "Special"
+    },
+    {
+      "title": "One Piece 3D2Y: Ace no shi wo Koete! Luffy Nakama Tono Chikai",
+      "slug": "one-piece-3d2y-ace-no-shi-wo-koete-luffy-nakama-tono-chikai-sub-indonesia",
+      "poster": "https://i3.wp.com/v1.animasu.app/wp-content/uploads/2020/04/64755.jpg",
+      "episode": "1 Episode",
+      "status_or_day": "Selesai ✓",
+      "type": "Special"
+    }
+  ],
+  "pagination": {
+    "hasNext": true,
+    "hasPrev": false,
+    "currentPage": 1
+  }
+}

@@ -1,0 +1,129 @@
+{
+  "status": "success",
+  "creator": "Sanka Vollerei",
+  "source": "Donghub",
+  "data": {
+    "title": "Soul Land 2 Episode 135 Subtitle Indonesia",
+    "release_date": "Januari 9, 2026",
+    "navigation": {
+      "prev_slug": "soul-land-2-episode-134-subtitle-indonesia",
+      "next_slug": "soul-land-2-episode-136-subtitle-indonesia",
+      "all_slug": "soul-land-2-the-unrivaled-tang-sect"
+    },
+    "streams": [
+      {
+        "server": "Main Server",
+        "url": "https://geo.dailymotion.com/player/xid0t.html?video=k2Cqx0aaYjJfd7ECZz4"
+      },
+      {
+        "server": "OKRU",
+        "url": "https://anichin.rpmvid.com/#1clv5e"
+      }
+    ],
+    "downloads": [],
+    "anime_info": {
+      "title": "Soul Land 2: The Unrivaled Tang Sect",
+      "slug": null,
+      "thumbnail": "https://donghub.vip/wp-content/uploads/2025/02/SL2.jpg",
+      "rating": "Rating 0.0",
+      "rating_percentage": "0",
+      "status": "Ongoing",
+      "network": "Tencent Penguin Pictures",
+      "studio": "Sparkly Key Animation Studio",
+      "released": "Feb 09, 2025",
+      "country": "China",
+      "type": "ONA",
+      "episodes": "104",
+      "fansub": "Admin",
+      "genres": [
+        {
+          "name": "Action",
+          "url": "https://donghub.vip/genres/action/"
+        },
+        {
+          "name": "Adventure",
+          "url": "https://donghub.vip/genres/adventure/"
+        },
+        {
+          "name": "Fantasy",
+          "url": "https://donghub.vip/genres/fantasy/"
+        },
+        {
+          "name": "Romance",
+          "url": "https://donghub.vip/genres/romance/"
+        }
+      ],
+      "synopsis": "Soul Land 2: The Unrivaled Tang Sect – Dunia tanpa sihir, tanpa Dou-Qi, tanpa seni bela diri, tetapi dengan Essence Spirits. Di Benua Douluo sepuluh ribu tahun setelah Sekte Tang didirikan, Sekte Tang menurun. Akan tetapi, satu generasi Jenius lahir dan melahirkan generasi baru Tujuh Monster Shrek untuk menghidupkan kembali Sekte Tang dan menulis kembali kisah kebesaran Sekte Tang? Binatang Jiwa berusia jutaan tahun, memegang matahari, bulan, dan dewa pemetik bintang kematian, sistem panduan jiwa baru yang menyebabkan penurunan Sekte Tang. Semua keajaiban akan terungkap satu per satu. Bisakah senjata tersembunyi dari Sekte Tang mendapatkan kembali kejayaannya, dan bisakah Sekte Tang mendapatkan kembali kecemerlangannya?\n\nNote : Bukan lanjutan cerita Tang San dkk, melainkan keturunan setelah 10.000 tahun!"
+    },
+    "related_episodes": [
+      {
+        "title": "Soul Land 2 Episode 134 Subtitle Indonesia",
+        "url": "https://donghub.vip/soul-land-2-episode-134-subtitle-indonesia/",
+        "slug": "soul-land-2-episode-134-subtitle-indonesia",
+        "thumbnail": "https://donghub.vip/wp-content/uploads/2025/02/SL2.jpg",
+        "posted_by": "Admin",
+        "posted_date": "3 bulan ago"
+      },
+      {
+        "title": "Soul Land 2 Episode 136 Subtitle Indonesia",
+        "url": "https://donghub.vip/soul-land-2-episode-136-subtitle-indonesia/",
+        "slug": "soul-land-2-episode-136-subtitle-indonesia",
+        "thumbnail": "https://donghub.vip/wp-content/uploads/2025/02/SL2.jpg",
+        "posted_by": "Admin",
+        "posted_date": "3 bulan ago"
+      }
+    ],
+    "recommended_series": [
+      {
+        "title": "The Great Ruler",
+        "url": "https://donghub.vip/the-great-ruler/",
+        "slug": "the-great-ruler",
+        "thumbnail": "https://donghub.vip/wp-content/uploads/2026/01/TGR-Season-2.jpg",
+        "type": "ONA",
+        "status": "Ongoing",
+        "sub_type": "Sub",
+        "is_hot": true
+      },
+      {
+        "title": "Yi Nian Yong Heng",
+        "url": "https://donghub.vip/yi-nian-yong-heng/",
+        "slug": "yi-nian-yong-heng",
+        "thumbnail": "https://donghub.vip/wp-content/uploads/2025/02/yi-nian-yen-hong.png",
+        "type": "ONA",
+        "status": "Ongoing",
+        "sub_type": "Sub",
+        "is_hot": true
+      },
+      {
+        "title": "Kultivator vs Hero",
+        "url": "https://donghub.vip/kultivator-vs-hero/",
+        "slug": "kultivator-vs-hero",
+        "thumbnail": "https://donghub.vip/wp-content/uploads/2026/02/Kultivator-vs-Hero.webp",
+        "type": "ONA",
+        "status": "Ongoing",
+        "sub_type": "Sub",
+        "is_hot": true
+      },
+      {
+        "title": "Word of Honor Season 2",
+        "url": "https://donghub.vip/word-of-honor-season-2/",
+        "slug": "word-of-honor-season-2",
+        "thumbnail": "https://donghub.vip/wp-content/uploads/2025/05/Word-of-Honor-Season-2-768x1370.jpg",
+        "type": "ONA",
+        "status": "Ongoing",
+        "sub_type": "Sub",
+        "is_hot": true
+      },
+      {
+        "title": "Wu Dong Qian Kun Season 4",
+        "url": "https://donghub.vip/wu-dong-qian-kun-season-4/",
+        "slug": "wu-dong-qian-kun-season-4",
+        "thumbnail": "https://donghub.vip/wp-content/uploads/2025/11/Wu-Dong-Qian-Kun-Season-4.jpg",
+        "type": "ONA",
+        "status": "Completed",
+        "sub_type": "Sub",
+        "is_hot": false
+      }
+    ]
+  }
+}

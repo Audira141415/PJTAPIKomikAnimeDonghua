@@ -1,0 +1,49 @@
+{
+  "status": "success",
+  "creator": "Sanka Vollerei",
+  "source": "Animekuindo",
+  "data": [
+    {
+      "title": "Spy x Family Movie: Code: White Subtitle Indonesia",
+      "slug": "spy-x-family-movie-code-white-subtitle-indonesia",
+      "poster": "https://i2.wp.com/s2.animekuindo.life/wp-content/uploads/2025/12/1764736870-4696-139388.jpg?resize=247,350",
+      "type": "Movie",
+      "status": "Completed",
+      "episode": "Movie",
+      "url": "https://s2.animekuindo.life/anime/spy-x-family-movie-code-white-subtitle-indonesia/"
+    },
+    {
+      "title": "Project Sekai Movie: Kowareta Sekai to Utaenai Miku Subtitle Indonesia",
+      "slug": "project-sekai-movie-kowareta-sekai-to-utaenai-miku-subtitle-indonesia",
+      "poster": "https://i2.wp.com/s2.animekuindo.life/wp-content/uploads/2025/11/1743221622-3396-144101-212x300-copy.webp?resize=247,350",
+      "type": "Movie",
+      "status": "Completed",
+      "episode": "Movie",
+      "url": "https://s2.animekuindo.life/anime/project-sekai-movie-kowareta-sekai-to-utaenai-miku-subtitle-indonesia/"
+    },
+    {
+      "title": "Kimetsu no Yaiba Movie 1: Mugenjou-hen – Akaza Sairai Subtitle Indonesia",
+      "slug": "kimetsu-no-yaiba-movie-1-mugenjou-hen-akaza-sairai-subtitle-indonesia",
+      "poster": "https://i0.wp.com/s2.animekuindo.life/wp-content/uploads/2025/10/1760065379-7869-148216.jpg?resize=247,350",
+      "type": "Movie",
+      "status": "Completed",
+      "episode": "Movie",
+      "url": "https://s2.animekuindo.life/anime/kimetsu-no-yaiba-movie-1-mugenjou-hen-akaza-sairai-subtitle-indonesia/"
+    },
+    {
+      "title": "Overlord Movie 3: Sei Oukoku-hen Subtitle Indonesia",
+      "slug": "overlord-movie-3-sei-oukoku-hen",
+      "poster": "https://i2.wp.com/s2.animekuindo.life/wp-content/uploads/2025/03/1743221622-3396-144101.jpg?resize=247,350",
+      "type": "Movie",
+      "status": "Completed",
+      "episode": "Movie",
+      "url": "https://s2.animekuindo.life/anime/overlord-movie-3-sei-oukoku-hen/"
+    }
+  ],
+  "pagination": {
+    "current_page": 1,
+    "has_next": false,
+    "next_page": null,
+    "prev_page": null
+  }
+}

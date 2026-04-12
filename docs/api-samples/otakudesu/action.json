@@ -1,0 +1,711 @@
+{
+  "status": "success",
+  "creator": "Sanka Vollerei",
+  "statusCode": 200,
+  "statusMessage": "OK",
+  "message": "",
+  "ok": true,
+  "data": {
+    "animeList": [
+      {
+        "title": "Dorohedoro Season 2",
+        "poster": "https://otakudesu.blog/wp-content/uploads/2026/04/Dorohedoro-Season-2.jpg",
+        "studios": "MAPPA",
+        "score": "8.17",
+        "episodes": null,
+        "season": "Spring 2026",
+        "animeId": "dorohedo-s2-sub-indo",
+        "href": "/anime/anime/dorohedo-s2-sub-indo",
+        "otakudesuUrl": "https://otakudesu.blog/anime/dorohedo-s2-sub-indo/",
+        "synopsis": {
+          "paragraphs": []
+        },
+        "genreList": [
+          {
+            "title": "Action",
+            "genreId": "action",
+            "href": "/anime/genre/action",
+            "otakudesuUrl": "https://otakudesu.blog/genres/action/"
+          },
+          {
+            "title": "Comedy",
+            "genreId": "comedy",
+            "href": "/anime/genre/comedy",
+            "otakudesuUrl": "https://otakudesu.blog/genres/comedy/"
+          },
+          {
+            "title": "Fantasy",
+            "genreId": "fantasy",
+            "href": "/anime/genre/fantasy",
+            "otakudesuUrl": "https://otakudesu.blog/genres/fantasy/"
+          },
+          {
+            "title": "Gore",
+            "genreId": "gore",
+            "href": "/anime/genre/gore",
+            "otakudesuUrl": "https://otakudesu.blog/genres/gore/"
+          },
+          {
+            "title": "Horror",
+            "genreId": "horror",
+            "href": "/anime/genre/horror",
+            "otakudesuUrl": "https://otakudesu.blog/genres/horror/"
+          },
+          {
+            "title": "Seinen",
+            "genreId": "seinen",
+            "href": "/anime/genre/seinen",
+            "otakudesuUrl": "https://otakudesu.blog/genres/seinen/"
+          }
+        ]
+      },
+      {
+        "title": "Marriagetoxin",
+        "poster": "https://otakudesu.blog/wp-content/uploads/2026/04/Marriagetoxin-Sub.jpg",
+        "studios": "Bones Film",
+        "score": "7.44",
+        "episodes": null,
+        "season": "Spring 2026",
+        "animeId": "marratoxin-sub-indo",
+        "href": "/anime/anime/marratoxin-sub-indo",
+        "otakudesuUrl": "https://otakudesu.blog/anime/marratoxin-sub-indo/",
+        "synopsis": {
+          "paragraphs": []
+        },
+        "genreList": [
+          {
+            "title": "Action",
+            "genreId": "action",
+            "href": "/anime/genre/action",
+            "otakudesuUrl": "https://otakudesu.blog/genres/action/"
+          },
+          {
+            "title": "Adult Cast",
+            "genreId": "adult-cast",
+            "href": "/anime/genre/adult-cast",
+            "otakudesuUrl": "https://otakudesu.blog/genres/adult-cast/"
+          },
+          {
+            "title": "Shounen",
+            "genreId": "shounen",
+            "href": "/anime/genre/shounen",
+            "otakudesuUrl": "https://otakudesu.blog/genres/shounen/"
+          }
+        ]
+      },
+      {
+        "title": "One Piece",
+        "poster": "https://otakudesu.blog/wp-content/uploads/2021/05/One-Piece-Sub-Indo.jpg",
+        "studios": "Toei Animation",
+        "score": "8.54",
+        "episodes": null,
+        "season": "Fall 1999",
+        "animeId": "1piece-sub-indo",
+        "href": "/anime/anime/1piece-sub-indo",
+        "otakudesuUrl": "https://otakudesu.blog/anime/1piece-sub-indo/",
+        "synopsis": {
+          "paragraphs": [
+            "Dulu, ada seorang bajak laut terkenal di seluruh lautan bernama Gol D. Roger. Ia merupakan seorang raja bajak laut yang telah berlayar mengarungi seluruh Grand Line, sayangnya ia ditangkap pemerintah dan telah dieksekusi mati. Sesaat sebelum kematiannya, Ia mengumumkan kepada dunia bahwa dirinya menyimpan sebuah harta karun bernama One Piece, sebuah harta karun yang kini menjadi incaran seluruh bajak laut yang ada di dunia.",
+            "Di Era Bajak Laut saat ini, ada seorang remaja bernama Monkey D. Luffy yang memiliki cita-cita untuk menjadi seorang Raja Bajak Laut. Namun Luffy sadar bahwa ia tidak bisa melakukannya sendiri, sembari dalam perjalanan ia juga mencari kru dan bertemu dengan teman-temannya yang baru. Berbeda dengan bajak laut lain yang ganas dan jahat, Luffy bersama teman-temannya berlayar murni atas dasar petualangan serta mencari tempat tempat baru yang akan muncul di hadapan mereka.",
+            "Di perjalanan inilah cerita mereka dimulai, mampukan Luffy bersama teman-temannya mencapai impian mereka?",
+            "(Info: Episode sebelumnya akan ditambahkan secara berkala)"
+          ]
+        },
+        "genreList": [
+          {
+            "title": "Action",
+            "genreId": "action",
+            "href": "/anime/genre/action",
+            "otakudesuUrl": "https://otakudesu.blog/genres/action/"
+          },
+          {
+            "title": "Adventure",
+            "genreId": "adventure",
+            "href": "/anime/genre/adventure",
+            "otakudesuUrl": "https://otakudesu.blog/genres/adventure/"
+          },
+          {
+            "title": "Comedy",
+            "genreId": "comedy",
+            "href": "/anime/genre/comedy",
+            "otakudesuUrl": "https://otakudesu.blog/genres/comedy/"
+          },
+          {
+            "title": "Drama",
+            "genreId": "drama",
+            "href": "/anime/genre/drama",
+            "otakudesuUrl": "https://otakudesu.blog/genres/drama/"
+          },
+          {
+            "title": "Fantasy",
+            "genreId": "fantasy",
+            "href": "/anime/genre/fantasy",
+            "otakudesuUrl": "https://otakudesu.blog/genres/fantasy/"
+          },
+          {
+            "title": "Shounen",
+            "genreId": "shounen",
+            "href": "/anime/genre/shounen",
+            "otakudesuUrl": "https://otakudesu.blog/genres/shounen/"
+          },
+          {
+            "title": "Super Power",
+            "genreId": "super-power",
+            "href": "/anime/genre/super-power",
+            "otakudesuUrl": "https://otakudesu.blog/genres/super-power/"
+          }
+        ]
+      },
+      {
+        "title": "Ghost Concert: Missing Songs",
+        "poster": "https://otakudesu.blog/wp-content/uploads/2026/04/155658.jpg",
+        "studios": "ENGI",
+        "score": "",
+        "episodes": 12,
+        "season": "Spring 2026",
+        "animeId": "ghost-concert-sub-indo",
+        "href": "/anime/anime/ghost-concert-sub-indo",
+        "otakudesuUrl": "https://otakudesu.blog/anime/ghost-concert-sub-indo/",
+        "synopsis": {
+          "paragraphs": []
+        },
+        "genreList": [
+          {
+            "title": "Action",
+            "genreId": "action",
+            "href": "/anime/genre/action",
+            "otakudesuUrl": "https://otakudesu.blog/genres/action/"
+          },
+          {
+            "title": "Music",
+            "genreId": "music",
+            "href": "/anime/genre/music",
+            "otakudesuUrl": "https://otakudesu.blog/genres/music/"
+          },
+          {
+            "title": "Sci-Fi",
+            "genreId": "sci-fi",
+            "href": "/anime/genre/sci-fi",
+            "otakudesuUrl": "https://otakudesu.blog/genres/sci-fi/"
+          },
+          {
+            "title": "Supernatural",
+            "genreId": "supernatural",
+            "href": "/anime/genre/supernatural",
+            "otakudesuUrl": "https://otakudesu.blog/genres/supernatural/"
+          }
+        ]
+      },
+      {
+        "title": "Niwatori Fighter",
+        "poster": "https://otakudesu.blog/wp-content/uploads/2026/03/150983.jpg",
+        "studios": "SANZIGEN",
+        "score": "",
+        "episodes": null,
+        "season": "Spring 2026",
+        "animeId": "niwatori-fight-sub-indo",
+        "href": "/anime/anime/niwatori-fight-sub-indo",
+        "otakudesuUrl": "https://otakudesu.blog/anime/niwatori-fight-sub-indo/",
+        "synopsis": {
+          "paragraphs": []
+        },
+        "genreList": [
+          {
+            "title": "Action",
+            "genreId": "action",
+            "href": "/anime/genre/action",
+            "otakudesuUrl": "https://otakudesu.blog/genres/action/"
+          },
+          {
+            "title": "Comedy",
+            "genreId": "comedy",
+            "href": "/anime/genre/comedy",
+            "otakudesuUrl": "https://otakudesu.blog/genres/comedy/"
+          }
+        ]
+      },
+      {
+        "title": "Yomi no Tsugai",
+        "poster": "https://otakudesu.blog/wp-content/uploads/2026/04/156397.jpg",
+        "studios": "Bones Film",
+        "score": "",
+        "episodes": null,
+        "season": "Spring 2026",
+        "animeId": "yomi-tsugai-sub-indo",
+        "href": "/anime/anime/yomi-tsugai-sub-indo",
+        "otakudesuUrl": "https://otakudesu.blog/anime/yomi-tsugai-sub-indo/",
+        "synopsis": {
+          "paragraphs": [
+            "Mengisahkan Yuru, seorang anak laki-laki yang tinggal di sebuah desa kecil jauh di pegunungan. Di sana, ia hidup dengan tenang dan damai sembari memburu burung liar. Namun, suatu hari sang adik yakni Asa secara tiba-tiba mendapatkan tugas suci.",
+            "Tugas tersebut adalah sang adik harus mendekam di dalam penjara. Mengetahui ada yang tidak beres, Yuru mencoba menyelidiki apa sebenarnya yang terjadi pada desa tersebut. Apakah ada sesuatu yang disembunyikan darinya?"
+          ]
+        },
+        "genreList": [
+          {
+            "title": "Action",
+            "genreId": "action",
+            "href": "/anime/genre/action",
+            "otakudesuUrl": "https://otakudesu.blog/genres/action/"
+          },
+          {
+            "title": "Adventure",
+            "genreId": "adventure",
+            "href": "/anime/genre/adventure",
+            "otakudesuUrl": "https://otakudesu.blog/genres/adventure/"
+          },
+          {
+            "title": "Fantasy",
+            "genreId": "fantasy",
+            "href": "/anime/genre/fantasy",
+            "otakudesuUrl": "https://otakudesu.blog/genres/fantasy/"
+          },
+          {
+            "title": "Shounen",
+            "genreId": "shounen",
+            "href": "/anime/genre/shounen",
+            "otakudesuUrl": "https://otakudesu.blog/genres/shounen/"
+          }
+        ]
+      },
+      {
+        "title": "Tensei shitara Slime Datta Ken Season 4",
+        "poster": "https://otakudesu.blog/wp-content/uploads/2026/04/156389.jpg",
+        "studios": "8bit",
+        "score": "7.69",
+        "episodes": null,
+        "season": "Spring 2026",
+        "animeId": "slime-s4-sub-indo",
+        "href": "/anime/anime/slime-s4-sub-indo",
+        "otakudesuUrl": "https://otakudesu.blog/anime/slime-s4-sub-indo/",
+        "synopsis": {
+          "paragraphs": []
+        },
+        "genreList": [
+          {
+            "title": "Action",
+            "genreId": "action",
+            "href": "/anime/genre/action",
+            "otakudesuUrl": "https://otakudesu.blog/genres/action/"
+          },
+          {
+            "title": "Comedy",
+            "genreId": "comedy",
+            "href": "/anime/genre/comedy",
+            "otakudesuUrl": "https://otakudesu.blog/genres/comedy/"
+          },
+          {
+            "title": "Fantasy",
+            "genreId": "fantasy",
+            "href": "/anime/genre/fantasy",
+            "otakudesuUrl": "https://otakudesu.blog/genres/fantasy/"
+          },
+          {
+            "title": "Isekai",
+            "genreId": "isekai",
+            "href": "/anime/genre/isekai",
+            "otakudesuUrl": "https://otakudesu.blog/genres/isekai/"
+          },
+          {
+            "title": "Reincarnation",
+            "genreId": "reincarnation",
+            "href": "/anime/genre/reincarnation",
+            "otakudesuUrl": "https://otakudesu.blog/genres/reincarnation/"
+          },
+          {
+            "title": "Shounen",
+            "genreId": "shounen",
+            "href": "/anime/genre/shounen",
+            "otakudesuUrl": "https://otakudesu.blog/genres/shounen/"
+          }
+        ]
+      },
+      {
+        "title": "Enen no Shouboutai: San no Shou Part 2",
+        "poster": "https://otakudesu.blog/wp-content/uploads/2026/01/152472.jpg",
+        "studios": "David Production",
+        "score": "7.41",
+        "episodes": 13,
+        "season": "Winter 2026",
+        "animeId": "enen-shouboutai-season-3-p2-sub-indo",
+        "href": "/anime/anime/enen-shouboutai-season-3-p2-sub-indo",
+        "otakudesuUrl": "https://otakudesu.blog/anime/enen-shouboutai-season-3-p2-sub-indo/",
+        "synopsis": {
+          "paragraphs": []
+        },
+        "genreList": [
+          {
+            "title": "Action",
+            "genreId": "action",
+            "href": "/anime/genre/action",
+            "otakudesuUrl": "https://otakudesu.blog/genres/action/"
+          },
+          {
+            "title": "Fantasy",
+            "genreId": "fantasy",
+            "href": "/anime/genre/fantasy",
+            "otakudesuUrl": "https://otakudesu.blog/genres/fantasy/"
+          },
+          {
+            "title": "Sci-Fi",
+            "genreId": "sci-fi",
+            "href": "/anime/genre/sci-fi",
+            "otakudesuUrl": "https://otakudesu.blog/genres/sci-fi/"
+          },
+          {
+            "title": "Shounen",
+            "genreId": "shounen",
+            "href": "/anime/genre/shounen",
+            "otakudesuUrl": "https://otakudesu.blog/genres/shounen/"
+          },
+          {
+            "title": "Urban Fantasy",
+            "genreId": "urban-fantasy",
+            "href": "/anime/genre/urban-fantasy",
+            "otakudesuUrl": "https://otakudesu.blog/genres/urban-fantasy/"
+          }
+        ]
+      },
+      {
+        "title": "Reincarnation no Kaben",
+        "poster": "https://otakudesu.blog/wp-content/uploads/2026/04/155042.jpg",
+        "studios": "BENTEN Film",
+        "score": "",
+        "episodes": null,
+        "season": "Spring 2026",
+        "animeId": "reincarnation-kaben-sub-indo",
+        "href": "/anime/anime/reincarnation-kaben-sub-indo",
+        "otakudesuUrl": "https://otakudesu.blog/anime/reincarnation-kaben-sub-indo/",
+        "synopsis": {
+          "paragraphs": [
+            "Touya Senji, seorang pria yang menganggap bahwa dirinya sangatlah rendah mengingat ia selalu dibanding-bandingkan dengan sang kakak yang memiliki bakat. Untuk itu, dirinya pun belajar dengan begitu giat guna mendapat nilai sempurna. Sayangnya, hasil yang ia dapatkan tidaklah memuaskan.",
+            "Suatu hari, Touya bertemu dengan Haito yang merupakan teman masa kecilnya di sekolah dulu. Haito mengatakan kepada Touya bahwa dirinya adalah seorang Mawarimono yang mendapatkan kemampuan dari seseorang.",
+            "Mengetahui hal tersebut, Touya pun mencoba untuk mendapatkan kekuatan tersebut."
+          ]
+        },
+        "genreList": [
+          {
+            "title": "Action",
+            "genreId": "action",
+            "href": "/anime/genre/action",
+            "otakudesuUrl": "https://otakudesu.blog/genres/action/"
+          },
+          {
+            "title": "Mystery",
+            "genreId": "mystery",
+            "href": "/anime/genre/mystery",
+            "otakudesuUrl": "https://otakudesu.blog/genres/mystery/"
+          },
+          {
+            "title": "Reincarnation",
+            "genreId": "reincarnation",
+            "href": "/anime/genre/reincarnation",
+            "otakudesuUrl": "https://otakudesu.blog/genres/reincarnation/"
+          },
+          {
+            "title": "Shounen",
+            "genreId": "shounen",
+            "href": "/anime/genre/shounen",
+            "otakudesuUrl": "https://otakudesu.blog/genres/shounen/"
+          },
+          {
+            "title": "Supernatural",
+            "genreId": "supernatural",
+            "href": "/anime/genre/supernatural",
+            "otakudesuUrl": "https://otakudesu.blog/genres/supernatural/"
+          }
+        ]
+      },
+      {
+        "title": "Vigilante: Boku no Hero Academia Illegals Season 2",
+        "poster": "https://otakudesu.blog/wp-content/uploads/2026/01/vigilante-boku-no-hero-academia-illegals-2nd-season-0425f475b8.jpg",
+        "studios": "Bones Film",
+        "score": "7.10",
+        "episodes": null,
+        "season": "Winter 2026",
+        "animeId": "vigilante-bnh-academia-illegals-s2-sub-indo",
+        "href": "/anime/anime/vigilante-bnh-academia-illegals-s2-sub-indo",
+        "otakudesuUrl": "https://otakudesu.blog/anime/vigilante-bnh-academia-illegals-s2-sub-indo/",
+        "synopsis": {
+          "paragraphs": []
+        },
+        "genreList": [
+          {
+            "title": "Action",
+            "genreId": "action",
+            "href": "/anime/genre/action",
+            "otakudesuUrl": "https://otakudesu.blog/genres/action/"
+          },
+          {
+            "title": "Shounen",
+            "genreId": "shounen",
+            "href": "/anime/genre/shounen",
+            "otakudesuUrl": "https://otakudesu.blog/genres/shounen/"
+          },
+          {
+            "title": "Super Power",
+            "genreId": "super-power",
+            "href": "/anime/genre/super-power",
+            "otakudesuUrl": "https://otakudesu.blog/genres/super-power/"
+          }
+        ]
+      },
+      {
+        "title": "Golden Kamuy Season 5",
+        "poster": "https://otakudesu.blog/wp-content/uploads/2026/01/154763.jpg",
+        "studios": "Brain's Base",
+        "score": "",
+        "episodes": null,
+        "season": "Winter 2026",
+        "animeId": "kamuy-golden-season-5-sub-indo",
+        "href": "/anime/anime/kamuy-golden-season-5-sub-indo",
+        "otakudesuUrl": "https://otakudesu.blog/anime/kamuy-golden-season-5-sub-indo/",
+        "synopsis": {
+          "paragraphs": []
+        },
+        "genreList": [
+          {
+            "title": "Action",
+            "genreId": "action",
+            "href": "/anime/genre/action",
+            "otakudesuUrl": "https://otakudesu.blog/genres/action/"
+          },
+          {
+            "title": "Adventure",
+            "genreId": "adventure",
+            "href": "/anime/genre/adventure",
+            "otakudesuUrl": "https://otakudesu.blog/genres/adventure/"
+          },
+          {
+            "title": "Historical",
+            "genreId": "historical",
+            "href": "/anime/genre/historical",
+            "otakudesuUrl": "https://otakudesu.blog/genres/historical/"
+          },
+          {
+            "title": "Military",
+            "genreId": "military",
+            "href": "/anime/genre/military",
+            "otakudesuUrl": "https://otakudesu.blog/genres/military/"
+          },
+          {
+            "title": "Seinen",
+            "genreId": "seinen",
+            "href": "/anime/genre/seinen",
+            "otakudesuUrl": "https://otakudesu.blog/genres/seinen/"
+          }
+        ]
+      },
+      {
+        "title": "Isekai de Cheat Skill wo Te ni Shita Ore wa",
+        "poster": "https://otakudesu.blog/wp-content/uploads/2023/05/Isekai-de-Cheat-Skill-wo-Te-ni-Shita-Ore-wa-Sub-Indo.jpg",
+        "studios": "Millepensee",
+        "score": "6.36",
+        "episodes": 13,
+        "season": "Spring 2023",
+        "animeId": "iseleve-sub-indo",
+        "href": "/anime/anime/iseleve-sub-indo",
+        "otakudesuUrl": "https://otakudesu.blog/anime/iseleve-sub-indo/",
+        "synopsis": {
+          "paragraphs": [
+            "Yuuya Tenjou merupakan seorang laki-laki yang sejak kecil mengalami nasib kurang baik. Sebab, ia selalu mendapatkan hinaan karena tubuhnya yang jelek. Bahkan, keluarganya juga turut melakukan tindakan yang tidak baik tersebut.",
+            "Beruntung, ia masih memiliki orang yang peduli padanya, yakni sang Kakek. Hingga akhir hidup sang Kakek, Yuuya mendapatkan banyak sekali bantuan, mulai dari hak waris rumah dan juga seluruh tabungan sang Kakek.",
+            "Suatu hari, Yuuya yang tengah berada di sebuah gudang mendapati gerbang yang muncul secara tiba-tiba. Siap sangka, gerbang ini akan membuat kehidupannya berubah secara drastis."
+          ]
+        },
+        "genreList": [
+          {
+            "title": "Action",
+            "genreId": "action",
+            "href": "/anime/genre/action",
+            "otakudesuUrl": "https://otakudesu.blog/genres/action/"
+          },
+          {
+            "title": "Adventure",
+            "genreId": "adventure",
+            "href": "/anime/genre/adventure",
+            "otakudesuUrl": "https://otakudesu.blog/genres/adventure/"
+          },
+          {
+            "title": "Fantasy",
+            "genreId": "fantasy",
+            "href": "/anime/genre/fantasy",
+            "otakudesuUrl": "https://otakudesu.blog/genres/fantasy/"
+          },
+          {
+            "title": "Isekai",
+            "genreId": "isekai",
+            "href": "/anime/genre/isekai",
+            "otakudesuUrl": "https://otakudesu.blog/genres/isekai/"
+          },
+          {
+            "title": "School",
+            "genreId": "school",
+            "href": "/anime/genre/school",
+            "otakudesuUrl": "https://otakudesu.blog/genres/school/"
+          }
+        ]
+      },
+      {
+        "title": "Jigokuraku Season 2",
+        "poster": "https://otakudesu.blog/wp-content/uploads/2026/01/154456.jpg",
+        "studios": "MAPPA",
+        "score": "7.58",
+        "episodes": null,
+        "season": "Winter 2026",
+        "animeId": "jigokuku-s2-sub-indo",
+        "href": "/anime/anime/jigokuku-s2-sub-indo",
+        "otakudesuUrl": "https://otakudesu.blog/anime/jigokuku-s2-sub-indo/",
+        "synopsis": {
+          "paragraphs": []
+        },
+        "genreList": [
+          {
+            "title": "Action",
+            "genreId": "action",
+            "href": "/anime/genre/action",
+            "otakudesuUrl": "https://otakudesu.blog/genres/action/"
+          },
+          {
+            "title": "Adventure",
+            "genreId": "adventure",
+            "href": "/anime/genre/adventure",
+            "otakudesuUrl": "https://otakudesu.blog/genres/adventure/"
+          },
+          {
+            "title": "Gore",
+            "genreId": "gore",
+            "href": "/anime/genre/gore",
+            "otakudesuUrl": "https://otakudesu.blog/genres/gore/"
+          },
+          {
+            "title": "Historical",
+            "genreId": "historical",
+            "href": "/anime/genre/historical",
+            "otakudesuUrl": "https://otakudesu.blog/genres/historical/"
+          },
+          {
+            "title": "Samurai",
+            "genreId": "samurai",
+            "href": "/anime/genre/samurai",
+            "otakudesuUrl": "https://otakudesu.blog/genres/samurai/"
+          },
+          {
+            "title": "Shounen",
+            "genreId": "shounen",
+            "href": "/anime/genre/shounen",
+            "otakudesuUrl": "https://otakudesu.blog/genres/shounen/"
+          },
+          {
+            "title": "Supernatural",
+            "genreId": "supernatural",
+            "href": "/anime/genre/supernatural",
+            "otakudesuUrl": "https://otakudesu.blog/genres/supernatural/"
+          }
+        ]
+      },
+      {
+        "title": "Digimon Beatbreak",
+        "poster": "https://otakudesu.blog/wp-content/uploads/2025/10/Digimon-Beatbreak.jpg",
+        "studios": "Toei Animation",
+        "score": "",
+        "episodes": null,
+        "season": "Fall 2025",
+        "animeId": "digimon-bb-sub-indo",
+        "href": "/anime/anime/digimon-bb-sub-indo",
+        "otakudesuUrl": "https://otakudesu.blog/anime/digimon-bb-sub-indo/",
+        "synopsis": {
+          "paragraphs": [
+            "Di masa depan nanti, e-Pulse kini mampu membentuk pikirin serta emosi manusia dan digunakan sebagai energi untuk AI bernama Sapotama. Namun, pengembangan AI tersebut tidak lepas dari monster yang memakan e-Pulse.",
+            "Cerita pun berpusat kepada Tomoro Tenma yang memiliki sebuah kekuatan unik yaitu ia mampu merusak Sapotama seseorang hanya dengan menyentuhnya.  Suatu hari, ia bertemu dengan Gekkomon dan diminta untuk mengikutinya ke suatu tempat.",
+            "Sesampainya di sana, ia mendapati kakaknya yang tengah bertarung dengan monster. Sayangnya, sang kakak harus mengorbankan diri untuk menyelamatkan Tenma. Kini, kehidupan Tenma telah berubah setelah pertemuannya dengan Gekkomon.",
+            " "
+          ]
+        },
+        "genreList": [
+          {
+            "title": "Action",
+            "genreId": "action",
+            "href": "/anime/genre/action",
+            "otakudesuUrl": "https://otakudesu.blog/genres/action/"
+          },
+          {
+            "title": "Adventure",
+            "genreId": "adventure",
+            "href": "/anime/genre/adventure",
+            "otakudesuUrl": "https://otakudesu.blog/genres/adventure/"
+          },
+          {
+            "title": "Comedy",
+            "genreId": "comedy",
+            "href": "/anime/genre/comedy",
+            "otakudesuUrl": "https://otakudesu.blog/genres/comedy/"
+          },
+          {
+            "title": "Fantasy",
+            "genreId": "fantasy",
+            "href": "/anime/genre/fantasy",
+            "otakudesuUrl": "https://otakudesu.blog/genres/fantasy/"
+          },
+          {
+            "title": "Sci-Fi",
+            "genreId": "sci-fi",
+            "href": "/anime/genre/sci-fi",
+            "otakudesuUrl": "https://otakudesu.blog/genres/sci-fi/"
+          }
+        ]
+      },
+      {
+        "title": "Yuusha no Kuzu",
+        "poster": "https://otakudesu.blog/wp-content/uploads/2026/01/Yuusha-no-Kuzu.jpg",
+        "studios": "OLM",
+        "score": "",
+        "episodes": 24,
+        "season": "Winter 2026",
+        "animeId": "yuusha-kuzu-sub-indo",
+        "href": "/anime/anime/yuusha-kuzu-sub-indo",
+        "otakudesuUrl": "https://otakudesu.blog/anime/yuusha-kuzu-sub-indo/",
+        "synopsis": {
+          "paragraphs": [
+            "Bagi sebagian orang, menjadi pahlawan adalah sebuah pekerjaan yang hanya dilakukan oleh orang-orang sampah. Berlatar pada abad ke-21, di dunia bawah tanah Tokyo telah dikuasai oleh mafia yang kini menjadi Raja Iblis setelah mereka menjalani operasi Aether.",
+            "Maka dari itu, lahirlah para pemburu yang bertugas untuk mengalahkan Raja Iblis. Mereka yang bertugas dikenal dengan sebutah pahlawan. Setiap pahlawan yang ingin melawan Raja Iblis harus menggunakan obat yang dikenal dengan E-3.",
+            "Yashiro, salah satu orang yang bekerja sebagai pahlawan ini didatangi oleh gadis SMA bernama Jougamine. Ia mengaku sebagai murid dari Yashiro. Mau tidak mau, ia pun menerima gadis tersebut dan melibatkannya dalam berbagai kejadian."
+          ]
+        },
+        "genreList": [
+          {
+            "title": "Action",
+            "genreId": "action",
+            "href": "/anime/genre/action",
+            "otakudesuUrl": "https://otakudesu.blog/genres/action/"
+          },
+          {
+            "title": "Organized Crime",
+            "genreId": "organized-crime",
+            "href": "/anime/genre/organized-crime",
+            "otakudesuUrl": "https://otakudesu.blog/genres/organized-crime/"
+          },
+          {
+            "title": "Sci-Fi",
+            "genreId": "sci-fi",
+            "href": "/anime/genre/sci-fi",
+            "otakudesuUrl": "https://otakudesu.blog/genres/sci-fi/"
+          },
+          {
+            "title": "Super Power",
+            "genreId": "super-power",
+            "href": "/anime/genre/super-power",
+            "otakudesuUrl": "https://otakudesu.blog/genres/super-power/"
+          }
+        ]
+      }
+    ]
+  },
+  "pagination": {
+    "currentPage": 1,
+    "hasPrevPage": false,
+    "prevPage": null,
+    "hasNextPage": true,
+    "nextPage": 2,
+    "totalPages": 45
+  }
+}

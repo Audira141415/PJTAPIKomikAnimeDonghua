@@ -1,0 +1,291 @@
+{
+  "status": "success",
+  "creator": "Sanka Vollerei",
+  "statusCode": 200,
+  "statusMessage": "OK",
+  "message": "",
+  "ok": true,
+  "data": {
+    "title": "Sakamoto Days Part 2 Episode 10 Subtitle Indonesia",
+    "animeId": "akamoto-day-part-2-sub-indo",
+    "releaseTime": "Release on 10:48 pm",
+    "defaultStreamingUrl": "https://desustream.info/dstream/otakuwatch5/v2/index.php?id=TGdRNDRNazNrcGl6MUN4RG81MlRlOUQvYnFDTm1wZVZ6ZGxGMjRnTVdndz0=",
+    "hasPrevEpisode": true,
+    "prevEpisode": {
+      "title": "Prev",
+      "episodeId": "sd-p2-episode-9-sub-indo",
+      "href": "/anime/episode/sd-p2-episode-9-sub-indo",
+      "otakudesuUrl": "https://otakudesu.blog/episode/sd-p2-episode-9-sub-indo/"
+    },
+    "hasNextEpisode": true,
+    "nextEpisode": {
+      "title": "Next",
+      "episodeId": "sd-p2-episode-11-sub-indo",
+      "href": "/anime/episode/sd-p2-episode-11-sub-indo",
+      "otakudesuUrl": "https://otakudesu.blog/episode/sd-p2-episode-11-sub-indo/"
+    },
+    "server": {
+      "qualities": [
+        {
+          "title": "360p",
+          "serverList": []
+        },
+        {
+          "title": "480p",
+          "serverList": [
+            {
+              "title": "otakuwatch5",
+              "serverId": "6DBBB9-5-9D5u",
+              "href": "/anime/server/6DBBB9-5-9D5u"
+            },
+            {
+              "title": "odstream",
+              "serverId": "6DBBB9-6-9D5u",
+              "href": "/anime/server/6DBBB9-6-9D5u"
+            },
+            {
+              "title": "vidhide",
+              "serverId": "6DBBB9-7-9D5u",
+              "href": "/anime/server/6DBBB9-7-9D5u"
+            },
+            {
+              "title": "mega",
+              "serverId": "6DBBB9-8-9D5u",
+              "href": "/anime/server/6DBBB9-8-9D5u"
+            }
+          ]
+        },
+        {
+          "title": "720p",
+          "serverList": [
+            {
+              "title": "otakuwatch5hd ",
+              "serverId": "6DBBB9-5-C75u",
+              "href": "/anime/server/6DBBB9-5-C75u"
+            },
+            {
+              "title": "odstreamhd ",
+              "serverId": "6DBBB9-6-C75u",
+              "href": "/anime/server/6DBBB9-6-C75u"
+            },
+            {
+              "title": "vidhide ",
+              "serverId": "6DBBB9-7-C75u",
+              "href": "/anime/server/6DBBB9-7-C75u"
+            },
+            {
+              "title": "mega ",
+              "serverId": "6DBBB9-8-C75u",
+              "href": "/anime/server/6DBBB9-8-C75u"
+            }
+          ]
+        }
+      ]
+    },
+    "downloadUrl": {
+      "qualities": [
+        {
+          "title": "360p",
+          "size": "40.9 MB",
+          "urls": [
+            {
+              "title": "OtakuFiles",
+              "url": "https://link.desustream.com/?id=Uk83OUt2T214S3VyTlZnTDBTeXJPNkU2WjV3cStpQm1MMU93NUIybFRPTEE1cFkrMXJOQ0JDTDFIeXhqanVORGFYVHR1a2pPbmZBUWt5NHhxMUVMZ0lLZC8yckJjeUZQTmtyTmt1OE9lZz09"
+            },
+            {
+              "title": "Kraken",
+              "url": "https://link.desustream.com/?id=Uk83OUt2T214S3V2TTFnTHdTU2tQcWdzT3R3czRXSWlhbG02K2dXekdPRzU5NnBTMUl4VlFESDRGam80eVBsTGNRPT0="
+            },
+            {
+              "title": "PDrain",
+              "url": "https://link.desustream.com/?id=Uk83OUt2T214S3UwS0VFRnlDNndOcTBuWjVFZzR5QjRNd1dlMVh6NkllZlA="
+            },
+            {
+              "title": "VidHide",
+              "url": "https://link.desustream.com/?id=Uk83OUt2T214S3VnSkVvVndEaXJJYUZuS3AwaW9XbGhNdysyNlJlblMvMlcvb3Q5L3Y5RUd6QT0="
+            },
+            {
+              "title": "Mega",
+              "url": "https://link.desustream.com/?id=Uk83OUt2T214S3VwSkY0QmlpUzRlS0lnSlpkZ3hsaEhjRnk5OTNEZ0VNTzM0YXRrNGFKR0pqalNIVGN2NWVwa2MwN1VnWHorck5VRWptVVA4UVJ4OU1PZ3JUZTBNVzVUQ3c9PQ=="
+            }
+          ]
+        },
+        {
+          "title": "480p",
+          "size": "74.9 MB",
+          "urls": [
+            {
+              "title": "OtakuFiles",
+              "url": "https://link.desustream.com/?id=Uk83OUt2T214S3VyTlZnTDBTeXJPNkU2WjV3cStpQjBiQW12dTB5MFQvbVI2SkUrMXJOQ0JDTDFIeXhqanVORGFYVHR1a2pPbmZBUWt5NHhxMUVMZ0lLZCtHVEJjeUZQTmtyTmt1OE9lZz09"
+            },
+            {
+              "title": "Kraken",
+              "url": "https://link.desustream.com/?id=Uk83OUt2T214S3V2TTFnTHdTU2tQcWdzT3R3czRXSWlhbG02K2dYekROQ2krS3BWL0tGaVFESDRGam80eVBsTGNRPT0="
+            },
+            {
+              "title": "PDrain",
+              "url": "https://link.desustream.com/?id=Uk83OUt2T214S3UwS0VFRnlDNndOcTBuWjVFZzR5QjRNMWlKdzBTZ0V2T1c="
+            },
+            {
+              "title": "VidHide",
+              "url": "https://link.desustream.com/?id=Uk83OUt2T214S3VnSkVvVndEaXJJYUZuS3AwaW9XbGhNdysyNlJleUZMeU12TUoyN1A5UkcyQT0="
+            },
+            {
+              "title": "Mega",
+              "url": "https://link.desustream.com/?id=Uk83OUt2T214S3VwSkY0QmlpUzRlS0lnSlpkZzRGeFBWSGk5L0c3Z1NyeTcrckFpM2FCZ0JRRGpTelJVLzkxUVNubUxvRUxwa053S29YQXZ3MFJsdzlhVXVtNmhOR1pXTlE9PQ=="
+            }
+          ]
+        },
+        {
+          "title": "720p",
+          "size": "136.0 MB",
+          "urls": [
+            {
+              "title": "OtakuFiles",
+              "url": "https://link.desustream.com/?id=Uk83OUt2T214S3VyTlZnTDBTeXJPNkU2WjV3cStpQTBaRWJ1K0UydERmaVo3WmcrMXJOQ0JDTDFIeXhqanVORGFYVHR1a2pPbmZBUWt5NHhxMUVMZ0lLZCsyN0JjeUZQTmtyTmt1OE9lZz09"
+            },
+            {
+              "title": "Kraken",
+              "url": "https://link.desustream.com/?id=Uk83OUt2T214S3V2TTFnTHdTU2tQcWdzT3R3czRXSWlhbG02K2dXbUs5aU56Yk5sN2FCcFFESDRGam80eVBsTGNRPT0="
+            },
+            {
+              "title": "PDrain",
+              "url": "https://link.desustream.com/?id=Uk83OUt2T214S3UwS0VFRnlDNndOcTBuWjVFZzR5QjRNM084NEhMd0hmNjg="
+            },
+            {
+              "title": "VidHide",
+              "url": "https://link.desustream.com/?id=Uk83OUt2T214S3VnSkVvVndEaXJJYUZuS3AwaW9XbGhNdysyNlJmMlRieVQrcDEzNzdOTVhTUT0="
+            },
+            {
+              "title": "Mega",
+              "url": "https://link.desustream.com/?id=Uk83OUt2T214S3VwSkY0QmlpUzRlS0lnSlpkZytFeFhYVWVNNm1iZ0tjWEk1NTFUd2ZCeVBTVDlGUmw0NmRrWGIzdm5sSEg1anRzaG1tVll5QnA1NHRDWGhqQzVhMWg5Q3c9PQ=="
+            }
+          ]
+        }
+      ]
+    },
+    "info": {
+      "credit": "Samehadaku",
+      "encoder": "Samehadaku",
+      "duration": "25 Menit",
+      "type": "TV",
+      "genreList": [
+        {
+          "title": "Action",
+          "genreId": "action",
+          "href": "/anime/genre/action",
+          "otakudesuUrl": "https://otakudesu.blog/genres/action/"
+        },
+        {
+          "title": "Comedy",
+          "genreId": "comedy",
+          "href": "/anime/genre/comedy",
+          "otakudesuUrl": "https://otakudesu.blog/genres/comedy/"
+        },
+        {
+          "title": "Organized Crime",
+          "genreId": "organized-crime",
+          "href": "/anime/genre/organized-crime",
+          "otakudesuUrl": "https://otakudesu.blog/genres/organized-crime/"
+        },
+        {
+          "title": "Shounen",
+          "genreId": "shounen",
+          "href": "/anime/genre/shounen",
+          "otakudesuUrl": "https://otakudesu.blog/genres/shounen/"
+        }
+      ],
+      "episodeList": [
+        {
+          "title": "Episode 11",
+          "eps": 11,
+          "date": "",
+          "episodeId": "sd-p2-episode-11-sub-indo",
+          "href": "/anime/episode/sd-p2-episode-11-sub-indo",
+          "otakudesuUrl": "https://otakudesu.blog/episode/sd-p2-episode-11-sub-indo/"
+        },
+        {
+          "title": "Episode 10",
+          "eps": 10,
+          "date": "",
+          "episodeId": "sd-p2-episode-10-sub-indo",
+          "href": "/anime/episode/sd-p2-episode-10-sub-indo",
+          "otakudesuUrl": "https://otakudesu.blog/episode/sd-p2-episode-10-sub-indo/"
+        },
+        {
+          "title": "Episode 9",
+          "eps": 9,
+          "date": "",
+          "episodeId": "sd-p2-episode-9-sub-indo",
+          "href": "/anime/episode/sd-p2-episode-9-sub-indo",
+          "otakudesuUrl": "https://otakudesu.blog/episode/sd-p2-episode-9-sub-indo/"
+        },
+        {
+          "title": "Episode 8",
+          "eps": 8,
+          "date": "",
+          "episodeId": "sd-p2-episode-8-sub-indo",
+          "href": "/anime/episode/sd-p2-episode-8-sub-indo",
+          "otakudesuUrl": "https://otakudesu.blog/episode/sd-p2-episode-8-sub-indo/"
+        },
+        {
+          "title": "Episode 7",
+          "eps": 7,
+          "date": "",
+          "episodeId": "sd-p2-episode-7-sub-indo",
+          "href": "/anime/episode/sd-p2-episode-7-sub-indo",
+          "otakudesuUrl": "https://otakudesu.blog/episode/sd-p2-episode-7-sub-indo/"
+        },
+        {
+          "title": "Episode 6",
+          "eps": 6,
+          "date": "",
+          "episodeId": "sd-p2-episode-6-sub-indo",
+          "href": "/anime/episode/sd-p2-episode-6-sub-indo",
+          "otakudesuUrl": "https://otakudesu.blog/episode/sd-p2-episode-6-sub-indo/"
+        },
+        {
+          "title": "Episode 5",
+          "eps": 5,
+          "date": "",
+          "episodeId": "sd-p2-episode-5-sub-indo",
+          "href": "/anime/episode/sd-p2-episode-5-sub-indo",
+          "otakudesuUrl": "https://otakudesu.blog/episode/sd-p2-episode-5-sub-indo/"
+        },
+        {
+          "title": "Episode 4",
+          "eps": 4,
+          "date": "",
+          "episodeId": "sd-p2-episode-4-sub-indo",
+          "href": "/anime/episode/sd-p2-episode-4-sub-indo",
+          "otakudesuUrl": "https://otakudesu.blog/episode/sd-p2-episode-4-sub-indo/"
+        },
+        {
+          "title": "Episode 3",
+          "eps": 3,
+          "date": "",
+          "episodeId": "sd-p2-episode-3-sub-indo",
+          "href": "/anime/episode/sd-p2-episode-3-sub-indo",
+          "otakudesuUrl": "https://otakudesu.blog/episode/sd-p2-episode-3-sub-indo/"
+        },
+        {
+          "title": "Episode 2",
+          "eps": 2,
+          "date": "",
+          "episodeId": "sd-p2-episode-2-sub-indo",
+          "href": "/anime/episode/sd-p2-episode-2-sub-indo",
+          "otakudesuUrl": "https://otakudesu.blog/episode/sd-p2-episode-2-sub-indo/"
+        },
+        {
+          "title": "Episode 1",
+          "eps": 1,
+          "date": "",
+          "episodeId": "sd-p2-episode-1-sub-indo",
+          "href": "/anime/episode/sd-p2-episode-1-sub-indo",
+          "otakudesuUrl": "https://otakudesu.blog/episode/sd-p2-episode-1-sub-indo/"
+        }
+      ]
+    }
+  },
+  "pagination": null
+}

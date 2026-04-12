@@ -1,0 +1,126 @@
+{
+  "status": "success",
+  "creator": "Sanka Vollerei",
+  "total": 20,
+  "data": [
+    {
+      "name": "Drama",
+      "slug": "drama",
+      "count": 1127,
+      "url": "https://winbu.net/genre/drama/"
+    },
+    {
+      "name": "Action",
+      "slug": "action",
+      "count": 987,
+      "url": "https://winbu.net/genre/action/"
+    },
+    {
+      "name": "Comedy",
+      "slug": "comedy",
+      "count": 808,
+      "url": "https://winbu.net/genre/comedy/"
+    },
+    {
+      "name": "Fantasy",
+      "slug": "fantasy",
+      "count": 624,
+      "url": "https://winbu.net/genre/fantasy/"
+    },
+    {
+      "name": "Melodrama",
+      "slug": "Melodrama",
+      "count": 531,
+      "url": "https://winbu.net/genre/Melodrama/"
+    },
+    {
+      "name": "Life",
+      "slug": "life",
+      "count": 509,
+      "url": "https://winbu.net/genre/life/"
+    },
+    {
+      "name": "Dark",
+      "slug": "Dark",
+      "count": 441,
+      "url": "https://winbu.net/genre/Dark/"
+    },
+    {
+      "name": "Adventure",
+      "slug": "adventure",
+      "count": 437,
+      "url": "https://winbu.net/genre/adventure/"
+    },
+    {
+      "name": "Romance",
+      "slug": "romance",
+      "count": 432,
+      "url": "https://winbu.net/genre/romance/"
+    },
+    {
+      "name": "Horror",
+      "slug": "horror",
+      "count": 395,
+      "url": "https://winbu.net/genre/horror/"
+    },
+    {
+      "name": "Thriller",
+      "slug": "thriller",
+      "count": 368,
+      "url": "https://winbu.net/genre/thriller/"
+    },
+    {
+      "name": "Business",
+      "slug": "Business",
+      "count": 352,
+      "url": "https://winbu.net/genre/Business/"
+    },
+    {
+      "name": "Food",
+      "slug": "Food",
+      "count": 331,
+      "url": "https://winbu.net/genre/Food/"
+    },
+    {
+      "name": "Mystery",
+      "slug": "mystery",
+      "count": 261,
+      "url": "https://winbu.net/genre/mystery/"
+    },
+    {
+      "name": "Crime",
+      "slug": "Crime",
+      "count": 248,
+      "url": "https://winbu.net/genre/Crime/"
+    },
+    {
+      "name": "Political",
+      "slug": "Political",
+      "count": 246,
+      "url": "https://winbu.net/genre/Political/"
+    },
+    {
+      "name": "Teen",
+      "slug": "Teen",
+      "count": 187,
+      "url": "https://winbu.net/genre/Teen/"
+    },
+    {
+      "name": "Law",
+      "count": 1,
+      "url": "https://winbu.net/tag/law/"
+    },
+    {
+      "name": "Sci-Fi",
+      "slug": "sci-fi",
+      "count": 151,
+      "url": "https://winbu.net/genre/sci-fi/"
+    },
+    {
+      "name": "Medical",
+      "slug": "medical",
+      "count": 147,
+      "url": "https://winbu.net/genre/medical/"
+    }
+  ]
+}

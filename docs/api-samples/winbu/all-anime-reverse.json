@@ -1,0 +1,288 @@
+{
+  "status": "success",
+  "creator": "Sanka Vollerei",
+  "message": "Daftar Anime (Z-A)",
+  "data": [
+    {
+      "title": "Zutaboro Reijou wa Ane no Moto Konyakusha ni Dekiai sareru",
+      "id": "zutaboro-reijou-wa-ane-no-moto-konyakusha-ni-dekiai-sareru",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2025/07/149900l_200x300.jpeg",
+      "rating": "0",
+      "time": "6 bulan",
+      "episode": ""
+    },
+    {
+      "title": "Zootopia 2 (2025)",
+      "id": "zootopia-2-2025",
+      "type": "film",
+      "image": "https://winbu.net/wp-content/uploads/2025/12/Z2_200x300.jpeg",
+      "rating": "26147",
+      "time": "2 bulan",
+      "episode": ""
+    },
+    {
+      "title": "Zombieverse: New Blood",
+      "id": "zombieverse-new-blood",
+      "type": "series",
+      "image": "https://winbu.net/wp-content/uploads/2025/05/48764_200x300.jpeg",
+      "rating": "0",
+      "time": "11 bulan",
+      "episode": ""
+    },
+    {
+      "title": "Zombies 4: Dawn of the Vampires (2025)",
+      "id": "zombies-4-dawn-of-the-vampires-2025",
+      "type": "film",
+      "image": "https://winbu.net/wp-content/uploads/2025/07/54443_200x300.jpeg",
+      "rating": "9942",
+      "time": "9 bulan",
+      "episode": ""
+    },
+    {
+      "title": "Zombiddal (2025)",
+      "id": "zombiddal-2025",
+      "type": "film",
+      "image": "https://winbu.net/wp-content/uploads/2025/09/60842_200x300.jpeg",
+      "rating": "11526",
+      "time": "6 bulan",
+      "episode": ""
+    },
+    {
+      "title": "Zom 100 Bucket List of the Dead",
+      "id": "zom-100-bucket-list-of-the-dead",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2023/12/Zom-100-Episode-12-END_200x300.jpeg",
+      "rating": "0",
+      "time": "2 tahun",
+      "episode": ""
+    },
+    {
+      "title": "Zoids Wild Zero",
+      "id": "zoids-wild-zero",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2020/08/zoid-12-scaled_200x300.jpeg",
+      "rating": "0",
+      "time": "5 tahun",
+      "episode": ""
+    },
+    {
+      "title": "Ziam (2025)",
+      "id": "ziam-2025",
+      "type": "film",
+      "image": "https://winbu.net/wp-content/uploads/2025/07/54174_200x300.jpeg",
+      "rating": "6030",
+      "time": "9 bulan",
+      "episode": ""
+    },
+    {
+      "title": "Zenshuu",
+      "id": "zenshuu",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2025/01/146841_200x300.jpeg",
+      "rating": "0",
+      "time": "1 tahun",
+      "episode": ""
+    },
+    {
+      "title": "Zebra (2024)",
+      "id": "zebra-2024",
+      "type": "film",
+      "image": "https://winbu.net/wp-content/uploads/2025/06/50841_200x300.jpeg",
+      "rating": "9893",
+      "time": "10 bulan",
+      "episode": ""
+    },
+    {
+      "title": "Zatsu Tabi",
+      "id": "zatsu-tabi",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2025/04/148218-1_200x300.jpeg",
+      "rating": "0",
+      "time": "9 bulan",
+      "episode": ""
+    },
+    {
+      "title": "Yuusha-kei ni Shosu: Choubatsu Yuusha 9004-tai Keimu Kiroku",
+      "id": "yuusha-kei-ni-shosu-choubatsu-yuusha-9004-tai-keimu-kiroku",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2026/01/151911_200x300.jpeg",
+      "rating": "0",
+      "time": "14 hari",
+      "episode": ""
+    },
+    {
+      "title": "Yuusha Yamemasu",
+      "id": "yuusha-yamemasu",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2022/06/Yuusha-Yamemasu-Episode-12-END_200x300.jpeg",
+      "rating": "0",
+      "time": "3 tahun",
+      "episode": ""
+    },
+    {
+      "title": "Yuusha Party wo Tsuihou sareta Shiromadoushi, S-Rank Boukensha ni Hirowareru: Kono Shiromadoushi ga Kikakugai Sugiru",
+      "id": "yuusha-party-wo-tsuihou-sareta-shiromadoushi-s-rank-boukensha-ni-hirowareru-kono-shiromadoushi-ga-kikakugai-sugiru",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2025/07/149889l_200x300.jpeg",
+      "rating": "0",
+      "time": "6 bulan",
+      "episode": ""
+    },
+    {
+      "title": "Yuusha Party wo Oidasareta Kiyoubinbou",
+      "id": "yuusha-party-wo-oidasareta-kiyoubinbou",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2026/01/153135_200x300.jpeg",
+      "rating": "0",
+      "time": "22 hari",
+      "episode": ""
+    },
+    {
+      "title": "Yuusha Party ni Kawaii Ko ga Ita node, Kokuhaku shitemita.",
+      "id": "yuusha-party-ni-kawaii-ko-ga-ita-node-kokuhaku-shitemita",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2026/01/152828_200x300.jpeg",
+      "rating": "0",
+      "time": "9 hari",
+      "episode": ""
+    },
+    {
+      "title": "Yuusha no Kuzu",
+      "id": "yuusha-no-kuzu",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2026/01/154043_200x300.jpeg",
+      "rating": "0",
+      "time": "12 hari",
+      "episode": ""
+    },
+    {
+      "title": "Yuusha ga Shinda!",
+      "id": "yuusha-ga-shinda",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2023/06/Yuusha-ga-Shinda-Episode-12-END_200x300.jpeg",
+      "rating": "0",
+      "time": "2 tahun",
+      "episode": ""
+    },
+    {
+      "title": "Yuru Camp△ Season 3",
+      "id": "yuru-camp%e2%96%b3-season-3",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2024/06/Yuru-Camp-Season-3-Episode-12-END_200x300.jpeg",
+      "rating": "0",
+      "time": "1 tahun",
+      "episode": ""
+    },
+    {
+      "title": "Yuru Camp△ Season 2",
+      "id": "yuru-camp%e2%96%b3-season-2",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2021/04/Screenshot-2021-04-01-225133-1-scaled_200x300.jpeg",
+      "rating": "0",
+      "time": "5 tahun",
+      "episode": ""
+    },
+    {
+      "title": "Yunmeng Romance (2026)",
+      "id": "yunmeng-romance-2026",
+      "type": "film",
+      "image": "https://winbu.net/wp-content/uploads/2026/01/YR_200x300.jpeg",
+      "rating": "7353",
+      "time": "2 bulan",
+      "episode": ""
+    },
+    {
+      "title": "Yummy Yummy Yummy",
+      "id": "yummy-yummy-yummy",
+      "type": "series",
+      "image": "https://winbu.net/wp-content/uploads/2025/10/62926_200x300.jpeg",
+      "rating": "0",
+      "time": "5 bulan",
+      "episode": ""
+    },
+    {
+      "title": "Yu☆Gi☆Oh!: Sevens",
+      "id": "yu%e2%98%86gi%e2%98%86oh-sevens",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2020/07/Yugi-09_200x300.jpeg",
+      "rating": "0",
+      "time": "5 tahun",
+      "episode": ""
+    },
+    {
+      "title": "Yu Ling Shi (B.King)",
+      "id": "yu-ling-shi-b-king",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2026/03/149200l_200x300.jpeg",
+      "rating": "0",
+      "time": "5 hari",
+      "episode": ""
+    },
+    {
+      "title": "Youthful Glory",
+      "id": "youthful-glory",
+      "type": "series",
+      "image": "https://winbu.net/wp-content/uploads/2025/06/51257_200x300.jpeg",
+      "rating": "0",
+      "time": "10 bulan",
+      "episode": ""
+    },
+    {
+      "title": "Your Letter (2025)",
+      "id": "your-letter-2025",
+      "type": "film",
+      "image": "https://winbu.net/wp-content/uploads/2025/12/YL_200x300.jpeg",
+      "rating": "12623",
+      "time": "3 bulan",
+      "episode": ""
+    },
+    {
+      "title": "Your Host (2025)",
+      "id": "your-host-2025",
+      "type": "film",
+      "image": "https://winbu.net/wp-content/uploads/2025/12/image-26_200x300.jpeg",
+      "rating": "5487",
+      "time": "4 bulan",
+      "episode": ""
+    },
+    {
+      "title": "Your Friends & Neighbors Season 2",
+      "id": "your-friends-neighbors-season-2",
+      "type": "series",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/76468_200x300.jpeg",
+      "rating": "0",
+      "time": "5 hari",
+      "episode": ""
+    },
+    {
+      "title": "Your Friends & Neighbors Season 1",
+      "id": "your-friends-neighbors-season-1",
+      "type": "series",
+      "image": "https://winbu.net/wp-content/uploads/2025/05/50623_200x300.jpeg",
+      "rating": "0",
+      "time": "10 bulan",
+      "episode": ""
+    },
+    {
+      "title": "Your Forma",
+      "id": "your-forma",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2025/04/147967-1_200x300.jpeg",
+      "rating": "0",
+      "time": "9 bulan",
+      "episode": ""
+    }
+  ],
+  "pagination": {
+    "current_page": 1,
+    "total_pages": 5,
+    "has_next_page": true,
+    "next_page": 2,
+    "prev_page": null,
+    "has_prev_page": false
+  },
+  "filters": {
+    "order": "titlereverse"
+  }
+}

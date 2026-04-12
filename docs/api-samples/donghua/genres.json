@@ -1,0 +1,2381 @@
+{
+  "creator": "Sanka Vollerei",
+  "data": [
+    {
+      "name": "Action",
+      "slug": "action",
+      "href": "/donghua/genres/action",
+      "anichinUrl": "https://anichin.cafe/genres/action/"
+    },
+    {
+      "name": "Action Drama",
+      "slug": "action-drama",
+      "href": "/donghua/genres/action-drama",
+      "anichinUrl": "https://anichin.cafe/genres/action-drama/"
+    },
+    {
+      "name": "Actions",
+      "slug": "actions",
+      "href": "/donghua/genres/actions",
+      "anichinUrl": "https://anichin.cafe/genres/actions/"
+    },
+    {
+      "name": "Adventure",
+      "slug": "adventure",
+      "href": "/donghua/genres/adventure",
+      "anichinUrl": "https://anichin.cafe/genres/adventure/"
+    },
+    {
+      "name": "Comedy",
+      "slug": "comedy",
+      "href": "/donghua/genres/comedy",
+      "anichinUrl": "https://anichin.cafe/genres/comedy/"
+    },
+    {
+      "name": "Crossdressing",
+      "slug": "crossdressing",
+      "href": "/donghua/genres/crossdressing",
+      "anichinUrl": "https://anichin.cafe/genres/crossdressing/"
+    },
+    {
+      "name": "Cultivation",
+      "slug": "cultivation",
+      "href": "/donghua/genres/cultivation",
+      "anichinUrl": "https://anichin.cafe/genres/cultivation/"
+    },
+    {
+      "name": "Demons",
+      "slug": "demons",
+      "href": "/donghua/genres/demons",
+      "anichinUrl": "https://anichin.cafe/genres/demons/"
+    },
+    {
+      "name": "Drama",
+      "slug": "drama",
+      "href": "/donghua/genres/drama",
+      "anichinUrl": "https://anichin.cafe/genres/drama/"
+    },
+    {
+      "name": "e School",
+      "slug": "e-school",
+      "href": "/donghua/genres/e-school",
+      "anichinUrl": "https://anichin.cafe/genres/e-school/"
+    },
+    {
+      "name": "Ecchi",
+      "slug": "ecchi",
+      "href": "/donghua/genres/ecchi",
+      "anichinUrl": "https://anichin.cafe/genres/ecchi/"
+    },
+    {
+      "name": "Fantasy",
+      "slug": "fantasy",
+      "href": "/donghua/genres/fantasy",
+      "anichinUrl": "https://anichin.cafe/genres/fantasy/"
+    },
+    {
+      "name": "Friendship",
+      "slug": "friendship",
+      "href": "/donghua/genres/friendship",
+      "anichinUrl": "https://anichin.cafe/genres/friendship/"
+    },
+    {
+      "name": "Game",
+      "slug": "game",
+      "href": "/donghua/genres/game",
+      "anichinUrl": "https://anichin.cafe/genres/game/"
+    },
+    {
+      "name": "Gore",
+      "slug": "gore",
+      "href": "/donghua/genres/gore",
+      "anichinUrl": "https://anichin.cafe/genres/gore/"
+    },
+    {
+      "name": "Gourmet",
+      "slug": "gourmet",
+      "href": "/donghua/genres/gourmet",
+      "anichinUrl": "https://anichin.cafe/genres/gourmet/"
+    },
+    {
+      "name": "Harem",
+      "slug": "harem",
+      "href": "/donghua/genres/harem",
+      "anichinUrl": "https://anichin.cafe/genres/harem/"
+    },
+    {
+      "name": "Historical",
+      "slug": "historical",
+      "href": "/donghua/genres/historical",
+      "anichinUrl": "https://anichin.cafe/genres/historical/"
+    },
+    {
+      "name": "Horror",
+      "slug": "horror",
+      "href": "/donghua/genres/horror",
+      "anichinUrl": "https://anichin.cafe/genres/horror/"
+    },
+    {
+      "name": "Isekai",
+      "slug": "isekai",
+      "href": "/donghua/genres/isekai",
+      "anichinUrl": "https://anichin.cafe/genres/isekai/"
+    },
+    {
+      "name": "Life",
+      "slug": "life",
+      "href": "/donghua/genres/life",
+      "anichinUrl": "https://anichin.cafe/genres/life/"
+    },
+    {
+      "name": "Magic",
+      "slug": "magic",
+      "href": "/donghua/genres/magic",
+      "anichinUrl": "https://anichin.cafe/genres/magic/"
+    },
+    {
+      "name": "Martial Arts",
+      "slug": "martial-arts",
+      "href": "/donghua/genres/martial-arts",
+      "anichinUrl": "https://anichin.cafe/genres/martial-arts/"
+    },
+    {
+      "name": "Mecha",
+      "slug": "mecha",
+      "href": "/donghua/genres/mecha",
+      "anichinUrl": "https://anichin.cafe/genres/mecha/"
+    },
+    {
+      "name": "Military",
+      "slug": "military",
+      "href": "/donghua/genres/military",
+      "anichinUrl": "https://anichin.cafe/genres/military/"
+    },
+    {
+      "name": "Music",
+      "slug": "music",
+      "href": "/donghua/genres/music",
+      "anichinUrl": "https://anichin.cafe/genres/music/"
+    },
+    {
+      "name": "Mystery",
+      "slug": "mystery",
+      "href": "/donghua/genres/mystery",
+      "anichinUrl": "https://anichin.cafe/genres/mystery/"
+    },
+    {
+      "name": "Mythology",
+      "slug": "mythology",
+      "href": "/donghua/genres/mythology",
+      "anichinUrl": "https://anichin.cafe/genres/mythology/"
+    },
+    {
+      "name": "Psychological",
+      "slug": "psychological",
+      "href": "/donghua/genres/psychological",
+      "anichinUrl": "https://anichin.cafe/genres/psychological/"
+    },
+    {
+      "name": "Reincaranation",
+      "slug": "reincaranation",
+      "href": "/donghua/genres/reincaranation",
+      "anichinUrl": "https://anichin.cafe/genres/reincaranation/"
+    },
+    {
+      "name": "Reincarnation",
+      "slug": "reincarnation",
+      "href": "/donghua/genres/reincarnation",
+      "anichinUrl": "https://anichin.cafe/genres/reincarnation/"
+    },
+    {
+      "name": "Romanc",
+      "slug": "romanc",
+      "href": "/donghua/genres/romanc",
+      "anichinUrl": "https://anichin.cafe/genres/romanc/"
+    },
+    {
+      "name": "Romance",
+      "slug": "romance",
+      "href": "/donghua/genres/romance",
+      "anichinUrl": "https://anichin.cafe/genres/romance/"
+    },
+    {
+      "name": "School",
+      "slug": "school",
+      "href": "/donghua/genres/school",
+      "anichinUrl": "https://anichin.cafe/genres/school/"
+    },
+    {
+      "name": "Sci-Fi",
+      "slug": "sci-fi",
+      "href": "/donghua/genres/sci-fi",
+      "anichinUrl": "https://anichin.cafe/genres/sci-fi/"
+    },
+    {
+      "name": "Shoujo",
+      "slug": "shoujo",
+      "href": "/donghua/genres/shoujo",
+      "anichinUrl": "https://anichin.cafe/genres/shoujo/"
+    },
+    {
+      "name": "Shounen",
+      "slug": "shounen",
+      "href": "/donghua/genres/shounen",
+      "anichinUrl": "https://anichin.cafe/genres/shounen/"
+    },
+    {
+      "name": "Slice of Life",
+      "slug": "slice-of-life",
+      "href": "/donghua/genres/slice-of-life",
+      "anichinUrl": "https://anichin.cafe/genres/slice-of-life/"
+    },
+    {
+      "name": "Space",
+      "slug": "space",
+      "href": "/donghua/genres/space",
+      "anichinUrl": "https://anichin.cafe/genres/space/"
+    },
+    {
+      "name": "Sports",
+      "slug": "sports",
+      "href": "/donghua/genres/sports",
+      "anichinUrl": "https://anichin.cafe/genres/sports/"
+    },
+    {
+      "name": "Super Power",
+      "slug": "super-power",
+      "href": "/donghua/genres/super-power",
+      "anichinUrl": "https://anichin.cafe/genres/super-power/"
+    },
+    {
+      "name": "Supernatural",
+      "slug": "supernatural",
+      "href": "/donghua/genres/supernatural",
+      "anichinUrl": "https://anichin.cafe/genres/supernatural/"
+    },
+    {
+      "name": "Suspense",
+      "slug": "suspense",
+      "href": "/donghua/genres/suspense",
+      "anichinUrl": "https://anichin.cafe/genres/suspense/"
+    },
+    {
+      "name": "Team Sports",
+      "slug": "team-sports",
+      "href": "/donghua/genres/team-sports",
+      "anichinUrl": "https://anichin.cafe/genres/team-sports/"
+    },
+    {
+      "name": "Thriller",
+      "slug": "thriller",
+      "href": "/donghua/genres/thriller",
+      "anichinUrl": "https://anichin.cafe/genres/thriller/"
+    },
+    {
+      "name": "Urban Fantasy",
+      "slug": "urban-fantasy",
+      "href": "/donghua/genres/urban-fantasy",
+      "anichinUrl": "https://anichin.cafe/genres/urban-fantasy/"
+    },
+    {
+      "name": "2014",
+      "slug": "2014",
+      "href": "/donghua/genres/2014",
+      "anichinUrl": "https://anichin.cafe/genres/2014/"
+    },
+    {
+      "name": "2015",
+      "slug": "2015",
+      "href": "/donghua/genres/2015",
+      "anichinUrl": "https://anichin.cafe/genres/2015/"
+    },
+    {
+      "name": "2016",
+      "slug": "2016",
+      "href": "/donghua/genres/2016",
+      "anichinUrl": "https://anichin.cafe/genres/2016/"
+    },
+    {
+      "name": "2017",
+      "slug": "2017",
+      "href": "/donghua/genres/2017",
+      "anichinUrl": "https://anichin.cafe/genres/2017/"
+    },
+    {
+      "name": "2018",
+      "slug": "2018",
+      "href": "/donghua/genres/2018",
+      "anichinUrl": "https://anichin.cafe/genres/2018/"
+    },
+    {
+      "name": "2019",
+      "slug": "2019",
+      "href": "/donghua/genres/2019",
+      "anichinUrl": "https://anichin.cafe/genres/2019/"
+    },
+    {
+      "name": "2020",
+      "slug": "2020",
+      "href": "/donghua/genres/2020",
+      "anichinUrl": "https://anichin.cafe/genres/2020/"
+    },
+    {
+      "name": "2021",
+      "slug": "2021",
+      "href": "/donghua/genres/2021",
+      "anichinUrl": "https://anichin.cafe/genres/2021/"
+    },
+    {
+      "name": "2022",
+      "slug": "2022",
+      "href": "/donghua/genres/2022",
+      "anichinUrl": "https://anichin.cafe/genres/2022/"
+    },
+    {
+      "name": "2023",
+      "slug": "2023",
+      "href": "/donghua/genres/2023",
+      "anichinUrl": "https://anichin.cafe/genres/2023/"
+    },
+    {
+      "name": "2024",
+      "slug": "2024",
+      "href": "/donghua/genres/2024",
+      "anichinUrl": "https://anichin.cafe/genres/2024/"
+    },
+    {
+      "name": "2025",
+      "slug": "2025",
+      "href": "/donghua/genres/2025",
+      "anichinUrl": "https://anichin.cafe/genres/2025/"
+    },
+    {
+      "name": "2026",
+      "slug": "2026",
+      "href": "/donghua/genres/2026",
+      "anichinUrl": "https://anichin.cafe/genres/2026/"
+    },
+    {
+      "name": "Spring 2022",
+      "slug": "spring-2022",
+      "href": "/donghua/genres/spring-2022",
+      "anichinUrl": "https://anichin.cafe/genres/spring-2022/"
+    },
+    {
+      "name": "Spring 2023",
+      "slug": "spring-2023",
+      "href": "/donghua/genres/spring-2023",
+      "anichinUrl": "https://anichin.cafe/genres/spring-2023/"
+    },
+    {
+      "name": "Summer 2022",
+      "slug": "summer-2022",
+      "href": "/donghua/genres/summer-2022",
+      "anichinUrl": "https://anichin.cafe/genres/summer-2022/"
+    },
+    {
+      "name": "Summer 2023",
+      "slug": "summer-2023",
+      "href": "/donghua/genres/summer-2023",
+      "anichinUrl": "https://anichin.cafe/genres/summer-2023/"
+    },
+    {
+      "name": "Winter 2023",
+      "slug": "winter-2023",
+      "href": "/donghua/genres/winter-2023",
+      "anichinUrl": "https://anichin.cafe/genres/winter-2023/"
+    },
+    {
+      "name": "2:10 AM Animation",
+      "slug": "210-am-animation",
+      "href": "/donghua/genres/210-am-animation",
+      "anichinUrl": "https://anichin.cafe/genres/210-am-animation/"
+    },
+    {
+      "name": "2:10 Animatión",
+      "slug": "210-animation",
+      "href": "/donghua/genres/210-animation",
+      "anichinUrl": "https://anichin.cafe/genres/210-animation/"
+    },
+    {
+      "name": "AHA Entertainment",
+      "slug": "aha-entertainment",
+      "href": "/donghua/genres/aha-entertainment",
+      "anichinUrl": "https://anichin.cafe/genres/aha-entertainment/"
+    },
+    {
+      "name": "ASK Animation Studio",
+      "slug": "ask-animation-studio",
+      "href": "/donghua/genres/ask-animation-studio",
+      "anichinUrl": "https://anichin.cafe/genres/ask-animation-studio/"
+    },
+    {
+      "name": "Aurora",
+      "slug": "aurora",
+      "href": "/donghua/genres/aurora",
+      "anichinUrl": "https://anichin.cafe/genres/aurora/"
+    },
+    {
+      "name": "Axis Studios",
+      "slug": "axis-studios",
+      "href": "/donghua/genres/axis-studios",
+      "anichinUrl": "https://anichin.cafe/genres/axis-studios/"
+    },
+    {
+      "name": "Azure Sea Studios",
+      "slug": "azure-sea-studios",
+      "href": "/donghua/genres/azure-sea-studios",
+      "anichinUrl": "https://anichin.cafe/genres/azure-sea-studios/"
+    },
+    {
+      "name": "B.CMAY PICTURES",
+      "slug": "b-cmay-pictures",
+      "href": "/donghua/genres/b-cmay-pictures",
+      "anichinUrl": "https://anichin.cafe/genres/b-cmay-pictures/"
+    },
+    {
+      "name": "Beijing Enlight Pictures",
+      "slug": "beijing-enlight-pictures",
+      "href": "/donghua/genres/beijing-enlight-pictures",
+      "anichinUrl": "https://anichin.cafe/genres/beijing-enlight-pictures/"
+    },
+    {
+      "name": "BETOBE",
+      "slug": "betobe",
+      "href": "/donghua/genres/betobe",
+      "anichinUrl": "https://anichin.cafe/genres/betobe/"
+    },
+    {
+      "name": "Big Firebird Cultural Media",
+      "slug": "big-firebird-cultural-media",
+      "href": "/donghua/genres/big-firebird-cultural-media",
+      "anichinUrl": "https://anichin.cafe/genres/big-firebird-cultural-media/"
+    },
+    {
+      "name": "Big Firebird Culture",
+      "slug": "big-firebird-culture",
+      "href": "/donghua/genres/big-firebird-culture",
+      "anichinUrl": "https://anichin.cafe/genres/big-firebird-culture/"
+    },
+    {
+      "name": "BigBigSun",
+      "slug": "bigbigsun",
+      "href": "/donghua/genres/bigbigsun",
+      "anichinUrl": "https://anichin.cafe/genres/bigbigsun/"
+    },
+    {
+      "name": "Bilibili",
+      "slug": "bilibili",
+      "href": "/donghua/genres/bilibili",
+      "anichinUrl": "https://anichin.cafe/genres/bilibili/"
+    },
+    {
+      "name": "BlueArc Animation Studio",
+      "slug": "bluearc-animation-studio",
+      "href": "/donghua/genres/bluearc-animation-studio",
+      "anichinUrl": "https://anichin.cafe/genres/bluearc-animation-studio/"
+    },
+    {
+      "name": "Borutong",
+      "slug": "borutong",
+      "href": "/donghua/genres/borutong",
+      "anichinUrl": "https://anichin.cafe/genres/borutong/"
+    },
+    {
+      "name": "Boyan Pictures",
+      "slug": "boyan-pictures",
+      "href": "/donghua/genres/boyan-pictures",
+      "anichinUrl": "https://anichin.cafe/genres/boyan-pictures/"
+    },
+    {
+      "name": "BUILD DREAM",
+      "slug": "build-dream",
+      "href": "/donghua/genres/build-dream",
+      "anichinUrl": "https://anichin.cafe/genres/build-dream/"
+    },
+    {
+      "name": "BYMENT",
+      "slug": "byment",
+      "href": "/donghua/genres/byment",
+      "anichinUrl": "https://anichin.cafe/genres/byment/"
+    },
+    {
+      "name": "CG Year",
+      "slug": "cg-year",
+      "href": "/donghua/genres/cg-year",
+      "anichinUrl": "https://anichin.cafe/genres/cg-year/"
+    },
+    {
+      "name": "Chongzhuo Animation",
+      "slug": "chongzhuo-animation",
+      "href": "/donghua/genres/chongzhuo-animation",
+      "anichinUrl": "https://anichin.cafe/genres/chongzhuo-animation/"
+    },
+    {
+      "name": "Chosen",
+      "slug": "chosen",
+      "href": "/donghua/genres/chosen",
+      "anichinUrl": "https://anichin.cafe/genres/chosen/"
+    },
+    {
+      "name": "Chosen Studio",
+      "slug": "chosen-studio",
+      "href": "/donghua/genres/chosen-studio",
+      "anichinUrl": "https://anichin.cafe/genres/chosen-studio/"
+    },
+    {
+      "name": "Cloud Art",
+      "slug": "cloud-art",
+      "href": "/donghua/genres/cloud-art",
+      "anichinUrl": "https://anichin.cafe/genres/cloud-art/"
+    },
+    {
+      "name": "Cloud Culture",
+      "slug": "cloud-culture",
+      "href": "/donghua/genres/cloud-culture",
+      "anichinUrl": "https://anichin.cafe/genres/cloud-culture/"
+    },
+    {
+      "name": "CMC Media",
+      "slug": "cmc-media",
+      "href": "/donghua/genres/cmc-media",
+      "anichinUrl": "https://anichin.cafe/genres/cmc-media/"
+    },
+    {
+      "name": "Coastline Animation Studio",
+      "slug": "coastline-animation-studio",
+      "href": "/donghua/genres/coastline-animation-studio",
+      "anichinUrl": "https://anichin.cafe/genres/coastline-animation-studio/"
+    },
+    {
+      "name": "Colored Pencil Animation",
+      "slug": "colored-pencil-animation",
+      "href": "/donghua/genres/colored-pencil-animation",
+      "anichinUrl": "https://anichin.cafe/genres/colored-pencil-animation/"
+    },
+    {
+      "name": "Colored-Pencil Animation Design",
+      "slug": "colored-pencil-animation-design",
+      "href": "/donghua/genres/colored-pencil-animation-design",
+      "anichinUrl": "https://anichin.cafe/genres/colored-pencil-animation-design/"
+    },
+    {
+      "name": "D.ROCK-ART",
+      "slug": "d-rock-art",
+      "href": "/donghua/genres/d-rock-art",
+      "anichinUrl": "https://anichin.cafe/genres/d-rock-art/"
+    },
+    {
+      "name": "Da Yu",
+      "slug": "da-yu",
+      "href": "/donghua/genres/da-yu",
+      "anichinUrl": "https://anichin.cafe/genres/da-yu/"
+    },
+    {
+      "name": "Dancing CG Studio",
+      "slug": "dancing-cg-studio",
+      "href": "/donghua/genres/dancing-cg-studio",
+      "anichinUrl": "https://anichin.cafe/genres/dancing-cg-studio/"
+    },
+    {
+      "name": "Dangun Pictures",
+      "slug": "dangun-pictures",
+      "href": "/donghua/genres/dangun-pictures",
+      "anichinUrl": "https://anichin.cafe/genres/dangun-pictures/"
+    },
+    {
+      "name": "DC Entertainment",
+      "slug": "dc-entertainment",
+      "href": "/donghua/genres/dc-entertainment",
+      "anichinUrl": "https://anichin.cafe/genres/dc-entertainment/"
+    },
+    {
+      "name": "DC Impression Vision",
+      "slug": "dc-impression-vision",
+      "href": "/donghua/genres/dc-impression-vision",
+      "anichinUrl": "https://anichin.cafe/genres/dc-impression-vision/"
+    },
+    {
+      "name": "Djinn Power",
+      "slug": "djinn-power",
+      "href": "/donghua/genres/djinn-power",
+      "anichinUrl": "https://anichin.cafe/genres/djinn-power/"
+    },
+    {
+      "name": "EMT Squared",
+      "slug": "emt-squared",
+      "href": "/donghua/genres/emt-squared",
+      "anichinUrl": "https://anichin.cafe/genres/emt-squared/"
+    },
+    {
+      "name": "Escape Velocity Animation",
+      "slug": "escape-velocity-animation",
+      "href": "/donghua/genres/escape-velocity-animation",
+      "anichinUrl": "https://anichin.cafe/genres/escape-velocity-animation/"
+    },
+    {
+      "name": "Fengyun Animation",
+      "slug": "fengyun-animation",
+      "href": "/donghua/genres/fengyun-animation",
+      "anichinUrl": "https://anichin.cafe/genres/fengyun-animation/"
+    },
+    {
+      "name": "Flying Fish Studio",
+      "slug": "flying-fish-studio",
+      "href": "/donghua/genres/flying-fish-studio",
+      "anichinUrl": "https://anichin.cafe/genres/flying-fish-studio/"
+    },
+    {
+      "name": "Foch Film",
+      "slug": "foch-film",
+      "href": "/donghua/genres/foch-film",
+      "anichinUrl": "https://anichin.cafe/genres/foch-film/"
+    },
+    {
+      "name": "Foch Films",
+      "slug": "foch-films",
+      "href": "/donghua/genres/foch-films",
+      "anichinUrl": "https://anichin.cafe/genres/foch-films/"
+    },
+    {
+      "name": "G.H.Y. Culture & Media",
+      "slug": "g-h-y-culture-media",
+      "href": "/donghua/genres/g-h-y-culture-media",
+      "anichinUrl": "https://anichin.cafe/genres/g-h-y-culture-media/"
+    },
+    {
+      "name": "Garden Culture",
+      "slug": "garden-culture",
+      "href": "/donghua/genres/garden-culture",
+      "anichinUrl": "https://anichin.cafe/genres/garden-culture/"
+    },
+    {
+      "name": "Green Planet Studio",
+      "slug": "green-planet-studio",
+      "href": "/donghua/genres/green-planet-studio",
+      "anichinUrl": "https://anichin.cafe/genres/green-planet-studio/"
+    },
+    {
+      "name": "Haoliners Animation League",
+      "slug": "haoliners-animation-league",
+      "href": "/donghua/genres/haoliners-animation-league",
+      "anichinUrl": "https://anichin.cafe/genres/haoliners-animation-league/"
+    },
+    {
+      "name": "He Zhou Culture",
+      "slug": "he-zhou-culture",
+      "href": "/donghua/genres/he-zhou-culture",
+      "anichinUrl": "https://anichin.cafe/genres/he-zhou-culture/"
+    },
+    {
+      "name": "Heart & Soul Animation",
+      "slug": "heart-soul-animation",
+      "href": "/donghua/genres/heart-soul-animation",
+      "anichinUrl": "https://anichin.cafe/genres/heart-soul-animation/"
+    },
+    {
+      "name": "High Energy Studio",
+      "slug": "high-energy-studio",
+      "href": "/donghua/genres/high-energy-studio",
+      "anichinUrl": "https://anichin.cafe/genres/high-energy-studio/"
+    },
+    {
+      "name": "HM Heros",
+      "slug": "hm-heros",
+      "href": "/donghua/genres/hm-heros",
+      "anichinUrl": "https://anichin.cafe/genres/hm-heros/"
+    },
+    {
+      "name": "Honglu Technology",
+      "slug": "honglu-technology",
+      "href": "/donghua/genres/honglu-technology",
+      "anichinUrl": "https://anichin.cafe/genres/honglu-technology/"
+    },
+    {
+      "name": "Hua Dream",
+      "slug": "hua-dream",
+      "href": "/donghua/genres/hua-dream",
+      "anichinUrl": "https://anichin.cafe/genres/hua-dream/"
+    },
+    {
+      "name": "iQIYI",
+      "slug": "iqiyi",
+      "href": "/donghua/genres/iqiyi",
+      "anichinUrl": "https://anichin.cafe/genres/iqiyi/"
+    },
+    {
+      "name": "Ji Man Wen Hua",
+      "slug": "ji-man-wen-hua",
+      "href": "/donghua/genres/ji-man-wen-hua",
+      "anichinUrl": "https://anichin.cafe/genres/ji-man-wen-hua/"
+    },
+    {
+      "name": "Joicy Studio",
+      "slug": "joicy-studio",
+      "href": "/donghua/genres/joicy-studio",
+      "anichinUrl": "https://anichin.cafe/genres/joicy-studio/"
+    },
+    {
+      "name": "KIO STUDIO",
+      "slug": "kio-studio",
+      "href": "/donghua/genres/kio-studio",
+      "anichinUrl": "https://anichin.cafe/genres/kio-studio/"
+    },
+    {
+      "name": "KJJ Animation",
+      "slug": "kjj-animation",
+      "href": "/donghua/genres/kjj-animation",
+      "anichinUrl": "https://anichin.cafe/genres/kjj-animation/"
+    },
+    {
+      "name": "Kunjing Culture",
+      "slug": "kunjing-culture",
+      "href": "/donghua/genres/kunjing-culture",
+      "anichinUrl": "https://anichin.cafe/genres/kunjing-culture/"
+    },
+    {
+      "name": "L²Studio",
+      "slug": "l%c2%b2studio",
+      "href": "/donghua/genres/l%c2%b2studio",
+      "anichinUrl": "https://anichin.cafe/genres/l%c2%b2studio/"
+    },
+    {
+      "name": "LAN Studio",
+      "slug": "lan-studio",
+      "href": "/donghua/genres/lan-studio",
+      "anichinUrl": "https://anichin.cafe/genres/lan-studio/"
+    },
+    {
+      "name": "Left Pocket Studio",
+      "slug": "left-pocket-studio",
+      "href": "/donghua/genres/left-pocket-studio",
+      "anichinUrl": "https://anichin.cafe/genres/left-pocket-studio/"
+    },
+    {
+      "name": "LIDENFILMS",
+      "slug": "lidenfilms",
+      "href": "/donghua/genres/lidenfilms",
+      "anichinUrl": "https://anichin.cafe/genres/lidenfilms/"
+    },
+    {
+      "name": "Light Chaser Animation Studios",
+      "slug": "light-chaser-animation-studios",
+      "href": "/donghua/genres/light-chaser-animation-studios",
+      "anichinUrl": "https://anichin.cafe/genres/light-chaser-animation-studios/"
+    },
+    {
+      "name": "Liliyabi Company Introduction",
+      "slug": "liliyabi-company-introduction",
+      "href": "/donghua/genres/liliyabi-company-introduction",
+      "anichinUrl": "https://anichin.cafe/genres/liliyabi-company-introduction/"
+    },
+    {
+      "name": "Lingsanwu Animation",
+      "slug": "lingsanwu-animation",
+      "href": "/donghua/genres/lingsanwu-animation",
+      "anichinUrl": "https://anichin.cafe/genres/lingsanwu-animation/"
+    },
+    {
+      "name": "Liyu Culture",
+      "slug": "liyu-culture",
+      "href": "/donghua/genres/liyu-culture",
+      "anichinUrl": "https://anichin.cafe/genres/liyu-culture/"
+    },
+    {
+      "name": "Long Zhi Gu Wenhua",
+      "slug": "long-zhi-gu-wenhua",
+      "href": "/donghua/genres/long-zhi-gu-wenhua",
+      "anichinUrl": "https://anichin.cafe/genres/long-zhi-gu-wenhua/"
+    },
+    {
+      "name": "Lx Animation Studio",
+      "slug": "lx-animation-studio",
+      "href": "/donghua/genres/lx-animation-studio",
+      "anichinUrl": "https://anichin.cafe/genres/lx-animation-studio/"
+    },
+    {
+      "name": "Majestic Studio",
+      "slug": "majestic-studio",
+      "href": "/donghua/genres/majestic-studio",
+      "anichinUrl": "https://anichin.cafe/genres/majestic-studio/"
+    },
+    {
+      "name": "Mandrill Picture Corp",
+      "slug": "mandrill-picture-corp",
+      "href": "/donghua/genres/mandrill-picture-corp",
+      "anichinUrl": "https://anichin.cafe/genres/mandrill-picture-corp/"
+    },
+    {
+      "name": "Martial Arts Reincaranation",
+      "slug": "martial-arts-reincaranation",
+      "href": "/donghua/genres/martial-arts-reincaranation",
+      "anichinUrl": "https://anichin.cafe/genres/martial-arts-reincaranation/"
+    },
+    {
+      "name": "Medo",
+      "slug": "medo",
+      "href": "/donghua/genres/medo",
+      "anichinUrl": "https://anichin.cafe/genres/medo/"
+    },
+    {
+      "name": "Midway Games",
+      "slug": "midway-games",
+      "href": "/donghua/genres/midway-games",
+      "anichinUrl": "https://anichin.cafe/genres/midway-games/"
+    },
+    {
+      "name": "Mili Digital",
+      "slug": "mili-digital",
+      "href": "/donghua/genres/mili-digital",
+      "anichinUrl": "https://anichin.cafe/genres/mili-digital/"
+    },
+    {
+      "name": "Mili Pictures",
+      "slug": "mili-pictures",
+      "href": "/donghua/genres/mili-pictures",
+      "anichinUrl": "https://anichin.cafe/genres/mili-pictures/"
+    },
+    {
+      "name": "Mokai Technology",
+      "slug": "mokai-technology",
+      "href": "/donghua/genres/mokai-technology",
+      "anichinUrl": "https://anichin.cafe/genres/mokai-technology/"
+    },
+    {
+      "name": "Motion Magic",
+      "slug": "motion-magic",
+      "href": "/donghua/genres/motion-magic",
+      "anichinUrl": "https://anichin.cafe/genres/motion-magic/"
+    },
+    {
+      "name": "Namu Animation",
+      "slug": "namu-animation",
+      "href": "/donghua/genres/namu-animation",
+      "anichinUrl": "https://anichin.cafe/genres/namu-animation/"
+    },
+    {
+      "name": "October Media",
+      "slug": "october-media",
+      "href": "/donghua/genres/october-media",
+      "anichinUrl": "https://anichin.cafe/genres/october-media/"
+    },
+    {
+      "name": "Oriental Creative Color",
+      "slug": "oriental-creative-color",
+      "href": "/donghua/genres/oriental-creative-color",
+      "anichinUrl": "https://anichin.cafe/genres/oriental-creative-color/"
+    },
+    {
+      "name": "Original Force",
+      "slug": "original-force",
+      "href": "/donghua/genres/original-force",
+      "anichinUrl": "https://anichin.cafe/genres/original-force/"
+    },
+    {
+      "name": "Painted Edge",
+      "slug": "painted-edge",
+      "href": "/donghua/genres/painted-edge",
+      "anichinUrl": "https://anichin.cafe/genres/painted-edge/"
+    },
+    {
+      "name": "Paper Plane Animation Studio",
+      "slug": "paper-plane-animation-studio",
+      "href": "/donghua/genres/paper-plane-animation-studio",
+      "anichinUrl": "https://anichin.cafe/genres/paper-plane-animation-studio/"
+    },
+    {
+      "name": "Passion Paint Animation",
+      "slug": "passion-paint-animation",
+      "href": "/donghua/genres/passion-paint-animation",
+      "anichinUrl": "https://anichin.cafe/genres/passion-paint-animation/"
+    },
+    {
+      "name": "Pb Animation Co. Ltd.",
+      "slug": "pb-animation-co-ltd",
+      "href": "/donghua/genres/pb-animation-co-ltd",
+      "anichinUrl": "https://anichin.cafe/genres/pb-animation-co-ltd/"
+    },
+    {
+      "name": "Phantom",
+      "slug": "phantom",
+      "href": "/donghua/genres/phantom",
+      "anichinUrl": "https://anichin.cafe/genres/phantom/"
+    },
+    {
+      "name": "Qing Xiang",
+      "slug": "qing-xiang",
+      "href": "/donghua/genres/qing-xiang",
+      "anichinUrl": "https://anichin.cafe/genres/qing-xiang/"
+    },
+    {
+      "name": "Qingxiang Culture",
+      "slug": "qingxiang-culture",
+      "href": "/donghua/genres/qingxiang-culture",
+      "anichinUrl": "https://anichin.cafe/genres/qingxiang-culture/"
+    },
+    {
+      "name": "Qiyuan Yinghua",
+      "slug": "qiyuan-yinghua",
+      "href": "/donghua/genres/qiyuan-yinghua",
+      "anichinUrl": "https://anichin.cafe/genres/qiyuan-yinghua/"
+    },
+    {
+      "name": "Quyue Technology",
+      "slug": "quyue-technology",
+      "href": "/donghua/genres/quyue-technology",
+      "anichinUrl": "https://anichin.cafe/genres/quyue-technology/"
+    },
+    {
+      "name": "Red Dog Culture House",
+      "slug": "red-dog-culture-house",
+      "href": "/donghua/genres/red-dog-culture-house",
+      "anichinUrl": "https://anichin.cafe/genres/red-dog-culture-house/"
+    },
+    {
+      "name": "Rocen",
+      "slug": "rocen",
+      "href": "/donghua/genres/rocen",
+      "anichinUrl": "https://anichin.cafe/genres/rocen/"
+    },
+    {
+      "name": "Ruo Hong Culture",
+      "slug": "ruo-hong-culture",
+      "href": "/donghua/genres/ruo-hong-culture",
+      "anichinUrl": "https://anichin.cafe/genres/ruo-hong-culture/"
+    },
+    {
+      "name": "Shanghai Foch Film",
+      "slug": "shanghai-foch-film",
+      "href": "/donghua/genres/shanghai-foch-film",
+      "anichinUrl": "https://anichin.cafe/genres/shanghai-foch-film/"
+    },
+    {
+      "name": "Shanghai Foch Film Culture Investment",
+      "slug": "shanghai-foch-film-culture-investment",
+      "href": "/donghua/genres/shanghai-foch-film-culture-investment",
+      "anichinUrl": "https://anichin.cafe/genres/shanghai-foch-film-culture-investment/"
+    },
+    {
+      "name": "Shanghai Motion Magic",
+      "slug": "shanghai-motion-magic",
+      "href": "/donghua/genres/shanghai-motion-magic",
+      "anichinUrl": "https://anichin.cafe/genres/shanghai-motion-magic/"
+    },
+    {
+      "name": "Sharefun Studio",
+      "slug": "sharefun-studio",
+      "href": "/donghua/genres/sharefun-studio",
+      "anichinUrl": "https://anichin.cafe/genres/sharefun-studio/"
+    },
+    {
+      "name": "Shengying Animation",
+      "slug": "shengying-animation",
+      "href": "/donghua/genres/shengying-animation",
+      "anichinUrl": "https://anichin.cafe/genres/shengying-animation/"
+    },
+    {
+      "name": "Shenman Entertainment",
+      "slug": "shenman-entertainment",
+      "href": "/donghua/genres/shenman-entertainment",
+      "anichinUrl": "https://anichin.cafe/genres/shenman-entertainment/"
+    },
+    {
+      "name": "Shenying Animation",
+      "slug": "shenying-animation",
+      "href": "/donghua/genres/shenying-animation",
+      "anichinUrl": "https://anichin.cafe/genres/shenying-animation/"
+    },
+    {
+      "name": "SJYNEXCUS",
+      "slug": "sjynexcus",
+      "href": "/donghua/genres/sjynexcus",
+      "anichinUrl": "https://anichin.cafe/genres/sjynexcus/"
+    },
+    {
+      "name": "Skyloong",
+      "slug": "skyloong",
+      "href": "/donghua/genres/skyloong",
+      "anichinUrl": "https://anichin.cafe/genres/skyloong/"
+    },
+    {
+      "name": "Soda Bear Animation",
+      "slug": "soda-bear-animation",
+      "href": "/donghua/genres/soda-bear-animation",
+      "anichinUrl": "https://anichin.cafe/genres/soda-bear-animation/"
+    },
+    {
+      "name": "Soyep",
+      "slug": "soyep",
+      "href": "/donghua/genres/soyep",
+      "anichinUrl": "https://anichin.cafe/genres/soyep/"
+    },
+    {
+      "name": "Sparkly Key Animation Studio",
+      "slug": "sparkly-key-animation-studio",
+      "href": "/donghua/genres/sparkly-key-animation-studio",
+      "anichinUrl": "https://anichin.cafe/genres/sparkly-key-animation-studio/"
+    },
+    {
+      "name": "Star Hunter Animation",
+      "slug": "star-hunter-animation",
+      "href": "/donghua/genres/star-hunter-animation",
+      "anichinUrl": "https://anichin.cafe/genres/star-hunter-animation/"
+    },
+    {
+      "name": "Studio Goindol",
+      "slug": "studio-goindol",
+      "href": "/donghua/genres/studio-goindol",
+      "anichinUrl": "https://anichin.cafe/genres/studio-goindol/"
+    },
+    {
+      "name": "Studio LAN",
+      "slug": "studio-lan",
+      "href": "/donghua/genres/studio-lan",
+      "anichinUrl": "https://anichin.cafe/genres/studio-lan/"
+    },
+    {
+      "name": "Success Corp.",
+      "slug": "success-corp",
+      "href": "/donghua/genres/success-corp",
+      "anichinUrl": "https://anichin.cafe/genres/success-corp/"
+    },
+    {
+      "name": "Suoyi Technology",
+      "slug": "suoyi-technology",
+      "href": "/donghua/genres/suoyi-technology",
+      "anichinUrl": "https://anichin.cafe/genres/suoyi-technology/"
+    },
+    {
+      "name": "Taikong Works",
+      "slug": "taikong-works",
+      "href": "/donghua/genres/taikong-works",
+      "anichinUrl": "https://anichin.cafe/genres/taikong-works/"
+    },
+    {
+      "name": "Tang Kirin Culture",
+      "slug": "tang-kirin-culture",
+      "href": "/donghua/genres/tang-kirin-culture",
+      "anichinUrl": "https://anichin.cafe/genres/tang-kirin-culture/"
+    },
+    {
+      "name": "Three Realms Animation",
+      "slug": "three-realms-animation",
+      "href": "/donghua/genres/three-realms-animation",
+      "anichinUrl": "https://anichin.cafe/genres/three-realms-animation/"
+    },
+    {
+      "name": "Thundray",
+      "slug": "thundray",
+      "href": "/donghua/genres/thundray",
+      "anichinUrl": "https://anichin.cafe/genres/thundray/"
+    },
+    {
+      "name": "Tong Ming Xuan",
+      "slug": "tong-ming-xuan",
+      "href": "/donghua/genres/tong-ming-xuan",
+      "anichinUrl": "https://anichin.cafe/genres/tong-ming-xuan/"
+    },
+    {
+      "name": "Transcendence Picture",
+      "slug": "transcendence-picture",
+      "href": "/donghua/genres/transcendence-picture",
+      "anichinUrl": "https://anichin.cafe/genres/transcendence-picture/"
+    },
+    {
+      "name": "TrioPen Studio",
+      "slug": "triopen-studio",
+      "href": "/donghua/genres/triopen-studio",
+      "anichinUrl": "https://anichin.cafe/genres/triopen-studio/"
+    },
+    {
+      "name": "UKA",
+      "slug": "uka",
+      "href": "/donghua/genres/uka",
+      "anichinUrl": "https://anichin.cafe/genres/uka/"
+    },
+    {
+      "name": "Warner Bros. Animation",
+      "slug": "warner-bros-animation",
+      "href": "/donghua/genres/warner-bros-animation",
+      "anichinUrl": "https://anichin.cafe/genres/warner-bros-animation/"
+    },
+    {
+      "name": "Wawayu Animation",
+      "slug": "wawayu-animation",
+      "href": "/donghua/genres/wawayu-animation",
+      "anichinUrl": "https://anichin.cafe/genres/wawayu-animation/"
+    },
+    {
+      "name": "Wonder Cat Animation",
+      "slug": "wonder-cat-animation",
+      "href": "/donghua/genres/wonder-cat-animation",
+      "anichinUrl": "https://anichin.cafe/genres/wonder-cat-animation/"
+    },
+    {
+      "name": "Wu Zhi Guanying Dongman",
+      "slug": "wu-zhi-guanying-dongman",
+      "href": "/donghua/genres/wu-zhi-guanying-dongman",
+      "anichinUrl": "https://anichin.cafe/genres/wu-zhi-guanying-dongman/"
+    },
+    {
+      "name": "Xiaoming Taiji",
+      "slug": "xiaoming-taiji",
+      "href": "/donghua/genres/xiaoming-taiji",
+      "anichinUrl": "https://anichin.cafe/genres/xiaoming-taiji/"
+    },
+    {
+      "name": "Xing Yi Kai Chen",
+      "slug": "xing-yi-kai-chen",
+      "href": "/donghua/genres/xing-yi-kai-chen",
+      "anichinUrl": "https://anichin.cafe/genres/xing-yi-kai-chen/"
+    },
+    {
+      "name": "XMOV",
+      "slug": "xmov",
+      "href": "/donghua/genres/xmov",
+      "anichinUrl": "https://anichin.cafe/genres/xmov/"
+    },
+    {
+      "name": "Xuan Yuan",
+      "slug": "xuan-yuan",
+      "href": "/donghua/genres/xuan-yuan",
+      "anichinUrl": "https://anichin.cafe/genres/xuan-yuan/"
+    },
+    {
+      "name": "Xuni Pictures",
+      "slug": "xuni-pictures",
+      "href": "/donghua/genres/xuni-pictures",
+      "anichinUrl": "https://anichin.cafe/genres/xuni-pictures/"
+    },
+    {
+      "name": "Xuni Ying Ye",
+      "slug": "xuni-ying-ye",
+      "href": "/donghua/genres/xuni-ying-ye",
+      "anichinUrl": "https://anichin.cafe/genres/xuni-ying-ye/"
+    },
+    {
+      "name": "Year Young Culture",
+      "slug": "year-young-culture",
+      "href": "/donghua/genres/year-young-culture",
+      "anichinUrl": "https://anichin.cafe/genres/year-young-culture/"
+    },
+    {
+      "name": "YHKT Entertainment",
+      "slug": "yhkt-entertainment",
+      "href": "/donghua/genres/yhkt-entertainment",
+      "anichinUrl": "https://anichin.cafe/genres/yhkt-entertainment/"
+    },
+    {
+      "name": "Yi Chen Animation",
+      "slug": "yi-chen-animation",
+      "href": "/donghua/genres/yi-chen-animation",
+      "anichinUrl": "https://anichin.cafe/genres/yi-chen-animation/"
+    },
+    {
+      "name": "Yien Animation Studio",
+      "slug": "yien-animation-studio",
+      "href": "/donghua/genres/yien-animation-studio",
+      "anichinUrl": "https://anichin.cafe/genres/yien-animation-studio/"
+    },
+    {
+      "name": "Yofox Culture",
+      "slug": "yofox-culture",
+      "href": "/donghua/genres/yofox-culture",
+      "anichinUrl": "https://anichin.cafe/genres/yofox-culture/"
+    },
+    {
+      "name": "Yosep",
+      "slug": "yosep",
+      "href": "/donghua/genres/yosep",
+      "anichinUrl": "https://anichin.cafe/genres/yosep/"
+    },
+    {
+      "name": "Action",
+      "slug": "action",
+      "href": "/donghua/genres/action",
+      "anichinUrl": "https://anichin.cafe/genres/action/"
+    },
+    {
+      "name": "Action Drama",
+      "slug": "action-drama",
+      "href": "/donghua/genres/action-drama",
+      "anichinUrl": "https://anichin.cafe/genres/action-drama/"
+    },
+    {
+      "name": "Actions",
+      "slug": "actions",
+      "href": "/donghua/genres/actions",
+      "anichinUrl": "https://anichin.cafe/genres/actions/"
+    },
+    {
+      "name": "Adventure",
+      "slug": "adventure",
+      "href": "/donghua/genres/adventure",
+      "anichinUrl": "https://anichin.cafe/genres/adventure/"
+    },
+    {
+      "name": "Comedy",
+      "slug": "comedy",
+      "href": "/donghua/genres/comedy",
+      "anichinUrl": "https://anichin.cafe/genres/comedy/"
+    },
+    {
+      "name": "Crossdressing",
+      "slug": "crossdressing",
+      "href": "/donghua/genres/crossdressing",
+      "anichinUrl": "https://anichin.cafe/genres/crossdressing/"
+    },
+    {
+      "name": "Cultivation",
+      "slug": "cultivation",
+      "href": "/donghua/genres/cultivation",
+      "anichinUrl": "https://anichin.cafe/genres/cultivation/"
+    },
+    {
+      "name": "Demons",
+      "slug": "demons",
+      "href": "/donghua/genres/demons",
+      "anichinUrl": "https://anichin.cafe/genres/demons/"
+    },
+    {
+      "name": "Drama",
+      "slug": "drama",
+      "href": "/donghua/genres/drama",
+      "anichinUrl": "https://anichin.cafe/genres/drama/"
+    },
+    {
+      "name": "e School",
+      "slug": "e-school",
+      "href": "/donghua/genres/e-school",
+      "anichinUrl": "https://anichin.cafe/genres/e-school/"
+    },
+    {
+      "name": "Ecchi",
+      "slug": "ecchi",
+      "href": "/donghua/genres/ecchi",
+      "anichinUrl": "https://anichin.cafe/genres/ecchi/"
+    },
+    {
+      "name": "Fantasy",
+      "slug": "fantasy",
+      "href": "/donghua/genres/fantasy",
+      "anichinUrl": "https://anichin.cafe/genres/fantasy/"
+    },
+    {
+      "name": "Friendship",
+      "slug": "friendship",
+      "href": "/donghua/genres/friendship",
+      "anichinUrl": "https://anichin.cafe/genres/friendship/"
+    },
+    {
+      "name": "Game",
+      "slug": "game",
+      "href": "/donghua/genres/game",
+      "anichinUrl": "https://anichin.cafe/genres/game/"
+    },
+    {
+      "name": "Gore",
+      "slug": "gore",
+      "href": "/donghua/genres/gore",
+      "anichinUrl": "https://anichin.cafe/genres/gore/"
+    },
+    {
+      "name": "Gourmet",
+      "slug": "gourmet",
+      "href": "/donghua/genres/gourmet",
+      "anichinUrl": "https://anichin.cafe/genres/gourmet/"
+    },
+    {
+      "name": "Harem",
+      "slug": "harem",
+      "href": "/donghua/genres/harem",
+      "anichinUrl": "https://anichin.cafe/genres/harem/"
+    },
+    {
+      "name": "Historical",
+      "slug": "historical",
+      "href": "/donghua/genres/historical",
+      "anichinUrl": "https://anichin.cafe/genres/historical/"
+    },
+    {
+      "name": "Horror",
+      "slug": "horror",
+      "href": "/donghua/genres/horror",
+      "anichinUrl": "https://anichin.cafe/genres/horror/"
+    },
+    {
+      "name": "Isekai",
+      "slug": "isekai",
+      "href": "/donghua/genres/isekai",
+      "anichinUrl": "https://anichin.cafe/genres/isekai/"
+    },
+    {
+      "name": "Life",
+      "slug": "life",
+      "href": "/donghua/genres/life",
+      "anichinUrl": "https://anichin.cafe/genres/life/"
+    },
+    {
+      "name": "Magic",
+      "slug": "magic",
+      "href": "/donghua/genres/magic",
+      "anichinUrl": "https://anichin.cafe/genres/magic/"
+    },
+    {
+      "name": "Martial Arts",
+      "slug": "martial-arts",
+      "href": "/donghua/genres/martial-arts",
+      "anichinUrl": "https://anichin.cafe/genres/martial-arts/"
+    },
+    {
+      "name": "Mecha",
+      "slug": "mecha",
+      "href": "/donghua/genres/mecha",
+      "anichinUrl": "https://anichin.cafe/genres/mecha/"
+    },
+    {
+      "name": "Military",
+      "slug": "military",
+      "href": "/donghua/genres/military",
+      "anichinUrl": "https://anichin.cafe/genres/military/"
+    },
+    {
+      "name": "Music",
+      "slug": "music",
+      "href": "/donghua/genres/music",
+      "anichinUrl": "https://anichin.cafe/genres/music/"
+    },
+    {
+      "name": "Mystery",
+      "slug": "mystery",
+      "href": "/donghua/genres/mystery",
+      "anichinUrl": "https://anichin.cafe/genres/mystery/"
+    },
+    {
+      "name": "Mythology",
+      "slug": "mythology",
+      "href": "/donghua/genres/mythology",
+      "anichinUrl": "https://anichin.cafe/genres/mythology/"
+    },
+    {
+      "name": "Psychological",
+      "slug": "psychological",
+      "href": "/donghua/genres/psychological",
+      "anichinUrl": "https://anichin.cafe/genres/psychological/"
+    },
+    {
+      "name": "Reincaranation",
+      "slug": "reincaranation",
+      "href": "/donghua/genres/reincaranation",
+      "anichinUrl": "https://anichin.cafe/genres/reincaranation/"
+    },
+    {
+      "name": "Reincarnation",
+      "slug": "reincarnation",
+      "href": "/donghua/genres/reincarnation",
+      "anichinUrl": "https://anichin.cafe/genres/reincarnation/"
+    },
+    {
+      "name": "Romanc",
+      "slug": "romanc",
+      "href": "/donghua/genres/romanc",
+      "anichinUrl": "https://anichin.cafe/genres/romanc/"
+    },
+    {
+      "name": "Romance",
+      "slug": "romance",
+      "href": "/donghua/genres/romance",
+      "anichinUrl": "https://anichin.cafe/genres/romance/"
+    },
+    {
+      "name": "School",
+      "slug": "school",
+      "href": "/donghua/genres/school",
+      "anichinUrl": "https://anichin.cafe/genres/school/"
+    },
+    {
+      "name": "Sci-Fi",
+      "slug": "sci-fi",
+      "href": "/donghua/genres/sci-fi",
+      "anichinUrl": "https://anichin.cafe/genres/sci-fi/"
+    },
+    {
+      "name": "Shoujo",
+      "slug": "shoujo",
+      "href": "/donghua/genres/shoujo",
+      "anichinUrl": "https://anichin.cafe/genres/shoujo/"
+    },
+    {
+      "name": "Shounen",
+      "slug": "shounen",
+      "href": "/donghua/genres/shounen",
+      "anichinUrl": "https://anichin.cafe/genres/shounen/"
+    },
+    {
+      "name": "Slice of Life",
+      "slug": "slice-of-life",
+      "href": "/donghua/genres/slice-of-life",
+      "anichinUrl": "https://anichin.cafe/genres/slice-of-life/"
+    },
+    {
+      "name": "Space",
+      "slug": "space",
+      "href": "/donghua/genres/space",
+      "anichinUrl": "https://anichin.cafe/genres/space/"
+    },
+    {
+      "name": "Sports",
+      "slug": "sports",
+      "href": "/donghua/genres/sports",
+      "anichinUrl": "https://anichin.cafe/genres/sports/"
+    },
+    {
+      "name": "Super Power",
+      "slug": "super-power",
+      "href": "/donghua/genres/super-power",
+      "anichinUrl": "https://anichin.cafe/genres/super-power/"
+    },
+    {
+      "name": "Supernatural",
+      "slug": "supernatural",
+      "href": "/donghua/genres/supernatural",
+      "anichinUrl": "https://anichin.cafe/genres/supernatural/"
+    },
+    {
+      "name": "Suspense",
+      "slug": "suspense",
+      "href": "/donghua/genres/suspense",
+      "anichinUrl": "https://anichin.cafe/genres/suspense/"
+    },
+    {
+      "name": "Team Sports",
+      "slug": "team-sports",
+      "href": "/donghua/genres/team-sports",
+      "anichinUrl": "https://anichin.cafe/genres/team-sports/"
+    },
+    {
+      "name": "Thriller",
+      "slug": "thriller",
+      "href": "/donghua/genres/thriller",
+      "anichinUrl": "https://anichin.cafe/genres/thriller/"
+    },
+    {
+      "name": "Urban Fantasy",
+      "slug": "urban-fantasy",
+      "href": "/donghua/genres/urban-fantasy",
+      "anichinUrl": "https://anichin.cafe/genres/urban-fantasy/"
+    },
+    {
+      "name": "2014",
+      "slug": "2014",
+      "href": "/donghua/genres/2014",
+      "anichinUrl": "https://anichin.cafe/genres/2014/"
+    },
+    {
+      "name": "2015",
+      "slug": "2015",
+      "href": "/donghua/genres/2015",
+      "anichinUrl": "https://anichin.cafe/genres/2015/"
+    },
+    {
+      "name": "2016",
+      "slug": "2016",
+      "href": "/donghua/genres/2016",
+      "anichinUrl": "https://anichin.cafe/genres/2016/"
+    },
+    {
+      "name": "2017",
+      "slug": "2017",
+      "href": "/donghua/genres/2017",
+      "anichinUrl": "https://anichin.cafe/genres/2017/"
+    },
+    {
+      "name": "2018",
+      "slug": "2018",
+      "href": "/donghua/genres/2018",
+      "anichinUrl": "https://anichin.cafe/genres/2018/"
+    },
+    {
+      "name": "2019",
+      "slug": "2019",
+      "href": "/donghua/genres/2019",
+      "anichinUrl": "https://anichin.cafe/genres/2019/"
+    },
+    {
+      "name": "2020",
+      "slug": "2020",
+      "href": "/donghua/genres/2020",
+      "anichinUrl": "https://anichin.cafe/genres/2020/"
+    },
+    {
+      "name": "2021",
+      "slug": "2021",
+      "href": "/donghua/genres/2021",
+      "anichinUrl": "https://anichin.cafe/genres/2021/"
+    },
+    {
+      "name": "2022",
+      "slug": "2022",
+      "href": "/donghua/genres/2022",
+      "anichinUrl": "https://anichin.cafe/genres/2022/"
+    },
+    {
+      "name": "2023",
+      "slug": "2023",
+      "href": "/donghua/genres/2023",
+      "anichinUrl": "https://anichin.cafe/genres/2023/"
+    },
+    {
+      "name": "2024",
+      "slug": "2024",
+      "href": "/donghua/genres/2024",
+      "anichinUrl": "https://anichin.cafe/genres/2024/"
+    },
+    {
+      "name": "2025",
+      "slug": "2025",
+      "href": "/donghua/genres/2025",
+      "anichinUrl": "https://anichin.cafe/genres/2025/"
+    },
+    {
+      "name": "2026",
+      "slug": "2026",
+      "href": "/donghua/genres/2026",
+      "anichinUrl": "https://anichin.cafe/genres/2026/"
+    },
+    {
+      "name": "Spring 2022",
+      "slug": "spring-2022",
+      "href": "/donghua/genres/spring-2022",
+      "anichinUrl": "https://anichin.cafe/genres/spring-2022/"
+    },
+    {
+      "name": "Spring 2023",
+      "slug": "spring-2023",
+      "href": "/donghua/genres/spring-2023",
+      "anichinUrl": "https://anichin.cafe/genres/spring-2023/"
+    },
+    {
+      "name": "Summer 2022",
+      "slug": "summer-2022",
+      "href": "/donghua/genres/summer-2022",
+      "anichinUrl": "https://anichin.cafe/genres/summer-2022/"
+    },
+    {
+      "name": "Summer 2023",
+      "slug": "summer-2023",
+      "href": "/donghua/genres/summer-2023",
+      "anichinUrl": "https://anichin.cafe/genres/summer-2023/"
+    },
+    {
+      "name": "Winter 2023",
+      "slug": "winter-2023",
+      "href": "/donghua/genres/winter-2023",
+      "anichinUrl": "https://anichin.cafe/genres/winter-2023/"
+    },
+    {
+      "name": "2:10 AM Animation",
+      "slug": "210-am-animation",
+      "href": "/donghua/genres/210-am-animation",
+      "anichinUrl": "https://anichin.cafe/genres/210-am-animation/"
+    },
+    {
+      "name": "2:10 Animatión",
+      "slug": "210-animation",
+      "href": "/donghua/genres/210-animation",
+      "anichinUrl": "https://anichin.cafe/genres/210-animation/"
+    },
+    {
+      "name": "AHA Entertainment",
+      "slug": "aha-entertainment",
+      "href": "/donghua/genres/aha-entertainment",
+      "anichinUrl": "https://anichin.cafe/genres/aha-entertainment/"
+    },
+    {
+      "name": "ASK Animation Studio",
+      "slug": "ask-animation-studio",
+      "href": "/donghua/genres/ask-animation-studio",
+      "anichinUrl": "https://anichin.cafe/genres/ask-animation-studio/"
+    },
+    {
+      "name": "Aurora",
+      "slug": "aurora",
+      "href": "/donghua/genres/aurora",
+      "anichinUrl": "https://anichin.cafe/genres/aurora/"
+    },
+    {
+      "name": "Axis Studios",
+      "slug": "axis-studios",
+      "href": "/donghua/genres/axis-studios",
+      "anichinUrl": "https://anichin.cafe/genres/axis-studios/"
+    },
+    {
+      "name": "Azure Sea Studios",
+      "slug": "azure-sea-studios",
+      "href": "/donghua/genres/azure-sea-studios",
+      "anichinUrl": "https://anichin.cafe/genres/azure-sea-studios/"
+    },
+    {
+      "name": "B.CMAY PICTURES",
+      "slug": "b-cmay-pictures",
+      "href": "/donghua/genres/b-cmay-pictures",
+      "anichinUrl": "https://anichin.cafe/genres/b-cmay-pictures/"
+    },
+    {
+      "name": "Beijing Enlight Pictures",
+      "slug": "beijing-enlight-pictures",
+      "href": "/donghua/genres/beijing-enlight-pictures",
+      "anichinUrl": "https://anichin.cafe/genres/beijing-enlight-pictures/"
+    },
+    {
+      "name": "BETOBE",
+      "slug": "betobe",
+      "href": "/donghua/genres/betobe",
+      "anichinUrl": "https://anichin.cafe/genres/betobe/"
+    },
+    {
+      "name": "Big Firebird Cultural Media",
+      "slug": "big-firebird-cultural-media",
+      "href": "/donghua/genres/big-firebird-cultural-media",
+      "anichinUrl": "https://anichin.cafe/genres/big-firebird-cultural-media/"
+    },
+    {
+      "name": "Big Firebird Culture",
+      "slug": "big-firebird-culture",
+      "href": "/donghua/genres/big-firebird-culture",
+      "anichinUrl": "https://anichin.cafe/genres/big-firebird-culture/"
+    },
+    {
+      "name": "BigBigSun",
+      "slug": "bigbigsun",
+      "href": "/donghua/genres/bigbigsun",
+      "anichinUrl": "https://anichin.cafe/genres/bigbigsun/"
+    },
+    {
+      "name": "Bilibili",
+      "slug": "bilibili",
+      "href": "/donghua/genres/bilibili",
+      "anichinUrl": "https://anichin.cafe/genres/bilibili/"
+    },
+    {
+      "name": "BlueArc Animation Studio",
+      "slug": "bluearc-animation-studio",
+      "href": "/donghua/genres/bluearc-animation-studio",
+      "anichinUrl": "https://anichin.cafe/genres/bluearc-animation-studio/"
+    },
+    {
+      "name": "Borutong",
+      "slug": "borutong",
+      "href": "/donghua/genres/borutong",
+      "anichinUrl": "https://anichin.cafe/genres/borutong/"
+    },
+    {
+      "name": "Boyan Pictures",
+      "slug": "boyan-pictures",
+      "href": "/donghua/genres/boyan-pictures",
+      "anichinUrl": "https://anichin.cafe/genres/boyan-pictures/"
+    },
+    {
+      "name": "BUILD DREAM",
+      "slug": "build-dream",
+      "href": "/donghua/genres/build-dream",
+      "anichinUrl": "https://anichin.cafe/genres/build-dream/"
+    },
+    {
+      "name": "BYMENT",
+      "slug": "byment",
+      "href": "/donghua/genres/byment",
+      "anichinUrl": "https://anichin.cafe/genres/byment/"
+    },
+    {
+      "name": "CG Year",
+      "slug": "cg-year",
+      "href": "/donghua/genres/cg-year",
+      "anichinUrl": "https://anichin.cafe/genres/cg-year/"
+    },
+    {
+      "name": "Chongzhuo Animation",
+      "slug": "chongzhuo-animation",
+      "href": "/donghua/genres/chongzhuo-animation",
+      "anichinUrl": "https://anichin.cafe/genres/chongzhuo-animation/"
+    },
+    {
+      "name": "Chosen",
+      "slug": "chosen",
+      "href": "/donghua/genres/chosen",
+      "anichinUrl": "https://anichin.cafe/genres/chosen/"
+    },
+    {
+      "name": "Chosen Studio",
+      "slug": "chosen-studio",
+      "href": "/donghua/genres/chosen-studio",
+      "anichinUrl": "https://anichin.cafe/genres/chosen-studio/"
+    },
+    {
+      "name": "Cloud Art",
+      "slug": "cloud-art",
+      "href": "/donghua/genres/cloud-art",
+      "anichinUrl": "https://anichin.cafe/genres/cloud-art/"
+    },
+    {
+      "name": "Cloud Culture",
+      "slug": "cloud-culture",
+      "href": "/donghua/genres/cloud-culture",
+      "anichinUrl": "https://anichin.cafe/genres/cloud-culture/"
+    },
+    {
+      "name": "CMC Media",
+      "slug": "cmc-media",
+      "href": "/donghua/genres/cmc-media",
+      "anichinUrl": "https://anichin.cafe/genres/cmc-media/"
+    },
+    {
+      "name": "Coastline Animation Studio",
+      "slug": "coastline-animation-studio",
+      "href": "/donghua/genres/coastline-animation-studio",
+      "anichinUrl": "https://anichin.cafe/genres/coastline-animation-studio/"
+    },
+    {
+      "name": "Colored Pencil Animation",
+      "slug": "colored-pencil-animation",
+      "href": "/donghua/genres/colored-pencil-animation",
+      "anichinUrl": "https://anichin.cafe/genres/colored-pencil-animation/"
+    },
+    {
+      "name": "Colored-Pencil Animation Design",
+      "slug": "colored-pencil-animation-design",
+      "href": "/donghua/genres/colored-pencil-animation-design",
+      "anichinUrl": "https://anichin.cafe/genres/colored-pencil-animation-design/"
+    },
+    {
+      "name": "D.ROCK-ART",
+      "slug": "d-rock-art",
+      "href": "/donghua/genres/d-rock-art",
+      "anichinUrl": "https://anichin.cafe/genres/d-rock-art/"
+    },
+    {
+      "name": "Da Yu",
+      "slug": "da-yu",
+      "href": "/donghua/genres/da-yu",
+      "anichinUrl": "https://anichin.cafe/genres/da-yu/"
+    },
+    {
+      "name": "Dancing CG Studio",
+      "slug": "dancing-cg-studio",
+      "href": "/donghua/genres/dancing-cg-studio",
+      "anichinUrl": "https://anichin.cafe/genres/dancing-cg-studio/"
+    },
+    {
+      "name": "Dangun Pictures",
+      "slug": "dangun-pictures",
+      "href": "/donghua/genres/dangun-pictures",
+      "anichinUrl": "https://anichin.cafe/genres/dangun-pictures/"
+    },
+    {
+      "name": "DC Entertainment",
+      "slug": "dc-entertainment",
+      "href": "/donghua/genres/dc-entertainment",
+      "anichinUrl": "https://anichin.cafe/genres/dc-entertainment/"
+    },
+    {
+      "name": "DC Impression Vision",
+      "slug": "dc-impression-vision",
+      "href": "/donghua/genres/dc-impression-vision",
+      "anichinUrl": "https://anichin.cafe/genres/dc-impression-vision/"
+    },
+    {
+      "name": "Djinn Power",
+      "slug": "djinn-power",
+      "href": "/donghua/genres/djinn-power",
+      "anichinUrl": "https://anichin.cafe/genres/djinn-power/"
+    },
+    {
+      "name": "EMT Squared",
+      "slug": "emt-squared",
+      "href": "/donghua/genres/emt-squared",
+      "anichinUrl": "https://anichin.cafe/genres/emt-squared/"
+    },
+    {
+      "name": "Escape Velocity Animation",
+      "slug": "escape-velocity-animation",
+      "href": "/donghua/genres/escape-velocity-animation",
+      "anichinUrl": "https://anichin.cafe/genres/escape-velocity-animation/"
+    },
+    {
+      "name": "Fengyun Animation",
+      "slug": "fengyun-animation",
+      "href": "/donghua/genres/fengyun-animation",
+      "anichinUrl": "https://anichin.cafe/genres/fengyun-animation/"
+    },
+    {
+      "name": "Flying Fish Studio",
+      "slug": "flying-fish-studio",
+      "href": "/donghua/genres/flying-fish-studio",
+      "anichinUrl": "https://anichin.cafe/genres/flying-fish-studio/"
+    },
+    {
+      "name": "Foch Film",
+      "slug": "foch-film",
+      "href": "/donghua/genres/foch-film",
+      "anichinUrl": "https://anichin.cafe/genres/foch-film/"
+    },
+    {
+      "name": "Foch Films",
+      "slug": "foch-films",
+      "href": "/donghua/genres/foch-films",
+      "anichinUrl": "https://anichin.cafe/genres/foch-films/"
+    },
+    {
+      "name": "G.H.Y. Culture & Media",
+      "slug": "g-h-y-culture-media",
+      "href": "/donghua/genres/g-h-y-culture-media",
+      "anichinUrl": "https://anichin.cafe/genres/g-h-y-culture-media/"
+    },
+    {
+      "name": "Garden Culture",
+      "slug": "garden-culture",
+      "href": "/donghua/genres/garden-culture",
+      "anichinUrl": "https://anichin.cafe/genres/garden-culture/"
+    },
+    {
+      "name": "Green Planet Studio",
+      "slug": "green-planet-studio",
+      "href": "/donghua/genres/green-planet-studio",
+      "anichinUrl": "https://anichin.cafe/genres/green-planet-studio/"
+    },
+    {
+      "name": "Haoliners Animation League",
+      "slug": "haoliners-animation-league",
+      "href": "/donghua/genres/haoliners-animation-league",
+      "anichinUrl": "https://anichin.cafe/genres/haoliners-animation-league/"
+    },
+    {
+      "name": "He Zhou Culture",
+      "slug": "he-zhou-culture",
+      "href": "/donghua/genres/he-zhou-culture",
+      "anichinUrl": "https://anichin.cafe/genres/he-zhou-culture/"
+    },
+    {
+      "name": "Heart & Soul Animation",
+      "slug": "heart-soul-animation",
+      "href": "/donghua/genres/heart-soul-animation",
+      "anichinUrl": "https://anichin.cafe/genres/heart-soul-animation/"
+    },
+    {
+      "name": "High Energy Studio",
+      "slug": "high-energy-studio",
+      "href": "/donghua/genres/high-energy-studio",
+      "anichinUrl": "https://anichin.cafe/genres/high-energy-studio/"
+    },
+    {
+      "name": "HM Heros",
+      "slug": "hm-heros",
+      "href": "/donghua/genres/hm-heros",
+      "anichinUrl": "https://anichin.cafe/genres/hm-heros/"
+    },
+    {
+      "name": "Honglu Technology",
+      "slug": "honglu-technology",
+      "href": "/donghua/genres/honglu-technology",
+      "anichinUrl": "https://anichin.cafe/genres/honglu-technology/"
+    },
+    {
+      "name": "Hua Dream",
+      "slug": "hua-dream",
+      "href": "/donghua/genres/hua-dream",
+      "anichinUrl": "https://anichin.cafe/genres/hua-dream/"
+    },
+    {
+      "name": "iQIYI",
+      "slug": "iqiyi",
+      "href": "/donghua/genres/iqiyi",
+      "anichinUrl": "https://anichin.cafe/genres/iqiyi/"
+    },
+    {
+      "name": "Ji Man Wen Hua",
+      "slug": "ji-man-wen-hua",
+      "href": "/donghua/genres/ji-man-wen-hua",
+      "anichinUrl": "https://anichin.cafe/genres/ji-man-wen-hua/"
+    },
+    {
+      "name": "Joicy Studio",
+      "slug": "joicy-studio",
+      "href": "/donghua/genres/joicy-studio",
+      "anichinUrl": "https://anichin.cafe/genres/joicy-studio/"
+    },
+    {
+      "name": "KIO STUDIO",
+      "slug": "kio-studio",
+      "href": "/donghua/genres/kio-studio",
+      "anichinUrl": "https://anichin.cafe/genres/kio-studio/"
+    },
+    {
+      "name": "KJJ Animation",
+      "slug": "kjj-animation",
+      "href": "/donghua/genres/kjj-animation",
+      "anichinUrl": "https://anichin.cafe/genres/kjj-animation/"
+    },
+    {
+      "name": "Kunjing Culture",
+      "slug": "kunjing-culture",
+      "href": "/donghua/genres/kunjing-culture",
+      "anichinUrl": "https://anichin.cafe/genres/kunjing-culture/"
+    },
+    {
+      "name": "L²Studio",
+      "slug": "l%c2%b2studio",
+      "href": "/donghua/genres/l%c2%b2studio",
+      "anichinUrl": "https://anichin.cafe/genres/l%c2%b2studio/"
+    },
+    {
+      "name": "LAN Studio",
+      "slug": "lan-studio",
+      "href": "/donghua/genres/lan-studio",
+      "anichinUrl": "https://anichin.cafe/genres/lan-studio/"
+    },
+    {
+      "name": "Left Pocket Studio",
+      "slug": "left-pocket-studio",
+      "href": "/donghua/genres/left-pocket-studio",
+      "anichinUrl": "https://anichin.cafe/genres/left-pocket-studio/"
+    },
+    {
+      "name": "LIDENFILMS",
+      "slug": "lidenfilms",
+      "href": "/donghua/genres/lidenfilms",
+      "anichinUrl": "https://anichin.cafe/genres/lidenfilms/"
+    },
+    {
+      "name": "Light Chaser Animation Studios",
+      "slug": "light-chaser-animation-studios",
+      "href": "/donghua/genres/light-chaser-animation-studios",
+      "anichinUrl": "https://anichin.cafe/genres/light-chaser-animation-studios/"
+    },
+    {
+      "name": "Liliyabi Company Introduction",
+      "slug": "liliyabi-company-introduction",
+      "href": "/donghua/genres/liliyabi-company-introduction",
+      "anichinUrl": "https://anichin.cafe/genres/liliyabi-company-introduction/"
+    },
+    {
+      "name": "Lingsanwu Animation",
+      "slug": "lingsanwu-animation",
+      "href": "/donghua/genres/lingsanwu-animation",
+      "anichinUrl": "https://anichin.cafe/genres/lingsanwu-animation/"
+    },
+    {
+      "name": "Liyu Culture",
+      "slug": "liyu-culture",
+      "href": "/donghua/genres/liyu-culture",
+      "anichinUrl": "https://anichin.cafe/genres/liyu-culture/"
+    },
+    {
+      "name": "Long Zhi Gu Wenhua",
+      "slug": "long-zhi-gu-wenhua",
+      "href": "/donghua/genres/long-zhi-gu-wenhua",
+      "anichinUrl": "https://anichin.cafe/genres/long-zhi-gu-wenhua/"
+    },
+    {
+      "name": "Lx Animation Studio",
+      "slug": "lx-animation-studio",
+      "href": "/donghua/genres/lx-animation-studio",
+      "anichinUrl": "https://anichin.cafe/genres/lx-animation-studio/"
+    },
+    {
+      "name": "Majestic Studio",
+      "slug": "majestic-studio",
+      "href": "/donghua/genres/majestic-studio",
+      "anichinUrl": "https://anichin.cafe/genres/majestic-studio/"
+    },
+    {
+      "name": "Mandrill Picture Corp",
+      "slug": "mandrill-picture-corp",
+      "href": "/donghua/genres/mandrill-picture-corp",
+      "anichinUrl": "https://anichin.cafe/genres/mandrill-picture-corp/"
+    },
+    {
+      "name": "Martial Arts Reincaranation",
+      "slug": "martial-arts-reincaranation",
+      "href": "/donghua/genres/martial-arts-reincaranation",
+      "anichinUrl": "https://anichin.cafe/genres/martial-arts-reincaranation/"
+    },
+    {
+      "name": "Medo",
+      "slug": "medo",
+      "href": "/donghua/genres/medo",
+      "anichinUrl": "https://anichin.cafe/genres/medo/"
+    },
+    {
+      "name": "Midway Games",
+      "slug": "midway-games",
+      "href": "/donghua/genres/midway-games",
+      "anichinUrl": "https://anichin.cafe/genres/midway-games/"
+    },
+    {
+      "name": "Mili Digital",
+      "slug": "mili-digital",
+      "href": "/donghua/genres/mili-digital",
+      "anichinUrl": "https://anichin.cafe/genres/mili-digital/"
+    },
+    {
+      "name": "Mili Pictures",
+      "slug": "mili-pictures",
+      "href": "/donghua/genres/mili-pictures",
+      "anichinUrl": "https://anichin.cafe/genres/mili-pictures/"
+    },
+    {
+      "name": "Mokai Technology",
+      "slug": "mokai-technology",
+      "href": "/donghua/genres/mokai-technology",
+      "anichinUrl": "https://anichin.cafe/genres/mokai-technology/"
+    },
+    {
+      "name": "Motion Magic",
+      "slug": "motion-magic",
+      "href": "/donghua/genres/motion-magic",
+      "anichinUrl": "https://anichin.cafe/genres/motion-magic/"
+    },
+    {
+      "name": "Namu Animation",
+      "slug": "namu-animation",
+      "href": "/donghua/genres/namu-animation",
+      "anichinUrl": "https://anichin.cafe/genres/namu-animation/"
+    },
+    {
+      "name": "October Media",
+      "slug": "october-media",
+      "href": "/donghua/genres/october-media",
+      "anichinUrl": "https://anichin.cafe/genres/october-media/"
+    },
+    {
+      "name": "Oriental Creative Color",
+      "slug": "oriental-creative-color",
+      "href": "/donghua/genres/oriental-creative-color",
+      "anichinUrl": "https://anichin.cafe/genres/oriental-creative-color/"
+    },
+    {
+      "name": "Original Force",
+      "slug": "original-force",
+      "href": "/donghua/genres/original-force",
+      "anichinUrl": "https://anichin.cafe/genres/original-force/"
+    },
+    {
+      "name": "Painted Edge",
+      "slug": "painted-edge",
+      "href": "/donghua/genres/painted-edge",
+      "anichinUrl": "https://anichin.cafe/genres/painted-edge/"
+    },
+    {
+      "name": "Paper Plane Animation Studio",
+      "slug": "paper-plane-animation-studio",
+      "href": "/donghua/genres/paper-plane-animation-studio",
+      "anichinUrl": "https://anichin.cafe/genres/paper-plane-animation-studio/"
+    },
+    {
+      "name": "Passion Paint Animation",
+      "slug": "passion-paint-animation",
+      "href": "/donghua/genres/passion-paint-animation",
+      "anichinUrl": "https://anichin.cafe/genres/passion-paint-animation/"
+    },
+    {
+      "name": "Pb Animation Co. Ltd.",
+      "slug": "pb-animation-co-ltd",
+      "href": "/donghua/genres/pb-animation-co-ltd",
+      "anichinUrl": "https://anichin.cafe/genres/pb-animation-co-ltd/"
+    },
+    {
+      "name": "Phantom",
+      "slug": "phantom",
+      "href": "/donghua/genres/phantom",
+      "anichinUrl": "https://anichin.cafe/genres/phantom/"
+    },
+    {
+      "name": "Qing Xiang",
+      "slug": "qing-xiang",
+      "href": "/donghua/genres/qing-xiang",
+      "anichinUrl": "https://anichin.cafe/genres/qing-xiang/"
+    },
+    {
+      "name": "Qingxiang Culture",
+      "slug": "qingxiang-culture",
+      "href": "/donghua/genres/qingxiang-culture",
+      "anichinUrl": "https://anichin.cafe/genres/qingxiang-culture/"
+    },
+    {
+      "name": "Qiyuan Yinghua",
+      "slug": "qiyuan-yinghua",
+      "href": "/donghua/genres/qiyuan-yinghua",
+      "anichinUrl": "https://anichin.cafe/genres/qiyuan-yinghua/"
+    },
+    {
+      "name": "Quyue Technology",
+      "slug": "quyue-technology",
+      "href": "/donghua/genres/quyue-technology",
+      "anichinUrl": "https://anichin.cafe/genres/quyue-technology/"
+    },
+    {
+      "name": "Red Dog Culture House",
+      "slug": "red-dog-culture-house",
+      "href": "/donghua/genres/red-dog-culture-house",
+      "anichinUrl": "https://anichin.cafe/genres/red-dog-culture-house/"
+    },
+    {
+      "name": "Rocen",
+      "slug": "rocen",
+      "href": "/donghua/genres/rocen",
+      "anichinUrl": "https://anichin.cafe/genres/rocen/"
+    },
+    {
+      "name": "Ruo Hong Culture",
+      "slug": "ruo-hong-culture",
+      "href": "/donghua/genres/ruo-hong-culture",
+      "anichinUrl": "https://anichin.cafe/genres/ruo-hong-culture/"
+    },
+    {
+      "name": "Shanghai Foch Film",
+      "slug": "shanghai-foch-film",
+      "href": "/donghua/genres/shanghai-foch-film",
+      "anichinUrl": "https://anichin.cafe/genres/shanghai-foch-film/"
+    },
+    {
+      "name": "Shanghai Foch Film Culture Investment",
+      "slug": "shanghai-foch-film-culture-investment",
+      "href": "/donghua/genres/shanghai-foch-film-culture-investment",
+      "anichinUrl": "https://anichin.cafe/genres/shanghai-foch-film-culture-investment/"
+    },
+    {
+      "name": "Shanghai Motion Magic",
+      "slug": "shanghai-motion-magic",
+      "href": "/donghua/genres/shanghai-motion-magic",
+      "anichinUrl": "https://anichin.cafe/genres/shanghai-motion-magic/"
+    },
+    {
+      "name": "Sharefun Studio",
+      "slug": "sharefun-studio",
+      "href": "/donghua/genres/sharefun-studio",
+      "anichinUrl": "https://anichin.cafe/genres/sharefun-studio/"
+    },
+    {
+      "name": "Shengying Animation",
+      "slug": "shengying-animation",
+      "href": "/donghua/genres/shengying-animation",
+      "anichinUrl": "https://anichin.cafe/genres/shengying-animation/"
+    },
+    {
+      "name": "Shenman Entertainment",
+      "slug": "shenman-entertainment",
+      "href": "/donghua/genres/shenman-entertainment",
+      "anichinUrl": "https://anichin.cafe/genres/shenman-entertainment/"
+    },
+    {
+      "name": "Shenying Animation",
+      "slug": "shenying-animation",
+      "href": "/donghua/genres/shenying-animation",
+      "anichinUrl": "https://anichin.cafe/genres/shenying-animation/"
+    },
+    {
+      "name": "SJYNEXCUS",
+      "slug": "sjynexcus",
+      "href": "/donghua/genres/sjynexcus",
+      "anichinUrl": "https://anichin.cafe/genres/sjynexcus/"
+    },
+    {
+      "name": "Skyloong",
+      "slug": "skyloong",
+      "href": "/donghua/genres/skyloong",
+      "anichinUrl": "https://anichin.cafe/genres/skyloong/"
+    },
+    {
+      "name": "Soda Bear Animation",
+      "slug": "soda-bear-animation",
+      "href": "/donghua/genres/soda-bear-animation",
+      "anichinUrl": "https://anichin.cafe/genres/soda-bear-animation/"
+    },
+    {
+      "name": "Soyep",
+      "slug": "soyep",
+      "href": "/donghua/genres/soyep",
+      "anichinUrl": "https://anichin.cafe/genres/soyep/"
+    },
+    {
+      "name": "Sparkly Key Animation Studio",
+      "slug": "sparkly-key-animation-studio",
+      "href": "/donghua/genres/sparkly-key-animation-studio",
+      "anichinUrl": "https://anichin.cafe/genres/sparkly-key-animation-studio/"
+    },
+    {
+      "name": "Star Hunter Animation",
+      "slug": "star-hunter-animation",
+      "href": "/donghua/genres/star-hunter-animation",
+      "anichinUrl": "https://anichin.cafe/genres/star-hunter-animation/"
+    },
+    {
+      "name": "Studio Goindol",
+      "slug": "studio-goindol",
+      "href": "/donghua/genres/studio-goindol",
+      "anichinUrl": "https://anichin.cafe/genres/studio-goindol/"
+    },
+    {
+      "name": "Studio LAN",
+      "slug": "studio-lan",
+      "href": "/donghua/genres/studio-lan",
+      "anichinUrl": "https://anichin.cafe/genres/studio-lan/"
+    },
+    {
+      "name": "Success Corp.",
+      "slug": "success-corp",
+      "href": "/donghua/genres/success-corp",
+      "anichinUrl": "https://anichin.cafe/genres/success-corp/"
+    },
+    {
+      "name": "Suoyi Technology",
+      "slug": "suoyi-technology",
+      "href": "/donghua/genres/suoyi-technology",
+      "anichinUrl": "https://anichin.cafe/genres/suoyi-technology/"
+    },
+    {
+      "name": "Taikong Works",
+      "slug": "taikong-works",
+      "href": "/donghua/genres/taikong-works",
+      "anichinUrl": "https://anichin.cafe/genres/taikong-works/"
+    },
+    {
+      "name": "Tang Kirin Culture",
+      "slug": "tang-kirin-culture",
+      "href": "/donghua/genres/tang-kirin-culture",
+      "anichinUrl": "https://anichin.cafe/genres/tang-kirin-culture/"
+    },
+    {
+      "name": "Three Realms Animation",
+      "slug": "three-realms-animation",
+      "href": "/donghua/genres/three-realms-animation",
+      "anichinUrl": "https://anichin.cafe/genres/three-realms-animation/"
+    },
+    {
+      "name": "Thundray",
+      "slug": "thundray",
+      "href": "/donghua/genres/thundray",
+      "anichinUrl": "https://anichin.cafe/genres/thundray/"
+    },
+    {
+      "name": "Tong Ming Xuan",
+      "slug": "tong-ming-xuan",
+      "href": "/donghua/genres/tong-ming-xuan",
+      "anichinUrl": "https://anichin.cafe/genres/tong-ming-xuan/"
+    },
+    {
+      "name": "Transcendence Picture",
+      "slug": "transcendence-picture",
+      "href": "/donghua/genres/transcendence-picture",
+      "anichinUrl": "https://anichin.cafe/genres/transcendence-picture/"
+    },
+    {
+      "name": "TrioPen Studio",
+      "slug": "triopen-studio",
+      "href": "/donghua/genres/triopen-studio",
+      "anichinUrl": "https://anichin.cafe/genres/triopen-studio/"
+    },
+    {
+      "name": "UKA",
+      "slug": "uka",
+      "href": "/donghua/genres/uka",
+      "anichinUrl": "https://anichin.cafe/genres/uka/"
+    },
+    {
+      "name": "Warner Bros. Animation",
+      "slug": "warner-bros-animation",
+      "href": "/donghua/genres/warner-bros-animation",
+      "anichinUrl": "https://anichin.cafe/genres/warner-bros-animation/"
+    },
+    {
+      "name": "Wawayu Animation",
+      "slug": "wawayu-animation",
+      "href": "/donghua/genres/wawayu-animation",
+      "anichinUrl": "https://anichin.cafe/genres/wawayu-animation/"
+    },
+    {
+      "name": "Wonder Cat Animation",
+      "slug": "wonder-cat-animation",
+      "href": "/donghua/genres/wonder-cat-animation",
+      "anichinUrl": "https://anichin.cafe/genres/wonder-cat-animation/"
+    },
+    {
+      "name": "Wu Zhi Guanying Dongman",
+      "slug": "wu-zhi-guanying-dongman",
+      "href": "/donghua/genres/wu-zhi-guanying-dongman",
+      "anichinUrl": "https://anichin.cafe/genres/wu-zhi-guanying-dongman/"
+    },
+    {
+      "name": "Xiaoming Taiji",
+      "slug": "xiaoming-taiji",
+      "href": "/donghua/genres/xiaoming-taiji",
+      "anichinUrl": "https://anichin.cafe/genres/xiaoming-taiji/"
+    },
+    {
+      "name": "Xing Yi Kai Chen",
+      "slug": "xing-yi-kai-chen",
+      "href": "/donghua/genres/xing-yi-kai-chen",
+      "anichinUrl": "https://anichin.cafe/genres/xing-yi-kai-chen/"
+    },
+    {
+      "name": "XMOV",
+      "slug": "xmov",
+      "href": "/donghua/genres/xmov",
+      "anichinUrl": "https://anichin.cafe/genres/xmov/"
+    },
+    {
+      "name": "Xuan Yuan",
+      "slug": "xuan-yuan",
+      "href": "/donghua/genres/xuan-yuan",
+      "anichinUrl": "https://anichin.cafe/genres/xuan-yuan/"
+    },
+    {
+      "name": "Xuni Pictures",
+      "slug": "xuni-pictures",
+      "href": "/donghua/genres/xuni-pictures",
+      "anichinUrl": "https://anichin.cafe/genres/xuni-pictures/"
+    },
+    {
+      "name": "Xuni Ying Ye",
+      "slug": "xuni-ying-ye",
+      "href": "/donghua/genres/xuni-ying-ye",
+      "anichinUrl": "https://anichin.cafe/genres/xuni-ying-ye/"
+    },
+    {
+      "name": "Year Young Culture",
+      "slug": "year-young-culture",
+      "href": "/donghua/genres/year-young-culture",
+      "anichinUrl": "https://anichin.cafe/genres/year-young-culture/"
+    },
+    {
+      "name": "YHKT Entertainment",
+      "slug": "yhkt-entertainment",
+      "href": "/donghua/genres/yhkt-entertainment",
+      "anichinUrl": "https://anichin.cafe/genres/yhkt-entertainment/"
+    },
+    {
+      "name": "Yi Chen Animation",
+      "slug": "yi-chen-animation",
+      "href": "/donghua/genres/yi-chen-animation",
+      "anichinUrl": "https://anichin.cafe/genres/yi-chen-animation/"
+    },
+    {
+      "name": "Yien Animation Studio",
+      "slug": "yien-animation-studio",
+      "href": "/donghua/genres/yien-animation-studio",
+      "anichinUrl": "https://anichin.cafe/genres/yien-animation-studio/"
+    },
+    {
+      "name": "Yofox Culture",
+      "slug": "yofox-culture",
+      "href": "/donghua/genres/yofox-culture",
+      "anichinUrl": "https://anichin.cafe/genres/yofox-culture/"
+    },
+    {
+      "name": "Yosep",
+      "slug": "yosep",
+      "href": "/donghua/genres/yosep",
+      "anichinUrl": "https://anichin.cafe/genres/yosep/"
+    }
+  ]
+}

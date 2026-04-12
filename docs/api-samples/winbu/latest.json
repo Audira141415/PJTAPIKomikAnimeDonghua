@@ -1,0 +1,288 @@
+{
+  "status": "success",
+  "creator": "Sanka Vollerei",
+  "message": "Latest Added",
+  "data": [
+    {
+      "title": "Happiness 2021",
+      "id": "happiness-2021",
+      "type": "series",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/77056_200x300.jpeg",
+      "rating": "0",
+      "time": "9 menit",
+      "episode": ""
+    },
+    {
+      "title": "Awajima Hyakkei",
+      "id": "awajima-hyakkei",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/156361_200x300.jpeg",
+      "rating": "0",
+      "time": "5 jam",
+      "episode": ""
+    },
+    {
+      "title": "Golden (2025)",
+      "id": "golden-2025",
+      "type": "film",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/Gold_200x300.jpeg",
+      "rating": "243",
+      "time": "15 jam",
+      "episode": ""
+    },
+    {
+      "title": "How to Make a Killing (2026)",
+      "id": "how-to-make-a-killing-2026",
+      "type": "film",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/HTMAK_200x300.jpeg",
+      "rating": "541",
+      "time": "15 jam",
+      "episode": ""
+    },
+    {
+      "title": "Send Help (2026)",
+      "id": "send-help-2026",
+      "type": "film",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/SH_200x300.jpeg",
+      "rating": "283",
+      "time": "15 jam",
+      "episode": ""
+    },
+    {
+      "title": "She Wants My Daughter (2025)",
+      "id": "she-wants-my-daughter-2025",
+      "type": "film",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/SWMD_200x300.jpeg",
+      "rating": "569",
+      "time": "16 jam",
+      "episode": ""
+    },
+    {
+      "title": "Kujima Utaeba Ie Hororo",
+      "id": "kujima-utaeba-ie-hororo",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/155195_200x300.jpeg",
+      "rating": "0",
+      "time": "16 jam",
+      "episode": ""
+    },
+    {
+      "title": "Himekishi wa Barbaroi no Yome",
+      "id": "himekishi-wa-barbaroi-no-yome",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/155022_200x300.jpeg",
+      "rating": "0",
+      "time": "19 jam",
+      "episode": ""
+    },
+    {
+      "title": "Radioactive Emergency",
+      "id": "radioactive-emergency",
+      "type": "series",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/77005_200x300.jpeg",
+      "rating": "0",
+      "time": "16 jam",
+      "episode": ""
+    },
+    {
+      "title": "The Madison Season 1",
+      "id": "the-madison-season-1",
+      "type": "series",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/76958_200x300.jpeg",
+      "rating": "0",
+      "time": "22 jam",
+      "episode": ""
+    },
+    {
+      "title": "Papa Zola: The Movie (2025)",
+      "id": "papa-zola-the-movie-2025",
+      "type": "film",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/PZTM_200x300.jpeg",
+      "rating": "711",
+      "time": "1 hari",
+      "episode": ""
+    },
+    {
+      "title": "The Boys Season 5",
+      "id": "the-boys-season-5",
+      "type": "series",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/76933_200x300.jpeg",
+      "rating": "0",
+      "time": "1 hari",
+      "episode": ""
+    },
+    {
+      "title": "Rebirth 2026",
+      "id": "rebirth-2026",
+      "type": "series",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/77029_200x300.jpeg",
+      "rating": "0",
+      "time": "14 jam",
+      "episode": ""
+    },
+    {
+      "title": "Otaku ni Yasashii Gal wa Inai!?",
+      "id": "otaku-ni-yasashii-gal-wa-inai",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/Otagyaru_200x300.jpeg",
+      "rating": "0",
+      "time": "1 hari",
+      "episode": ""
+    },
+    {
+      "title": "Kanojo, Okarishimasu Season 5",
+      "id": "kanojo-okarishimasu-season-5",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/KanokariS5_200x300.jpeg",
+      "rating": "0",
+      "time": "1 hari",
+      "episode": ""
+    },
+    {
+      "title": "Re:Zero kara Hajimeru Isekai Seikatsu 4th Season",
+      "id": "rezero-kara-hajimeru-isekai-seikatsu-4th-season",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/RZS4_200x300.jpeg",
+      "rating": "0",
+      "time": "1 hari",
+      "episode": ""
+    },
+    {
+      "title": "The Love That Remains (2025)",
+      "id": "the-love-that-remains-2025",
+      "type": "film",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/TLTR_200x300.jpeg",
+      "rating": "1473",
+      "time": "1 hari",
+      "episode": ""
+    },
+    {
+      "title": "Hridayapoorvam (2025)",
+      "id": "hridayapoorvam-2025",
+      "type": "film",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/Hp_200x300.jpeg",
+      "rating": "1451",
+      "time": "1 hari",
+      "episode": ""
+    },
+    {
+      "title": "Do Not Enter (2026)",
+      "id": "do-not-enter-2026",
+      "type": "film",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/DNE_200x300.jpeg",
+      "rating": "1528",
+      "time": "1 hari",
+      "episode": ""
+    },
+    {
+      "title": "Grizzly Night (2026)",
+      "id": "grizzly-night-2026",
+      "type": "film",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/GN_200x300.jpeg",
+      "rating": "1470",
+      "time": "1 hari",
+      "episode": ""
+    },
+    {
+      "title": "Legend of Ling Jing (2026)",
+      "id": "legend-of-ling-jing-2026",
+      "type": "film",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/LoLJ_200x300.jpeg",
+      "rating": "1492",
+      "time": "2 hari",
+      "episode": ""
+    },
+    {
+      "title": "Megami “Isekai Tensei Nani ni Naritai Desu ka” Ore “Yuusha no Rokkotsu de”",
+      "id": "megami-isekai-tensei-nani-ni-naritai-desu-ka-ore-yuusha-no-rokkotsu-de",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/MRR_200x300.jpeg",
+      "rating": "0",
+      "time": "2 hari",
+      "episode": ""
+    },
+    {
+      "title": "Tadaima, Ojamasaremasu!",
+      "id": "tadaima-ojamasaremasu",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/TO_200x300.jpeg",
+      "rating": "0",
+      "time": "2 hari",
+      "episode": ""
+    },
+    {
+      "title": "Hidarikiki no Eren",
+      "id": "hidarikiki-no-eren",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/HnE_200x300.jpeg",
+      "rating": "0",
+      "time": "2 hari",
+      "episode": ""
+    },
+    {
+      "title": "Replica datte Koi wo Suru",
+      "id": "replica-datte-koi-wo-suru",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/RDKWS_200x300.jpeg",
+      "rating": "0",
+      "time": "2 hari",
+      "episode": ""
+    },
+    {
+      "title": "Class de 2-banme ni Kawaii Onnanoko to Tomodachi ni Natta",
+      "id": "class-de-2-banme-ni-kawaii-onnanoko-to-tomodachi-ni-natta",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/Class_de_2-banme_200x300.jpeg",
+      "rating": "0",
+      "time": "2 hari",
+      "episode": ""
+    },
+    {
+      "title": "Pilar’s Diary in the Amazon (2025)",
+      "id": "pilars-diary-in-the-amazon-2025",
+      "type": "film",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/PDITA_200x300.jpeg",
+      "rating": "1715",
+      "time": "2 hari",
+      "episode": ""
+    },
+    {
+      "title": "Marriagetoxin",
+      "id": "marriagetoxin",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/MT_200x300.jpeg",
+      "rating": "0",
+      "time": "2 hari",
+      "episode": ""
+    },
+    {
+      "title": "Higeki no Genkyou to Naru Saikyou Gedou Last Boss Joou wa Tami no Tame ni Tsukushimasu. 2nd Season",
+      "id": "higeki-no-genkyou-to-naru-saikyou-gedou-last-boss-joou-wa-tami-no-tame-ni-tsukushimasu-2nd-season",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/Higeki-no-Genkyou_200x300.jpeg",
+      "rating": "0",
+      "time": "2 hari",
+      "episode": ""
+    },
+    {
+      "title": "Hyakki Yakoushou",
+      "id": "hyakki-yakoushou",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/HYS_200x300.jpeg",
+      "rating": "0",
+      "time": "2 hari",
+      "episode": ""
+    }
+  ],
+  "pagination": {
+    "current_page": 1,
+    "total_pages": 5,
+    "has_next_page": true,
+    "next_page": 2,
+    "prev_page": null,
+    "has_prev_page": false
+  },
+  "filters": {
+    "order": "latest"
+  }
+}

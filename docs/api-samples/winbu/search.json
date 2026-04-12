@@ -1,0 +1,78 @@
+{
+  "status": "success",
+  "creator": "Sanka Vollerei",
+  "query": "one piece",
+  "results": [
+    {
+      "title": "One Piece Live Action Season 2",
+      "id": "one-piece-live-action-season-2",
+      "type": "series",
+      "image": "https://winbu.net/wp-content/uploads/2026/03/74467_85x126.jpeg",
+      "description": "ncarian harta karun terbesar di dunia, mereka akan menemui pulau-pulau aneh dan sejumlah musuh baru yang tangguh.",
+      "rating": "-",
+      "episode": ""
+    },
+    {
+      "title": "One Piece",
+      "id": "one-piece",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2020/04/E5RxYkWX0AAwdGH.png_85x126.jpeg",
+      "description": "Gol D. Roger dikenal sebagai Raja Bajak Laut, Orang terkuat dan paling terkenal yang pernah mengarungi Grand Line. Penangkapan...",
+      "rating": "-",
+      "episode": ""
+    },
+    {
+      "title": "One Piece: Gyojin Tou-hen",
+      "id": "one-piece-gyojin-tou-hen",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2024/11/One-Piece-Gyojin-Tou-hen_85x126.jpeg",
+      "description": "Versi spesial yang diedit dari Arc Fish-Man Island dari anime One Piece dengan visual kontemporer penyempurnaan.",
+      "rating": "-",
+      "episode": ""
+    },
+    {
+      "title": "One Piece Fan Letter",
+      "id": "one-piece-fan-letter",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2024/10/One-Piece-Fan-Letter_85x126.jpeg",
+      "description": "Dua tahun setelah Perang Marineford di mana Luffy si Topi Jerami kehilangan kakaknya, Ace, kisah berlanjut di Kepulauan Sabaody....",
+      "rating": "-",
+      "episode": ""
+    },
+    {
+      "title": "One Piece Live Action",
+      "id": "one-piece-live-action",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2023/08/One-Piece-Live-Action-Cover_85x126.jpeg",
+      "description": "Versi live action dari anime populer, One Piece. Tonton Juga ; Anime One Piece One Piece Film: Red",
+      "rating": "-",
+      "episode": ""
+    },
+    {
+      "title": "One Piece Film: Red",
+      "id": "one-piece-film-red",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2022/11/OPFR-Cover_85x126.jpeg",
+      "description": "Sebagai seorang anak, Uta—mantan musisi Bajak Laut Rambut Merah dan teman masa kecil Monkey D. Luffy—berjanji bahwa dia akan...",
+      "rating": "-",
+      "episode": ""
+    },
+    {
+      "title": "Monsters: Ippyaku Sanjou Hiryuu Jigoku",
+      "id": "monsters-ippyaku-sanjou-hiryuu-jigoku",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2024/01/Monsters-Ippyaku-Sanjou-Hiryuu-Jigoku-Cover_85x126.jpeg",
+      "description": "Adaptasi dari one-shot manga berjudul Monsters oleh Oda Eiichiro. Spin off dari One Piece ini, menceritakan tentang Samurai legendaris...",
+      "rating": "-",
+      "episode": ""
+    }
+  ],
+  "pagination": {
+    "current_page": 1,
+    "total_pages": 1,
+    "has_next_page": false,
+    "next_page": null,
+    "prev_page": null,
+    "has_prev_page": false
+  }
+}

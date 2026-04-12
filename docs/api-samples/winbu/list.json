@@ -1,0 +1,261 @@
+{
+  "status": "success",
+  "creator": "Sanka Vollerei",
+  "data": [
+    {
+      "title": "Black Clover: Mahou Tei no Ken",
+      "id": "black-clover-mahou-tei-no-ken",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2023/06/Black-Clover-Mahou-Tei-no-Ken_200x300.jpeg",
+      "rating": "0",
+      "time": "2 tahun",
+      "episode": ""
+    },
+    {
+      "title": "Blue Lock: Episode Nagi",
+      "id": "blue-lock-episode-nagi",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2024/09/Blue.Lock_.Episode.Nagi_-1_200x300.jpeg",
+      "rating": "0",
+      "time": "1 tahun",
+      "episode": ""
+    },
+    {
+      "title": "Boku no Hero Academia the Movie 1: Futari no Hero",
+      "id": "movie-boku-no-hero-academia-the-movie-1-futari-no-hero",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2020/04/93138_200x300.jpeg",
+      "rating": "0",
+      "time": "6 tahun",
+      "episode": ""
+    },
+    {
+      "title": "Boku no Hero Academia the Movie 3: World Heroes Mission",
+      "id": "boku-no-hero-academia-the-movie-3-world-heroes-mission",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2022/02/Boku-no-Hero-Academia-the-Movie-3_200x300.jpeg",
+      "rating": "0",
+      "time": "4 tahun",
+      "episode": ""
+    },
+    {
+      "title": "Digimon Adventure 02: The Beginning",
+      "id": "digimon-adventure-02-the-beginning",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2024/06/Digimon-Adventure-02-The-Beginning-Movie_200x300.jpeg",
+      "rating": "0",
+      "time": "1 tahun",
+      "episode": ""
+    },
+    {
+      "title": "Digimon Adventure: Last Evolution Kizuna",
+      "id": "digimon-adventure-last-evolution-kizuna",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2020/09/2020-09-05_18-28-10_200x300.jpeg",
+      "rating": "0",
+      "time": "5 tahun",
+      "episode": ""
+    },
+    {
+      "title": "Dragon Ball Super Movie: Broly",
+      "id": "dragon-ball-super-movie-broly",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2020/04/93498_200x300.jpeg",
+      "rating": "0",
+      "time": "6 tahun",
+      "episode": ""
+    },
+    {
+      "title": "Dragon Ball Super Movie: Super Hero",
+      "id": "dragon-ball-super-movie-super-hero",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2022/12/Dragon-Ball-Super-Movie-Super-Hero-BLURAY_200x300.jpeg",
+      "rating": "0",
+      "time": "3 tahun",
+      "episode": ""
+    },
+    {
+      "title": "Gintama: The Final",
+      "id": "gintama-the-final",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2021/08/Screenshot-2021-08-08-234159-scaled_200x300.jpeg",
+      "rating": "0",
+      "time": "4 tahun",
+      "episode": ""
+    },
+    {
+      "title": "Goblin Slayer: Goblin’s Crown",
+      "id": "goblin-slayer-goblins-crown",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2020/07/100023l_200x300.jpeg",
+      "rating": "0",
+      "time": "5 tahun",
+      "episode": ""
+    },
+    {
+      "title": "Gridman Universe",
+      "id": "gridman-universe",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2023/10/Gridman-Universe-Movie_200x300.jpeg",
+      "rating": "0",
+      "time": "2 tahun",
+      "episode": ""
+    },
+    {
+      "title": "Haikyuu!! Movie: Gomisuteba no Kessen",
+      "id": "haikyuu-movie-gomisuteba-no-kessen",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2024/10/Haikyu.The_.Dumpster.Battle_200x300.jpeg",
+      "rating": "0",
+      "time": "1 tahun",
+      "episode": ""
+    },
+    {
+      "title": "Jujutsu Kaisen 0",
+      "id": "jujutsu-kaisen-0",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2022/09/Jujutsu-Kaisen-0-Movie-BD_200x300.jpeg",
+      "rating": "0",
+      "time": "3 tahun",
+      "episode": ""
+    },
+    {
+      "title": "Kidou Senshi Gundam SEED Freedom",
+      "id": "kidou-senshi-gundam-seed-freedom",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2024/06/Kidou-Senshi-Gundam-SEED-Freedom_200x300.jpeg",
+      "rating": "0",
+      "time": "1 tahun",
+      "episode": ""
+    },
+    {
+      "title": "Kimetsu no Yaiba Movie – Mugen Train",
+      "id": "kimetsu-no-yaiba-movie-mugen-train",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2021/04/106947_200x300.jpeg",
+      "rating": "74531",
+      "time": "5 tahun",
+      "episode": "Episode 1"
+    },
+    {
+      "title": "Kimitachi wa Dou Ikiru ka",
+      "id": "kimitachi-wa-dou-ikiru-ka",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2024/06/images_200x300.jpeg",
+      "rating": "0",
+      "time": "1 tahun",
+      "episode": ""
+    },
+    {
+      "title": "Nanatsu no Taizai Movie 2: Hikari ni Norowareshi Mono-tachi",
+      "id": "nanatsu-no-taizai-movie-2-hikari-ni-norowareshi-mono-tachi",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2021/10/Screenshot-2021-10-02-230943-300x169.jpg",
+      "rating": "0",
+      "time": "4 tahun",
+      "episode": ""
+    },
+    {
+      "title": "One Piece Film: Red",
+      "id": "one-piece-film-red",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2022/11/One-Piece-Film-Red-2_200x300.jpeg",
+      "rating": "0",
+      "time": "3 tahun",
+      "episode": ""
+    },
+    {
+      "title": "Seishun Buta Yarou wa Odekake Sister no Yume o Minai",
+      "id": "seishun-buta-yarou-wa-odekake-sister-no-yume-o-minai",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2023/12/Seishun-Buta-Yarou-wa-Odekake-Sister-no-Yume-o-Minai_200x300.jpeg",
+      "rating": "0",
+      "time": "2 tahun",
+      "episode": ""
+    },
+    {
+      "title": "Seishun Buta Yarou wa Randoseru Girl no Yume wo Minai",
+      "id": "seishun-buta-yarou-wa-randoseru-girl-no-yume-wo-minai",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2024/06/139260_200x300.jpeg",
+      "rating": "0",
+      "time": "1 tahun",
+      "episode": ""
+    },
+    {
+      "title": "Sora no Aosa wo Shiru Hito yo",
+      "id": "sora-no-aosa-wo-shiru-hito-yo-bd",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2020/06/102527_200x300.jpeg",
+      "rating": "0",
+      "time": "5 tahun",
+      "episode": ""
+    },
+    {
+      "title": "Spy x Family: Code White",
+      "id": "spy-x-family-code-white",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2024/08/Spy.x.Family.Code_.White_.2024-1_200x300.jpeg",
+      "rating": "0",
+      "time": "1 tahun",
+      "episode": ""
+    },
+    {
+      "title": "Suzume no Tojimari",
+      "id": "suzume-no-tojimari",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2023/07/Suzume-no-Tojimari-Movie_200x300.jpeg",
+      "rating": "0",
+      "time": "2 tahun",
+      "episode": ""
+    },
+    {
+      "title": "Sword Art Online: Progressive Movie Hoshi Naki Yoru no Aria",
+      "id": "sword-art-online-progressive",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2022/07/Sword-Art-Online-Progressive-Movie_200x300.jpeg",
+      "rating": "0",
+      "time": "3 tahun",
+      "episode": ""
+    },
+    {
+      "title": "Tenki no Ko",
+      "id": "tenki-no-ko",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2020/05/101146_200x300.jpeg",
+      "rating": "0",
+      "time": "5 tahun",
+      "episode": ""
+    },
+    {
+      "title": "Tensei shitara Slime Datta Ken Movie: Guren no Kizuna-hen",
+      "id": "tensei-shitara-slime-datta-ken-movie-guren-no-kizuna-hen",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2023/03/Screenshot-152_200x300.jpeg",
+      "rating": "0",
+      "time": "3 tahun",
+      "episode": ""
+    },
+    {
+      "title": "The First Slam Dunk",
+      "id": "the-first-slam-dunk",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2024/03/The-First-Slam-Dunk_200x300.jpeg",
+      "rating": "0",
+      "time": "2 tahun",
+      "episode": ""
+    }
+  ],
+  "pagination": {
+    "current_page": 1,
+    "total_pages": 1,
+    "has_next_page": false,
+    "next_page": null,
+    "prev_page": null,
+    "has_prev_page": false
+  },
+  "filters": {
+    "order": "popular?status=ongoing",
+    "type": "movie"
+  }
+}

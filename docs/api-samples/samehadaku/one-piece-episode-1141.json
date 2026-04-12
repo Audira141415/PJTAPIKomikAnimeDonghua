@@ -1,0 +1,941 @@
+{
+  "status": "success",
+  "creator": "Sanka Vollerei",
+  "message": "",
+  "data": {
+    "title": "One Piece Episode 1141 Sub Indo",
+    "animeId": "one-piece",
+    "poster": "https://v2.samehadaku.how/wp-content/uploads/2020/04/E5RxYkWX0AAwdGH.png.jpg",
+    "releasedOn": "8 months yang lalu",
+    "defaultStreamingUrl": "https://www.blogger.com/video.g?token=AD6v5dxLuUbFbjiYZrIYOKrhQ852Bg_a7vqCrx2VqbFk_iONBTVY7-bwsnSwddYMKVB3of1wNeqbsAFAp54FwTvldsEInENMoFhVHUoi6mfetLQhyW_A7kv7ImOHXTEaF1YCxSrX8n4",
+    "hasPrevEpisode": true,
+    "prevEpisode": {
+      "title": "Prev",
+      "episodeId": "one-piece-episode-1140",
+      "href": "/samehadaku/episode/one-piece-episode-1140",
+      "samehadakuUrl": "https://v2.samehadaku.how/one-piece-episode-1140/"
+    },
+    "hasNextEpisode": true,
+    "nextEpisode": {
+      "title": "Next",
+      "episodeId": "one-piece-episode-1142",
+      "href": "/samehadaku/episode/one-piece-episode-1142",
+      "samehadakuUrl": "https://v2.samehadaku.how/one-piece-episode-1142/"
+    },
+    "synopsis": {
+      "paragraphs": [
+        "Gol D. Roger dikenal sebagai Raja Bajak Laut, Orang terkuat dan paling terkenal yang pernah mengarungi Grand Line. Penangkapan dan Eksekusi Roger oleh Pemerintahan Dunia telah membawa perubahan di seluruh dunia. Kata kata terakhir sebelum kematiannya mengungkapkan lokasi dari harta karun terbesar di dunia, One Piece. Inilah awal dari era bajak laut, semua orang bermimpi menemukan One Piece (yang mana menjanjikan harta dan tahta yang tak terhingga jumlahnya), dan tentunya merebut gelar dari orang yang pertama menemukannya, gelar Raja Bajak Laut. Monkey D Luffy."
+      ],
+      "connections": []
+    },
+    "genreList": [
+      {
+        "title": "Action",
+        "genreId": "action",
+        "href": "/samehadaku/genres/action",
+        "samehadakuUrl": "https://v2.samehadaku.how/genre/action"
+      },
+      {
+        "title": "Adventure",
+        "genreId": "adventure",
+        "href": "/samehadaku/genres/adventure",
+        "samehadakuUrl": "https://v2.samehadaku.how/genre/adventure"
+      },
+      {
+        "title": "Comedy",
+        "genreId": "comedy",
+        "href": "/samehadaku/genres/comedy",
+        "samehadakuUrl": "https://v2.samehadaku.how/genre/comedy"
+      },
+      {
+        "title": "Drama",
+        "genreId": "drama",
+        "href": "/samehadaku/genres/drama",
+        "samehadakuUrl": "https://v2.samehadaku.how/genre/drama"
+      },
+      {
+        "title": "Fantasy",
+        "genreId": "fantasy",
+        "href": "/samehadaku/genres/fantasy",
+        "samehadakuUrl": "https://v2.samehadaku.how/genre/fantasy"
+      },
+      {
+        "title": "Shounen",
+        "genreId": "shounen",
+        "href": "/samehadaku/genres/shounen",
+        "samehadakuUrl": "https://v2.samehadaku.how/genre/shounen"
+      },
+      {
+        "title": "Super Power",
+        "genreId": "super-power",
+        "href": "/samehadaku/genres/super-power",
+        "samehadakuUrl": "https://v2.samehadaku.how/genre/super-power"
+      }
+    ],
+    "server": {
+      "qualities": [
+        {
+          "title": "unknown",
+          "serverList": []
+        },
+        {
+          "title": "360p",
+          "serverList": [
+            {
+              "title": "Blogspot 360p",
+              "serverId": "9AAB5-6-xhmyrq",
+              "href": "/samehadaku/server/9AAB5-6-xhmyrq"
+            }
+          ]
+        },
+        {
+          "title": "480p",
+          "serverList": [
+            {
+              "title": "Premium 480p",
+              "serverId": "9AAB5-7-xhmyrq",
+              "href": "/samehadaku/server/9AAB5-7-xhmyrq"
+            },
+            {
+              "title": "Mega 480p",
+              "serverId": "9AAB5-A-xhmyrq",
+              "href": "/samehadaku/server/9AAB5-A-xhmyrq"
+            },
+            {
+              "title": "Nakama 480p",
+              "serverId": "9AAB5-D-xhmyrq",
+              "href": "/samehadaku/server/9AAB5-D-xhmyrq"
+            },
+            {
+              "title": "Pucuk 480p",
+              "serverId": "9AAB5-66-xhmyrq",
+              "href": "/samehadaku/server/9AAB5-66-xhmyrq"
+            }
+          ]
+        },
+        {
+          "title": "720p",
+          "serverList": [
+            {
+              "title": "Premium 720p",
+              "serverId": "9AAB5-8-xhmyrq",
+              "href": "/samehadaku/server/9AAB5-8-xhmyrq"
+            },
+            {
+              "title": "Mega 720p",
+              "serverId": "9AAB5-B-xhmyrq",
+              "href": "/samehadaku/server/9AAB5-B-xhmyrq"
+            },
+            {
+              "title": "Nakama 720p",
+              "serverId": "9AAB5-E-xhmyrq",
+              "href": "/samehadaku/server/9AAB5-E-xhmyrq"
+            },
+            {
+              "title": "Pucuk 720p",
+              "serverId": "9AAB5-67-xhmyrq",
+              "href": "/samehadaku/server/9AAB5-67-xhmyrq"
+            }
+          ]
+        },
+        {
+          "title": "1080p",
+          "serverList": [
+            {
+              "title": "Premium 1080p",
+              "serverId": "9AAB5-9-xhmyrq",
+              "href": "/samehadaku/server/9AAB5-9-xhmyrq"
+            },
+            {
+              "title": "Mega 1080p",
+              "serverId": "9AAB5-C-xhmyrq",
+              "href": "/samehadaku/server/9AAB5-C-xhmyrq"
+            },
+            {
+              "title": "Nakama 1080p",
+              "serverId": "9AAB5-65-xhmyrq",
+              "href": "/samehadaku/server/9AAB5-65-xhmyrq"
+            },
+            {
+              "title": "Pucuk 1080p",
+              "serverId": "9AAB5-68-xhmyrq",
+              "href": "/samehadaku/server/9AAB5-68-xhmyrq"
+            }
+          ]
+        },
+        {
+          "title": "4k",
+          "serverList": [
+            {
+              "title": "Mega 4K",
+              "serverId": "9AAB5-69-xhmyrq",
+              "href": "/samehadaku/server/9AAB5-69-xhmyrq"
+            },
+            {
+              "title": "Nakama 4K",
+              "serverId": "9AAB5-6A-xhmyrq",
+              "href": "/samehadaku/server/9AAB5-6A-xhmyrq"
+            }
+          ]
+        }
+      ]
+    },
+    "downloadUrl": {
+      "formats": [
+        {
+          "title": "MKV",
+          "qualities": [
+            {
+              "title": "360p ",
+              "urls": [
+                {
+                  "title": "Gofile",
+                  "url": "https://gofile.io/d/uB1jCu"
+                },
+                {
+                  "title": " Krakenfiles",
+                  "url": "https://krakenfiles.com/view/72IGYrqKVf/file.html"
+                },
+                {
+                  "title": " Acefile",
+                  "url": "https://acefile.co/f/109997692/op-1141-360p-samehadaku-care-mkv"
+                },
+                {
+                  "title": " Pixeldrain",
+                  "url": "https://pixeldrain.com/u/LwstxUR3"
+                },
+                {
+                  "title": " Mediafire (RAR)",
+                  "url": "https://www.mediafire.com/file/unz17mxewo7al0g/OP-1141-360p-SAMEHADAKU.CARE.rar/file"
+                },
+                {
+                  "title": " Filedon",
+                  "url": "https://filedon.co/view/q0AFBodLMo"
+                }
+              ]
+            },
+            {
+              "title": "480p ",
+              "urls": [
+                {
+                  "title": "Gofile",
+                  "url": "https://gofile.io/d/TiFHdV"
+                },
+                {
+                  "title": " Krakenfiles",
+                  "url": "https://krakenfiles.com/view/EcFQCTwuIa/file.html"
+                },
+                {
+                  "title": " Acefile",
+                  "url": "https://acefile.co/f/109994089/op-1141-480p-samehadaku-care-mkv"
+                },
+                {
+                  "title": " Pixeldrain",
+                  "url": "https://pixeldrain.com/u/gPru4yL9"
+                },
+                {
+                  "title": " Mediafire (RAR)",
+                  "url": "https://www.mediafire.com/file/cb704nao6va3nyl/OP-1141-480p-SAMEHADAKU.CARE.rar/file"
+                },
+                {
+                  "title": " Filedon",
+                  "url": "https://filedon.co/view/qxQlMuOS8A"
+                }
+              ]
+            },
+            {
+              "title": "720p ",
+              "urls": [
+                {
+                  "title": "Gofile",
+                  "url": "https://gofile.io/d/IlRVWx"
+                },
+                {
+                  "title": " Krakenfiles",
+                  "url": "https://krakenfiles.com/view/b4AE9IaC9v/file.html"
+                },
+                {
+                  "title": " Acefile",
+                  "url": "https://acefile.co/f/109997691/op-1141-720p-samehadaku-care-mkv"
+                },
+                {
+                  "title": " Pixeldrain",
+                  "url": "https://pixeldrain.com/u/4jBrxCJj"
+                },
+                {
+                  "title": " Mediafire (RAR)",
+                  "url": "https://www.mediafire.com/file/ov2p65o5epw3rlk/OP-1141-720p-SAMEHADAKU.CARE.rar/file"
+                },
+                {
+                  "title": " Filedon",
+                  "url": "https://filedon.co/view/GIXEiW6qCe"
+                }
+              ]
+            },
+            {
+              "title": "1080p ",
+              "urls": [
+                {
+                  "title": "Gofile",
+                  "url": "https://gofile.io/d/z8evGL"
+                },
+                {
+                  "title": " Krakenfiles",
+                  "url": "https://krakenfiles.com/view/CBbHUtc5KK/file.html"
+                },
+                {
+                  "title": " Acefile",
+                  "url": "https://acefile.co/f/109994086/op-1141-1080p-samehadaku-care-mkv"
+                },
+                {
+                  "title": " Pixeldrain",
+                  "url": "https://pixeldrain.com/u/3M3XvaW4"
+                },
+                {
+                  "title": " Mediafire (RAR)",
+                  "url": "https://www.mediafire.com/file/0hdyozvp44a0hkz/OP-1141-1080p-SAMEHADAKU.CARE.rar/file"
+                },
+                {
+                  "title": " Filedon",
+                  "url": "https://filedon.co/view/vN8kM6YFnI"
+                }
+              ]
+            },
+            {
+              "title": "4K ",
+              "urls": [
+                {
+                  "title": "Gofile",
+                  "url": "https://gofile.io/d/wusN9H"
+                },
+                {
+                  "title": "Krakenfile",
+                  "url": "https://krakenfiles.com/view/sQ7UgXGcLU/file.html"
+                },
+                {
+                  "title": "Pixeldrain",
+                  "url": "https://pixeldrain.com/u/PgirbLJP"
+                },
+                {
+                  "title": "Mediafire (RAR)",
+                  "url": "https://www.mediafire.com/file/0a02s542adhgee5/OP-1141-4K-SAMEHADAKU.CARE.rar/file"
+                },
+                {
+                  "title": "Filedon",
+                  "url": "https://filedon.co/view/Jb6Q0xaNCp"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "MP4",
+          "qualities": [
+            {
+              "title": "360p ",
+              "urls": [
+                {
+                  "title": "Gofile",
+                  "url": "https://gofile.io/d/vyVi4z"
+                },
+                {
+                  "title": " Krakenfiles",
+                  "url": "https://krakenfiles.com/view/jYYIZXFepF/file.html"
+                },
+                {
+                  "title": " Pixeldrain",
+                  "url": "https://pixeldrain.com/u/aZ9p2sSY"
+                },
+                {
+                  "title": " Filedon",
+                  "url": "https://filedon.co/view/y0ByFMBhYg"
+                }
+              ]
+            },
+            {
+              "title": "480p ",
+              "urls": [
+                {
+                  "title": "Gofile",
+                  "url": "https://gofile.io/d/9QWo2O"
+                },
+                {
+                  "title": " Krakenfiles",
+                  "url": "https://krakenfiles.com/view/U8xXVsLPK7/file.html"
+                },
+                {
+                  "title": " Pixeldrain",
+                  "url": "https://pixeldrain.com/u/pTy13iZB"
+                },
+                {
+                  "title": " Filedon",
+                  "url": "https://filedon.co/view/sGhMlkC888"
+                }
+              ]
+            },
+            {
+              "title": "MP4HD ",
+              "urls": [
+                {
+                  "title": "Gofile",
+                  "url": "https://gofile.io/d/16Tma9"
+                },
+                {
+                  "title": " Krakenfiles",
+                  "url": "https://krakenfiles.com/view/iWGytJUjzz/file.html"
+                },
+                {
+                  "title": " Pixeldrain",
+                  "url": "https://pixeldrain.com/u/As8zNW1z"
+                },
+                {
+                  "title": " Filedon",
+                  "url": "https://filedon.co/view/D5UKwLjzU5"
+                }
+              ]
+            },
+            {
+              "title": "FULLHD ",
+              "urls": [
+                {
+                  "title": "Gofile",
+                  "url": "https://gofile.io/d/J9jkqW"
+                },
+                {
+                  "title": " Krakenfiles",
+                  "url": "https://krakenfiles.com/view/PYx4dKGJbc/file.html"
+                },
+                {
+                  "title": " Pixeldrain",
+                  "url": "https://pixeldrain.com/u/hiEN5NNL"
+                },
+                {
+                  "title": " Filedon",
+                  "url": "https://filedon.co/view/0EGbXYXuSw"
+                }
+              ]
+            },
+            {
+              "title": "4K ",
+              "urls": [
+                {
+                  "title": "Gofile",
+                  "url": "https://gofile.io/d/KwxEsp"
+                },
+                {
+                  "title": "Krakenfile",
+                  "url": "https://krakenfiles.com/view/kfRNmnLE32/file.html"
+                },
+                {
+                  "title": "Pixeldrain",
+                  "url": "https://pixeldrain.com/u/4KVYhkvp"
+                },
+                {
+                  "title": "Filedon",
+                  "url": "https://filedon.co/view/bRJLsR7dam"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "x265 [Mode Irit Kuota tapi Kualitas Sama Beningnya]",
+          "qualities": [
+            {
+              "title": "480p ",
+              "urls": [
+                {
+                  "title": "Gofile",
+                  "url": "https://gofile.io/d/wwvMlO"
+                },
+                {
+                  "title": " Krakenfiles",
+                  "url": "https://krakenfiles.com/view/no5Cdz78y4/file.html"
+                },
+                {
+                  "title": " Acefile",
+                  "url": "https://acefile.co/f/109994085/op-1141-480p-x265-samehadaku-care-mkv"
+                },
+                {
+                  "title": " Pixeldrain",
+                  "url": "https://pixeldrain.com/u/BPmTWrcY"
+                },
+                {
+                  "title": " Mediafire (RAR)",
+                  "url": "https://www.mediafire.com/file/x35i3mrsfowjadr/OP-1141-480p-[x265]-SAMEHADAKU.CARE.rar/file"
+                },
+                {
+                  "title": " Filedon",
+                  "url": "https://filedon.co/view/3eDfWAh6wc"
+                }
+              ]
+            },
+            {
+              "title": "720p ",
+              "urls": [
+                {
+                  "title": "Gofile",
+                  "url": "https://gofile.io/d/rL3dlE"
+                },
+                {
+                  "title": " Krakenfiles",
+                  "url": "https://krakenfiles.com/view/WbqiWCXT67/file.html"
+                },
+                {
+                  "title": " Acefile",
+                  "url": "https://acefile.co/f/109997690/op-1141-720p-x265-samehadaku-care-mkv"
+                },
+                {
+                  "title": " Pixeldrain",
+                  "url": "https://pixeldrain.com/u/GM2BGZLD"
+                },
+                {
+                  "title": " Mediafire (RAR)",
+                  "url": "https://www.mediafire.com/file/qfa0rlfwvl2r9dt/OP-1141-720p-[x265]-SAMEHADAKU.CARE.rar/file"
+                },
+                {
+                  "title": " Filedon",
+                  "url": "https://filedon.co/view/ocB2HOiHTs"
+                }
+              ]
+            },
+            {
+              "title": "1080p ",
+              "urls": [
+                {
+                  "title": "Gofile",
+                  "url": "https://gofile.io/d/3K5DHR"
+                },
+                {
+                  "title": " Krakenfiles",
+                  "url": "https://krakenfiles.com/view/MD5zCBraCQ/file.html"
+                },
+                {
+                  "title": " Acefile",
+                  "url": "https://acefile.co/f/109997094/op-1141-1080p-x265-samehadaku-care-mkv"
+                },
+                {
+                  "title": " Pixeldrain",
+                  "url": "https://pixeldrain.com/u/6aLSdVP3"
+                },
+                {
+                  "title": " Mediafire (RAR)",
+                  "url": "https://www.mediafire.com/file/ae5tlm2za8xo3tn/OP-1141-1080p-[x265]-SAMEHADAKU.CARE.rar/file"
+                },
+                {
+                  "title": " Filedon",
+                  "url": "https://filedon.co/view/iu7GoiVk0s"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "recommendedEpisodeList": [
+      {
+        "title": "One Piece Episode 1156",
+        "poster": "https://v2.samehadaku.how/wp-content/uploads/2026/04/One-Piece-1156.jpg",
+        "releaseDate": "5 April 2026",
+        "episodeId": "one-piece-episode-1141",
+        "href": "/samehadaku/episode/one-piece-episode-1156",
+        "samehadakuUrl": "https://v2.samehadaku.how/one-piece-episode-1156/"
+      },
+      {
+        "title": "One Piece Episode 1155",
+        "poster": "https://v2.samehadaku.how/wp-content/uploads/2025/12/image-14.jpg",
+        "releaseDate": "29 December 2025",
+        "episodeId": "one-piece-episode-1141",
+        "href": "/samehadaku/episode/one-piece-episode-1155",
+        "samehadakuUrl": "https://v2.samehadaku.how/one-piece-episode-1155/"
+      },
+      {
+        "title": "One Piece Episode 1154",
+        "poster": "https://v2.samehadaku.how/wp-content/uploads/2025/12/image-12.jpg",
+        "releaseDate": "22 December 2025",
+        "episodeId": "one-piece-episode-1141",
+        "href": "/samehadaku/episode/one-piece-episode-1154",
+        "samehadakuUrl": "https://v2.samehadaku.how/one-piece-episode-1154/"
+      },
+      {
+        "title": "One Piece Episode 1153",
+        "poster": "https://v2.samehadaku.how/wp-content/uploads/2025/12/image-8.jpg",
+        "releaseDate": "15 December 2025",
+        "episodeId": "one-piece-episode-1141",
+        "href": "/samehadaku/episode/one-piece-episode-1153",
+        "samehadakuUrl": "https://v2.samehadaku.how/one-piece-episode-1153/"
+      },
+      {
+        "title": "One Piece Episode 1152",
+        "poster": "https://v2.samehadaku.how/wp-content/uploads/2025/12/image-3.jpg",
+        "releaseDate": "8 December 2025",
+        "episodeId": "one-piece-episode-1141",
+        "href": "/samehadaku/episode/one-piece-episode-1152",
+        "samehadakuUrl": "https://v2.samehadaku.how/one-piece-episode-1152/"
+      },
+      {
+        "title": "One Piece Episode 1151",
+        "poster": "https://v2.samehadaku.how/wp-content/uploads/2025/11/image-19.jpg",
+        "releaseDate": "1 December 2025",
+        "episodeId": "one-piece-episode-1141",
+        "href": "/samehadaku/episode/one-piece-episode-1151",
+        "samehadakuUrl": "https://v2.samehadaku.how/one-piece-episode-1151/"
+      },
+      {
+        "title": "One Piece Episode 1150",
+        "poster": "https://v2.samehadaku.how/wp-content/uploads/2025/11/image-9.jpg",
+        "releaseDate": "17 November 2025",
+        "episodeId": "one-piece-episode-1141",
+        "href": "/samehadaku/episode/one-piece-episode-1150",
+        "samehadakuUrl": "https://v2.samehadaku.how/one-piece-episode-1150/"
+      },
+      {
+        "title": "One Piece Episode 1149",
+        "poster": "https://v2.samehadaku.how/wp-content/uploads/2025/11/image-4-2.jpg",
+        "releaseDate": "10 November 2025",
+        "episodeId": "one-piece-episode-1141",
+        "href": "/samehadaku/episode/one-piece-episode-1149",
+        "samehadakuUrl": "https://v2.samehadaku.how/one-piece-episode-1149/"
+      },
+      {
+        "title": "One Piece Episode 1148",
+        "poster": "https://v2.samehadaku.how/wp-content/uploads/2025/11/image-6.jpg",
+        "releaseDate": "3 November 2025",
+        "episodeId": "one-piece-episode-1141",
+        "href": "/samehadaku/episode/one-piece-episode-1148",
+        "samehadakuUrl": "https://v2.samehadaku.how/one-piece-episode-1148/"
+      },
+      {
+        "title": "One Piece Episode 1147",
+        "poster": "https://v2.samehadaku.how/wp-content/uploads/2025/10/image-12.jpg",
+        "releaseDate": "27 October 2025",
+        "episodeId": "one-piece-episode-1141",
+        "href": "/samehadaku/episode/one-piece-episode-1147",
+        "samehadakuUrl": "https://v2.samehadaku.how/one-piece-episode-1147/"
+      },
+      {
+        "title": "One Piece Episode 1146",
+        "poster": "https://v2.samehadaku.how/wp-content/uploads/2025/10/Screenshot-83-1.jpg",
+        "releaseDate": "20 October 2025",
+        "episodeId": "one-piece-episode-1141",
+        "href": "/samehadaku/episode/one-piece-episode-1146",
+        "samehadakuUrl": "https://v2.samehadaku.how/one-piece-episode-1146/"
+      },
+      {
+        "title": "One Piece Episode 1145",
+        "poster": "https://v2.samehadaku.how/wp-content/uploads/2025/09/image-2-7.jpg",
+        "releaseDate": "29 September 2025",
+        "episodeId": "one-piece-episode-1141",
+        "href": "/samehadaku/episode/one-piece-episode-1145",
+        "samehadakuUrl": "https://v2.samehadaku.how/one-piece-episode-1145/"
+      },
+      {
+        "title": "One Piece Episode 1144",
+        "poster": "https://v2.samehadaku.how/wp-content/uploads/2025/09/image-2-5.jpg",
+        "releaseDate": "22 September 2025",
+        "episodeId": "one-piece-episode-1141",
+        "href": "/samehadaku/episode/one-piece-episode-1144",
+        "samehadakuUrl": "https://v2.samehadaku.how/one-piece-episode-1144/"
+      },
+      {
+        "title": "One Piece Episode 1143",
+        "poster": "https://v2.samehadaku.how/wp-content/uploads/2025/09/image-2-2.jpg",
+        "releaseDate": "15 September 2025",
+        "episodeId": "one-piece-episode-1141",
+        "href": "/samehadaku/episode/one-piece-episode-1143",
+        "samehadakuUrl": "https://v2.samehadaku.how/one-piece-episode-1143/"
+      },
+      {
+        "title": "One Piece Episode 1142",
+        "poster": "https://v2.samehadaku.how/wp-content/uploads/2025/09/image-10.jpg",
+        "releaseDate": "8 September 2025",
+        "episodeId": "one-piece-episode-1141",
+        "href": "/samehadaku/episode/one-piece-episode-1142",
+        "samehadakuUrl": "https://v2.samehadaku.how/one-piece-episode-1142/"
+      },
+      {
+        "title": "One Piece Episode 1141",
+        "poster": "https://v2.samehadaku.how/wp-content/uploads/2025/08/image-2-3.jpg",
+        "releaseDate": "24 August 2025",
+        "episodeId": "one-piece-episode-1141",
+        "href": "/samehadaku/episode/one-piece-episode-1141",
+        "samehadakuUrl": "https://v2.samehadaku.how/one-piece-episode-1141/"
+      },
+      {
+        "title": "One Piece Episode 1140",
+        "poster": "https://v2.samehadaku.how/wp-content/uploads/2025/08/image-14.jpg",
+        "releaseDate": "18 August 2025",
+        "episodeId": "one-piece-episode-1141",
+        "href": "/samehadaku/episode/one-piece-episode-1140",
+        "samehadakuUrl": "https://v2.samehadaku.how/one-piece-episode-1140/"
+      },
+      {
+        "title": "One Piece Episode 1139",
+        "poster": "https://v2.samehadaku.how/wp-content/uploads/2025/08/Screenshot-433.jpg",
+        "releaseDate": "10 August 2025",
+        "episodeId": "one-piece-episode-1141",
+        "href": "/samehadaku/episode/one-piece-episode-1139",
+        "samehadakuUrl": "https://v2.samehadaku.how/one-piece-episode-1139/"
+      },
+      {
+        "title": "One Piece Episode 1138",
+        "poster": "https://v2.samehadaku.how/wp-content/uploads/2025/08/Screenshot-418.jpg",
+        "releaseDate": "3 August 2025",
+        "episodeId": "one-piece-episode-1141",
+        "href": "/samehadaku/episode/one-piece-episode-1138",
+        "samehadakuUrl": "https://v2.samehadaku.how/one-piece-episode-1138/"
+      },
+      {
+        "title": "One Piece Episode 1137",
+        "poster": "https://v2.samehadaku.how/wp-content/uploads/2025/07/Screenshot-402.jpg",
+        "releaseDate": "28 July 2025",
+        "episodeId": "one-piece-episode-1141",
+        "href": "/samehadaku/episode/one-piece-episode-1137",
+        "samehadakuUrl": "https://v2.samehadaku.how/one-piece-episode-1137/"
+      },
+      {
+        "title": "One Piece Episode 1136",
+        "poster": "https://v2.samehadaku.how/wp-content/uploads/2025/07/image.jpg",
+        "releaseDate": "13 July 2025",
+        "episodeId": "one-piece-episode-1141",
+        "href": "/samehadaku/episode/one-piece-episode-1136",
+        "samehadakuUrl": "https://v2.samehadaku.how/one-piece-episode-1136/"
+      },
+      {
+        "title": "One Piece Episode 1135",
+        "poster": "https://v2.samehadaku.how/wp-content/uploads/2025/07/One-Piece-Episode-1135.jpg",
+        "releaseDate": "6 July 2025",
+        "episodeId": "one-piece-episode-1141",
+        "href": "/samehadaku/episode/one-piece-episode-1135",
+        "samehadakuUrl": "https://v2.samehadaku.how/one-piece-episode-1135/"
+      },
+      {
+        "title": "One Piece Episode 1134",
+        "poster": "https://v2.samehadaku.how/wp-content/uploads/2025/06/image-2-3.jpg",
+        "releaseDate": "29 June 2025",
+        "episodeId": "one-piece-episode-1141",
+        "href": "/samehadaku/episode/one-piece-episode-1134",
+        "samehadakuUrl": "https://v2.samehadaku.how/one-piece-episode-1134/"
+      },
+      {
+        "title": "One Piece Episode 1133",
+        "poster": "https://v2.samehadaku.how/wp-content/uploads/2025/06/Screenshot-323.jpg",
+        "releaseDate": "15 June 2025",
+        "episodeId": "one-piece-episode-1141",
+        "href": "/samehadaku/episode/one-piece-episode-1133",
+        "samehadakuUrl": "https://v2.samehadaku.how/one-piece-episode-1133/"
+      },
+      {
+        "title": "One Piece Episode 1132",
+        "poster": "https://v2.samehadaku.how/wp-content/uploads/2025/06/image-6.jpg",
+        "releaseDate": "8 June 2025",
+        "episodeId": "one-piece-episode-1141",
+        "href": "/samehadaku/episode/one-piece-episode-1132",
+        "samehadakuUrl": "https://v2.samehadaku.how/one-piece-episode-1132/"
+      }
+    ],
+    "movie": {
+      "href": "/samehadaku/movies",
+      "samehadakuUrl": "https://v2.samehadaku.how//anime-movie/",
+      "animeList": [
+        {
+          "title": "Kimetsu no Yaiba – The Movie: Infinity Castle – Part 1: Akaza Returns",
+          "poster": "https://v2.samehadaku.how/wp-content/uploads/2026/01/148216.jpg",
+          "releaseDate": "Jul 18, 2025",
+          "animeId": "kimetsu-no-yaiba-the-movie-infinity-castle-part-1-akaza-returns",
+          "href": "/samehadaku/anime/kimetsu-no-yaiba-the-movie-infinity-castle-part-1-akaza-returns",
+          "samehadakuUrl": "https://v2.samehadaku.how/anime/kimetsu-no-yaiba-the-movie-infinity-castle-part-1-akaza-returns/",
+          "genreList": [
+            {
+              "title": "Action",
+              "genreId": "action",
+              "href": "/samehadaku/genres/action",
+              "samehadakuUrl": "https://v2.samehadaku.how/genre/action/"
+            },
+            {
+              "title": "Historical",
+              "genreId": "historical",
+              "href": "/samehadaku/genres/historical",
+              "samehadakuUrl": "https://v2.samehadaku.how/genre/historical/"
+            },
+            {
+              "title": "Supernatural",
+              "genreId": "supernatural",
+              "href": "/samehadaku/genres/supernatural",
+              "samehadakuUrl": "https://v2.samehadaku.how/genre/supernatural/"
+            }
+          ]
+        },
+        {
+          "title": "Chainsaw Man Reze-hen",
+          "poster": "https://v2.samehadaku.how/wp-content/uploads/2025/12/bx171627-ZN9D7P46yHnw.png",
+          "releaseDate": "Sep 19, 2025",
+          "animeId": "chainsaw-man-reze-hen-index",
+          "href": "/samehadaku/anime/chainsaw-man-reze-hen-index",
+          "samehadakuUrl": "https://v2.samehadaku.how/anime/chainsaw-man-reze-hen-index/",
+          "genreList": [
+            {
+              "title": "Action",
+              "genreId": "action",
+              "href": "/samehadaku/genres/action",
+              "samehadakuUrl": "https://v2.samehadaku.how/genre/action/"
+            },
+            {
+              "title": "Fantasy",
+              "genreId": "fantasy",
+              "href": "/samehadaku/genres/fantasy",
+              "samehadakuUrl": "https://v2.samehadaku.how/genre/fantasy/"
+            },
+            {
+              "title": "Gore",
+              "genreId": "gore",
+              "href": "/samehadaku/genres/gore",
+              "samehadakuUrl": "https://v2.samehadaku.how/genre/gore/"
+            },
+            {
+              "title": "Shounen",
+              "genreId": "shounen",
+              "href": "/samehadaku/genres/shounen",
+              "samehadakuUrl": "https://v2.samehadaku.how/genre/shounen/"
+            },
+            {
+              "title": "Urban Fantasy",
+              "genreId": "urban-fantasy",
+              "href": "/samehadaku/genres/urban-fantasy",
+              "samehadakuUrl": "https://v2.samehadaku.how/genre/urban-fantasy/"
+            }
+          ]
+        },
+        {
+          "title": "Sidonia no Kishi Ai Tsumugu Hoshi",
+          "poster": "https://v2.samehadaku.how/wp-content/uploads/2025/07/108354.jpg",
+          "releaseDate": "Jun 4, 2021",
+          "animeId": "sidonia-no-kishi-ai-tsumugu-hoshi",
+          "href": "/samehadaku/anime/sidonia-no-kishi-ai-tsumugu-hoshi",
+          "samehadakuUrl": "https://v2.samehadaku.how/anime/sidonia-no-kishi-ai-tsumugu-hoshi/",
+          "genreList": [
+            {
+              "title": "Action",
+              "genreId": "action",
+              "href": "/samehadaku/genres/action",
+              "samehadakuUrl": "https://v2.samehadaku.how/genre/action/"
+            },
+            {
+              "title": "Sci-Fi",
+              "genreId": "sci-fi",
+              "href": "/samehadaku/genres/sci-fi",
+              "samehadakuUrl": "https://v2.samehadaku.how/genre/sci-fi/"
+            }
+          ]
+        },
+        {
+          "title": "Overlord Movie 3 Sei Oukoku hen",
+          "poster": "https://v2.samehadaku.how/wp-content/uploads/2025/04/144101.jpg",
+          "releaseDate": "Sep 20, 2024",
+          "animeId": "overlord-movie-3-sei-oukoku-hen",
+          "href": "/samehadaku/anime/overlord-movie-3-sei-oukoku-hen",
+          "samehadakuUrl": "https://v2.samehadaku.how/anime/overlord-movie-3-sei-oukoku-hen/",
+          "genreList": [
+            {
+              "title": "Action",
+              "genreId": "action",
+              "href": "/samehadaku/genres/action",
+              "samehadakuUrl": "https://v2.samehadaku.how/genre/action/"
+            },
+            {
+              "title": "Adventure",
+              "genreId": "adventure",
+              "href": "/samehadaku/genres/adventure",
+              "samehadakuUrl": "https://v2.samehadaku.how/genre/adventure/"
+            },
+            {
+              "title": "Fantasy",
+              "genreId": "fantasy",
+              "href": "/samehadaku/genres/fantasy",
+              "samehadakuUrl": "https://v2.samehadaku.how/genre/fantasy/"
+            }
+          ]
+        },
+        {
+          "title": "Boku no Hero Academia the Movie 4",
+          "poster": "https://v2.samehadaku.how/wp-content/uploads/2025/02/143549.jpg",
+          "releaseDate": "Aug 2, 2024",
+          "animeId": "boku-no-hero-academia-the-movie-4",
+          "href": "/samehadaku/anime/boku-no-hero-academia-the-movie-4",
+          "samehadakuUrl": "https://v2.samehadaku.how/anime/boku-no-hero-academia-the-movie-4/",
+          "genreList": [
+            {
+              "title": "Action",
+              "genreId": "action",
+              "href": "/samehadaku/genres/action",
+              "samehadakuUrl": "https://v2.samehadaku.how/genre/action/"
+            },
+            {
+              "title": "School",
+              "genreId": "school",
+              "href": "/samehadaku/genres/school",
+              "samehadakuUrl": "https://v2.samehadaku.how/genre/school/"
+            },
+            {
+              "title": "Super Power",
+              "genreId": "super-power",
+              "href": "/samehadaku/genres/super-power",
+              "samehadakuUrl": "https://v2.samehadaku.how/genre/super-power/"
+            }
+          ]
+        },
+        {
+          "title": "Haikyuu!! Movie: Gomisuteba no Kessen",
+          "poster": "https://v2.samehadaku.how/wp-content/uploads/2024/10/140360.jpg",
+          "releaseDate": "Feb 16, 2024",
+          "animeId": "haikyuu-movie-gomisuteba-no-kessen",
+          "href": "/samehadaku/anime/haikyuu-movie-gomisuteba-no-kessen",
+          "samehadakuUrl": "https://v2.samehadaku.how/anime/haikyuu-movie-gomisuteba-no-kessen/",
+          "genreList": [
+            {
+              "title": "School",
+              "genreId": "school",
+              "href": "/samehadaku/genres/school",
+              "samehadakuUrl": "https://v2.samehadaku.how/genre/school/"
+            },
+            {
+              "title": "Sports",
+              "genreId": "sports",
+              "href": "/samehadaku/genres/sports",
+              "samehadakuUrl": "https://v2.samehadaku.how/genre/sports/"
+            },
+            {
+              "title": "TeamSports",
+              "genreId": "teamsports",
+              "href": "/samehadaku/genres/teamsports",
+              "samehadakuUrl": "https://v2.samehadaku.how/genre/teamsports/"
+            }
+          ]
+        },
+        {
+          "title": "Blue Lock: Episode Nagi",
+          "poster": "https://v2.samehadaku.how/wp-content/uploads/2024/09/139928.jpg",
+          "releaseDate": "Apr 19, 2024",
+          "animeId": "blue-lock-episode-nagi",
+          "href": "/samehadaku/anime/blue-lock-episode-nagi",
+          "samehadakuUrl": "https://v2.samehadaku.how/anime/blue-lock-episode-nagi/",
+          "genreList": [
+            {
+              "title": "Sports",
+              "genreId": "sports",
+              "href": "/samehadaku/genres/sports",
+              "samehadakuUrl": "https://v2.samehadaku.how/genre/sports/"
+            },
+            {
+              "title": "Team",
+              "genreId": "team",
+              "href": "/samehadaku/genres/team",
+              "samehadakuUrl": "https://v2.samehadaku.how/genre/team/"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "pagination": null
+}

@@ -1,0 +1,667 @@
+{
+  "status": "success",
+  "creator": "Sanka Vollerei",
+  "source": "Kusonime",
+  "seasons": [
+    {
+      "name": "Anime Movie",
+      "slug": "movie"
+    },
+    {
+      "name": "Anime ONA",
+      "slug": "ona"
+    },
+    {
+      "name": "Anime OVA",
+      "slug": "ova"
+    },
+    {
+      "name": "Anime Special",
+      "slug": "special"
+    },
+    {
+      "name": "Drama",
+      "slug": "drama"
+    },
+    {
+      "name": "Fall 1976",
+      "slug": "fall-1976"
+    },
+    {
+      "name": "Fall 1982",
+      "slug": "fall-1982"
+    },
+    {
+      "name": "Fall 1983",
+      "slug": "fall-1983"
+    },
+    {
+      "name": "Fall 1985",
+      "slug": "fall-1985"
+    },
+    {
+      "name": "Fall 1986",
+      "slug": "fall-1986"
+    },
+    {
+      "name": "Fall 1989",
+      "slug": "fall-1989"
+    },
+    {
+      "name": "Fall 1991",
+      "slug": "fall-1991"
+    },
+    {
+      "name": "Fall 1992",
+      "slug": "fall-1992"
+    },
+    {
+      "name": "Fall 1993",
+      "slug": "fall-1993"
+    },
+    {
+      "name": "Fall 1994",
+      "slug": "fall-1994"
+    },
+    {
+      "name": "Fall 1995",
+      "slug": "fall-1995"
+    },
+    {
+      "name": "Fall 1996",
+      "slug": "fall-1996"
+    },
+    {
+      "name": "Fall 1997",
+      "slug": "fall-1997"
+    },
+    {
+      "name": "Fall 1998",
+      "slug": "fall-1998"
+    },
+    {
+      "name": "Fall 1999",
+      "slug": "fall-1999"
+    },
+    {
+      "name": "Fall 2000",
+      "slug": "fall-2000"
+    },
+    {
+      "name": "Fall 2001",
+      "slug": "fall-2001"
+    },
+    {
+      "name": "Fall 2002",
+      "slug": "fall-2002"
+    },
+    {
+      "name": "Fall 2003",
+      "slug": "fall-2003"
+    },
+    {
+      "name": "Fall 2004",
+      "slug": "fall-2004"
+    },
+    {
+      "name": "Fall 2005",
+      "slug": "fall-2005"
+    },
+    {
+      "name": "Fall 2006",
+      "slug": "fall-2006"
+    },
+    {
+      "name": "Fall 2007",
+      "slug": "fall-2007"
+    },
+    {
+      "name": "Fall 2008",
+      "slug": "fall-2008"
+    },
+    {
+      "name": "Fall 2009",
+      "slug": "fall-2009"
+    },
+    {
+      "name": "Fall 2010",
+      "slug": "fall-2010"
+    },
+    {
+      "name": "Fall 2011",
+      "slug": "fall-2011"
+    },
+    {
+      "name": "Fall 2012",
+      "slug": "fall-2012"
+    },
+    {
+      "name": "Fall 2013",
+      "slug": "fall-2013"
+    },
+    {
+      "name": "Fall 2014",
+      "slug": "fall-2014"
+    },
+    {
+      "name": "Fall 2015",
+      "slug": "fall-2015"
+    },
+    {
+      "name": "Fall 2016",
+      "slug": "fall-2016"
+    },
+    {
+      "name": "Fall 2017",
+      "slug": "fall-2017"
+    },
+    {
+      "name": "Fall 2018",
+      "slug": "fall-2018"
+    },
+    {
+      "name": "Fall 2019",
+      "slug": "fall-2019"
+    },
+    {
+      "name": "Fall 2020",
+      "slug": "fall-2020"
+    },
+    {
+      "name": "Fall 2021",
+      "slug": "fall-2021"
+    },
+    {
+      "name": "Fall 2022",
+      "slug": "fall-2022"
+    },
+    {
+      "name": "Fall 2023",
+      "slug": "fall-2023"
+    },
+    {
+      "name": "Fall 2024",
+      "slug": "fall-2024"
+    },
+    {
+      "name": "Fall 2025",
+      "slug": "fall-2025"
+    },
+    {
+      "name": "Historical",
+      "slug": "historical"
+    },
+    {
+      "name": "Seinen",
+      "slug": "seinen"
+    },
+    {
+      "name": "Spring 1969",
+      "slug": "spring-1969"
+    },
+    {
+      "name": "Spring 1976",
+      "slug": "spring-1976"
+    },
+    {
+      "name": "Spring 1978",
+      "slug": "spring-1978"
+    },
+    {
+      "name": "Spring 1979",
+      "slug": "spring-1979"
+    },
+    {
+      "name": "Spring 1985",
+      "slug": "spring-1985"
+    },
+    {
+      "name": "Spring 1986",
+      "slug": "spring-1986"
+    },
+    {
+      "name": "Spring 1987",
+      "slug": "spring-1987"
+    },
+    {
+      "name": "Spring 1988",
+      "slug": "spring-1988"
+    },
+    {
+      "name": "Spring 1989",
+      "slug": "spring-1989"
+    },
+    {
+      "name": "Spring 1990",
+      "slug": "spring-1990"
+    },
+    {
+      "name": "Spring 1991",
+      "slug": "spring-1991"
+    },
+    {
+      "name": "Spring 1992",
+      "slug": "spring-1992"
+    },
+    {
+      "name": "Spring 1993",
+      "slug": "spring-1993"
+    },
+    {
+      "name": "Spring 1994",
+      "slug": "spring-1994"
+    },
+    {
+      "name": "Spring 1995",
+      "slug": "spring-1995"
+    },
+    {
+      "name": "Spring 1996",
+      "slug": "spring-1996"
+    },
+    {
+      "name": "Spring 1997",
+      "slug": "spring-1997"
+    },
+    {
+      "name": "Spring 1998",
+      "slug": "spring-1998"
+    },
+    {
+      "name": "Spring 1999",
+      "slug": "spring-1999"
+    },
+    {
+      "name": "Spring 2000",
+      "slug": "spring-2000"
+    },
+    {
+      "name": "Spring 2001",
+      "slug": "spring-2001"
+    },
+    {
+      "name": "Spring 2002",
+      "slug": "spring-2002"
+    },
+    {
+      "name": "Spring 2003",
+      "slug": "spring-2003"
+    },
+    {
+      "name": "Spring 2004",
+      "slug": "spring-2004"
+    },
+    {
+      "name": "Spring 2005",
+      "slug": "spring-2005"
+    },
+    {
+      "name": "Spring 2006",
+      "slug": "spring-2006"
+    },
+    {
+      "name": "Spring 2007",
+      "slug": "spring-2007"
+    },
+    {
+      "name": "Spring 2008",
+      "slug": "spring-2008"
+    },
+    {
+      "name": "Spring 2009",
+      "slug": "spring-2009"
+    },
+    {
+      "name": "Spring 2010",
+      "slug": "spring-2010"
+    },
+    {
+      "name": "Spring 2011",
+      "slug": "spring-2011"
+    },
+    {
+      "name": "Spring 2012",
+      "slug": "spring-2012"
+    },
+    {
+      "name": "Spring 2013",
+      "slug": "spring-2013"
+    },
+    {
+      "name": "Spring 2014",
+      "slug": "spring-2014"
+    },
+    {
+      "name": "Spring 2015",
+      "slug": "spring-2015"
+    },
+    {
+      "name": "Spring 2016",
+      "slug": "spring-2016"
+    },
+    {
+      "name": "Spring 2017",
+      "slug": "spring-2017"
+    },
+    {
+      "name": "Spring 2018",
+      "slug": "spring-2018"
+    },
+    {
+      "name": "Spring 2019",
+      "slug": "spring-2019"
+    },
+    {
+      "name": "Spring 2020",
+      "slug": "spring-2020"
+    },
+    {
+      "name": "Spring 2021",
+      "slug": "spring-2021"
+    },
+    {
+      "name": "Spring 2022",
+      "slug": "spring-2022"
+    },
+    {
+      "name": "Spring 2023",
+      "slug": "spring-2023"
+    },
+    {
+      "name": "Spring 2024",
+      "slug": "spring-2024"
+    },
+    {
+      "name": "Spring 2025",
+      "slug": "spring-2025"
+    },
+    {
+      "name": "Spring 2026",
+      "slug": "spring-2026"
+    },
+    {
+      "name": "Summer 1977",
+      "slug": "summer-1977"
+    },
+    {
+      "name": "Summer 1988",
+      "slug": "summer-1988"
+    },
+    {
+      "name": "Summer 1995",
+      "slug": "summer-1995"
+    },
+    {
+      "name": "Summer 1997",
+      "slug": "summer-1997"
+    },
+    {
+      "name": "Summer 1998",
+      "slug": "summer-1998"
+    },
+    {
+      "name": "Summer 1999",
+      "slug": "summer-1999"
+    },
+    {
+      "name": "Summer 2000",
+      "slug": "summer-2000"
+    },
+    {
+      "name": "Summer 2001",
+      "slug": "summer-2001"
+    },
+    {
+      "name": "Summer 2002",
+      "slug": "summer-2002"
+    },
+    {
+      "name": "Summer 2003",
+      "slug": "summer-2003"
+    },
+    {
+      "name": "Summer 2004",
+      "slug": "summer-2004"
+    },
+    {
+      "name": "Summer 2005",
+      "slug": "summer-2005"
+    },
+    {
+      "name": "Summer 2006",
+      "slug": "summer-2006"
+    },
+    {
+      "name": "Summer 2007",
+      "slug": "summer-2007"
+    },
+    {
+      "name": "Summer 2008",
+      "slug": "summer-2008"
+    },
+    {
+      "name": "Summer 2009",
+      "slug": "summer-2009"
+    },
+    {
+      "name": "Summer 2010",
+      "slug": "summer-2010"
+    },
+    {
+      "name": "Summer 2011",
+      "slug": "summer-2011"
+    },
+    {
+      "name": "Summer 2012",
+      "slug": "summer-2012"
+    },
+    {
+      "name": "Summer 2013",
+      "slug": "summer-2013"
+    },
+    {
+      "name": "Summer 2014",
+      "slug": "summer-2014"
+    },
+    {
+      "name": "Summer 2015",
+      "slug": "summer-2015"
+    },
+    {
+      "name": "Summer 2016",
+      "slug": "summer-2016"
+    },
+    {
+      "name": "Summer 2017",
+      "slug": "summer-2017"
+    },
+    {
+      "name": "Summer 2018",
+      "slug": "summer-2018"
+    },
+    {
+      "name": "Summer 2019",
+      "slug": "summer-2019"
+    },
+    {
+      "name": "Summer 2020",
+      "slug": "summer-2020"
+    },
+    {
+      "name": "Summer 2021",
+      "slug": "summer-2021"
+    },
+    {
+      "name": "Summer 2022",
+      "slug": "summer-2022"
+    },
+    {
+      "name": "Summer 2023",
+      "slug": "summer-2023"
+    },
+    {
+      "name": "Summer 2024",
+      "slug": "summer-2024"
+    },
+    {
+      "name": "Summer 2025",
+      "slug": "summer-2025"
+    },
+    {
+      "name": "Winter 1986",
+      "slug": "winter-1986"
+    },
+    {
+      "name": "Winter 1988",
+      "slug": "winter-1988"
+    },
+    {
+      "name": "Winter 1989",
+      "slug": "winter-1989"
+    },
+    {
+      "name": "Winter 1990",
+      "slug": "winter-1990"
+    },
+    {
+      "name": "Winter 1991",
+      "slug": "winter-1991"
+    },
+    {
+      "name": "Winter 1992",
+      "slug": "winter-1992"
+    },
+    {
+      "name": "Winter 1993",
+      "slug": "winter-1993"
+    },
+    {
+      "name": "Winter 1994",
+      "slug": "winter-1994"
+    },
+    {
+      "name": "Winter 1995",
+      "slug": "winter-1995"
+    },
+    {
+      "name": "Winter 1996",
+      "slug": "winter-1996"
+    },
+    {
+      "name": "Winter 1997",
+      "slug": "winter-1997"
+    },
+    {
+      "name": "Winter 1998",
+      "slug": "winter-1998"
+    },
+    {
+      "name": "Winter 1999",
+      "slug": "winter-1999"
+    },
+    {
+      "name": "Winter 2001",
+      "slug": "winter-2001"
+    },
+    {
+      "name": "Winter 2002",
+      "slug": "winter-2002"
+    },
+    {
+      "name": "Winter 2003",
+      "slug": "winter-2003"
+    },
+    {
+      "name": "Winter 2004",
+      "slug": "winter-2004"
+    },
+    {
+      "name": "Winter 2005",
+      "slug": "winter-2005"
+    },
+    {
+      "name": "Winter 2006",
+      "slug": "winter-2006"
+    },
+    {
+      "name": "Winter 2007",
+      "slug": "winter-2007"
+    },
+    {
+      "name": "Winter 2008",
+      "slug": "winter-2008"
+    },
+    {
+      "name": "Winter 2009",
+      "slug": "winter-2009"
+    },
+    {
+      "name": "Winter 2010",
+      "slug": "winter-2010"
+    },
+    {
+      "name": "Winter 2011",
+      "slug": "winter-2011"
+    },
+    {
+      "name": "Winter 2012",
+      "slug": "winter-2012"
+    },
+    {
+      "name": "Winter 2013",
+      "slug": "winter-2013"
+    },
+    {
+      "name": "Winter 2014",
+      "slug": "winter-2014"
+    },
+    {
+      "name": "Winter 2015",
+      "slug": "winter-2015"
+    },
+    {
+      "name": "Winter 2016",
+      "slug": "winter-2016"
+    },
+    {
+      "name": "Winter 2017",
+      "slug": "winter-2017"
+    },
+    {
+      "name": "Winter 2018",
+      "slug": "winter-2018"
+    },
+    {
+      "name": "Winter 2019",
+      "slug": "winter-2019"
+    },
+    {
+      "name": "Winter 2020",
+      "slug": "winter-2020"
+    },
+    {
+      "name": "Winter 2021",
+      "slug": "winter-2021"
+    },
+    {
+      "name": "Winter 2022",
+      "slug": "winter-2022"
+    },
+    {
+      "name": "Winter 2023",
+      "slug": "winter-2023"
+    },
+    {
+      "name": "Winter 2024",
+      "slug": "winter-2024"
+    },
+    {
+      "name": "Winter 2025",
+      "slug": "winter-2025"
+    },
+    {
+      "name": "Winter 2026",
+      "slug": "winter-2026"
+    }
+  ]
+}

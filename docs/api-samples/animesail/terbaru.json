@@ -1,0 +1,11 @@
+{
+  "status": "success",
+  "creator": "Sanka Vollerei",
+  "source": "AnimeSail",
+  "data": [],
+  "pagination": {
+    "current_page": 1,
+    "last_visible_page": null,
+    "has_next": false
+  }
+}

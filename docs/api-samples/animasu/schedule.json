@@ -1,0 +1,703 @@
+{
+  "status": "success",
+  "creator": "Sanka Vollerei",
+  "source": "Animasu",
+  "schedule": {
+    "jum'at": [
+      {
+        "title": "Sword of Coming Season 2",
+        "slug": "sword-of-coming-s2",
+        "poster": "https://i1.wp.com/v1.animasu.app/wp-content/uploads/2025/12/154453.jpg",
+        "episode": "Sudah Rilis!",
+        "status_or_day": "18",
+        "type": ""
+      },
+      {
+        "title": "Koori no Jouheki",
+        "slug": "koori-no-jouheki",
+        "poster": "https://i0.wp.com/v1.animasu.app/wp-content/uploads/2026/04/154933.jpg",
+        "episode": "Sudah Rilis!",
+        "status_or_day": "2",
+        "type": ""
+      },
+      {
+        "title": "Kirio Fanclub",
+        "slug": "kirio-fanclub",
+        "poster": "https://i2.wp.com/v1.animasu.app/wp-content/uploads/2026/04/155831.jpg",
+        "episode": "Sudah Rilis!",
+        "status_or_day": "2",
+        "type": ""
+      },
+      {
+        "title": "Reincarnation no Kaben",
+        "slug": "reincarnation-no-kaben",
+        "poster": "https://i1.wp.com/v1.animasu.app/wp-content/uploads/2026/04/155042.jpg",
+        "episode": "Sudah Rilis!",
+        "status_or_day": "2",
+        "type": ""
+      },
+      {
+        "title": "Mamonogurai no Boukensha: Ore dake Mamono wo Kuratte Tsuyoku Naru",
+        "slug": "mamonogurai-no-boukensha-ore-dake-mamono-wo-kuratte-tsuyoku-naru",
+        "poster": "https://i2.wp.com/v1.animasu.app/wp-content/uploads/2026/04/154990.jpg",
+        "episode": "Sudah Rilis!",
+        "status_or_day": "2",
+        "type": ""
+      },
+      {
+        "title": "Awajima Hyakkei",
+        "slug": "awajima-hyakkei",
+        "poster": "https://i0.wp.com/v1.animasu.app/wp-content/uploads/2026/04/156361.jpg",
+        "episode": "Sudah Rilis!",
+        "status_or_day": "1",
+        "type": ""
+      },
+      {
+        "title": "Haibara-kun no Tsuyokute Seishun New Game",
+        "slug": "haibara-kun-no-tsuyokute-seishun-new-game",
+        "poster": "https://i3.wp.com/v1.animasu.app/wp-content/uploads/2026/04/156048.jpg",
+        "episode": "Sudah Rilis!",
+        "status_or_day": "2",
+        "type": ""
+      },
+      {
+        "title": "Mata Korosarete Shimatta no desu ne, Tantei-sama",
+        "slug": "mata-korosarete-shimatta-no-desu-ne-tantei-sama",
+        "poster": "https://i3.wp.com/v1.animasu.app/wp-content/uploads/2026/04/156152.jpg",
+        "episode": "Sudah Rilis!",
+        "status_or_day": "2",
+        "type": ""
+      },
+      {
+        "title": "Purple River Season 2",
+        "slug": "purple-river-s2",
+        "poster": "https://i0.wp.com/v1.animasu.app/wp-content/uploads/2025/07/151163.jpg",
+        "episode": "Sudah Rilis!",
+        "status_or_day": "40",
+        "type": ""
+      }
+    ],
+    "sabtu": [
+      {
+        "title": "Tensei shitara Slime Datta Ken Season 4",
+        "slug": "tensei-shitara-slime-datta-ken-season-4",
+        "poster": "https://i1.wp.com/v1.animasu.app/wp-content/uploads/2026/04/156389.jpg",
+        "episode": "Sudah Rilis!",
+        "status_or_day": "??",
+        "type": ""
+      },
+      {
+        "title": "Otonari no Tenshi-sama ni Itsunomanika Dame Ningen ni Sareteita Ken Season 2",
+        "slug": "otonari-no-tenshi-sama-ni-itsunomanika-dame-ningen-ni-sareteita-ken-s2",
+        "poster": "https://i0.wp.com/v1.animasu.app/wp-content/uploads/2026/04/154843.jpg",
+        "episode": "Sudah Rilis!",
+        "status_or_day": "??",
+        "type": ""
+      },
+      {
+        "title": "Jishou Akuyaku Reijou na Konyakusha no Kansatsu Kiroku.",
+        "slug": "jishou-akuyaku-reijou-na-konyakusha-no-kansatsu-kiroku",
+        "poster": "https://i1.wp.com/v1.animasu.app/wp-content/uploads/2026/04/153376.jpg",
+        "episode": "Sudah Rilis!",
+        "status_or_day": "??",
+        "type": ""
+      },
+      {
+        "title": "Snowball Earth",
+        "slug": "snowball-earth",
+        "poster": "https://i1.wp.com/v1.animasu.app/wp-content/uploads/2026/04/156390.jpg",
+        "episode": "Sudah Rilis!",
+        "status_or_day": "??",
+        "type": ""
+      },
+      {
+        "title": "Da Zhu Zai Nian Fan [The Grand Lord]",
+        "slug": "the-grand-lord",
+        "poster": "https://i3.wp.com/v1.animasu.app/wp-content/uploads/2023/10/136621.jpg",
+        "episode": "Sudah Rilis!",
+        "status_or_day": "??",
+        "type": ""
+      },
+      {
+        "title": "Honzuki no Gekokujou: Shisho ni Naru Tame ni wa Shudan wo Erandeiraremasen Season 3 Part 2",
+        "slug": "honzuki-no-gekokujou-shisho-ni-naru-tame-ni-wa-shudan-wo-erandeiraremasen-s3-part-2",
+        "poster": "https://i0.wp.com/v1.animasu.app/wp-content/uploads/2026/04/155054.jpg",
+        "episode": "Sudah Rilis!",
+        "status_or_day": "??",
+        "type": ""
+      },
+      {
+        "title": "Battle Through The Heavens Season 5 [Doupo Cangqiong: Nian Fan]",
+        "slug": "battle-through-the-heavens-season-5",
+        "poster": "https://i0.wp.com/v1.animasu.app/wp-content/uploads/2022/09/Donghua_Season_5_Poster.jpg",
+        "episode": "Sudah Rilis!",
+        "status_or_day": "??",
+        "type": ""
+      },
+      {
+        "title": "Mairimashita! Iruma-kun Season 4",
+        "slug": "mairimashita-iruma-kun-s4",
+        "poster": "https://i2.wp.com/v1.animasu.app/wp-content/uploads/2026/04/154048.jpg",
+        "episode": "Sudah Rilis!",
+        "status_or_day": "2",
+        "type": ""
+      },
+      {
+        "title": "Detective Conan",
+        "slug": "detective-conan-indonesia",
+        "poster": "https://i2.wp.com/v1.animasu.app/wp-content/uploads/2020/04/75199.jpg",
+        "episode": "Sudah Rilis!",
+        "status_or_day": "??",
+        "type": ""
+      }
+    ],
+    "minggu": [
+      {
+        "title": "Yomi no Tsugai",
+        "slug": "yomi-no-tsugai",
+        "poster": "https://i1.wp.com/v1.animasu.app/wp-content/uploads/2026/04/156397.jpg",
+        "episode": "Sudah Rilis!",
+        "status_or_day": "2",
+        "type": ""
+      },
+      {
+        "title": "Saikyou no Shokugyou wa Yuusha demo Kenja demo Naku Kanteishi (Kari) Rashii desu yo?",
+        "slug": "saikyou-no-shokugyou-wa-yuusha-demo-kenja-demo-naku-kanteishi-kari-rashii-desu-yo",
+        "poster": "https://i3.wp.com/v1.animasu.app/wp-content/uploads/2026/04/155095.jpg",
+        "episode": "Sudah Rilis!",
+        "status_or_day": "??",
+        "type": ""
+      },
+      {
+        "title": "Mao",
+        "slug": "mao",
+        "poster": "https://i0.wp.com/v1.animasu.app/wp-content/uploads/2026/04/156386.jpg",
+        "episode": "Sudah Rilis!",
+        "status_or_day": "??",
+        "type": ""
+      },
+      {
+        "title": "Kanan-sama wa Akumade Choroi",
+        "slug": "kanan-sama-wa-akumade-choroi",
+        "poster": "https://i2.wp.com/v1.animasu.app/wp-content/uploads/2026/04/154996.jpg",
+        "episode": "Sudah Rilis!",
+        "status_or_day": "2",
+        "type": ""
+      },
+      {
+        "title": "Kami no Niwatsuki Kusunoki-tei",
+        "slug": "kami-no-niwatsuki-kusunoki-tei",
+        "poster": "https://i0.wp.com/v1.animasu.app/wp-content/uploads/2026/04/156105.jpg",
+        "episode": "Sudah Rilis!",
+        "status_or_day": "2",
+        "type": ""
+      },
+      {
+        "title": "Shunkashuutou Daikousha: Haru no Mai",
+        "slug": "shunkashuutou-daikousha-haru-no-mai",
+        "poster": "https://i3.wp.com/v1.animasu.app/wp-content/uploads/2026/03/155524.jpg",
+        "episode": "Sudah Rilis!",
+        "status_or_day": "??",
+        "type": ""
+      },
+      {
+        "title": "Needy Girl Overdose",
+        "slug": "needy-girl-overdose",
+        "poster": "https://i0.wp.com/v1.animasu.app/wp-content/uploads/2026/04/154935.jpg",
+        "episode": "Sudah Rilis!",
+        "status_or_day": "2",
+        "type": ""
+      },
+      {
+        "title": "Diamond no Ace Act II Season 2",
+        "slug": "diamond-no-ace-act-ii-s2",
+        "poster": "https://i2.wp.com/v1.animasu.app/wp-content/uploads/2026/04/154245.jpg",
+        "episode": "Sudah Rilis!",
+        "status_or_day": "??",
+        "type": ""
+      },
+      {
+        "title": "Nippon Sangoku",
+        "slug": "nippon-sangoku",
+        "poster": "https://i0.wp.com/v1.animasu.app/wp-content/uploads/2026/04/156387.jpg",
+        "episode": "Sudah Rilis!",
+        "status_or_day": "??",
+        "type": ""
+      },
+      {
+        "title": "Niwatori Fighter",
+        "slug": "niwatori-fighter",
+        "poster": "https://i1.wp.com/v1.animasu.app/wp-content/uploads/2026/03/150983.jpg",
+        "episode": "Sudah Rilis!",
+        "status_or_day": "??",
+        "type": ""
+      }
+    ],
+    "senin": [
+      {
+        "title": "Maid-san wa Taberu dake",
+        "slug": "maid-san-wa-taberu-dake",
+        "poster": "https://i0.wp.com/v1.animasu.app/wp-content/uploads/2026/04/156007.jpg",
+        "episode": "Sudah Rilis!",
+        "status_or_day": "??",
+        "type": ""
+      },
+      {
+        "title": "One Piece Serial",
+        "slug": "op-indonesia",
+        "poster": "https://i1.wp.com/v1.animasu.app/wp-content/uploads/2020/04/download-1.jpeg",
+        "episode": "Sudah Rilis!",
+        "status_or_day": "??",
+        "type": ""
+      },
+      {
+        "title": "Ghost Concert: Missing Songs",
+        "slug": "ghost-concert-missing-songs",
+        "poster": "https://i3.wp.com/v1.animasu.app/wp-content/uploads/2026/04/155658.jpg",
+        "episode": "Sudah Rilis!",
+        "status_or_day": "2",
+        "type": ""
+      },
+      {
+        "title": "Ingoku Danchi",
+        "slug": "ingoku-danchi",
+        "poster": "https://i3.wp.com/v1.animasu.app/wp-content/uploads/2026/04/155741.jpg",
+        "episode": "Sudah Rilis!",
+        "status_or_day": "2",
+        "type": ""
+      }
+    ],
+    "selasa": [
+      {
+        "title": "Isekai Nonbiri Nouka Season 2",
+        "slug": "isekai-nonbiri-nouka-s2",
+        "poster": "https://i1.wp.com/v1.animasu.app/wp-content/uploads/2026/04/156369.jpg",
+        "episode": "Sudah Rilis!",
+        "status_or_day": "??",
+        "type": ""
+      },
+      {
+        "title": "Tongari Boushi no Atelier",
+        "slug": "tongari-boushi-no-atelier",
+        "poster": "https://i2.wp.com/v1.animasu.app/wp-content/uploads/2026/04/155542.jpg",
+        "episode": "Sudah Rilis!",
+        "status_or_day": "3",
+        "type": ""
+      },
+      {
+        "title": "Ponkotsu Fuuki Iin to Skirt-take ga Futekisetsu na JK no Hanashi",
+        "slug": "ponkotsu-fuuki-iin-to-skirt-take-ga-futekisetsu-na-jk-no-hanashi",
+        "poster": "https://i2.wp.com/v1.animasu.app/wp-content/uploads/2026/04/155726.jpg",
+        "episode": "Sudah Rilis!",
+        "status_or_day": "??",
+        "type": ""
+      },
+      {
+        "title": "Liar Game",
+        "slug": "liar-game",
+        "poster": "https://i1.wp.com/v1.animasu.app/wp-content/uploads/2026/04/156078.jpg",
+        "episode": "Sudah Rilis!",
+        "status_or_day": "??",
+        "type": ""
+      },
+      {
+        "title": "Akane-banashi",
+        "slug": "akane-banashi",
+        "poster": "https://i1.wp.com/v1.animasu.app/wp-content/uploads/2026/04/155669.jpg",
+        "episode": "Sudah Rilis!",
+        "status_or_day": "??",
+        "type": ""
+      },
+      {
+        "title": "Higeki no Genkyou to Naru Saikyou Gedou Last Boss Joou wa Tami no Tame ni Tsukushimasu. Season 2",
+        "slug": "higeki-no-genkyou-to-naru-saikyou-gedou-last-boss-joou-wa-tami-no-tame-ni-tsukushimasu-s2",
+        "poster": "https://i2.wp.com/v1.animasu.app/wp-content/uploads/2026/04/155657.jpg",
+        "episode": "Sudah Rilis!",
+        "status_or_day": "??",
+        "type": ""
+      },
+      {
+        "title": "Marriagetoxin",
+        "slug": "marriagetoxin",
+        "poster": "https://i1.wp.com/v1.animasu.app/wp-content/uploads/2026/04/154309.jpg",
+        "episode": "Sudah Rilis!",
+        "status_or_day": "??",
+        "type": ""
+      },
+      {
+        "title": "Replica datte, Koi wo Suru.",
+        "slug": "replica-datte-koi-wo-suru",
+        "poster": "https://i1.wp.com/v1.animasu.app/wp-content/uploads/2026/04/155671.jpg",
+        "episode": "Sudah Rilis!",
+        "status_or_day": "2",
+        "type": ""
+      }
+    ],
+    "rabu": [
+      {
+        "title": "Class de 2-banme ni Kawaii Onnanoko to Tomodachi ni Natta",
+        "slug": "class-de-2-banme-ni-kawaii-onnanoko-to-tomodachi-ni-natta",
+        "poster": "https://i0.wp.com/v1.animasu.app/wp-content/uploads/2026/04/155713.jpg",
+        "episode": "Sudah Rilis!",
+        "status_or_day": "2",
+        "type": ""
+      },
+      {
+        "title": "Hidarikiki no Eren",
+        "slug": "hidarikiki-no-eren",
+        "poster": "https://i1.wp.com/v1.animasu.app/wp-content/uploads/2026/04/156388.jpg",
+        "episode": "Sudah Rilis!",
+        "status_or_day": "2",
+        "type": ""
+      },
+      {
+        "title": "Tadaima, Ojamasaremasu!",
+        "slug": "tadaima-ojamasaremasu",
+        "poster": "https://i0.wp.com/v1.animasu.app/wp-content/uploads/2026/04/156106.jpg",
+        "episode": "Sudah Rilis!",
+        "status_or_day": "??",
+        "type": ""
+      },
+      {
+        "title": "Megami \"Isekai Tensei Nani ni Naritai desu ka\" Ore \"Yuusha no Rokkotsu de\"",
+        "slug": "megami-isekai-tensei-nani-ni-naritai-desu-ka-ore-yuusha-no-rokkotsu-de",
+        "poster": "https://i0.wp.com/v1.animasu.app/wp-content/uploads/2026/04/156005.jpg",
+        "episode": "Sudah Rilis!",
+        "status_or_day": "??",
+        "type": ""
+      },
+      {
+        "title": "Youkoso Jitsuryoku Shijou Shugi no Kyoushitsu e Season 4 : 2-nensei-hen 1 Gakki",
+        "slug": "youkoso-jitsuryoku-shijou-shugi-no-kyoushitsu-e-s4",
+        "poster": "https://i1.wp.com/v1.animasu.app/wp-content/uploads/2026/04/153626.jpg",
+        "episode": "Sudah Rilis!",
+        "status_or_day": "6",
+        "type": ""
+      },
+      {
+        "title": "Kanojo, Okarishimasu Season 5",
+        "slug": "kanojo-okarishimasu-s5",
+        "poster": "https://i0.wp.com/v1.animasu.app/wp-content/uploads/2026/04/156075.jpg",
+        "episode": "Sudah Rilis!",
+        "status_or_day": "??",
+        "type": ""
+      },
+      {
+        "title": "Re:Zero kara Hajimeru Isekai Seikatsu Season 4",
+        "slug": "rezero-kara-hajimeru-isekai-seikatsu-s4",
+        "poster": "https://i3.wp.com/v1.animasu.app/wp-content/uploads/2026/04/155824.jpg",
+        "episode": "Sudah Rilis!",
+        "status_or_day": "2",
+        "type": ""
+      },
+      {
+        "title": "Dorohedoro Season 2",
+        "slug": "dorohedoro-s2",
+        "poster": "https://i1.wp.com/v1.animasu.app/wp-content/uploads/2026/04/155354.jpg",
+        "episode": "Sudah Rilis!",
+        "status_or_day": "??",
+        "type": ""
+      },
+      {
+        "title": "Jidou Hanbaiki ni Umarekawatta Ore wa Meikyuu wo Samayou Season 3",
+        "slug": "jidou-hanbaiki-ni-umarekawatta-ore-wa-meikyuu-wo-samayou-s3",
+        "poster": "https://i2.wp.com/v1.animasu.app/wp-content/uploads/2026/04/156029.jpg",
+        "episode": "Sudah Rilis!",
+        "status_or_day": "??",
+        "type": ""
+      }
+    ],
+    "kamis": [
+      {
+        "title": "Tomb of Fallen Gods Season 3",
+        "slug": "tomb-of-fallen-gods-s3",
+        "poster": "https://i1.wp.com/v1.animasu.app/wp-content/uploads/2025/08/150774.jpg",
+        "episode": "Sudah Rilis!",
+        "status_or_day": "??",
+        "type": ""
+      },
+      {
+        "title": "Shen Yin Wangzuo [ Throne of Seal ]",
+        "slug": "throne-of-seal",
+        "poster": "https://i1.wp.com/v1.animasu.app/wp-content/uploads/2022/05/MV5BN2E0ODQzZTMtZjMwZS00MmJhLTlkNGItOTlhMjEyYTJjNmJjXkEyXkFqcGdeQXVyNjMxMTE5NTY@._V1_.jpg",
+        "episode": "Sudah Rilis!",
+        "status_or_day": "??",
+        "type": ""
+      },
+      {
+        "title": "Nigashita Sakana wa Ookikatta ga Tsuriageta Sakana ga Ookisugita Ken",
+        "slug": "nigashita-sakana-wa-ookikatta-ga-tsuriageta-sakana-ga-ookisugita-ken",
+        "poster": "https://i3.wp.com/v1.animasu.app/wp-content/uploads/2026/04/155068.jpg",
+        "episode": "Sudah Rilis!",
+        "status_or_day": "??",
+        "type": ""
+      },
+      {
+        "title": "Otaku ni Yasashii Gal wa Inai!?",
+        "slug": "otaku-ni-yasashii-gal-wa-inai",
+        "poster": "https://i3.wp.com/v1.animasu.app/wp-content/uploads/2026/04/155456.jpg",
+        "episode": "Sudah Rilis!",
+        "status_or_day": "??",
+        "type": ""
+      },
+      {
+        "title": "Saikyou no Ousama, Nidome no Jinsei wa Nani wo Suru? Season 2",
+        "slug": "saikyou-no-ousama-nidome-no-jinsei-wa-nani-wo-suru-s2",
+        "poster": "https://i2.wp.com/v1.animasu.app/wp-content/uploads/2026/04/156028.jpg",
+        "episode": "Sudah Rilis!",
+        "status_or_day": "??",
+        "type": ""
+      },
+      {
+        "title": "B.King [ Spirit Master ]",
+        "slug": "spirit-master",
+        "poster": "https://i1.wp.com/v1.animasu.app/wp-content/uploads/2026/02/Picsart_23-10-02_22-14-56-008_101851-01-768x1150-1.jpg",
+        "episode": "Sudah Rilis!",
+        "status_or_day": "9",
+        "type": ""
+      },
+      {
+        "title": "Beyond Time’s Gaze",
+        "slug": "beyond-times-gaze",
+        "poster": "https://i3.wp.com/v1.animasu.app/wp-content/uploads/2025/12/153418.jpg",
+        "episode": "Sudah Rilis!",
+        "status_or_day": "??",
+        "type": ""
+      },
+      {
+        "title": "Renegade Immortal [Xian Ni]",
+        "slug": "renegade-immortal",
+        "poster": "https://i0.wp.com/v1.animasu.app/wp-content/uploads/2023/10/photo.jpg",
+        "episode": "Sudah Rilis!",
+        "status_or_day": "??",
+        "type": ""
+      },
+      {
+        "title": "Himekishi wa Barbaroi no Yome",
+        "slug": "himekishi-wa-barbaroi-no-yome",
+        "poster": "https://i0.wp.com/v1.animasu.app/wp-content/uploads/2026/04/155022.jpg",
+        "episode": "Sudah Rilis!",
+        "status_or_day": "??",
+        "type": ""
+      },
+      {
+        "title": "Dr. Stone: Science Future Part 3",
+        "slug": "dr-stone-science-future-part-3",
+        "poster": "https://i0.wp.com/v1.animasu.app/wp-content/uploads/2026/04/155779.jpg",
+        "episode": "Sudah Rilis!",
+        "status_or_day": "??",
+        "type": ""
+      },
+      {
+        "title": "Kujima Utaeba Ie Hororo",
+        "slug": "kujima-utaeba-ie-hororo",
+        "poster": "https://i3.wp.com/v1.animasu.app/wp-content/uploads/2026/04/155195.jpg",
+        "episode": "Sudah Rilis!",
+        "status_or_day": "2",
+        "type": ""
+      }
+    ],
+    "random": [
+      {
+        "title": "Fangkai Nage Nuwu",
+        "slug": "fangkai-nage-nuwu",
+        "poster": "https://i1.wp.com/v1.animasu.app/wp-content/uploads/2026/03/153536.jpg",
+        "episode": "??",
+        "status_or_day": "6",
+        "type": ""
+      },
+      {
+        "title": "Yuusha no Kuzu",
+        "slug": "yuusha-no-kuzu",
+        "poster": "https://i2.wp.com/v1.animasu.app/wp-content/uploads/2026/01/154043-1.jpg",
+        "episode": "??",
+        "status_or_day": "13",
+        "type": ""
+      },
+      {
+        "title": "Yoroi Shin Den Samurai Troopers",
+        "slug": "yoroi-shin-den-samurai-troopers",
+        "poster": "https://i0.wp.com/v1.animasu.app/wp-content/uploads/2026/01/153952.jpg",
+        "episode": "??",
+        "status_or_day": "12",
+        "type": ""
+      },
+      {
+        "title": "Isekai no Sata wa Shachiku Shidai",
+        "slug": "isekai-no-sata-wa-shachiku-shidai",
+        "poster": "https://i3.wp.com/v1.animasu.app/wp-content/uploads/2026/01/153806.jpg",
+        "episode": "??",
+        "status_or_day": "12",
+        "type": ""
+      },
+      {
+        "title": "Martial God Asura Season 2",
+        "slug": "martial-god-asura-season-2",
+        "poster": "https://i1.wp.com/v1.animasu.app/wp-content/uploads/2026/02/155607.jpg",
+        "episode": "??",
+        "status_or_day": "4",
+        "type": ""
+      },
+      {
+        "title": "Hitori No Shita Season 6",
+        "slug": "hitori-no-shita-season-6",
+        "poster": "https://i0.wp.com/v1.animasu.app/wp-content/uploads/2026/01/151431.jpg",
+        "episode": "??",
+        "status_or_day": "7",
+        "type": ""
+      },
+      {
+        "title": "Soul of the Dragon",
+        "slug": "soul-of-the-dragon",
+        "poster": "https://i3.wp.com/v1.animasu.app/wp-content/uploads/2025/12/153807.jpg",
+        "episode": "??",
+        "status_or_day": "9",
+        "type": ""
+      },
+      {
+        "title": "Mofa Gongzhu de Xiao Fannao",
+        "slug": "mofa-gongzhu-de-xiao-fannao",
+        "poster": "https://i1.wp.com/v1.animasu.app/wp-content/uploads/2025/09/320768.jpg",
+        "episode": "??",
+        "status_or_day": "16",
+        "type": ""
+      },
+      {
+        "title": "Kamen Rider Zeztz",
+        "slug": "kamen-rider-zeztz",
+        "poster": "https://i1.wp.com/v1.animasu.app/wp-content/uploads/2025/09/images.jpg",
+        "episode": "??",
+        "status_or_day": "11",
+        "type": ""
+      },
+      {
+        "title": "Wind of the Tang Dynasty",
+        "slug": "wind-of-the-tang-dynasty",
+        "poster": "https://i0.wp.com/v1.animasu.app/wp-content/uploads/2025/10/1000071165.jpg",
+        "episode": "??",
+        "status_or_day": "5",
+        "type": ""
+      },
+      {
+        "title": "The Divine Emperor of Destiny",
+        "slug": "the-divine-emperor-of-destiny",
+        "poster": "https://i3.wp.com/v1.animasu.app/wp-content/uploads/2025/09/151964.jpg",
+        "episode": "??",
+        "status_or_day": "11",
+        "type": ""
+      },
+      {
+        "title": "I Am The Blade",
+        "slug": "i-am-the-blade",
+        "poster": "https://i1.wp.com/v1.animasu.app/wp-content/uploads/2025/07/149601.jpg",
+        "episode": "??",
+        "status_or_day": "9",
+        "type": ""
+      },
+      {
+        "title": "World of Immortals",
+        "slug": "world-of-immortals",
+        "poster": "https://i0.wp.com/v1.animasu.app/wp-content/uploads/2024/10/146039.jpg",
+        "episode": "??",
+        "status_or_day": "23",
+        "type": ""
+      },
+      {
+        "title": "Shiye Mowang [ The Laid Off Demon King ]",
+        "slug": "the-laid-off-demon-king",
+        "poster": "https://i3.wp.com/v1.animasu.app/wp-content/uploads/2025/02/17257742db86f1b50e_m-1.jpg",
+        "episode": "??",
+        "status_or_day": "7",
+        "type": ""
+      },
+      {
+        "title": "Shiguang Dailiren: Yingdu Pian [ Link Click: Bridon Arc ]",
+        "slug": "shiguang-dailiren-yingdu-pian",
+        "poster": "https://i1.wp.com/v1.animasu.app/wp-content/uploads/2024/12/147189.jpg",
+        "episode": "??",
+        "status_or_day": "6",
+        "type": ""
+      },
+      {
+        "title": "Keyboard Immortal",
+        "slug": "keyboard-immortal",
+        "poster": "https://i3.wp.com/v1.animasu.app/wp-content/uploads/2024/06/111Keyboard-Immortal-Subtitle-Indonesia-1.jpg",
+        "episode": "??",
+        "status_or_day": "34",
+        "type": ""
+      },
+      {
+        "title": "My WeChat Connects to the Dragon Palace",
+        "slug": "my-wechat-connects-to-the-dragon-palace",
+        "poster": "https://i1.wp.com/v1.animasu.app/wp-content/uploads/2024/08/144804.jpg",
+        "episode": "??",
+        "status_or_day": "12",
+        "type": ""
+      },
+      {
+        "title": "Endless God Realm",
+        "slug": "endless-god-realm",
+        "poster": "https://i0.wp.com/v1.animasu.app/wp-content/uploads/2024/08/Endless-God-RealmSubtitle-Indonesia.jpg",
+        "episode": "??",
+        "status_or_day": "43",
+        "type": ""
+      },
+      {
+        "title": "X-Epoch of Dragon [ Long Shidai ]",
+        "slug": "x-epoch-of-dragon",
+        "poster": "https://i0.wp.com/v1.animasu.app/wp-content/uploads/2023/07/137280.jpg",
+        "episode": "??",
+        "status_or_day": "22",
+        "type": ""
+      },
+      {
+        "title": "Rail Romanesque Season 2",
+        "slug": "rail-romanesque-s2",
+        "poster": "https://i0.wp.com/v1.animasu.app/wp-content/uploads/2023/10/137093.jpg",
+        "episode": "??",
+        "status_or_day": "5",
+        "type": ""
+      },
+      {
+        "title": "The Legend of Magic Outfit [Mo Zhuang Chuanshuo]",
+        "slug": "the-legend-of-magic-outfit",
+        "poster": "https://i0.wp.com/v1.animasu.app/wp-content/uploads/2023/08/137950.jpg",
+        "episode": "??",
+        "status_or_day": "31",
+        "type": ""
+      },
+      {
+        "title": "Ai Zai Xi Yuan Qian [Immemorial Love For You] Season 2",
+        "slug": "ai-zai-xi-yuan-qian-s2",
+        "poster": "https://i0.wp.com/v1.animasu.app/wp-content/uploads/2021/02/112028.jpg",
+        "episode": "??",
+        "status_or_day": "4",
+        "type": ""
+      },
+      {
+        "title": "Ochibi-san",
+        "slug": "ochibi-san",
+        "poster": "https://cache2-ebookjapan.akamaized.net/contents/thumb/s/CLK00460.jpg?1527743388000",
+        "episode": "??",
+        "status_or_day": "3",
+        "type": ""
+      },
+      {
+        "title": "Fantasy x Hunter [Huan You Lieren]",
+        "slug": "huan-you-lieren",
+        "poster": "https://cdn.myanimelist.net/images/anime/1620/120376.jpg",
+        "episode": "??",
+        "status_or_day": "4",
+        "type": ""
+      },
+      {
+        "title": "Fate/Grand Carnival",
+        "slug": "fate-grand-carnival",
+        "poster": "https://i1.wp.com/v1.animasu.app/wp-content/uploads/2021/11/117596.jpg",
+        "episode": "??",
+        "status_or_day": "3",
+        "type": ""
+      }
+    ]
+  }
+}

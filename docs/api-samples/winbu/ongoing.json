@@ -1,0 +1,288 @@
+{
+  "status": "success",
+  "creator": "Sanka Vollerei",
+  "message": "Ongoing Anime",
+  "data": [
+    {
+      "title": "Awajima Hyakkei",
+      "id": "awajima-hyakkei",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/156361_200x300.jpeg",
+      "rating": "0",
+      "time": "5 jam",
+      "episode": ""
+    },
+    {
+      "title": "Kujima Utaeba Ie Hororo",
+      "id": "kujima-utaeba-ie-hororo",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/155195_200x300.jpeg",
+      "rating": "0",
+      "time": "16 jam",
+      "episode": ""
+    },
+    {
+      "title": "Himekishi wa Barbaroi no Yome",
+      "id": "himekishi-wa-barbaroi-no-yome",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/155022_200x300.jpeg",
+      "rating": "0",
+      "time": "19 jam",
+      "episode": ""
+    },
+    {
+      "title": "Otaku ni Yasashii Gal wa Inai!?",
+      "id": "otaku-ni-yasashii-gal-wa-inai",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/Otagyaru_200x300.jpeg",
+      "rating": "0",
+      "time": "1 hari",
+      "episode": ""
+    },
+    {
+      "title": "Kanojo, Okarishimasu Season 5",
+      "id": "kanojo-okarishimasu-season-5",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/KanokariS5_200x300.jpeg",
+      "rating": "0",
+      "time": "1 hari",
+      "episode": ""
+    },
+    {
+      "title": "Re:Zero kara Hajimeru Isekai Seikatsu 4th Season",
+      "id": "rezero-kara-hajimeru-isekai-seikatsu-4th-season",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/RZS4_200x300.jpeg",
+      "rating": "0",
+      "time": "1 hari",
+      "episode": ""
+    },
+    {
+      "title": "Megami “Isekai Tensei Nani ni Naritai Desu ka” Ore “Yuusha no Rokkotsu de”",
+      "id": "megami-isekai-tensei-nani-ni-naritai-desu-ka-ore-yuusha-no-rokkotsu-de",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/MRR_200x300.jpeg",
+      "rating": "0",
+      "time": "2 hari",
+      "episode": ""
+    },
+    {
+      "title": "Tadaima, Ojamasaremasu!",
+      "id": "tadaima-ojamasaremasu",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/TO_200x300.jpeg",
+      "rating": "0",
+      "time": "2 hari",
+      "episode": ""
+    },
+    {
+      "title": "Hidarikiki no Eren",
+      "id": "hidarikiki-no-eren",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/HnE_200x300.jpeg",
+      "rating": "0",
+      "time": "2 hari",
+      "episode": ""
+    },
+    {
+      "title": "Replica datte Koi wo Suru",
+      "id": "replica-datte-koi-wo-suru",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/RDKWS_200x300.jpeg",
+      "rating": "0",
+      "time": "2 hari",
+      "episode": ""
+    },
+    {
+      "title": "Class de 2-banme ni Kawaii Onnanoko to Tomodachi ni Natta",
+      "id": "class-de-2-banme-ni-kawaii-onnanoko-to-tomodachi-ni-natta",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/Class_de_2-banme_200x300.jpeg",
+      "rating": "0",
+      "time": "2 hari",
+      "episode": ""
+    },
+    {
+      "title": "Marriagetoxin",
+      "id": "marriagetoxin",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/MT_200x300.jpeg",
+      "rating": "0",
+      "time": "2 hari",
+      "episode": ""
+    },
+    {
+      "title": "Higeki no Genkyou to Naru Saikyou Gedou Last Boss Joou wa Tami no Tame ni Tsukushimasu. 2nd Season",
+      "id": "higeki-no-genkyou-to-naru-saikyou-gedou-last-boss-joou-wa-tami-no-tame-ni-tsukushimasu-2nd-season",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/Higeki-no-Genkyou_200x300.jpeg",
+      "rating": "0",
+      "time": "2 hari",
+      "episode": ""
+    },
+    {
+      "title": "Hyakki Yakoushou",
+      "id": "hyakki-yakoushou",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/HYS_200x300.jpeg",
+      "rating": "0",
+      "time": "2 hari",
+      "episode": ""
+    },
+    {
+      "title": "Ponkotsu Fuuki Iin to Skirt-take ga Futekisetsu na JK no Hanashi",
+      "id": "ponkotsu-fuuki-iin-to-skirt-take-ga-futekisetsu-na-jk-no-hanashi",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/155726_200x300.jpeg",
+      "rating": "0",
+      "time": "3 hari",
+      "episode": ""
+    },
+    {
+      "title": "Liar Game",
+      "id": "liar-game",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/156078_200x300.jpeg",
+      "rating": "0",
+      "time": "3 hari",
+      "episode": ""
+    },
+    {
+      "title": "Isekai Nonbiri Nouka 2",
+      "id": "isekai-nonbiri-nouka-2",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/156369_200x300.jpeg",
+      "rating": "0",
+      "time": "3 hari",
+      "episode": ""
+    },
+    {
+      "title": "Tongari Boushi no Atelier",
+      "id": "tongari-boushi-no-atelier",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/155542_200x300.jpeg",
+      "rating": "0",
+      "time": "3 hari",
+      "episode": ""
+    },
+    {
+      "title": "Mahou no Shimai Lulutto Lilly",
+      "id": "mahou-no-shimai-lulutto-lilly",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/152762_200x300.jpeg",
+      "rating": "0",
+      "time": "3 hari",
+      "episode": ""
+    },
+    {
+      "title": "Ingoku Danchi",
+      "id": "ingoku-danchi",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/155741_200x300.jpeg",
+      "rating": "0",
+      "time": "4 hari",
+      "episode": ""
+    },
+    {
+      "title": "Marika-chan no Koukando wa Bukkowareteiru",
+      "id": "marika-chan-no-koukando-wa-bukkowareteiru",
+      "type": "anime",
+      "image": "",
+      "rating": "0",
+      "time": "4 hari",
+      "episode": ""
+    },
+    {
+      "title": "Nippon Sangoku",
+      "id": "nippon-sangoku",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/156387_200x300.jpeg",
+      "rating": "0",
+      "time": "4 hari",
+      "episode": ""
+    },
+    {
+      "title": "Ghost Concert: Missing Songs",
+      "id": "ghost-concert-missing-songs",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/155658_200x300.jpeg",
+      "rating": "0",
+      "time": "4 hari",
+      "episode": ""
+    },
+    {
+      "title": "Diamond no Ace: Act II Season 2",
+      "id": "diamond-no-ace-act-ii-season-2",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/154245_200x300.jpeg",
+      "rating": "0",
+      "time": "4 hari",
+      "episode": ""
+    },
+    {
+      "title": "Tsue to Tsurugi no Wistoria Season 2",
+      "id": "tsue-to-tsurugi-no-wistoria-season-2",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/155788_200x300.jpeg",
+      "rating": "0",
+      "time": "4 hari",
+      "episode": ""
+    },
+    {
+      "title": "Needy Girl Overdose",
+      "id": "needy-girl-overdose",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/154935_200x300.jpeg",
+      "rating": "0",
+      "time": "5 hari",
+      "episode": ""
+    },
+    {
+      "title": "Shunkashuutou Daikousha: Haru no Mai",
+      "id": "shunkashuutou-daikousha-haru-no-mai",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/156385_200x300.jpeg",
+      "rating": "0",
+      "time": "5 hari",
+      "episode": ""
+    },
+    {
+      "title": "Kami no Niwatsuki Kusunoki-tei",
+      "id": "kami-no-niwatsuki-kusunoki-tei",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/156105_200x300.jpeg",
+      "rating": "0",
+      "time": "5 hari",
+      "episode": ""
+    },
+    {
+      "title": "Kanan-sama wa Akumade Choroi",
+      "id": "kanan-sama-wa-akumade-choroi",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/154996_200x300.jpeg",
+      "rating": "0",
+      "time": "5 hari",
+      "episode": ""
+    },
+    {
+      "title": "MAO",
+      "id": "mao",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/156386_200x300.jpeg",
+      "rating": "0",
+      "time": "5 hari",
+      "episode": ""
+    }
+  ],
+  "pagination": {
+    "current_page": 1,
+    "total_pages": 6,
+    "has_next_page": true,
+    "next_page": 2,
+    "prev_page": null,
+    "has_prev_page": false
+  },
+  "filters": {
+    "status": "ongoing"
+  }
+}

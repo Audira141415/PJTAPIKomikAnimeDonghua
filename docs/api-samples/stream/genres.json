@@ -1,0 +1,378 @@
+{
+  "status": 200,
+  "creator": "Sanka Vollerei",
+  "data": [
+    {
+      "title": "Action",
+      "slug": "action"
+    },
+    {
+      "title": "Adventrue",
+      "slug": "adventrue"
+    },
+    {
+      "title": "Adventure",
+      "slug": "adventure"
+    },
+    {
+      "title": "Anthropomorphic",
+      "slug": "anthropomorphic"
+    },
+    {
+      "title": "Avant Garde",
+      "slug": "avant-garde"
+    },
+    {
+      "title": "Cars",
+      "slug": "cars"
+    },
+    {
+      "title": "CGDCT",
+      "slug": "cgdct"
+    },
+    {
+      "title": "Childcare",
+      "slug": "childcare"
+    },
+    {
+      "title": "Comdey",
+      "slug": "comdey"
+    },
+    {
+      "title": "Comedy",
+      "slug": "comedy"
+    },
+    {
+      "title": "Crossdressing",
+      "slug": "crossdressing"
+    },
+    {
+      "title": "Delinquents",
+      "slug": "delinquents"
+    },
+    {
+      "title": "Dementia",
+      "slug": "dementia"
+    },
+    {
+      "title": "Demons",
+      "slug": "demons"
+    },
+    {
+      "title": "Detective",
+      "slug": "detective"
+    },
+    {
+      "title": "Donghua",
+      "slug": "donghua"
+    },
+    {
+      "title": "Drama",
+      "slug": "drama"
+    },
+    {
+      "title": "Ecchi",
+      "slug": "ecchi"
+    },
+    {
+      "title": "Echhi",
+      "slug": "echhi"
+    },
+    {
+      "title": "Educational",
+      "slug": "educational"
+    },
+    {
+      "title": "Erotica",
+      "slug": "erotica"
+    },
+    {
+      "title": "Family",
+      "slug": "family"
+    },
+    {
+      "title": "Fantasy",
+      "slug": "fantasy"
+    },
+    {
+      "title": "Gag Humor",
+      "slug": "gag-humor"
+    },
+    {
+      "title": "Game",
+      "slug": "game"
+    },
+    {
+      "title": "Girls Love",
+      "slug": "girls-love"
+    },
+    {
+      "title": "Gore",
+      "slug": "gore"
+    },
+    {
+      "title": "Gourmet",
+      "slug": "gourmet"
+    },
+    {
+      "title": "Harem",
+      "slug": "harem"
+    },
+    {
+      "title": "High Stakes Game",
+      "slug": "high-stakes-game"
+    },
+    {
+      "title": "Historical",
+      "slug": "historical"
+    },
+    {
+      "title": "Horror",
+      "slug": "horror"
+    },
+    {
+      "title": "Idols (Female)",
+      "slug": "idols-female"
+    },
+    {
+      "title": "Idols (Male)",
+      "slug": "idols-male"
+    },
+    {
+      "title": "Isekai",
+      "slug": "isekai"
+    },
+    {
+      "title": "Iyashikei",
+      "slug": "iyashikei"
+    },
+    {
+      "title": "Josei",
+      "slug": "josei"
+    },
+    {
+      "title": "Kids",
+      "slug": "kids"
+    },
+    {
+      "title": "Life",
+      "slug": "life"
+    },
+    {
+      "title": "Live Action",
+      "slug": "live-action"
+    },
+    {
+      "title": "Love Polygon",
+      "slug": "love-polygon"
+    },
+    {
+      "title": "Love Status Quo",
+      "slug": "love-status-quo"
+    },
+    {
+      "title": "Magic",
+      "slug": "magic"
+    },
+    {
+      "title": "Magical Sex Shift",
+      "slug": "magical-sex-shift"
+    },
+    {
+      "title": "Mahou Shoujo",
+      "slug": "mahou-shoujo"
+    },
+    {
+      "title": "Martial Arts",
+      "slug": "martial-arts"
+    },
+    {
+      "title": "Mecha",
+      "slug": "mecha"
+    },
+    {
+      "title": "Medical",
+      "slug": "medical"
+    },
+    {
+      "title": "Military",
+      "slug": "military"
+    },
+    {
+      "title": "Music",
+      "slug": "music"
+    },
+    {
+      "title": "Mystery",
+      "slug": "mystery"
+    },
+    {
+      "title": "Mythology",
+      "slug": "mythology"
+    },
+    {
+      "title": "Organized Crime",
+      "slug": "organized-crime"
+    },
+    {
+      "title": "Otaku Culture",
+      "slug": "otaku-culture"
+    },
+    {
+      "title": "Parody",
+      "slug": "parody"
+    },
+    {
+      "title": "Performing Arts",
+      "slug": "performing-arts"
+    },
+    {
+      "title": "Pets",
+      "slug": "pets"
+    },
+    {
+      "title": "Police",
+      "slug": "police"
+    },
+    {
+      "title": "Psychological",
+      "slug": "psychological"
+    },
+    {
+      "title": "Racing",
+      "slug": "racing"
+    },
+    {
+      "title": "Reincarnation",
+      "slug": "reincarnation"
+    },
+    {
+      "title": "Reverse Harem",
+      "slug": "reverse-harem"
+    },
+    {
+      "title": "Romance",
+      "slug": "romance"
+    },
+    {
+      "title": "Romantic Subtext",
+      "slug": "romantic-subtext"
+    },
+    {
+      "title": "Samurai",
+      "slug": "samurai"
+    },
+    {
+      "title": "School",
+      "slug": "school"
+    },
+    {
+      "title": "Sci-Fi",
+      "slug": "sci-fi"
+    },
+    {
+      "title": "Seinen",
+      "slug": "seinen"
+    },
+    {
+      "title": "Shoujo",
+      "slug": "shoujo"
+    },
+    {
+      "title": "Shoujo Ai",
+      "slug": "shoujo-ai"
+    },
+    {
+      "title": "Shounen",
+      "slug": "shounen"
+    },
+    {
+      "title": "Shounen Ai",
+      "slug": "shounen-ai"
+    },
+    {
+      "title": "Showbiz",
+      "slug": "showbiz"
+    },
+    {
+      "title": "Slice of Life",
+      "slug": "slice-of-life"
+    },
+    {
+      "title": "Space",
+      "slug": "space"
+    },
+    {
+      "title": "Sports",
+      "slug": "sports"
+    },
+    {
+      "title": "Strategy Game",
+      "slug": "strategy-game"
+    },
+    {
+      "title": "Super Power",
+      "slug": "super-power"
+    },
+    {
+      "title": "Supernatural",
+      "slug": "supernatural"
+    },
+    {
+      "title": "Survival",
+      "slug": "survival"
+    },
+    {
+      "title": "Suspense",
+      "slug": "suspense"
+    },
+    {
+      "title": "Team Sports",
+      "slug": "team-sports"
+    },
+    {
+      "title": "Thriller",
+      "slug": "thriller"
+    },
+    {
+      "title": "Time Travel",
+      "slug": "time-travel"
+    },
+    {
+      "title": "Tokusatsu",
+      "slug": "tokusatsu"
+    },
+    {
+      "title": "Urban Fantasy",
+      "slug": "urban-fantasy"
+    },
+    {
+      "title": "Vampire",
+      "slug": "vampire"
+    },
+    {
+      "title": "Video Game",
+      "slug": "video-game"
+    },
+    {
+      "title": "Villainess",
+      "slug": "villainess"
+    },
+    {
+      "title": "Visual Arts",
+      "slug": "visual-arts"
+    },
+    {
+      "title": "Work Life",
+      "slug": "work-life"
+    },
+    {
+      "title": "Workplace",
+      "slug": "workplace"
+    },
+    {
+      "title": "Yaoi",
+      "slug": "yaoi"
+    }
+  ]
+}

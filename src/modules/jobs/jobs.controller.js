@@ -5,9 +5,12 @@ const { success } = require('../../shared/utils/response');
 const jobsService = require('./jobs.service');
 const {
   dashboardQuery,
+  animeSyncQuery,
+  animeSyncSourceParam,
   retryAllBody,
   jobIdParam,
 } = require('./jobs.validation');
+const animeSyncService = require('./animeSync.service');
 
 const health = catchAsync(async (_req, res) => {
   const data = await jobsService.getQueueHealth();
@@ -53,10 +56,33 @@ const removeFailed = catchAsync(async (req, res) => {
   });
 });
 
+const syncAnimeSource = catchAsync(async (req, res) => {
+  const { source } = animeSyncSourceParam.parse(req.params);
+  const options = animeSyncQuery.parse(req.query);
+  const data = await animeSyncService.syncAnimeSource(source, options);
+
+  return success(res, {
+    message: `Anime source synced: ${source}`,
+    data,
+  });
+});
+
+const syncAnimeAll = catchAsync(async (req, res) => {
+  const options = animeSyncQuery.parse(req.query);
+  const data = await animeSyncService.syncAnimeSources(undefined, options);
+
+  return success(res, {
+    message: 'All anime sources synced',
+    data,
+  });
+});
+
 module.exports = {
   health,
   dashboard,
   retryById,
   retryAll,
   removeFailed,
+  syncAnimeSource,
+  syncAnimeAll,
 };

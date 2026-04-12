@@ -1,0 +1,571 @@
+{
+  "status": "success",
+  "creator": "Sanka Vollerei",
+  "source": "Donghub",
+  "data": {
+    "Friday": [
+      {
+        "title": "Candle in the Tomb: Return to the South Sea",
+        "slug": "candle-in-the-tomb-return-to-the-south-sea",
+        "poster": "https://donghub.vip/wp-content/uploads/2025/08/Candle-in-the-Tomb-Return-to-the-South-Sea-768x1077.webp",
+        "episode": "at 01:52",
+        "type": "",
+        "status": "Unknown",
+        "sub": "10",
+        "release_time": "at 01:52",
+        "url": "https://donghub.vip/candle-in-the-tomb-return-to-the-south-sea/"
+      },
+      {
+        "title": "Hitori No Shita Season 6",
+        "slug": "hitori-no-shita-season-6",
+        "poster": "https://donghub.vip/wp-content/uploads/2026/01/Outcast-S6.jpg",
+        "episode": "at 13:38",
+        "type": "",
+        "status": "Unknown",
+        "sub": "16",
+        "release_time": "at 13:38",
+        "url": "https://donghub.vip/hitori-no-shita-season-6/"
+      },
+      {
+        "title": "Purple River Season 2",
+        "slug": "purple-river-season-2",
+        "poster": "https://donghub.vip/wp-content/uploads/2025/07/Purple-River‌-Season-2-768x1077.jpg",
+        "episode": "at 22:11",
+        "type": "",
+        "status": "Unknown",
+        "sub": "41",
+        "release_time": "at 22:11",
+        "url": "https://donghub.vip/purple-river-season-2/"
+      },
+      {
+        "title": "[Azure Legacy] The Demon Hunter",
+        "slug": "azure-legacy-the-deamon-hunter",
+        "poster": "https://donghub.vip/wp-content/uploads/2025/02/Azure-Legacy-S3-768x1152.jpg",
+        "episode": "released",
+        "type": "",
+        "status": "Unknown",
+        "sub": "72",
+        "release_time": null,
+        "url": "https://donghub.vip/azure-legacy-the-deamon-hunter/"
+      },
+      {
+        "title": "Lingwu Continent",
+        "slug": "lingwu-continent",
+        "poster": "https://donghub.vip/wp-content/uploads/2025/07/Lingwu-Continent-Subtitle-Indonesia-Anichin.site_.webp",
+        "episode": "released",
+        "type": "",
+        "status": "Unknown",
+        "sub": "168",
+        "release_time": null,
+        "url": "https://donghub.vip/lingwu-continent/"
+      },
+      {
+        "title": "The Great Ruler",
+        "slug": "the-great-ruler",
+        "poster": "https://donghub.vip/wp-content/uploads/2026/01/TGR-Season-2.jpg",
+        "episode": "released",
+        "type": "",
+        "status": "Unknown",
+        "sub": "68",
+        "release_time": null,
+        "url": "https://donghub.vip/the-great-ruler/"
+      },
+      {
+        "title": "Dragon’s Triumph in the Celestial Realm",
+        "slug": "dragons-triumph-in-the-celestial-realm",
+        "poster": "https://donghub.vip/wp-content/uploads/2026/02/Dragons-Triumph-in-the-Celestial-Realm.jpg",
+        "episode": "released",
+        "type": "",
+        "status": "Unknown",
+        "sub": "25",
+        "release_time": null,
+        "url": "https://donghub.vip/dragons-triumph-in-the-celestial-realm/"
+      },
+      {
+        "title": "Renegade Immortal",
+        "slug": "renegade-immortal",
+        "poster": "https://donghub.vip/wp-content/uploads/2025/02/renegade-ascendent-768x1044.jpg",
+        "episode": "released",
+        "type": "",
+        "status": "Unknown",
+        "sub": "136",
+        "release_time": null,
+        "url": "https://donghub.vip/renegade-immortal/"
+      },
+      {
+        "title": "Battle Through The Heavens Season 5",
+        "slug": "battle-through-the-heavens-season-5",
+        "poster": "https://donghub.vip/wp-content/uploads/2025/02/BTTH-S5.jpg",
+        "episode": "released",
+        "type": "",
+        "status": "Unknown",
+        "sub": "194",
+        "release_time": null,
+        "url": "https://donghub.vip/battle-through-the-heavens-season-5/"
+      },
+      {
+        "title": "Soul Land 2: The Unrivaled Tang Sect",
+        "slug": "soul-land-2-the-unrivaled-tang-sect",
+        "poster": "https://donghub.vip/wp-content/uploads/2025/02/SL2.jpg",
+        "episode": "released",
+        "type": "",
+        "status": "Unknown",
+        "sub": "148",
+        "release_time": null,
+        "url": "https://donghub.vip/soul-land-2-the-unrivaled-tang-sect/"
+      },
+      {
+        "title": "The Other Side of Deep Space",
+        "slug": "the-other-side-of-deep-space",
+        "poster": "https://donghub.vip/wp-content/uploads/2026/01/Deep-Space.jpg",
+        "episode": "released",
+        "type": "",
+        "status": "Unknown",
+        "sub": "15",
+        "release_time": null,
+        "url": "https://donghub.vip/the-other-side-of-deep-space/"
+      },
+      {
+        "title": "Supreme God Emperor",
+        "slug": "supreme-god-emperor",
+        "poster": "https://donghub.vip/wp-content/uploads/2025/07/Supreme-God-Emperor-Subtitle-Indonesia.webp",
+        "episode": "released",
+        "type": "",
+        "status": "Unknown",
+        "sub": "595",
+        "release_time": null,
+        "url": "https://donghub.vip/supreme-god-emperor/"
+      },
+      {
+        "title": "Against the Sky Supreme",
+        "slug": "against-the-sky-supreme",
+        "poster": "https://donghub.vip/wp-content/uploads/2025/07/Against.webp",
+        "episode": "released",
+        "type": "",
+        "status": "Unknown",
+        "sub": "504",
+        "release_time": null,
+        "url": "https://donghub.vip/against-the-sky-supreme/"
+      }
+    ],
+    "Saturday": [
+      {
+        "title": "Starting With a King Account",
+        "slug": "starting-with-a-king-account",
+        "poster": "https://donghub.vip/wp-content/uploads/2026/02/Starting-With-a-King-Account-Subtitle-Indonesia.jpg",
+        "episode": "at 00:50",
+        "type": "",
+        "status": "Unknown",
+        "sub": "5",
+        "release_time": "at 00:50",
+        "url": "https://donghub.vip/starting-with-a-king-account/"
+      },
+      {
+        "title": "Eat Around the Mortal World",
+        "slug": "eat-around-the-mortal-world",
+        "poster": "https://donghub.vip/wp-content/uploads/2025/11/Eat-Around-the-Mortal-World-Subtitle-Indonesia.jpg",
+        "episode": "at 01:20",
+        "type": "",
+        "status": "Unknown",
+        "sub": "16",
+        "release_time": "at 01:20",
+        "url": "https://donghub.vip/eat-around-the-mortal-world/"
+      },
+      {
+        "title": "Way Of Choices",
+        "slug": "way-of-choices",
+        "poster": "https://donghub.vip/wp-content/uploads/2026/01/Way-Of-Choices.jpg",
+        "episode": "at 01:28",
+        "type": "",
+        "status": "Unknown",
+        "sub": "13",
+        "release_time": "at 01:28",
+        "url": "https://donghub.vip/way-of-choices/"
+      },
+      {
+        "title": "Divine Love – Deep Blue",
+        "slug": "divine-love-deep-blue",
+        "poster": "https://donghub.vip/wp-content/uploads/2025/07/Divine-Love-–-Deep-Blue.jpg",
+        "episode": "at 02:27",
+        "type": "",
+        "status": "Unknown",
+        "sub": "8",
+        "release_time": "at 02:27",
+        "url": "https://donghub.vip/divine-love-deep-blue/"
+      },
+      {
+        "title": "The Supreme Dantian",
+        "slug": "the-supreme-dantian",
+        "poster": "https://donghub.vip/wp-content/uploads/2025/10/The-Supreme-Dantian.webp",
+        "episode": "at 02:36",
+        "type": "",
+        "status": "Unknown",
+        "sub": "10",
+        "release_time": "at 02:36",
+        "url": "https://donghub.vip/the-supreme-dantian/"
+      },
+      {
+        "title": "B. King",
+        "slug": "b-king",
+        "poster": "https://donghub.vip/wp-content/uploads/2026/02/B-King.webp",
+        "episode": "at 03:55",
+        "type": "",
+        "status": "Unknown",
+        "sub": "9",
+        "release_time": "at 03:55",
+        "url": "https://donghub.vip/b-king/"
+      },
+      {
+        "title": "A Record Of Immortality",
+        "slug": "a-record-of-immortality",
+        "poster": "https://donghub.vip/wp-content/uploads/2025/02/a-record-immortality-2025-768x1024.jpg",
+        "episode": "at 04:50",
+        "type": "",
+        "status": "Unknown",
+        "sub": "177",
+        "release_time": "at 04:50",
+        "url": "https://donghub.vip/a-record-of-immortality/"
+      },
+      {
+        "title": "Peerless Divine Emperor",
+        "slug": "peerless-divine-emperor",
+        "poster": "https://donghub.vip/wp-content/uploads/2025/10/Peerless-Divine-Emperor-Subtitle-Indonesia.webp",
+        "episode": "at 10:30",
+        "type": "",
+        "status": "Unknown",
+        "sub": "??",
+        "release_time": "at 10:30",
+        "url": "https://donghub.vip/peerless-divine-emperor/"
+      },
+      {
+        "title": "Beyond Time’s Gaze",
+        "slug": "beyond-times-gaze",
+        "poster": "https://donghub.vip/wp-content/uploads/2025/12/Beyond-Times-Gaze.jpg",
+        "episode": "at 10:50",
+        "type": "",
+        "status": "Unknown",
+        "sub": "17",
+        "release_time": "at 10:50",
+        "url": "https://donghub.vip/beyond-times-gaze/"
+      }
+    ],
+    "Sunday": [
+      {
+        "title": "The new chronicles of extraordinary Beings: Preface",
+        "slug": "the-new-chronicles-of-extraordinary-beings-preface",
+        "poster": "https://donghub.vip/wp-content/uploads/2025/07/The-new-chronicles-of-extraordinary-Beings-Preface.jpg",
+        "episode": "at 03:32",
+        "type": "",
+        "status": "Unknown",
+        "sub": "3",
+        "release_time": "at 03:32",
+        "url": "https://donghub.vip/the-new-chronicles-of-extraordinary-beings-preface/"
+      },
+      {
+        "title": "Tales of Herding Gods",
+        "slug": "tales-of-herding-gods",
+        "poster": "https://donghub.vip/wp-content/uploads/2025/02/herding-god-2025-768x1024.jpg",
+        "episode": "at 03:55",
+        "type": "",
+        "status": "Unknown",
+        "sub": "78",
+        "release_time": "at 03:55",
+        "url": "https://donghub.vip/tales-of-herding-gods/"
+      },
+      {
+        "title": "Heaven Scrap Master",
+        "slug": "heaven-scrap-master",
+        "poster": "https://donghub.vip/wp-content/uploads/2025/09/Screenshot-2025-09-29-112728.png",
+        "episode": "at 10:17",
+        "type": "",
+        "status": "Unknown",
+        "sub": "40",
+        "release_time": "at 10:17",
+        "url": "https://donghub.vip/heaven-scrap-master/"
+      }
+    ],
+    "Monday": [
+      {
+        "title": "World’s Best Martial Artist",
+        "slug": "worlds-best-martial-artist",
+        "poster": "https://donghub.vip/wp-content/uploads/2025/09/Worlds-Best-Martial-Artist-Subtitle-Indonesia-768x1077.webp",
+        "episode": "at 02:51",
+        "type": "",
+        "status": "Unknown",
+        "sub": "3",
+        "release_time": "at 02:51",
+        "url": "https://donghub.vip/worlds-best-martial-artist/"
+      },
+      {
+        "title": "Walking the Way All Alone",
+        "slug": "walking-the-way-all-alone",
+        "poster": "https://donghub.vip/wp-content/uploads/2026/04/Walking-the-Way-All-Alone-Subtitle-Indonesia-768x1152.jpg",
+        "episode": "at 11:01",
+        "type": "",
+        "status": "Unknown",
+        "sub": "3",
+        "release_time": "at 11:01",
+        "url": "https://donghub.vip/walking-the-way-all-alone/"
+      },
+      {
+        "title": "Apotheosis",
+        "slug": "apotheosis",
+        "poster": "https://donghub.vip/wp-content/uploads/2025/12/Apotheosis-S3.jpg",
+        "episode": "at 11:44",
+        "type": "",
+        "status": "Unknown",
+        "sub": "124",
+        "release_time": "at 11:44",
+        "url": "https://donghub.vip/apotheosis/"
+      },
+      {
+        "title": "Swallowed Star",
+        "slug": "swallowed-star",
+        "poster": "https://donghub.vip/wp-content/uploads/2025/02/swallowed-star-s4-768x1365.webp",
+        "episode": "at 11:55",
+        "type": "",
+        "status": "Unknown",
+        "sub": "219",
+        "release_time": "at 11:55",
+        "url": "https://donghub.vip/swallowed-star/"
+      }
+    ],
+    "Tuesday": [
+      {
+        "title": "Sword and Fairy 3",
+        "slug": "sword-and-fairy-3",
+        "poster": "https://donghub.vip/wp-content/uploads/2025/12/Sword-and-Fairy-3-768x1077-1.jpg",
+        "episode": "at 03:03",
+        "type": "",
+        "status": "Unknown",
+        "sub": "18",
+        "release_time": "at 03:03",
+        "url": "https://donghub.vip/sword-and-fairy-3/"
+      },
+      {
+        "title": "Lord of the Ancient God Grave",
+        "slug": "lord-of-the-ancient-god-grave",
+        "poster": "https://donghub.vip/wp-content/uploads/2025/07/Lord-of-the-Ancient-God-Grave-Subtitle-Indonesia.webp",
+        "episode": "at 03:12",
+        "type": "",
+        "status": "Unknown",
+        "sub": "438",
+        "release_time": "at 03:12",
+        "url": "https://donghub.vip/lord-of-the-ancient-god-grave/"
+      },
+      {
+        "title": "Wealth and Wonder",
+        "slug": "wealth-and-wonder",
+        "poster": "https://donghub.vip/wp-content/uploads/2025/06/Wealth-and-Wonder-768x1090.jpg",
+        "episode": "at 03:45",
+        "type": "",
+        "status": "Unknown",
+        "sub": "27",
+        "release_time": "at 03:45",
+        "url": "https://donghub.vip/wealth-and-wonder/"
+      },
+      {
+        "title": "The Long March Toward the Universe",
+        "slug": "the-long-march-toward-the-universe",
+        "poster": "https://donghub.vip/wp-content/uploads/2025/08/The-Long-March-Toward-the-Universe-768x1152.jpg",
+        "episode": "at 04:14",
+        "type": "",
+        "status": "Unknown",
+        "sub": "5",
+        "release_time": "at 04:14",
+        "url": "https://donghub.vip/the-long-march-toward-the-universe/"
+      },
+      {
+        "title": "100.000 Years of Refining Qi",
+        "slug": "100-000-years-of-refining-qi",
+        "poster": "https://donghub.vip/wp-content/uploads/2025/07/100.000-Years-of-Refining-Qi-1.jpg",
+        "episode": "at 06:05",
+        "type": "",
+        "status": "Unknown",
+        "sub": "336",
+        "release_time": "at 06:05",
+        "url": "https://donghub.vip/100-000-years-of-refining-qi/"
+      },
+      {
+        "title": "Shrouding The Heavens",
+        "slug": "shrouding-the-heavens",
+        "poster": "https://donghub.vip/wp-content/uploads/2025/02/Shrounding-the-Heavens.jpg",
+        "episode": "at 06:06",
+        "type": "",
+        "status": "Unknown",
+        "sub": "158",
+        "release_time": "at 06:06",
+        "url": "https://donghub.vip/shrouding-the-heavens/"
+      },
+      {
+        "title": "Yi Nian Yong Heng",
+        "slug": "yi-nian-yong-heng",
+        "poster": "https://donghub.vip/wp-content/uploads/2025/02/yi-nian-yen-hong.png",
+        "episode": "at 06:54",
+        "type": "",
+        "status": "Unknown",
+        "sub": "60",
+        "release_time": "at 06:54",
+        "url": "https://donghub.vip/yi-nian-yong-heng/"
+      },
+      {
+        "title": "The Supreme Body Refining Master",
+        "slug": "the-supreme-body-refining-master",
+        "poster": "https://donghub.vip/wp-content/uploads/2026/01/The-Supreme-Body-Refining-Master.jpg",
+        "episode": "at 11:12",
+        "type": "",
+        "status": "Unknown",
+        "sub": "30",
+        "release_time": "at 11:12",
+        "url": "https://donghub.vip/the-supreme-body-refining-master/"
+      },
+      {
+        "title": "Peerless Battle Spirit",
+        "slug": "peerless-battle-spirit",
+        "poster": "https://donghub.vip/wp-content/uploads/2025/07/Peerless-Battle-Spirit-Subtitle-Indonesia.webp",
+        "episode": "at 23:09",
+        "type": "",
+        "status": "Unknown",
+        "sub": "173",
+        "release_time": "at 23:09",
+        "url": "https://donghub.vip/peerless-battle-spirit/"
+      },
+      {
+        "title": "Release that Witch",
+        "slug": "release-that-witch",
+        "poster": "https://donghub.vip/wp-content/uploads/2026/03/Release-that-Witch-Subtitle-Indonesia.jpg",
+        "episode": "at 23:12",
+        "type": "",
+        "status": "Unknown",
+        "sub": "7",
+        "release_time": "at 23:12",
+        "url": "https://donghub.vip/release-that-witch/"
+      }
+    ],
+    "Wednesday": [
+      {
+        "title": "In Search of Gods",
+        "slug": "in-search-of-gods",
+        "poster": "https://donghub.vip/wp-content/uploads/2026/03/In-Search-of-Gods.webp",
+        "episode": "at 01:27",
+        "type": "",
+        "status": "Unknown",
+        "sub": "6",
+        "release_time": "at 01:27",
+        "url": "https://donghub.vip/in-search-of-gods/"
+      },
+      {
+        "title": "Dragon God’s Myriad Forms: Dragon Soul",
+        "slug": "dragon-gods-myriad-forms-dragon-soul",
+        "poster": "https://donghub.vip/wp-content/uploads/2025/12/Dragon-Gods-Myriad-Forms-Dragon-Soul.jpg",
+        "episode": "at 01:44",
+        "type": "",
+        "status": "Unknown",
+        "sub": "9",
+        "release_time": "at 01:44",
+        "url": "https://donghub.vip/dragon-gods-myriad-forms-dragon-soul/"
+      },
+      {
+        "title": "The Gate of Mystical Realm",
+        "slug": "the-gate-of-mystical-realm",
+        "poster": "https://donghub.vip/wp-content/uploads/2025/11/The-Gate-of-Mystical-Realm.jpg",
+        "episode": "at 03:34",
+        "type": "",
+        "status": "Unknown",
+        "sub": "23",
+        "release_time": "at 03:34",
+        "url": "https://donghub.vip/the-gate-of-mystical-realm/"
+      },
+      {
+        "title": "Throne of Seal",
+        "slug": "throne-of-seal",
+        "poster": "https://donghub.vip/wp-content/uploads/2025/02/ToS-HD-new.jpg",
+        "episode": "at 12:20",
+        "type": "",
+        "status": "Unknown",
+        "sub": "207",
+        "release_time": "at 12:20",
+        "url": "https://donghub.vip/throne-of-seal/"
+      },
+      {
+        "title": "Sword of Coming Season 2",
+        "slug": "sword-of-coming-season-2",
+        "poster": "https://donghub.vip/wp-content/uploads/2025/12/Sword-of-Coming-Season-2-Subtitle-Indonesia.jpg",
+        "episode": "at 12:49",
+        "type": "",
+        "status": "Unknown",
+        "sub": "19",
+        "release_time": "at 12:49",
+        "url": "https://donghub.vip/sword-of-coming-season-2/"
+      }
+    ],
+    "Thursday": [
+      {
+        "title": "Tomb of Fallen Gods Season 3",
+        "slug": "tomb-of-fallen-gods-season-3",
+        "poster": "https://donghub.vip/wp-content/uploads/2025/08/Tomb-of-Fallen-Gods-Season-3.webp",
+        "episode": "at 03:28",
+        "type": "",
+        "status": "Unknown",
+        "sub": "38",
+        "release_time": "at 03:28",
+        "url": "https://donghub.vip/tomb-of-fallen-gods-season-3/"
+      },
+      {
+        "title": "Throne of Seal: The Crownless God",
+        "slug": "throne-of-seal-the-crownless-god",
+        "poster": "https://donghub.vip/wp-content/uploads/2025/05/Throne-of-Seal-The-Crownless-God-768x1152.jpg",
+        "episode": "at 04:18",
+        "type": "",
+        "status": "Unknown",
+        "sub": "2",
+        "release_time": "at 04:18",
+        "url": "https://donghub.vip/throne-of-seal-the-crownless-god/"
+      },
+      {
+        "title": "Aliens Among Immortal",
+        "slug": "aliens-among-immortal",
+        "poster": "https://donghub.vip/wp-content/uploads/2026/03/Aliens-Among-Immortal-768x1023.jpg",
+        "episode": "at 04:50",
+        "type": "",
+        "status": "Unknown",
+        "sub": "18",
+        "release_time": "at 04:50",
+        "url": "https://donghub.vip/aliens-among-immortal/"
+      },
+      {
+        "title": "Perfect World",
+        "slug": "perfect-world",
+        "poster": "https://donghub.vip/wp-content/uploads/2025/02/6102684551348947810-768x1044.jpg",
+        "episode": "at 06:57",
+        "type": "",
+        "status": "Unknown",
+        "sub": "264",
+        "release_time": "at 06:57",
+        "url": "https://donghub.vip/perfect-world/"
+      },
+      {
+        "title": "The Ravages Of Time Season 2",
+        "slug": "the-ravages-of-time",
+        "poster": "https://donghub.vip/wp-content/uploads/2025/02/the-ravege-of-time-2-768x1075.jpg",
+        "episode": "at 07:04",
+        "type": "",
+        "status": "Unknown",
+        "sub": "7",
+        "release_time": "at 07:04",
+        "url": "https://donghub.vip/the-ravages-of-time/"
+      },
+      {
+        "title": "Kultivator vs Hero",
+        "slug": "kultivator-vs-hero",
+        "poster": "https://donghub.vip/wp-content/uploads/2026/02/Kultivator-vs-Hero.webp",
+        "episode": "at 22:22",
+        "type": "",
+        "status": "Unknown",
+        "sub": "30",
+        "release_time": "at 22:22",
+        "url": "https://donghub.vip/kultivator-vs-hero/"
+      }
+    ]
+  }
+}

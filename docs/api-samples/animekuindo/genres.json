@@ -1,0 +1,408 @@
+{
+  "status": "success",
+  "creator": "Sanka Vollerei",
+  "data": [
+    {
+      "name": "Action",
+      "slug": "action",
+      "count": "94",
+      "url": "https://s2.animekuindo.life/genres/action/"
+    },
+    {
+      "name": "Adult Cast",
+      "slug": "adult-cast",
+      "count": "26",
+      "url": "https://s2.animekuindo.life/genres/adult-cast/"
+    },
+    {
+      "name": "Adventure",
+      "slug": "adventure",
+      "count": "64",
+      "url": "https://s2.animekuindo.life/genres/adventure/"
+    },
+    {
+      "name": "Anthropomorphic",
+      "slug": "anthropomorphic",
+      "count": "5",
+      "url": "https://s2.animekuindo.life/genres/anthropomorphic/"
+    },
+    {
+      "name": "Boys Love",
+      "slug": "boys-love",
+      "count": "1",
+      "url": "https://s2.animekuindo.life/genres/boys-love/"
+    },
+    {
+      "name": "CGDCT",
+      "slug": "cgdct",
+      "count": "5",
+      "url": "https://s2.animekuindo.life/genres/cgdct/"
+    },
+    {
+      "name": "Childcare",
+      "slug": "childcare",
+      "count": "4",
+      "url": "https://s2.animekuindo.life/genres/childcare/"
+    },
+    {
+      "name": "Comedy",
+      "slug": "comedy",
+      "count": "82",
+      "url": "https://s2.animekuindo.life/genres/comedy/"
+    },
+    {
+      "name": "Crossdressing",
+      "slug": "crossdressing",
+      "count": "1",
+      "url": "https://s2.animekuindo.life/genres/crossdressing/"
+    },
+    {
+      "name": "Delinquents",
+      "slug": "delinquents",
+      "count": "1",
+      "url": "https://s2.animekuindo.life/genres/delinquents/"
+    },
+    {
+      "name": "Detective",
+      "slug": "detective",
+      "count": "2",
+      "url": "https://s2.animekuindo.life/genres/detective/"
+    },
+    {
+      "name": "Drama",
+      "slug": "drama",
+      "count": "35",
+      "url": "https://s2.animekuindo.life/genres/drama/"
+    },
+    {
+      "name": "Ecchi",
+      "slug": "ecchi",
+      "count": "6",
+      "url": "https://s2.animekuindo.life/genres/ecchi/"
+    },
+    {
+      "name": "Erotica",
+      "slug": "erotica",
+      "count": "1",
+      "url": "https://s2.animekuindo.life/genres/erotica/"
+    },
+    {
+      "name": "Fantasy",
+      "slug": "fantasy",
+      "count": "107",
+      "url": "https://s2.animekuindo.life/genres/fantasy/"
+    },
+    {
+      "name": "Gag Humor",
+      "slug": "gag-humor",
+      "count": "4",
+      "url": "https://s2.animekuindo.life/genres/gag-humor/"
+    },
+    {
+      "name": "Girls Love",
+      "slug": "girls-love",
+      "count": "2",
+      "url": "https://s2.animekuindo.life/genres/girls-love/"
+    },
+    {
+      "name": "Gore",
+      "slug": "gore",
+      "count": "3",
+      "url": "https://s2.animekuindo.life/genres/gore/"
+    },
+    {
+      "name": "Gourmet",
+      "slug": "gourmet",
+      "count": "8",
+      "url": "https://s2.animekuindo.life/genres/gourmet/"
+    },
+    {
+      "name": "Harem",
+      "slug": "harem",
+      "count": "15",
+      "url": "https://s2.animekuindo.life/genres/harem/"
+    },
+    {
+      "name": "High Stakes Game",
+      "slug": "high-stakes-game",
+      "count": "1",
+      "url": "https://s2.animekuindo.life/genres/high-stakes-game/"
+    },
+    {
+      "name": "Historical",
+      "slug": "historical",
+      "count": "13",
+      "url": "https://s2.animekuindo.life/genres/historical/"
+    },
+    {
+      "name": "Horror",
+      "slug": "horror",
+      "count": "3",
+      "url": "https://s2.animekuindo.life/genres/horror/"
+    },
+    {
+      "name": "Idols (Male)",
+      "slug": "idols-male",
+      "count": "1",
+      "url": "https://s2.animekuindo.life/genres/idols-male/"
+    },
+    {
+      "name": "Isekai",
+      "slug": "isekai",
+      "count": "37",
+      "url": "https://s2.animekuindo.life/genres/isekai/"
+    },
+    {
+      "name": "Josei",
+      "slug": "josei",
+      "count": "2",
+      "url": "https://s2.animekuindo.life/genres/josei/"
+    },
+    {
+      "name": "Love Polygon",
+      "slug": "love-polygon",
+      "count": "4",
+      "url": "https://s2.animekuindo.life/genres/love-polygon/"
+    },
+    {
+      "name": "Love Status Quo",
+      "slug": "love-status-quo",
+      "count": "4",
+      "url": "https://s2.animekuindo.life/genres/love-status-quo/"
+    },
+    {
+      "name": "Magical Sex Shift",
+      "slug": "magical-sex-shift",
+      "count": "2",
+      "url": "https://s2.animekuindo.life/genres/magical-sex-shift/"
+    },
+    {
+      "name": "Martial Arts",
+      "slug": "martial-arts",
+      "count": "3",
+      "url": "https://s2.animekuindo.life/genres/martial-arts/"
+    },
+    {
+      "name": "Mecha",
+      "slug": "mecha",
+      "count": "1",
+      "url": "https://s2.animekuindo.life/genres/mecha/"
+    },
+    {
+      "name": "Medical",
+      "slug": "medical",
+      "count": "3",
+      "url": "https://s2.animekuindo.life/genres/medical/"
+    },
+    {
+      "name": "Military",
+      "slug": "military",
+      "count": "6",
+      "url": "https://s2.animekuindo.life/genres/military/"
+    },
+    {
+      "name": "Music",
+      "slug": "music",
+      "count": "7",
+      "url": "https://s2.animekuindo.life/genres/music/"
+    },
+    {
+      "name": "Mystery",
+      "slug": "mystery",
+      "count": "14",
+      "url": "https://s2.animekuindo.life/genres/mystery/"
+    },
+    {
+      "name": "Mythology",
+      "slug": "mythology",
+      "count": "6",
+      "url": "https://s2.animekuindo.life/genres/mythology/"
+    },
+    {
+      "name": "Organized Crime",
+      "slug": "organized-crime",
+      "count": "5",
+      "url": "https://s2.animekuindo.life/genres/organized-crime/"
+    },
+    {
+      "name": "Otaku Culture",
+      "slug": "otaku-culture",
+      "count": "3",
+      "url": "https://s2.animekuindo.life/genres/otaku-culture/"
+    },
+    {
+      "name": "Parody",
+      "slug": "parody",
+      "count": "8",
+      "url": "https://s2.animekuindo.life/genres/parody/"
+    },
+    {
+      "name": "Performing Arts",
+      "slug": "performing-arts",
+      "count": "4",
+      "url": "https://s2.animekuindo.life/genres/performing-arts/"
+    },
+    {
+      "name": "Pets",
+      "slug": "pets",
+      "count": "1",
+      "url": "https://s2.animekuindo.life/genres/pets/"
+    },
+    {
+      "name": "Psychological",
+      "slug": "psychological",
+      "count": "4",
+      "url": "https://s2.animekuindo.life/genres/psychological/"
+    },
+    {
+      "name": "Racing",
+      "slug": "racing",
+      "count": "3",
+      "url": "https://s2.animekuindo.life/genres/racing/"
+    },
+    {
+      "name": "Reincarnation",
+      "slug": "reincarnation",
+      "count": "15",
+      "url": "https://s2.animekuindo.life/genres/reincarnation/"
+    },
+    {
+      "name": "Reverse Harem",
+      "slug": "reverse-harem",
+      "count": "2",
+      "url": "https://s2.animekuindo.life/genres/reverse-harem/"
+    },
+    {
+      "name": "Romance",
+      "slug": "romance",
+      "count": "60",
+      "url": "https://s2.animekuindo.life/genres/romance/"
+    },
+    {
+      "name": "Samurai",
+      "slug": "samurai",
+      "count": "4",
+      "url": "https://s2.animekuindo.life/genres/samurai/"
+    },
+    {
+      "name": "School",
+      "slug": "school",
+      "count": "59",
+      "url": "https://s2.animekuindo.life/genres/school/"
+    },
+    {
+      "name": "Sci-Fi",
+      "slug": "sci-fi",
+      "count": "27",
+      "url": "https://s2.animekuindo.life/genres/sci-fi/"
+    },
+    {
+      "name": "Seinen",
+      "slug": "seinen",
+      "count": "41",
+      "url": "https://s2.animekuindo.life/genres/seinen/"
+    },
+    {
+      "name": "Shoujo",
+      "slug": "shoujo",
+      "count": "10",
+      "url": "https://s2.animekuindo.life/genres/shoujo/"
+    },
+    {
+      "name": "Shounen",
+      "slug": "shounen",
+      "count": "72",
+      "url": "https://s2.animekuindo.life/genres/shounen/"
+    },
+    {
+      "name": "Showbiz",
+      "slug": "showbiz",
+      "count": "3",
+      "url": "https://s2.animekuindo.life/genres/showbiz/"
+    },
+    {
+      "name": "Slice of Life",
+      "slug": "slice-of-life",
+      "count": "9",
+      "url": "https://s2.animekuindo.life/genres/slice-of-life/"
+    },
+    {
+      "name": "Space",
+      "slug": "space",
+      "count": "1",
+      "url": "https://s2.animekuindo.life/genres/space/"
+    },
+    {
+      "name": "Sports",
+      "slug": "sports",
+      "count": "7",
+      "url": "https://s2.animekuindo.life/genres/sports/"
+    },
+    {
+      "name": "Strategy Game",
+      "slug": "strategy-game",
+      "count": "1",
+      "url": "https://s2.animekuindo.life/genres/strategy-game/"
+    },
+    {
+      "name": "Super Power",
+      "slug": "super-power",
+      "count": "15",
+      "url": "https://s2.animekuindo.life/genres/super-power/"
+    },
+    {
+      "name": "Supernatural",
+      "slug": "supernatural",
+      "count": "24",
+      "url": "https://s2.animekuindo.life/genres/supernatural/"
+    },
+    {
+      "name": "Survival",
+      "slug": "survival",
+      "count": "1",
+      "url": "https://s2.animekuindo.life/genres/survival/"
+    },
+    {
+      "name": "Suspense",
+      "slug": "suspense",
+      "count": "6",
+      "url": "https://s2.animekuindo.life/genres/suspense/"
+    },
+    {
+      "name": "Time Travel",
+      "slug": "time-travel",
+      "count": "5",
+      "url": "https://s2.animekuindo.life/genres/time-travel/"
+    },
+    {
+      "name": "Urban Fantasy",
+      "slug": "urban-fantasy",
+      "count": "9",
+      "url": "https://s2.animekuindo.life/genres/urban-fantasy/"
+    },
+    {
+      "name": "Vampire",
+      "slug": "vampire",
+      "count": "4",
+      "url": "https://s2.animekuindo.life/genres/vampire/"
+    },
+    {
+      "name": "Video Game",
+      "slug": "video-game",
+      "count": "1",
+      "url": "https://s2.animekuindo.life/genres/video-game/"
+    },
+    {
+      "name": "Villainess",
+      "slug": "villainess",
+      "count": "5",
+      "url": "https://s2.animekuindo.life/genres/villainess/"
+    },
+    {
+      "name": "Workplace",
+      "slug": "workplace",
+      "count": "7",
+      "url": "https://s2.animekuindo.life/genres/workplace/"
+    }
+  ]
+}

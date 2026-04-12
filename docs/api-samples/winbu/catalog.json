@@ -1,0 +1,29 @@
+{
+  "status": "success",
+  "creator": "Sanka Vollerei",
+  "data": [
+    {
+      "title": "One Piece",
+      "id": "one-piece",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2020/04/E5RxYkWX0AAwdGH.png_200x300.jpeg",
+      "rating": "0",
+      "time": "4 hari",
+      "episode": ""
+    }
+  ],
+  "pagination": {
+    "current_page": 1,
+    "total_pages": 1,
+    "has_next_page": false,
+    "next_page": null,
+    "prev_page": null,
+    "has_prev_page": false
+  },
+  "filters": {
+    "order": "update",
+    "status": "Currently Airing",
+    "type": "TV",
+    "title": "one piece"
+  }
+}

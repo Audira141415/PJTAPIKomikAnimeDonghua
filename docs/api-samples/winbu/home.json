@@ -1,0 +1,800 @@
+{
+  "status": "success",
+  "creator": "Sanka Vollerei",
+  "source": "Winbu.net",
+  "data": {
+    "top10_anime": [
+      {
+        "rank": "#1",
+        "title": "Tsue to Tsurugi no Wistoria Season 2",
+        "id": "tsue-to-tsurugi-no-wistoria-season-2",
+        "type": "anime",
+        "image": "https://winbu.net/wp-content/uploads/2026/04/155788_151x223.jpeg",
+        "rating": "7.3"
+      },
+      {
+        "rank": "#2",
+        "title": "Saikyou no Ousama, Nidome no Jinsei wa Nani o Suru? Season 2",
+        "id": "saikyou-no-ousama-nidome-no-jinsei-wa-nani-o-suru-season-2",
+        "type": "anime",
+        "image": "https://winbu.net/wp-content/uploads/2026/04/TBATES2_151x223.jpeg",
+        "rating": "0"
+      },
+      {
+        "rank": "#3",
+        "title": "One Piece",
+        "id": "one-piece",
+        "type": "anime",
+        "image": "https://winbu.net/wp-content/uploads/2020/04/E5RxYkWX0AAwdGH.png_151x223.jpeg",
+        "rating": "8.71"
+      },
+      {
+        "rank": "#4",
+        "title": "Daikenja Riddle no Jikan Gyakkou",
+        "id": "daikenja-riddle-no-jikan-gyakkou",
+        "type": "anime",
+        "image": "https://winbu.net/wp-content/uploads/2026/04/155312_151x223.jpeg",
+        "rating": "5.4"
+      },
+      {
+        "rank": "#5",
+        "title": "Mamonogurai no Boukensha: Ore dake Mamono wo Kuratte Tsuyoku Naru",
+        "id": "mamonogurai-no-boukensha-ore-dake-mamono-wo-kuratte-tsuyoku-naru",
+        "type": "anime",
+        "image": "https://winbu.net/wp-content/uploads/2026/04/154990_151x223.jpeg",
+        "rating": "6.81"
+      },
+      {
+        "rank": "#6",
+        "title": "Ingoku Danchi",
+        "id": "ingoku-danchi",
+        "type": "anime",
+        "image": "https://winbu.net/wp-content/uploads/2026/04/155741_151x223.jpeg",
+        "rating": "6"
+      },
+      {
+        "rank": "#7",
+        "title": "Saikyou no Shokugyou wa Yuusha demo Kenja demo Naku Kanteishi (Kari) Rashii desu yo?",
+        "id": "saikyou-no-shokugyou-wa-yuusha-demo-kenja-demo-naku-kanteishi-kari-rashii-desu-yo",
+        "type": "anime",
+        "image": "https://winbu.net/wp-content/uploads/2026/03/SaikyouNoShoku_151x223.jpeg",
+        "rating": "6,17"
+      },
+      {
+        "rank": "#8",
+        "title": "That Time I Got Reincarnated as a Slime Season 4",
+        "id": "that-time-i-got-reincarnated-as-a-slime-season-4",
+        "type": "anime",
+        "image": "https://winbu.net/wp-content/uploads/2026/04/76417_151x223.jpeg",
+        "rating": "8.22"
+      },
+      {
+        "rank": "#9",
+        "title": "Tensei shitara Slime Datta Ken Season 4",
+        "id": "tensei-shitara-slime-datta-ken-season-4",
+        "type": "anime",
+        "image": "https://winbu.net/wp-content/uploads/2026/04/156389_151x223.jpeg",
+        "rating": "7.51"
+      },
+      {
+        "rank": "#10",
+        "title": "Daemons of the Shadow Realm",
+        "id": "daemons-of-the-shadow-realm",
+        "type": "anime",
+        "image": "https://winbu.net/wp-content/uploads/2026/04/76486_151x223.jpeg",
+        "rating": "7.35"
+      }
+    ],
+    "top10_film": [
+      {
+        "rank": "#1",
+        "title": "Agent Zero (2025)",
+        "id": "agent-zero-2025",
+        "type": "film",
+        "image": "https://winbu.net/wp-content/uploads/2026/04/Agent_Zero_151x223.jpeg",
+        "rating": "5"
+      },
+      {
+        "rank": "#2",
+        "title": "The Boy with My Son’s Face (2026)",
+        "id": "the-boy-with-my-sons-face-2026",
+        "type": "film",
+        "image": "https://winbu.net/wp-content/uploads/2026/04/TBWMSF_151x223.jpeg",
+        "rating": "5"
+      },
+      {
+        "rank": "#3",
+        "title": "A Gangster’s Life (2026)",
+        "id": "a-gangsters-life-2026",
+        "type": "film",
+        "image": "https://winbu.net/wp-content/uploads/2026/04/AGL_151x223.jpeg",
+        "rating": "6"
+      },
+      {
+        "rank": "#4",
+        "title": "Ainsley McGregor Mysteries: A Case For the Watchmaker (2026)",
+        "id": "ainsley-mcgregor-mysteries-a-case-for-the-watchmaker-2026",
+        "type": "film",
+        "image": "https://winbu.net/wp-content/uploads/2026/04/AMM_ACFTW_151x223.jpeg",
+        "rating": "7"
+      },
+      {
+        "rank": "#5",
+        "title": "Primate (2026)",
+        "id": "primate-2026",
+        "type": "film",
+        "image": "https://winbu.net/wp-content/uploads/2026/04/Prim_151x223.jpeg",
+        "rating": "6"
+      },
+      {
+        "rank": "#6",
+        "title": "Vigilante (2026)",
+        "id": "vigilante-2026",
+        "type": "film",
+        "image": "https://winbu.net/wp-content/uploads/2026/04/Vigil_151x223.jpeg",
+        "rating": "6,9"
+      },
+      {
+        "rank": "#7",
+        "title": "Mexicali (2026)",
+        "id": "mexicali-2026",
+        "type": "film",
+        "image": "https://winbu.net/wp-content/uploads/2026/04/MXCA_151x223.jpeg",
+        "rating": "6"
+      },
+      {
+        "rank": "#8",
+        "title": "Magellan (2025)",
+        "id": "magellan-2025",
+        "type": "film",
+        "image": "",
+        "rating": "6"
+      },
+      {
+        "rank": "#9",
+        "title": "A Useful Ghost (2025)",
+        "id": "a-useful-ghost-2025",
+        "type": "film",
+        "image": "https://winbu.net/wp-content/uploads/2026/04/AUG_151x223.jpeg",
+        "rating": "6"
+      },
+      {
+        "rank": "#10",
+        "title": "Home Behind Bars (2025)",
+        "id": "home-behind-bars-2025",
+        "type": "film",
+        "image": "https://winbu.net/wp-content/uploads/2026/04/HBB_151x223.jpeg",
+        "rating": "6"
+      }
+    ],
+    "latest_anime": [
+      {
+        "title": "Awajima Hyakkei",
+        "id": "awajima-hyakkei",
+        "type": "anime",
+        "image": "https://winbu.net/wp-content/uploads/2026/04/156361_200x300.jpeg",
+        "episode": "Episode 1",
+        "time": "5 jam",
+        "views": "74"
+      },
+      {
+        "title": "Haibara-kun no Tsuyokute Seishun New Game",
+        "id": "haibara-kun-no-tsuyokute-seishun-new-game",
+        "type": "anime",
+        "image": "https://winbu.net/wp-content/uploads/2026/04/156048_200x300.jpeg",
+        "episode": "Episode 2",
+        "time": "5 jam",
+        "views": "79"
+      },
+      {
+        "title": "Mata Korosarete Shimatta no desu ne, Tantei-sama",
+        "id": "mata-korosarete-shimatta-no-desu-ne-tantei-sama",
+        "type": "anime",
+        "image": "https://winbu.net/wp-content/uploads/2026/04/156152_200x300.jpeg",
+        "episode": "Episode 2",
+        "time": "5 jam",
+        "views": "164"
+      },
+      {
+        "title": "Mamonogurai no Boukensha: Ore dake Mamono wo Kuratte Tsuyoku Naru",
+        "id": "mamonogurai-no-boukensha-ore-dake-mamono-wo-kuratte-tsuyoku-naru",
+        "type": "anime",
+        "image": "https://winbu.net/wp-content/uploads/2026/04/154990_200x300.jpeg",
+        "episode": "Episode 2",
+        "time": "14 jam",
+        "views": "1241"
+      },
+      {
+        "title": "Shrouding the Heavens",
+        "id": "shrouding-the-heavens",
+        "type": "anime",
+        "image": "https://winbu.net/wp-content/uploads/2024/11/135727_200x300.jpeg",
+        "episode": "Episode 157",
+        "time": "15 jam",
+        "views": "72"
+      },
+      {
+        "title": "Kirio Fanclub",
+        "id": "kirio-fanclub",
+        "type": "anime",
+        "image": "https://winbu.net/wp-content/uploads/2026/04/155831_200x300.jpeg",
+        "episode": "Episode 2",
+        "time": "15 jam",
+        "views": "287"
+      },
+      {
+        "title": "Reincarnation no Kaben",
+        "id": "reincarnation-no-kaben",
+        "type": "anime",
+        "image": "https://winbu.net/wp-content/uploads/2026/04/155042_200x300.jpeg",
+        "episode": "Episode 2",
+        "time": "15 jam",
+        "views": "984"
+      },
+      {
+        "title": "Throne of Seal",
+        "id": "throne-of-seal",
+        "type": "anime",
+        "image": "https://winbu.net/wp-content/uploads/2024/11/122162_200x300.jpeg",
+        "episode": "Episode 206",
+        "time": "16 jam",
+        "views": "97"
+      },
+      {
+        "title": "Perfect World",
+        "id": "perfect-world",
+        "type": "anime",
+        "image": "https://winbu.net/wp-content/uploads/2024/11/137928_200x300.jpeg",
+        "episode": "Episode 263",
+        "time": "16 jam",
+        "views": "164"
+      },
+      {
+        "title": "Kujima Utaeba Ie Hororo",
+        "id": "kujima-utaeba-ie-hororo",
+        "type": "anime",
+        "image": "https://winbu.net/wp-content/uploads/2026/04/155195_200x300.jpeg",
+        "episode": "Episode 1",
+        "time": "16 jam",
+        "views": "183"
+      },
+      {
+        "title": "Ganzo! Bandori-chan",
+        "id": "ganzo-bandori-chan",
+        "type": "anime",
+        "image": "https://winbu.net/wp-content/uploads/2025/10/Ganzo-Bandori-chan-200x300-1_200x300.jpeg",
+        "episode": "Episode 28",
+        "time": "16 jam",
+        "views": "67"
+      },
+      {
+        "title": "Koala Enikki",
+        "id": "koala-enikki",
+        "type": "anime",
+        "image": "https://winbu.net/wp-content/uploads/2025/10/152302_200x300.jpeg",
+        "episode": "Episode 28",
+        "time": "16 jam",
+        "views": "48"
+      },
+      {
+        "title": "Koori no Jouheki",
+        "id": "koori-no-jouheki",
+        "type": "anime",
+        "image": "https://winbu.net/wp-content/uploads/2026/04/152301l_200x300.jpeg",
+        "episode": "Episode 2",
+        "time": "16 jam",
+        "views": "450"
+      },
+      {
+        "title": "Dr. Stone: Science Future Part 3",
+        "id": "dr-stone-science-future-part-3",
+        "type": "anime",
+        "image": "https://winbu.net/wp-content/uploads/2026/04/155779_200x300.jpeg",
+        "episode": "Episode 2",
+        "time": "18 jam",
+        "views": "1145"
+      },
+      {
+        "title": "Himekishi wa Barbaroi no Yome",
+        "id": "himekishi-wa-barbaroi-no-yome",
+        "type": "anime",
+        "image": "https://winbu.net/wp-content/uploads/2026/04/155022_200x300.jpeg",
+        "episode": "Episode 1",
+        "time": "19 jam",
+        "views": "1267"
+      },
+      {
+        "title": "Ganbare! Nakamura-kun!!",
+        "id": "ganbare-nakamura-kun",
+        "type": "anime",
+        "image": "https://winbu.net/wp-content/uploads/2026/04/Ganbare-N-kun_200x300.jpeg",
+        "episode": "Episode 3",
+        "time": "1 hari",
+        "views": "236"
+      },
+      {
+        "title": "Otaku ni Yasashii Gal wa Inai!?",
+        "id": "otaku-ni-yasashii-gal-wa-inai",
+        "type": "anime",
+        "image": "https://winbu.net/wp-content/uploads/2026/04/Otagyaru_200x300.jpeg",
+        "episode": "Episode 1",
+        "time": "1 hari",
+        "views": "798"
+      },
+      {
+        "title": "The Beginning After the End Season 2",
+        "id": "the-beginning-after-the-end-season-2",
+        "type": "anime",
+        "image": "https://winbu.net/wp-content/uploads/2026/04/76937_200x300.jpeg",
+        "episode": "Episode 2",
+        "time": "1 hari",
+        "views": "2919"
+      },
+      {
+        "title": "Jidou Hanbaiki ni Umarekawatta Ore wa Meikyuu wo Samayou 3rd Season",
+        "id": "jidou-hanbaiki-ni-umarekawatta-ore-wa-meikyuu-wo-samayou-3rd-season",
+        "type": "anime",
+        "image": "https://winbu.net/wp-content/uploads/2026/04/Jidou-Hanbaiki-S3_200x300.jpeg",
+        "episode": "Episode 2",
+        "time": "1 hari",
+        "views": "337"
+      },
+      {
+        "title": "Saikyou no Ousama, Nidome no Jinsei wa Nani o Suru? Season 2",
+        "id": "saikyou-no-ousama-nidome-no-jinsei-wa-nani-o-suru-season-2",
+        "type": "anime",
+        "image": "https://winbu.net/wp-content/uploads/2026/04/TBATES2_200x300.jpeg",
+        "episode": "Episode 2",
+        "time": "1 hari",
+        "views": "2697"
+      }
+    ],
+    "latest_film": [
+      {
+        "title": "Golden (2025)",
+        "id": "golden-2025",
+        "type": "film",
+        "image": "https://winbu.net/wp-content/uploads/2026/04/Gold_200x300.jpeg",
+        "episode": "",
+        "time": "15 jam",
+        "views": "5\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t243"
+      },
+      {
+        "title": "How to Make a Killing (2026)",
+        "id": "how-to-make-a-killing-2026",
+        "type": "film",
+        "image": "https://winbu.net/wp-content/uploads/2026/04/HTMAK_200x300.jpeg",
+        "episode": "",
+        "time": "15 jam",
+        "views": "6\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t540"
+      },
+      {
+        "title": "Send Help (2026)",
+        "id": "send-help-2026",
+        "type": "film",
+        "image": "https://winbu.net/wp-content/uploads/2026/04/SH_200x300.jpeg",
+        "episode": "",
+        "time": "15 jam",
+        "views": "7\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t283"
+      },
+      {
+        "title": "She Wants My Daughter (2025)",
+        "id": "she-wants-my-daughter-2025",
+        "type": "film",
+        "image": "https://winbu.net/wp-content/uploads/2026/04/SWMD_200x300.jpeg",
+        "episode": "",
+        "time": "16 jam",
+        "views": "6\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t568"
+      },
+      {
+        "title": "Papa Zola: The Movie (2025)",
+        "id": "papa-zola-the-movie-2025",
+        "type": "film",
+        "image": "https://winbu.net/wp-content/uploads/2026/04/PZTM_200x300.jpeg",
+        "episode": "",
+        "time": "1 hari",
+        "views": "8\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t711"
+      },
+      {
+        "title": "The Love That Remains (2025)",
+        "id": "the-love-that-remains-2025",
+        "type": "film",
+        "image": "https://winbu.net/wp-content/uploads/2026/04/TLTR_200x300.jpeg",
+        "episode": "",
+        "time": "1 hari",
+        "views": "6\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t1472"
+      },
+      {
+        "title": "Hridayapoorvam (2025)",
+        "id": "hridayapoorvam-2025",
+        "type": "film",
+        "image": "https://winbu.net/wp-content/uploads/2026/04/Hp_200x300.jpeg",
+        "episode": "",
+        "time": "1 hari",
+        "views": "7\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t1451"
+      },
+      {
+        "title": "Do Not Enter (2026)",
+        "id": "do-not-enter-2026",
+        "type": "film",
+        "image": "https://winbu.net/wp-content/uploads/2026/04/DNE_200x300.jpeg",
+        "episode": "",
+        "time": "1 hari",
+        "views": "5\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t1526"
+      },
+      {
+        "title": "Grizzly Night (2026)",
+        "id": "grizzly-night-2026",
+        "type": "film",
+        "image": "https://winbu.net/wp-content/uploads/2026/04/GN_200x300.jpeg",
+        "episode": "",
+        "time": "1 hari",
+        "views": "4,5\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t1470"
+      },
+      {
+        "title": "Legend of Ling Jing (2026)",
+        "id": "legend-of-ling-jing-2026",
+        "type": "film",
+        "image": "https://winbu.net/wp-content/uploads/2026/04/LoLJ_200x300.jpeg",
+        "episode": "",
+        "time": "2 hari",
+        "views": "6\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t1490"
+      },
+      {
+        "title": "Pilar’s Diary in the Amazon (2025)",
+        "id": "pilars-diary-in-the-amazon-2025",
+        "type": "film",
+        "image": "https://winbu.net/wp-content/uploads/2026/04/PDITA_200x300.jpeg",
+        "episode": "",
+        "time": "2 hari",
+        "views": "7\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t1715"
+      },
+      {
+        "title": "Soft Leaves (2025)",
+        "id": "https-gofile-io-d-hit9hy",
+        "type": "film",
+        "image": "https://winbu.net/wp-content/uploads/2026/04/SL_200x300.jpeg",
+        "episode": "",
+        "time": "2 hari",
+        "views": "7\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t2336"
+      },
+      {
+        "title": "Amityville La Llorona (2025)",
+        "id": "amityville-la-llorona-2025",
+        "type": "film",
+        "image": "https://winbu.net/wp-content/uploads/2026/04/ALL_200x300.jpeg",
+        "episode": "",
+        "time": "2 hari",
+        "views": "3\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t1855"
+      },
+      {
+        "title": "Bad Voodoo (2026)",
+        "id": "bad-voodoo-2026",
+        "type": "film",
+        "image": "https://winbu.net/wp-content/uploads/2026/04/BV_200x300.jpeg",
+        "episode": "",
+        "time": "2 hari",
+        "views": "3\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t2211"
+      },
+      {
+        "title": "Dream Animal: THE MOVIE (2025)",
+        "id": "dream-animal-the-movie-2025",
+        "type": "film",
+        "image": "https://winbu.net/wp-content/uploads/2026/04/DA_TM_200x300.jpeg",
+        "episode": "",
+        "time": "3 hari",
+        "views": "8\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t1997"
+      },
+      {
+        "title": "Agent Zeta (2026)",
+        "id": "agent-zeta-2026",
+        "type": "film",
+        "image": "https://winbu.net/wp-content/uploads/2026/04/AZ_200x300.jpeg",
+        "episode": "",
+        "time": "3 hari",
+        "views": "6\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t2404"
+      },
+      {
+        "title": "Border 2 (2026)",
+        "id": "border-2-2026",
+        "type": "film",
+        "image": "https://winbu.net/wp-content/uploads/2026/04/Brd2_200x300.jpeg",
+        "episode": "",
+        "time": "3 hari",
+        "views": "6\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t2448"
+      },
+      {
+        "title": "Peaky Blinders: The Immortal Man (2026)",
+        "id": "peaky-blinders-the-immortal-man-2026",
+        "type": "film",
+        "image": "https://winbu.net/wp-content/uploads/2026/04/PB_TIM_200x300.jpeg",
+        "episode": "",
+        "time": "3 hari",
+        "views": "7\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t2520"
+      },
+      {
+        "title": "The Towering Phoenix Mountain (2026)",
+        "id": "the-towering-phoenix-mountain-2026",
+        "type": "film",
+        "image": "https://winbu.net/wp-content/uploads/2026/04/TTPM_200x300.jpeg",
+        "episode": "",
+        "time": "3 hari",
+        "views": "6\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t2415"
+      },
+      {
+        "title": "A Town Called Purgatory (2025)",
+        "id": "a-town-called-purgatory-2025",
+        "type": "film",
+        "image": "https://winbu.net/wp-content/uploads/2026/04/ATCP_200x300.jpeg",
+        "episode": "",
+        "time": "3 hari",
+        "views": "4\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t2380"
+      }
+    ],
+    "latest_series": [
+      {
+        "title": "Happiness 2021",
+        "id": "happiness-2021",
+        "type": "series",
+        "image": "https://winbu.net/wp-content/uploads/2026/04/77056_200x300.jpeg",
+        "episode": "Episode 7",
+        "time": "8 menit",
+        "views": "8.8\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t1"
+      },
+      {
+        "title": "Love Beyond the Grave",
+        "id": "love-beyond-the-grave",
+        "type": "series",
+        "image": "https://winbu.net/wp-content/uploads/2026/04/77033_200x300.jpeg",
+        "episode": "Episode 28",
+        "time": "10 jam",
+        "views": "7\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t28"
+      },
+      {
+        "title": "The Ramparts of Ice",
+        "id": "the-ramparts-of-ice",
+        "type": "series",
+        "image": "https://winbu.net/wp-content/uploads/2026/04/77031_200x300.jpeg",
+        "episode": "Episode 2",
+        "time": "11 jam",
+        "views": "7.63\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t14"
+      },
+      {
+        "title": "Rebirth 2026",
+        "id": "rebirth-2026",
+        "type": "series",
+        "image": "https://winbu.net/wp-content/uploads/2026/04/77029_200x300.jpeg",
+        "episode": "Episode 7",
+        "time": "14 jam",
+        "views": "7\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t18"
+      },
+      {
+        "title": "Radioactive Emergency",
+        "id": "radioactive-emergency",
+        "type": "series",
+        "image": "https://winbu.net/wp-content/uploads/2026/04/77005_200x300.jpeg",
+        "episode": "Episode end",
+        "time": "16 jam",
+        "views": "7.6\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t11"
+      },
+      {
+        "title": "Hold A Court Now",
+        "id": "hold-a-court-now",
+        "type": "series",
+        "image": "https://winbu.net/wp-content/uploads/2026/04/76978_200x300.jpeg",
+        "episode": "Episode 22",
+        "time": "18 jam",
+        "views": "8.1\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t4"
+      },
+      {
+        "title": "Pearl in Red",
+        "id": "pearl-in-red",
+        "type": "series",
+        "image": "https://winbu.net/wp-content/uploads/2026/04/76964_200x300.jpeg",
+        "episode": "Episode 24",
+        "time": "21 jam",
+        "views": "7\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t7"
+      },
+      {
+        "title": "Reboot 2026",
+        "id": "reboot-2026",
+        "type": "series",
+        "image": "https://winbu.net/wp-content/uploads/2026/04/76962_200x300.jpeg",
+        "episode": "Episode 7",
+        "time": "21 jam",
+        "views": "7\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t2"
+      },
+      {
+        "title": "The Madison Season 1",
+        "id": "the-madison-season-1",
+        "type": "series",
+        "image": "https://winbu.net/wp-content/uploads/2026/04/76958_200x300.jpeg",
+        "episode": "Episode end",
+        "time": "22 jam",
+        "views": "7.9\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t5"
+      },
+      {
+        "title": "Shrinking Season 3",
+        "id": "shrinking-season-3",
+        "type": "series",
+        "image": "https://winbu.net/wp-content/uploads/2026/04/76935_200x300.jpeg",
+        "episode": "Episode end",
+        "time": "1 hari",
+        "views": "8.1\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t5"
+      },
+      {
+        "title": "The Boys Season 5",
+        "id": "the-boys-season-5",
+        "type": "series",
+        "image": "https://winbu.net/wp-content/uploads/2026/04/76933_200x300.jpeg",
+        "episode": "Episode 2",
+        "time": "1 hari",
+        "views": "8.6\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t456"
+      },
+      {
+        "title": "Climax",
+        "id": "climax",
+        "type": "series",
+        "image": "https://winbu.net/wp-content/uploads/2026/04/76907_200x300.jpeg",
+        "episode": "Episode 8",
+        "time": "1 hari",
+        "views": "7\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t41"
+      },
+      {
+        "title": "Imperfect Women",
+        "id": "imperfect-women",
+        "type": "series",
+        "image": "https://winbu.net/wp-content/uploads/2026/04/76901_200x300.jpeg",
+        "episode": "Episode 5",
+        "time": "1 hari",
+        "views": "4.9\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t16"
+      },
+      {
+        "title": "Veil of Shadows",
+        "id": "veil-of-shadows",
+        "type": "series",
+        "image": "https://winbu.net/wp-content/uploads/2026/04/76894_200x300.jpeg",
+        "episode": "Episode 16",
+        "time": "1 hari",
+        "views": "7\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t84"
+      },
+      {
+        "title": "You’re All Surrounded",
+        "id": "youre-all-surrounded",
+        "type": "series",
+        "image": "https://winbu.net/wp-content/uploads/2026/04/76850_200x300.jpeg",
+        "episode": "Episode end",
+        "time": "2 hari",
+        "views": "8.1\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t19"
+      },
+      {
+        "title": "Siren’s Kiss",
+        "id": "sirens-kiss",
+        "type": "series",
+        "image": "https://winbu.net/wp-content/uploads/2026/04/76826_200x300.jpeg",
+        "episode": "Episode end",
+        "time": "2 hari",
+        "views": "7\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t70"
+      },
+      {
+        "title": "Marshals Season 1",
+        "id": "marshals-season-1",
+        "type": "series",
+        "image": "https://winbu.net/wp-content/uploads/2026/04/76812_200x300.jpeg",
+        "episode": "Episode 6",
+        "time": "2 hari",
+        "views": "6.0\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t35"
+      }
+    ],
+    "tv_show": [
+      {
+        "title": "The Secret Friends Club",
+        "id": "the-secret-friends-club",
+        "type": "series",
+        "image": "https://winbu.net/wp-content/uploads/2026/04/76923_200x300.jpeg",
+        "episode": "Episode 10",
+        "time": "1 hari",
+        "views": "7\t\t\t\n            TV Show\n\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t5"
+      },
+      {
+        "title": "Curtain Up, Class!",
+        "id": "curtain-up-class",
+        "type": "series",
+        "image": "https://winbu.net/wp-content/uploads/2026/04/76823_200x300.jpeg",
+        "episode": "Episode 7",
+        "time": "2 hari",
+        "views": "7\t\t\t\n            TV Show\n\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t22"
+      },
+      {
+        "title": "Chef and My Fridge Season 2",
+        "id": "chef-and-my-fridge-season-2",
+        "type": "series",
+        "image": "https://winbu.net/wp-content/uploads/2026/04/76702_200x300.jpeg",
+        "episode": "Episode 61",
+        "time": "3 hari",
+        "views": "8.2\t\t\t\n            TV Show\n\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t25"
+      },
+      {
+        "title": "Bake Your Dream",
+        "id": "bake-your-dream",
+        "type": "series",
+        "image": "https://winbu.net/wp-content/uploads/2026/04/76674_200x300.jpeg",
+        "episode": "Episode end",
+        "time": "3 hari",
+        "views": "7\t\t\t\n            TV Show\n\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t24"
+      },
+      {
+        "title": "Reply High School",
+        "id": "reply-high-school",
+        "type": "series",
+        "image": "https://winbu.net/wp-content/uploads/2026/04/76611_200x300.jpeg",
+        "episode": "Episode 7",
+        "time": "4 hari",
+        "views": "7\t\t\t\n            TV Show\n\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t7"
+      },
+      {
+        "title": "The Village Barber",
+        "id": "the-village-barber",
+        "type": "series",
+        "image": "https://winbu.net/wp-content/uploads/2026/04/76384_200x300.jpeg",
+        "episode": "Episode 8",
+        "time": "5 hari",
+        "views": "7\t\t\t\n            TV Show\n\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t20"
+      },
+      {
+        "title": "When Our Kids Fall In Love Season 2",
+        "id": "when-our-kids-fall-in-love-season-2",
+        "type": "series",
+        "image": "https://winbu.net/wp-content/uploads/2026/04/76371_200x300.jpeg",
+        "episode": "Episode 6",
+        "time": "6 hari",
+        "views": "7\t\t\t\n            TV Show\n\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t12"
+      },
+      {
+        "title": "Whenever Possible Season 4",
+        "id": "whenever-possible-season-4",
+        "type": "series",
+        "image": "https://winbu.net/wp-content/uploads/2026/04/76206_200x300.jpeg",
+        "episode": "Episode 15",
+        "time": "8 hari",
+        "views": "7\t\t\t\n            TV Show\n\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t23"
+      },
+      {
+        "title": "Ready or Not: Texas",
+        "id": "ready-or-not-texas",
+        "type": "series",
+        "image": "https://winbu.net/wp-content/uploads/2026/03/75772_200x300.jpeg",
+        "episode": "Episode end",
+        "time": "12 hari",
+        "views": "7.0\t\t\t\n            TV Show\n\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t17"
+      },
+      {
+        "title": "The Genius Paik Season 3",
+        "id": "the-genius-paik-season-3",
+        "type": "series",
+        "image": "https://winbu.net/wp-content/uploads/2026/03/75623_200x300.jpeg",
+        "episode": "Episode 7",
+        "time": "13 hari",
+        "views": "7\t\t\t\n            TV Show\n\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t126"
+      },
+      {
+        "title": "Cha’s Family",
+        "id": "chas-family",
+        "type": "series",
+        "image": "https://winbu.net/wp-content/uploads/2026/03/74253_200x300.jpeg",
+        "episode": "Episode 9",
+        "time": "1 bulan",
+        "views": "7\t\t\t\n            TV Show\n\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t41"
+      },
+      {
+        "title": "Battle of Fates",
+        "id": "battle-of-fates",
+        "type": "series",
+        "image": "https://winbu.net/wp-content/uploads/2026/03/73958_200x300.jpeg",
+        "episode": "Episode end",
+        "time": "1 bulan",
+        "views": "7\t\t\t\n            TV Show\n\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t337"
+      }
+    ]
+  }
+}

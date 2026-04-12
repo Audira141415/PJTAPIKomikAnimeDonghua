@@ -1,0 +1,102 @@
+{
+  "status": "success",
+  "creator": "Sanka Vollerei",
+  "source": "Nimegami",
+  "anime_list": [
+    {
+      "title": "Say \"I Love You\"",
+      "slug": "say-i-love-you-sub-indo",
+      "poster": "https://nimegami.id/wp-content/uploads/2021/10/Say-I-Love-You-Sub-Indo-300x192.jpg",
+      "type": "Drama Movie",
+      "episode": null,
+      "status": "Complete",
+      "nimegami_url": "https://nimegami.id/drama/say-i-love-you-sub-indo/"
+    },
+    {
+      "title": "Friends Games: The Movie Final",
+      "slug": "friends-games-the-movie-final-sub-indo",
+      "poster": "https://nimegami.id/wp-content/uploads/2021/09/Friends-Games-The-Movie-Final-Sub-Indo-300x169.jpg",
+      "type": "Drama Movie",
+      "episode": null,
+      "status": "Complete",
+      "nimegami_url": "https://nimegami.id/drama/friends-games-the-movie-final-sub-indo/"
+    },
+    {
+      "title": "Tori Girl",
+      "slug": "tori-girl-bd-sub-indo",
+      "poster": "https://nimegami.id/wp-content/uploads/2021/08/Tori-Girl-Sub-Indo-300x171.jpg",
+      "type": "Drama Movie",
+      "episode": null,
+      "status": "Complete",
+      "nimegami_url": "https://nimegami.id/drama/tori-girl-bd-sub-indo/"
+    },
+    {
+      "title": "The 100th Love With You",
+      "slug": "the-100th-love-with-you-sub-indo",
+      "poster": "https://nimegami.id/wp-content/uploads/2021/08/The-100th-Love-With-You-Sub-Indo-300x200.jpg",
+      "type": "Drama Movie",
+      "episode": null,
+      "status": "Complete",
+      "nimegami_url": "https://nimegami.id/drama/the-100th-love-with-you-sub-indo/"
+    },
+    {
+      "title": "Snow Flower",
+      "slug": "snow-flower-sub-indo",
+      "poster": "https://nimegami.id/wp-content/uploads/2021/08/Snow-Flower-Sub-Indo-300x157.jpg",
+      "type": "Drama Movie",
+      "episode": null,
+      "status": "Complete",
+      "nimegami_url": "https://nimegami.id/drama/snow-flower-sub-indo/"
+    },
+    {
+      "title": "We Love",
+      "slug": "we-love-live-action-sub-indo",
+      "poster": "https://nimegami.id/wp-content/uploads/2021/08/We-Love-Live-Action-Sub-Indo-300x213.jpg",
+      "type": "Drama Movie",
+      "episode": null,
+      "status": "Complete",
+      "nimegami_url": "https://nimegami.id/live-action/we-love-live-action-sub-indo/"
+    },
+    {
+      "title": "Love And Goodbye And Hawaii",
+      "slug": "love-and-goodbye-and-hawaii-drama-movie-sub-indo",
+      "poster": "https://nimegami.id/wp-content/uploads/2020/02/images-2020-02-27T105651.321-178x100.jpeg",
+      "type": "Drama Movie",
+      "episode": null,
+      "status": "Complete",
+      "nimegami_url": "https://nimegami.id/drama/love-and-goodbye-and-hawaii-drama-movie-sub-indo/"
+    },
+    {
+      "title": "Masquerade Hotel",
+      "slug": "masquerade-hotel-drama-movie-sub-indo",
+      "poster": "https://nimegami.id/wp-content/uploads/2020/02/images-2020-02-27T105328.045-178x93.jpeg",
+      "type": "Drama Movie",
+      "episode": null,
+      "status": "Complete",
+      "nimegami_url": "https://nimegami.id/drama/masquerade-hotel-drama-movie-sub-indo/"
+    },
+    {
+      "title": "Ao no Kaerimichi",
+      "slug": "ao-no-kaerimichi-drama-movie-sub-indo",
+      "poster": "https://nimegami.id/wp-content/uploads/2020/02/images-2020-02-27T105014.415-178x96.jpeg",
+      "type": "Drama Movie",
+      "episode": null,
+      "status": "Complete",
+      "nimegami_url": "https://nimegami.id/drama/ao-no-kaerimichi-drama-movie-sub-indo/"
+    },
+    {
+      "title": "Our Little Sister",
+      "slug": "our-little-sister-drama-movie-sub-indo",
+      "poster": "https://nimegami.id/wp-content/uploads/2020/02/images-2020-02-27T104323.637-130x134.jpeg",
+      "type": "Drama Movie",
+      "episode": null,
+      "status": "Complete",
+      "nimegami_url": "https://nimegami.id/drama/our-little-sister-drama-movie-sub-indo/"
+    }
+  ],
+  "pagination": {
+    "hasNext": true,
+    "hasPrev": false,
+    "currentPage": 1
+  }
+}

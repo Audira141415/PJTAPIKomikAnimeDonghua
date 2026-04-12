@@ -1,0 +1,203 @@
+{
+  "status": "success",
+  "creator": "Sanka Vollerei",
+  "source": "Kusonime",
+  "anime_list": [
+    {
+      "title": "Hikuidori: Ushuu Boro Tobi-gumi Batch Subtitle Indonesia",
+      "slug": "hikuidori-batch-subtitle-indonesia",
+      "poster": "https://kusonime.com/wp-content/uploads/2026/01/Hikuidori-Ushuu-Boro-Tobi-gumi-1.jpg",
+      "genres": [
+        {
+          "name": "Historical",
+          "slug": "historical"
+        }
+      ],
+      "released": "6:30 am"
+    },
+    {
+      "title": "Jingai Kyoushitsu no Ningengirai Kyoushi Batch Subtitle Indonesia",
+      "slug": "jingaikyoshitsu-batch-subtitle-indonesia",
+      "poster": "https://kusonime.com/wp-content/uploads/2026/01/Jingai-Kyoushitsu-no-Ningen-Kirai-Kyoushi.jpg",
+      "genres": [
+        {
+          "name": "Drama",
+          "slug": "drama"
+        },
+        {
+          "name": "School",
+          "slug": "school"
+        },
+        {
+          "name": "Supernatural",
+          "slug": "supernatural"
+        }
+      ],
+      "released": "5:15 am"
+    },
+    {
+      "title": "Rurouni Kenshin: Meiji Kenkaku Romantan (2023) Episode 01-47 Batch Subtitle Indonesia",
+      "slug": "samurai-x-2023-subtitle-indonesia-1",
+      "poster": "https://kusonime.com/wp-content/uploads/2023/07/Rurouni-Kenshin-2023.jpg",
+      "genres": [
+        {
+          "name": "Action",
+          "slug": "action"
+        },
+        {
+          "name": "Adventure",
+          "slug": "adventure"
+        },
+        {
+          "name": "Comedy",
+          "slug": "comedy"
+        },
+        {
+          "name": "Historical",
+          "slug": "historical"
+        },
+        {
+          "name": "Romance",
+          "slug": "romance"
+        },
+        {
+          "name": "Samurai",
+          "slug": "samurai"
+        }
+      ],
+      "released": "6:00 am"
+    },
+    {
+      "title": "Yuusha no Kuzu Batch Subtitle Indonesia",
+      "slug": "yushanokuzu-batch-subtitle-indonesia",
+      "poster": "https://kusonime.com/wp-content/uploads/2026/01/Yuusha-no-Kuzu.jpg",
+      "genres": [
+        {
+          "name": "Action",
+          "slug": "action"
+        },
+        {
+          "name": "Sci-Fi",
+          "slug": "sci-fi"
+        },
+        {
+          "name": "Super Power",
+          "slug": "super-power"
+        }
+      ],
+      "released": "10:52 pm"
+    },
+    {
+      "title": "Enen no Shouboutai: San no Shou Batch Subtitle Indonesia",
+      "slug": "enen-shouboutai-s3-batch-sub-indo",
+      "poster": "https://kusonime.com/wp-content/uploads/2025/04/Enen-no-Shouboutai-San-no-Shou.jpeg",
+      "genres": [
+        {
+          "name": "Action",
+          "slug": "action"
+        },
+        {
+          "name": "Shounen",
+          "slug": "shounen"
+        },
+        {
+          "name": "Supernatural",
+          "slug": "supernatural"
+        }
+      ],
+      "released": "5:00 am"
+    },
+    {
+      "title": "Wonderful Precure! Batch Subtitle Indonesia",
+      "slug": "wonderful-precure-batch-subtitle-indonesia",
+      "poster": "https://kusonime.com/wp-content/uploads/2024/01/Wonderful-Precure.jpg",
+      "genres": [
+        {
+          "name": "Action",
+          "slug": "action"
+        },
+        {
+          "name": "Fantasy",
+          "slug": "fantasy"
+        }
+      ],
+      "released": "6:00 pm"
+    },
+    {
+      "title": "Chitose-kun wa Ramune Bin no Naka Batch Subtitle Indonesia",
+      "slug": "chiramune-batch-subtitle-indonesia",
+      "poster": "https://kusonime.com/wp-content/uploads/2025/10/Chitose-kun-wa-Ramune-Bin-no-Naka.jpg",
+      "genres": [
+        {
+          "name": "Comedy",
+          "slug": "comedy"
+        },
+        {
+          "name": "Harem",
+          "slug": "harem"
+        },
+        {
+          "name": "Romance",
+          "slug": "romance"
+        },
+        {
+          "name": "School",
+          "slug": "school"
+        }
+      ],
+      "released": "7:00 pm"
+    },
+    {
+      "title": "MF Ghost Season 3 Batch Subtitle Indonesia",
+      "slug": "mf-ghost-s3-batch-subtitle-indonesia",
+      "poster": "https://kusonime.com/wp-content/uploads/2026/01/MF-Ghost-Season-3.jpg",
+      "genres": [
+        {
+          "name": "Drama",
+          "slug": "drama"
+        },
+        {
+          "name": "Seinen",
+          "slug": "seinen"
+        },
+        {
+          "name": "Sports",
+          "slug": "sports"
+        }
+      ],
+      "released": "2:00 pm"
+    },
+    {
+      "title": "The iDOLM@STER Million Live! OVA dan Special BD Subtitle Indonesia",
+      "slug": "the-idolmster-million-live-ova-bd-subtitle-indonesia",
+      "poster": "https://kusonime.com/wp-content/uploads/2024/09/Million-Live.jpg",
+      "genres": [
+        {
+          "name": "Music",
+          "slug": "music"
+        },
+        {
+          "name": "Slice of Life",
+          "slug": "slice-of-life"
+        }
+      ],
+      "released": "12:51 pm"
+    },
+    {
+      "title": "Darwin Jihen Batch Subtitle Indonesia",
+      "slug": "darwinsincident-batch-subtitle-indonesia",
+      "poster": "https://kusonime.com/wp-content/uploads/2026/01/Darwin-Jihen.jpg",
+      "genres": [
+        {
+          "name": "Sci-Fi",
+          "slug": "sci-fi"
+        },
+        {
+          "name": "Seinen",
+          "slug": "seinen"
+        }
+      ],
+      "released": "5:00 pm"
+    }
+  ]
+}

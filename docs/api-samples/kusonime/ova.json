@@ -1,0 +1,223 @@
+{
+  "status": "success",
+  "creator": "Sanka Vollerei",
+  "source": "Kusonime",
+  "anime_list": [
+    {
+      "title": "The iDOLM@STER Million Live! OVA dan Special BD Subtitle Indonesia",
+      "slug": "the-idolmster-million-live-ova-bd-subtitle-indonesia",
+      "poster": "https://kusonime.com/wp-content/uploads/2024/09/Million-Live.jpg",
+      "genres": [
+        {
+          "name": "Music",
+          "slug": "music"
+        },
+        {
+          "name": "Slice of Life",
+          "slug": "slice-of-life"
+        }
+      ],
+      "released": "12:51 pm"
+    },
+    {
+      "title": "Tenshi no Tamago BD Subtitle Indonesia",
+      "slug": "tenshi-no-tamago-subtitle-indonesia",
+      "poster": "https://kusonime.com/wp-content/uploads/2017/11/Tenshi-no-Tamago.jpg",
+      "genres": [
+        {
+          "name": "Dementia",
+          "slug": "dementia"
+        },
+        {
+          "name": "Drama",
+          "slug": "drama"
+        },
+        {
+          "name": "Fantasy",
+          "slug": "fantasy"
+        }
+      ],
+      "released": "7:23 pm"
+    },
+    {
+      "title": "Holy Knight BD Batch Subtitle Indonesia",
+      "slug": "holy-knight-bd-batch-subtitle-indonesia",
+      "poster": "https://kusonime.com/wp-content/uploads/2017/11/Holy-Knight.jpg",
+      "genres": [
+        {
+          "name": "Ecchi",
+          "slug": "ecchi"
+        },
+        {
+          "name": "Fantasy",
+          "slug": "fantasy"
+        },
+        {
+          "name": "School",
+          "slug": "school"
+        },
+        {
+          "name": "Seinen",
+          "slug": "seinen"
+        },
+        {
+          "name": "Supernatural",
+          "slug": "supernatural"
+        },
+        {
+          "name": "Vampire",
+          "slug": "vampire"
+        }
+      ],
+      "released": "5:00 pm"
+    },
+    {
+      "title": "Murder Princess Batch Subtitle Indonesia",
+      "slug": "murder-princess-batch-subtitle-indonesia",
+      "poster": "https://kusonime.com/wp-content/uploads/2017/11/Murder-Princess.jpg",
+      "genres": [
+        {
+          "name": "Action",
+          "slug": "action"
+        },
+        {
+          "name": "Adventure",
+          "slug": "adventure"
+        },
+        {
+          "name": "Fantasy",
+          "slug": "fantasy"
+        }
+      ],
+      "released": "4:00 pm"
+    },
+    {
+      "title": "Aoi Umi no Tristia Batch Subtitle Indonesia",
+      "slug": "tristia-batch-subtitle-indonesia",
+      "poster": "https://kusonime.com/wp-content/uploads/2025/08/Aoi-Umi-no-Tristia.jpg",
+      "genres": [
+        {
+          "name": "Adventure",
+          "slug": "adventure"
+        },
+        {
+          "name": "Mecha",
+          "slug": "mecha"
+        }
+      ],
+      "released": "4:00 pm"
+    },
+    {
+      "title": "Wuhang Zhanshen Batch Subtitle Indonesia",
+      "slug": "wuhang-zhanshen-batch-subtitle-indonesia",
+      "poster": "https://kusonime.com/wp-content/uploads/2025/08/Wuhang-Zhanshen.jpg",
+      "genres": [
+        {
+          "name": "Action",
+          "slug": "action"
+        },
+        {
+          "name": "Adventure",
+          "slug": "adventure"
+        },
+        {
+          "name": "Fantasy",
+          "slug": "fantasy"
+        },
+        {
+          "name": "Martial Arts",
+          "slug": "martial-arts"
+        }
+      ],
+      "released": "4:32 pm"
+    },
+    {
+      "title": "Tobira wo Akete (1995) Subtitle Indonesia",
+      "slug": "tobira-wo-akete-1995-subtitle-indonesia",
+      "poster": "https://kusonime.com/wp-content/uploads/2025/07/Tobira-wo-Akete-1995.jpg",
+      "genres": [
+        {
+          "name": "Fantasy",
+          "slug": "fantasy"
+        }
+      ],
+      "released": "6:00 pm"
+    },
+    {
+      "title": "RG Veda Batch Subtitle Indonesia",
+      "slug": "rg-veda-batch-subtitle-indonesia",
+      "poster": "https://kusonime.com/wp-content/uploads/2025/06/RG-Veda.jpg",
+      "genres": [
+        {
+          "name": "Adventure",
+          "slug": "adventure"
+        },
+        {
+          "name": "Drama",
+          "slug": "drama"
+        },
+        {
+          "name": "Fantasy",
+          "slug": "fantasy"
+        }
+      ],
+      "released": "12:00 pm"
+    },
+    {
+      "title": "Kikaider 01 The Animation Batch Subtitle Indonesia",
+      "slug": "kikaider-01-the-animation-batch-subtitle-indonesia",
+      "poster": "https://kusonime.com/wp-content/uploads/2025/05/Kikaider-01-The-Animation.jpg",
+      "genres": [
+        {
+          "name": "Action",
+          "slug": "action"
+        },
+        {
+          "name": "Adventure",
+          "slug": "adventure"
+        },
+        {
+          "name": "Drama",
+          "slug": "drama"
+        },
+        {
+          "name": "Mecha",
+          "slug": "mecha"
+        },
+        {
+          "name": "Sci-Fi",
+          "slug": "sci-fi"
+        },
+        {
+          "name": "Shounen",
+          "slug": "shounen"
+        }
+      ],
+      "released": "11:46 am"
+    },
+    {
+      "title": "Nurse Witch Komugi-chan Magikarte Batch Subtitle Indonesia",
+      "slug": "nurse-witch-komugi-chan-magikarte-batch-subtitle-indonesia",
+      "poster": "https://kusonime.com/wp-content/uploads/2025/03/Nurse-Witch-Komugi-chan-Magikarte.jpg",
+      "genres": [
+        {
+          "name": "Comedy",
+          "slug": "comedy"
+        },
+        {
+          "name": "Fantasy",
+          "slug": "fantasy"
+        },
+        {
+          "name": "Parody",
+          "slug": "parody"
+        },
+        {
+          "name": "Shoujo",
+          "slug": "shoujo"
+        }
+      ],
+      "released": "2:00 pm"
+    }
+  ]
+}

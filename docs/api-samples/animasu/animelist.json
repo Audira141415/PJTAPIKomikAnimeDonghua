@@ -1,0 +1,156 @@
+{
+  "status": "success",
+  "creator": "Sanka Vollerei",
+  "source": "Animasu",
+  "animes": [
+    {
+      "title": "A Dream Within a Dream",
+      "slug": "a-dream-within-a-dream",
+      "poster": "https://i0.wp.com/v1.animasu.app/wp-content/uploads/2025/12/a_100624502_m_601_en_m2_260_360.jpg",
+      "genres": [
+        "Fantasi",
+        "Komedi",
+        "Romansa",
+        "Sejarah"
+      ],
+      "release": "Juni 26, 2025",
+      "status": "Selesai",
+      "type": "Drama China",
+      "episode_count": "40 Episode"
+    },
+    {
+      "title": "A Man",
+      "slug": "a-man",
+      "poster": "https://i3.wp.com/v1.animasu.app/wp-content/uploads/2023/09/A_Man_Japanese_Movie-p2.jpg",
+      "genres": [
+        "Drama",
+        "Live Action",
+        "Misteri"
+      ],
+      "release": "Nov 18, 2022",
+      "status": "Selesai",
+      "type": "Live Action",
+      "episode_count": "1 Episode"
+    },
+    {
+      "title": "A Moment But Forever",
+      "slug": "a-moment-but-forever-sub-indo",
+      "poster": "https://i0.wp.com/v1.animasu.app/wp-content/uploads/2025/12/MV5BYTA3ZjUyYzktZTYzOC00MzEwLWIw.jpg",
+      "genres": [
+        "Fantasi",
+        "Romansa",
+        "Wuxia"
+      ],
+      "release": "Maret 28, 2025",
+      "status": "Selesai",
+      "type": "Drama China",
+      "episode_count": "36 Episode"
+    },
+    {
+      "title": "A Moment but Forever",
+      "slug": "a-moment-but-forever",
+      "poster": "https://i1.wp.com/v1.animasu.app/wp-content/uploads/2024/08/bx166418-rqnQuBVIXQ9F-1.jpg",
+      "genres": [
+        "Aksi",
+        "Donghua",
+        "Fantasi",
+        "Romansa"
+      ],
+      "release": "Agu 7, 2024",
+      "status": "Selesai",
+      "type": "ONA",
+      "episode_count": "14 Episode"
+    },
+    {
+      "title": "A Record of a Mortal’s Journey to Immortality",
+      "slug": "a-record-of-a-mortals-journey-to-immortality",
+      "poster": "https://i3.wp.com/v1.animasu.app/wp-content/uploads/2025/12/the-immortal-ascension.jpg",
+      "genres": [
+        "Drama",
+        "Fantasi",
+        "Wuxia"
+      ],
+      "release": "Jul 27, 2025",
+      "status": "Selesai",
+      "type": "Drama China",
+      "episode_count": "30 Episode"
+    },
+    {
+      "title": "A Record of a Mortal’s Journey to Immortality",
+      "slug": "a-mortals-journey-to-immortality",
+      "poster": "https://i3.wp.com/v1.animasu.app/wp-content/uploads/2022/01/109745.jpg",
+      "genres": [
+        "Aksi",
+        "Donghua",
+        "Fantasi",
+        "Petualangan"
+      ],
+      "release": "Jul 25, 2020",
+      "status": "Selesai",
+      "type": "ONA",
+      "episode_count": "17 Episode"
+    },
+    {
+      "title": "A-Channel",
+      "slug": "a-channel",
+      "poster": "https://i0.wp.com/v1.animasu.app/wp-content/uploads/2020/12/29687.jpg",
+      "genres": [
+        "Komedi",
+        "Seinen",
+        "Sekolahan",
+        "Slice of Life"
+      ],
+      "release": "Apr 8, 2011",
+      "status": "Selesai",
+      "type": "Serial TV",
+      "episode_count": "12 Episode"
+    },
+    {
+      "title": "A-Channel:  A-Channel",
+      "slug": "a-channel-a-channel",
+      "poster": "https://i0.wp.com/v1.animasu.app/wp-content/uploads/2020/12/29573.jpg",
+      "genres": [
+        "Komedi",
+        "Seinen",
+        "Sekolahan",
+        "Slice of Life"
+      ],
+      "release": "Mei 25, 2011",
+      "status": "Selesai",
+      "type": "Special",
+      "episode_count": "11 Episode"
+    },
+    {
+      "title": "A-Rank Party wo Ridatsu shita Ore wa, Moto Oshiego-tachi to Meikyuu Shinbu wo Mezasu.",
+      "slug": "a-rank-party-wo-ridatsu-shita-ore-wa-moto-oshiego-tachi-to-meikyuu-shinbu-wo-mezasu",
+      "poster": "https://i3.wp.com/v1.animasu.app/wp-content/uploads/2025/01/146455-1.jpg",
+      "genres": [
+        "Aksi",
+        "Fantasi",
+        "Petualangan"
+      ],
+      "release": "Jan 12, 2025",
+      "status": "Selesai",
+      "type": "Serial TV",
+      "episode_count": "24 Episode"
+    },
+    {
+      "title": "A.I.C.O.: Incarnation",
+      "slug": "a-i-c-o-incarnation",
+      "poster": "https://i2.wp.com/v1.animasu.app/wp-content/uploads/2020/12/91085.jpg",
+      "genres": [
+        "Aksi",
+        "Sci-Fi"
+      ],
+      "release": "Mar 9, 2018",
+      "status": "Selesai",
+      "type": "ONA",
+      "episode_count": "12 Episode"
+    }
+  ],
+  "pagination": {
+    "hasNext": true,
+    "hasPrev": false,
+    "currentPage": 1
+  }
+}

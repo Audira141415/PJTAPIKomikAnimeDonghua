@@ -47,4 +47,46 @@ describe('season.service', () => {
     expect(result.seasons).toHaveLength(1);
     expect(result.meta.total).toBe(1);
   });
+
+  it('getSeasonsBySeries throws 404 when series not found', async () => {
+    mangaRepo.findById.mockResolvedValueOnce(null);
+    await expect(seasonService.getSeasonsBySeries('bad', { page: 1, limit: 20 }))
+      .rejects.toMatchObject({ statusCode: 404 });
+  });
+
+  it('getSeasonById returns the season', async () => {
+    seasonRepo.findById.mockResolvedValueOnce({ _id: 'season1', number: 1 });
+    const result = await seasonService.getSeasonById('season1');
+    expect(result).toMatchObject({ _id: 'season1' });
+  });
+
+  it('getSeasonById throws 404 when season not found', async () => {
+    seasonRepo.findById.mockResolvedValueOnce(null);
+    await expect(seasonService.getSeasonById('missing'))
+      .rejects.toMatchObject({ statusCode: 404 });
+  });
+
+  it('updateSeason returns the updated season', async () => {
+    seasonRepo.updateById.mockResolvedValueOnce({ _id: 'season1', title: 'Updated' });
+    const result = await seasonService.updateSeason('season1', { title: 'Updated' });
+    expect(result).toMatchObject({ title: 'Updated' });
+  });
+
+  it('updateSeason throws 404 when season not found', async () => {
+    seasonRepo.updateById.mockResolvedValueOnce(null);
+    await expect(seasonService.updateSeason('missing', {}))
+      .rejects.toMatchObject({ statusCode: 404 });
+  });
+
+  it('deleteSeason returns the deleted season', async () => {
+    seasonRepo.deleteById.mockResolvedValueOnce({ _id: 'season1' });
+    const result = await seasonService.deleteSeason('season1');
+    expect(result).toMatchObject({ _id: 'season1' });
+  });
+
+  it('deleteSeason throws 404 when season not found', async () => {
+    seasonRepo.deleteById.mockResolvedValueOnce(null);
+    await expect(seasonService.deleteSeason('missing'))
+      .rejects.toMatchObject({ statusCode: 404 });
+  });
 });

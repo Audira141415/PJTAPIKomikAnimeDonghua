@@ -1,0 +1,231 @@
+{
+  "status": "success",
+  "creator": "Sanka Vollerei",
+  "source": "Animasu",
+  "genres": [
+    {
+      "name": "Aksi",
+      "slug": "aksi"
+    },
+    {
+      "name": "Anak-Anak",
+      "slug": "anak-anak"
+    },
+    {
+      "name": "Antariksa",
+      "slug": "luar-angkasa"
+    },
+    {
+      "name": "Avant Garde",
+      "slug": "avant-garde"
+    },
+    {
+      "name": "Dimensia",
+      "slug": "dementia"
+    },
+    {
+      "name": "Donghua",
+      "slug": "donghua"
+    },
+    {
+      "name": "Drama",
+      "slug": "drama"
+    },
+    {
+      "name": "Ecchi",
+      "slug": "ecchi"
+    },
+    {
+      "name": "Fantasi",
+      "slug": "fantasi"
+    },
+    {
+      "name": "Fantasi Urban",
+      "slug": "fantasi-urban"
+    },
+    {
+      "name": "Game",
+      "slug": "game"
+    },
+    {
+      "name": "Gourmet",
+      "slug": "gourmet"
+    },
+    {
+      "name": "Harem",
+      "slug": "harem"
+    },
+    {
+      "name": "Horror",
+      "slug": "horror"
+    },
+    {
+      "name": "Iblis",
+      "slug": "iblis"
+    },
+    {
+      "name": "Isekai",
+      "slug": "isekai"
+    },
+    {
+      "name": "Josei",
+      "slug": "josei"
+    },
+    {
+      "name": "Ketegangan",
+      "slug": "suspense"
+    },
+    {
+      "name": "Komedi",
+      "slug": "komedi"
+    },
+    {
+      "name": "Live Action",
+      "slug": "live-action"
+    },
+    {
+      "name": "Makanan",
+      "slug": "makanan"
+    },
+    {
+      "name": "Martial Arts",
+      "slug": "martial-arts"
+    },
+    {
+      "name": "Medis",
+      "slug": "medical"
+    },
+    {
+      "name": "Militer",
+      "slug": "militer"
+    },
+    {
+      "name": "Misteri",
+      "slug": "misteri"
+    },
+    {
+      "name": "Mitologi",
+      "slug": "mitologi"
+    },
+    {
+      "name": "Mobil",
+      "slug": "mobil"
+    },
+    {
+      "name": "Musik",
+      "slug": "musik"
+    },
+    {
+      "name": "Olahraga",
+      "slug": "olahraga"
+    },
+    {
+      "name": "Parodi",
+      "slug": "parodi"
+    },
+    {
+      "name": "Perang",
+      "slug": "perang"
+    },
+    {
+      "name": "Petualangan",
+      "slug": "petualangan"
+    },
+    {
+      "name": "Polisi",
+      "slug": "polisi"
+    },
+    {
+      "name": "Politik",
+      "slug": "politik"
+    },
+    {
+      "name": "Psikologis",
+      "slug": "psikologis"
+    },
+    {
+      "name": "Reinkarnasi",
+      "slug": "reincarnation"
+    },
+    {
+      "name": "Robot",
+      "slug": "mecha"
+    },
+    {
+      "name": "Romansa",
+      "slug": "romansa"
+    },
+    {
+      "name": "Samurai",
+      "slug": "samurai"
+    },
+    {
+      "name": "Sci-Fi",
+      "slug": "sci-fi"
+    },
+    {
+      "name": "Seinen",
+      "slug": "seinen"
+    },
+    {
+      "name": "Sejarah",
+      "slug": "sejarah"
+    },
+    {
+      "name": "Sekolahan",
+      "slug": "sekolahan"
+    },
+    {
+      "name": "Shoujo",
+      "slug": "shoujo"
+    },
+    {
+      "name": "Shoujo Ai",
+      "slug": "shoujo-ai"
+    },
+    {
+      "name": "Shounen",
+      "slug": "shounen"
+    },
+    {
+      "name": "Shounen Ai",
+      "slug": "shounen-ai"
+    },
+    {
+      "name": "Sihir",
+      "slug": "sihir"
+    },
+    {
+      "name": "Slice of Life",
+      "slug": "slice-of-life"
+    },
+    {
+      "name": "Super Power",
+      "slug": "super-power"
+    },
+    {
+      "name": "Supranatural",
+      "slug": "supranatural"
+    },
+    {
+      "name": "Thriller",
+      "slug": "thriller"
+    },
+    {
+      "name": "Time Travel",
+      "slug": "time-travel"
+    },
+    {
+      "name": "Vampir",
+      "slug": "vampir"
+    },
+    {
+      "name": "Wuxia",
+      "slug": "wuxia"
+    },
+    {
+      "name": "Yaoi",
+      "slug": "yaoi"
+    }
+  ]
+}

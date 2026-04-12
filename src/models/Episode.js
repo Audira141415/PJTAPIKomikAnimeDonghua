@@ -9,7 +9,7 @@ const streamUrlSchema = new mongoose.Schema(
   {
     quality: {
       type: String,
-      enum: ['360p', '480p', '720p', '1080p'],
+      enum: ['360p', '480p', '720p', '1080p', '4k'],
       required: true,
     },
     url: {
@@ -112,6 +112,52 @@ const episodeSchema = new mongoose.Schema(
       type: String,
       default: null,
       trim: true,
+    },
+    sourceKey: {
+      type: String,
+      default: null,
+      trim: true,
+      index: true,
+    },
+    sourceId: {
+      type: String,
+      default: null,
+      trim: true,
+      index: true,
+    },
+    downloadUrls: {
+      type: mongoose.Schema.Types.Mixed,
+      default: null,
+    },
+    externalRefs: {
+      type: [
+        new mongoose.Schema(
+          {
+            sourceKey: {
+              type: String,
+              required: true,
+              trim: true,
+            },
+            sourceId: {
+              type: String,
+              default: null,
+              trim: true,
+            },
+            url: {
+              type: String,
+              default: null,
+              trim: true,
+            },
+            kind: {
+              type: String,
+              default: 'episode',
+              trim: true,
+            },
+          },
+          { _id: false }
+        ),
+      ],
+      default: [],
     },
   },
   { timestamps: true }

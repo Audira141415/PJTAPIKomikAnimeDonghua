@@ -1,0 +1,92 @@
+{
+  "status": "success",
+  "creator": "Sanka Vollerei",
+  "source": "Animasu",
+  "animes": [
+    {
+      "title": "Shrouding the Heavens: The Imperial Path",
+      "slug": "shrouding-the-heavens-the-imperial-path",
+      "poster": "https://i0.wp.com/v1.animasu.app/wp-content/uploads/2026/04/156548.jpg",
+      "episode": "Movie",
+      "status_or_day": "Selesai ✓",
+      "type": "Movie"
+    },
+    {
+      "title": "Kaya-chan wa Kowakunai",
+      "slug": "kaya-chan-wa-kowakunai",
+      "poster": "https://i2.wp.com/v1.animasu.app/wp-content/uploads/2026/01/153705.jpg",
+      "episode": "12 Episode",
+      "status_or_day": "Selesai ✓",
+      "type": "TV"
+    },
+    {
+      "title": "Higeki no Genkyou to Naru Saikyou Gedou Last Boss Joou wa Tami no Tame ni Tsukushimasu.",
+      "slug": "higeki-no-genkyou-to-naru-saikyou-gedou-last-boss-joou-wa-tami-no-tame-ni-tsukushimasu",
+      "poster": "https://i0.wp.com/v1.animasu.app/wp-content/uploads/2023/07/135542.jpg",
+      "episode": "12 Episode",
+      "status_or_day": "Selesai ✓",
+      "type": "TV"
+    },
+    {
+      "title": "Akuyaku Reijou wa Ringoku no Outaishi ni Dekiai sareru",
+      "slug": "akuyaku-reijou-wa-ringoku-no-outaishi-ni-dekiai-sareru",
+      "poster": "https://i1.wp.com/v1.animasu.app/wp-content/uploads/2026/01/151284.jpg",
+      "episode": "12 Episode",
+      "status_or_day": "Selesai ✓",
+      "type": "TV"
+    },
+    {
+      "title": "Jigokuraku Season 2",
+      "slug": "jigokuraku-s2",
+      "poster": "https://i1.wp.com/v1.animasu.app/wp-content/uploads/2026/01/154456.jpg",
+      "episode": "12 Episode",
+      "status_or_day": "Selesai ✓",
+      "type": "TV"
+    },
+    {
+      "title": "Ikoku Nikki",
+      "slug": "ikoku-nikki",
+      "poster": "https://i2.wp.com/v1.animasu.app/wp-content/uploads/2026/01/154233.jpg",
+      "episode": "13 Episode",
+      "status_or_day": "Selesai ✓",
+      "type": "TV"
+    },
+    {
+      "title": "Vigilante: Boku no Hero Academia Illegals Season 2",
+      "slug": "vigilante-boku-no-hero-academia-illegals-s2",
+      "poster": "https://i2.wp.com/v1.animasu.app/wp-content/uploads/2026/01/154049.jpg",
+      "episode": "13 Episode",
+      "status_or_day": "Selesai ✓",
+      "type": "TV"
+    },
+    {
+      "title": "Golden Kamuy Final Season",
+      "slug": "golden-kamuy-final-season",
+      "poster": "https://i2.wp.com/v1.animasu.app/wp-content/uploads/2026/01/154763.jpg",
+      "episode": "13 Episode",
+      "status_or_day": "Selesai ✓",
+      "type": "TV"
+    },
+    {
+      "title": "Himesama “Goumon” no Jikan desu Season 2",
+      "slug": "himesama-goumon-no-jikan-desu-s2",
+      "poster": "https://i2.wp.com/v1.animasu.app/wp-content/uploads/2026/01/153326.jpg",
+      "episode": "12 Episode",
+      "status_or_day": "Selesai ✓",
+      "type": "TV"
+    },
+    {
+      "title": "Darwin Jihen",
+      "slug": "darwin-jihen",
+      "poster": "https://i3.wp.com/v1.animasu.app/wp-content/uploads/2026/01/152829.jpg",
+      "episode": "13 Episode",
+      "status_or_day": "Selesai ✓",
+      "type": "TV"
+    }
+  ],
+  "pagination": {
+    "hasNext": true,
+    "hasPrev": false,
+    "currentPage": 1
+  }
+}

@@ -1,0 +1,207 @@
+{
+  "status": "success",
+  "creator": "Sanka Vollerei",
+  "source": "Kusonime",
+  "genres": [
+    {
+      "name": "Action",
+      "slug": "action"
+    },
+    {
+      "name": "Adventure",
+      "slug": "adventure"
+    },
+    {
+      "name": "Cars",
+      "slug": "cars"
+    },
+    {
+      "name": "Comedy",
+      "slug": "comedy"
+    },
+    {
+      "name": "Crime",
+      "slug": "crime"
+    },
+    {
+      "name": "Dementia",
+      "slug": "dementia"
+    },
+    {
+      "name": "Demon",
+      "slug": "demon"
+    },
+    {
+      "name": "Demons",
+      "slug": "demons"
+    },
+    {
+      "name": "Detective",
+      "slug": "detective"
+    },
+    {
+      "name": "Drama",
+      "slug": "drama"
+    },
+    {
+      "name": "Ecchi",
+      "slug": "ecchi"
+    },
+    {
+      "name": "Fantasy",
+      "slug": "fantasy"
+    },
+    {
+      "name": "Game",
+      "slug": "game"
+    },
+    {
+      "name": "Gore",
+      "slug": "gore"
+    },
+    {
+      "name": "Gourmet",
+      "slug": "gourmet"
+    },
+    {
+      "name": "Harem",
+      "slug": "harem"
+    },
+    {
+      "name": "Historical",
+      "slug": "historical"
+    },
+    {
+      "name": "Horror",
+      "slug": "horror"
+    },
+    {
+      "name": "Josei",
+      "slug": "josei"
+    },
+    {
+      "name": "Kids",
+      "slug": "kids"
+    },
+    {
+      "name": "Magic",
+      "slug": "magic"
+    },
+    {
+      "name": "Martial Arts",
+      "slug": "martial-arts"
+    },
+    {
+      "name": "Mecha",
+      "slug": "mecha"
+    },
+    {
+      "name": "Military",
+      "slug": "military"
+    },
+    {
+      "name": "Music",
+      "slug": "music"
+    },
+    {
+      "name": "Mystery",
+      "slug": "mystery"
+    },
+    {
+      "name": "Mythology",
+      "slug": "mythology"
+    },
+    {
+      "name": "Parody",
+      "slug": "parody"
+    },
+    {
+      "name": "Police",
+      "slug": "police"
+    },
+    {
+      "name": "Psychological",
+      "slug": "psychological"
+    },
+    {
+      "name": "Romance",
+      "slug": "romance"
+    },
+    {
+      "name": "Samurai",
+      "slug": "samurai"
+    },
+    {
+      "name": "School",
+      "slug": "school"
+    },
+    {
+      "name": "Sci-Fi",
+      "slug": "sci-fi"
+    },
+    {
+      "name": "Seinen",
+      "slug": "seinen"
+    },
+    {
+      "name": "Shojou",
+      "slug": "shojou"
+    },
+    {
+      "name": "Shoujo",
+      "slug": "shoujo"
+    },
+    {
+      "name": "Shoujo Ai",
+      "slug": "shoujo-ai"
+    },
+    {
+      "name": "Shounen",
+      "slug": "shounen"
+    },
+    {
+      "name": "Shounen Ai",
+      "slug": "shounen-ai"
+    },
+    {
+      "name": "Slice of Life",
+      "slug": "slice-of-life"
+    },
+    {
+      "name": "Space",
+      "slug": "space"
+    },
+    {
+      "name": "Sports",
+      "slug": "sports"
+    },
+    {
+      "name": "Super Power",
+      "slug": "super-power"
+    },
+    {
+      "name": "Supernatural",
+      "slug": "supernatural"
+    },
+    {
+      "name": "Suspense",
+      "slug": "suspense"
+    },
+    {
+      "name": "Thriller",
+      "slug": "thriller"
+    },
+    {
+      "name": "Vampire",
+      "slug": "vampire"
+    },
+    {
+      "name": "Yaoi",
+      "slug": "yaoi"
+    },
+    {
+      "name": "Yuri",
+      "slug": "yuri"
+    }
+  ]
+}

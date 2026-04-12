@@ -1,0 +1,102 @@
+{
+  "status": "success",
+  "creator": "Sanka Vollerei",
+  "source": "Nimegami",
+  "anime_list": [
+    {
+      "title": "Dorohedoro Season 2",
+      "slug": "dorohedoro-season-2-sub-indo",
+      "poster": "https://nimegami.id/wp-content/uploads/2026/04/Dorohedoro-Season-2-Sub-Indo2-300x169.jpg",
+      "type": "ONA",
+      "episode": "3",
+      "status": "On-going",
+      "nimegami_url": "https://nimegami.id/dorohedoro-season-2-sub-indo/"
+    },
+    {
+      "title": "Reincarnation no Kaben",
+      "slug": "reincarnation-no-kaben-sub-indo",
+      "poster": "https://nimegami.id/wp-content/uploads/2026/04/Reincarnation-no-Kaben-Sub-Indo2-300x215.jpg",
+      "type": "TV",
+      "episode": "1",
+      "status": "On-going",
+      "nimegami_url": "https://nimegami.id/reincarnation-no-kaben-sub-indo/"
+    },
+    {
+      "title": "Steel Ball Run: JoJo no Kimyou na Bouken",
+      "slug": "steel-ball-run-jojo-no-kimyou-na-bouken-sub-indo",
+      "poster": "https://nimegami.id/wp-content/uploads/2026/03/Steel-Ball-Run-JoJo-no-Kimyou-na-Bouken-Sub-Indo2-300x169.jpg",
+      "type": "ONA",
+      "episode": "1",
+      "status": "On-going",
+      "nimegami_url": "https://nimegami.id/steel-ball-run-jojo-no-kimyou-na-bouken-sub-indo/"
+    },
+    {
+      "title": "Niwatori Fighter",
+      "slug": "niwatori-fighter-sub-indo",
+      "poster": "https://nimegami.id/wp-content/uploads/2026/03/Niwatori-Fighter-Sub-Indo2-300x193.jpg",
+      "type": "TV",
+      "episode": "1",
+      "status": "On-going",
+      "nimegami_url": "https://nimegami.id/niwatori-fighter-sub-indo/"
+    },
+    {
+      "title": "Senyuu Season 2",
+      "slug": "senyuu-season-2-sub-indo",
+      "poster": "https://nimegami.id/wp-content/uploads/2026/03/Senyuu-Season-2-Sub-Indo1-300x169.jpg",
+      "type": "TV",
+      "episode": "13",
+      "status": "Complete",
+      "nimegami_url": "https://nimegami.id/senyuu-season-2-sub-indo/"
+    },
+    {
+      "title": "Ranma ½",
+      "slug": "ranma-%c2%bd-sub-indo",
+      "poster": "https://nimegami.id/wp-content/uploads/2026/03/Ranma-½-Sub-Indo2-300x225.jpg",
+      "type": "TV",
+      "episode": "161",
+      "status": "Complete",
+      "nimegami_url": "https://nimegami.id/ranma-%c2%bd-sub-indo/"
+    },
+    {
+      "title": "Baki-dou",
+      "slug": "baki-dou-sub-indo",
+      "poster": "https://nimegami.id/wp-content/uploads/2026/03/Baki-dou-Sub-Indo2-300x169.jpg",
+      "type": "ONA",
+      "episode": "13",
+      "status": "Complete",
+      "nimegami_url": "https://nimegami.id/baki-dou-sub-indo/"
+    },
+    {
+      "title": "Trigun Stampede",
+      "slug": "trigun-stampede-sub-indo",
+      "poster": "https://nimegami.id/wp-content/uploads/2026/03/Trigun-Stampede-Sub-Indo2-300x169.jpg",
+      "type": "TV",
+      "episode": "12",
+      "status": "Complete",
+      "nimegami_url": "https://nimegami.id/trigun-stampede-sub-indo/"
+    },
+    {
+      "title": "Chou Kaguya-hime!",
+      "slug": "chou-kaguya-hime-sub-indo",
+      "poster": "https://nimegami.id/wp-content/uploads/2026/02/Chou-Kaguya-hime-Sub-Indo2-300x207.jpg",
+      "type": "ONA",
+      "episode": "1",
+      "status": "Complete",
+      "nimegami_url": "https://nimegami.id/chou-kaguya-hime-sub-indo/"
+    },
+    {
+      "title": "JoJo no Kimyou na Bouken Part 6: Stone Ocean Part 3",
+      "slug": "jojo-no-kimyou-na-bouken-part-6-stone-ocean-part-3-sub-indo",
+      "poster": "https://nimegami.id/wp-content/uploads/2026/01/JoJo-no-Kimyou-na-Bouken-Part-6-Stone-Ocean-Part-3-Sub-Indo-300x195.png",
+      "type": "BD",
+      "episode": "14",
+      "status": "Complete",
+      "nimegami_url": "https://nimegami.id/jojo-no-kimyou-na-bouken-part-6-stone-ocean-part-3-sub-indo/"
+    }
+  ],
+  "pagination": {
+    "hasNext": true,
+    "hasPrev": false,
+    "currentPage": 1
+  }
+}

@@ -8,7 +8,7 @@ const paginationQuery = z.object({
 });
 
 const searchQuery = z.object({
-  q:     z.string().min(1, 'Kata kunci pencarian wajib diisi').max(200).trim(),
+  q:     z.string().trim().min(1, 'Kata kunci pencarian wajib diisi').max(200),
   page:  z.coerce.number().int().min(1).default(1),
   limit: z.coerce.number().int().min(1).max(100).default(20),
 });

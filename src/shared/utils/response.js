@@ -16,6 +16,65 @@ const STATUS_MESSAGES = {
   500: 'Internal Server Error',
 };
 
+const STATUS_ERROR_CODES = {
+  400: 'bad_request',
+  401: 'unauthorized',
+  403: 'forbidden',
+  404: 'not_found',
+  409: 'conflict',
+  422: 'unprocessable_entity',
+  429: 'too_many_requests',
+  500: 'internal_server_error',
+};
+
+const isPlainObject = (value) => {
+  if (!value || typeof value !== 'object') {
+    return false;
+  }
+
+  const proto = Object.getPrototypeOf(value);
+  return proto === Object.prototype || proto === null;
+};
+
+const normalizeCreator = (value, seen = new WeakSet()) => {
+  if (Array.isArray(value)) {
+    return value.map((item) => normalizeCreator(item, seen));
+  }
+
+  if (!value || typeof value !== 'object') {
+    return value;
+  }
+
+  if (value instanceof Date || Buffer.isBuffer(value)) {
+    return value;
+  }
+
+  if (typeof value.toJSON === 'function' && !isPlainObject(value)) {
+    return normalizeCreator(value.toJSON(), seen);
+  }
+
+  if (!isPlainObject(value)) {
+    return value;
+  }
+
+  if (seen.has(value)) {
+    return value;
+  }
+  seen.add(value);
+
+  const normalized = {};
+  Object.keys(value).forEach((key) => {
+    if (key === 'creator') {
+      normalized[key] = CREATOR;
+      return;
+    }
+
+    normalized[key] = normalizeCreator(value[key], seen);
+  });
+
+  return normalized;
+};
+
 /**
  * Send a successful response.
  * @param {Response} res
@@ -24,16 +83,20 @@ const STATUS_MESSAGES = {
  * @param {*}       [opts.data=null]       - payload (object / array / null)
  * @param {*}       [opts.pagination=null] - pagination block (top-level)
  */
-const success = (res, { statusCode = 200, data = null, pagination = null } = {}) => {
+const success = (res, { statusCode = 200, data = null, pagination = null, message = '', meta = null } = {}) => {
+  const metaValue = meta || pagination;
   return res.status(statusCode).json({
     status: 'success',
+    success: true,
+    error: null,
+    meta: metaValue,
+    data: normalizeCreator(data),
+    message,
+    ok: true,
     creator: CREATOR,
     statusCode,
     statusMessage: STATUS_MESSAGES[statusCode] || 'OK',
-    message: '',
-    ok: true,
-    data,
-    pagination,
+    pagination: metaValue,
   });
 };
 
@@ -46,13 +109,20 @@ const success = (res, { statusCode = 200, data = null, pagination = null } = {})
  */
 const error = (res, { statusCode = 500, message = 'Internal Server Error' } = {}) => {
   return res.status(statusCode).json({
-    status: 'success',
+    status: 'error',
+    success: false,
+    error: {
+      code: STATUS_ERROR_CODES[statusCode] || 'error',
+      message,
+      statusCode,
+    },
+    meta: null,
+    data: null,
+    message,
+    ok: false,
     creator: CREATOR,
     statusCode,
     statusMessage: STATUS_MESSAGES[statusCode] || 'Error',
-    message,
-    ok: false,
-    data: null,
     pagination: null,
   });
 };

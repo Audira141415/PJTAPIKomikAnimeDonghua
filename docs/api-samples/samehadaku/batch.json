@@ -1,0 +1,971 @@
+{
+  "status": "success",
+  "creator": "Sanka Vollerei",
+  "message": "",
+  "data": {
+    "batchList": [
+      {
+        "title": "Yuusha-kei ni Shosu Episode 1-12 [BATCH]",
+        "poster": "https://v2.samehadaku.how/wp-content/uploads/2026/01/151911.jpg",
+        "type": "TV",
+        "score": "8.1",
+        "status": "Completed",
+        "batchId": "yuusha-kei-ni-shosu-episode-1-12-batch",
+        "href": "/samehadaku/batch/yuusha-kei-ni-shosu-episode-1-12-batch",
+        "samehadakuUrl": "https://v2.samehadaku.how/batch/yuusha-kei-ni-shosu-episode-1-12-batch/",
+        "genreList": [
+          {
+            "title": "Action",
+            "genreId": "action",
+            "href": "/samehadaku/genres/action",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/action/"
+          },
+          {
+            "title": "Adventure",
+            "genreId": "adventure",
+            "href": "/samehadaku/genres/adventure",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/adventure/"
+          },
+          {
+            "title": "Fantasy",
+            "genreId": "fantasy",
+            "href": "/samehadaku/genres/fantasy",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/fantasy/"
+          }
+        ]
+      },
+      {
+        "title": "Jigokuraku Season 2 Episode 1-12 [BATCH]",
+        "poster": "https://v2.samehadaku.how/wp-content/uploads/2026/01/154456.jpg",
+        "type": "TV",
+        "score": "8.2",
+        "status": "Completed",
+        "batchId": "jigokuraku-season-2-episode-1-12-batch",
+        "href": "/samehadaku/batch/jigokuraku-season-2-episode-1-12-batch",
+        "samehadakuUrl": "https://v2.samehadaku.how/batch/jigokuraku-season-2-episode-1-12-batch/",
+        "genreList": [
+          {
+            "title": "Action",
+            "genreId": "action",
+            "href": "/samehadaku/genres/action",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/action/"
+          },
+          {
+            "title": "Adventure",
+            "genreId": "adventure",
+            "href": "/samehadaku/genres/adventure",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/adventure/"
+          },
+          {
+            "title": "Gore",
+            "genreId": "gore",
+            "href": "/samehadaku/genres/gore",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/gore/"
+          },
+          {
+            "title": "Historical",
+            "genreId": "historical",
+            "href": "/samehadaku/genres/historical",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/historical/"
+          },
+          {
+            "title": "Samurai",
+            "genreId": "samurai",
+            "href": "/samehadaku/genres/samurai",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/samurai/"
+          },
+          {
+            "title": "Supernatural",
+            "genreId": "supernatural",
+            "href": "/samehadaku/genres/supernatural",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/supernatural/"
+          }
+        ]
+      },
+      {
+        "title": "Ikoku Nikki Episode 1-13 [BATCH]",
+        "poster": "https://v2.samehadaku.how/wp-content/uploads/2026/01/154233-1.jpg",
+        "type": "TV",
+        "score": "8.8",
+        "status": "Completed",
+        "batchId": "ikoku-nikki-episode-1-13-batch",
+        "href": "/samehadaku/batch/ikoku-nikki-episode-1-13-batch",
+        "samehadakuUrl": "https://v2.samehadaku.how/batch/ikoku-nikki-episode-1-13-batch/",
+        "genreList": [
+          {
+            "title": "Drama",
+            "genreId": "drama",
+            "href": "/samehadaku/genres/drama",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/drama/"
+          }
+        ]
+      },
+      {
+        "title": "Dead Account Episode 1-12 [BATCH]",
+        "poster": "https://v2.samehadaku.how/wp-content/uploads/2026/01/154192.jpg",
+        "type": "TV",
+        "score": "6.6",
+        "status": "Completed",
+        "batchId": "dead-account-episode-1-12-batch",
+        "href": "/samehadaku/batch/dead-account-episode-1-12-batch",
+        "samehadakuUrl": "https://v2.samehadaku.how/batch/dead-account-episode-1-12-batch/",
+        "genreList": [
+          {
+            "title": "Action",
+            "genreId": "action",
+            "href": "/samehadaku/genres/action",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/action/"
+          },
+          {
+            "title": "Supernatural",
+            "genreId": "supernatural",
+            "href": "/samehadaku/genres/supernatural",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/supernatural/"
+          }
+        ]
+      },
+      {
+        "title": "Fumetsu no Anata e Season 3 Episode 1-22 [BATCH]",
+        "poster": "https://v2.samehadaku.how/wp-content/uploads/2025/10/150961.jpg",
+        "type": "TV",
+        "score": "7.4",
+        "status": "Completed",
+        "batchId": "fumetsu-no-anata-e-season-3-episode-1-22-batch",
+        "href": "/samehadaku/batch/fumetsu-no-anata-e-season-3-episode-1-22-batch",
+        "samehadakuUrl": "https://v2.samehadaku.how/batch/fumetsu-no-anata-e-season-3-episode-1-22-batch/",
+        "genreList": [
+          {
+            "title": "Adventure",
+            "genreId": "adventure",
+            "href": "/samehadaku/genres/adventure",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/adventure/"
+          },
+          {
+            "title": "Drama",
+            "genreId": "drama",
+            "href": "/samehadaku/genres/drama",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/drama/"
+          },
+          {
+            "title": "Supernatural",
+            "genreId": "supernatural",
+            "href": "/samehadaku/genres/supernatural",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/supernatural/"
+          }
+        ]
+      },
+      {
+        "title": "Fire Force Season 3 Part 2 Episode 1-13 [BATCH]",
+        "poster": "https://v2.samehadaku.how/wp-content/uploads/2026/01/Fire-Force-Season-3-Part-2.jpg",
+        "type": "TV",
+        "score": "8.14",
+        "status": "Completed",
+        "batchId": "fire-force-season-3-part-2-episode-1-13-batch",
+        "href": "/samehadaku/batch/fire-force-season-3-part-2-episode-1-13-batch",
+        "samehadakuUrl": "https://v2.samehadaku.how/batch/fire-force-season-3-part-2-episode-1-13-batch/",
+        "genreList": [
+          {
+            "title": "Action",
+            "genreId": "action",
+            "href": "/samehadaku/genres/action",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/action/"
+          },
+          {
+            "title": "Fantasy",
+            "genreId": "fantasy",
+            "href": "/samehadaku/genres/fantasy",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/fantasy/"
+          },
+          {
+            "title": "Sci-Fi",
+            "genreId": "sci-fi",
+            "href": "/samehadaku/genres/sci-fi",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/sci-fi/"
+          },
+          {
+            "title": "Shounen",
+            "genreId": "shounen",
+            "href": "/samehadaku/genres/shounen",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/shounen/"
+          },
+          {
+            "title": "Urban Fantasy",
+            "genreId": "urban-fantasy",
+            "href": "/samehadaku/genres/urban-fantasy",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/urban-fantasy/"
+          }
+        ]
+      },
+      {
+        "title": "Darwin Jihen Episode 1-13 [BATCH]",
+        "poster": "https://v2.samehadaku.how/wp-content/uploads/2026/01/152829.jpg",
+        "type": "TV",
+        "score": "6.83",
+        "status": "Completed",
+        "batchId": "darwin-jihen-episode-1-13-batch",
+        "href": "/samehadaku/batch/darwin-jihen-episode-1-13-batch",
+        "samehadakuUrl": "https://v2.samehadaku.how/batch/darwin-jihen-episode-1-13-batch/",
+        "genreList": [
+          {
+            "title": "Sci-Fi",
+            "genreId": "sci-fi",
+            "href": "/samehadaku/genres/sci-fi",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/sci-fi/"
+          }
+        ]
+      },
+      {
+        "title": "Yuukawa Episode 1-13 [BATCH]",
+        "poster": "https://v2.samehadaku.how/wp-content/uploads/2026/01/bx195515-p1nD71Hmr4ly.jpg",
+        "type": "TV",
+        "score": "6.89",
+        "status": "Completed",
+        "batchId": "yuukawa-episode-1-13-batch",
+        "href": "/samehadaku/batch/yuukawa-episode-1-13-batch",
+        "samehadakuUrl": "https://v2.samehadaku.how/batch/yuukawa-episode-1-13-batch/",
+        "genreList": [
+          {
+            "title": "Adventure",
+            "genreId": "adventure",
+            "href": "/samehadaku/genres/adventure",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/adventure/"
+          },
+          {
+            "title": "Comedy",
+            "genreId": "comedy",
+            "href": "/samehadaku/genres/comedy",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/comedy/"
+          },
+          {
+            "title": "Fantasy",
+            "genreId": "fantasy",
+            "href": "/samehadaku/genres/fantasy",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/fantasy/"
+          },
+          {
+            "title": "Isekai",
+            "genreId": "isekai",
+            "href": "/samehadaku/genres/isekai",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/isekai/"
+          },
+          {
+            "title": "Reincarnation",
+            "genreId": "reincarnation",
+            "href": "/samehadaku/genres/reincarnation",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/reincarnation/"
+          },
+          {
+            "title": "Romance",
+            "genreId": "romance",
+            "href": "/samehadaku/genres/romance",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/romance/"
+          }
+        ]
+      },
+      {
+        "title": "Chitose-kun wa Ramune Bin no Naka Episode 1-13 [BATCH]",
+        "poster": "https://v2.samehadaku.how/wp-content/uploads/2025/10/Chitose-kun-wa-Ramune-Bin-no-Naka.jpg",
+        "type": "TV",
+        "score": "7.41",
+        "status": "Completed",
+        "batchId": "chitose-kun-wa-ramune-bin-no-naka-episode-1-13-batch",
+        "href": "/samehadaku/batch/chitose-kun-wa-ramune-bin-no-naka-episode-1-13-batch",
+        "samehadakuUrl": "https://v2.samehadaku.how/batch/chitose-kun-wa-ramune-bin-no-naka-episode-1-13-batch/",
+        "genreList": [
+          {
+            "title": "Comedy",
+            "genreId": "comedy",
+            "href": "/samehadaku/genres/comedy",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/comedy/"
+          },
+          {
+            "title": "Harem",
+            "genreId": "harem",
+            "href": "/samehadaku/genres/harem",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/harem/"
+          },
+          {
+            "title": "Romance",
+            "genreId": "romance",
+            "href": "/samehadaku/genres/romance",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/romance/"
+          },
+          {
+            "title": "School",
+            "genreId": "school",
+            "href": "/samehadaku/genres/school",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/school/"
+          }
+        ]
+      },
+      {
+        "title": "Golden Kamuy Final Season Episode 1-13 [BATCH]",
+        "poster": "https://v2.samehadaku.how/wp-content/uploads/2026/01/Golden-Kamuy-Final-Season.jpg",
+        "type": "TV",
+        "score": "8.42",
+        "status": "Completed",
+        "batchId": "golden-kamuy-final-season-episode-1-13-batch",
+        "href": "/samehadaku/batch/golden-kamuy-final-season-episode-1-13-batch",
+        "samehadakuUrl": "https://v2.samehadaku.how/batch/golden-kamuy-final-season-episode-1-13-batch/",
+        "genreList": [
+          {
+            "title": "Action",
+            "genreId": "action",
+            "href": "/samehadaku/genres/action",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/action/"
+          },
+          {
+            "title": "Adult Cast",
+            "genreId": "adult-cast",
+            "href": "/samehadaku/genres/adult-cast",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/adult-cast/"
+          },
+          {
+            "title": "Adventure",
+            "genreId": "adventure",
+            "href": "/samehadaku/genres/adventure",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/adventure/"
+          },
+          {
+            "title": "Historical",
+            "genreId": "historical",
+            "href": "/samehadaku/genres/historical",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/historical/"
+          },
+          {
+            "title": "Military",
+            "genreId": "military",
+            "href": "/samehadaku/genres/military",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/military/"
+          },
+          {
+            "title": "Seinen",
+            "genreId": "seinen",
+            "href": "/samehadaku/genres/seinen",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/seinen/"
+          }
+        ]
+      },
+      {
+        "title": "Vigilante Boku no Hero Academia Illegals Season 2 Episode 1-13 [BATCH]",
+        "poster": "https://v2.samehadaku.how/wp-content/uploads/2026/01/Vigilante-Boku-no-Hero-Academia-Illegals-Season-2.jpg",
+        "type": "TV",
+        "score": "7.38",
+        "status": "Completed",
+        "batchId": "vigilante-boku-no-hero-academia-illegals-season-2-episode-1-13-batch",
+        "href": "/samehadaku/batch/vigilante-boku-no-hero-academia-illegals-season-2-episode-1-13-batch",
+        "samehadakuUrl": "https://v2.samehadaku.how/batch/vigilante-boku-no-hero-academia-illegals-season-2-episode-1-13-batch/",
+        "genreList": [
+          {
+            "title": "Action",
+            "genreId": "action",
+            "href": "/samehadaku/genres/action",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/action/"
+          },
+          {
+            "title": "Shounen",
+            "genreId": "shounen",
+            "href": "/samehadaku/genres/shounen",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/shounen/"
+          },
+          {
+            "title": "Super Power",
+            "genreId": "super-power",
+            "href": "/samehadaku/genres/super-power",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/super-power/"
+          }
+        ]
+      },
+      {
+        "title": "Trigun Stargaze Episode 1-12 [BATCH]",
+        "poster": "https://v2.samehadaku.how/wp-content/uploads/2026/01/154541.jpg",
+        "type": "TV",
+        "score": "7.35",
+        "status": "Completed",
+        "batchId": "trigun-stargaze-episode-1-12-batch",
+        "href": "/samehadaku/batch/trigun-stargaze-episode-1-12-batch",
+        "samehadakuUrl": "https://v2.samehadaku.how/batch/trigun-stargaze-episode-1-12-batch/",
+        "genreList": [
+          {
+            "title": "Action",
+            "genreId": "action",
+            "href": "/samehadaku/genres/action",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/action/"
+          },
+          {
+            "title": "Adventure",
+            "genreId": "adventure",
+            "href": "/samehadaku/genres/adventure",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/adventure/"
+          },
+          {
+            "title": "Sci-Fi",
+            "genreId": "sci-fi",
+            "href": "/samehadaku/genres/sci-fi",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/sci-fi/"
+          }
+        ]
+      },
+      {
+        "title": "Tamon-kun Ima Docchi Episode 1-13 [BATCH]",
+        "poster": "https://v2.samehadaku.how/wp-content/uploads/2026/01/153320.jpg",
+        "type": "TV",
+        "score": "7.87",
+        "status": "Completed",
+        "batchId": "tamon-kun-ima-docchi-episode-1-13-batch",
+        "href": "/samehadaku/batch/tamon-kun-ima-docchi-episode-1-13-batch",
+        "samehadakuUrl": "https://v2.samehadaku.how/batch/tamon-kun-ima-docchi-episode-1-13-batch/",
+        "genreList": [
+          {
+            "title": "Comedy",
+            "genreId": "comedy",
+            "href": "/samehadaku/genres/comedy",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/comedy/"
+          },
+          {
+            "title": "Romance",
+            "genreId": "romance",
+            "href": "/samehadaku/genres/romance",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/romance/"
+          }
+        ]
+      },
+      {
+        "title": "Oshi no Ko Season 3 Episode 1-11 [BATCH]",
+        "poster": "https://v2.samehadaku.how/wp-content/uploads/2026/01/153329.jpg",
+        "type": "TV",
+        "score": "7.23",
+        "status": "Completed",
+        "batchId": "oshi-no-ko-season-3-episode-1-11-batch",
+        "href": "/samehadaku/batch/oshi-no-ko-season-3-episode-1-11-batch",
+        "samehadakuUrl": "https://v2.samehadaku.how/batch/oshi-no-ko-season-3-episode-1-11-batch/",
+        "genreList": [
+          {
+            "title": "Drama",
+            "genreId": "drama",
+            "href": "/samehadaku/genres/drama",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/drama/"
+          }
+        ]
+      },
+      {
+        "title": "Toujima Tanzaburou wa Kamen Rider Episode 1-24 [BATCH]",
+        "poster": "https://v2.samehadaku.how/wp-content/uploads/2025/10/152139.jpg",
+        "type": "TV",
+        "score": "7.69",
+        "status": "Completed",
+        "batchId": "toujima-tanzaburou-wa-kamen-rider-episode-1-24-batch",
+        "href": "/samehadaku/batch/toujima-tanzaburou-wa-kamen-rider-episode-1-24-batch",
+        "samehadakuUrl": "https://v2.samehadaku.how/batch/toujima-tanzaburou-wa-kamen-rider-episode-1-24-batch/",
+        "genreList": [
+          {
+            "title": "Action",
+            "genreId": "action",
+            "href": "/samehadaku/genres/action",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/action/"
+          },
+          {
+            "title": "Comedy",
+            "genreId": "comedy",
+            "href": "/samehadaku/genres/comedy",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/comedy/"
+          }
+        ]
+      },
+      {
+        "title": "Uruwashi no Yoi no Tsuki Episode 1-12 [BATCH]",
+        "poster": "https://v2.samehadaku.how/wp-content/uploads/2026/01/bx192507-SCmImUlUnpAD.jpg",
+        "type": "TV",
+        "score": "7.49",
+        "status": "Completed",
+        "batchId": "uruwashi-no-yoi-no-tsuki-episode-1-12-batch",
+        "href": "/samehadaku/batch/uruwashi-no-yoi-no-tsuki-episode-1-12-batch",
+        "samehadakuUrl": "https://v2.samehadaku.how/batch/uruwashi-no-yoi-no-tsuki-episode-1-12-batch/",
+        "genreList": [
+          {
+            "title": "Romance",
+            "genreId": "romance",
+            "href": "/samehadaku/genres/romance",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/romance/"
+          },
+          {
+            "title": "School",
+            "genreId": "school",
+            "href": "/samehadaku/genres/school",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/school/"
+          },
+          {
+            "title": "Shoujo",
+            "genreId": "shoujo",
+            "href": "/samehadaku/genres/shoujo",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/shoujo/"
+          }
+        ]
+      },
+      {
+        "title": "Kaya-chan wa Kowakunai Episode 1-12 [BATCH]",
+        "poster": "https://v2.samehadaku.how/wp-content/uploads/2026/01/Kaya-chan-wa-Kowakunai.jpg",
+        "type": "TV",
+        "score": "7.41",
+        "status": "Completed",
+        "batchId": "kaya-chan-wa-kowakunai-episode-1-12-batch",
+        "href": "/samehadaku/batch/kaya-chan-wa-kowakunai-episode-1-12-batch",
+        "samehadakuUrl": "https://v2.samehadaku.how/batch/kaya-chan-wa-kowakunai-episode-1-12-batch/",
+        "genreList": [
+          {
+            "title": "School",
+            "genreId": "school",
+            "href": "/samehadaku/genres/school",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/school/"
+          },
+          {
+            "title": "Supernatural",
+            "genreId": "supernatural",
+            "href": "/samehadaku/genres/supernatural",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/supernatural/"
+          }
+        ]
+      },
+      {
+        "title": "Fate/strange Fake Episode 1-13 [BATCH]",
+        "poster": "https://v2.samehadaku.how/wp-content/uploads/2024/12/136845l.jpg",
+        "type": "TV",
+        "score": "8.44",
+        "status": "Completed",
+        "batchId": "fate-strange-fake-episode-1-13-batch",
+        "href": "/samehadaku/batch/fate-strange-fake-episode-1-13-batch",
+        "samehadakuUrl": "https://v2.samehadaku.how/batch/fate-strange-fake-episode-1-13-batch/",
+        "genreList": [
+          {
+            "title": "Action",
+            "genreId": "action",
+            "href": "/samehadaku/genres/action",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/action/"
+          },
+          {
+            "title": "Fantasy",
+            "genreId": "fantasy",
+            "href": "/samehadaku/genres/fantasy",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/fantasy/"
+          },
+          {
+            "title": "Urban Fantasy",
+            "genreId": "urban-fantasy",
+            "href": "/samehadaku/genres/urban-fantasy",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/urban-fantasy/"
+          }
+        ]
+      },
+      {
+        "title": "Tensei shitara Dragon no Tamago datta Episode 1-12 [BATCH]",
+        "poster": "https://v2.samehadaku.how/wp-content/uploads/2026/01/Tensei-shitara-Dragon-no-Tamago-datta.jpg",
+        "type": "TV",
+        "score": "6.42",
+        "status": "Completed",
+        "batchId": "tensei-shitara-dragon-no-tamago-datta-episode-1-12-batch",
+        "href": "/samehadaku/batch/tensei-shitara-dragon-no-tamago-datta-episode-1-12-batch",
+        "samehadakuUrl": "https://v2.samehadaku.how/batch/tensei-shitara-dragon-no-tamago-datta-episode-1-12-batch/",
+        "genreList": [
+          {
+            "title": "Action",
+            "genreId": "action",
+            "href": "/samehadaku/genres/action",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/action/"
+          },
+          {
+            "title": "Adventure",
+            "genreId": "adventure",
+            "href": "/samehadaku/genres/adventure",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/adventure/"
+          },
+          {
+            "title": "Fantasy",
+            "genreId": "fantasy",
+            "href": "/samehadaku/genres/fantasy",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/fantasy/"
+          },
+          {
+            "title": "Isekai",
+            "genreId": "isekai",
+            "href": "/samehadaku/genres/isekai",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/isekai/"
+          },
+          {
+            "title": "Reincarnation",
+            "genreId": "reincarnation",
+            "href": "/samehadaku/genres/reincarnation",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/reincarnation/"
+          }
+        ]
+      },
+      {
+        "title": "SI-VIS Episode 1-24 [BATCH]",
+        "poster": "https://v2.samehadaku.how/wp-content/uploads/2025/10/bx196553-n0cZ0oOOOkYF.jpg",
+        "type": "TV",
+        "score": "6.03",
+        "status": "Completed",
+        "batchId": "si-vis-episode-1-24-batch",
+        "href": "/samehadaku/batch/si-vis-episode-1-24-batch",
+        "samehadakuUrl": "https://v2.samehadaku.how/batch/si-vis-episode-1-24-batch/",
+        "genreList": [
+          {
+            "title": "Music",
+            "genreId": "music",
+            "href": "/samehadaku/genres/music",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/music/"
+          },
+          {
+            "title": "Super Power",
+            "genreId": "super-power",
+            "href": "/samehadaku/genres/super-power",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/super-power/"
+          }
+        ]
+      },
+      {
+        "title": "Ao no Miburo Season 2 Episode 1-14 [BATCH]",
+        "poster": "https://v2.samehadaku.how/wp-content/uploads/2025/12/Ao-no-Miburo-Season-2.jpg",
+        "type": "TV",
+        "score": "7.18",
+        "status": "Completed",
+        "batchId": "ao-no-miburo-season-2-episode-1-14-batch",
+        "href": "/samehadaku/batch/ao-no-miburo-season-2-episode-1-14-batch",
+        "samehadakuUrl": "https://v2.samehadaku.how/batch/ao-no-miburo-season-2-episode-1-14-batch/",
+        "genreList": [
+          {
+            "title": "Action",
+            "genreId": "action",
+            "href": "/samehadaku/genres/action",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/action/"
+          },
+          {
+            "title": "Historical",
+            "genreId": "historical",
+            "href": "/samehadaku/genres/historical",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/historical/"
+          },
+          {
+            "title": "Samurai",
+            "genreId": "samurai",
+            "href": "/samehadaku/genres/samurai",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/samurai/"
+          },
+          {
+            "title": "Shounen",
+            "genreId": "shounen",
+            "href": "/samehadaku/genres/shounen",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/shounen/"
+          }
+        ]
+      },
+      {
+        "title": "Hell Mode Yarikomizuki no Gamer Episode 1-12 [BATCH]",
+        "poster": "https://v2.samehadaku.how/wp-content/uploads/2026/01/Hell-Mode-Yarikomizuki-no-Gamer.jpg",
+        "type": "TV",
+        "score": "7.17",
+        "status": "Completed",
+        "batchId": "hell-mode-yarikomizuki-no-gamer-episode-1-12-batch",
+        "href": "/samehadaku/batch/hell-mode-yarikomizuki-no-gamer-episode-1-12-batch",
+        "samehadakuUrl": "https://v2.samehadaku.how/batch/hell-mode-yarikomizuki-no-gamer-episode-1-12-batch/",
+        "genreList": [
+          {
+            "title": "Action",
+            "genreId": "action",
+            "href": "/samehadaku/genres/action",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/action/"
+          },
+          {
+            "title": "Adventure",
+            "genreId": "adventure",
+            "href": "/samehadaku/genres/adventure",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/adventure/"
+          },
+          {
+            "title": "Fantasy",
+            "genreId": "fantasy",
+            "href": "/samehadaku/genres/fantasy",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/fantasy/"
+          },
+          {
+            "title": "Isekai",
+            "genreId": "isekai",
+            "href": "/samehadaku/genres/isekai",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/isekai/"
+          },
+          {
+            "title": "Reincarnation",
+            "genreId": "reincarnation",
+            "href": "/samehadaku/genres/reincarnation",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/reincarnation/"
+          }
+        ]
+      },
+      {
+        "title": "Majutsushi Kunon wa Mieteiru Episode 1-13 [BATCH]",
+        "poster": "https://v2.samehadaku.how/wp-content/uploads/2026/01/154459.jpg",
+        "type": "TV",
+        "score": "6.5",
+        "status": "Completed",
+        "batchId": "majutsushi-kunon-wa-mieteiru-episode-1-13-batch",
+        "href": "/samehadaku/batch/majutsushi-kunon-wa-mieteiru-episode-1-13-batch",
+        "samehadakuUrl": "https://v2.samehadaku.how/batch/majutsushi-kunon-wa-mieteiru-episode-1-13-batch/",
+        "genreList": [
+          {
+            "title": "Fantasy",
+            "genreId": "fantasy",
+            "href": "/samehadaku/genres/fantasy",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/fantasy/"
+          }
+        ]
+      },
+      {
+        "title": "Medalist Season 2 Episode 1-9 [BATCH]",
+        "poster": "https://v2.samehadaku.how/wp-content/uploads/2026/01/155038.jpg",
+        "type": "TV",
+        "score": "8.4",
+        "status": "Completed",
+        "batchId": "medalist-season-2-episode-1-9-batch",
+        "href": "/samehadaku/batch/medalist-season-2-episode-1-9-batch",
+        "samehadakuUrl": "https://v2.samehadaku.how/batch/medalist-season-2-episode-1-9-batch/",
+        "genreList": [
+          {
+            "title": "Drama",
+            "genreId": "drama",
+            "href": "/samehadaku/genres/drama",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/drama/"
+          },
+          {
+            "title": "Sports",
+            "genreId": "sports",
+            "href": "/samehadaku/genres/sports",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/sports/"
+          }
+        ]
+      },
+      {
+        "title": "Omae Gotoki ga Maou ni Kateru to Omouna Episode 1-12 [BATCH]",
+        "poster": "https://v2.samehadaku.how/wp-content/uploads/2026/01/Omae-Gotoki-ga-Maou-ni-Kateru-to-Omouna.jpg",
+        "type": "TV",
+        "score": "6.23",
+        "status": "Completed",
+        "batchId": "omae-gotoki-ga-maou-ni-kateru-to-omouna-episode-1-12-batch",
+        "href": "/samehadaku/batch/omae-gotoki-ga-maou-ni-kateru-to-omouna-episode-1-12-batch",
+        "samehadakuUrl": "https://v2.samehadaku.how/batch/omae-gotoki-ga-maou-ni-kateru-to-omouna-episode-1-12-batch/",
+        "genreList": [
+          {
+            "title": "Action",
+            "genreId": "action",
+            "href": "/samehadaku/genres/action",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/action/"
+          },
+          {
+            "title": "Adventure",
+            "genreId": "adventure",
+            "href": "/samehadaku/genres/adventure",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/adventure/"
+          },
+          {
+            "title": "Fantasy",
+            "genreId": "fantasy",
+            "href": "/samehadaku/genres/fantasy",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/fantasy/"
+          }
+        ]
+      },
+      {
+        "title": "Mato Seihei no Slave Season 2 Episode 1-12 [BATCH] [UC]",
+        "poster": "https://v2.samehadaku.how/wp-content/uploads/2026/01/Mato-Seihei-no-Slave-Season-2.jpg",
+        "type": "TV",
+        "score": "7.46",
+        "status": "Completed",
+        "batchId": "mato-seihei-no-slave-season-2-episode-1-12-batch-uc",
+        "href": "/samehadaku/batch/mato-seihei-no-slave-season-2-episode-1-12-batch-uc",
+        "samehadakuUrl": "https://v2.samehadaku.how/batch/mato-seihei-no-slave-season-2-episode-1-12-batch-uc/",
+        "genreList": [
+          {
+            "title": "Action",
+            "genreId": "action",
+            "href": "/samehadaku/genres/action",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/action/"
+          },
+          {
+            "title": "Ecchi",
+            "genreId": "ecchi",
+            "href": "/samehadaku/genres/ecchi",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/ecchi/"
+          },
+          {
+            "title": "Fantasy",
+            "genreId": "fantasy",
+            "href": "/samehadaku/genres/fantasy",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/fantasy/"
+          },
+          {
+            "title": "Harem",
+            "genreId": "harem",
+            "href": "/samehadaku/genres/harem",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/harem/"
+          },
+          {
+            "title": "Shounen",
+            "genreId": "shounen",
+            "href": "/samehadaku/genres/shounen",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/shounen/"
+          }
+        ]
+      },
+      {
+        "title": "Sousou no Frieren Season 2 Episode 1-10 [BATCH]",
+        "poster": "https://v2.samehadaku.how/wp-content/uploads/2026/01/bx182255-butzrqd4I0aC.jpg",
+        "type": "TV",
+        "score": "9.30",
+        "status": "Completed",
+        "batchId": "sousou-no-frieren-season-2-episode-1-10-batch",
+        "href": "/samehadaku/batch/sousou-no-frieren-season-2-episode-1-10-batch",
+        "samehadakuUrl": "https://v2.samehadaku.how/batch/sousou-no-frieren-season-2-episode-1-10-batch/",
+        "genreList": [
+          {
+            "title": "Adventure",
+            "genreId": "adventure",
+            "href": "/samehadaku/genres/adventure",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/adventure/"
+          },
+          {
+            "title": "Drama",
+            "genreId": "drama",
+            "href": "/samehadaku/genres/drama",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/drama/"
+          },
+          {
+            "title": "Fantasy",
+            "genreId": "fantasy",
+            "href": "/samehadaku/genres/fantasy",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/fantasy/"
+          },
+          {
+            "title": "Shounen",
+            "genreId": "shounen",
+            "href": "/samehadaku/genres/shounen",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/shounen/"
+          }
+        ]
+      },
+      {
+        "title": "Jigoku Sensei Nube (2025) Part 2 Episode 1-13 [BATCH]",
+        "poster": "https://v2.samehadaku.how/wp-content/uploads/2026/01/Jigoku-Sensei-Nube-2025-Part-2.jpg",
+        "type": "TV",
+        "score": "7.11",
+        "status": "Completed",
+        "batchId": "jigoku-sensei-nube-2025-part-2-episode-1-13-batch",
+        "href": "/samehadaku/batch/jigoku-sensei-nube-2025-part-2-episode-1-13-batch",
+        "samehadakuUrl": "https://v2.samehadaku.how/batch/jigoku-sensei-nube-2025-part-2-episode-1-13-batch/",
+        "genreList": [
+          {
+            "title": "Comedy",
+            "genreId": "comedy",
+            "href": "/samehadaku/genres/comedy",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/comedy/"
+          },
+          {
+            "title": "Horror",
+            "genreId": "horror",
+            "href": "/samehadaku/genres/horror",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/horror/"
+          },
+          {
+            "title": "Mythology",
+            "genreId": "mythology",
+            "href": "/samehadaku/genres/mythology",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/mythology/"
+          },
+          {
+            "title": "School",
+            "genreId": "school",
+            "href": "/samehadaku/genres/school",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/school/"
+          },
+          {
+            "title": "Shounen",
+            "genreId": "shounen",
+            "href": "/samehadaku/genres/shounen",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/shounen/"
+          },
+          {
+            "title": "Supernatural",
+            "genreId": "supernatural",
+            "href": "/samehadaku/genres/supernatural",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/supernatural/"
+          }
+        ]
+      },
+      {
+        "title": "Odayaka Kizoku no Kyuuka no Susume Episode 1-12 [BATCH]",
+        "poster": "https://v2.samehadaku.how/wp-content/uploads/2026/01/Odayaka-Kizoku-no-Kyuuka-no-Susume.jpg",
+        "type": "TV",
+        "score": "6.81",
+        "status": "Completed",
+        "batchId": "odayaka-kizoku-no-kyuuka-no-susume-episode-1-12-batch",
+        "href": "/samehadaku/batch/odayaka-kizoku-no-kyuuka-no-susume-episode-1-12-batch",
+        "samehadakuUrl": "https://v2.samehadaku.how/batch/odayaka-kizoku-no-kyuuka-no-susume-episode-1-12-batch/",
+        "genreList": [
+          {
+            "title": "Adventure",
+            "genreId": "adventure",
+            "href": "/samehadaku/genres/adventure",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/adventure/"
+          },
+          {
+            "title": "Fantasy",
+            "genreId": "fantasy",
+            "href": "/samehadaku/genres/fantasy",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/fantasy/"
+          },
+          {
+            "title": "Slice of Life",
+            "genreId": "slice-of-life",
+            "href": "/samehadaku/genres/slice-of-life",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/slice-of-life/"
+          }
+        ]
+      },
+      {
+        "title": "Okiraku Ryoushu no Tanoshii Ryouchi Bouei Episode 1-12 [BATCH]",
+        "poster": "https://v2.samehadaku.how/wp-content/uploads/2026/01/Okiraku-Ryoushu-no-Tanoshii-Ryouchi-Bouei.jpg",
+        "type": "TV",
+        "score": "6.81",
+        "status": "Completed",
+        "batchId": "okiraku-ryoushu-no-tanoshii-ryouchi-bouei-episode-1-12-batch",
+        "href": "/samehadaku/batch/okiraku-ryoushu-no-tanoshii-ryouchi-bouei-episode-1-12-batch",
+        "samehadakuUrl": "https://v2.samehadaku.how/batch/okiraku-ryoushu-no-tanoshii-ryouchi-bouei-episode-1-12-batch/",
+        "genreList": [
+          {
+            "title": "Fantasy",
+            "genreId": "fantasy",
+            "href": "/samehadaku/genres/fantasy",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/fantasy/"
+          },
+          {
+            "title": "Isekai",
+            "genreId": "isekai",
+            "href": "/samehadaku/genres/isekai",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/isekai/"
+          },
+          {
+            "title": "Reincarnation",
+            "genreId": "reincarnation",
+            "href": "/samehadaku/genres/reincarnation",
+            "samehadakuUrl": "https://v2.samehadaku.how/genre/reincarnation/"
+          }
+        ]
+      }
+    ]
+  },
+  "pagination": {
+    "currentPage": 1,
+    "hasPrevPage": false,
+    "prevPage": null,
+    "hasNextPage": true,
+    "nextPage": 2,
+    "totalPages": 18
+  }
+}

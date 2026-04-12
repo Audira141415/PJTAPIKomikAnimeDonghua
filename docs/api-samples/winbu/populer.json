@@ -1,0 +1,288 @@
+{
+  "status": "success",
+  "creator": "Sanka Vollerei",
+  "message": "Daftar Anime Terpopuler",
+  "data": [
+    {
+      "title": "One Piece",
+      "id": "one-piece",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2020/04/E5RxYkWX0AAwdGH.png_200x300.jpeg",
+      "rating": "0",
+      "time": "4 hari",
+      "episode": ""
+    },
+    {
+      "title": "Tales of Herding Gods",
+      "id": "tales-of-herding-gods",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2025/02/hg_200x300.jpeg",
+      "rating": "0",
+      "time": "4 hari",
+      "episode": ""
+    },
+    {
+      "title": "Battle Through the Heavens Season 5",
+      "id": "battle-through-the-heavens-season-5",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2025/01/126374_200x300.jpeg",
+      "rating": "0",
+      "time": "4 hari",
+      "episode": ""
+    },
+    {
+      "title": "Detective Conan",
+      "id": "detective-conan",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2024/12/konan_200x300.jpeg",
+      "rating": "0",
+      "time": "5 hari",
+      "episode": ""
+    },
+    {
+      "title": "Renegade Immortal",
+      "id": "renegade-immortal",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2024/11/138768_200x300.jpeg",
+      "rating": "0",
+      "time": "3 hari",
+      "episode": ""
+    },
+    {
+      "title": "Perfect World",
+      "id": "perfect-world",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2024/11/137928_200x300.jpeg",
+      "rating": "0",
+      "time": "16 jam",
+      "episode": ""
+    },
+    {
+      "title": "To Be Hero X",
+      "id": "to-be-hero-x",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2025/04/148474_200x300.jpeg",
+      "rating": "0",
+      "time": "6 bulan",
+      "episode": ""
+    },
+    {
+      "title": "Boruto: Naruto Next Generations",
+      "id": "boruto-naruto-next-generations",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2023/03/Boruto-Episode-293-END_200x300.jpeg",
+      "rating": "0",
+      "time": "3 tahun",
+      "episode": ""
+    },
+    {
+      "title": "Kakushite! Makina-san!!",
+      "id": "kakushite-makina-san",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2025/04/142934-1_200x300.jpeg",
+      "rating": "0",
+      "time": "9 bulan",
+      "episode": ""
+    },
+    {
+      "title": "Gachiakuta",
+      "id": "gachiakuta",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2025/07/150432l_200x300.jpeg",
+      "rating": "0",
+      "time": "3 bulan",
+      "episode": ""
+    },
+    {
+      "title": "Shrouding the Heavens",
+      "id": "shrouding-the-heavens",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2024/11/135727_200x300.jpeg",
+      "rating": "0",
+      "time": "15 jam",
+      "episode": ""
+    },
+    {
+      "title": "Soul Land 2: The Unrivaled Tang Sect",
+      "id": "soul-land-2-the-unrivaled-tang-sect",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2024/11/Soul-Land-2-The-Unrivaled-Tang-Sect-1_200x300.jpeg",
+      "rating": "0",
+      "time": "13 hari",
+      "episode": ""
+    },
+    {
+      "title": "Throne of Seal",
+      "id": "throne-of-seal",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2024/11/122162_200x300.jpeg",
+      "rating": "0",
+      "time": "16 jam",
+      "episode": ""
+    },
+    {
+      "title": "Oshi no Ko",
+      "id": "oshi-no-ko",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2023/06/Oshi-no-Ko-Episode-11-END_200x300.jpeg",
+      "rating": "0",
+      "time": "2 tahun",
+      "episode": ""
+    },
+    {
+      "title": "Lord of Mysteries",
+      "id": "lord-of-mysteries",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2025/06/lotm_200x300.jpeg",
+      "rating": "0",
+      "time": "6 bulan",
+      "episode": ""
+    },
+    {
+      "title": "Shin Samurai-den Yaiba",
+      "id": "shin-samurai-den-yaiba",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2025/04/148242_200x300.jpeg",
+      "rating": "0",
+      "time": "6 bulan",
+      "episode": ""
+    },
+    {
+      "title": "One Punch Man 3",
+      "id": "one-punch-man-3",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2025/10/148347_200x300.jpeg",
+      "rating": "0",
+      "time": "3 bulan",
+      "episode": ""
+    },
+    {
+      "title": "My Gift Lvl 9999 Unlimited Gacha",
+      "id": "my-gift-lvl-9999-unlimited-gacha",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2025/10/151246_200x300.jpeg",
+      "rating": "0",
+      "time": "3 bulan",
+      "episode": ""
+    },
+    {
+      "title": "Kimi to Idol Precure♪",
+      "id": "kimi-to-idol-precure%e2%99%aa",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2025/02/147358_200x300.jpeg",
+      "rating": "0",
+      "time": "2 bulan",
+      "episode": ""
+    },
+    {
+      "title": "Jujutsu Kaisen Season 3",
+      "id": "jujutsu-kaisen-season-3",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2026/03/75693_200x300.jpeg",
+      "rating": "0",
+      "time": "13 hari",
+      "episode": ""
+    },
+    {
+      "title": "Sozai Saishuka no Isekai Ryokouki",
+      "id": "sozai-saishuka-no-isekai-ryokouki",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2025/09/151136_200x300.jpeg",
+      "rating": "0",
+      "time": "3 bulan",
+      "episode": ""
+    },
+    {
+      "title": "Yuusha Party wo Oidasareta Kiyoubinbou",
+      "id": "yuusha-party-wo-oidasareta-kiyoubinbou",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2026/01/153135_200x300.jpeg",
+      "rating": "0",
+      "time": "22 hari",
+      "episode": ""
+    },
+    {
+      "title": "Solo Leveling Season 2: Arise from the Shadow",
+      "id": "solo-leveling-season-2-arise-from-the-shadow",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2025/01/145502_200x300.jpeg",
+      "rating": "0",
+      "time": "1 tahun",
+      "episode": ""
+    },
+    {
+      "title": "Tougen Anki",
+      "id": "tougen-anki",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2025/07/150666l_200x300.jpeg",
+      "rating": "0",
+      "time": "3 bulan",
+      "episode": ""
+    },
+    {
+      "title": "Kaijuu 8-gou Season 2",
+      "id": "kaijuu-8-gou-season-2",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2025/07/150344l_200x300.jpeg",
+      "rating": "0",
+      "time": "6 bulan",
+      "episode": ""
+    },
+    {
+      "title": "Ansatsusha de Aru Ore no Status ga Yuusha yori mo Akiraka ni Tsuyoi no da ga",
+      "id": "ansatsusha-de-aru-ore-no-status-ga-yuusha-yori-mo-akiraka-ni-tsuyoi-no-da-ga",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2025/10/151118_200x300.jpeg",
+      "rating": "0",
+      "time": "3 bulan",
+      "episode": ""
+    },
+    {
+      "title": "Yandere Dark Elf",
+      "id": "yandere-dark-elf",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2025/04/148314_200x300.jpeg",
+      "rating": "0",
+      "time": "9 bulan",
+      "episode": ""
+    },
+    {
+      "title": "Isekai Mokushiroku Mynoghra: Hametsu no Bunmei de Hajimeru Sekai Seifuku",
+      "id": "isekai-mokushiroku-mynoghra-hametsu-no-bunmei-de-hajimeru-sekai-seifuku",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2025/07/150383l_200x300.jpeg",
+      "rating": "0",
+      "time": "6 bulan",
+      "episode": ""
+    },
+    {
+      "title": "Dead Mount Death Play",
+      "id": "dead-mount-death-play",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2023/06/Dead-Mount-Death-Play-Episode-12-END_200x300.jpeg",
+      "rating": "0",
+      "time": "2 tahun",
+      "episode": ""
+    },
+    {
+      "title": "Sakamoto Days Cour 2",
+      "id": "sakamoto-days-part-2",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2025/07/148719l_200x300.jpeg",
+      "rating": "0",
+      "time": "6 bulan",
+      "episode": ""
+    }
+  ],
+  "pagination": {
+    "current_page": 1,
+    "total_pages": 5,
+    "has_next_page": true,
+    "next_page": 2,
+    "prev_page": null,
+    "has_prev_page": false
+  },
+  "filters": {
+    "order": "popular"
+  }
+}

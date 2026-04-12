@@ -18,11 +18,13 @@ set "PORT_RANGE_MAX=5020"
 set "SCRIPT_DIR=%~dp0"
 set "PID_FILE=%SCRIPT_DIR%.app.pid"
 set "LOG_DIR=%SCRIPT_DIR%logs"
-set "LOG_FILE=%LOG_DIR%\app.log"
+set "LOG_FILE=%LOG_DIR%\combined.log"
 set "ENV_FILE=%SCRIPT_DIR%.env"
 set "ENV_EXAMPLE=%SCRIPT_DIR%.env.example"
 set "MODE=local"
 set "CUSTOM_PORT="
+
+cd /d "%SCRIPT_DIR%"
 
 :: --- Baca Argumen ----------------------------------------
 if not "%1"=="" (
@@ -60,31 +62,43 @@ if not exist "%LOG_DIR%" mkdir "%LOG_DIR%"
 
 :: --- Validasi .env ---------------------------------------
 echo [1/5] Cek konfigurasi .env ...
-if not exist "%ENV_FILE%" (
-  if exist "%ENV_EXAMPLE%" (
-    echo [WARN]  File .env tidak ditemukan. Menyalin dari .env.example ...
-    copy "%ENV_EXAMPLE%" "%ENV_FILE%" >nul
-    echo [OK]    .env telah dibuat: %ENV_FILE%
-    echo.
-    echo [INFO]  Edit .env dan atur minimal:
-    echo          - MONGO_URI
-    echo          - JWT_ACCESS_SECRET   (min 32 karakter)
-    echo          - JWT_REFRESH_SECRET  (min 32 karakter)
-    echo.
-    set /p CONTINUE= Lanjutkan dengan konfigurasi default? [Y/N]: 
-    if /I "!CONTINUE!" NEQ "Y" (
-      echo [INFO]  Edit .env lalu jalankan start.bat kembali.
-      pause
-      exit /b 0
-    )
-  ) else (
-    echo [ERROR] File .env dan .env.example tidak ditemukan!
-    pause
-    exit /b 1
-  )
-) else (
-  echo [OK]    File .env ditemukan.
+if exist "%ENV_FILE%" goto :ENV_OK
+
+if not exist "%ENV_EXAMPLE%" (
+  echo [ERROR] File .env dan .env.example tidak ditemukan!
+  echo         Cek path: %SCRIPT_DIR%
+  pause
+  exit /b 1
 )
+
+echo [WARN]  File .env tidak ditemukan. Menyalin dari .env.example ...
+copy /Y "%ENV_EXAMPLE%" "%ENV_FILE%" >nul
+if !ERRORLEVEL! NEQ 0 (
+  echo [ERROR] Gagal menyalin .env.example ke .env
+  echo         Source: %ENV_EXAMPLE%
+  echo         Target: %ENV_FILE%
+  pause
+  exit /b 1
+)
+
+echo [OK]    .env telah dibuat: %ENV_FILE%
+echo.
+echo [INFO]  Edit .env dan atur minimal:
+echo          - MONGO_URI
+echo          - JWT_ACCESS_SECRET   (min 32 karakter)
+echo          - JWT_REFRESH_SECRET  (min 32 karakter)
+echo.
+set "CONTINUE="
+set /p CONTINUE= Lanjutkan dengan konfigurasi default? [Y/N]: 
+if /I "!CONTINUE!" EQU "Y" goto :ENV_OK
+if /I "!CONTINUE!" EQU "YES" goto :ENV_OK
+
+echo [INFO]  Edit .env lalu jalankan start.bat kembali.
+pause
+exit /b 0
+
+:ENV_OK
+echo [OK]    File .env ditemukan.
 
 :: --- Baca PORT dari .env ---------------------------------
 set "ENV_PORT=%DEFAULT_PORT%"
@@ -186,7 +200,7 @@ echo  +--------------------------------------------------+
 echo.
 
 cd /d "%SCRIPT_DIR%"
-start "Comic API Server" /B cmd /C "set PORT=!FINAL_PORT!&& node server.js >> "!LOG_FILE!" 2>&1"
+start "Comic API Server" /B cmd /C "set PORT=!FINAL_PORT!&& node server.js"
 timeout /T 2 /NOBREAK >nul
 
 :: Ambil PID node terbaru

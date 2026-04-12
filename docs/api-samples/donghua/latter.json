@@ -1,0 +1,66 @@
+{
+  "status": "success",
+  "creator": "Sanka Vollerei",
+  "donghua_list": [
+    {
+      "title": "Ze Tian Ji Season 1",
+      "slug": "ze-tian-ji-season-1",
+      "poster": "https://i2.wp.com/anichin.cafe/wp-content/uploads/2015/07/ztj.jpg?resize=247,350",
+      "status": "Completed",
+      "type": "Donghua",
+      "sub": "Sub",
+      "href": "/donghua/detail/ze-tian-ji-season-1",
+      "anichinUrl": "https://anichin.cafe/seri/ze-tian-ji-season-1/"
+    },
+    {
+      "title": "Ze Tian Ji Season 2",
+      "slug": "ze-tian-ji-season-2",
+      "poster": "https://i1.wp.com/anichin.cafe/wp-content/uploads/2023/12/ztj2.jpg?resize=247,350",
+      "status": "Completed",
+      "type": "",
+      "sub": "Sub",
+      "href": "/donghua/detail/ze-tian-ji-season-2",
+      "anichinUrl": "https://anichin.cafe/seri/ze-tian-ji-season-2/"
+    },
+    {
+      "title": "Ze Tian Ji Season 3",
+      "slug": "ze-tian-ji-season-3",
+      "poster": "https://i1.wp.com/anichin.cafe/wp-content/uploads/2023/12/ztj3.jpg?resize=247,350",
+      "status": "Completed",
+      "type": "Donghua",
+      "sub": "Sub",
+      "href": "/donghua/detail/ze-tian-ji-season-3",
+      "anichinUrl": "https://anichin.cafe/seri/ze-tian-ji-season-3/"
+    },
+    {
+      "title": "Ze Tian Ji Season 4",
+      "slug": "ze-tian-ji-season-4",
+      "poster": "https://i1.wp.com/anichin.cafe/wp-content/uploads/2023/12/ztj4.jpg?resize=247,350",
+      "status": "Completed",
+      "type": "Donghua",
+      "sub": "Sub",
+      "href": "/donghua/detail/ze-tian-ji-season-4",
+      "anichinUrl": "https://anichin.cafe/seri/ze-tian-ji-season-4/"
+    },
+    {
+      "title": "Ze Tian Ji Season 5",
+      "slug": "ze-tian-ji-season-5",
+      "poster": "https://i2.wp.com/anichin.cafe/wp-content/uploads/2023/12/0-768x1086-1.jpg?resize=247,350",
+      "status": "Completed",
+      "type": "Donghua",
+      "sub": "Sub",
+      "href": "/donghua/detail/ze-tian-ji-season-5",
+      "anichinUrl": "https://anichin.cafe/seri/ze-tian-ji-season-5/"
+    },
+    {
+      "title": "Zhu Tian Ji",
+      "slug": "zhu-tian-ji",
+      "poster": "https://i3.wp.com/anichin.cafe/wp-content/uploads/2023/07/Zhu-Tian-Ji.jpg?resize=247,350",
+      "status": "Completed",
+      "type": "Donghua",
+      "sub": "Sub",
+      "href": "/donghua/detail/zhu-tian-ji",
+      "anichinUrl": "https://anichin.cafe/seri/zhu-tian-ji/"
+    }
+  ]
+}

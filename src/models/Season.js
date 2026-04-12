@@ -44,6 +44,48 @@ const seasonSchema = new mongoose.Schema(
       type: Number,
       default: 0,
     },
+    sourceKey: {
+      type: String,
+      default: null,
+      trim: true,
+      index: true,
+    },
+    sourceId: {
+      type: String,
+      default: null,
+      trim: true,
+      index: true,
+    },
+    externalRefs: {
+      type: [
+        new mongoose.Schema(
+          {
+            sourceKey: {
+              type: String,
+              required: true,
+              trim: true,
+            },
+            sourceId: {
+              type: String,
+              default: null,
+              trim: true,
+            },
+            url: {
+              type: String,
+              default: null,
+              trim: true,
+            },
+            kind: {
+              type: String,
+              default: 'season',
+              trim: true,
+            },
+          },
+          { _id: false }
+        ),
+      ],
+      default: [],
+    },
   },
   { timestamps: true }
 );

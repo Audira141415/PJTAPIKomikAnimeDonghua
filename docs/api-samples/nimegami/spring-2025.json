@@ -1,0 +1,102 @@
+{
+  "status": "success",
+  "creator": "Sanka Vollerei",
+  "source": "Nimegami",
+  "anime_list": [
+    {
+      "title": "Araiguma Calcal-dan",
+      "slug": "araiguma-calcal-dan-sub-indo",
+      "poster": "https://nimegami.id/wp-content/uploads/2025/10/Araiguma-Calcal-dan-Sub-Indo2-300x169.jpg",
+      "type": "TV",
+      "episode": "24",
+      "status": "Complete",
+      "nimegami_url": "https://nimegami.id/araiguma-calcal-dan-sub-indo/"
+    },
+    {
+      "title": "Ballpark de Tsukamaete!",
+      "slug": "ballpark-de-tsukamaete-sub-indo",
+      "poster": "https://nimegami.id/wp-content/uploads/2025/06/Ballpark-de-Tsukamaete-Sub-Indo2-300x169.webp",
+      "type": "TV",
+      "episode": "12",
+      "status": "Complete",
+      "nimegami_url": "https://nimegami.id/ballpark-de-tsukamaete-sub-indo/"
+    },
+    {
+      "title": "Anne Shirley",
+      "slug": "anne-shirley-sub-indo",
+      "poster": "https://nimegami.id/wp-content/uploads/2025/05/Anne-Shirley-Sub-Indo2-300x150.jpg",
+      "type": "TV",
+      "episode": "24",
+      "status": "Complete",
+      "nimegami_url": "https://nimegami.id/anne-shirley-sub-indo/"
+    },
+    {
+      "title": "Summer Pockets",
+      "slug": "summer-pockets-sub-indo",
+      "poster": "https://nimegami.id/wp-content/uploads/2025/05/Summer-Pockets-Sub-Indo2-300x169.webp",
+      "type": "TV",
+      "episode": "25",
+      "status": "Complete",
+      "nimegami_url": "https://nimegami.id/summer-pockets-sub-indo/"
+    },
+    {
+      "title": "Ninja to Koroshiya no Futarigurashi",
+      "slug": "ninja-to-koroshiya-no-futarigurashi-sub-indo",
+      "poster": "https://nimegami.id/wp-content/uploads/2025/05/Ninja-to-Koroshiya-no-Futarigurashi-Sub-Indo2-300x212.webp",
+      "type": "TV",
+      "episode": "12",
+      "status": "Complete",
+      "nimegami_url": "https://nimegami.id/ninja-to-koroshiya-no-futarigurashi-sub-indo/"
+    },
+    {
+      "title": "Kijin Gentoushou",
+      "slug": "kijin-gentoushou-sub-indo",
+      "poster": "https://nimegami.id/wp-content/uploads/2025/05/Kijin-Gentoushou-Sub-Indo2-300x169.jpg",
+      "type": "TV",
+      "episode": "24",
+      "status": "Complete",
+      "nimegami_url": "https://nimegami.id/kijin-gentoushou-sub-indo/"
+    },
+    {
+      "title": "Zatsu Tabi: That's Journey",
+      "slug": "zatsu-tabi-thats-journey-sub-indo",
+      "poster": "https://nimegami.id/wp-content/uploads/2025/05/Zatsu-Tabi-Thats-Journey-Sub-Indo2-300x156.png",
+      "type": "TV",
+      "episode": "12",
+      "status": "Complete",
+      "nimegami_url": "https://nimegami.id/zatsu-tabi-thats-journey-sub-indo/"
+    },
+    {
+      "title": "Aharen-san wa Hakarenai Season 2",
+      "slug": "aharen-san-wa-hakarenai-season-2-sub-indo",
+      "poster": "https://nimegami.id/wp-content/uploads/2025/04/Aharen-san-wa-Hakarenai-Season-2-Sub-Indo2-300x169.webp",
+      "type": "TV",
+      "episode": "12",
+      "status": "Complete",
+      "nimegami_url": "https://nimegami.id/aharen-san-wa-hakarenai-season-2-sub-indo/"
+    },
+    {
+      "title": "Shin Samurai-den Yaiba",
+      "slug": "shin-samurai-den-yaiba-sub-indo",
+      "poster": "https://nimegami.id/wp-content/uploads/2025/04/Shin-Samurai-den-Yaiba-Sub-Indo2-300x169.jpg",
+      "type": "TV",
+      "episode": "24",
+      "status": "Complete",
+      "nimegami_url": "https://nimegami.id/shin-samurai-den-yaiba-sub-indo/"
+    },
+    {
+      "title": "Sentai Daishikkaku Season 2",
+      "slug": "sentai-daishikkaku-season-2-sub-indo",
+      "poster": "https://nimegami.id/wp-content/uploads/2025/04/Sentai-Daishikkaku-Season-2-Sub-Indo2-300x212.webp",
+      "type": "TV",
+      "episode": "12",
+      "status": "Complete",
+      "nimegami_url": "https://nimegami.id/sentai-daishikkaku-season-2-sub-indo/"
+    }
+  ],
+  "pagination": {
+    "hasNext": true,
+    "hasPrev": false,
+    "currentPage": 1
+  }
+}

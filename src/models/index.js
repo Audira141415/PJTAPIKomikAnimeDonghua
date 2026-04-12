@@ -13,6 +13,9 @@ const Comment                = require('./Comment');
 const Review                 = require('./Review');
 const Tag                    = require('./Tag');
 const Collection             = require('./Collection');
+const SourceFeed             = require('./SourceFeed');
+const RawSnapshot             = require('./RawSnapshot');
+const SyncRun                 = require('./SyncRun');
 
 module.exports = {
   User,
@@ -30,4 +33,7 @@ module.exports = {
   Review,
   Tag,
   Collection,
+  SourceFeed,
+  RawSnapshot,
+  SyncRun,
 };

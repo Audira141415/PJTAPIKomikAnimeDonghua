@@ -1,0 +1,316 @@
+{
+  "status": "success",
+  "creator": "Sanka Vollerei",
+  "source": "Winbu",
+  "message": "Daftar Film",
+  "data": [
+    {
+      "title": "Golden (2025)",
+      "id": "golden-2025",
+      "type": "film",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/Gold_200x300.jpeg",
+      "episode": "",
+      "time": "15 jam",
+      "views": "5\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t243",
+      "rating": "-"
+    },
+    {
+      "title": "How to Make a Killing (2026)",
+      "id": "how-to-make-a-killing-2026",
+      "type": "film",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/HTMAK_200x300.jpeg",
+      "episode": "",
+      "time": "15 jam",
+      "views": "6\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t541",
+      "rating": "-"
+    },
+    {
+      "title": "Send Help (2026)",
+      "id": "send-help-2026",
+      "type": "film",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/SH_200x300.jpeg",
+      "episode": "",
+      "time": "15 jam",
+      "views": "7\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t283",
+      "rating": "-"
+    },
+    {
+      "title": "She Wants My Daughter (2025)",
+      "id": "she-wants-my-daughter-2025",
+      "type": "film",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/SWMD_200x300.jpeg",
+      "episode": "",
+      "time": "16 jam",
+      "views": "6\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t569",
+      "rating": "-"
+    },
+    {
+      "title": "Papa Zola: The Movie (2025)",
+      "id": "papa-zola-the-movie-2025",
+      "type": "film",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/PZTM_200x300.jpeg",
+      "episode": "",
+      "time": "1 hari",
+      "views": "8\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t711",
+      "rating": "-"
+    },
+    {
+      "title": "The Love That Remains (2025)",
+      "id": "the-love-that-remains-2025",
+      "type": "film",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/TLTR_200x300.jpeg",
+      "episode": "",
+      "time": "1 hari",
+      "views": "6\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t1473",
+      "rating": "-"
+    },
+    {
+      "title": "Hridayapoorvam (2025)",
+      "id": "hridayapoorvam-2025",
+      "type": "film",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/Hp_200x300.jpeg",
+      "episode": "",
+      "time": "1 hari",
+      "views": "7\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t1451",
+      "rating": "-"
+    },
+    {
+      "title": "Do Not Enter (2026)",
+      "id": "do-not-enter-2026",
+      "type": "film",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/DNE_200x300.jpeg",
+      "episode": "",
+      "time": "1 hari",
+      "views": "5\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t1528",
+      "rating": "-"
+    },
+    {
+      "title": "Grizzly Night (2026)",
+      "id": "grizzly-night-2026",
+      "type": "film",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/GN_200x300.jpeg",
+      "episode": "",
+      "time": "1 hari",
+      "views": "4,5\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t1470",
+      "rating": "-"
+    },
+    {
+      "title": "Legend of Ling Jing (2026)",
+      "id": "legend-of-ling-jing-2026",
+      "type": "film",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/LoLJ_200x300.jpeg",
+      "episode": "",
+      "time": "2 hari",
+      "views": "6\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t1492",
+      "rating": "-"
+    },
+    {
+      "title": "Pilar’s Diary in the Amazon (2025)",
+      "id": "pilars-diary-in-the-amazon-2025",
+      "type": "film",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/PDITA_200x300.jpeg",
+      "episode": "",
+      "time": "2 hari",
+      "views": "7\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t1715",
+      "rating": "-"
+    },
+    {
+      "title": "Soft Leaves (2025)",
+      "id": "https-gofile-io-d-hit9hy",
+      "type": "film",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/SL_200x300.jpeg",
+      "episode": "",
+      "time": "2 hari",
+      "views": "7\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t2336",
+      "rating": "-"
+    },
+    {
+      "title": "Amityville La Llorona (2025)",
+      "id": "amityville-la-llorona-2025",
+      "type": "film",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/ALL_200x300.jpeg",
+      "episode": "",
+      "time": "2 hari",
+      "views": "3\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t1855",
+      "rating": "-"
+    },
+    {
+      "title": "Bad Voodoo (2026)",
+      "id": "bad-voodoo-2026",
+      "type": "film",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/BV_200x300.jpeg",
+      "episode": "",
+      "time": "2 hari",
+      "views": "3\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t2212",
+      "rating": "-"
+    },
+    {
+      "title": "Dream Animal: THE MOVIE (2025)",
+      "id": "dream-animal-the-movie-2025",
+      "type": "film",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/DA_TM_200x300.jpeg",
+      "episode": "",
+      "time": "3 hari",
+      "views": "8\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t1998",
+      "rating": "-"
+    },
+    {
+      "title": "Agent Zeta (2026)",
+      "id": "agent-zeta-2026",
+      "type": "film",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/AZ_200x300.jpeg",
+      "episode": "",
+      "time": "3 hari",
+      "views": "6\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t2404",
+      "rating": "-"
+    },
+    {
+      "title": "Border 2 (2026)",
+      "id": "border-2-2026",
+      "type": "film",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/Brd2_200x300.jpeg",
+      "episode": "",
+      "time": "3 hari",
+      "views": "6\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t2448",
+      "rating": "-"
+    },
+    {
+      "title": "Peaky Blinders: The Immortal Man (2026)",
+      "id": "peaky-blinders-the-immortal-man-2026",
+      "type": "film",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/PB_TIM_200x300.jpeg",
+      "episode": "",
+      "time": "3 hari",
+      "views": "7\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t2520",
+      "rating": "-"
+    },
+    {
+      "title": "The Towering Phoenix Mountain (2026)",
+      "id": "the-towering-phoenix-mountain-2026",
+      "type": "film",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/TTPM_200x300.jpeg",
+      "episode": "",
+      "time": "3 hari",
+      "views": "6\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t2415",
+      "rating": "-"
+    },
+    {
+      "title": "A Town Called Purgatory (2025)",
+      "id": "a-town-called-purgatory-2025",
+      "type": "film",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/ATCP_200x300.jpeg",
+      "episode": "",
+      "time": "3 hari",
+      "views": "4\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t2380",
+      "rating": "-"
+    },
+    {
+      "title": "Preschool (2026)",
+      "id": "preschool-2026",
+      "type": "film",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/PreS_200x300.jpeg",
+      "episode": "",
+      "time": "4 hari",
+      "views": "5\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t2659",
+      "rating": "-"
+    },
+    {
+      "title": "Magellan (2025)",
+      "id": "magellan-2025",
+      "type": "film",
+      "image": "",
+      "episode": "",
+      "time": "4 hari",
+      "views": "6\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t3360",
+      "rating": "-"
+    },
+    {
+      "title": "A Useful Ghost (2025)",
+      "id": "a-useful-ghost-2025",
+      "type": "film",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/AUG_200x300.jpeg",
+      "episode": "",
+      "time": "4 hari",
+      "views": "6\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t3082",
+      "rating": "-"
+    },
+    {
+      "title": "Vigilante (2026)",
+      "id": "vigilante-2026",
+      "type": "film",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/Vigil_200x300.jpeg",
+      "episode": "",
+      "time": "4 hari",
+      "views": "6,9\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t3679",
+      "rating": "-"
+    },
+    {
+      "title": "Humint (2026)",
+      "id": "humint-2026",
+      "type": "film",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/Hmint_200x300.jpeg",
+      "episode": "",
+      "time": "4 hari",
+      "views": "7\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t2944",
+      "rating": "-"
+    },
+    {
+      "title": "Scream 7 (2026)",
+      "id": "scream-7-2026",
+      "type": "film",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/S7_200x300.jpeg",
+      "episode": "",
+      "time": "5 hari",
+      "views": "5\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t2929",
+      "rating": "-"
+    },
+    {
+      "title": "Primate (2026)",
+      "id": "primate-2026",
+      "type": "film",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/Prim_200x300.jpeg",
+      "episode": "",
+      "time": "6 hari",
+      "views": "6\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t3721",
+      "rating": "-"
+    },
+    {
+      "title": "Ainsley McGregor Mysteries: A Case For the Watchmaker (2026)",
+      "id": "ainsley-mcgregor-mysteries-a-case-for-the-watchmaker-2026",
+      "type": "film",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/AMM_ACFTW_200x300.jpeg",
+      "episode": "",
+      "time": "6 hari",
+      "views": "7\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t3995",
+      "rating": "-"
+    },
+    {
+      "title": "Mexicali (2026)",
+      "id": "mexicali-2026",
+      "type": "film",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/MXCA_200x300.jpeg",
+      "episode": "",
+      "time": "6 hari",
+      "views": "6\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t3509",
+      "rating": "-"
+    },
+    {
+      "title": "A Gangster’s Life (2026)",
+      "id": "a-gangsters-life-2026",
+      "type": "film",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/AGL_200x300.jpeg",
+      "episode": "",
+      "time": "6 hari",
+      "views": "6\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t4368",
+      "rating": "-"
+    }
+  ],
+  "pagination": {
+    "current_page": 1,
+    "total_pages": 5,
+    "has_next_page": true,
+    "next_page": 2,
+    "prev_page": null,
+    "has_prev_page": false
+  }
+}

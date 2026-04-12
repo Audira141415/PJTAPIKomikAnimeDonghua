@@ -1,0 +1,92 @@
+{
+  "status": "success",
+  "creator": "Sanka Vollerei",
+  "source": "Animasu",
+  "animes": [
+    {
+      "title": "Purple River Season 2",
+      "slug": "purple-river-s2",
+      "poster": "https://i0.wp.com/v1.animasu.app/wp-content/uploads/2025/07/151163.jpg",
+      "episode": "Episode 40",
+      "status_or_day": "🔥🔥🔥",
+      "type": "ONA"
+    },
+    {
+      "title": "100.000 Years of Refining Qi [Lian Qi Shi Wan Nian]",
+      "slug": "100-000-years-of-refining-qi",
+      "poster": "https://i0.wp.com/v1.animasu.app/wp-content/uploads/2023/09/MV5BOTU0MzcyMTYtNzRmOS00MDUwLWI1.jpg",
+      "episode": "Episode 335",
+      "status_or_day": "🔥🔥🔥",
+      "type": "ONA"
+    },
+    {
+      "title": "Shrouding the Heavens [ Zhe Tian ]",
+      "slug": "shrouding-the-heavens",
+      "poster": "https://i2.wp.com/v1.animasu.app/wp-content/uploads/2023/07/hMPIFy9S8F3gpgpOiRqBvMj9Icg.jpg",
+      "episode": "Episode 157",
+      "status_or_day": "🔥🔥🔥",
+      "type": "ONA"
+    },
+    {
+      "title": "Mata Korosarete Shimatta no desu ne, Tantei-sama",
+      "slug": "mata-korosarete-shimatta-no-desu-ne-tantei-sama",
+      "poster": "https://i3.wp.com/v1.animasu.app/wp-content/uploads/2026/04/156152.jpg",
+      "episode": "Episode 2",
+      "status_or_day": "🔥🔥🔥",
+      "type": "TV"
+    },
+    {
+      "title": "Haibara-kun no Tsuyokute Seishun New Game",
+      "slug": "haibara-kun-no-tsuyokute-seishun-new-game",
+      "poster": "https://i3.wp.com/v1.animasu.app/wp-content/uploads/2026/04/156048.jpg",
+      "episode": "Episode 2",
+      "status_or_day": "🔥🔥🔥",
+      "type": "TV"
+    },
+    {
+      "title": "Awajima Hyakkei",
+      "slug": "awajima-hyakkei",
+      "poster": "https://i0.wp.com/v1.animasu.app/wp-content/uploads/2026/04/156361.jpg",
+      "episode": "Episode 1",
+      "status_or_day": "🔥🔥🔥",
+      "type": "TV"
+    },
+    {
+      "title": "Mamonogurai no Boukensha: Ore dake Mamono wo Kuratte Tsuyoku Naru",
+      "slug": "mamonogurai-no-boukensha-ore-dake-mamono-wo-kuratte-tsuyoku-naru",
+      "poster": "https://i2.wp.com/v1.animasu.app/wp-content/uploads/2026/04/154990.jpg",
+      "episode": "Episode 2",
+      "status_or_day": "🔥🔥🔥",
+      "type": "TV"
+    },
+    {
+      "title": "Reincarnation no Kaben",
+      "slug": "reincarnation-no-kaben",
+      "poster": "https://i1.wp.com/v1.animasu.app/wp-content/uploads/2026/04/155042.jpg",
+      "episode": "Episode 2",
+      "status_or_day": "🔥🔥🔥",
+      "type": "TV"
+    },
+    {
+      "title": "Kirio Fanclub",
+      "slug": "kirio-fanclub",
+      "poster": "https://i2.wp.com/v1.animasu.app/wp-content/uploads/2026/04/155831.jpg",
+      "episode": "Episode 2",
+      "status_or_day": "🔥🔥🔥",
+      "type": "TV"
+    },
+    {
+      "title": "Koori no Jouheki",
+      "slug": "koori-no-jouheki",
+      "poster": "https://i0.wp.com/v1.animasu.app/wp-content/uploads/2026/04/154933.jpg",
+      "episode": "Episode 2",
+      "status_or_day": "🔥🔥🔥",
+      "type": "TV"
+    }
+  ],
+  "pagination": {
+    "hasNext": true,
+    "hasPrev": false,
+    "currentPage": 1
+  }
+}

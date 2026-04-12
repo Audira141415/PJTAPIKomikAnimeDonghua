@@ -1,5 +1,23 @@
 const API_BASE = '/api/v1';
 const FALLBACK_DATA_PATH = '/data/dashboard-fallback.json';
+const ANIME_PROXY_SOURCES = [
+  'anime',
+  'samehadaku',
+  'animasu',
+  'kusonime',
+  'anoboy',
+  'animesail',
+  'oploverz',
+  'stream',
+  'animekuindo',
+  'nimegami',
+  'alqanime',
+  'donghub',
+  'winbu',
+  'kura',
+  'dramabox',
+  'drachin',
+];
 
 const defaultDashboardData = {
   categories: [
@@ -329,6 +347,9 @@ const endpointExamples = {
   },
 };
 
+/* ══════════════════════════════════════════════════════════════
+   DOM REFERENCES
+   ══════════════════════════════════════════════════════════ */
 const stateEls = {
   serverDot: document.getElementById('serverDot'),
   serverText: document.getElementById('serverText'),
@@ -354,12 +375,91 @@ const presetCategory = document.getElementById('presetCategory');
 const presetEndpoint = document.getElementById('presetEndpoint');
 const copyPlaygroundResponse = document.getElementById('copyPlaygroundResponse');
 const carouselCategory = document.getElementById('carouselCategory');
+const headerDot = document.getElementById('headerDot');
 
 let dashboardData = defaultDashboardData;
 let carouselSlides = [];
 let carouselIndex = 0;
 let carouselTimer = null;
 
+/* ══════════════════════════════════════════════════════════════
+   SIDEBAR TOGGLE + NAV HIGHLIGHT
+   ══════════════════════════════════════════════════════════ */
+const sidebar = document.getElementById('sidebar');
+const sidebarOverlay = document.getElementById('sidebarOverlay');
+const hamburgerBtn = document.getElementById('hamburgerBtn');
+
+const openSidebar = () => {
+  sidebar.classList.add('open');
+  sidebarOverlay.classList.add('show');
+  document.body.style.overflow = 'hidden';
+};
+const closeSidebar = () => {
+  sidebar.classList.remove('open');
+  sidebarOverlay.classList.remove('show');
+  document.body.style.overflow = '';
+};
+
+if (hamburgerBtn) {
+  hamburgerBtn.addEventListener('click', () => {
+    sidebar.classList.contains('open') ? closeSidebar() : openSidebar();
+  });
+}
+if (sidebarOverlay) {
+  sidebarOverlay.addEventListener('click', closeSidebar);
+}
+
+// Close sidebar on nav click (mobile)
+document.querySelectorAll('.nav-item[data-nav]').forEach((navItem) => {
+  navItem.addEventListener('click', () => {
+    // Update active state
+    document.querySelectorAll('.nav-item').forEach((n) => n.classList.remove('active'));
+    navItem.classList.add('active');
+    // Close sidebar on mobile
+    if (window.innerWidth <= 768) {
+      closeSidebar();
+    }
+  });
+});
+
+// Intersection Observer for active nav highlighting
+const navObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const id = entry.target.id;
+        document.querySelectorAll('.nav-item').forEach((n) => n.classList.remove('active'));
+        const activeNav = document.querySelector(`.nav-item[data-nav="${id}"]`);
+        if (activeNav) activeNav.classList.add('active');
+      }
+    });
+  },
+  { rootMargin: '-100px 0px -60% 0px', threshold: 0 }
+);
+
+document.querySelectorAll('section[id^="section-"]').forEach((section) => {
+  navObserver.observe(section);
+});
+
+/* ══════════════════════════════════════════════════════════════
+   RELATIVE TIME
+   ══════════════════════════════════════════════════════════ */
+const relativeTime = (isoString) => {
+  const now = Date.now();
+  const then = new Date(isoString).getTime();
+  const diffSec = Math.max(0, Math.floor((now - then) / 1000));
+  if (diffSec < 5) return 'baru saja';
+  if (diffSec < 60) return `${diffSec}s lalu`;
+  const diffMin = Math.floor(diffSec / 60);
+  if (diffMin < 60) return `${diffMin}m lalu`;
+  const diffHour = Math.floor(diffMin / 60);
+  if (diffHour < 24) return `${diffHour}h lalu`;
+  return new Date(isoString).toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit' });
+};
+
+/* ══════════════════════════════════════════════════════════════
+   UTILITIES
+   ══════════════════════════════════════════════════════════ */
 const copyText = async (text, buttonEl) => {
   try {
     await navigator.clipboard.writeText(text);
@@ -398,6 +498,9 @@ const sanitizeImageUrl = (url) => {
   }
 };
 
+/* ══════════════════════════════════════════════════════════════
+   STATUS / HEALTH
+   ══════════════════════════════════════════════════════════ */
 const formatStatusClass = (connected, state) => {
   if (connected) return 'ok';
   if (state === 'connecting' || state === 'initializing') return 'warn';
@@ -406,8 +509,16 @@ const formatStatusClass = (connected, state) => {
 
 const setHealthItem = (dotEl, textEl, label, connected, state) => {
   const statusClass = formatStatusClass(connected, state);
-  dotEl.className = `health-dot ${statusClass}`;
-  textEl.textContent = `${label}: ${connected ? 'Connected' : state}`;
+  dotEl.className = `status-dot ${statusClass}`;
+  textEl.textContent = connected ? 'Connected' : state;
+};
+
+const formatUptime = (seconds) => {
+  if (seconds < 60) return `${seconds}s`;
+  if (seconds < 3600) return `${Math.floor(seconds / 60)}m ${seconds % 60}s`;
+  const h = Math.floor(seconds / 3600);
+  const m = Math.floor((seconds % 3600) / 60);
+  return `${h}h ${m}m`;
 };
 
 const renderStatus = (payload) => {
@@ -418,8 +529,16 @@ const renderStatus = (payload) => {
   setHealthItem(stateEls.mongoDot, stateEls.mongoText, 'MongoDB', info.database.connected, info.database.state);
   setHealthItem(stateEls.redisDot, stateEls.redisText, 'Redis', info.cache.connected, info.cache.state);
 
-  stateEls.uptime.textContent = `${Math.floor(info.server.uptimeSeconds / 60)} min`;
+  stateEls.uptime.textContent = formatUptime(info.server.uptimeSeconds);
   stateEls.mem.textContent = `${info.system.memory.usedMb} MB / ${info.system.memory.totalMb} MB`;
+
+  // Header dot color
+  if (headerDot) {
+    const allOk = info.database.connected;
+    headerDot.style.background = allOk ? 'var(--green)' : 'var(--yellow)';
+    headerDot.style.boxShadow = allOk ? '0 0 8px rgba(34,197,94,.5)' : '0 0 8px rgba(245,158,11,.4)';
+    headerDot.title = allOk ? 'All systems operational' : 'Some services degraded';
+  }
 
   const dbOnline = info.database.connected;
   stateEls.dbBanner.classList.toggle('hidden', dbOnline);
@@ -435,9 +554,16 @@ const loadStatus = async () => {
     setHealthItem(stateEls.serverDot, stateEls.serverText, 'Server', false, 'unreachable');
     setHealthItem(stateEls.mongoDot, stateEls.mongoText, 'MongoDB', false, 'unreachable');
     setHealthItem(stateEls.redisDot, stateEls.redisText, 'Redis', false, 'unreachable');
+    if (headerDot) {
+      headerDot.style.background = 'var(--red)';
+      headerDot.style.boxShadow = '0 0 8px rgba(239,68,68,.4)';
+    }
   }
 };
 
+/* ══════════════════════════════════════════════════════════════
+   ACTIVITY LOG
+   ══════════════════════════════════════════════════════════ */
 const statusBadgeClass = (statusCode) => {
   if (statusCode >= 500) return 'err';
   if (statusCode >= 400) return 'warn';
@@ -457,7 +583,9 @@ const renderActivity = (items) => {
     const row = document.createElement('tr');
 
     const timeCell = document.createElement('td');
-    timeCell.textContent = new Date(item.timestamp).toLocaleTimeString();
+    timeCell.textContent = relativeTime(item.timestamp);
+    timeCell.title = new Date(item.timestamp).toLocaleString('id-ID');
+    timeCell.style.whiteSpace = 'nowrap';
 
     const requestCell = document.createElement('td');
     const methodChip = document.createElement('span');
@@ -474,6 +602,7 @@ const renderActivity = (items) => {
 
     const latencyCell = document.createElement('td');
     latencyCell.textContent = `${item.durationMs} ms`;
+    latencyCell.style.whiteSpace = 'nowrap';
 
     row.appendChild(timeCell);
     row.appendChild(requestCell);
@@ -494,6 +623,9 @@ const loadActivity = async () => {
   }
 };
 
+/* ══════════════════════════════════════════════════════════════
+   EXAMPLE BLOCKS
+   ══════════════════════════════════════════════════════════ */
 const inferExample = (method, path) => {
   const direct = endpointExamples[path];
   if (direct) return direct;
@@ -577,39 +709,38 @@ const attachEndpointCopyButtons = () => {
   document.querySelectorAll('.card').forEach((card) => {
     const endpointEl = card.querySelector('.endpoint');
     if (!endpointEl) return;
-    if (endpointEl.querySelector('.endpoint-copy-btn')) return; // Already added
+    if (endpointEl.querySelector('.endpoint-copy-btn')) return;
 
     const method = endpointEl.querySelector('.method')?.textContent?.trim() || 'GET';
     const rawPath = endpointEl.textContent.replace(method, '').trim();
     if (!rawPath.startsWith('/')) return;
 
-    // Create wrapper container to hold endpoint and copy button side-by-side
     const wrapper = document.createElement('div');
     wrapper.className = 'endpoint-wrapper';
-    
-    // Clone endpoint to move it
+
     const newEndpoint = endpointEl.cloneNode(true);
     endpointEl.replaceWith(wrapper);
-    
-    // Create copy button
+
     const copyBtn = document.createElement('button');
     copyBtn.type = 'button';
     copyBtn.className = 'copy-btn endpoint-copy-btn';
     copyBtn.textContent = 'Copy URL';
-    copyBtn.title = `Copy: ${method} http://localhost:5000${rawPath}`;
-    
+    copyBtn.title = `Copy: ${method} ${window.location.origin}${rawPath}`;
+
     copyBtn.addEventListener('click', (e) => {
       e.stopPropagation();
-      const fullUrl = `${method} http://localhost:5000${rawPath}`;
+      const fullUrl = `${method} ${window.location.origin}${rawPath}`;
       copyText(fullUrl, copyBtn);
     });
-    
-    // Add endpoint and button to wrapper
+
     wrapper.appendChild(newEndpoint);
     wrapper.appendChild(copyBtn);
   });
 };
 
+/* ══════════════════════════════════════════════════════════════
+   CAROUSEL
+   ══════════════════════════════════════════════════════════ */
 const updateCarousel = () => {
   carouselTrack.style.transform = `translateX(-${carouselIndex * 100}%)`;
   carouselDots.querySelectorAll('.dot').forEach((dot, idx) => {
@@ -717,6 +848,9 @@ const initCarouselFilter = () => {
   carouselCategory.addEventListener('change', applyCarouselFilter);
 };
 
+/* ══════════════════════════════════════════════════════════════
+   TESTER PRESETS
+   ══════════════════════════════════════════════════════════ */
 const updatePresetEndpointOptions = () => {
   const selectedCategory = presetCategory.value;
   const category = dashboardData.testerPresets.find((item) => item.key === selectedCategory);
@@ -770,6 +904,9 @@ const initTesterPresets = () => {
   presetEndpoint.addEventListener('change', applyPresetSelection);
 };
 
+/* ══════════════════════════════════════════════════════════════
+   SEARCH FILTER
+   ══════════════════════════════════════════════════════════ */
 const filterCards = () => {
   const q = searchInput.value.toLowerCase().trim();
   document.querySelectorAll('.card').forEach((card) => {
@@ -786,6 +923,9 @@ const filterCards = () => {
   });
 };
 
+/* ══════════════════════════════════════════════════════════════
+   PLAYGROUND
+   ══════════════════════════════════════════════════════════ */
 const runPlayground = async (event) => {
   event.preventDefault();
   responseMeta.textContent = 'Loading...';
@@ -847,12 +987,22 @@ const runPlayground = async (event) => {
     }
     responseMeta.textContent = `${res.status} ${res.statusText} · ${elapsed} ms`;
     responseBox.textContent = pretty;
+    const ts = new Date().toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit' });
+    const okState = { ok: res.ok, ts, count: (getQlStatus(path)?.count || 0) + 1 };
+    if (!res.ok) okState.msg = `${res.status} ${res.statusText}`;
+    setQlStatus(path, okState);
   } catch (err) {
     responseMeta.textContent = 'Request failed';
     responseBox.textContent = err.message;
+    const ts = new Date().toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit' });
+    const errState = { ok: false, ts, count: (getQlStatus(path)?.count || 0) + 1, msg: err.message };
+    setQlStatus(path, errState);
   }
 };
 
+/* ══════════════════════════════════════════════════════════════
+   DATA LOADING
+   ══════════════════════════════════════════════════════════ */
 const loadDashboardData = async () => {
   try {
     const res = await fetch(FALLBACK_DATA_PATH);
@@ -870,27 +1020,34 @@ const loadDashboardData = async () => {
 };
 
 const loadContentStats = async () => {
+  const set = (id, val) => {
+    const el = document.getElementById(id);
+    if (el) el.textContent = val ?? '0';
+  };
+
+  set('statAnimeProxy', ANIME_PROXY_SOURCES.length);
+
   try {
     const res = await fetch(`${API_BASE}/comic/stats`);
     const json = await res.json();
     const d = json?.data;
     if (!d) return;
     const byType = d.byType || {};
-    const set = (id, val) => {
-      const el = document.getElementById(id);
-      if (el) el.textContent = val ?? '0';
-    };
+
     set('statTotal',   d.total);
     set('statDonghua', (byType.donghua || 0) + (byType.movie || 0));
     set('statManga',   byType.manga   || 0);
     set('statManhwa',  byType.manhwa  || 0);
     set('statManhua',  byType.manhua  || 0);
-    set('statOna',     byType.ona     || 0);
+    set('statOna',     (byType.ona || 0) + (byType.anime || 0));
   } catch {
     // gagal fetch stats — biarkan ... tetap tampil
   }
 };
 
+/* ══════════════════════════════════════════════════════════════
+   QUICK LINKS
+   ══════════════════════════════════════════════════════════ */
 const QUICK_LINKS = [
   {
     group: '🌐 Sistem & Halaman',
@@ -1091,7 +1248,172 @@ const QUICK_LINKS = [
       { tag: 'PROXY', tagClass: 'ql-proxy', label: 'Search "naruto"',    path: '/api/v1/drachin/search/naruto' },
     ],
   },
+
+  // ── DB Routes ──────────────────────────────────────────────────────────────
+  {
+    group: '🗄️ DB: Manga',
+    items: [
+      { tag: 'DB', tagClass: 'ql-db', label: 'List Manga (page 1)',       path: '/api/v1/manga-db?page=1&limit=20' },
+      { tag: 'DB', tagClass: 'ql-db', label: 'Search Manga',             path: '/api/v1/manga-db?search=naruto' },
+      { tag: 'DB', tagClass: 'ql-db', label: 'Filter Ongoing',           path: '/api/v1/manga-db?status=ongoing' },
+      { tag: 'DB', tagClass: 'ql-db', label: 'Sort by Rating',           path: '/api/v1/manga-db?sortBy=rating&order=desc' },
+      { tag: 'DB', tagClass: 'ql-db', label: 'Detail by Slug',           path: '/api/v1/manga-db/one-piece' },
+      { tag: 'DB', tagClass: 'ql-db', label: 'Chapters (by ID)',         path: '/api/v1/manga-db/:id/chapters' },
+    ],
+  },
+  {
+    group: '🗄️ DB: Manhwa',
+    items: [
+      { tag: 'DB', tagClass: 'ql-db', label: 'List Manhwa (page 1)',     path: '/api/v1/manhwa-db?page=1&limit=20' },
+      { tag: 'DB', tagClass: 'ql-db', label: 'Search Manhwa',           path: '/api/v1/manhwa-db?search=solo+leveling' },
+      { tag: 'DB', tagClass: 'ql-db', label: 'Filter Completed',        path: '/api/v1/manhwa-db?status=completed' },
+      { tag: 'DB', tagClass: 'ql-db', label: 'Sort by Views',           path: '/api/v1/manhwa-db?sortBy=views&order=desc' },
+      { tag: 'DB', tagClass: 'ql-db', label: 'Detail by Slug',          path: '/api/v1/manhwa-db/solo-leveling' },
+      { tag: 'DB', tagClass: 'ql-db', label: 'Chapters (by ID)',        path: '/api/v1/manhwa-db/:id/chapters' },
+    ],
+  },
+  {
+    group: '🗄️ DB: Manhua',
+    items: [
+      { tag: 'DB', tagClass: 'ql-db', label: 'List Manhua (page 1)',     path: '/api/v1/manhua-db?page=1&limit=20' },
+      { tag: 'DB', tagClass: 'ql-db', label: 'Search Manhua',           path: '/api/v1/manhua-db?search=battle' },
+      { tag: 'DB', tagClass: 'ql-db', label: 'Filter Ongoing',          path: '/api/v1/manhua-db?status=ongoing' },
+      { tag: 'DB', tagClass: 'ql-db', label: 'Detail by Slug',          path: '/api/v1/manhua-db/battle-through-the-heavens' },
+      { tag: 'DB', tagClass: 'ql-db', label: 'Chapters (by ID)',        path: '/api/v1/manhua-db/:id/chapters' },
+    ],
+  },
+  {
+    group: '🗄️ DB: Anime',
+    items: [
+      { tag: 'DB', tagClass: 'ql-db', label: 'List Anime (page 1)',      path: '/api/v1/anime-db?page=1&limit=20' },
+      { tag: 'DB', tagClass: 'ql-db', label: 'Search Anime',            path: '/api/v1/anime-db?search=naruto' },
+      { tag: 'DB', tagClass: 'ql-db', label: 'Filter Ongoing',          path: '/api/v1/anime-db?status=ongoing' },
+      { tag: 'DB', tagClass: 'ql-db', label: 'Sort by Rating',          path: '/api/v1/anime-db?sortBy=rating&order=desc' },
+      { tag: 'DB', tagClass: 'ql-db', label: 'Detail by Slug',          path: '/api/v1/anime-db/naruto' },
+      { tag: 'DB', tagClass: 'ql-db', label: 'Seasons (by ID)',         path: '/api/v1/anime-db/:id/seasons' },
+      { tag: 'DB', tagClass: 'ql-db', label: 'Episodes (by ID)',        path: '/api/v1/anime-db/:id/episodes' },
+    ],
+  },
+  {
+    group: '🗄️ DB: Donghua',
+    items: [
+      { tag: 'DB', tagClass: 'ql-db', label: 'List Donghua (page 1)',    path: '/api/v1/donghua-db?page=1&limit=20' },
+      { tag: 'DB', tagClass: 'ql-db', label: 'Search Donghua',          path: '/api/v1/donghua-db?search=battle' },
+      { tag: 'DB', tagClass: 'ql-db', label: 'Filter Ongoing',          path: '/api/v1/donghua-db?status=ongoing' },
+      { tag: 'DB', tagClass: 'ql-db', label: 'Sort by Views',           path: '/api/v1/donghua-db?sortBy=views&order=desc' },
+      { tag: 'DB', tagClass: 'ql-db', label: 'Detail by Slug',          path: '/api/v1/donghua-db/battle-through-the-heavens' },
+      { tag: 'DB', tagClass: 'ql-db', label: 'Seasons (by ID)',         path: '/api/v1/donghua-db/:id/seasons' },
+      { tag: 'DB', tagClass: 'ql-db', label: 'Episodes (by ID)',        path: '/api/v1/donghua-db/:id/episodes' },
+    ],
+  },
+  {
+    group: '🛠️ Anime DB Sync',
+    bulkAction: { label: '⚡ Sync All 16 Sources', path: '/api/v1/jobs/anime-sync?limit=20&update=true', method: 'POST' },
+    items: [
+      { tag: 'SYNC', tagClass: 'ql-admin', method: 'POST', label: 'Sync Oploverz', path: '/api/v1/jobs/anime-sync/oploverz?limit=1&update=true' },
+      { tag: 'SYNC', tagClass: 'ql-admin', method: 'POST', label: 'Sync Samehadaku', path: '/api/v1/jobs/anime-sync/samehadaku?limit=1&update=true' },
+      { tag: 'SYNC', tagClass: 'ql-admin', method: 'POST', label: 'Sync Animasu', path: '/api/v1/jobs/anime-sync/animasu?limit=1&update=true' },
+      { tag: 'SYNC', tagClass: 'ql-admin', method: 'POST', label: 'Sync Kusonime', path: '/api/v1/jobs/anime-sync/kusonime?limit=1&update=true' },
+      { tag: 'SYNC', tagClass: 'ql-admin', method: 'POST', label: 'Sync Anoboy', path: '/api/v1/jobs/anime-sync/anoboy?limit=1&update=true' },
+      { tag: 'SYNC', tagClass: 'ql-admin', method: 'POST', label: 'Sync AnimeSail', path: '/api/v1/jobs/anime-sync/animesail?limit=1&update=true' },
+      { tag: 'SYNC', tagClass: 'ql-admin', method: 'POST', label: 'Sync Stream', path: '/api/v1/jobs/anime-sync/stream?limit=1&update=true' },
+      { tag: 'SYNC', tagClass: 'ql-admin', method: 'POST', label: 'Sync Animekuindo', path: '/api/v1/jobs/anime-sync/animekuindo?limit=1&update=true' },
+      { tag: 'SYNC', tagClass: 'ql-admin', method: 'POST', label: 'Sync Nimegami', path: '/api/v1/jobs/anime-sync/nimegami?limit=1&update=true' },
+      { tag: 'SYNC', tagClass: 'ql-admin', method: 'POST', label: 'Sync Alqanime', path: '/api/v1/jobs/anime-sync/alqanime?limit=1&update=true' },
+      { tag: 'SYNC', tagClass: 'ql-admin', method: 'POST', label: 'Sync Donghub', path: '/api/v1/jobs/anime-sync/donghub?limit=1&update=true' },
+      { tag: 'SYNC', tagClass: 'ql-admin', method: 'POST', label: 'Sync Winbu', path: '/api/v1/jobs/anime-sync/winbu?limit=1&update=true' },
+      { tag: 'SYNC', tagClass: 'ql-admin', method: 'POST', label: 'Sync Kuramanime', path: '/api/v1/jobs/anime-sync/kura?limit=1&update=true' },
+      { tag: 'SYNC', tagClass: 'ql-admin', method: 'POST', label: 'Sync Dramabox', path: '/api/v1/jobs/anime-sync/dramabox?limit=1&update=true' },
+      { tag: 'SYNC', tagClass: 'ql-admin', method: 'POST', label: 'Sync Drachin', path: '/api/v1/jobs/anime-sync/drachin?limit=1&update=true' },
+    ],
+  },
 ];
+
+/* ── Quick Link status persistence ────────────────────────────── */
+const QL_STATUS_KEY = 'ql_sync_status_v1';
+const _qlStatusCache = (() => {
+  try { return JSON.parse(localStorage.getItem(QL_STATUS_KEY) || '{}'); }
+  catch { return {}; }
+})();
+const _saveQlStatus = () => {
+  try { localStorage.setItem(QL_STATUS_KEY, JSON.stringify(_qlStatusCache)); } catch {}
+};
+const setQlStatus = (path, state) => { _qlStatusCache[path] = state; _saveQlStatus(); };
+const getQlStatus = (path) => _qlStatusCache[path] || null;
+const _applyStatusEl = (el, state) => {
+  if (!el) return;
+  el.classList.remove('ql-status--ok', 'ql-status--fail', 'ql-status--loading');
+  if (!state) { el.textContent = ''; return; }
+  if (state === 'loading') {
+    el.classList.add('ql-status--loading');
+    el.textContent = '●';
+    el.title = 'Running…';
+    return;
+  }
+  el.classList.add(state.ok ? 'ql-status--ok' : 'ql-status--fail');
+  el.textContent = state.ok ? '✓' : '✗';
+  el.title = `${state.ok ? 'OK' : 'Gagal'} · ${state.ts}${state.msg ? ' · ' + state.msg : ''}`;
+};
+
+const executeQuickLink = async ({ method = 'GET', path, body = null, statusEl = null }) => {
+  responseMeta.textContent = 'Loading...';
+  responseBox.textContent = '';
+  _applyStatusEl(statusEl, 'loading');
+
+  let url = path;
+  if (!url.startsWith('http')) {
+    if (!url.startsWith('/')) url = `/${url}`;
+    if (!url.startsWith('/api/')) {
+      url = `${API_BASE}${url}`;
+    }
+  }
+
+  const resolvedUrl = new URL(url, window.location.origin);
+  if (resolvedUrl.origin !== window.location.origin) {
+    responseMeta.textContent = 'Blocked: external origin is not allowed in quick links';
+    responseBox.textContent = resolvedUrl.href;
+    return;
+  }
+
+  const headers = { Accept: 'application/json' };
+  const token = document.getElementById('playToken')?.value?.trim();
+  if (token) {
+    headers.Authorization = `Bearer ${token}`;
+  }
+
+  const options = { method, headers };
+  if (body && method !== 'GET') {
+    headers['Content-Type'] = 'application/json';
+    options.body = JSON.stringify(body);
+  }
+
+  const startedAt = performance.now();
+  try {
+    const res = await fetch(resolvedUrl.href, options);
+    const elapsed = Math.round((performance.now() - startedAt) * 100) / 100;
+    const text = await res.text();
+    let pretty = text;
+    try {
+      pretty = JSON.stringify(JSON.parse(text), null, 2);
+    } catch {
+      // Keep raw text if not JSON
+    }
+    responseMeta.textContent = `${res.status} ${res.statusText} · ${elapsed} ms`;
+    responseBox.textContent = pretty;
+    const ts = new Date().toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit' });
+    const okState = { ok: res.ok, ts, count: (getQlStatus(path)?.count || 0) + 1 };
+    if (!res.ok) okState.msg = `${res.status} ${res.statusText}`;
+    setQlStatus(path, okState);
+    _applyStatusEl(statusEl, okState);
+  } catch (err) {
+    responseMeta.textContent = 'Request failed';
+    responseBox.textContent = err.message;
+    const ts = new Date().toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit' });
+    const errState = { ok: false, ts, count: (getQlStatus(path)?.count || 0) + 1, msg: err.message };
+    setQlStatus(path, errState);
+    _applyStatusEl(statusEl, errState);
+  }
+};
 
 const renderQuickLinks = () => {
   const grid = document.getElementById('quickLinksGrid');
@@ -1112,6 +1434,33 @@ const renderQuickLinks = () => {
     titleEl.textContent = group.group;
     groupEl.appendChild(titleEl);
 
+    // ── Bulk hero button (groups with bulkAction) ──────────────
+    if (group.bulkAction) {
+      const ba = group.bulkAction;
+      const bulkWrap = document.createElement('div');
+      bulkWrap.className = 'ql-bulk-wrap';
+
+      const bulkBtn = document.createElement('button');
+      bulkBtn.type = 'button';
+      bulkBtn.className = 'ql-bulk-btn';
+      bulkBtn.textContent = ba.label;
+
+      const bulkStatusEl = document.createElement('span');
+      bulkStatusEl.className = 'ql-status ql-bulk-status';
+      const savedBulk = getQlStatus(ba.path);
+      if (savedBulk) _applyStatusEl(bulkStatusEl, savedBulk);
+
+      bulkBtn.addEventListener('click', async () => {
+        bulkBtn.disabled = true;
+        await executeQuickLink({ method: ba.method, path: ba.path, statusEl: bulkStatusEl });
+        bulkBtn.disabled = false;
+      });
+
+      bulkWrap.appendChild(bulkBtn);
+      bulkWrap.appendChild(bulkStatusEl);
+      groupEl.appendChild(bulkWrap);
+    }
+
     const itemsEl = document.createElement('div');
     itemsEl.className = 'ql-items';
 
@@ -1126,24 +1475,43 @@ const renderQuickLinks = () => {
       tag.className = `ql-tag ${item.tagClass}`;
       tag.textContent = item.tag;
 
-      const label = document.createElement('a');
+      const isAction = String(item.method || 'GET').toUpperCase() !== 'GET';
+
+      // ── per-item status badge ──────────────────────────────────
+      const statusEl = document.createElement('span');
+      statusEl.className = 'ql-status';
+      const saved = getQlStatus(item.path);
+      if (saved) _applyStatusEl(statusEl, saved);
+
+      const label = isAction ? document.createElement('button') : document.createElement('a');
       label.className = 'ql-label';
-      label.href = fullUrl;
-      label.target = '_blank';
-      label.rel = 'noopener noreferrer';
-      label.textContent = item.label;
+      if (isAction) {
+        label.type = 'button';
+        label.textContent = item.label;
+        label.addEventListener('click', () => executeQuickLink({ method: item.method, path: item.path, body: item.body || null, statusEl }));
+      } else {
+        label.href = fullUrl;
+        label.target = '_blank';
+        label.rel = 'noopener noreferrer';
+        label.textContent = item.label;
+      }
 
       const copyBtn = document.createElement('button');
       copyBtn.type = 'button';
       copyBtn.className = 'ql-copy-btn';
-      copyBtn.textContent = 'Copy';
+      copyBtn.textContent = isAction ? 'Run' : 'Copy';
       copyBtn.addEventListener('click', (e) => {
         e.stopPropagation();
-        copyText(fullUrl, copyBtn);
+        if (isAction) {
+          executeQuickLink({ method: item.method, path: item.path, body: item.body || null, statusEl });
+        } else {
+          copyText(fullUrl, copyBtn);
+        }
       });
 
       row.appendChild(tag);
       row.appendChild(label);
+      row.appendChild(statusEl);
       row.appendChild(copyBtn);
       itemsEl.appendChild(row);
     });
@@ -1153,6 +1521,9 @@ const renderQuickLinks = () => {
   });
 };
 
+/* ══════════════════════════════════════════════════════════════
+   BOOT
+   ══════════════════════════════════════════════════════════ */
 const boot = async () => {
   await loadDashboardData();
 

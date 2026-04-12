@@ -30,6 +30,7 @@ const winbu            = require('../modules/winbu/winbu.routes');
 const kuramanime       = require('../modules/kuramanime/kuramanime.routes');
 const dramabox         = require('../modules/dramabox/dramabox.routes');
 const drachin          = require('../modules/drachin/drachin.routes');
+const createContentRouter = require('../modules/content-db/createContentRouter');
 const jobsRoutes       = require('../modules/jobs/jobs.routes');
 const trendingRoutes = require('../modules/trending/trending.routes');
 const collectionRoutes = require('../modules/collection/collection.routes');
@@ -76,6 +77,14 @@ router.use('/drachin',    drachin);
 router.use('/jobs',      jobsRoutes);
 router.use('/collections', collectionRoutes);
 router.use('/comic',       comicRoutes);   // ← /api/v1/comic/* unified comic endpoints
+
+// ── Per-type DB routes ────────────────────────────────────────────────────────
+router.use('/manga-db',   createContentRouter('manga'));
+router.use('/manhwa-db',  createContentRouter('manhwa'));
+router.use('/manhua-db',  createContentRouter('manhua'));
+router.use('/anime-db',   createContentRouter('anime'));
+router.use('/donghua-db', createContentRouter('donghua'));
+
 router.use('/',          trendingRoutes); // ← Trending routes at root (/)
 
 router.get(

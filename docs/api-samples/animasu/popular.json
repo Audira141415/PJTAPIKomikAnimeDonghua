@@ -1,0 +1,92 @@
+{
+  "status": "success",
+  "creator": "Sanka Vollerei",
+  "source": "Animasu",
+  "animes": [
+    {
+      "title": "One Piece Serial",
+      "slug": "op-indonesia",
+      "poster": "https://i1.wp.com/v1.animasu.app/wp-content/uploads/2020/04/download-1.jpeg",
+      "episode": "Episode 1156",
+      "status_or_day": "🔥🔥🔥",
+      "type": "TV"
+    },
+    {
+      "title": "Tokyo Revengers",
+      "slug": "tokyo-revengers",
+      "poster": "https://i2.wp.com/v1.animasu.app/wp-content/uploads/2021/03/122012.jpg",
+      "episode": "24 Episode",
+      "status_or_day": "Selesai ✓",
+      "type": "TV"
+    },
+    {
+      "title": "Boruto: Naruto Next Generations",
+      "slug": "boruto-naruto-next-generations-subtitle-indo",
+      "poster": "https://i2.wp.com/v1.animasu.app/wp-content/uploads/2020/04/84460.jpg",
+      "episode": "293 Episode",
+      "status_or_day": "Selesai ✓",
+      "type": "TV"
+    },
+    {
+      "title": "Black Clover",
+      "slug": "black-clover-sub-indo",
+      "poster": "https://i0.wp.com/v1.animasu.app/wp-content/uploads/2020/04/88336.jpg",
+      "episode": "170 Episode",
+      "status_or_day": "Selesai ✓",
+      "type": "TV"
+    },
+    {
+      "title": "Tensei shitara Slime Datta Ken Season 2 Part 2",
+      "slug": "tensei-shitara-slime-datta-ken-s2-part-2-sub-indo",
+      "poster": "https://i2.wp.com/v1.animasu.app/wp-content/uploads/2021/03/cover-tensei-shitara-slime-datta-ken-2nd-season-part-2.jpg",
+      "episode": "12 Episode",
+      "status_or_day": "Selesai ✓",
+      "type": "TV"
+    },
+    {
+      "title": "Mushoku Tensei: Isekai Ittara Honki Dasu Part 2",
+      "slug": "mushoku-tensei-isekai-ittara-honki-dasu-part-2",
+      "poster": "https://i0.wp.com/v1.animasu.app/wp-content/uploads/2021/03/1571416748-9a938a16e389dee97158f29d3b19f77f.jpeg",
+      "episode": "12 Episode",
+      "status_or_day": "Selesai ✓",
+      "type": "TV"
+    },
+    {
+      "title": "Jujutsu Kaisen (TV)",
+      "slug": "jujutsu-kaisen-subtitle-indo",
+      "poster": "https://i1.wp.com/v1.animasu.app/wp-content/uploads/2020/09/109222.jpg",
+      "episode": "24 Episode",
+      "status_or_day": "Selesai ✓",
+      "type": "TV"
+    },
+    {
+      "title": "Seirei Gensouki",
+      "slug": "seirei-gensouki",
+      "poster": "https://i3.wp.com/v1.animasu.app/wp-content/uploads/2021/06/110385.jpg",
+      "episode": "12 Episode",
+      "status_or_day": "Selesai ✓",
+      "type": "TV"
+    },
+    {
+      "title": "Detective Conan",
+      "slug": "detective-conan-indonesia",
+      "poster": "https://i2.wp.com/v1.animasu.app/wp-content/uploads/2020/04/75199.jpg",
+      "episode": "Episode 1251",
+      "status_or_day": "🔥🔥🔥",
+      "type": "TV"
+    },
+    {
+      "title": "Kimetsu no Yaiba Movie: Mugen Ressha-hen",
+      "slug": "kimetsu-no-yaiba-movie-mugen-ressha-hen-sub-indo",
+      "poster": "https://cdn.myanimelist.net/images/anime/1704/106947.jpg",
+      "episode": "Movie",
+      "status_or_day": "Selesai ✓",
+      "type": "Movie"
+    }
+  ],
+  "pagination": {
+    "hasNext": true,
+    "hasPrev": false,
+    "currentPage": 1
+  }
+}

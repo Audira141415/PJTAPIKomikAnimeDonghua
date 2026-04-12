@@ -1,0 +1,92 @@
+{
+  "status": "success",
+  "creator": "Sanka Vollerei",
+  "source": "Animasu",
+  "animes": [
+    {
+      "title": "Fate/Grand Carnival",
+      "slug": "fate-grand-carnival",
+      "poster": "https://i1.wp.com/v1.animasu.app/wp-content/uploads/2021/11/117596.jpg",
+      "episode": "Episode 2",
+      "status_or_day": "🔥🔥🔥",
+      "type": "OVA"
+    },
+    {
+      "title": "Fantasy x Hunter [Huan You Lieren]",
+      "slug": "huan-you-lieren",
+      "poster": "https://cdn.myanimelist.net/images/anime/1620/120376.jpg",
+      "episode": "Episode 3",
+      "status_or_day": "🔥🔥🔥",
+      "type": "ONA"
+    },
+    {
+      "title": "Dubu Xiaoyao [One Step Toward Freedom]",
+      "slug": "one-step-toward-freedom",
+      "poster": "https://cdn.myanimelist.net/images/anime/1429/108132.jpg",
+      "episode": "Episode 279",
+      "status_or_day": "🔥🔥🔥",
+      "type": "ONA"
+    },
+    {
+      "title": "Jiu Tian Xuan Di Jue [The Success Of Empyrean Xuan Emperor] Season 2",
+      "slug": "the-success-of-empyrean-xuan-emperor-s2",
+      "poster": "https://i3.wp.com/v1.animasu.app/wp-content/uploads/2022/05/123484.jpg",
+      "episode": "Episode 117",
+      "status_or_day": "🔥🔥🔥",
+      "type": "ONA"
+    },
+    {
+      "title": "Martial Masters [wu shen zhu zai]",
+      "slug": "martial-masters",
+      "poster": "https://i2.wp.com/v1.animasu.app/wp-content/uploads/2021/11/Martial-Master-v1-e1697280487477.jpg",
+      "episode": "Episode 301",
+      "status_or_day": "🔥🔥🔥",
+      "type": "ONA"
+    },
+    {
+      "title": "Super Dragon Ball Heroes",
+      "slug": "super-dragon-ball-heroes-indo",
+      "poster": "https://cdn.myanimelist.net/images/anime/1480/92990.jpg",
+      "episode": "Episode 50",
+      "status_or_day": "🔥🔥🔥",
+      "type": "ONA"
+    },
+    {
+      "title": "Ochibi-san",
+      "slug": "ochibi-san",
+      "poster": "https://cache2-ebookjapan.akamaized.net/contents/thumb/s/CLK00460.jpg?1527743388000",
+      "episode": "Episode 2",
+      "status_or_day": "🔥🔥🔥",
+      "type": "TV"
+    },
+    {
+      "title": "THRUD",
+      "slug": "thrud",
+      "poster": "https://i1.wp.com/v1.animasu.app/wp-content/uploads/2023/08/137724.jpg",
+      "episode": "Episode 2",
+      "status_or_day": "🔥🔥🔥",
+      "type": "ONA"
+    },
+    {
+      "title": "Ai Zai Xi Yuan Qian [Immemorial Love For You] Season 2",
+      "slug": "ai-zai-xi-yuan-qian-s2",
+      "poster": "https://i0.wp.com/v1.animasu.app/wp-content/uploads/2021/02/112028.jpg",
+      "episode": "Episode 3",
+      "status_or_day": "🔥🔥🔥",
+      "type": "ONA"
+    },
+    {
+      "title": "The Legend of Magic Outfit [Mo Zhuang Chuanshuo]",
+      "slug": "the-legend-of-magic-outfit",
+      "poster": "https://i0.wp.com/v1.animasu.app/wp-content/uploads/2023/08/137950.jpg",
+      "episode": "Episode 30",
+      "status_or_day": "🔥🔥🔥",
+      "type": "ONA"
+    }
+  ],
+  "pagination": {
+    "hasNext": true,
+    "hasPrev": false,
+    "currentPage": 1
+  }
+}

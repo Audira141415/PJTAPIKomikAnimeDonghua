@@ -32,6 +32,7 @@ const westmanga   = require('../westmanga/westmanga.service');
 const mangasusuku = require('../mangasusuku/mangasusuku.service');
 const kiryuu      = require('../kiryuu/kiryuu.service');
 const cosmic      = require('../cosmic/cosmic.service');
+const { normalizeCard } = require('./cardNormalizer');
 
 /**
  * Extract the first array of comics from a scraper response.
@@ -65,30 +66,6 @@ const extractCards = (data) => {
  * Handles both HTML-scraped cards (slug, title, cover, chapter)
  * and JSON API cards (Westmanga / Meganei WP REST).
  */
-const normalizeCard = (card, source) => {
-  if (!card || typeof card !== 'object') return null;
-
-  /* Westmanga JSON API shape */
-  const title = card.title || card.name || card.post_title || '';
-  const slug  = card.slug  || card.post_name || card.id || null;
-  const cover = card.cover ||
-                card.coverImage || card.image || card.thumbnail ||
-                card.thumbnail_url || card.imageSrc || null;
-
-  /* Chapter from different key names */
-  const chapter =
-    card.chapter     || card.latestChapter || card.last_chapter ||
-    card.firstChapter?.title || null;
-
-  const type   = card.type || card.post_type || null;
-  const rating = card.rating || card.score   || null;
-  const link   = card.link  || card.url      || card.href || null;
-
-  if (!title && !slug) return null;
-
-  return { source, title, slug, cover, chapter, type, rating, link };
-};
-
 /* ── Source definitions ───────────────────────────────────────────────────── */
 const SOURCES = {
   bacakomik: {

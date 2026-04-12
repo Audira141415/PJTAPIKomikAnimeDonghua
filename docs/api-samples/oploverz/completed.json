@@ -1,0 +1,102 @@
+{
+  "status": "success",
+  "creator": "Sanka Vollerei",
+  "source": "Oploverz",
+  "anime_list": [
+    {
+      "title": "3D Kanojo Real Girl S2",
+      "slug": "anime",
+      "poster": "https://i0.wp.com/oploverz.click/wp-content/uploads/manga-images/thumbnail/3d-kanojo-real-girl-s2.jpg",
+      "type": "TV",
+      "episode": "Completed",
+      "status": "Completed",
+      "oploverz_url": "https://oploverz.click/anime/3d-kanojo-real-girl-s2/"
+    },
+    {
+      "title": "3D Kanojo: Real Girl",
+      "slug": "anime",
+      "poster": "https://i2.wp.com/oploverz.click/wp-content/uploads/manga-images/thumbnail/3d-kanojo-real-girl.jpg",
+      "type": "TV",
+      "episode": "Completed",
+      "status": "Completed",
+      "oploverz_url": "https://oploverz.click/anime/3d-kanojo-real-girl/"
+    },
+    {
+      "title": "86 Eighty-Six Part 1",
+      "slug": "anime",
+      "poster": "https://i3.wp.com/oploverz.click/wp-content/uploads/manga-images/thumbnail/86-eighty-six-part-1.jpg",
+      "type": "TV",
+      "episode": "Completed",
+      "status": "Completed",
+      "oploverz_url": "https://oploverz.click/anime/86-eighty-six-part-1/"
+    },
+    {
+      "title": "86 Eighty-Six Part 2",
+      "slug": "anime",
+      "poster": "https://i3.wp.com/oploverz.click/wp-content/uploads/manga-images/thumbnail/86-eighty-six-part-2.jpg",
+      "type": "TV",
+      "episode": "Completed",
+      "status": "Completed",
+      "oploverz_url": "https://oploverz.click/anime/86-eighty-six-part-2/"
+    },
+    {
+      "title": "Accel World",
+      "slug": "anime",
+      "poster": "https://i2.wp.com/oploverz.click/wp-content/uploads/manga-images/thumbnail/accel-world.jpg",
+      "type": "TV",
+      "episode": "Completed",
+      "status": "Completed",
+      "oploverz_url": "https://oploverz.click/anime/accel-world/"
+    },
+    {
+      "title": "Aho Girl",
+      "slug": "anime",
+      "poster": "https://i0.wp.com/oploverz.click/wp-content/uploads/manga-images/thumbnail/aho-girl.jpg",
+      "type": "TV",
+      "episode": "Completed",
+      "status": "Completed",
+      "oploverz_url": "https://oploverz.click/anime/aho-girl/"
+    },
+    {
+      "title": "Ajin",
+      "slug": "anime",
+      "poster": "https://i3.wp.com/oploverz.click/wp-content/uploads/manga-images/thumbnail/ajin.jpg",
+      "type": "TV",
+      "episode": "Completed",
+      "status": "Completed",
+      "oploverz_url": "https://oploverz.click/anime/ajin/"
+    },
+    {
+      "title": "Ajin Season 2",
+      "slug": "anime",
+      "poster": "https://i2.wp.com/oploverz.click/wp-content/uploads/manga-images/thumbnail/ajin-season-2.jpg",
+      "type": "TV",
+      "episode": "Completed",
+      "status": "Completed",
+      "oploverz_url": "https://oploverz.click/anime/ajin-season-2/"
+    },
+    {
+      "title": "Akame ga Kill!",
+      "slug": "anime",
+      "poster": "https://i1.wp.com/oploverz.click/wp-content/uploads/manga-images/thumbnail/akame-ga-kill.jpg",
+      "type": "TV",
+      "episode": "Completed",
+      "status": "Completed",
+      "oploverz_url": "https://oploverz.click/anime/akame-ga-kill/"
+    },
+    {
+      "title": "Akatsuki no Yona",
+      "slug": "anime",
+      "poster": "https://i2.wp.com/oploverz.click/wp-content/uploads/manga-images/thumbnail/akatsuki-no-yona.jpg",
+      "type": "TV",
+      "episode": "Completed",
+      "status": "Completed",
+      "oploverz_url": "https://oploverz.click/anime/akatsuki-no-yona/"
+    }
+  ],
+  "pagination": {
+    "hasNext": true,
+    "hasPrev": false,
+    "currentPage": 1
+  }
+}

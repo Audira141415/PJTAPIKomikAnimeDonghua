@@ -1,0 +1,285 @@
+{
+  "status": "success",
+  "creator": "Sanka Vollerei",
+  "message": "Anime Donghua",
+  "data": [
+    {
+      "title": "Awajima Hyakkei",
+      "id": "awajima-hyakkei",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/156361_200x300.jpeg",
+      "episode": "Episode 1",
+      "time": "5 jam",
+      "views": "74",
+      "rating": "-"
+    },
+    {
+      "title": "Haibara-kun no Tsuyokute Seishun New Game",
+      "id": "haibara-kun-no-tsuyokute-seishun-new-game",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/156048_200x300.jpeg",
+      "episode": "Episode 2",
+      "time": "5 jam",
+      "views": "79",
+      "rating": "-"
+    },
+    {
+      "title": "Mata Korosarete Shimatta no desu ne, Tantei-sama",
+      "id": "mata-korosarete-shimatta-no-desu-ne-tantei-sama",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/156152_200x300.jpeg",
+      "episode": "Episode 2",
+      "time": "5 jam",
+      "views": "164",
+      "rating": "-"
+    },
+    {
+      "title": "Mamonogurai no Boukensha: Ore dake Mamono wo Kuratte Tsuyoku Naru",
+      "id": "mamonogurai-no-boukensha-ore-dake-mamono-wo-kuratte-tsuyoku-naru",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/154990_200x300.jpeg",
+      "episode": "Episode 2",
+      "time": "14 jam",
+      "views": "1241",
+      "rating": "-"
+    },
+    {
+      "title": "Shrouding the Heavens",
+      "id": "shrouding-the-heavens",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2024/11/135727_200x300.jpeg",
+      "episode": "Episode 157",
+      "time": "15 jam",
+      "views": "72",
+      "rating": "-"
+    },
+    {
+      "title": "Kirio Fanclub",
+      "id": "kirio-fanclub",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/155831_200x300.jpeg",
+      "episode": "Episode 2",
+      "time": "15 jam",
+      "views": "287",
+      "rating": "-"
+    },
+    {
+      "title": "Reincarnation no Kaben",
+      "id": "reincarnation-no-kaben",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/155042_200x300.jpeg",
+      "episode": "Episode 2",
+      "time": "15 jam",
+      "views": "984",
+      "rating": "-"
+    },
+    {
+      "title": "Throne of Seal",
+      "id": "throne-of-seal",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2024/11/122162_200x300.jpeg",
+      "episode": "Episode 206",
+      "time": "16 jam",
+      "views": "97",
+      "rating": "-"
+    },
+    {
+      "title": "Perfect World",
+      "id": "perfect-world",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2024/11/137928_200x300.jpeg",
+      "episode": "Episode 263",
+      "time": "16 jam",
+      "views": "164",
+      "rating": "-"
+    },
+    {
+      "title": "Kujima Utaeba Ie Hororo",
+      "id": "kujima-utaeba-ie-hororo",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/155195_200x300.jpeg",
+      "episode": "Episode 1",
+      "time": "16 jam",
+      "views": "183",
+      "rating": "-"
+    },
+    {
+      "title": "Ganzo! Bandori-chan",
+      "id": "ganzo-bandori-chan",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2025/10/Ganzo-Bandori-chan-200x300-1_200x300.jpeg",
+      "episode": "Episode 28",
+      "time": "16 jam",
+      "views": "67",
+      "rating": "-"
+    },
+    {
+      "title": "Koala Enikki",
+      "id": "koala-enikki",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2025/10/152302_200x300.jpeg",
+      "episode": "Episode 28",
+      "time": "16 jam",
+      "views": "48",
+      "rating": "-"
+    },
+    {
+      "title": "Koori no Jouheki",
+      "id": "koori-no-jouheki",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/152301l_200x300.jpeg",
+      "episode": "Episode 2",
+      "time": "16 jam",
+      "views": "450",
+      "rating": "-"
+    },
+    {
+      "title": "Dr. Stone: Science Future Part 3",
+      "id": "dr-stone-science-future-part-3",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/155779_200x300.jpeg",
+      "episode": "Episode 2",
+      "time": "18 jam",
+      "views": "1145",
+      "rating": "-"
+    },
+    {
+      "title": "Himekishi wa Barbaroi no Yome",
+      "id": "himekishi-wa-barbaroi-no-yome",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/155022_200x300.jpeg",
+      "episode": "Episode 1",
+      "time": "19 jam",
+      "views": "1267",
+      "rating": "-"
+    },
+    {
+      "title": "Ganbare! Nakamura-kun!!",
+      "id": "ganbare-nakamura-kun",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/Ganbare-N-kun_200x300.jpeg",
+      "episode": "Episode 3",
+      "time": "1 hari",
+      "views": "236",
+      "rating": "-"
+    },
+    {
+      "title": "Otaku ni Yasashii Gal wa Inai!?",
+      "id": "otaku-ni-yasashii-gal-wa-inai",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/Otagyaru_200x300.jpeg",
+      "episode": "Episode 1",
+      "time": "1 hari",
+      "views": "798",
+      "rating": "-"
+    },
+    {
+      "title": "The Beginning After the End Season 2",
+      "id": "the-beginning-after-the-end-season-2",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/76937_200x300.jpeg",
+      "episode": "Episode 2",
+      "time": "1 hari",
+      "views": "2919",
+      "rating": "-"
+    },
+    {
+      "title": "Jidou Hanbaiki ni Umarekawatta Ore wa Meikyuu wo Samayou 3rd Season",
+      "id": "jidou-hanbaiki-ni-umarekawatta-ore-wa-meikyuu-wo-samayou-3rd-season",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/Jidou-Hanbaiki-S3_200x300.jpeg",
+      "episode": "Episode 2",
+      "time": "1 hari",
+      "views": "337",
+      "rating": "-"
+    },
+    {
+      "title": "Saikyou no Ousama, Nidome no Jinsei wa Nani o Suru? Season 2",
+      "id": "saikyou-no-ousama-nidome-no-jinsei-wa-nani-o-suru-season-2",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/TBATES2_200x300.jpeg",
+      "episode": "Episode 2",
+      "time": "1 hari",
+      "views": "2697",
+      "rating": "-"
+    },
+    {
+      "title": "Nigashita Sakana wa Ookikatta ga Tsuriageta Sakana ga Ookisugita Ken",
+      "id": "nigashita-sakana-wa-ookikatta-ga-tsuriageta-sakana-ga-ookisugita-ken",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/Nigetsuri_200x300.jpeg",
+      "episode": "Episode 2",
+      "time": "1 hari",
+      "views": "720",
+      "rating": "-"
+    },
+    {
+      "title": "Re:Zero kara Hajimeru Isekai Seikatsu 4th Season",
+      "id": "rezero-kara-hajimeru-isekai-seikatsu-4th-season",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/RZS4_200x300.jpeg",
+      "episode": "Episode 1",
+      "time": "1 hari",
+      "views": "828",
+      "rating": "-"
+    },
+    {
+      "title": "Dorohedoro Season 2",
+      "id": "dorohedoro-season-2",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/DorohedoroS2_200x300.jpeg",
+      "episode": "Episode 4",
+      "time": "1 hari",
+      "views": "766",
+      "rating": "-"
+    },
+    {
+      "title": "Kanojo, Okarishimasu Season 5",
+      "id": "kanojo-okarishimasu-season-5",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/KanokariS5_200x300.jpeg",
+      "episode": "Episode 1",
+      "time": "1 hari",
+      "views": "1410",
+      "rating": "-"
+    },
+    {
+      "title": "Classroom of the Elite Season 4",
+      "id": "classroom-of-the-elite-season-4",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/CotE_200x300.jpeg",
+      "episode": "Episode 5",
+      "time": "1 hari",
+      "views": "754",
+      "rating": "-"
+    },
+    {
+      "title": "Ugoku! Neko Mukashibanashi",
+      "id": "ugoku-neko-mukashibanashi",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2025/10/152216_200x300.jpeg",
+      "episode": "Episode 26",
+      "time": "1 hari",
+      "views": "132",
+      "rating": "-"
+    },
+    {
+      "title": "Megami “Isekai Tensei Nani ni Naritai Desu ka” Ore “Yuusha no Rokkotsu de”",
+      "id": "megami-isekai-tensei-nani-ni-naritai-desu-ka-ore-yuusha-no-rokkotsu-de",
+      "type": "anime",
+      "image": "https://winbu.net/wp-content/uploads/2026/04/MRR_200x300.jpeg",
+      "episode": "Episode 1",
+      "time": "2 hari",
+      "views": "2833",
+      "rating": "-"
+    }
+  ],
+  "pagination": {
+    "current_page": 1,
+    "total_pages": 5,
+    "has_next_page": true,
+    "next_page": 2,
+    "prev_page": null,
+    "has_prev_page": false
+  }
+}

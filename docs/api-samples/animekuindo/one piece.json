@@ -1,0 +1,31 @@
+{
+  "status": "success",
+  "creator": "Sanka Vollerei",
+  "source": "Animekuindo",
+  "data": [
+    {
+      "title": "One Piece Subtitle Indonesia",
+      "slug": "one-piece-subtitle-indonesia",
+      "poster": "https://i0.wp.com/s2.animekuindo.life/wp-content/uploads/2025/08/anime-one-piece-1741848758475.jpeg?resize=247,350",
+      "type": "TV",
+      "status": "Unknown",
+      "episode": "Ongoing",
+      "url": "https://s2.animekuindo.life/anime/one-piece-subtitle-indonesia/"
+    },
+    {
+      "title": "One Piece: Gyojin Tou-hen Subtitle Indonesia",
+      "slug": "one-piece-gyojin-tou-hen-subtitle-indonesia",
+      "poster": "https://i1.wp.com/s2.animekuindo.life/wp-content/uploads/2025/02/1739679894-1803-146063.jpg?resize=247,350",
+      "type": "TV",
+      "status": "Completed",
+      "episode": "Completed",
+      "url": "https://s2.animekuindo.life/anime/one-piece-gyojin-tou-hen-subtitle-indonesia/"
+    }
+  ],
+  "pagination": {
+    "current_page": 1,
+    "has_next": false,
+    "next_page": null,
+    "prev_page": null
+  }
+}

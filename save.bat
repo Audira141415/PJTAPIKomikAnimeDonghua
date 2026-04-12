@@ -1,86 +1,98 @@
 @echo off
-setlocal EnableDelayedExpansion
-title Save & Push ke GitHub
+setlocal EnableExtensions DisableDelayedExpansion
+title Save ^& Push ke GitHub
 
 :: =========================================================
-::  save.bat -- Commit semua perubahan dan push ke GitHub
-::  Cara  : save.bat
-::           save.bat "pesan commit kustom"
-::  Contoh: save.bat
-::           save.bat "feat: tambah module samehadaku"
+:: save.bat -- commit semua perubahan lalu push ke GitHub
+:: Cara  : save.bat
+::         save.bat "pesan commit kustom"
+:: Contoh: save.bat
+::         save.bat "feat: tambah module samehadaku"
 :: =========================================================
 
-set "BRANCH=main"
 set "REMOTE=origin"
+set "BRANCH="
+set "MSG=%~1"
 
-:: --- Ambil pesan commit dari argumen atau default --------
-if not "%~1"=="" (
-    set "MSG=%~1"
-) else (
-    :: Default: pakai timestamp + status singkat
-    for /f "tokens=1-3 delims=/ " %%a in ("%DATE%") do set "D=%%c-%%b-%%a"
-    for /f "tokens=1-2 delims=: " %%a in ("%TIME%") do set "T=%%a:%%b"
-    set "T=!T: =0!"
-    set "MSG=chore: update !D! !T!"
-)
-
-echo.
-echo  ============================================
-echo   SAVE ^& PUSH KE GITHUB
-echo   Remote : %REMOTE%
-echo   Branch : %BRANCH%
-echo   Commit : !MSG!
-echo  ============================================
-echo.
-
-:: --- Cek apakah ini git repo ----------------------------
+:: --- Pastikan ini repo Git --------------------------------
 git rev-parse --is-inside-work-tree >nul 2>&1
 if errorlevel 1 (
-    echo  [ERROR] Bukan git repository!
-    pause & exit /b 1
+    echo [ERROR] Folder ini bukan git repository.
+    pause
+    exit /b 1
 )
 
-:: --- Status perubahan -----------------------------------
-echo  [1/4] Mengecek perubahan...
+:: --- Ambil branch aktif -----------------------------------
+for /f "usebackq delims=" %%i in (`git branch --show-current`) do set "BRANCH=%%i"
+if not defined BRANCH (
+    echo [ERROR] Tidak bisa menentukan branch aktif. Repository mungkin sedang detached HEAD.
+    pause
+    exit /b 1
+)
+
+:: --- Cek remote -------------------------------------------
+git remote get-url %REMOTE% >nul 2>&1
+if errorlevel 1 (
+    echo [ERROR] Remote "%REMOTE%" tidak ditemukan.
+    pause
+    exit /b 1
+)
+
+:: --- Commit message default ------------------------------
+if "%MSG%"=="" (
+    for /f "usebackq delims=" %%i in (`powershell -NoProfile -Command "Get-Date -Format ''yyyy-MM-dd HH:mm''"`) do set "STAMP=%%i"
+    call set "MSG=chore: update %%STAMP%%"
+)
+
+echo.
+echo ============================================
+echo  SAVE ^& PUSH KE GITHUB
+echo  Remote : %REMOTE%
+echo  Branch : %BRANCH%
+echo  Commit : %MSG%
+echo ============================================
+echo.
+
+echo [1/4] Mengecek perubahan...
 git status --short
 echo.
 
-:: --- Apakah ada perubahan? ------------------------------
-for /f %%i in ('git status --porcelain') do set "HAS_CHANGES=1"
-if not defined HAS_CHANGES (
-    echo  [INFO] Tidak ada perubahan. Tidak ada yang di-push.
-    pause & exit /b 0
-)
-
-:: --- Add semua perubahan --------------------------------
-echo  [2/4] Menambahkan semua file...
+echo [2/4] Menambahkan semua file...
 git add -A
 if errorlevel 1 (
-    echo  [ERROR] git add gagal!
-    pause & exit /b 1
+    echo [ERROR] git add gagal.
+    pause
+    exit /b 1
 )
 
-:: --- Commit ---------------------------------------------
-echo  [3/4] Membuat commit: "!MSG!"
-git commit -m "!MSG!"
+git diff --cached --quiet
+if not errorlevel 1 (
+    echo [INFO] Tidak ada perubahan untuk di-commit.
+    pause
+    exit /b 0
+)
+
+echo [3/4] Membuat commit: "%MSG%"
+git commit -m "%MSG%"
 if errorlevel 1 (
-    echo  [ERROR] git commit gagal!
-    pause & exit /b 1
+    echo [ERROR] git commit gagal.
+    pause
+    exit /b 1
 )
 
-:: --- Push -----------------------------------------------
-echo  [4/4] Pushing ke %REMOTE%/%BRANCH%...
-git push %REMOTE% %BRANCH%
+echo [4/4] Push ke %REMOTE%/%BRANCH%...
+git push -u %REMOTE% "%BRANCH%"
 if errorlevel 1 (
     echo.
-    echo  [ERROR] Push gagal! Coba jalankan: git pull origin %BRANCH% --rebase
-    pause & exit /b 1
+    echo [ERROR] Push gagal.
+    echo [INFO] Coba jalankan: git pull --rebase %REMOTE% "%BRANCH%"
+    pause
+    exit /b 1
 )
 
 echo.
-echo  ============================================
-echo   BERHASIL! Kode sudah di-push ke GitHub.
-echo   https://github.com/Audira141415/PJTAPIKomikAnimeDonghua
-echo  ============================================
+echo ============================================
+echo  BERHASIL! Perubahan sudah di-push ke GitHub.
+echo ============================================
 echo.
 pause

@@ -1,0 +1,52 @@
+{
+  "status": "success",
+  "creator": "Sanka Vollerei",
+  "source": "Anoboy",
+  "anime_list": [
+    {
+      "title": "One Piece Live Action Season 2 (2026)",
+      "slug": "one-piece-live-action-season-2-2026",
+      "poster": "https://anoboy.be/wp-content/uploads/2026/03/One-Piece-Live-Action-Season-2-2026.webp",
+      "status": "Completed",
+      "type": "Live Action",
+      "url": "https://anoboy.be/anime/one-piece-live-action-season-2-2026/"
+    },
+    {
+      "title": "One Piece: Gyojin Tou-hen",
+      "slug": "one-piece-gyojin-tou-hen",
+      "poster": "https://anoboy.be/wp-content/uploads/2024/11/1730615946-6319-146063.jpg",
+      "status": "Completed",
+      "type": "TV",
+      "url": "https://anoboy.be/anime/one-piece-gyojin-tou-hen/"
+    },
+    {
+      "title": "One Piece Fan Letter: Gyojin Tou-hen",
+      "slug": "one-piece-fan-letter-gyojin-tou-hen",
+      "poster": "https://anoboy.be/wp-content/uploads/2024/10/1729449625-9061-145881.jpg",
+      "status": "Completed",
+      "type": "TV",
+      "url": "https://anoboy.be/anime/one-piece-fan-letter-gyojin-tou-hen/"
+    },
+    {
+      "title": "One Piece Fan Letter",
+      "slug": "one-piece-fan-letter",
+      "poster": "https://anoboy.be/wp-content/uploads/2024/10/1729275497-5383-145881.jpg",
+      "status": null,
+      "type": "TV",
+      "url": "https://anoboy.be/anime/one-piece-fan-letter/"
+    },
+    {
+      "title": "One Piece",
+      "slug": "one-piece",
+      "poster": "https://anoboy.be/wp-content/uploads/2024/03/1711820157-9513-138851.jpg",
+      "status": null,
+      "type": "TV",
+      "url": "https://anoboy.be/anime/one-piece/"
+    }
+  ],
+  "pagination": {
+    "hasNext": false,
+    "hasPrev": false,
+    "currentPage": 1
+  }
+}

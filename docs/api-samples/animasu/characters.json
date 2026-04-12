@@ -1,0 +1,219 @@
+{
+  "status": "success",
+  "creator": "Sanka Vollerei",
+  "source": "Animasu",
+  "characters": [
+    {
+      "name": "Ambisi",
+      "slug": "ambisius"
+    },
+    {
+      "name": "Anak-Anak",
+      "slug": "anak-anak"
+    },
+    {
+      "name": "Anti-Sosial",
+      "slug": "anti-sosial"
+    },
+    {
+      "name": "Badass",
+      "slug": "badass"
+    },
+    {
+      "name": "Berbisnis",
+      "slug": "berbisnis"
+    },
+    {
+      "name": "Berisik",
+      "slug": "berisik"
+    },
+    {
+      "name": "Berjuang",
+      "slug": "berjuang"
+    },
+    {
+      "name": "Beruntung",
+      "slug": "beruntung"
+    },
+    {
+      "name": "Blakblakan",
+      "slug": "blakblakan"
+    },
+    {
+      "name": "Bounty Hunter",
+      "slug": "bounty-hunter"
+    },
+    {
+      "name": "Cerewet",
+      "slug": "cerewet"
+    },
+    {
+      "name": "Ceria",
+      "slug": "ceria"
+    },
+    {
+      "name": "Ceroboh",
+      "slug": "ceroboh"
+    },
+    {
+      "name": "Cewek",
+      "slug": "perempuan"
+    },
+    {
+      "name": "Couple",
+      "slug": "couple"
+    },
+    {
+      "name": "Cowok",
+      "slug": "laki-laki"
+    },
+    {
+      "name": "Dewa",
+      "slug": "dewa"
+    },
+    {
+      "name": "Dikagumi",
+      "slug": "dikagumi"
+    },
+    {
+      "name": "Disepelekan",
+      "slug": "disepelekan"
+    },
+    {
+      "name": "Ditakuti",
+      "slug": "ditakuti"
+    },
+    {
+      "name": "Iblis",
+      "slug": "iblis"
+    },
+    {
+      "name": "Jenius",
+      "slug": "jenius"
+    },
+    {
+      "name": "Kejam",
+      "slug": "kejam"
+    },
+    {
+      "name": "Legenda",
+      "slug": "legenda"
+    },
+    {
+      "name": "Licik",
+      "slug": "licik"
+    },
+    {
+      "name": "Loli",
+      "slug": "loli"
+    },
+    {
+      "name": "Mencolok",
+      "slug": "mencolok"
+    },
+    {
+      "name": "Menyebalkan",
+      "slug": "menyebalkan"
+    },
+    {
+      "name": "Mesum",
+      "slug": "mesum"
+    },
+    {
+      "name": "Monster",
+      "slug": "monster"
+    },
+    {
+      "name": "Narsis",
+      "slug": "narsis"
+    },
+    {
+      "name": "Optimis",
+      "slug": "optimis"
+    },
+    {
+      "name": "Overpower",
+      "slug": "overpower"
+    },
+    {
+      "name": "Pemalas",
+      "slug": "pemalas"
+    },
+    {
+      "name": "Pemalu",
+      "slug": "pemalu"
+    },
+    {
+      "name": "Pemarah",
+      "slug": "pemarah"
+    },
+    {
+      "name": "Pemimpin",
+      "slug": "pemimpin"
+    },
+    {
+      "name": "Penakut",
+      "slug": "penakut"
+    },
+    {
+      "name": "Pendendam",
+      "slug": "pendendam"
+    },
+    {
+      "name": "Pendiam",
+      "slug": "pendiam"
+    },
+    {
+      "name": "Pesimis",
+      "slug": "pesimis"
+    },
+    {
+      "name": "Polos",
+      "slug": "polos"
+    },
+    {
+      "name": "Semangat",
+      "slug": "semangat"
+    },
+    {
+      "name": "Setia",
+      "slug": "setia"
+    },
+    {
+      "name": "Slengekan",
+      "slug": "slengekan"
+    },
+    {
+      "name": "Sopan",
+      "slug": "sopan"
+    },
+    {
+      "name": "Suram",
+      "slug": "suram"
+    },
+    {
+      "name": "Terkutuk",
+      "slug": "terkutuk"
+    },
+    {
+      "name": "Totalitas",
+      "slug": "totalitas"
+    },
+    {
+      "name": "Tsundere",
+      "slug": "tsundere"
+    },
+    {
+      "name": "Vampir",
+      "slug": "vampir"
+    },
+    {
+      "name": "Yandere",
+      "slug": "yandere"
+    },
+    {
+      "name": "Zero To Hero",
+      "slug": "zero-to-hero"
+    }
+  ]
+}

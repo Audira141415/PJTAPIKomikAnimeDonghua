@@ -1,0 +1,79 @@
+{
+  "status": "success",
+  "creator": "Sanka Vollerei",
+  "source": "Kusonime",
+  "anime_list": [
+    {
+      "title": "Fumetsu no Anata e Season 3 Batch Subtitle Indonesia",
+      "slug": "fumetsu-no-anata-e-s3-subtitle-indonesia",
+      "poster": "https://kusonime.com/wp-content/uploads/2025/10/Fumetsu-no-Anata-e-Season-3.jpg",
+      "genres": [
+        {
+          "name": "Adventure",
+          "slug": "adventure"
+        },
+        {
+          "name": "Drama",
+          "slug": "drama"
+        },
+        {
+          "name": "Shounen",
+          "slug": "shounen"
+        },
+        {
+          "name": "Supernatural",
+          "slug": "supernatural"
+        }
+      ],
+      "released": "10:00 am"
+    },
+    {
+      "title": "Fumetsu no Anata e Season 2 BD Batch Subtitle Indonesia",
+      "slug": "fumetsu-no-anata-e-s2-subtitle-indonesia",
+      "poster": "https://kusonime.com/wp-content/uploads/2022/10/Fumetsu-no-Anata-e-Season-2.jpg",
+      "genres": [
+        {
+          "name": "Adventure",
+          "slug": "adventure"
+        },
+        {
+          "name": "Drama",
+          "slug": "drama"
+        },
+        {
+          "name": "Shounen",
+          "slug": "shounen"
+        },
+        {
+          "name": "Supernatural",
+          "slug": "supernatural"
+        }
+      ],
+      "released": "7:00 pm"
+    },
+    {
+      "title": "Fumetsu no Anata e BD Batch Subtitle Indonesia",
+      "slug": "fumetsu-no-anata-e-batch-subtitle-indonesia-1",
+      "poster": "https://kusonime.com/wp-content/uploads/2021/05/Fumetsu-no-Anata-e.jpg",
+      "genres": [
+        {
+          "name": "Adventure",
+          "slug": "adventure"
+        },
+        {
+          "name": "Drama",
+          "slug": "drama"
+        },
+        {
+          "name": "Shounen",
+          "slug": "shounen"
+        },
+        {
+          "name": "Supernatural",
+          "slug": "supernatural"
+        }
+      ],
+      "released": "8:00 am"
+    }
+  ]
+}
