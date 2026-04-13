@@ -1,16 +1,15 @@
 'use strict';
 
-const { sankaGet } = require('../../shared/utils/sankaClient');
-const from = (r) => r?.data ?? r;
+const stream = require('../../shared/scrapers/stream.scraper');
 
-const getLatest  = (page = 1)                         => sankaGet(`/stream/latest/${page}`).then(from);
-const getPopular = ()                                  => sankaGet('/stream/popular').then(from);
-const search     = (query)                             => sankaGet(`/stream/search/${encodeURIComponent(query)}`).then(from);
-const getAnime   = (slug)                              => sankaGet(`/stream/anime/${slug}`).then(from);
-const getEpisode = (slug)                              => sankaGet(`/stream/episode/${slug}`).then(from);
-const getMovies  = (page = 1)                          => sankaGet(`/stream/movie/${page}`).then(from);
-const getList    = ()                                  => sankaGet('/stream/list').then(from);
-const getGenres  = ()                                  => sankaGet('/stream/genres').then(from);
-const getByGenre = (slug, page = 1)                    => sankaGet(`/stream/genres/${slug}/${page}`).then(from);
+const getLatest  = (page = 1)      => stream.getLatest(page);
+const getPopular = ()               => stream.getPopular();
+const search     = (query)          => stream.search(query);
+const getAnime   = (slug)           => stream.getAnime(slug);
+const getEpisode = (slug)           => stream.getEpisode(slug);
+const getMovies  = (page = 1)       => stream.getMovies(page);
+const getList    = ()               => stream.getList();
+const getGenres  = ()               => stream.getGenres();
+const getByGenre = (slug, page = 1) => stream.getByGenre(slug, page);
 
 module.exports = { getLatest, getPopular, search, getAnime, getEpisode, getMovies, getList, getGenres, getByGenre };
