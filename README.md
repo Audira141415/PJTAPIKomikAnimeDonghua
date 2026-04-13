@@ -93,6 +93,10 @@ EMAIL_FROM=noreply@audira.com
 
 # Logging
 LOG_LEVEL=debug
+
+# Full import pipeline (optional)
+# Uncomment only if a remote source is blocked in your deployment environment.
+# FULL_IMPORT_DISABLED_STAGES=mangadex-all
 ```
 
 ---

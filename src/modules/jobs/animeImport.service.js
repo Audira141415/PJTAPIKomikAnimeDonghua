@@ -22,7 +22,7 @@ const SOURCE_ENDPOINTS = [
   { key: 'anime', path: '/anime/home', name: 'Anime' },
   { key: 'samehadaku', path: '/samehadaku/home', name: 'Samehadaku' },
   { key: 'animasu', path: '/animasu/home', name: 'Animasu' },
-  { key: 'kusonime', path: '/kusonime/home', name: 'Kusonime' },
+  { key: 'kusonime', path: '/kusonime/latest', name: 'Kusonime' },
   { key: 'anoboy', path: '/anoboy/home', name: 'Anoboy' },
   { key: 'animesail', path: '/animesail/home', name: 'AnimeSail' },
   { key: 'oploverz', path: '/oploverz/ongoing', name: 'Oploverz' },

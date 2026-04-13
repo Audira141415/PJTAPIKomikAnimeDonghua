@@ -73,6 +73,7 @@ function parseArgs(argv) {
   return {
     include: parseCsv(getArg('--include')),
     exclude: parseCsv(getArg('--exclude')),
+    disabled: parseCsv(process.env.FULL_IMPORT_DISABLED_STAGES),
     stopAfter: getArg('--stop-after'),
     checkpoint: path.resolve(getArg('--checkpoint') || DEFAULT_CHECKPOINT),
     progressLog: path.resolve(getArg('--progress-log') || DEFAULT_PROGRESS_LOG),
@@ -174,7 +175,7 @@ function logProgress(logPath, payload) {
 function resolveSelectedStages(registry, options) {
   const availableKeys = registry.map((stage) => stage.key);
   const include = options.include || [];
-  const exclude = new Set(options.exclude || []);
+  const exclude = new Set([...(options.exclude || []), ...(options.disabled || [])]);
   const stopAfter = options.stopAfter || null;
 
   const unknownInclude = include.filter((key) => !availableKeys.includes(key));
@@ -289,6 +290,7 @@ function printHelp() {
   console.log('Options:');
   console.log('  --include <stage1,stage2>   Run only selected stages');
   console.log('  --exclude <stage1,stage2>   Exclude stages from selected set');
+  console.log('  FULL_IMPORT_DISABLED_STAGES Comma-separated stages disabled by environment');
   console.log('  --stop-after <stage>        Stop selection after this stage');
   console.log('  --checkpoint <path>         Custom checkpoint file');
   console.log('  --progress-log <path>       Custom progress log JSONL file');
@@ -302,6 +304,18 @@ function printHelp() {
   STAGE_REGISTRY.forEach((stage) => {
     console.log(`  - ${stage.key}: ${stage.label}`);
   });
+}
+
+function createRunOptionsSnapshot(options) {
+  return {
+    include: options.include,
+    exclude: options.exclude,
+    disabled: options.disabled,
+    stopAfter: options.stopAfter,
+    dryRun: options.dryRun,
+    resume: !options.noResume,
+    continueOnError: options.continueOnError,
+  };
 }
 
 async function runPipeline(options) {
@@ -320,14 +334,7 @@ async function runPipeline(options) {
     startedAt: new Date().toISOString(),
     finishedAt: null,
     selectedStages: selectedStages.map((stage) => stage.key),
-    options: {
-      include: options.include,
-      exclude: options.exclude,
-      stopAfter: options.stopAfter,
-      dryRun: options.dryRun,
-      resume: !options.noResume,
-      continueOnError: options.continueOnError,
-    },
+    options: createRunOptionsSnapshot(options),
   };
   checkpoint = saveCheckpointState(options.checkpoint, checkpoint);
 
@@ -518,6 +525,7 @@ module.exports = {
   createEmptyCheckpoint,
   normalizeCheckpoint,
   resolveSelectedStages,
+  createRunOptionsSnapshot,
   initializeStageState,
   buildExecutionQueue,
   isStageRunnable,

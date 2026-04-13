@@ -1,16 +1,14 @@
 'use strict';
 
-const { sankaGet } = require('../../shared/utils/sankaClient');
-const from = (r) => r?.data ?? r;
+const scraper = require('../../shared/scrapers/oploverz.scraper');
 
-const getHome      = ({ page = 1 } = {})              => sankaGet('/oploverz/home', { page }).then(from);
-const getSchedule  = ()                               => sankaGet('/oploverz/schedule').then(from);
-const getOngoing   = ({ page = 1 } = {})              => sankaGet('/oploverz/ongoing', { page }).then(from);
-const getCompleted = ({ page = 1 } = {})              => sankaGet('/oploverz/completed', { page }).then(from);
-const getList      = ({ page = 1, status, type, order } = {}) =>
-  sankaGet('/oploverz/list', { page, status, type, order }).then(from);
-const search       = (query, { page = 1 } = {})       => sankaGet(`/oploverz/search/${encodeURIComponent(query)}`, { page }).then(from);
-const getAnime     = (slug)                           => sankaGet(`/oploverz/anime/${slug}`).then(from);
-const getEpisode   = (slug)                           => sankaGet(`/oploverz/episode/${slug}`).then(from);
+const getHome      = ({ page = 1 } = {})                          => scraper.getHome({ page });
+const getSchedule  = ()                                           => scraper.getSchedule();
+const getOngoing   = ({ page = 1 } = {})                          => scraper.getOngoing({ page });
+const getCompleted = ({ page = 1 } = {})                          => scraper.getCompleted({ page });
+const getList      = ({ page = 1, status, type, order } = {})     => scraper.getList({ page, status, type, order });
+const search       = (query, { page = 1 } = {})                   => scraper.search(query, { page });
+const getAnime     = (slug)                                       => scraper.getAnime(slug);
+const getEpisode   = (slug)                                       => scraper.getEpisode(slug);
 
 module.exports = { getHome, getSchedule, getOngoing, getCompleted, getList, search, getAnime, getEpisode };

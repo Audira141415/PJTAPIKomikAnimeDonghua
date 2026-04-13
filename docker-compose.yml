@@ -38,7 +38,7 @@ services:
     volumes:
       - mongo_data:/data/db
     healthcheck:
-      test: ["CMD", "mongosh", "--eval", "db.adminCommand('ping')"]
+      test: ["CMD-SHELL", "mongo --quiet --username \"$$MONGO_INITDB_ROOT_USERNAME\" --password \"$$MONGO_INITDB_ROOT_PASSWORD\" --authenticationDatabase admin localhost:27017/admin --eval \"quit(db.adminCommand({ ping: 1 }).ok ? 0 : 2)\""]
       interval: 10s
       timeout: 5s
       retries: 5
@@ -88,6 +88,11 @@ services:
       SCRAPER_DELAY_MS: "1000"
       SCRAPER_RUN_ON_STARTUP: "true"
       SCRAPER_ANIME_LIMIT_PER_SOURCE: "200"
+    healthcheck:
+      test: ["CMD", "node", "-e", "const fs=require('fs'); const cmd=fs.readFileSync('/proc/1/cmdline', 'utf8').replace(/\\u0000/g, ' ' ); process.exit(cmd.includes('scripts/scheduler.js') ? 0 : 1);"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
     depends_on:
       api:
         condition: service_healthy
@@ -114,6 +119,11 @@ services:
       SCRAPER_API_BASE_URL: ${SCRAPER_API_BASE_URL_DOCKER:-http://api:5000/api/v1}
       SCRAPER_JOB_TIMEOUT_MS: "3600000"
       SCRAPER_WORKER_CONCURRENCY: "1"
+    healthcheck:
+      test: ["CMD", "node", "-e", "const fs=require('fs'); const cmd=fs.readFileSync('/proc/1/cmdline', 'utf8').replace(/\\u0000/g, ' ' ); process.exit(cmd.includes('src/jobs/worker.js') ? 0 : 1);"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
     depends_on:
       mongo:
         condition: service_healthy

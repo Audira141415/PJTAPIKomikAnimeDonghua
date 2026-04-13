@@ -81,6 +81,14 @@ describe('GET /health', () => {
     expect(res.status).toBe(200);
     expect(res.body).toHaveProperty('version', 'v1');
   });
+
+  it('does not force upgrade-insecure-requests on HTTP deployment', async () => {
+    const res = await request(app).get('/');
+    expect(res.status).toBe(200);
+
+    const csp = res.headers['content-security-policy'] || '';
+    expect(csp).not.toContain('upgrade-insecure-requests');
+  });
 });
 
 describe('Legacy /api route', () => {

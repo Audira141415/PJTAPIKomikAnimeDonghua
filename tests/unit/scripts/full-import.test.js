@@ -3,7 +3,9 @@
 const {
   STAGE_REGISTRY,
   createEmptyCheckpoint,
+  createRunOptionsSnapshot,
   normalizeCheckpoint,
+  parseArgs,
   resolveSelectedStages,
   initializeStageState,
   buildExecutionQueue,
@@ -36,6 +38,61 @@ describe('scripts/full-import', () => {
       exclude: [],
       stopAfter: null,
     })).toThrow(/Unknown stage key/);
+  });
+
+  it('excludes stages disabled by configuration', () => {
+    const selected = resolveSelectedStages(STAGE_REGISTRY, {
+      include: [],
+      exclude: [],
+      disabled: ['mangadex-all'],
+      stopAfter: null,
+    });
+
+    expect(selected.map((stage) => stage.key)).toEqual([
+      'comic-seed',
+      'comic-sync',
+      'anime-snapshots',
+      'anime-proxy',
+    ]);
+  });
+
+  it('reads disabled stages from environment in parseArgs', () => {
+    const previous = process.env.FULL_IMPORT_DISABLED_STAGES;
+    process.env.FULL_IMPORT_DISABLED_STAGES = 'mangadex-all,anime-proxy';
+
+    try {
+      const parsed = parseArgs([]);
+
+      expect(parsed.disabled).toEqual(['mangadex-all', 'anime-proxy']);
+    } finally {
+      if (previous === undefined) {
+        delete process.env.FULL_IMPORT_DISABLED_STAGES;
+      } else {
+        process.env.FULL_IMPORT_DISABLED_STAGES = previous;
+      }
+    }
+  });
+
+  it('captures disabled stages in run option snapshots', () => {
+    const snapshot = createRunOptionsSnapshot({
+      include: ['comic-seed'],
+      exclude: ['anime-proxy'],
+      disabled: ['mangadex-all'],
+      stopAfter: 'anime-snapshots',
+      dryRun: false,
+      noResume: false,
+      continueOnError: true,
+    });
+
+    expect(snapshot).toEqual({
+      include: ['comic-seed'],
+      exclude: ['anime-proxy'],
+      disabled: ['mangadex-all'],
+      stopAfter: 'anime-snapshots',
+      dryRun: false,
+      resume: true,
+      continueOnError: true,
+    });
   });
 
   it('initializes missing stage states as pending', () => {

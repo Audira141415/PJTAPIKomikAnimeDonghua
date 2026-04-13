@@ -44,7 +44,34 @@ app.use((req, res, next) => {
 });
 
 // Security headers
-app.use(helmet());
+const appUrlProtocol = (() => {
+  try {
+    return new URL(env.APP_URL).protocol;
+  } catch {
+    return 'http:';
+  }
+})();
+const isHttpsDeployment = appUrlProtocol === 'https:';
+let helmetDirectives = helmet.contentSecurityPolicy.getDefaultDirectives();
+
+if (!isHttpsDeployment) {
+  // Avoid forcing HTTP deployments to fetch JS/CSS over HTTPS.
+  helmetDirectives = Object.fromEntries(
+    Object.entries(helmetDirectives).filter(([directive]) => (
+      directive !== 'upgrade-insecure-requests' && directive !== 'upgradeInsecureRequests'
+    ))
+  );
+}
+
+app.use(
+  helmet({
+    contentSecurityPolicy: {
+      useDefaults: false,
+      directives: helmetDirectives,
+    },
+    hsts: isHttpsDeployment,
+  })
+);
 
 // CORS
 const corsOrigins = env.CORS_ORIGIN.split(',').map((o) => o.trim()).filter(Boolean);

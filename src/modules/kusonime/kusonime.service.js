@@ -2,23 +2,21 @@
 
 /**
  * Kusonime Service
- * Proxies all requests to the Sanka Vollerei anime API under /kusonime/
+ * Direct scraper service (tanpa proxy Sanka).
  */
 
-const { sankaGet } = require('../../shared/utils/sankaClient');
+const kusonime = require('../../shared/scrapers/kusonime.scraper');
 
-const fromSanka = (resp) => resp?.data ?? resp;
-
-const getLatest    = ({ page = 1 } = {})             => sankaGet('/kusonime/latest',    { page }).then(fromSanka);
-const getAllAnime   = ({ page = 1 } = {})             => sankaGet('/kusonime/all-anime', { page }).then(fromSanka);
-const getMovies    = ({ page = 1 } = {})             => sankaGet('/kusonime/movie',     { page }).then(fromSanka);
-const getByType    = (type, { page = 1 } = {})       => sankaGet(`/kusonime/type/${type}`, { page }).then(fromSanka);
-const getAllGenres  = ()                              => sankaGet('/kusonime/all-genres').then(fromSanka);
-const getAllSeasons = ()                              => sankaGet('/kusonime/all-seasons').then(fromSanka);
-const search       = (query, { page = 1 } = {})      => sankaGet(`/kusonime/search/${encodeURIComponent(query)}`, { page }).then(fromSanka);
-const getByGenre   = (slug, { page = 1 } = {})       => sankaGet(`/kusonime/genre/${slug}`, { page }).then(fromSanka);
-const getBySeason  = (season, year, { page = 1 } = {}) => sankaGet(`/kusonime/season/${season}/${year}`, { page }).then(fromSanka);
-const getDetail    = (slug)                          => sankaGet(`/kusonime/detail/${slug}`).then(fromSanka);
+const getLatest    = ({ page = 1 } = {})               => kusonime.getLatest({ page });
+const getAllAnime  = ({ page = 1 } = {})               => kusonime.getAllAnime({ page });
+const getMovies    = ({ page = 1 } = {})               => kusonime.getMovies({ page });
+const getByType    = (type, { page = 1 } = {})         => kusonime.getByType(type, { page });
+const getAllGenres = ()                                => kusonime.getAllGenres();
+const getAllSeasons= ()                                => kusonime.getAllSeasons();
+const search       = (query, { page = 1 } = {})        => kusonime.search(query, { page });
+const getByGenre   = (slug, { page = 1 } = {})         => kusonime.getByGenre(slug, { page });
+const getBySeason  = (season, year, { page = 1 } = {}) => kusonime.getBySeason(season, year, { page });
+const getDetail    = (slug)                            => kusonime.getDetail(slug);
 
 module.exports = {
   getLatest, getAllAnime, getMovies, getByType,
