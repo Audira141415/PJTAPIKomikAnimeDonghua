@@ -24,9 +24,19 @@ describe('jobs/scheduler', () => {
     jest.clearAllMocks();
   });
 
-  it('registers three repeatable schedules', async () => {
+  it('registers repeatable schedules including full import', async () => {
     await scheduler.upsertRepeatableJobs();
-    expect(scraperQueue.upsertJobScheduler).toHaveBeenCalledTimes(3);
+    expect(scraperQueue.upsertJobScheduler).toHaveBeenCalledTimes(7);
+    expect(scraperQueue.upsertJobScheduler).toHaveBeenCalledWith(
+      'comic-sync-sources-schedule',
+      expect.objectContaining({ pattern: expect.any(String), tz: expect.any(String) }),
+      expect.objectContaining({ name: 'comic-sync-sources' })
+    );
+    expect(scraperQueue.upsertJobScheduler).toHaveBeenCalledWith(
+      'full-import-daily-schedule',
+      expect.objectContaining({ pattern: expect.any(String), tz: expect.any(String) }),
+      expect.objectContaining({ name: 'full-import-daily' })
+    );
   });
 
   it('enqueues startup job with deterministic jobId when enabled', async () => {

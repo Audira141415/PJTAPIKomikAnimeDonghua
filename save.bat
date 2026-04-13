@@ -80,14 +80,32 @@ if errorlevel 1 (
     exit /b 1
 )
 
-echo [4/4] Push ke %REMOTE%/%BRANCH%...
+set "DOCKER_STACK_ATTEMPTED=0"
+call :stopDockerStack
+
+echo [5/6] Push ke %REMOTE%/%BRANCH%...
 git push -u %REMOTE% "%BRANCH%"
-if errorlevel 1 (
+set "PUSH_EXIT=%ERRORLEVEL%"
+
+call :startDockerStack
+set "RESTORE_EXIT=%ERRORLEVEL%"
+
+if not "%PUSH_EXIT%"=="0" (
     echo.
     echo [ERROR] Push gagal.
     echo [INFO] Coba jalankan: git pull --rebase %REMOTE% "%BRANCH%"
+    if not "%RESTORE_EXIT%"=="0" (
+        echo [ERROR] Docker stack gagal dinyalakan kembali.
+    )
     pause
-    exit /b 1
+    exit /b %PUSH_EXIT%
+)
+
+if not "%RESTORE_EXIT%"=="0" (
+    echo.
+    echo [ERROR] Docker stack gagal dinyalakan kembali.
+    pause
+    exit /b %RESTORE_EXIT%
 )
 
 echo.
@@ -96,3 +114,39 @@ echo  BERHASIL! Perubahan sudah di-push ke GitHub.
 echo ============================================
 echo.
 pause
+exit /b 0
+
+:stopDockerStack
+docker compose version >nul 2>&1
+if errorlevel 1 (
+    echo [INFO] Docker Compose tidak tersedia. Lewati stop stack.
+    exit /b 0
+)
+
+set "DOCKER_STACK_ATTEMPTED=1"
+echo [4/6] Menutup Docker stack sementara...
+docker compose down
+if errorlevel 1 (
+    echo [WARN] Gagal menghentikan Docker stack. Push tetap dilanjutkan.
+    exit /b 1
+)
+
+exit /b 0
+
+:startDockerStack
+if not "%DOCKER_STACK_ATTEMPTED%"=="1" exit /b 0
+
+docker compose version >nul 2>&1
+if errorlevel 1 (
+    echo [WARN] Docker Compose tidak tersedia untuk menyalakan stack kembali.
+    exit /b 1
+)
+
+echo [6/6] Menyalakan kembali Docker stack...
+docker compose up -d
+if errorlevel 1 (
+    echo [WARN] Gagal menyalakan kembali Docker stack.
+    exit /b 1
+)
+
+exit /b 0

@@ -8,9 +8,53 @@ const logger = require('../config/logger');
 const SERIES_CRON = process.env.SCRAPER_SERIES_CRON || '0 3 * * *';
 const EPISODE_CRON = process.env.SCRAPER_EPISODE_CRON || '0 */6 * * *';
 const FULL_EPISODE_CRON = process.env.SCRAPER_FULL_EPISODE_CRON || '0 1 * * 0';
+const ANIME_ALL_CRON = process.env.SCRAPER_ANIME_ALL_CRON || '0 2 * * *';
+const COMIC_DAILY_CRON = process.env.SCRAPER_COMIC_DAILY_CRON || '0 4 * * *';
+const COMIC_SOURCES_CRON = process.env.SCRAPER_COMIC_SOURCES_CRON || '0 5 * * *';
+const FULL_IMPORT_CRON = process.env.SCRAPER_FULL_IMPORT_CRON || '0 6 * * *';
 const SCRAPER_TZ = process.env.SCRAPER_TZ || 'Asia/Jakarta';
+const SCRAPER_API_BASE_URL = process.env.SCRAPER_API_BASE_URL || null;
+const SCRAPER_ANIME_LIMIT = Number.parseInt(process.env.SCRAPER_ANIME_LIMIT_PER_SOURCE || '200', 10);
 
 async function upsertRepeatableJobs() {
+  await scraperQueue.upsertJobScheduler('anime-sync-all-schedule', {
+    pattern: ANIME_ALL_CRON,
+    tz: SCRAPER_TZ,
+  }, {
+    name: 'anime-sync-all',
+    data: {
+      limit: Number.isFinite(SCRAPER_ANIME_LIMIT) ? SCRAPER_ANIME_LIMIT : 200,
+      ...(SCRAPER_API_BASE_URL ? { baseUrl: SCRAPER_API_BASE_URL } : {}),
+    },
+  });
+
+  await scraperQueue.upsertJobScheduler('comic-sync-daily-schedule', {
+    pattern: COMIC_DAILY_CRON,
+    tz: SCRAPER_TZ,
+  }, {
+    name: 'comic-sync-daily',
+    data: {},
+  });
+
+  await scraperQueue.upsertJobScheduler('comic-sync-sources-schedule', {
+    pattern: COMIC_SOURCES_CRON,
+    tz: SCRAPER_TZ,
+  }, {
+    name: 'comic-sync-sources',
+    data: {
+      sources: 'all',
+      page: 1,
+    },
+  });
+
+  await scraperQueue.upsertJobScheduler('full-import-daily-schedule', {
+    pattern: FULL_IMPORT_CRON,
+    tz: SCRAPER_TZ,
+  }, {
+    name: 'full-import-daily',
+    data: {},
+  });
+
   await scraperQueue.upsertJobScheduler('series-sync-schedule', {
     pattern: SERIES_CRON,
     tz: SCRAPER_TZ,
@@ -38,6 +82,10 @@ async function upsertRepeatableJobs() {
 
 async function bootstrap() {
   logger.info('Registering queue-based scraper schedules', {
+    animeAllCron: ANIME_ALL_CRON,
+    comicDailyCron: COMIC_DAILY_CRON,
+    comicSourcesCron: COMIC_SOURCES_CRON,
+    fullImportCron: FULL_IMPORT_CRON,
     seriesCron: SERIES_CRON,
     episodeCron: EPISODE_CRON,
     fullEpisodeCron: FULL_EPISODE_CRON,

@@ -7,6 +7,10 @@ const JOB_COMMAND_MAP = {
   'series-sync': ['scripts/anichin-scraper.js', '--update'],
   'episode-sync-ongoing': ['scripts/anichin-scraper.js', '--episodes', '--update'],
   'episode-sync-full': ['scripts/anichin-scraper.js', '--episodes', '--update'],
+  'anime-sync-all': ['scripts/anime-sync-proxy.js', '--update'],
+  'comic-sync-daily': ['scripts/mangadex-import.js', '--all', '--update'],
+  'comic-sync-sources': ['scripts/comic-sync-daily.js', '--sources', 'all', '--page', '1'],
+  'full-import-daily': ['scripts/full-import.js', '--reset-checkpoint'],
 };
 
 function buildScraperArgs(jobName, jobData = {}) {
@@ -25,12 +29,26 @@ function buildScraperArgs(jobName, jobData = {}) {
     args.push('--limit', String(jobData.limit));
   }
 
+  if (jobData.page) {
+    args.push('--page', String(jobData.page));
+  }
+
+  if (jobData.sources) {
+    args.push('--sources', String(jobData.sources));
+  }
+
   if (jobData.skip) {
     args.push('--skip', String(jobData.skip));
   }
 
   if (jobData.seriesUrl) {
     args.push('--series-url', String(jobData.seriesUrl));
+  }
+
+  if (jobData.baseUrl) {
+    args.push('--base-url', String(jobData.baseUrl));
+  } else if (process.env.SCRAPER_API_BASE_URL && jobName === 'anime-sync-all') {
+    args.push('--base-url', process.env.SCRAPER_API_BASE_URL);
   }
 
   if (jobData.dryRun) {

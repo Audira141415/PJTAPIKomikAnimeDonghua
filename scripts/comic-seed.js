@@ -89,6 +89,48 @@ const TYPE_CATEGORY = {
   ona:     'animation',
 };
 
+const DOMAIN_PREFIXES = new Set(['www', 'm', 'amp', 'cdn', 'img', 'image', 'images', 'uploads', 'thumbnail']);
+
+const sanitizeSourceKey = (value) => {
+  const text = String(value || '')
+    .trim()
+    .toLowerCase()
+    .replace(/[^a-z0-9-_.]/g, '-')
+    .replace(/-+/g, '-')
+    .replace(/^[-_.]+|[-_.]+$/g, '');
+  return text || null;
+};
+
+const getHostname = (rawUrl) => {
+  if (!rawUrl || typeof rawUrl !== 'string') return null;
+  try {
+    const parsed = new URL(rawUrl);
+    return parsed.hostname ? parsed.hostname.toLowerCase() : null;
+  } catch (_err) {
+    return null;
+  }
+};
+
+const deriveSourceKeyFromUrl = (rawUrl) => {
+  const hostname = getHostname(rawUrl);
+  if (!hostname) return null;
+
+  const pieces = hostname.split('.').filter(Boolean);
+  if (!pieces.length) return null;
+
+  let labels = pieces;
+  if (labels.length > 2) {
+    while (labels.length > 2 && DOMAIN_PREFIXES.has(labels[0])) {
+      labels = labels.slice(1);
+    }
+  }
+
+  if (labels.length >= 2) {
+    return sanitizeSourceKey(labels[0]);
+  }
+  return sanitizeSourceKey(labels[0]);
+};
+
 // ── Helper: buat slug unik ─────────────────────────────────────────────────────
 const makeSlug = (title) =>
   slugify(title, { lower: true, strict: true, locale: 'id' });
@@ -103,6 +145,13 @@ const normalize = (item, index) => {
 
   const type = VALID_TYPES.includes(item.type) ? item.type : 'manga';
   const status = VALID_STATUS.includes(item.status) ? item.status : 'ongoing';
+  const fallbackUrl = item.sourceUrl || item.url || item.link || item.coverImage || null;
+  const sourceKey = sanitizeSourceKey(item.sourceKey || item.source || item.site)
+    || deriveSourceKeyFromUrl(item.sourceUrl)
+    || deriveSourceKeyFromUrl(item.coverImage)
+    || deriveSourceKeyFromUrl(item.url)
+    || 'internal';
+  const sourceUrl = typeof fallbackUrl === 'string' ? fallbackUrl : null;
 
   return {
     title,
@@ -119,7 +168,18 @@ const normalize = (item, index) => {
     coverImage:    item.coverImage || null,
     releasedOn:    item.releasedOn ? new Date(item.releasedOn) : null,
     totalEpisodes: item.totalEpisodes != null ? Number(item.totalEpisodes) : null,
-    sourceUrl:     null,  // data internal — tidak ada URL sumber eksternal
+    network:       sourceKey,
+    sourceKey,
+    sourceId:      makeSlug(title),
+    sourceUrl,
+    externalRefs: [
+      {
+        sourceKey,
+        sourceId: makeSlug(title),
+        url: sourceUrl,
+        kind: 'seed',
+      },
+    ],
   };
 };
 

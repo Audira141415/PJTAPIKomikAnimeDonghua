@@ -1,5 +1,3 @@
-version: '3.9'
-
 services:
   api:
     build:
@@ -12,6 +10,7 @@ services:
     env_file:
       - .env
     environment:
+      PORT: 5000
       NODE_ENV: production
       MONGO_URI: ${MONGO_URI_DOCKER:-mongodb://${MONGO_ROOT_USER:-admin}:${MONGO_ROOT_PASS:-change_me}@mongo:27017/comic_platform?authSource=admin}
       REDIS_URL: ${REDIS_URL_DOCKER:-redis://redis:6379}
@@ -19,6 +18,8 @@ services:
       - uploads_data:/app/uploads
       - logs_data:/app/logs
     depends_on:
+      api:
+        condition: service_healthy
       mongo:
         condition: service_healthy
       redis:
@@ -50,6 +51,8 @@ services:
     image: redis:7-alpine
     container_name: comic-redis
     restart: unless-stopped
+    ports:
+      - '127.0.0.1:${REDIS_HOST_PORT:-6379}:6379'
     command: redis-server --appendonly yes
     volumes:
       - redis_data:/data
@@ -75,14 +78,21 @@ services:
       NODE_ENV: production
       MONGO_URI: ${MONGO_URI_DOCKER:-mongodb://${MONGO_ROOT_USER:-admin}:${MONGO_ROOT_PASS:-change_me}@mongo:27017/comic_platform?authSource=admin}
       REDIS_URL: ${REDIS_URL_DOCKER:-redis://redis:6379}
+      SCRAPER_API_BASE_URL: ${SCRAPER_API_BASE_URL_DOCKER:-http://api:5000/api/v1}
       # Jadwal (cron syntax)
+      SCRAPER_ANIME_ALL_CRON: "0 2 * * *"   # Anime/donghua all-source sync: tiap hari jam 02:00 WIB
+      SCRAPER_COMIC_DAILY_CRON: "0 4 * * *" # Manga/manhwa/manhua sync: tiap hari jam 04:00 WIB
+      SCRAPER_FULL_IMPORT_CRON: "0 6 * * *" # Full local import reset: tiap hari jam 06:00 WIB
       SCRAPER_SERIES_CRON: "0 3 * * *"      # Series sync: tiap hari jam 03:00 WIB
       SCRAPER_EPISODE_CRON: "0 */6 * * *"   # Episode sync: tiap 6 jam
       SCRAPER_FULL_EPISODE_CRON: "0 1 * * 0" # Full sync: Minggu 01:00 WIB
       SCRAPER_TZ: "Asia/Jakarta"
       SCRAPER_DELAY_MS: "1000"
       SCRAPER_RUN_ON_STARTUP: "true"
+      SCRAPER_ANIME_LIMIT_PER_SOURCE: "200"
     depends_on:
+      api:
+        condition: service_healthy
       mongo:
         condition: service_healthy
       redis:
@@ -103,6 +113,7 @@ services:
       NODE_ENV: production
       MONGO_URI: ${MONGO_URI_DOCKER:-mongodb://${MONGO_ROOT_USER:-admin}:${MONGO_ROOT_PASS:-change_me}@mongo:27017/comic_platform?authSource=admin}
       REDIS_URL: ${REDIS_URL_DOCKER:-redis://redis:6379}
+      SCRAPER_API_BASE_URL: ${SCRAPER_API_BASE_URL_DOCKER:-http://api:5000/api/v1}
       SCRAPER_JOB_TIMEOUT_MS: "3600000"
       SCRAPER_WORKER_CONCURRENCY: "1"
     depends_on:
@@ -125,6 +136,7 @@ services:
     env_file:
       - .env
     environment:
+      PORT: 5000
       NODE_ENV: development
       MONGO_URI: ${MONGO_URI_DOCKER:-mongodb://${MONGO_ROOT_USER:-admin}:${MONGO_ROOT_PASS:-change_me}@mongo:27017/comic_platform?authSource=admin}
       REDIS_URL: ${REDIS_URL_DOCKER:-redis://redis:6379}

@@ -1,23 +1,5 @@
 const API_BASE = '/api/v1';
 const FALLBACK_DATA_PATH = '/data/dashboard-fallback.json';
-const ANIME_PROXY_SOURCES = [
-  'anime',
-  'samehadaku',
-  'animasu',
-  'kusonime',
-  'anoboy',
-  'animesail',
-  'oploverz',
-  'stream',
-  'animekuindo',
-  'nimegami',
-  'alqanime',
-  'donghub',
-  'winbu',
-  'kura',
-  'dramabox',
-  'drachin',
-];
 
 const defaultDashboardData = {
   categories: [
@@ -376,11 +358,48 @@ const presetEndpoint = document.getElementById('presetEndpoint');
 const copyPlaygroundResponse = document.getElementById('copyPlaygroundResponse');
 const carouselCategory = document.getElementById('carouselCategory');
 const headerDot = document.getElementById('headerDot');
+const topNetworkCards = document.getElementById('topNetworkCards');
+const distributionTableBody = document.getElementById('distributionTableBody');
+const distributionEmpty = document.getElementById('distributionEmpty');
+const recentNewlyAdded = document.getElementById('recentNewlyAdded');
+const recentRecentlyRated = document.getElementById('recentRecentlyRated');
+const recentJustUpdated = document.getElementById('recentJustUpdated');
+const insightsNetworkFilter = document.getElementById('insightsNetworkFilter');
+const insightsTypeFilter = document.getElementById('insightsTypeFilter');
+const insightsApplyFilter = document.getElementById('insightsApplyFilter');
+const insightsResetFilter = document.getElementById('insightsResetFilter');
+const overviewBreakdownMeta = document.getElementById('overviewBreakdownMeta');
+const overviewSourceBreakdown = document.getElementById('overviewSourceBreakdown');
+const animationSourceSelect = document.getElementById('animationSourceSelect');
+const animationSourceMeta = document.getElementById('animationSourceMeta');
+const animationSourceItemsBody = document.getElementById('animationSourceItemsBody');
+const mangaTypeSelect = document.getElementById('mangaTypeSelect');
+const mangaTitleSearch = document.getElementById('mangaTitleSearch');
+const mangaApplyBtn = document.getElementById('mangaApplyBtn');
+const mangaResetBtn = document.getElementById('mangaResetBtn');
+const mangaPrevBtn = document.getElementById('mangaPrevBtn');
+const mangaNextBtn = document.getElementById('mangaNextBtn');
+const mangaExplorerBody = document.getElementById('mangaExplorerBody');
+const mangaExplorerMeta = document.getElementById('mangaExplorerMeta');
 
 let dashboardData = defaultDashboardData;
 let carouselSlides = [];
 let carouselIndex = 0;
 let carouselTimer = null;
+let latestStatsSnapshot = null;
+const insightsFilterState = {
+  network: '',
+  type: '',
+};
+let insightsRequestVersion = 0;
+let selectedAnimationSource = '';
+const mangaExplorerState = {
+  type: 'manga',
+  q: '',
+  page: 1,
+  limit: 20,
+  totalPages: 1,
+};
 
 /* ══════════════════════════════════════════════════════════════
    SIDEBAR TOGGLE + NAV HIGHLIGHT
@@ -622,6 +641,266 @@ const loadActivity = async () => {
     renderActivity([]);
   }
 };
+
+/* ══════════════════════════════════════════════════════════════
+   DATA INSIGHTS (LIVE API)
+   ══════════════════════════════════════════════════════════ */
+const formatTypeSummary = (byType = {}) =>
+  Object.entries(byType)
+    .sort((a, b) => b[1] - a[1])
+    .map(([type, count]) => `${type}:${count}`)
+    .join(' | ');
+
+const renderTopNetworkCards = (rows = []) => {
+  if (!topNetworkCards) return;
+  topNetworkCards.innerHTML = '';
+
+  if (!rows.length) {
+    const empty = document.createElement('div');
+    empty.className = 'empty-state';
+    empty.textContent = 'Belum ada data network.';
+    topNetworkCards.appendChild(empty);
+    return;
+  }
+
+  rows.slice(0, 8).forEach((row) => {
+    const card = document.createElement('div');
+    card.className = 'network-mini-card';
+
+    const label = document.createElement('p');
+    label.textContent = row.network || 'unknown';
+
+    const total = document.createElement('strong');
+    total.textContent = String(row.total || 0);
+
+    const types = document.createElement('div');
+    types.className = 'network-mini-types';
+    types.textContent = formatTypeSummary(row.byType || {});
+
+    card.appendChild(label);
+    card.appendChild(total);
+    card.appendChild(types);
+    topNetworkCards.appendChild(card);
+  });
+};
+
+const renderDistributionTable = (rows = []) => {
+  if (!distributionTableBody || !distributionEmpty) return;
+  distributionTableBody.innerHTML = '';
+  distributionEmpty.classList.toggle('hidden', rows.length > 0);
+
+  rows.forEach((row) => {
+    const tr = document.createElement('tr');
+
+    const networkTd = document.createElement('td');
+    networkTd.textContent = row.network || 'unknown';
+
+    const totalTd = document.createElement('td');
+    totalTd.textContent = String(row.total || 0);
+
+    const typesTd = document.createElement('td');
+    typesTd.textContent = formatTypeSummary(row.byType || {});
+
+    const confidenceTd = document.createElement('td');
+    const avgConfidence = typeof row.avgConfidence === 'number' ? row.avgConfidence : null;
+    confidenceTd.textContent = avgConfidence == null ? 'N/A' : `${Math.round(avgConfidence * 100)}%`;
+
+    const ruleTd = document.createElement('td');
+    ruleTd.textContent = row.topRule || 'unknown';
+
+    tr.appendChild(networkTd);
+    tr.appendChild(totalTd);
+    tr.appendChild(typesTd);
+    tr.appendChild(confidenceTd);
+    tr.appendChild(ruleTd);
+    distributionTableBody.appendChild(tr);
+  });
+};
+
+const populateInsightsFilterOptions = (options = {}) => {
+  if (!insightsNetworkFilter || !insightsTypeFilter) return;
+
+  const networks = Array.isArray(options.availableNetworks) ? options.availableNetworks : [];
+  const types = Array.isArray(options.availableTypes) ? options.availableTypes : [];
+
+  const setSelectOptions = (el, list, emptyLabel, selectedValue) => {
+    const previous = selectedValue || '';
+    const frag = document.createDocumentFragment();
+
+    const allOption = document.createElement('option');
+    allOption.value = '';
+    allOption.textContent = emptyLabel;
+    frag.appendChild(allOption);
+
+    list.forEach((value) => {
+      const option = document.createElement('option');
+      option.value = value;
+      option.textContent = value;
+      frag.appendChild(option);
+    });
+
+    el.innerHTML = '';
+    el.appendChild(frag);
+    const resolved = list.includes(previous) ? previous : '';
+    el.value = resolved;
+    return resolved;
+  };
+
+  insightsFilterState.network = setSelectOptions(insightsNetworkFilter, networks, 'Semua Network', insightsFilterState.network);
+  insightsFilterState.type = setSelectOptions(insightsTypeFilter, types, 'Semua Type', insightsFilterState.type);
+};
+
+const renderRecentList = (targetEl, rows = [], type = 'updated') => {
+  if (!targetEl) return;
+  targetEl.innerHTML = '';
+
+  if (!rows.length) {
+    const li = document.createElement('li');
+    li.textContent = 'Belum ada data';
+    targetEl.appendChild(li);
+    return;
+  }
+
+  rows.slice(0, 6).forEach((row) => {
+    const li = document.createElement('li');
+    const title = document.createElement('div');
+    title.textContent = row.title || row.slug || 'Untitled';
+
+    const meta = document.createElement('div');
+    meta.className = 'recent-meta';
+    if (type === 'rated') {
+      meta.textContent = `rating: ${row.rating || 0}`;
+    } else {
+      meta.textContent = relativeTime(row.updatedAt || row.createdAt || new Date().toISOString());
+    }
+
+    li.appendChild(title);
+    li.appendChild(meta);
+    targetEl.appendChild(li);
+  });
+};
+
+const loadDataInsights = async () => {
+  const requestVersion = ++insightsRequestVersion;
+  const params = new URLSearchParams();
+  if (insightsFilterState.network) params.set('network', insightsFilterState.network);
+  if (insightsFilterState.type) params.set('type', insightsFilterState.type);
+
+  const distributionUrl = params.toString()
+    ? `${API_BASE}/comic/stats/distribution?${params.toString()}`
+    : `${API_BASE}/comic/stats/distribution`;
+
+  const [distResult, recentResult] = await Promise.allSettled([
+    fetch(distributionUrl),
+    fetch(`${API_BASE}/comic/realtime?limit=12`),
+  ]);
+
+  if (requestVersion !== insightsRequestVersion) return;
+
+  if (distResult.status === 'fulfilled' && distResult.value.ok) {
+    try {
+      const distJson = await distResult.value.json();
+      if (requestVersion !== insightsRequestVersion) return;
+      const byNetwork = distJson?.data?.byNetwork || [];
+      populateInsightsFilterOptions(distJson?.data?.options || {});
+      renderTopNetworkCards(byNetwork);
+      renderDistributionTable(byNetwork);
+    } catch {
+      renderTopNetworkCards([]);
+      renderDistributionTable([]);
+    }
+  } else {
+    renderTopNetworkCards([]);
+    renderDistributionTable([]);
+  }
+
+  if (recentResult.status === 'fulfilled' && recentResult.value.ok) {
+    try {
+      const recentJson = await recentResult.value.json();
+      if (requestVersion !== insightsRequestVersion) return;
+      const data = recentJson?.data || {};
+      renderRecentList(recentNewlyAdded, data.newlyAdded || [], 'new');
+      renderRecentList(recentRecentlyRated, data.recentlyRated || [], 'rated');
+      renderRecentList(recentJustUpdated, data.justUpdated || [], 'updated');
+    } catch {
+      renderRecentList(recentNewlyAdded, []);
+      renderRecentList(recentRecentlyRated, []);
+      renderRecentList(recentJustUpdated, []);
+    }
+  } else {
+    renderRecentList(recentNewlyAdded, []);
+    renderRecentList(recentRecentlyRated, []);
+    renderRecentList(recentJustUpdated, []);
+  }
+};
+
+const applyInsightsFilters = async () => {
+  insightsFilterState.network = insightsNetworkFilter?.value || '';
+  insightsFilterState.type = insightsTypeFilter?.value || '';
+  await loadDataInsights();
+};
+
+const resetInsightsFilters = async () => {
+  insightsFilterState.network = '';
+  insightsFilterState.type = '';
+  if (insightsNetworkFilter) insightsNetworkFilter.value = '';
+  if (insightsTypeFilter) insightsTypeFilter.value = '';
+  await loadDataInsights();
+};
+
+if (animationSourceSelect) {
+  animationSourceSelect.addEventListener('change', async () => {
+    selectedAnimationSource = animationSourceSelect.value || '';
+    await loadAnimationSourceItems();
+  });
+}
+
+if (mangaApplyBtn) {
+  mangaApplyBtn.addEventListener('click', async () => {
+    mangaExplorerState.type = mangaTypeSelect?.value || 'manga';
+    mangaExplorerState.q = (mangaTitleSearch?.value || '').trim();
+    mangaExplorerState.page = 1;
+    await loadMangaExplorer();
+  });
+}
+
+if (mangaResetBtn) {
+  mangaResetBtn.addEventListener('click', async () => {
+    mangaExplorerState.type = 'manga';
+    mangaExplorerState.q = '';
+    mangaExplorerState.page = 1;
+    if (mangaTypeSelect) mangaTypeSelect.value = 'manga';
+    if (mangaTitleSearch) mangaTitleSearch.value = '';
+    await loadMangaExplorer();
+  });
+}
+
+if (mangaPrevBtn) {
+  mangaPrevBtn.addEventListener('click', async () => {
+    if (mangaExplorerState.page <= 1) return;
+    mangaExplorerState.page -= 1;
+    await loadMangaExplorer();
+  });
+}
+
+if (mangaNextBtn) {
+  mangaNextBtn.addEventListener('click', async () => {
+    if (mangaExplorerState.page >= mangaExplorerState.totalPages) return;
+    mangaExplorerState.page += 1;
+    await loadMangaExplorer();
+  });
+}
+
+if (mangaTitleSearch) {
+  mangaTitleSearch.addEventListener('keydown', async (event) => {
+    if (event.key !== 'Enter') return;
+    event.preventDefault();
+    mangaExplorerState.type = mangaTypeSelect?.value || 'manga';
+    mangaExplorerState.q = (mangaTitleSearch.value || '').trim();
+    mangaExplorerState.page = 1;
+    await loadMangaExplorer();
+  });
+}
 
 /* ══════════════════════════════════════════════════════════════
    EXAMPLE BLOCKS
@@ -1019,29 +1298,631 @@ const loadDashboardData = async () => {
   carouselSlides = buildCarouselSlides(dashboardData.categories, 'all');
 };
 
+const formatRating = (value) => {
+  const num = Number(value || 0);
+  if (!Number.isFinite(num) || num <= 0) return '-';
+  return num.toFixed(2);
+};
+
+const renderAnimationSourceItems = (payload = {}) => {
+  if (!animationSourceItemsBody) return;
+  const items = Array.isArray(payload.data) ? payload.data : [];
+  const meta = payload.meta || {};
+  const pagination = payload.pagination || {};
+
+  animationSourceItemsBody.innerHTML = '';
+
+  if (animationSourceMeta) {
+    const selected = meta.selectedSource || '-';
+    const sourceSummary = Array.isArray(meta.sourceSummary) ? meta.sourceSummary : [];
+    const summary = sourceSummary.find((row) => row.source === meta.selectedSource);
+    const total = Number(summary?.total || pagination.total || items.length || 0);
+    const avg = summary ? ` · avg rating ${formatRating(summary.avgRating)}` : '';
+    animationSourceMeta.textContent = `${selected} · ${total} titles${avg}`;
+  }
+
+  if (!items.length) {
+    const tr = document.createElement('tr');
+    const td = document.createElement('td');
+    td.colSpan = 5;
+    td.className = 'overview-breakdown-empty';
+    td.textContent = 'Tidak ada judul untuk source ini.';
+    tr.appendChild(td);
+    animationSourceItemsBody.appendChild(tr);
+    return;
+  }
+
+  items.forEach((item) => {
+    const tr = document.createElement('tr');
+
+    const titleTd = document.createElement('td');
+    const titleWrap = document.createElement('div');
+    titleWrap.className = 'source-items-title';
+    const titleStrong = document.createElement('strong');
+    titleStrong.textContent = item.title || '-';
+    const subtitle = document.createElement('span');
+    subtitle.textContent = `slug: ${item.slug || '-'} · src: ${item.source || item.network || item.sourceKey || '-'}`;
+    titleWrap.appendChild(titleStrong);
+    titleWrap.appendChild(subtitle);
+    titleTd.appendChild(titleWrap);
+
+    const typeTd = document.createElement('td');
+    typeTd.textContent = item.type || '-';
+
+    const ratingTd = document.createElement('td');
+    ratingTd.textContent = formatRating(item.rating);
+
+    const viewsTd = document.createElement('td');
+    viewsTd.textContent = String(Number(item.views || 0));
+
+    const statusTd = document.createElement('td');
+    statusTd.textContent = item.status || '-';
+
+    tr.appendChild(titleTd);
+    tr.appendChild(typeTd);
+    tr.appendChild(ratingTd);
+    tr.appendChild(viewsTd);
+    tr.appendChild(statusTd);
+    animationSourceItemsBody.appendChild(tr);
+  });
+};
+
+const populateAnimationSourceSelect = (sourceList = []) => {
+  if (!animationSourceSelect) return;
+
+  const list = Array.isArray(sourceList) ? sourceList : [];
+  const previous = selectedAnimationSource || animationSourceSelect.value || '';
+  const fallback = list[0]?.source || '';
+  const resolved = list.some((row) => row.source === previous) ? previous : fallback;
+
+  animationSourceSelect.innerHTML = '';
+  if (!list.length) {
+    const option = document.createElement('option');
+    option.value = '';
+    option.textContent = 'Tidak ada source animation';
+    animationSourceSelect.appendChild(option);
+    selectedAnimationSource = '';
+    return;
+  }
+
+  list.forEach((row) => {
+    const option = document.createElement('option');
+    option.value = row.source;
+    option.textContent = `${row.source} (${row.count}) · avg ${formatRating(row.avgRating)}`;
+    animationSourceSelect.appendChild(option);
+  });
+
+  animationSourceSelect.value = resolved;
+  selectedAnimationSource = resolved;
+};
+
+const loadAnimationSourceItems = async () => {
+  if (!animationSourceItemsBody) return;
+
+  if (!selectedAnimationSource) {
+    renderAnimationSourceItems({ data: [], meta: { selectedSource: null, sourceSummary: [] }, pagination: { total: 0 } });
+    return;
+  }
+
+  const params = new URLSearchParams({
+    source: selectedAnimationSource,
+    category: 'animation',
+    limit: '20',
+  });
+
+  try {
+    const res = await fetch(`${API_BASE}/comic/stats/source-items?${params.toString()}`);
+    if (!res.ok) throw new Error('failed to fetch source items');
+    const json = await res.json();
+    renderAnimationSourceItems(json);
+  } catch {
+    renderAnimationSourceItems({ data: [], meta: { selectedSource: selectedAnimationSource, sourceSummary: [] }, pagination: { total: 0 } });
+  }
+};
+
+const renderMangaExplorerRows = (rows = []) => {
+  if (!mangaExplorerBody) return;
+  mangaExplorerBody.innerHTML = '';
+
+  if (!rows.length) {
+    const tr = document.createElement('tr');
+    const td = document.createElement('td');
+    td.colSpan = 5;
+    td.className = 'overview-breakdown-empty';
+    td.textContent = 'Tidak ada judul untuk filter saat ini.';
+    tr.appendChild(td);
+    mangaExplorerBody.appendChild(tr);
+    return;
+  }
+
+  rows.forEach((item) => {
+    const tr = document.createElement('tr');
+
+    const titleTd = document.createElement('td');
+    const titleWrap = document.createElement('div');
+    titleWrap.className = 'source-items-title';
+    const titleStrong = document.createElement('strong');
+    titleStrong.textContent = item.title || '-';
+    const subtitle = document.createElement('span');
+    subtitle.textContent = `slug: ${item.slug || '-'} · genres: ${Array.isArray(item.genres) && item.genres.length ? item.genres.slice(0, 3).join(', ') : '-'}`;
+    titleWrap.appendChild(titleStrong);
+    titleWrap.appendChild(subtitle);
+    titleTd.appendChild(titleWrap);
+
+    const typeTd = document.createElement('td');
+    typeTd.textContent = item.type || '-';
+
+    const ratingTd = document.createElement('td');
+    ratingTd.textContent = formatRating(item.rating);
+
+    const viewsTd = document.createElement('td');
+    viewsTd.textContent = String(Number(item.views || 0));
+
+    const statusTd = document.createElement('td');
+    statusTd.textContent = item.status || '-';
+
+    tr.appendChild(titleTd);
+    tr.appendChild(typeTd);
+    tr.appendChild(ratingTd);
+    tr.appendChild(viewsTd);
+    tr.appendChild(statusTd);
+    mangaExplorerBody.appendChild(tr);
+  });
+};
+
+const updateMangaExplorerMeta = (total = 0) => {
+  if (!mangaExplorerMeta) return;
+  const qLabel = mangaExplorerState.q ? ` · query: "${mangaExplorerState.q}"` : '';
+  mangaExplorerMeta.textContent = `${mangaExplorerState.type.toUpperCase()} · ${total} titles · page ${mangaExplorerState.page}/${Math.max(1, mangaExplorerState.totalPages)}${qLabel}`;
+};
+
+const loadMangaExplorer = async () => {
+  if (!mangaExplorerBody) return;
+
+  const params = new URLSearchParams({
+    type: mangaExplorerState.type,
+    page: String(mangaExplorerState.page),
+    limit: String(mangaExplorerState.limit),
+  });
+
+  const useSearch = Boolean(mangaExplorerState.q && mangaExplorerState.q.trim());
+  if (useSearch) {
+    params.set('q', mangaExplorerState.q.trim());
+  }
+
+  const endpoint = useSearch
+    ? `${API_BASE}/comic/search?${params.toString()}`
+    : `${API_BASE}/comic/unlimited?${params.toString()}`;
+
+  try {
+    const res = await fetch(endpoint);
+    if (!res.ok) throw new Error('failed to fetch manga explorer data');
+    const json = await res.json();
+    const rows = Array.isArray(json?.data) ? json.data : [];
+    const pagination = json?.pagination || json?.meta || {};
+
+    mangaExplorerState.totalPages = Number(pagination.totalPages || 1);
+    mangaExplorerState.page = Number(pagination.page || mangaExplorerState.page || 1);
+
+    if (mangaPrevBtn) mangaPrevBtn.disabled = mangaExplorerState.page <= 1;
+    if (mangaNextBtn) mangaNextBtn.disabled = mangaExplorerState.page >= mangaExplorerState.totalPages;
+
+    renderMangaExplorerRows(rows);
+    updateMangaExplorerMeta(Number(pagination.total || rows.length || 0));
+  } catch {
+    mangaExplorerState.totalPages = 1;
+    mangaExplorerState.page = 1;
+    if (mangaPrevBtn) mangaPrevBtn.disabled = true;
+    if (mangaNextBtn) mangaNextBtn.disabled = true;
+    renderMangaExplorerRows([]);
+    updateMangaExplorerMeta(0);
+  }
+};
+
 const loadContentStats = async () => {
   const set = (id, val) => {
     const el = document.getElementById(id);
     if (el) el.textContent = val ?? '0';
   };
 
-  set('statAnimeProxy', ANIME_PROXY_SOURCES.length);
+  const SOURCE_EMOJIS = {
+    anichin: '🍜',
+    samehadaku: '⚔️',
+    otakudesu: '🎌',
+    animekuindo: '🌀',
+    animasu: '🎞️',
+    anoboy: '🌊',
+    animeindo: '📺',
+    kusonime: '🥷',
+    mangadex: '📖',
+    komiku: '🖋️',
+    mangakakalot: '📚',
+    manhwaclan: '🧭',
+    mangabat: '🧱',
+    bato: '🧩',
+  };
+
+  const getSourceEmoji = (source, primaryType) => {
+    const normalized = String(source || '').toLowerCase();
+    if (SOURCE_EMOJIS[normalized]) return SOURCE_EMOJIS[normalized];
+    if (primaryType === 'anime') return '✨';
+    if (primaryType === 'donghua') return '🐉';
+    if (primaryType === 'manga') return '📚';
+    if (primaryType === 'manhwa') return '🟩';
+    if (primaryType === 'manhua') return '🟨';
+    if (primaryType === 'movie') return '🎬';
+    if (primaryType === 'ona') return '📼';
+    return '🔗';
+  };
+
+  const inferPrimaryType = (row) => {
+    if (row?.primaryType) return row.primaryType;
+    const byType = row?.byType || {};
+    const ordered = ['anime', 'donghua', 'manga', 'manhwa', 'manhua', 'movie', 'ona'];
+    return ordered.find((type) => (byType[type] || 0) > 0) || 'unknown';
+  };
+
+  const renderSourceSection = (container, titleText, subtitleText, rows, accentClass) => {
+    if (!container) return;
+    container.innerHTML = '';
+
+    const section = document.createElement('div');
+    section.className = 'overview-source-section';
+
+    const header = document.createElement('div');
+    header.className = 'overview-source-section-head';
+
+    const titleWrap = document.createElement('div');
+    titleWrap.className = 'overview-source-section-title';
+    const title = document.createElement('h3');
+    title.textContent = titleText;
+    const subtitle = document.createElement('p');
+    subtitle.textContent = subtitleText;
+    titleWrap.appendChild(title);
+    titleWrap.appendChild(subtitle);
+
+    const meta = document.createElement('span');
+    meta.className = `overview-source-section-meta ${accentClass}`.trim();
+    meta.textContent = `${rows.length} sources`;
+
+    header.appendChild(titleWrap);
+    header.appendChild(meta);
+
+    const grid = document.createElement('div');
+    grid.className = 'overview-source-grid';
+
+    const visibleRows = rows.slice(0, 10);
+    visibleRows.forEach((row) => {
+      const card = document.createElement('article');
+      card.className = 'overview-source-card';
+
+      const source = row.source || row._id || 'unknown';
+      const primaryType = inferPrimaryType(row);
+      const emoji = getSourceEmoji(source, primaryType);
+      const total = Number(row.categoryTotal || row.total || row.count || 0);
+      const byType = row.byType || {};
+      const details = Object.entries(byType)
+        .filter(([, count]) => Number(count) > 0)
+        .sort((a, b) => Number(b[1]) - Number(a[1]))
+        .slice(0, 3);
+
+      const badge = document.createElement('div');
+      badge.className = 'overview-source-badge';
+      badge.textContent = emoji;
+
+      const body = document.createElement('div');
+      body.className = 'overview-source-body';
+
+      const nameRow = document.createElement('div');
+      nameRow.className = 'overview-source-name-row';
+      const name = document.createElement('strong');
+      name.textContent = source;
+      const totalLabel = document.createElement('span');
+      totalLabel.textContent = `${total} item${total === 1 ? '' : 's'}`;
+      nameRow.appendChild(name);
+      nameRow.appendChild(totalLabel);
+
+      const typeChip = document.createElement('span');
+      typeChip.className = 'overview-source-type';
+      typeChip.textContent = primaryType;
+
+      const chipWrap = document.createElement('div');
+      chipWrap.className = 'overview-source-chips';
+      details.forEach(([type, count]) => {
+        const chip = document.createElement('span');
+        chip.className = 'overview-source-chip';
+        chip.textContent = `${type}: ${count}`;
+        chipWrap.appendChild(chip);
+      });
+
+      body.appendChild(nameRow);
+      body.appendChild(typeChip);
+      if (details.length > 0) body.appendChild(chipWrap);
+
+      card.appendChild(badge);
+      card.appendChild(body);
+      grid.appendChild(card);
+    });
+
+    if (rows.length > visibleRows.length) {
+      const more = document.createElement('div');
+      more.className = 'overview-breakdown-empty';
+      more.textContent = `+${rows.length - visibleRows.length} source lainnya tidak ditampilkan.`;
+      grid.appendChild(more);
+    }
+
+    if (!rows.length) {
+      const empty = document.createElement('div');
+      empty.className = 'overview-breakdown-empty';
+      empty.textContent = 'Belum ada source pada kategori ini.';
+      section.appendChild(header);
+      section.appendChild(empty);
+      container.appendChild(section);
+      return;
+    }
+
+    section.appendChild(header);
+    section.appendChild(grid);
+    container.appendChild(section);
+  };
+
+  const renderOverviewSourceBreakdown = (payload) => {
+    if (!overviewSourceBreakdown) return;
+
+    const breakdown = payload?.sourceBreakdown || {};
+    const animeSources = Array.isArray(breakdown.animeSources) ? breakdown.animeSources : [];
+    const donghuaSources = Array.isArray(breakdown.donghuaSources) ? breakdown.donghuaSources : [];
+    const mangaSources = Array.isArray(breakdown.mangaSources) ? breakdown.mangaSources : [];
+    const topSources = Array.isArray(breakdown.topSources) ? breakdown.topSources : [];
+    const byNetwork = payload?.animationByNetwork || payload?.byNetwork || {};
+    const entries = Object.entries(byNetwork)
+      .map(([source, count]) => [source, Number(count) || 0])
+      .filter(([, count]) => count > 0)
+      .sort((a, b) => b[1] - a[1]);
+
+    overviewSourceBreakdown.innerHTML = '';
+
+    const total = Number(payload?.animationTotal || entries.reduce((sum, [, count]) => sum + count, 0));
+    const sourceCount = Number(payload?.animationSources || entries.length);
+    if (overviewBreakdownMeta) {
+      overviewBreakdownMeta.textContent = `${total} animation items across ${sourceCount} sources`;
+    }
+
+    if (!entries.length) {
+      const empty = document.createElement('div');
+      empty.className = 'overview-breakdown-empty';
+      empty.textContent = 'Belum ada data breakdown source.';
+      overviewSourceBreakdown.appendChild(empty);
+    }
+
+    const maxCount = entries[0]?.[1] || 1;
+
+    const summary = document.createElement('div');
+    summary.className = 'overview-breakdown-summary';
+    summary.innerHTML = '';
+    const summaryItems = [
+      { label: 'Animation total', value: total },
+      { label: 'Animation sources', value: sourceCount },
+      { label: 'Anime sources', value: animeSources.length },
+      { label: 'Donghua sources', value: donghuaSources.length },
+      { label: 'Manga sources', value: mangaSources.length },
+    ];
+    summaryItems.forEach((item) => {
+      const chip = document.createElement('div');
+      chip.className = 'overview-summary-chip';
+      const label = document.createElement('span');
+      label.textContent = item.label;
+      const value = document.createElement('strong');
+      value.textContent = String(item.value);
+      chip.appendChild(label);
+      chip.appendChild(value);
+      summary.appendChild(chip);
+    });
+    overviewSourceBreakdown.appendChild(summary);
+
+    const groupedWrapper = document.createElement('div');
+    groupedWrapper.className = 'overview-source-groups';
+    renderSourceSection(groupedWrapper, 'Anime Sources', 'Source yang menyuplai katalog anime.', animeSources, 'accent-anime');
+    renderSourceSection(groupedWrapper, 'Donghua Sources', 'Source untuk donghua, movie, dan ONA.', donghuaSources, 'accent-donghua');
+    renderSourceSection(groupedWrapper, 'Manga Sources', 'Source untuk manga, manhwa, dan manhua.', mangaSources, 'accent-manga');
+    overviewSourceBreakdown.appendChild(groupedWrapper);
+
+    const topPanel = document.createElement('div');
+    topPanel.className = 'overview-top-sources';
+    const topHead = document.createElement('div');
+    topHead.className = 'overview-source-section-head';
+    const topTitleWrap = document.createElement('div');
+    topTitleWrap.className = 'overview-source-section-title';
+    const topTitle = document.createElement('h3');
+    topTitle.textContent = 'Top 10 Source Cards';
+    const topSubtitle = document.createElement('p');
+    topSubtitle.textContent = 'Gabungan source paling aktif di seluruh kategori, dengan badge emoji per source.';
+    topTitleWrap.appendChild(topTitle);
+    topTitleWrap.appendChild(topSubtitle);
+    const topMeta = document.createElement('span');
+    topMeta.className = 'overview-source-section-meta accent-top';
+    topMeta.textContent = `${topSources.length} cards`;
+    topHead.appendChild(topTitleWrap);
+    topHead.appendChild(topMeta);
+
+    const topGrid = document.createElement('div');
+    topGrid.className = 'overview-source-card-grid';
+    topSources.slice(0, 10).forEach((row) => {
+      const card = document.createElement('article');
+      card.className = 'overview-top-source-card';
+      const source = row.source || 'unknown';
+      const primaryType = inferPrimaryType(row);
+      const emoji = getSourceEmoji(source, primaryType);
+      const totalCount = Number(row.total || 0);
+      const byType = row.byType || {};
+      const segments = Object.entries(byType)
+        .filter(([, count]) => Number(count) > 0)
+        .sort((a, b) => Number(b[1]) - Number(a[1]))
+        .slice(0, 3);
+
+      const badge = document.createElement('div');
+      badge.className = 'overview-top-source-badge';
+      badge.textContent = emoji;
+
+      const content = document.createElement('div');
+      content.className = 'overview-top-source-content';
+
+      const name = document.createElement('strong');
+      name.className = 'overview-top-source-name';
+      name.textContent = source;
+
+      const meta = document.createElement('div');
+      meta.className = 'overview-top-source-meta';
+      meta.textContent = `${totalCount} total items · ${primaryType}`;
+
+      const chips = document.createElement('div');
+      chips.className = 'overview-top-source-chips';
+      segments.forEach(([type, count]) => {
+        const chip = document.createElement('span');
+        chip.className = 'overview-top-source-chip';
+        chip.textContent = `${type}: ${count}`;
+        chips.appendChild(chip);
+      });
+
+      content.appendChild(name);
+      content.appendChild(meta);
+      if (segments.length > 0) content.appendChild(chips);
+
+      card.appendChild(badge);
+      card.appendChild(content);
+      topGrid.appendChild(card);
+    });
+
+    if (topSources.length === 0) {
+      const empty = document.createElement('div');
+      empty.className = 'overview-breakdown-empty';
+      empty.textContent = 'Belum ada top source data.';
+      topGrid.appendChild(empty);
+    }
+
+    topPanel.appendChild(topHead);
+    topPanel.appendChild(topGrid);
+    overviewSourceBreakdown.appendChild(topPanel);
+
+    if (entries.length > 0) {
+      const rawPanel = document.createElement('div');
+      rawPanel.className = 'overview-raw-network-panel';
+      const rawHead = document.createElement('div');
+      rawHead.className = 'overview-source-section-head';
+      const rawTitleWrap = document.createElement('div');
+      rawTitleWrap.className = 'overview-source-section-title';
+      const rawTitle = document.createElement('h3');
+      rawTitle.textContent = 'Raw Animation Network Breakdown';
+      const rawSubtitle = document.createElement('p');
+      rawSubtitle.textContent = 'Panel cepat untuk melihat network yang mendominasi data animation.';
+      rawTitleWrap.appendChild(rawTitle);
+      rawTitleWrap.appendChild(rawSubtitle);
+      const rawMeta = document.createElement('span');
+      rawMeta.className = 'overview-source-section-meta accent-raw';
+      rawMeta.textContent = `${entries.length} networks`;
+      rawHead.appendChild(rawTitleWrap);
+      rawHead.appendChild(rawMeta);
+
+      const rawList = document.createElement('div');
+      rawList.className = 'overview-breakdown-list';
+      entries.slice(0, 10).forEach(([source, count]) => {
+        const row = document.createElement('div');
+        row.className = 'overview-breakdown-row';
+
+        const label = document.createElement('div');
+        label.className = 'overview-breakdown-label';
+        const title = document.createElement('strong');
+        title.textContent = source;
+        const subtitle = document.createElement('span');
+        subtitle.textContent = `${count} item` + (count > 1 ? 's' : '');
+        label.appendChild(title);
+        label.appendChild(subtitle);
+
+        const barWrap = document.createElement('div');
+        barWrap.className = 'overview-breakdown-bar-wrap';
+        const bar = document.createElement('div');
+        bar.className = 'overview-breakdown-bar';
+        const fill = document.createElement('i');
+        fill.style.width = `${Math.max(4, Math.round((count / maxCount) * 100))}%`;
+        bar.appendChild(fill);
+        const meta = document.createElement('small');
+        meta.textContent = `${Math.round((count / total) * 100)}% of total`;
+        barWrap.appendChild(bar);
+        barWrap.appendChild(meta);
+
+        const value = document.createElement('strong');
+        value.textContent = String(count);
+        value.style.textAlign = 'right';
+
+        row.appendChild(label);
+        row.appendChild(barWrap);
+        row.appendChild(value);
+        rawList.appendChild(row);
+      });
+
+      rawPanel.appendChild(rawHead);
+      rawPanel.appendChild(rawList);
+      overviewSourceBreakdown.appendChild(rawPanel);
+
+      if (entries.length > 10) {
+        const more = document.createElement('div');
+        more.className = 'overview-breakdown-empty';
+        more.textContent = `+${entries.length - 10} source lainnya tersembunyi.`;
+        overviewSourceBreakdown.appendChild(more);
+      }
+    }
+  };
 
   try {
     const res = await fetch(`${API_BASE}/comic/stats`);
+    if (!res.ok) {
+      throw new Error(`stats endpoint failed with status ${res.status}`);
+    }
     const json = await res.json();
     const d = json?.data;
-    if (!d) return;
+    if (!d) {
+      throw new Error('stats payload missing data');
+    }
     const byType = d.byType || {};
+    latestStatsSnapshot = d;
 
     set('statTotal',   d.total);
-    set('statDonghua', (byType.donghua || 0) + (byType.movie || 0));
+    set('statDonghua', byType.donghua || 0);
     set('statManga',   byType.manga   || 0);
     set('statManhwa',  byType.manhwa  || 0);
     set('statManhua',  byType.manhua  || 0);
-    set('statOna',     (byType.ona || 0) + (byType.anime || 0));
+    set('statAnime',   d.animationTotal || byType.anime || 0);
+    set('statOna',     byType.ona     || 0);
+    set('statMovie',   byType.movie   || 0);
+    set('statAnimeProxy', d.animationSources || d.proxySources || 0);
+    renderOverviewSourceBreakdown(d);
+    populateAnimationSourceSelect(d.animationSourceList || []);
+    await loadAnimationSourceItems();
   } catch {
-    // gagal fetch stats — biarkan ... tetap tampil
+    latestStatsSnapshot = null;
+    set('statTotal', '-');
+    set('statDonghua', '-');
+    set('statManga', '-');
+    set('statManhwa', '-');
+    set('statManhua', '-');
+    set('statAnime', '-');
+    set('statOna', '-');
+    set('statMovie', '-');
+    set('statAnimeProxy', '-');
+
+    if (overviewBreakdownMeta) overviewBreakdownMeta.textContent = 'No data';
+    if (overviewSourceBreakdown) {
+      overviewSourceBreakdown.innerHTML = '';
+      const empty = document.createElement('div');
+      empty.className = 'overview-breakdown-empty';
+      empty.textContent = 'Tidak ada data overview source.';
+      overviewSourceBreakdown.appendChild(empty);
+    }
+    if (animationSourceSelect) {
+      animationSourceSelect.innerHTML = '<option value="">Tidak ada source animation</option>';
+      selectedAnimationSource = '';
+    }
+    renderAnimationSourceItems({ data: [], meta: { selectedSource: null, sourceSummary: [] }, pagination: { total: 0 } });
   }
 };
 
@@ -1073,6 +1954,9 @@ const QUICK_LINKS = [
       { tag: 'GET', tagClass: 'ql-get', label: 'Filter Manhwa',                 path: '/api/v1/mangas?type=manhwa&page=1' },
       { tag: 'GET', tagClass: 'ql-get', label: 'Detail Manga (solo-leveling)',  path: '/api/v1/mangas/solo-leveling' },
       { tag: 'GET', tagClass: 'ql-get', label: 'Comic Stats',                   path: '/api/v1/comic/stats' },
+      { tag: 'GET', tagClass: 'ql-get', label: 'Animation Distribution Debug',  path: '/api/v1/comic/stats/distribution?sample=1&samplePerGroup=2' },
+      { tag: 'GET', tagClass: 'ql-get', label: 'Debug: winbu only',             path: '/api/v1/comic/stats/distribution?network=winbu&sample=1&samplePerGroup=2' },
+      { tag: 'GET', tagClass: 'ql-get', label: 'Debug: donghua only',           path: '/api/v1/comic/stats/distribution?type=donghua&sample=1&samplePerGroup=2' },
     ],
   },
   {
@@ -1543,14 +2427,41 @@ const boot = async () => {
 
   searchInput.addEventListener('input', filterCards);
   playgroundForm.addEventListener('submit', runPlayground);
+  if (insightsApplyFilter) {
+    insightsApplyFilter.addEventListener('click', () => {
+      applyInsightsFilters();
+    });
+  }
+  if (insightsResetFilter) {
+    insightsResetFilter.addEventListener('click', () => {
+      resetInsightsFilters();
+    });
+  }
+  if (insightsNetworkFilter) {
+    insightsNetworkFilter.addEventListener('change', () => {
+      applyInsightsFilters();
+    });
+  }
+  if (insightsTypeFilter) {
+    insightsTypeFilter.addEventListener('change', () => {
+      applyInsightsFilters();
+    });
+  }
 
   await loadStatus();
   await loadActivity();
   await loadContentStats();
+  await loadMangaExplorer();
+  try {
+    await loadDataInsights();
+  } catch {
+    // Keep boot flow alive even when insights payload is malformed.
+  }
 
   setInterval(loadStatus, 9000);
   setInterval(loadActivity, 3000);
   setInterval(loadContentStats, 30000);
+  setInterval(loadDataInsights, 45000);
 };
 
 boot();

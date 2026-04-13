@@ -60,6 +60,8 @@ router.get('/chapter/:slug',             c.chapterRead);       // GET /comic/cha
 
 // ── Stats & monitoring ────────────────────────────────────────────────────────
 router.get('/stats',       c.stats);       // GET /comic/stats
+router.get('/stats/source-items', c.statsSourceItems); // GET /comic/stats/source-items
+router.get('/stats/distribution', c.statsDistribution); // GET /comic/stats/distribution
 router.get('/fullstats',   c.fullstats);   // GET /comic/fullstats
 router.get('/analytics',   c.analytics);  // GET /comic/analytics
 router.get('/comparison',  c.comparison); // GET /comic/comparison

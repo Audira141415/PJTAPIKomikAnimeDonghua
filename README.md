@@ -356,9 +356,16 @@ npm run lint:syntax    # Check syntax
 npm audit              # Check dependency vulnerabilities
 npm run security:audit # Security audit
 npm run seed           # Seed database
+npm run import:full    # One-command full import with checkpoint resume
 npm run scheduler      # Run job scheduler
 npm run worker         # Run job worker
+full-import-daily.bat  # Windows batch: reset checkpoint lalu jalankan full import
 ```
+
+### Daily Full Import
+- Default cron untuk scheduler: `SCRAPER_FULL_IMPORT_CRON=0 6 * * *`
+- Waktu default: setiap hari jam 06:00 WIB
+- Kalau ingin jadwal lain, ubah `SCRAPER_FULL_IMPORT_CRON` di `.env` atau `docker-compose.yml`
 
 ### Code Style
 - ESLint configuration included

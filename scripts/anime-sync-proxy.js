@@ -17,11 +17,13 @@ const getArg = (flag) => {
   return i !== -1 ? args[i + 1] : null;
 };
 
-const BASE_URL = getArg('--base-url') || `http://localhost:${env.PORT || 3000}/api/v1`;
+const BASE_URL = getArg('--base-url') || process.env.SCRAPER_API_BASE_URL || `http://localhost:${env.PORT || 3000}/api/v1`;
 const LIMIT_PER_SOURCE = parseInt(getArg('--limit') || '20', 10);
 const DO_UPDATE = hasFlag('--update');
 const DRY_RUN = hasFlag('--dry-run');
 const ONLY_SOURCE = getArg('--source');
+const AUDIT_ONLY = hasFlag('--audit');
+const AUDIT_SAMPLE_SIZE = parseInt(getArg('--audit-sample') || '5', 10);
 
 const SOURCE_ENDPOINTS = [
   { key: 'anime', path: '/anime/home' },
@@ -42,10 +44,39 @@ const SOURCE_ENDPOINTS = [
   { key: 'drachin', path: '/drachin/latest' },
 ];
 
+const ALLOWED_ANIMATION_TYPES = new Set(['anime', 'donghua', 'ona', 'movie']);
+
+const SOURCE_FORCED_TYPE = {
+  donghub: 'donghua',
+  drachin: 'donghua',
+};
+
+const SOURCE_DEFAULT_TYPE = {};
+
+const SOURCE_TYPE_HINTS = {
+  donghub:   { donghua: 3 },
+  drachin:   { donghua: 3 },
+  winbu:     { donghua: 1, anime: 1 },
+  dramabox:  { donghua: 1, movie: 2 },
+  anime:     { anime: 2 },
+  samehadaku:{ anime: 2 },
+  animasu:   { anime: 2 },
+  kusonime:  { anime: 2 },
+  anoboy:    { anime: 2 },
+  animesail: { anime: 2 },
+  oploverz:  { anime: 2 },
+  stream:    { anime: 2 },
+  animekuindo:{ anime: 2 },
+  nimegami:  { anime: 2 },
+  alqanime:  { anime: 2 },
+};
+
 const client = axios.create({
   timeout: 20000,
   headers: { 'User-Agent': 'AudiraAnimeSync/1.0' },
 });
+
+const PROXY_SOURCE_KEYS = new Set(SOURCE_ENDPOINTS.map((s) => s.key));
 
 function toArray(value) {
   if (!value) return [];
@@ -122,6 +153,96 @@ function normalizeGenres(raw) {
     .filter(Boolean);
 }
 
+function normalizeText(value) {
+  return String(value || '').toLowerCase().trim();
+}
+
+function includesAny(text, keywords) {
+  return keywords.some((kw) => text.includes(kw));
+}
+
+function inferConfidence(score) {
+  if (score >= 100) return 0.99;
+  if (score >= 8) return 0.92;
+  if (score >= 6) return 0.85;
+  if (score >= 4) return 0.75;
+  if (score >= 2) return 0.65;
+  return 0.55;
+}
+
+function inferAnimationType(item, sourceKey) {
+  const forcedType = SOURCE_FORCED_TYPE[sourceKey];
+  if (forcedType) {
+    return {
+      type: forcedType,
+      confidence: 0.99,
+      reason: `forced-source:${sourceKey}`,
+    };
+  }
+
+  const score = { anime: 0, donghua: 0, ona: 0, movie: 0 };
+  const reasons = { anime: [], donghua: [], ona: [], movie: [] };
+
+  const addScore = (type, points, reason) => {
+    if (!Object.prototype.hasOwnProperty.call(score, type)) return;
+    score[type] += points;
+    reasons[type].push(reason);
+  };
+
+  const rawTypeText = normalizeText(pickFirst(item.type, item.format, item.kind, item.category, item.label, item.genreType));
+  const titleText = normalizeText(pickFirst(item.title, item.name, item.animeTitle));
+  const statusText = normalizeText(item.status);
+  const countryText = normalizeText(pickFirst(item.country, item.origin));
+  const genreText = normalizeText(normalizeGenres(item.genres).join(' '));
+  const sourceText = normalizeText(sourceKey);
+
+  if (includesAny(rawTypeText, ['donghua'])) addScore('donghua', 8, `raw-type:${rawTypeText}`);
+  if (includesAny(rawTypeText, ['ona'])) addScore('ona', 8, `raw-type:${rawTypeText}`);
+  if (includesAny(rawTypeText, ['movie', 'film'])) addScore('movie', 8, `raw-type:${rawTypeText}`);
+  if (includesAny(rawTypeText, ['anime', 'tv'])) addScore('anime', 6, `raw-type:${rawTypeText}`);
+
+  if (includesAny(rawTypeText, ['chinese', 'china', 'cn'])) addScore('donghua', 4, `raw-locale:${rawTypeText}`);
+  if (includesAny(countryText, ['china', 'chinese', 'cn'])) addScore('donghua', 4, `country:${countryText}`);
+  if (includesAny(genreText, ['donghua', 'chinese'])) addScore('donghua', 3, `genre:${genreText}`);
+
+  if (includesAny(titleText, ['donghua'])) addScore('donghua', 4, `title:${titleText}`);
+  if (includesAny(titleText, ['movie', 'film'])) addScore('movie', 4, `title:${titleText}`);
+  if (includesAny(statusText, ['movie'])) addScore('movie', 2, `status:${statusText}`);
+
+  const sourceHints = SOURCE_TYPE_HINTS[sourceKey] || {};
+  Object.entries(sourceHints).forEach(([type, points]) => {
+    addScore(type, points, `source-hint:${sourceKey}`);
+  });
+
+  if (sourceText.includes('dong')) addScore('donghua', 2, `source-name:${sourceText}`);
+
+  const ranked = Object.entries(score).sort((a, b) => b[1] - a[1]);
+  const [bestType, bestScore] = ranked[0];
+  const [runnerUpType, runnerUpScore] = ranked[1];
+
+  if (bestScore <= 0) {
+    const fallbackType = SOURCE_DEFAULT_TYPE[sourceKey] || 'anime';
+    return {
+      type: fallbackType,
+      confidence: 0.5,
+      reason: `fallback:${sourceKey || 'default'}`,
+    };
+  }
+
+  const confidence = Math.max(0.5, inferConfidence(bestScore - runnerUpScore >= 2 ? bestScore : bestScore - 1));
+  const reason = reasons[bestType][0] || `score:${bestType}:${bestScore}`;
+
+  return {
+    type: bestType,
+    confidence,
+    reason,
+  };
+}
+
+function detectAnimationType(item, sourceKey) {
+  return inferAnimationType(item, sourceKey).type;
+}
+
 function buildSourceUrl(item) {
   const keys = Object.keys(item);
   const urlKey = keys.find((k) => k.toLowerCase().endsWith('url'));
@@ -141,10 +262,13 @@ function mapToAnimeDoc(item, sourceKey, adminId) {
   const statusRaw = pickFirst(item.status, item.episode, item.episodes, item.releasedOn);
   const genres = normalizeGenres(item.genres);
 
+  const inferred = inferAnimationType(item, sourceKey);
+  const detectedType = inferred.type;
+
   return {
     title,
     slug,
-    type: 'anime',
+    type: ALLOWED_ANIMATION_TYPES.has(detectedType) ? detectedType : 'anime',
     contentCategory: 'animation',
     status: detectStatus(statusRaw),
     description: pickFirst(item.description, item.synopsis, item.sinopsis) || '',
@@ -160,7 +284,43 @@ function mapToAnimeDoc(item, sourceKey, adminId) {
     sub: pickFirst(item.sub, item.subtitle) || 'Sub',
     network: sourceKey,
     country: pickFirst(item.country, item.origin),
+    inferenceConfidence: inferred.confidence,
+    inferenceReason: inferred.reason,
   };
+}
+
+function printAuditReport(auditRows) {
+  if (!auditRows.length) {
+    console.log('AUDIT: tidak ada data untuk ditampilkan.');
+    return;
+  }
+
+  const grouped = new Map();
+  auditRows.forEach((row) => {
+    if (!grouped.has(row.source)) {
+      grouped.set(row.source, []);
+    }
+    grouped.get(row.source).push(row);
+  });
+
+  console.log('========================================');
+  console.log('ANIMATION TYPE AUDIT (sampling by source)');
+  console.log('========================================');
+
+  grouped.forEach((rows, source) => {
+    const counts = rows.reduce((acc, row) => {
+      acc[row.type] = (acc[row.type] || 0) + 1;
+      return acc;
+    }, {});
+    console.log(`SOURCE ${source} total=${rows.length} byType=${JSON.stringify(counts)}`);
+
+    rows
+      .slice(0, AUDIT_SAMPLE_SIZE)
+      .forEach((row) => {
+        const confidence = typeof row.confidence === 'number' ? row.confidence.toFixed(2) : '0.00';
+        console.log(`  - [${row.type}] conf=${confidence} title="${row.title}" reason=${row.reason}`);
+      });
+  });
 }
 
 function dedupeBySlug(items) {
@@ -172,6 +332,13 @@ function dedupeBySlug(items) {
     }
   });
   return Array.from(map.values());
+}
+
+function isProxyManagedRecord(existing) {
+  if (!existing) return false;
+  if (existing.contentCategory !== 'animation') return false;
+  const network = typeof existing.network === 'string' ? existing.network.trim() : '';
+  return network !== '' && PROXY_SOURCE_KEYS.has(network);
 }
 
 async function ensureAdminUser() {
@@ -202,14 +369,19 @@ async function upsertAnimeDocs(docs) {
     const existing = await Manga.findOne({ slug: doc.slug });
 
     // Slug is globally unique in Manga model.
-    // If same slug already belongs to non-anime content, skip to avoid collisions.
-    if (existing && existing.type !== 'anime') {
+    // If same slug already belongs to non-animation content, skip to avoid collisions.
+    if (existing && !ALLOWED_ANIMATION_TYPES.has(existing.type)) {
       conflicted += 1;
       continue;
     }
 
     if (existing && !DO_UPDATE) {
       skipped += 1;
+      continue;
+    }
+
+    if (existing && DO_UPDATE && !isProxyManagedRecord(existing)) {
+      conflicted += 1;
       continue;
     }
 
@@ -235,8 +407,15 @@ async function run() {
     throw new Error('Argumen --limit harus bilangan bulat > 0.');
   }
 
-  await mongoose.connect(env.MONGO_URI);
-  const admin = await ensureAdminUser();
+  if (AUDIT_ONLY && (!Number.isInteger(AUDIT_SAMPLE_SIZE) || AUDIT_SAMPLE_SIZE <= 0)) {
+    throw new Error('Argumen --audit-sample harus bilangan bulat > 0.');
+  }
+
+  let admin = null;
+  if (!AUDIT_ONLY) {
+    await mongoose.connect(env.MONGO_URI);
+    admin = await ensureAdminUser();
+  }
 
   const activeSources = ONLY_SOURCE
     ? SOURCE_ENDPOINTS.filter((s) => s.key === ONLY_SOURCE)
@@ -248,21 +427,45 @@ async function run() {
 
   let totalFetched = 0;
   const mergedDocs = [];
+  const auditRows = [];
 
   for (const source of activeSources) {
     try {
       const rawItems = await fetchSourceItems(source);
       totalFetched += rawItems.length;
 
-      const docs = rawItems
-        .map((item) => mapToAnimeDoc(item, source.key, admin._id))
-        .filter(Boolean);
+      if (AUDIT_ONLY) {
+        rawItems.forEach((item) => {
+          const title = pickFirst(item.title, item.name, item.animeTitle) || '(untitled)';
+          const inferred = inferAnimationType(item, source.key);
+          auditRows.push({
+            source: source.key,
+            title,
+            type: inferred.type,
+            confidence: inferred.confidence,
+            reason: inferred.reason,
+          });
+        });
+      }
 
-      mergedDocs.push(...docs);
-      console.log(`SOURCE ${source.key.padEnd(12)} fetched=${rawItems.length} mapped=${docs.length}`);
+      if (!AUDIT_ONLY) {
+        const docs = rawItems
+          .map((item) => mapToAnimeDoc(item, source.key, admin._id))
+          .filter(Boolean);
+
+        mergedDocs.push(...docs);
+        console.log(`SOURCE ${source.key.padEnd(12)} fetched=${rawItems.length} mapped=${docs.length}`);
+      } else {
+        console.log(`SOURCE ${source.key.padEnd(12)} fetched=${rawItems.length} audit=${rawItems.length}`);
+      }
     } catch (err) {
       console.log(`SOURCE ${source.key.padEnd(12)} error=${err.message}`);
     }
+  }
+
+  if (AUDIT_ONLY) {
+    printAuditReport(auditRows);
+    return;
   }
 
   const uniqueDocs = dedupeBySlug(mergedDocs);

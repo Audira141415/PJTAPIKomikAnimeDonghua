@@ -194,6 +194,18 @@ const mangaSchema = new mongoose.Schema(
       type: Date,
       default: null,
     },
+    inferenceConfidence: {
+      type: Number,
+      default: null,
+      min: 0,
+      max: 1,
+    },
+    inferenceReason: {
+      type: String,
+      default: null,
+      trim: true,
+      maxlength: 200,
+    },
   },
   { timestamps: true }
 );

@@ -22,7 +22,7 @@ const pageSchema = z.object({
 
 const searchSchema = z.object({
   q:      z.string().min(1).max(200),
-  type:   z.enum(['manga', 'manhwa', 'manhua']).optional(),
+  type:   z.enum(['manga', 'manhwa', 'manhua', 'anime', 'donghua', 'movie', 'ona']).optional(),
   genre:  z.string().optional(),
   status: z.enum(['ongoing', 'completed', 'hiatus']).optional(),
   page:   z.coerce.number().int().min(1).default(1),
@@ -31,6 +31,57 @@ const searchSchema = z.object({
 
 // ── Helper ────────────────────────────────────────────────────────────────────
 const buildMangaSelect = 'title slug type contentCategory coverImage status rating views genres releasedOn';
+
+const buildSourceLabelExpr = () => ({
+  $let: {
+    vars: {
+      networkLabel: {
+        $cond: [
+          {
+            $and: [
+              { $ne: ['$network', null] },
+              { $ne: ['$network', ''] },
+            ],
+          },
+          '$network',
+          null,
+        ],
+      },
+      sourceKeyLabel: {
+        $cond: [
+          {
+            $and: [
+              { $ne: ['$sourceKey', null] },
+              { $ne: ['$sourceKey', ''] },
+            ],
+          },
+          '$sourceKey',
+          null,
+        ],
+      },
+      sourceUrlHost: {
+        $let: {
+          vars: {
+            urlMatch: {
+              $regexFind: {
+                input: { $ifNull: ['$sourceUrl', ''] },
+                regex: /^https?:\/\/([^/?#]+)/i,
+              },
+            },
+          },
+          in: {
+            $cond: [
+              { $gt: [{ $size: { $ifNull: ['$$urlMatch.captures', []] } }, 0] },
+              { $arrayElemAt: ['$$urlMatch.captures', 0] },
+              null,
+            ],
+          },
+        },
+      },
+    },
+    in: { $ifNull: ['$$networkLabel', { $ifNull: ['$$sourceKeyLabel', '$$sourceUrlHost'] }] },
+  },
+});
 
 // ============================================================================
 //  GET /comic/terbaru  — Komik terbaru dengan pagination
@@ -147,7 +198,7 @@ const search = catchAsync(async (req, res) => {
 const advancedSearch = catchAsync(async (req, res) => {
   const schema = z.object({
     q:        z.string().optional(),
-    type:     z.enum(['manga', 'manhwa', 'manhua']).optional(),
+    type:     z.enum(['manga', 'manhwa', 'manhua', 'anime', 'donghua', 'movie', 'ona']).optional(),
     genre:    z.string().optional(),
     status:   z.enum(['ongoing', 'completed', 'hiatus']).optional(),
     sortBy:   z.enum(['rating', 'views', 'createdAt', 'title']).default('createdAt'),
@@ -519,25 +570,476 @@ const recommendations = catchAsync(async (req, res) => {
 //  GET /comic/stats  — Statistik umum API
 // ============================================================================
 const stats = catchAsync(async (req, res) => {
-  const cacheKey = 'comic:stats';
+  const cacheKey = 'comic:stats:v4';
   const cached = await cache.get(cacheKey);
   if (cached) return success(res, cached);
 
-  const [total, byType, byStatus] = await Promise.all([
+  const sourceLabelExpr = buildSourceLabelExpr();
+
+  const [
+    total,
+    byType,
+    byStatus,
+    animationByNetwork,
+    animationTotalAgg,
+    sourceTotals,
+    sourceTypeRows,
+  ] = await Promise.all([
     Manga.countDocuments({}),
     Manga.aggregate([{ $group: { _id: '$type', count: { $sum: 1 } } }]),
     Manga.aggregate([{ $group: { _id: '$status', count: { $sum: 1 } } }]),
+    Manga.aggregate([
+      { $match: { contentCategory: 'animation' } },
+      { $addFields: { sourceLabel: sourceLabelExpr } },
+      { $match: { sourceLabel: { $exists: true, $nin: [null, ''] } } },
+      { $group: { _id: '$sourceLabel', count: { $sum: 1 }, avgRating: { $avg: '$rating' } } },
+      { $sort: { count: -1, _id: 1 } },
+    ]),
+    Manga.aggregate([
+      { $match: { contentCategory: 'animation' } },
+      { $count: 'total' },
+    ]),
+    Manga.aggregate([
+      { $addFields: { sourceLabel: sourceLabelExpr } },
+      { $match: { sourceLabel: { $exists: true, $nin: [null, ''] } } },
+      {
+        $group: {
+          _id: '$sourceLabel',
+          total: { $sum: 1 },
+        },
+      },
+      { $sort: { total: -1, _id: 1 } },
+    ]),
+    Manga.aggregate([
+      { $addFields: { sourceLabel: sourceLabelExpr } },
+      { $match: { sourceLabel: { $exists: true, $nin: [null, ''] } } },
+      {
+        $group: {
+          _id: { network: '$sourceLabel', type: '$type', contentCategory: '$contentCategory' },
+          count: { $sum: 1 },
+        },
+      },
+      { $sort: { '_id.network': 1, count: -1 } },
+    ]),
   ]);
+
+  const animationTotal = animationTotalAgg[0]?.total || 0;
+  const animationByNetworkMap = Object.fromEntries(animationByNetwork.map(({ _id, count }) => [_id || 'unknown', count]));
+  const animationSourceList = animationByNetwork.map((row) => ({
+    source: row._id || 'unknown',
+    count: row.count || 0,
+    avgRating: Number((row.avgRating || 0).toFixed(2)),
+  }));
+
+  const sourceTypeMap = new Map();
+  sourceTypeRows.forEach((row) => {
+    const network = row._id?.network || 'unknown';
+    const type = row._id?.type || 'unknown';
+    const category = row._id?.contentCategory || 'unknown';
+    if (!sourceTypeMap.has(network)) {
+      sourceTypeMap.set(network, {
+        source: network,
+        total: 0,
+        byType: {},
+        byTypeCategory: {},
+        contentCategories: {},
+      });
+    }
+
+    const item = sourceTypeMap.get(network);
+    item.total += row.count || 0;
+    item.byType[type] = (item.byType[type] || 0) + (row.count || 0);
+    item.byTypeCategory[`${type}:${category}`] = (item.byTypeCategory[`${type}:${category}`] || 0) + (row.count || 0);
+    item.contentCategories[category] = (item.contentCategories[category] || 0) + (row.count || 0);
+  });
+
+  const sourceCards = sourceTotals.map((row) => {
+    const network = row._id || 'unknown';
+    const detail = sourceTypeMap.get(network) || {
+      source: network,
+      total: row.total || 0,
+      byType: {},
+      byTypeCategory: {},
+      contentCategories: {},
+    };
+    const typeCategory = detail.byTypeCategory || {};
+    return {
+      source: network,
+      total: row.total || 0,
+      byType: detail.byType,
+      byTypeCategory: typeCategory,
+      contentCategories: detail.contentCategories,
+      animeTotal: typeCategory['anime:animation'] || 0,
+      donghuaTotal: (typeCategory['donghua:animation'] || 0) + (typeCategory['movie:animation'] || 0) + (typeCategory['ona:animation'] || 0),
+      mangaTotal: (typeCategory['manga:comic'] || 0) + (typeCategory['manhwa:comic'] || 0) + (typeCategory['manhua:comic'] || 0),
+    };
+  });
+
+  const animeSources = sourceCards
+    .filter((row) => row.animeTotal > 0)
+    .sort((a, b) => b.animeTotal - a.animeTotal)
+    .map((row) => ({ ...row, categoryTotal: row.animeTotal }));
+  const donghuaSources = sourceCards
+    .filter((row) => row.donghuaTotal > 0)
+    .sort((a, b) => b.donghuaTotal - a.donghuaTotal)
+    .map((row) => ({ ...row, categoryTotal: row.donghuaTotal }));
+  const mangaSources = sourceCards
+    .filter((row) => row.mangaTotal > 0)
+    .sort((a, b) => b.mangaTotal - a.mangaTotal)
+    .map((row) => ({ ...row, categoryTotal: row.mangaTotal }));
+
+  const topSources = sourceCards.slice().sort((a, b) => b.total - a.total).slice(0, 10).map((row) => ({
+    ...row,
+    primaryType: row.byType.anime ? 'anime' : row.byType.donghua ? 'donghua' : row.byType.manhwa ? 'manhwa' : row.byType.manga ? 'manga' : row.byType.manhua ? 'manhua' : row.byType.movie ? 'movie' : row.byType.ona ? 'ona' : 'unknown',
+  }));
 
   const payload = {
     data: {
       total,
-      byType:   Object.fromEntries(byType.map(({ _id, count }) => [_id || 'unknown', count])),
+      byType: Object.fromEntries(byType.map(({ _id, count }) => [_id || 'unknown', count])),
       byStatus: Object.fromEntries(byStatus.map(({ _id, count }) => [_id || 'unknown', count])),
+      animationTotal,
+      animationSources: animationByNetwork.length,
+      animationByNetwork: animationByNetworkMap,
+      animationSourceList,
+      proxySources: animationByNetwork.length,
+      byNetwork: animationByNetworkMap,
+      sourceBreakdown: {
+        animeSources,
+        donghuaSources,
+        mangaSources,
+        topSources,
+      },
     },
   };
   await cache.set(cacheKey, payload, 5 * 60);
   return success(res, payload);
+});
+
+// ============================================================================
+//  GET /comic/stats/source-items  — Daftar judul per source + rating
+// ============================================================================
+const statsSourceItems = catchAsync(async (req, res) => {
+  const schema = z.object({
+    source: z.string().trim().min(1).max(100).optional(),
+    category: z.enum(['animation', 'comic']).default('animation'),
+    page: z.coerce.number().int().min(1).default(1),
+    limit: z.coerce.number().int().min(1).max(100).default(20),
+  });
+  const { source, category, page, limit } = schema.parse(req.query);
+  const { skip, limit: perPage, page: currentPage } = paginate(page, limit);
+
+  const sourceLabelExpr = buildSourceLabelExpr();
+
+  const sourceSummaryRows = await Manga.aggregate([
+    { $match: { contentCategory: category } },
+    { $addFields: { sourceLabel: sourceLabelExpr } },
+    { $match: { sourceLabel: { $exists: true, $nin: [null, ''] } } },
+    {
+      $group: {
+        _id: '$sourceLabel',
+        total: { $sum: 1 },
+        avgRating: { $avg: '$rating' },
+      },
+    },
+    { $sort: { total: -1, _id: 1 } },
+  ]);
+
+  const selectedSource = source || sourceSummaryRows[0]?._id || null;
+  if (!selectedSource) {
+    return success(res, {
+      data: [],
+      pagination: paginateMeta(0, currentPage, perPage),
+      meta: {
+        category,
+        selectedSource: null,
+        sourceSummary: [],
+      },
+    });
+  }
+
+  const [items, totalRows] = await Promise.all([
+    Manga.aggregate([
+      { $match: { contentCategory: category } },
+      { $addFields: { sourceLabel: sourceLabelExpr } },
+      { $match: { sourceLabel: selectedSource } },
+      { $sort: { rating: -1, views: -1, updatedAt: -1 } },
+      { $skip: skip },
+      { $limit: perPage },
+      {
+        $project: {
+          title: 1,
+          slug: 1,
+          type: 1,
+          rating: 1,
+          views: 1,
+          status: 1,
+          network: 1,
+          sourceKey: 1,
+          updatedAt: 1,
+          source: '$sourceLabel',
+        },
+      },
+    ]),
+    Manga.aggregate([
+      { $match: { contentCategory: category } },
+      { $addFields: { sourceLabel: sourceLabelExpr } },
+      { $match: { sourceLabel: selectedSource } },
+      { $count: 'total' },
+    ]),
+  ]);
+  const total = totalRows[0]?.total || 0;
+
+  const sourceSummary = sourceSummaryRows.map((row) => ({
+    source: row._id,
+    total: row.total || 0,
+    avgRating: Number((row.avgRating || 0).toFixed(2)),
+  }));
+
+  const normalizedItems = items.map((item) => {
+    const raw = typeof item.toObject === 'function' ? item.toObject() : item;
+    return {
+      ...raw,
+      source: raw.source || raw.network || raw.sourceKey || null,
+    };
+  });
+
+  return success(res, {
+    data: normalizedItems,
+    pagination: paginateMeta(total, currentPage, perPage),
+    meta: {
+      category,
+      selectedSource,
+      sourceSummary,
+    },
+  });
+});
+
+// ============================================================================
+//  GET /comic/stats/distribution  — Debug distribusi animation by network+type
+// ============================================================================
+const statsDistribution = catchAsync(async (req, res) => {
+  const includeSamples = ['1', 'true', 'yes'].includes(String(req.query.sample || '0').toLowerCase());
+  const parsedSamplePerGroup = parseInt(req.query.samplePerGroup || '3', 10);
+  const samplePerGroup = Number.isFinite(parsedSamplePerGroup)
+    ? Math.min(10, Math.max(1, parsedSamplePerGroup))
+    : 3;
+  const networkFilter = typeof req.query.network === 'string' && req.query.network.trim() ? req.query.network.trim() : null;
+  const typeFilter = typeof req.query.type === 'string' && req.query.type.trim() ? req.query.type.trim() : null;
+
+  const sourceLabelExpr = buildSourceLabelExpr();
+
+  const baseMatch = {
+    contentCategory: 'animation',
+    $or: [
+      { network: { $exists: true, $nin: [null, ''] } },
+      { sourceKey: { $exists: true, $nin: [null, ''] } },
+      { sourceUrl: { $exists: true, $nin: [null, ''] } },
+    ],
+  };
+  const match = { ...baseMatch };
+  if (networkFilter) {
+    const sourceUrlPattern = new RegExp(networkFilter.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'i');
+    match.$or = [{ network: networkFilter }, { sourceKey: networkFilter }, { sourceUrl: sourceUrlPattern }];
+  }
+  if (typeFilter) match.type = typeFilter;
+
+  const typeTotalsMatch = { ...match };
+
+  const [groupedRows, typeTotals, reasonRows, networkReasonRows, networkOptionsRows, typeOptionsRows] = await Promise.all([
+    Manga.aggregate([
+      { $match: match },
+      {
+        $group: {
+          _id: { network: sourceLabelExpr, type: '$type' },
+          count: { $sum: 1 },
+          confidenceSum: {
+            $sum: {
+              $cond: [{ $gt: [{ $ifNull: ['$inferenceConfidence', -1] }, -1] }, '$inferenceConfidence', 0],
+            },
+          },
+          confidenceCount: {
+            $sum: {
+              $cond: [{ $gt: [{ $ifNull: ['$inferenceConfidence', -1] }, -1] }, 1, 0],
+            },
+          },
+        },
+      },
+      { $sort: { '_id.network': 1, count: -1 } },
+    ]),
+    Manga.aggregate([
+      { $match: typeTotalsMatch },
+      { $group: { _id: '$type', count: { $sum: 1 } } },
+      { $sort: { count: -1 } },
+    ]),
+    Manga.aggregate([
+      { $match: match },
+      {
+        $group: {
+          _id: {
+            network: sourceLabelExpr,
+            type: '$type',
+            reason: { $ifNull: ['$inferenceReason', 'unknown'] },
+          },
+          count: { $sum: 1 },
+        },
+      },
+      { $sort: { '_id.network': 1, '_id.type': 1, count: -1 } },
+      {
+        $group: {
+          _id: { network: '$_id.network', type: '$_id.type' },
+          topRule: { $first: '$_id.reason' },
+          topRuleCount: { $first: '$count' },
+        },
+      },
+    ]),
+    Manga.aggregate([
+      { $match: match },
+      {
+        $group: {
+          _id: {
+            network: sourceLabelExpr,
+            reason: { $ifNull: ['$inferenceReason', 'unknown'] },
+          },
+          count: { $sum: 1 },
+        },
+      },
+      { $sort: { '_id.network': 1, count: -1 } },
+      {
+        $group: {
+          _id: '$_id.network',
+          topRule: { $first: '$_id.reason' },
+          topRuleCount: { $first: '$count' },
+        },
+      },
+    ]),
+    Manga.aggregate([
+      { $match: baseMatch },
+      { $group: { _id: sourceLabelExpr } },
+      { $sort: { _id: 1 } },
+    ]),
+    Manga.aggregate([
+      { $match: baseMatch },
+      { $group: { _id: '$type' } },
+      { $sort: { _id: 1 } },
+    ]),
+  ]);
+
+  const reasonMap = new Map(
+    reasonRows.map((row) => [`${row._id?.network || 'unknown'}::${row._id?.type || 'unknown'}`, {
+      topRule: row.topRule || 'unknown',
+      topRuleCount: row.topRuleCount || 0,
+    }])
+  );
+
+  const networkReasonMap = new Map(
+    networkReasonRows.map((row) => [row._id || 'unknown', {
+      topRule: row.topRule || 'unknown',
+      topRuleCount: row.topRuleCount || 0,
+    }])
+  );
+
+  const networkMap = new Map();
+
+  groupedRows.forEach(({ _id, count, confidenceSum, confidenceCount }) => {
+    const network = _id?.network || 'unknown';
+    const type = _id?.type || 'unknown';
+    const reasonInfo = reasonMap.get(`${network}::${type}`) || { topRule: 'unknown', topRuleCount: 0 };
+    const avgConfidence = confidenceCount > 0 ? (confidenceSum / confidenceCount) : null;
+
+    if (!networkMap.has(network)) {
+      networkMap.set(network, {
+        network,
+        total: 0,
+        byType: {},
+        byTypeDetails: {},
+        confidenceWeightedSum: 0,
+        confidenceWeightCount: 0,
+      });
+    }
+
+    const row = networkMap.get(network);
+    row.total += count;
+    row.byType[type] = count;
+    row.byTypeDetails[type] = {
+      count,
+      avgConfidence: avgConfidence == null ? null : Number(avgConfidence.toFixed(3)),
+      topRule: reasonInfo.topRule,
+      topRuleCount: reasonInfo.topRuleCount,
+    };
+    if (avgConfidence != null) {
+      row.confidenceWeightedSum += avgConfidence * confidenceCount;
+      row.confidenceWeightCount += confidenceCount;
+    }
+  });
+
+  let sampleMap = new Map();
+  if (includeSamples) {
+    const sampleRows = await Manga.aggregate([
+      { $match: match },
+      { $sort: { updatedAt: -1 } },
+      {
+        $group: {
+          _id: { network: '$network', type: '$type' },
+          samples: {
+            $push: {
+              title: '$title',
+              slug: '$slug',
+              updatedAt: '$updatedAt',
+            },
+          },
+        },
+      },
+      { $project: { _id: 1, samples: { $slice: ['$samples', samplePerGroup] } } },
+    ]);
+
+    sampleMap = new Map(
+      sampleRows.map((row) => [`${row._id?.network || 'unknown'}::${row._id?.type || 'unknown'}`, row.samples || []])
+    );
+  }
+
+  const byNetwork = Array.from(networkMap.values())
+    .sort((a, b) => b.total - a.total)
+    .map((row) => {
+      const networkRuleInfo = networkReasonMap.get(row.network) || { topRule: 'unknown' };
+      const avgConfidence = row.confidenceWeightCount > 0
+        ? Number((row.confidenceWeightedSum / row.confidenceWeightCount).toFixed(3))
+        : null;
+
+      const baseRow = {
+        network: row.network,
+        total: row.total,
+        byType: row.byType,
+        byTypeDetails: row.byTypeDetails,
+        avgConfidence,
+        topRule: networkRuleInfo.topRule || 'unknown',
+      };
+
+      if (!includeSamples) return baseRow;
+
+      const withSamples = { ...baseRow, samples: {} };
+      Object.keys(baseRow.byType).forEach((type) => {
+        withSamples.samples[type] = sampleMap.get(`${row.network}::${type}`) || [];
+      });
+      return withSamples;
+    });
+
+  return success(res, {
+    data: {
+      totalNetworks: byNetwork.length,
+      byType: Object.fromEntries(typeTotals.map(({ _id, count }) => [_id || 'unknown', count])),
+      byNetwork,
+      options: {
+        includeSamples,
+        samplePerGroup: includeSamples ? samplePerGroup : 0,
+        selectedNetwork: networkFilter,
+        selectedType: typeFilter,
+        availableNetworks: networkOptionsRows.map((row) => row._id).filter(Boolean),
+        availableTypes: typeOptionsRows.map((row) => row._id).filter(Boolean),
+      },
+      generatedAt: new Date().toISOString(),
+    },
+  });
 });
 
 // ============================================================================
@@ -714,7 +1216,7 @@ module.exports = {
   random, berwarna, pustaka,
   unlimited, scroll, infinite,
   homepage, recommendations,
-  stats, fullstats, analytics,
+  stats, statsSourceItems, statsDistribution, fullstats, analytics,
   realtime, comparison, health,
   // ── Admin CRUD ──────────────────────────────────────────────────────────────
   create, update, remove, rate,

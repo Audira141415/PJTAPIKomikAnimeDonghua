@@ -163,11 +163,30 @@ function getTitle(attributes) {
   return attributes.title?.en || attributes.title?.ja || Object.values(attributes.title || {})[0] || 'Unknown';
 }
 
+function normalizeTitleForDb(title) {
+  const text = String(title || '').trim() || 'Unknown';
+  const maxLength = 200;
+  if (text.length <= maxLength) {
+    return {
+      title: text,
+      alterTitle: null,
+    };
+  }
+
+  return {
+    title: text.slice(0, maxLength).trimEnd(),
+    alterTitle: text,
+  };
+}
+
 // ── Import satu manga ─────────────────────────────────────────────────────────
 async function importManga(mangaData, adminId) {
   const { id: mdId, attributes, relationships } = mangaData;
 
-  const title       = getTitle(attributes);
+  const originalTitle = getTitle(attributes);
+  const normalizedTitle = normalizeTitleForDb(originalTitle);
+  const title       = normalizedTitle.title;
+  const alterTitle  = normalizedTitle.alterTitle;
   const description = getDescription(attributes);
   const type        = mapType(attributes.originalLanguage);
   const status      = mapStatus(attributes.status);
@@ -196,6 +215,7 @@ async function importManga(mangaData, adminId) {
 
   const manga = await Manga.create({
     title,
+    alterTitle,
     description,
     type,
     status,
@@ -209,7 +229,8 @@ async function importManga(mangaData, adminId) {
     // (Kita tidak punya field custom, tapi ini tidak masalah untuk import)
   });
 
-  console.log(`  ✅ Import: "${title}" [${type}] — ${genres.join(', ')}`);
+  const logTitle = alterTitle ? `${title}...` : title;
+  console.log(`  ✅ Import: "${logTitle}" [${type}] — ${genres.join(', ')}`);
   return manga;
 }
 
