@@ -133,10 +133,41 @@ async function removeFailedJob(jobId) {
   return { removed: true, jobId };
 }
 
+async function enqueueEndpointMonitor(requestedBy = null) {
+  const { scraperQueue, error } = getQueueContext();
+  if (error || !scraperQueue) {
+    throw new ApiError(503, error?.message || 'Queue subsystem is not configured');
+  }
+
+  const job = await scraperQueue.add(
+    'endpoint-monitor',
+    {
+      requestedBy: requestedBy || null,
+      triggeredAt: new Date().toISOString(),
+      trigger: 'manual',
+    },
+    {
+      removeOnComplete: 100,
+      removeOnFail: 200,
+    },
+  );
+
+  const state = await job.getState();
+  return {
+    queued: true,
+    job: {
+      id: job.id,
+      name: job.name,
+      state,
+    },
+  };
+}
+
 module.exports = {
   getQueueHealth,
   getQueueDashboard,
   retryFailedJob,
   retryFailedJobs,
   removeFailedJob,
+  enqueueEndpointMonitor,
 };

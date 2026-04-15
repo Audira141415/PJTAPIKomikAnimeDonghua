@@ -12,6 +12,8 @@ const ANIME_ALL_CRON = process.env.SCRAPER_ANIME_ALL_CRON || '0 2 * * *';
 const COMIC_DAILY_CRON = process.env.SCRAPER_COMIC_DAILY_CRON || '0 4 * * *';
 const COMIC_SOURCES_CRON = process.env.SCRAPER_COMIC_SOURCES_CRON || '0 5 * * *';
 const FULL_IMPORT_CRON = process.env.SCRAPER_FULL_IMPORT_CRON || '0 6 * * *';
+const ENDPOINT_MONITOR_CRON = process.env.ENDPOINT_MONITOR_CRON || '*/15 * * * *';
+const ENDPOINT_MONITOR_ENABLED = process.env.ENDPOINT_MONITOR_ENABLED === 'true';
 const SCRAPER_TZ = process.env.SCRAPER_TZ || 'Asia/Jakarta';
 const SCRAPER_API_BASE_URL = process.env.SCRAPER_API_BASE_URL || null;
 const SCRAPER_ANIME_LIMIT = Number.parseInt(process.env.SCRAPER_ANIME_LIMIT_PER_SOURCE || '200', 10);
@@ -55,6 +57,16 @@ async function upsertRepeatableJobs() {
     data: {},
   });
 
+  if (ENDPOINT_MONITOR_ENABLED) {
+    await scraperQueue.upsertJobScheduler('endpoint-monitor-schedule', {
+      pattern: ENDPOINT_MONITOR_CRON,
+      tz: SCRAPER_TZ,
+    }, {
+      name: 'endpoint-monitor',
+      data: {},
+    });
+  }
+
   await scraperQueue.upsertJobScheduler('series-sync-schedule', {
     pattern: SERIES_CRON,
     tz: SCRAPER_TZ,
@@ -86,6 +98,8 @@ async function bootstrap() {
     comicDailyCron: COMIC_DAILY_CRON,
     comicSourcesCron: COMIC_SOURCES_CRON,
     fullImportCron: FULL_IMPORT_CRON,
+    endpointMonitorCron: ENDPOINT_MONITOR_CRON,
+    endpointMonitorEnabled: ENDPOINT_MONITOR_ENABLED,
     seriesCron: SERIES_CRON,
     episodeCron: EPISODE_CRON,
     fullEpisodeCron: FULL_EPISODE_CRON,

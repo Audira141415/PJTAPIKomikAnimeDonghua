@@ -11,6 +11,7 @@ const JOB_COMMAND_MAP = {
   'comic-sync-daily': ['scripts/mangadex-import.js', '--all', '--update'],
   'comic-sync-sources': ['scripts/comic-sync-daily.js', '--sources', 'all', '--page', '1'],
   'full-import-daily': ['scripts/full-import.js', '--reset-checkpoint'],
+  'endpoint-monitor': ['scripts/endpoint-monitor.js'],
 };
 
 function buildScraperArgs(jobName, jobData = {}) {

@@ -1,0 +1,142 @@
+#!/usr/bin/env node
+/**
+ * DEPLOYMENT QUICK START
+ * ══════════════════════════════════════════════════════════════════════════
+ * Copy-paste commands untuk deploy endpoint monitor ke server
+ */
+
+console.log(`
+╔════════════════════════════════════════════════════════════════════════════╗
+║                 ENDPOINT MONITOR DEPLOYMENT GUIDE                          ║
+║                         QUICK START COMMANDS                               ║
+╚════════════════════════════════════════════════════════════════════════════╝
+
+📋  CONFIGURATION SUDAH DIUPDATE:
+    ✅ .env - Telegram credentials dan monitor settings
+    ✅ scripts/endpoint-monitor.js - Monitor script
+    ✅ src/jobs/* - Job queue integration
+    ✅ docs/SERVER_DEPLOYMENT_MONITOR.md - Detailed guide
+
+═══════════════════════════════════════════════════════════════════════════════
+
+🔧 FOR LOCAL TESTING:
+
+  1. Verify configuration:
+     $ NODE_ENV=production node scripts/verify-endpoint-monitor-setup.js
+
+  2. Test notifications:
+     $ node scripts/test-endpoint-monitor-notification.js
+
+═══════════════════════════════════════════════════════════════════════════════
+
+🚀 FOR SERVER DEPLOYMENT:
+
+  1. SSH ke server:
+     $ ssh user@server
+
+  2. Navigate ke project:
+     $ cd /path/to/PJTAPIKomikAnimeDonghua
+
+  3. Backup current .env (optional):
+     $ cp .env .env.backup.$(date +%Y%m%d)
+
+  4. Update .env dengan values baru:
+     ┌─────────────────────────────────────────────────────────────┐
+     │ TELEGRAM_BOT_TOKEN=8793938728:AAGO6A3914gqe5SkHDzFEG...   │
+     │ TELEGRAM_CHAT_ID=-5283057899                               │
+     │ ENDPOINT_MONITOR_ENABLED=true                              │
+     │ ENDPOINT_MONITOR_BASE_URL=http://api:5000                  │
+     │ ENDPOINT_MONITOR_CRON=*/15 * * * *                         │
+     └─────────────────────────────────────────────────────────────┘
+
+  5. Restart services:
+     $ docker-compose restart scheduler worker api
+
+  6. Verify restart:
+     $ docker-compose ps
+
+  7. Check scheduler logs (expect: "endpoint-monitor scheduled"):
+     $ docker-compose logs scheduler | tail -20
+
+  8. Trigger test notification:
+     $ NODE_ENV=production node scripts/verify-endpoint-monitor-setup.js
+
+  9. Monitor live logs:
+     $ docker-compose logs -f scheduler
+
+═══════════════════════════════════════════════════════════════════════════════
+
+📱 VERIFICATION STEPS:
+
+  ✅ Step 1: Telegram test message received
+  ✅ Step 2: Scheduler logs show "endpoint-monitor scheduled"
+  ✅ Step 3: Monitor job runs every 15 minutes
+  ✅ Step 4: Notifications appear in Telegram group "Audira WEB/API komik"
+
+═══════════════════════════════════════════════════════════════════════════════
+
+⚠️  IMPORTANT NOTES:
+
+  • BASE_URL HARUS "http://api:5000" untuk Docker (bukan 127.0.0.1)
+  • Token sudah di-share dalam history - rotate ASAP setelah verification
+  • Ensure worker dan scheduler containers restart dengan env vars baru
+  • Check firewall jika Telegram API unreachable
+
+═══════════════════════════════════════════════════════════════════════════════
+
+🔒 SECURITY CHECKLIST:
+
+  [ ] .env tidak di-commit ke git
+  [ ] .env permissions: chmod 600 .env
+  [ ] Secrets stored di secret manager (bukan plain .env jika possible)
+  [ ] Rotate Telegram token setelah verification
+  [ ] Review audit logs untuk token usage
+
+═══════════════════════════════════════════════════════════════════════════════
+
+📊 MONITORING AFTER DEPLOY:
+
+  Daily check:
+    $ docker-compose logs scheduler | grep endpoint-monitor | tail -5
+
+  Queue status (jika Bull Board available):
+    http://server:3000/admin/bull/endpoint-monitor
+
+  Manual trigger:
+    $ curl -X POST http://localhost:5000/api/v1/jobs/endpoint-monitor \\
+      -H "Authorization: Bearer <admin_token>"
+
+═══════════════════════════════════════════════════════════════════════════════
+
+📚 DOCUMENTATION:
+
+  Full guide: docs/SERVER_DEPLOYMENT_MONITOR.md
+  Verify setup: scripts/verify-endpoint-monitor-setup.js
+  Test notify: scripts/test-endpoint-monitor-notification.js
+  Monitor code: scripts/endpoint-monitor.js
+
+═══════════════════════════════════════════════════════════════════════════════
+
+❓ TROUBLESHOOTING:
+
+  Monitor tidak jalan?
+    → docker-compose exec scheduler sh -c 'echo $ENDPOINT_MONITOR_ENABLED'
+    → docker-compose logs scheduler | grep ERROR
+
+  Telegram not receive?
+    → NODE_ENV=production node scripts/verify-endpoint-monitor-setup.js
+    → Check token dan chat ID di curl
+
+  Container tidak reload env?
+    → docker-compose restart scheduler worker
+    → Verifikasi dengan: docker-compose exec scheduler env | grep TELEGRAM
+
+═══════════════════════════════════════════════════════════════════════════════
+
+✅ STATUS: READY FOR PRODUCTION
+
+   All components configured and tested locally.
+   Ready to deploy to staging/production server.
+
+═══════════════════════════════════════════════════════════════════════════════
+`);

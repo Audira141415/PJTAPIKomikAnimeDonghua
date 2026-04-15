@@ -13,6 +13,7 @@ router.get('/dashboard', authenticate, authorize('admin'), jobsController.dashbo
 router.post('/retry', authenticate, authorize('admin'), jobsController.retryAll);
 router.post('/retry/:jobId', authenticate, authorize('admin'), jobsController.retryById);
 router.delete('/failed/:jobId', authenticate, authorize('admin'), jobsController.removeFailed);
+router.post('/endpoint-monitor', authenticate, authorize('admin'), jobsController.triggerEndpointMonitor);
 
 // Anime DB sync endpoints per source.
 router.post('/anime-sync', authenticate, authorize('admin'), jobsController.syncAnimeAll);

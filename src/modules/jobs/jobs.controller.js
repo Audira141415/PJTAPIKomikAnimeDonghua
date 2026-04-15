@@ -77,6 +77,16 @@ const syncAnimeAll = catchAsync(async (req, res) => {
   });
 });
 
+const triggerEndpointMonitor = catchAsync(async (req, res) => {
+  const userId = req.user?._id ? String(req.user._id) : null;
+  const data = await jobsService.enqueueEndpointMonitor(userId);
+
+  return success(res, {
+    message: 'Endpoint monitor job enqueued',
+    data,
+  });
+});
+
 module.exports = {
   health,
   dashboard,
@@ -85,4 +95,5 @@ module.exports = {
   removeFailed,
   syncAnimeSource,
   syncAnimeAll,
+  triggerEndpointMonitor,
 };
