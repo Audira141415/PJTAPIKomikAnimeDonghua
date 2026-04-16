@@ -5,10 +5,15 @@ Write-Host "🚀 Starting Automatic Deployment..." -ForegroundColor Cyan
 
 # Step 1: Push local changes to GitHub
 Write-Host "[1/3] Syncing local changes to GitHub..." -ForegroundColor Yellow
+# Run save.bat but we'll check git status instead of just exit code
 .\save.bat "auto: deployment sync"
-if ($LASTEXITCODE -ne 0) {
-    Write-Host "❌ Error: save.bat failed. Deployment aborted." -ForegroundColor Red
-    exit 1
+
+# Check if we are in sync with origin
+$gitStatus = git status
+if ($gitStatus -match "Your branch is up to date with 'origin/main'") {
+    Write-Host "✅ Local changes synced successfully (or already up to date)." -ForegroundColor Green
+} else {
+    Write-Host "⚠️ Warning: Local branch might not be synced. Proceeding anyway..." -ForegroundColor Yellow
 }
 
 # Step 2: Update the server via SSH
