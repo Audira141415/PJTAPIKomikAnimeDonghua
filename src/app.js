@@ -58,6 +58,11 @@ const appUrlProtocol = (() => {
 })();
 const isHttpsDeployment = appUrlProtocol === 'https:';
 let helmetDirectives = helmet.contentSecurityPolicy.getDefaultDirectives();
+helmetDirectives['script-src'] = ["'self'", "'unsafe-inline'"];
+helmetDirectives['img-src'] = ["'self'", "data:", "https://images.unsplash.com", "https://*.unsplash.com"];
+if (env.NODE_ENV === 'production') {
+  helmetDirectives['upgrade-insecure-requests'] = [];
+}
 
 if (!isHttpsDeployment) {
   // Avoid forcing HTTP deployments to fetch JS/CSS over HTTPS.
@@ -129,9 +134,6 @@ app.use('/dashboard', dashboardLimiter);
 
 // Dashboard status for landing page widgets
 app.get('/dashboard/status', async (req, res) => {
-  if (env.NODE_ENV === 'production') {
-    return res.status(404).json({ success: false, message: 'Route not found' });
-  }
   const mongoStates = {
     0: 'disconnected',
     1: 'connected',
@@ -177,10 +179,7 @@ app.get('/dashboard/status', async (req, res) => {
 });
 
 // Dashboard live activity feed
-app.get('/dashboard/activity', (req, res) => {
-  if (env.NODE_ENV === 'production') {
-    return res.status(404).json({ success: false, message: 'Route not found' });
-  }
+app.get('/dashboard/activity', async (req, res) => {
   const limit = Number.parseInt(req.query.limit, 10);
   const items = getActivity(limit);
   res.json({
