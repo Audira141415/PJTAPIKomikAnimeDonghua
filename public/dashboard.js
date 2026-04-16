@@ -1,6 +1,31 @@
 const API_BASE = '/api/v1';
 const FALLBACK_DATA_PATH = '/data/dashboard-fallback.json';
 
+/* ── Theme Engine ─────────────────────────────────────────── */
+const initTheme = () => {
+  const savedTheme = localStorage.getItem('audira-theme') || 'dark';
+  document.documentElement.setAttribute('data-theme', savedTheme);
+  updateThemeIcon(savedTheme);
+};
+
+const toggleTheme = () => {
+  const currentTheme = document.documentElement.getAttribute('data-theme');
+  const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+  document.documentElement.setAttribute('data-theme', newTheme);
+  localStorage.setItem('audira-theme', newTheme);
+  updateThemeIcon(newTheme);
+};
+
+const updateThemeIcon = (theme) => {
+  const iconEl = document.getElementById('themeIcon');
+  if (iconEl) {
+    iconEl.textContent = theme === 'light' ? '☀️' : '🌙';
+  }
+};
+
+// Initialize theme immediately
+initTheme();
+
 const defaultDashboardData = {
   categories: [
     {
@@ -358,16 +383,15 @@ const presetEndpoint = document.getElementById('presetEndpoint');
 const copyPlaygroundResponse = document.getElementById('copyPlaygroundResponse');
 const carouselCategory = document.getElementById('carouselCategory');
 const headerDot = document.getElementById('headerDot');
+const themeToggle = document.getElementById('themeToggle');
 const topNetworkCards = document.getElementById('topNetworkCards');
 const distributionTableBody = document.getElementById('distributionTableBody');
 const distributionEmpty = document.getElementById('distributionEmpty');
 const recentNewlyAdded = document.getElementById('recentNewlyAdded');
 const recentRecentlyRated = document.getElementById('recentRecentlyRated');
 const recentJustUpdated = document.getElementById('recentJustUpdated');
-const insightsNetworkFilter = document.getElementById('insightsNetworkFilter');
-const insightsTypeFilter = document.getElementById('insightsTypeFilter');
-const insightsApplyFilter = document.getElementById('insightsApplyFilter');
-const insightsResetFilter = document.getElementById('insightsResetFilter');
+const insightsNetworkCarousel = document.getElementById('insightsNetworkCarousel');
+const insightsTypeCarousel = document.getElementById('insightsTypeCarousel');
 const overviewBreakdownMeta = document.getElementById('overviewBreakdownMeta');
 const overviewSourceBreakdown = document.getElementById('overviewSourceBreakdown');
 const animationSourceSelect = document.getElementById('animationSourceSelect');
@@ -716,37 +740,53 @@ const renderDistributionTable = (rows = []) => {
   });
 };
 
+const renderUltimateEmptyState = (container, icon, title, text) => {
+  if (!container) return;
+  container.innerHTML = `
+    <div class="empty-state-ultimate">
+      <div class="empty-state-icon">${icon}</div>
+      <div class="empty-state-text">
+        <strong>${title}</strong><br/>
+        <span>${text}</span>
+      </div>
+    </div>
+  `;
+};
+
 const populateInsightsFilterOptions = (options = {}) => {
-  if (!insightsNetworkFilter || !insightsTypeFilter) return;
+  if (!insightsNetworkCarousel || !insightsTypeCarousel) return;
 
   const networks = Array.isArray(options.availableNetworks) ? options.availableNetworks : [];
   const types = Array.isArray(options.availableTypes) ? options.availableTypes : [];
 
-  const setSelectOptions = (el, list, emptyLabel, selectedValue) => {
-    const previous = selectedValue || '';
-    const frag = document.createDocumentFragment();
+  const renderBubbles = (container, list, emptyLabel, currentSelection, onSelect) => {
+    container.innerHTML = '';
+    
+    // "All" Bubble
+    const allBtn = document.createElement('div');
+    allBtn.className = `filter-bubble ${!currentSelection ? 'active' : ''}`;
+    allBtn.textContent = emptyLabel;
+    allBtn.onclick = () => onSelect('');
+    container.appendChild(allBtn);
 
-    const allOption = document.createElement('option');
-    allOption.value = '';
-    allOption.textContent = emptyLabel;
-    frag.appendChild(allOption);
-
-    list.forEach((value) => {
-      const option = document.createElement('option');
-      option.value = value;
-      option.textContent = value;
-      frag.appendChild(option);
+    list.forEach(val => {
+      const btn = document.createElement('div');
+      btn.className = `filter-bubble ${currentSelection === val ? 'active' : ''}`;
+      btn.textContent = val;
+      btn.onclick = () => onSelect(val);
+      container.appendChild(btn);
     });
-
-    el.innerHTML = '';
-    el.appendChild(frag);
-    const resolved = list.includes(previous) ? previous : '';
-    el.value = resolved;
-    return resolved;
   };
 
-  insightsFilterState.network = setSelectOptions(insightsNetworkFilter, networks, 'Semua Network', insightsFilterState.network);
-  insightsFilterState.type = setSelectOptions(insightsTypeFilter, types, 'Semua Type', insightsFilterState.type);
+  renderBubbles(insightsNetworkCarousel, networks, 'All Networks', insightsFilterState.network, (val) => {
+    insightsFilterState.network = val;
+    loadInsights(); 
+  });
+
+  renderBubbles(insightsTypeCarousel, types, 'All Content', insightsFilterState.type, (val) => {
+    insightsFilterState.type = val;
+    loadInsights();
+  });
 };
 
 const renderRecentList = (targetEl, rows = [], type = 'updated') => {
@@ -2424,28 +2464,13 @@ const boot = async () => {
     });
   }
 
+  if (themeToggle) {
+    themeToggle.addEventListener('click', toggleTheme);
+  }
+
   searchInput.addEventListener('input', filterCards);
   playgroundForm.addEventListener('submit', runPlayground);
-  if (insightsApplyFilter) {
-    insightsApplyFilter.addEventListener('click', () => {
-      applyInsightsFilters();
-    });
-  }
-  if (insightsResetFilter) {
-    insightsResetFilter.addEventListener('click', () => {
-      resetInsightsFilters();
-    });
-  }
-  if (insightsNetworkFilter) {
-    insightsNetworkFilter.addEventListener('change', () => {
-      applyInsightsFilters();
-    });
-  }
-  if (insightsTypeFilter) {
-    insightsTypeFilter.addEventListener('change', () => {
-      applyInsightsFilters();
-    });
-  }
+  // Filter bubbles handle their own click events to load insights instantly
 
   await loadStatus();
   await loadActivity();

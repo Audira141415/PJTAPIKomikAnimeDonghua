@@ -105,6 +105,9 @@
     </div>
   </div>
   <div class="header-right">
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme">
+      <span class="theme-toggle-icon" id="themeIcon">🌓</span>
+    </button>
     <div class="health-badge">
        <div class="dot connected" id="headerDot"></div>
        <span id="headerEnv" style="text-transform: uppercase; font-size: 0.7rem; font-weight: 800;">development</span>
@@ -122,7 +125,7 @@
     <div class="section-label">Technical Telemetry</div>
     <h1 class="ultimate-title">Core Content Matrix</h1>
 
-    <div class="stats-matrix">
+    <div class="stats-matrix ultimate-grid">
       <div class="stat-box" style="--accent: #6366f1;">
         <div class="label">Total Registry</div>
         <div class="value" id="statTotal">...</div>
@@ -318,23 +321,20 @@
     <h2 class="ultimate-title" style="font-size: 1.5rem;">Network Intelligence</h2>
     <div class="insight-toolbar">
       <div class="insight-filter-group">
-        <label for="insightsNetworkFilter">Network</label>
-        <select id="insightsNetworkFilter">
-          <option value="">Semua Network</option>
-        </select>
+        <label>Network Analytics</label>
+        <div id="insightsNetworkCarousel" class="carousel-filter">
+          <!-- Rendered as bubbles by dashboard.js -->
+          <div class="loading-pulse">Analyzing networks...</div>
+        </div>
       </div>
       <div class="insight-filter-group">
-        <label for="insightsTypeFilter">Type</label>
-        <select id="insightsTypeFilter">
-          <option value="">Semua Type</option>
-        </select>
-      </div>
-      <div class="insight-filter-actions">
-        <button type="button" id="insightsApplyFilter" class="insight-btn">Apply</button>
-        <button type="button" id="insightsResetFilter" class="insight-btn secondary">Reset</button>
+        <label>Content Type</label>
+        <div id="insightsTypeCarousel" class="carousel-filter">
+          <!-- Rendered as bubbles by dashboard.js -->
+        </div>
       </div>
     </div>
-    <div class="insight-grid">
+    <div class="insight-grid ultimate-grid">
       <article class="panel">
         <h2><span class="panel-icon">🏆</span> Top Network Sources</h2>
         <div class="network-cards" id="topNetworkCards">
@@ -364,7 +364,7 @@
 
     <article class="panel">
       <h2><span class="panel-icon">🆕</span> Recent Items By Category</h2>
-      <div class="recent-grid">
+      <div class="recent-grid ultimate-grid">
         <div class="recent-col">
           <p class="recent-title">Newly Added</p>
           <ul class="recent-list" id="recentNewlyAdded"></ul>
@@ -461,8 +461,9 @@
 
   <!-- ── SECTION: Discovery ─────────────────────────────────── -->
   <section id="section-discovery">
-    <div class="section-title">🔥 Discovery &amp; Trending</div>
-    <div class="grid" id="discovery">
+    <div class="section-label">🔥 Discovery &amp; Trending</div>
+    <h1 class="ultimate-title" style="font-size: 1.5rem;">Pulse of the Platform</h1>
+    <div class="ultimate-grid" id="discovery">
 
       <div class="card" style="--card-accent:#f97316" data-tags="trending popular">
         <div class="card-header">
@@ -499,8 +500,9 @@
 
   <!-- ── SECTION: Manga ─────────────────────────────────────── -->
   <section id="section-manga">
-    <div class="section-title">📖 Manga / Komik</div>
-    <div class="grid" id="manga">
+    <div class="section-label">📖 Media Repository</div>
+    <h1 class="ultimate-title" style="font-size: 1.5rem;">Manga / Komik Database</h1>
+    <div class="ultimate-grid" id="manga">
 
       <div class="card" style="--card-accent:#6366f1" data-tags="manga list semua">
         <div class="card-header">
@@ -559,8 +561,9 @@
 
   <!-- ── SECTION: Chapters ──────────────────────────────────── -->
   <section id="section-chapters">
-    <div class="section-title">📄 Chapters &amp; Baca</div>
-    <div class="grid" id="chapters">
+    <div class="section-label">📄 Reading Engine</div>
+    <h1 class="ultimate-title" style="font-size: 1.5rem;">Chapters &amp; Navigation</h1>
+    <div class="ultimate-grid" id="chapters">
 
       <div class="card" style="--card-accent:#06b6d4" data-tags="chapter baca gambar read">
         <div class="card-header">
@@ -598,8 +601,9 @@
 
   <!-- ── SECTION: Donghua ───────────────────────────────────── -->
   <section id="section-donghua">
-    <div class="section-title">🎬 Donghua API</div>
-    <div class="grid" id="donghua">
+    <div class="section-label">🎬 Animation API</div>
+    <h1 class="ultimate-title" style="font-size: 1.5rem;">Donghua Core Services</h1>
+    <div class="ultimate-grid" id="donghua">
 
       <div class="card" style="--card-accent:#ec4899" data-tags="donghua home beranda">
         <div class="card-header">
@@ -696,8 +700,9 @@
 
   <!-- ── SECTION: Episodes ──────────────────────────────────── -->
   <section id="section-episodes">
-    <div class="section-title">🎬 Episodes &amp; Seasons (Animasi)</div>
-    <div class="grid" id="episodes">
+    <div class="section-label">🎬 Series Telemetry</div>
+    <h1 class="ultimate-title" style="font-size: 1.5rem;">Episodes &amp; Seasons</h1>
+    <div class="ultimate-grid" id="episodes">
 
       <div class="card" style="--card-accent:#ec4899" data-tags="season daftar list">
         <div class="card-header">
@@ -734,8 +739,9 @@
 
   <!-- ── SECTION: Search ────────────────────────────────────── -->
   <section id="section-search">
-    <div class="section-title">🔍 Search</div>
-    <div class="grid" id="search">
+    <div class="section-label">🔍 Search Intelligence</div>
+    <h1 class="ultimate-title" style="font-size: 1.5rem;">Discovery Filters</h1>
+    <div class="ultimate-grid" id="search">
 
       <div class="card" style="--card-accent:#6366f1" data-tags="search cari global semua">
         <div class="card-header">
@@ -752,8 +758,9 @@
 
   <!-- ── SECTION: Auth ──────────────────────────────────────── -->
   <section id="section-auth">
-    <div class="section-title">👤 Auth &amp; User</div>
-    <div class="grid" id="auth">
+    <div class="section-label">👤 User Verification</div>
+    <h1 class="ultimate-title" style="font-size: 1.5rem;">Auth &amp; Account</h1>
+    <div class="ultimate-grid" id="auth">
 
       <div class="card" style="--card-accent:#10b981" data-tags="auth register daftar">
         <div class="card-header">
@@ -811,8 +818,9 @@
 
   <!-- ── SECTION: Bookmarks ─────────────────────────────────── -->
   <section id="section-bookmarks">
-    <div class="section-title">🔖 Bookmarks &amp; History</div>
-    <div class="grid" id="bookmarks">
+    <div class="section-label">🔖 Personal Vault</div>
+    <h1 class="ultimate-title" style="font-size: 1.5rem;">Bookmarks &amp; History</h1>
+    <div class="ultimate-grid" id="bookmarks">
 
       <div class="card" style="--card-accent:#ec4899" data-tags="bookmark koleksi list saya">
         <div class="card-header">
@@ -852,8 +860,9 @@
 
   <!-- ── SECTION: Collections ───────────────────────────────── -->
   <section id="section-collections">
-    <div class="section-title">📁 Collections</div>
-    <div class="grid" id="collections">
+    <div class="section-label">📁 Curated Playlists</div>
+    <h1 class="ultimate-title" style="font-size: 1.5rem;">Topic Collections</h1>
+    <div class="ultimate-grid" id="collections">
 
       <div class="card" style="--card-accent:#14b8a6" data-tags="collection list daftar">
         <div class="card-header">
@@ -892,8 +901,9 @@
 
   <!-- ── SECTION: Comments ──────────────────────────────────── -->
   <section id="section-comments">
-    <div class="section-title">💬 Comments &amp; Reviews</div>
-    <div class="grid" id="comments">
+    <div class="section-label">💬 Social Core</div>
+    <h1 class="ultimate-title" style="font-size: 1.5rem;">Comments &amp; Reviews</h1>
+    <div class="ultimate-grid" id="comments">
 
       <div class="card" style="--card-accent:#3b82f6" data-tags="comment komentar manga">
         <div class="card-header">
@@ -931,8 +941,9 @@
 
   <!-- ── SECTION: Tags ──────────────────────────────────────── -->
   <section id="section-tags">
-    <div class="section-title">🏷️ Tags</div>
-    <div class="grid" id="tags">
+    <div class="section-label">🏷️ Taxonomy</div>
+    <h1 class="ultimate-title" style="font-size: 1.5rem;">API Tags Registry</h1>
+    <div class="ultimate-grid" id="tags">
 
       <div class="card" style="--card-accent:#06b6d4" data-tags="tag genre daftar list">
         <div class="card-header">
@@ -949,8 +960,9 @@
 
   <!-- ── SECTION: Info ──────────────────────────────────────── -->
   <section>
-    <div class="section-title">ℹ️ Info &amp; Dokumentasi</div>
-    <div class="grid">
+    <div class="section-label">ℹ️ System Core</div>
+    <h1 class="ultimate-title" style="font-size: 1.5rem;">Info &amp; Documentation</h1>
+    <div class="ultimate-grid">
 
       <div class="card" style="--card-accent:#6366f1" data-tags="docs swagger dokumentasi">
         <div class="card-header">
