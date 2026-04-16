@@ -21,7 +21,7 @@ $SERVER_IP = "192.168.100.158"
 $SERVER_USER = "audira"
 
 Write-Host "[2/3] Updating production server ($SERVER_IP)..." -ForegroundColor Yellow
-ssh -o ConnectTimeout=10 "$SERVER_USER@$SERVER_IP" "cd audira-api && git fetch origin main && git reset --hard origin/main && docker compose restart api"
+ssh -o ConnectTimeout=10 "$SERVER_USER@$SERVER_IP" "cd audira-api && git fetch origin main && git reset --hard origin/main && docker compose up -d --build api"
 
 if ($LASTEXITCODE -ne 0) {
     Write-Host "❌ Error: SSH deployment failed. Check if SSH Key is authorized." -ForegroundColor Red
