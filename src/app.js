@@ -13,10 +13,15 @@ const routes = require('./routes');
 const { getRedisClient } = require('./config/redis');
 const { errorHandler, notFound } = require('./middlewares/error.middleware');
 const { apiLimiter, dashboardLimiter } = require('./middlewares/rateLimiter.middleware');
+const { clientUsageTracker } = require('./middlewares/clientUsage.middleware');
 const requestId = require('./middlewares/requestId.middleware').requestId;
 const { pushActivity, getActivity } = require('./shared/utils/dashboardMonitor');
 
 const app = express();
+
+if (env.TRUST_PROXY) {
+  app.set('trust proxy', 1);
+}
 
 // Attach X-Request-ID to every request/response
 app.use(requestId);
@@ -89,6 +94,7 @@ app.use(
 
 // Rate limiting
 app.use('/api', apiLimiter);
+app.use('/api', clientUsageTracker);
 
 // Body parsing
 app.use(express.json({ limit: '1mb' }));

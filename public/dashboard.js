@@ -528,8 +528,8 @@ const formatStatusClass = (connected, state) => {
 
 const setHealthItem = (dotEl, textEl, label, connected, state) => {
   const statusClass = formatStatusClass(connected, state);
-  dotEl.className = `status-dot ${statusClass}`;
-  textEl.textContent = connected ? 'Connected' : state;
+  dotEl.className = `dot ${statusClass} ${connected ? 'connected' : ''}`;
+  textEl.textContent = label + ': ' + (connected ? 'Operational' : state);
 };
 
 const formatUptime = (seconds) => {
@@ -551,11 +551,10 @@ const renderStatus = (payload) => {
   stateEls.uptime.textContent = formatUptime(info.server.uptimeSeconds);
   stateEls.mem.textContent = `${info.system.memory.usedMb} MB / ${info.system.memory.totalMb} MB`;
 
-  // Header dot color
+  // Header dot status
   if (headerDot) {
     const allOk = info.database.connected;
-    headerDot.style.background = allOk ? 'var(--green)' : 'var(--yellow)';
-    headerDot.style.boxShadow = allOk ? '0 0 8px rgba(34,197,94,.5)' : '0 0 8px rgba(245,158,11,.4)';
+    headerDot.className = `dot ${allOk ? 'connected' : 'warn'}`;
     headerDot.title = allOk ? 'All systems operational' : 'Some services degraded';
   }
 
@@ -574,8 +573,8 @@ const loadStatus = async () => {
     setHealthItem(stateEls.mongoDot, stateEls.mongoText, 'MongoDB', false, 'unreachable');
     setHealthItem(stateEls.redisDot, stateEls.redisText, 'Redis', false, 'unreachable');
     if (headerDot) {
-      headerDot.style.background = 'var(--red)';
-      headerDot.style.boxShadow = '0 0 8px rgba(239,68,68,.4)';
+      headerDot.className = 'dot down';
+      headerDot.title = 'Connection Lost';
     }
   }
 };

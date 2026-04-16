@@ -16,6 +16,8 @@ const Collection             = require('./Collection');
 const SourceFeed             = require('./SourceFeed');
 const RawSnapshot             = require('./RawSnapshot');
 const SyncRun                 = require('./SyncRun');
+const ClientApp               = require('./ClientApp');
+const UsageLog                = require('./UsageLog');
 
 module.exports = {
   User,
@@ -36,4 +38,6 @@ module.exports = {
   SourceFeed,
   RawSnapshot,
   SyncRun,
+  ClientApp,
+  UsageLog,
 };

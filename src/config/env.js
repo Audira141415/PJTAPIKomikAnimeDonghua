@@ -30,6 +30,9 @@ const env = {
   // Site branding — returned in API responses
   APP_NAME: process.env.APP_NAME || 'Audira Comic API',
   SITE_CREATOR: process.env.SITE_CREATOR || 'Audira',
+  TRUST_PROXY: process.env.TRUST_PROXY === 'true',
+  CLIENT_USAGE_TRACKING_ENABLED: process.env.CLIENT_USAGE_TRACKING_ENABLED !== 'false',
+  CLIENT_API_KEY_SALT_ROUNDS: parseInt(process.env.CLIENT_API_KEY_SALT_ROUNDS, 10) || 12,
 };
 
 const requiredVars = ['JWT_ACCESS_SECRET', 'JWT_REFRESH_SECRET', 'MONGO_URI'];

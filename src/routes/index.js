@@ -32,6 +32,7 @@ const dramabox         = require('../modules/dramabox/dramabox.routes');
 const drachin          = require('../modules/drachin/drachin.routes');
 const createContentRouter = require('../modules/content-db/createContentRouter');
 const jobsRoutes       = require('../modules/jobs/jobs.routes');
+const clientUsageRoutes = require('../modules/client-usage/clientUsage.routes');
 const trendingRoutes = require('../modules/trending/trending.routes');
 const collectionRoutes = require('../modules/collection/collection.routes');
 const comicRoutes = require('../modules/comic/comic.routes');
@@ -75,6 +76,7 @@ router.use('/kura',       kuramanime);
 router.use('/dramabox',   dramabox);
 router.use('/drachin',    drachin);
 router.use('/jobs',      jobsRoutes);
+router.use('/client-usage', clientUsageRoutes);
 router.use('/collections', collectionRoutes);
 router.use('/comic',       comicRoutes);   // ← /api/v1/comic/* unified comic endpoints
 
