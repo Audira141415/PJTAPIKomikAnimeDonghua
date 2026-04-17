@@ -83,6 +83,20 @@
     <a href="#section-activity" class="nav-item" data-nav="section-activity">
       <span class="nav-icon">📡</span> Activity Log
     </a>
+
+    <div class="nav-section-label">MANAGERIA (ADMIN)</div>
+    <a href="#section-intelligence" class="nav-item" data-nav="section-intelligence" id="navIntelligence">
+      <span class="nav-icon">📊</span> Intelligence Hub
+    </a>
+    <a href="#section-operations" class="nav-item" data-nav="section-operations" id="navOperations">
+      <span class="nav-icon">⚙️</span> Scraper Console
+    </a>
+    <a href="#section-registry" class="nav-item" data-nav="section-registry" id="navRegistry">
+      <span class="nav-icon">🔑</span> Client Registry
+    </a>
+    <a href="javascript:void(0)" class="nav-item" id="adminAuthBtn">
+      <span class="nav-icon">🔐</span> Admin Login
+    </a>
     <a href="/api/v1/docs" class="nav-item" target="_blank">
       <span class="nav-icon">📖</span> Swagger Docs
       <span class="nav-badge">API</span>
@@ -112,6 +126,8 @@
        <div class="dot connected" id="headerDot"></div>
        <span id="headerEnv" style="text-transform: uppercase; font-size: 0.7rem; font-weight: 800;">development</span>
     </div>
+    <div id="adminBadge" class="admin-badge" style="display: none;">ADMIN</div>
+  </div>
   </div>
 </header>
 
@@ -1013,6 +1029,86 @@
     </div>
   </section>
 
+  <!-- ── MANAGERIA: Intelligence Hub ───────────────────────── -->
+  <section id="section-intelligence" style="display: none;" class="animate-in">
+    <div class="section-label">Real-time Analytics</div>
+    <h1 class="ultimate-title">Intelligence Hub</h1>
+    <p class="section-subtitle">Memantau lalu lintas API dan performa node secara mendalam.</p>
+    
+    <div class="intelligence-grid ultimate-grid">
+       <div class="glass-card chart-card">
+          <div class="card-header">
+             <span class="card-title">Traffic Overview (24h)</span>
+          </div>
+          <div class="chart-container" id="trafficChart">
+             <!-- Rendered by intelligence.js -->
+             <div class="loading-shimmer" style="height: 200px;"></div>
+          </div>
+       </div>
+       <div class="glass-card stat-detail-card">
+          <div class="card-header">
+             <span class="card-title">Top Consumers</span>
+          </div>
+          <div class="consumer-list" id="topClientsList">
+             <!-- Rendered by intelligence.js -->
+          </div>
+       </div>
+    </div>
+  </section>
+
+  <!-- ── MANAGERIA: Scraper Console ───────────────────────── -->
+  <section id="section-operations" style="display: none;" class="animate-in">
+    <div class="section-label">Operational Control</div>
+    <h1 class="ultimate-title">Scraper Console</h1>
+    <p class="section-subtitle">Manajemen antrian (Queue) dan pemicu sinkronisasi manual.</p>
+    
+    <div class="ops-grid ultimate-grid">
+       <div class="glass-card ops-status-card">
+          <div class="card-header"><span class="card-title">Worker Health</span></div>
+          <div class="worker-stats" id="workerStatsGrid">
+             <!-- Rendered by operations.js -->
+          </div>
+       </div>
+       <div class="glass-card ops-control-card">
+          <div class="card-header"><span class="card-title">Manual Sync Triggers</span></div>
+          <div class="trigger-grid" id="syncTriggersGrid">
+             <!-- Rendered by operations.js -->
+          </div>
+       </div>
+    </div>
+  </section>
+
+  <!-- ── MANAGERIA: Client Registry ───────────────────────── -->
+  <section id="section-registry" style="display: none;" class="animate-in">
+    <div class="section-label">Ecosystem Management</div>
+    <h1 class="ultimate-title">Client Registry</h1>
+    <p class="section-subtitle">Manajemen API Key dan otorisasi domain untuk partner profesional.</p>
+    
+    <div class="glass-card registry-card">
+       <div class="registry-header">
+          <span class="card-title">Registered Apps / Clients</span>
+          <button class="btn btn-primary" id="createNewAppBtn">+ Register New App</button>
+       </div>
+       <div class="registry-table-container">
+          <table class="ultimate-table" id="registryTable">
+             <thead>
+                <tr>
+                   <th>Client Name</th>
+                   <th>Domain</th>
+                   <th>Key Prefix</th>
+                   <th>Status</th>
+                   <th>Last Used</th>
+                   <th>Actions</th>
+                </tr>
+             </thead>
+             <tbody id="registryBody">
+                <!-- Rendered by dashboard.js -->
+             </tbody>
+          </table>
+       </div>
+    </div>
+  </section>
+
 </main><!-- /main -->
 
 <!-- ── Footer ────────────────────────────────────────────────── -->
@@ -1022,5 +1118,28 @@
 </footer>
 
 <script src="/dashboard.js"></script>
+
+<!-- ── Admin Login Modal ────────────────────────────────────── -->
+<div id="loginModal" class="modal-backdrop" style="display: none;">
+  <div class="glass-card login-card animate-in">
+     <div class="modal-close" id="closeLoginModal">×</div>
+     <h2 class="ultimate-title" style="font-size: 1.5rem;">ADMIN ACCESS</h2>
+     <p class="section-subtitle">Otentikasi diperlukan untuk mengakses fungsi manajerial.</p>
+     
+     <form id="loginForm" class="login-form">
+       <div class="form-group">
+         <label>Email Address</label>
+         <input type="email" id="loginEmail" placeholder="admin@comic.com" required>
+       </div>
+       <div class="form-group">
+         <label>Password</label>
+         <input type="password" id="loginPass" placeholder="••••••••" required>
+       </div>
+       <button type="submit" class="btn btn-primary btn-block" style="margin-top: 20px;">AUTHENTICATE</button>
+     </form>
+     <div id="loginError" class="error-text" style="color: #ef4444; margin-top: 15px; font-size: 0.8rem; display: none;"></div>
+  </div>
+</div>
+
 </body>
 </html>

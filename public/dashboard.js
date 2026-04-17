@@ -7,7 +7,6 @@ const initTheme = () => {
   document.documentElement.setAttribute('data-theme', savedTheme);
   updateThemeIcon(savedTheme);
 };
-
 const toggleTheme = () => {
   const currentTheme = document.documentElement.getAttribute('data-theme');
   const newTheme = currentTheme === 'light' ? 'dark' : 'light';
@@ -15,18 +14,224 @@ const toggleTheme = () => {
   localStorage.setItem('audira-theme', newTheme);
   updateThemeIcon(newTheme);
 };
-
 const updateThemeIcon = (theme) => {
   const iconEl = document.getElementById('themeIcon');
-  if (iconEl) {
-    iconEl.textContent = theme === 'light' ? '☀️' : '🌙';
+  if (iconEl) iconEl.textContent = theme === 'light' ? '☀️' : '🌙';
+};
+initTheme();
+
+/* ── Admin Core (Auth & Fetch) ────────────────────────────── */
+let adminToken = localStorage.getItem('audira-admin-token');
+
+const adminFetch = async (url, options = {}) => {
+  const headers = { ...options.headers };
+  if (adminToken) headers['Authorization'] = `Bearer ${adminToken}`;
+  
+  const response = await fetch(`${API_BASE}${url}`, { ...options, headers });
+  if (response.status === 401) {
+    logoutAdmin();
+    showLoginModal();
+    throw new Error('Unauthorized');
+  }
+  return response.json();
+};
+
+const loginAdmin = async (email, password) => {
+  try {
+    const res = await fetch(`${API_BASE}/auth/login`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email, password })
+    });
+    const result = await res.json();
+    if (result.success) {
+      adminToken = result.data.accessToken;
+      localStorage.setItem('audira-admin-token', adminToken);
+      hideLoginModal();
+      updateAdminUI(true);
+      refreshAdminData();
+      return true;
+    }
+    throw new Error(result.message || 'Login failed');
+  } catch (err) {
+    const errEl = document.getElementById('loginError');
+    if (errEl) {
+      errEl.textContent = err.message;
+      errEl.style.display = 'block';
+    }
+    return false;
   }
 };
 
-// Initialize theme immediately
-initTheme();
+const logoutAdmin = () => {
+  adminToken = null;
+  localStorage.removeItem('audira-admin-token');
+  updateAdminUI(false);
+  // Hide admin sections
+  ['section-intelligence', 'section-operations', 'section-registry'].forEach(id => {
+    document.getElementById(id).style.display = 'none';
+  });
+  window.location.hash = '#section-overview';
+};
 
-const defaultDashboardData = {
+const updateAdminUI = (isAuthenticated) => {
+  const badge = document.getElementById('adminBadge');
+  const authBtn = document.getElementById('adminAuthBtn');
+  if (badge) badge.style.display = isAuthenticated ? 'block' : 'none';
+  if (authBtn) {
+    authBtn.innerHTML = isAuthenticated 
+      ? '<span class="nav-icon">🔓</span> Admin Logout' 
+      : '<span class="nav-icon">🔐</span> Admin Login';
+  }
+};
+
+const showLoginModal = () => {
+  const modal = document.getElementById('loginModal');
+  if (modal) modal.style.display = 'flex';
+};
+const hideLoginModal = () => {
+  const modal = document.getElementById('loginModal');
+  if (modal) modal.style.display = 'none';
+};
+
+const refreshAdminData = () => {
+  if (!adminToken) return;
+  loadIntelligenceData();
+};
+
+const loadOperationsData = async () => {
+  if (!adminToken) return;
+  try {
+    const data = await adminFetch('/jobs/dashboard');
+    if (data.success) renderOperations(data.data);
+  } catch (err) {
+    console.error('Failed to load operations:', err);
+  }
+};
+
+const loadIntelligenceData = async () => {
+  if (!adminToken) return;
+  try {
+    const data = await adminFetch('/client-usage/reports/dashboard');
+    if (data.success) renderIntelligence(data.data);
+  } catch (err) {
+    console.error('Failed to load intelligence:', err);
+  }
+};
+
+const renderOperations = (data) => {
+  const container = document.getElementById('workerStatsGrid');
+  if (!container) return;
+  const counts = data.counts || {};
+  container.innerHTML = `
+    <div class="job-stat"><span class="count">${counts.active || 0}</span><span class="label">Active</span></div>
+    <div class="job-stat"><span class="count">${counts.waiting || 0}</span><span class="label">Waiting</span></div>
+    <div class="job-stat" style="cursor:pointer" onclick="retryFailedJobs()"><span class="count" style="color:var(--red)">${counts.failed || 0}</span><span class="label">Failed (Retry?)</span></div>
+    <div class="job-stat"><span class="count" style="color:var(--green)">${counts.completed || 0}</span><span class="label">Completed</span></div>
+  `;
+  renderSyncTriggers();
+};
+
+const syncSources = [
+  { id: 'anoboy', label: 'Anoboy' },
+  { id: 'otakudesu', label: 'Otakudesu' },
+  { id: 'samehadaku', label: 'Samehadaku' },
+  { id: 'animasu', label: 'Animasu' },
+  { id: 'animesail', label: 'Animesail' },
+  { id: 'nimegami', label: 'Nimegami' },
+  { id: 'kuramanime', label: 'Kuramanime' }
+];
+
+const renderSyncTriggers = () => {
+  const grid = document.getElementById('syncTriggersGrid');
+  if (!grid) return;
+  grid.innerHTML = syncSources.map(s => `
+    <button class="btn-ops" onclick="triggerSync('${s.id}')">
+       <i>🔄</i> <span>Sync ${s.label}</span>
+    </button>
+  `).join('');
+};
+
+const triggerSync = async (source) => {
+  try {
+    const res = await adminFetch(`/jobs/anime-sync/${source}`, { method: 'POST' });
+    if (res.success) {
+      alert(`Sync triggered for ${source}`);
+      loadOperationsData();
+    }
+  } catch (err) {
+    alert(`Sync failed: ${err.message}`);
+  }
+};
+
+const retryFailedJobs = async () => {
+  if (!confirm('Retry all failed scraper tasks?')) return;
+  try {
+    const res = await adminFetch('/jobs/retry', { method: 'POST' });
+    if (res.success) loadOperationsData();
+  } catch (err) { alert(err.message); }
+};
+
+const renderIntelligence = (data) => {
+  const list = document.getElementById('topClientsList');
+  if (!list) return;
+  list.innerHTML = (data.topWebsites || []).map(site => `
+    <div class="consumer-item">
+      <span class="consumer-domain">${site.domain || 'Direct Access'}</span>
+      <span class="consumer-hits">${site.requestCount} requests</span>
+    </div>
+  `).join('') || '<div class="text-muted">No data available</div>';
+  renderRegistry();
+};
+
+const renderRegistry = async () => {
+  const body = document.getElementById('registryBody');
+  if (!body) return;
+  try {
+    const data = await adminFetch('/client-usage/clients');
+    if (data.success) {
+      body.innerHTML = data.data.items.map(app => `
+        <tr>
+          <td><strong style="color:var(--accent)">${app.name}</strong></td>
+          <td><code>${app.domain}</code></td>
+          <td><code>${app.apiKeyPrefix}...</code></td>
+          <td><span class="badge ${app.status === 'active' ? 'badge-green' : 'badge-red'}">${app.status}</span></td>
+          <td>${app.lastUsedAt ? new Date(app.lastUsedAt).toLocaleDateString() : 'Never'}</td>
+          <td>
+             <button class="btn-ops" style="padding:6px 12px; font-size:0.75rem" onclick="rotateKey('${app._id}')">Rotate</button>
+          </td>
+        </tr>
+      `).join('');
+    }
+  } catch (err) { console.error(err); }
+};
+
+const rotateKey = async (id) => {
+  if (!confirm('Warning: This will invalidate the current API key. Proceed?')) return;
+  try {
+    const res = await adminFetch(`/client-usage/clients/${id}/rotate-key`, { method: 'POST' });
+    if (res.success) {
+      alert(`New API Key: ${res.data.apiKey}\n\nSAVE THIS SECURELY.`);
+      renderRegistry();
+    }
+  } catch (err) { alert(err.message); }
+};
+
+const createNewApp = async () => {
+  const name = prompt('Enter Application Name:');
+  const domain = prompt('Enter Authorized Domain (e.g. example.com):');
+  if (!name || !domain) return;
+  try {
+    const res = await adminFetch('/client-usage/clients', {
+      method: 'POST',
+      body: JSON.stringify({ name, domain })
+    });
+    if (res.success) {
+      alert(`App registered successfully!\nAPI Key: ${res.data.apiKey}`);
+      renderRegistry();
+    }
+  } catch (err) { alert(err.message); }
+};
   categories: [
     {
       key: 'donghua',
@@ -452,17 +657,55 @@ if (sidebarOverlay) {
   sidebarOverlay.addEventListener('click', closeSidebar);
 }
 
-// Close sidebar on nav click (mobile)
-document.querySelectorAll('.nav-item[data-nav]').forEach((navItem) => {
-  navItem.addEventListener('click', () => {
-    // Update active state
-    document.querySelectorAll('.nav-item').forEach((n) => n.classList.remove('active'));
-    navItem.classList.add('active');
-    // Close sidebar on mobile
-    if (window.innerWidth <= 768) {
-      closeSidebar();
+// Section Management Logic
+const adminSections = ['section-intelligence', 'section-operations', 'section-registry'];
+
+const switchSection = (targetId) => {
+  const isTargetAdmin = adminSections.includes(targetId);
+  
+  if (isTargetAdmin && !adminToken) {
+    showLoginModal();
+    return;
+  }
+
+  // Show/Hide admin sections vs normal sections
+  document.querySelectorAll('section[id^="section-"]').forEach((sec) => {
+    if (adminSections.includes(sec.id)) {
+      sec.style.display = sec.id === targetId ? 'block' : 'none';
+    } else {
+      // Normal sections are always display block (or as per CSS), 
+      // but we hide them if an admin section is active AND we want a clean view.
+      // Actually, standard behavior is scrolling. For Admin, we'll use clean view.
+      sec.style.display = isTargetAdmin ? 'none' : 'block';
     }
   });
+
+  // Update nav active state
+  document.querySelectorAll('.nav-item').forEach((n) => n.classList.remove('active'));
+  const activeNav = document.querySelector(`.nav-item[data-nav="${targetId}"]`);
+  if (activeNav) activeNav.classList.add('active');
+
+  // Trigger data load if admin
+  if (targetId === 'section-operations') loadOperationsData();
+  if (targetId === 'section-intelligence') loadIntelligenceData();
+  if (targetId === 'section-registry') renderRegistry();
+};
+
+// Handle nav clicks
+document.querySelectorAll('.nav-item[data-nav]').forEach((navItem) => {
+  navItem.addEventListener('click', (e) => {
+    const targetId = navItem.getAttribute('data-nav');
+    if (targetId) {
+      switchSection(targetId);
+      if (window.innerWidth <= 768) closeSidebar();
+    }
+  });
+});
+
+// Handle hash changes for direct linking
+window.addEventListener('hashchange', () => {
+  const hash = window.location.hash.replace('#', '');
+  if (hash.startsWith('section-')) switchSection(hash);
 });
 
 // Intersection Observer for active nav highlighting
@@ -2468,6 +2711,38 @@ const boot = async () => {
     themeToggle.addEventListener('click', toggleTheme);
   }
 
+  /* ── Manageria Admin Listeners ─────────────────────────── */
+  const adminAuthBtn = document.getElementById('adminAuthBtn');
+  const loginForm = document.getElementById('loginForm');
+  const closeLoginModal = document.getElementById('closeLoginModal');
+
+  if (adminAuthBtn) {
+    adminAuthBtn.addEventListener('click', () => {
+      adminToken ? logoutAdmin() : showLoginModal();
+    });
+  }
+
+  if (loginForm) {
+    loginForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const email = document.getElementById('loginEmail').value;
+      const pass = document.getElementById('loginPass').value;
+      const success = await loginAdmin(email, pass);
+      if (success) {
+        // Switch to the first admin section after login
+        window.location.hash = '#section-intelligence';
+      }
+    });
+  }
+
+  if (closeLoginModal) {
+    closeLoginModal.addEventListener('click', hideLoginModal);
+  }
+
+  // Initial Admin UI Check
+  updateAdminUI(!!adminToken);
+  if (adminToken) refreshAdminData();
+
   searchInput.addEventListener('input', filterCards);
   playgroundForm.addEventListener('submit', runPlayground);
   // Filter bubbles handle their own click events to load insights instantly
@@ -2486,6 +2761,19 @@ const boot = async () => {
   setInterval(loadActivity, 3000);
   setInterval(loadContentStats, 30000);
   setInterval(loadDataInsights, 45000);
+  
+  // Admin Polling
+  setInterval(() => {
+    if (adminToken) {
+      const activeSection = window.location.hash.replace('#', '');
+      if (activeSection === 'section-operations') loadOperationsData();
+      if (activeSection === 'section-intelligence') loadIntelligenceData();
+    }
+  }, 10000);
+
+  // New App Button
+  const createAppBtn = document.getElementById('createNewAppBtn');
+  if (createAppBtn) createAppBtn.addEventListener('click', createNewApp);
 };
 
 boot();
