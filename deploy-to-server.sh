@@ -69,19 +69,19 @@ echo -e "${GREEN}    ✓ Configuration updated${NC}"
 
 # Step 3: Verify Docker Compose services
 echo -e "${BLUE}[4/6]${NC} Checking Docker Compose services..."
-docker compose ps
+docker compose -p pjtapikomikanimedonghua ps
 echo ""
 
 # Step 4: Restart services
 echo -e "${BLUE}[5/6]${NC} Restarting services (scheduler, worker, api)..."
-docker compose restart scheduler worker api
+docker compose -p pjtapikomikanimedonghua restart scheduler worker api
 echo -e "${GREEN}    ✓ Services restarted${NC}"
 echo ""
 
 # Step 5: Verify services are running
 echo -e "${BLUE}[6/6]${NC} Verifying service status..."
 sleep 3
-docker compose ps
+docker compose -p pjtapikomikanimedonghua ps
 
 echo ""
 echo -e "${GREEN}╔════════════════════════════════════════════════════════════════════════════╗${NC}"
