@@ -10,8 +10,8 @@ const { trendingQuery: trendingQuerySchema, popularQuery: popularQuerySchema, la
  * Get trending manga by bookmarks in a given period
  */
 const getTrending = catchAsync(async (req, res) => {
-  const { period, limit } = trendingQuerySchema.parse(req.query);
-  const payload = await trendingService.getTrendingByBookmarks(period, limit);
+  const { period, limit, type } = trendingQuerySchema.parse(req.query);
+  const payload = await trendingService.getTrendingByBookmarks(period, limit, type);
   return success(res, payload);
 });
 
@@ -20,8 +20,8 @@ const getTrending = catchAsync(async (req, res) => {
  * Get most popular manga by a given metric
  */
 const getPopular = catchAsync(async (req, res) => {
-  const { metric, limit } = popularQuerySchema.parse(req.query);
-  const payload = await trendingService.getPopularByMetric(metric, limit);
+  const { metric, limit, type } = popularQuerySchema.parse(req.query);
+  const payload = await trendingService.getPopularByMetric(metric, limit, type);
   return success(res, payload);
 });
 
@@ -30,8 +30,8 @@ const getPopular = catchAsync(async (req, res) => {
  * Get latest manga (recently added)
  */
 const getLatest = catchAsync(async (req, res) => {
-  const { limit } = latestQuerySchema.parse(req.query);
-  const payload = await trendingService.getLatestManga(limit);
+  const { limit, type } = latestQuerySchema.parse(req.query);
+  const payload = await trendingService.getLatestManga(limit, type); // Service method name kept but logic will be generic
   return success(res, payload);
 });
 

@@ -38,6 +38,9 @@ const collectionRoutes = require('../modules/collection/collection.routes');
 const comicRoutes = require('../modules/comic/comic.routes');
 const collectionController = require('../modules/collection/collection.controller');
 const proxyRoutes = require('../modules/proxy/proxy.routes');
+const anilistRoutes = require('../modules/anilist/anilist.routes');
+const adminRoutes = require('../modules/admin/admin.routes');
+const seoRoutes = require('../modules/seo/seo.routes');
 
 // Controllers needed for convenience nested routes
 const chapterController = require('../modules/chapter/chapter.controller');
@@ -81,6 +84,9 @@ router.use('/client-usage', clientUsageRoutes);
 router.use('/collections', collectionRoutes);
 router.use('/comic',       comicRoutes);   // ← /api/v1/comic/* unified comic endpoints
 router.use('/image',       proxyRoutes);   // ← Image proxy endpoint
+router.use('/anilist',     anilistRoutes); // ← AniList compatibility routes
+router.use('/admin',       adminRoutes);   // ← Admin maintenance & audit
+router.use('/seo',         seoRoutes);     // ← SEO & Sitemap
 
 // ── Per-type DB routes ────────────────────────────────────────────────────────
 router.use('/manga-db',   createContentRouter('manga'));

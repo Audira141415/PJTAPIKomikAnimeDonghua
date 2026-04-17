@@ -206,6 +206,22 @@ const mangaSchema = new mongoose.Schema(
       trim: true,
       maxlength: 200,
     },
+    isFeatured: {
+      type: Boolean,
+      default: false,
+      index: true,
+    },
+    isHot: {
+      type: Boolean,
+      default: false,
+      index: true,
+    },
+    statusMessage: {
+      type: String,
+      default: null,
+      trim: true,
+      maxlength: 500,
+    },
   },
   { timestamps: true }
 );

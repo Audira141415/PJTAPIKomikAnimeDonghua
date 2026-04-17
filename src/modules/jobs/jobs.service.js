@@ -163,6 +163,36 @@ async function enqueueEndpointMonitor(requestedBy = null) {
   };
 }
 
+async function enqueueMirroring(requestedBy = null) {
+  const { scraperQueue, error } = getQueueContext();
+  if (error || !scraperQueue) {
+    throw new ApiError(503, error?.message || 'Queue subsystem is not configured');
+  }
+
+  const job = await scraperQueue.add(
+    'image-mirroring',
+    {
+      requestedBy: requestedBy || null,
+      triggeredAt: new Date().toISOString(),
+      trigger: 'manual',
+    },
+    {
+      removeOnComplete: 10,
+      removeOnFail: 50,
+    },
+  );
+
+  const state = await job.getState();
+  return {
+    queued: true,
+    job: {
+      id: job.id,
+      name: job.name,
+      state,
+    },
+  };
+}
+
 module.exports = {
   getQueueHealth,
   getQueueDashboard,
@@ -170,4 +200,5 @@ module.exports = {
   retryFailedJobs,
   removeFailedJob,
   enqueueEndpointMonitor,
+  enqueueMirroring,
 };

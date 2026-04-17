@@ -12,6 +12,7 @@ const JOB_COMMAND_MAP = {
   'comic-sync-sources': ['scripts/comic-sync-daily.js', '--sources', 'all', '--page', '1'],
   'full-import-daily': ['scripts/full-import.js', '--reset-checkpoint'],
   'endpoint-monitor': ['scripts/endpoint-monitor.js'],
+  'image-mirroring': ['scripts/mirror-existing.js'],
 };
 
 function buildScraperArgs(jobName, jobData = {}) {

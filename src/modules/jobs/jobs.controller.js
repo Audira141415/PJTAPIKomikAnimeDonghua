@@ -87,6 +87,16 @@ const triggerEndpointMonitor = catchAsync(async (req, res) => {
   });
 });
 
+const triggerMirroring = catchAsync(async (req, res) => {
+  const userId = req.user?._id ? String(req.user._id) : null;
+  const data = await jobsService.enqueueMirroring(userId);
+
+  return success(res, {
+    message: 'Image mirroring job enqueued',
+    data,
+  });
+});
+
 module.exports = {
   health,
   dashboard,
@@ -96,4 +106,5 @@ module.exports = {
   syncAnimeSource,
   syncAnimeAll,
   triggerEndpointMonitor,
+  triggerMirroring,
 };
