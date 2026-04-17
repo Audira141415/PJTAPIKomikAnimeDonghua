@@ -232,6 +232,8 @@ const createNewApp = async () => {
     }
   } catch (err) { alert(err.message); }
 };
+
+const defaultDashboardData = {
   categories: [
     {
       key: 'donghua',
