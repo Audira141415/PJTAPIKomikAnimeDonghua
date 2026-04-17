@@ -15,6 +15,7 @@ services:
       MONGO_URI: ${MONGO_URI_DOCKER:-mongodb://${MONGO_ROOT_USER:-admin}:${MONGO_ROOT_PASS:-change_me}@mongo:27017/comic_platform?authSource=admin}
       REDIS_URL: ${REDIS_URL_DOCKER:-redis://redis:6379}
     volumes:
+      - ./public:/app/public:ro
       - uploads_data:/app/uploads
       - logs_data:/app/logs
     depends_on:
