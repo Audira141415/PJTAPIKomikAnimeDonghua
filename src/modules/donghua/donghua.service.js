@@ -85,7 +85,7 @@ const getHome = async () => {
           foreignField: '_id',
           as: 'series',
           pipeline: [
-            { $match: DONGHUA_FILTER },
+            { $match: { ...DONGHUA_FILTER, ...Manga.getDiscoveryFilter() } },
             { $project: { title: 1, slug: 1, coverImage: 1, status: 1, type: 1, sourceUrl: 1 } },
           ],
         },
@@ -94,7 +94,7 @@ const getHome = async () => {
       { $addFields: { series: { $arrayElemAt: ['$series', 0] } } },
       { $limit: 20 },
     ]),
-    Manga.find({ ...DONGHUA_FILTER, status: 'completed' })
+    Manga.find({ ...DONGHUA_FILTER, ...Manga.getDiscoveryFilter(), status: 'completed' })
       .sort({ updatedAt: -1 })
       .limit(20)
       .select('title slug coverImage status type alterTitle rating studio description genres totalEpisodes sourceUrl')
@@ -115,7 +115,7 @@ const getHome = async () => {
 // ─── Ongoing ─────────────────────────────────────────────────────────────────
 const getOngoing = async ({ page, limit }) => {
   const { skip, limit: perPage, page: currentPage } = paginate(page, limit);
-  const filter = { ...DONGHUA_FILTER, status: 'ongoing' };
+  const filter = { ...DONGHUA_FILTER, ...Manga.getDiscoveryFilter(), status: 'ongoing' };
 
   const [items, total] = await Promise.all([
     Manga.find(filter)
@@ -137,7 +137,7 @@ const getOngoing = async ({ page, limit }) => {
 // ─── Completed ───────────────────────────────────────────────────────────────
 const getCompleted = async ({ page, limit }) => {
   const { skip, limit: perPage, page: currentPage } = paginate(page, limit);
-  const filter = { ...DONGHUA_FILTER, status: 'completed' };
+  const filter = { ...DONGHUA_FILTER, ...Manga.getDiscoveryFilter(), status: 'completed' };
 
   const [items, total] = await Promise.all([
     Manga.find(filter)

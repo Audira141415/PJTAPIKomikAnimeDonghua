@@ -235,7 +235,7 @@ const buildMediaItem = (rawItem, context = {}) => {
 
   const sourceKey = context.sourceKey || 'unknown';
   const sourceId = pickFirst(rawItem.animeId, rawItem.sourceId, rawItem.id, rawItem.slug);
-  const title = pickFirst(rawItem.title, rawItem.name, rawItem.animeTitle);
+  const title = buildSeriesTitle(rawItem);
 
   if (!title) {
     return null;
@@ -248,7 +248,7 @@ const buildMediaItem = (rawItem, context = {}) => {
   }
 
   const type = normalizeType(rawItem.type) || context.defaultType || 'anime';
-  const coverImage = pickFirst(rawItem.poster, rawItem.coverImage, rawItem.image, rawItem.thumb);
+  const coverImage = pickFirst(rawItem.poster, rawItem.coverImage, rawItem.image, rawItem.thumb, rawItem.thumbnail, rawItem.img, rawItem.src);
   const sourceUrl = pickFirst(rawItem.samehadakuUrl, rawItem.sourceUrl, rawItem.url, rawItem.href, rawItem.link);
   const status = pickFirst(rawItem.status);
   const releaseDate = pickFirst(rawItem.releasedOn, rawItem.releaseDate, rawItem.airDate, rawItem.aired);

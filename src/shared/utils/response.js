@@ -10,6 +10,8 @@ const PROXY_DOMAIN_PATTERNS = [
   /hianime\./i,
   /aniwatch\./i,
   /akamaized\.net/i,
+  /anichin\./i,
+  /mangakatana\./i,
 ];
 
 const PROXY_BASE_URL = `${env.APP_URL}/api/v1/image/proxy?url=`;
@@ -17,6 +19,13 @@ const PROXY_BASE_URL = `${env.APP_URL}/api/v1/image/proxy?url=`;
 const wrapImageWithProxy = (url) => {
   if (!url || typeof url !== 'string' || url.startsWith('data:') || url.startsWith('blob:')) {
     return url;
+  }
+
+  // Convert local uploads path to absolute URL for the frontend
+  if (url.startsWith('/uploads/')) {
+    // Strip trailing slash from APP_URL just in case
+    const baseUrl = env.APP_URL.replace(/\/$/, '');
+    return `${baseUrl}${url}`;
   }
 
   // Already proxied or internal
@@ -27,7 +36,8 @@ const wrapImageWithProxy = (url) => {
     const hostname = new URL(url).hostname;
     const shouldProxy = PROXY_DOMAIN_PATTERNS.some((pattern) => pattern.test(hostname));
     if (shouldProxy) {
-      return `${PROXY_BASE_URL}${encodeURIComponent(url)}`;
+      const encoded = Buffer.from(url).toString('base64');
+      return `${PROXY_BASE_URL}${encoded}`;
     }
   } catch {
     // Leave invalid URLs alone

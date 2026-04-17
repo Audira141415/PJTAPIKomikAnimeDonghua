@@ -10,14 +10,26 @@ const { logger } = require('../../config/logger');
  * uses DNS-over-HTTPS.
  */
 exports.proxyImage = async (req, res) => {
-  const { url } = req.query;
+  let { url } = req.query;
 
   if (!url) {
     return res.status(400).json({ success: false, message: 'Image URL is required' });
   }
 
   try {
-    // Basic validation to ensure it's a valid http/https URL
+    // Check if the URL is Base64 encoded (obfuscated to bypass filters)
+    if (!url.startsWith('http')) {
+      try {
+        const decoded = Buffer.from(url, 'base64').toString('utf-8');
+        if (decoded.startsWith('http')) {
+           url = decoded;
+        }
+      } catch (e) {
+        // Not base64 or invalid, proceed with original
+      }
+    }
+
+    // Basic validation
     if (!url.startsWith('http')) {
       return res.status(400).json({ success: false, message: 'Invalid image URL' });
     }

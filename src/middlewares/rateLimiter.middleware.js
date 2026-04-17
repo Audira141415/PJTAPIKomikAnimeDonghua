@@ -25,6 +25,10 @@ const apiLimiter = rateLimit({
   standardHeaders: true,
   legacyHeaders: false,
   store: buildStore('rl:api:'),
+  skip: (req) => {
+    const ip = req.ip || req.connection.remoteAddress || '';
+    return ip.includes('192.168.100') || ip.includes('127.0.0.1') || ip === '::1';
+  },
   message: {
     success: false,
     message: 'Too many requests, please try again later.',

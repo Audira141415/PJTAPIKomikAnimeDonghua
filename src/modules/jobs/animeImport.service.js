@@ -17,6 +17,8 @@ const {
   snapshotChecksum,
   normalizeText,
 } = require('./animeSnapshot.mapper');
+const { mirrorImage } = require('../../shared/utils/imageDownloader');
+const telegram = require('../../shared/utils/telegram');
 
 const SOURCE_ENDPOINTS = [
   { key: 'anime', path: '/anime/home', name: 'Anime' },
@@ -223,6 +225,10 @@ async function upsertMediaItems(mediaItems, context) {
     if (!item?.slug) {
       skipped += 1;
       continue;
+    }
+
+    if (item.coverImage) {
+      item.coverImage = await mirrorImage(item.coverImage, item.type || 'unknown', item.slug);
     }
 
     const identityQuery = item.sourceKey && item.sourceId
@@ -550,6 +556,13 @@ async function syncAnimeSnapshot(snapshot, options = {}) {
     summary.skippedCount = mediaResults.skipped + seasonResults.skipped + episodeResults.skipped;
 
     await finishSyncRun(syncRun._id, summary, null);
+
+    // Kirim laporan ke Telegram Admin
+    telegram.sendSyncReport(sourceKey, {
+      inserted: summary.insertedCount,
+      updated: summary.updatedCount,
+      failed: summary.errorCount
+    }).catch(() => undefined);
 
     return {
       source: sourceKey,

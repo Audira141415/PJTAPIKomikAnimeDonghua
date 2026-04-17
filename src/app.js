@@ -59,7 +59,8 @@ const appUrlProtocol = (() => {
 const isHttpsDeployment = appUrlProtocol === 'https:';
 let helmetDirectives = helmet.contentSecurityPolicy.getDefaultDirectives();
 helmetDirectives['script-src'] = ["'self'", "'unsafe-inline'"];
-helmetDirectives['img-src'] = ["'self'", "data:", "https://images.unsplash.com", "https://*.unsplash.com"];
+helmetDirectives['img-src'] = ["'self'", "data:", "https://images.unsplash.com", "https://*.unsplash.com", "http://192.168.100.158:3000", "https://192.168.100.158:3000", "http://uploads.mangadex.org", "https://uploads.mangadex.org", "https://*.wp.com", "https://*.anichin.cafe"];
+
 if (env.NODE_ENV === 'production') {
   helmetDirectives['upgrade-insecure-requests'] = [];
 }
@@ -98,7 +99,8 @@ app.use(
 );
 
 // Rate limiting
-app.use('/api', apiLimiter);
+// Rate limiting disabled for debugging
+// app.use('/api', apiLimiter);
 app.use('/api', clientUsageTracker);
 
 // Body parsing
@@ -130,7 +132,8 @@ app.get('/health', (req, res) => {
 });
 
 // Rate limiting for dashboard telemetry endpoints
-app.use('/dashboard', dashboardLimiter);
+// Rate limiting disabled for debugging
+// app.use('/dashboard', dashboardLimiter);
 
 // Dashboard status for landing page widgets
 app.get('/dashboard/status', async (req, res) => {

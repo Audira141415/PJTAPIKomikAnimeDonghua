@@ -183,9 +183,16 @@ services:
 
 volumes:
   mongo_data:
+    external: true
+    name: audira-api_mongo_data
   redis_data:
+    external: true
+    name: audira-api_redis_data
   uploads_data:
+    external: true
+    name: audira-api_uploads_data
   logs_data:
+    driver: local
 
 networks:
   comic-net:

@@ -229,6 +229,13 @@ mangaSchema.index(
   }
 );
 
+mangaSchema.statics.getDiscoveryFilter = function () {
+  return {
+    title: { $exists: true, $ne: '', $nin: ['Unknown', 'unknown', 'null', 'Null'] },
+    coverImage: { $exists: true, $ne: '', $ne: null },
+  };
+};
+
 const ANIMATION_TYPES = ['anime', 'donghua', 'movie', 'ona'];
 
 mangaSchema.pre('save', function (next) {

@@ -93,7 +93,7 @@ const terbaru = catchAsync(async (req, res) => {
   if (cached) return success(res, cached);
 
   const { skip, limit: perPage, page: currentPage } = paginate(page, limit);
-  const filter = {};
+  const filter = Manga.getDiscoveryFilter();
   const [mangas, total] = await Promise.all([
     Manga.find(filter).sort({ createdAt: -1 }).skip(skip).limit(perPage).select(buildMangaSelect),
     Manga.countDocuments(filter),
@@ -387,7 +387,7 @@ const random = catchAsync(async (req, res) => {
   if (total === 0) return success(res, { data: [] });
 
   const skip = Math.max(0, Math.floor(Math.random() * total) - limit);
-  const mangas = await Manga.find({}).skip(skip).limit(limit).select(buildMangaSelect);
+  const mangas = await Manga.find(Manga.getDiscoveryFilter()).skip(skip).limit(limit).select(buildMangaSelect);
   return success(res, { data: mangas });
 });
 
@@ -400,7 +400,7 @@ const berwarna = catchAsync(async (req, res) => {
   const { skip, limit: perPage, page: currentPage } = paginate(page, limit);
 
   // "Berwarna" = manhwa (Korean webtoon, usually colored)
-  const filter = { type: 'manhwa' };
+  const filter = { ...Manga.getDiscoveryFilter(), type: 'manhwa' };
   const [mangas, total] = await Promise.all([
     Manga.find(filter).sort({ rating: -1 }).skip(skip).limit(perPage).select(buildMangaSelect),
     Manga.countDocuments(filter),
@@ -531,7 +531,7 @@ const homepage = catchAsync(async (req, res) => {
     trendingService.getPopularByMetric('views', 10),
     trendingService.getLatestManga(10),
     trendingService.getTrendingByBookmarks('week', 10),
-    Manga.find({}).sort({ createdAt: -1 }).limit(8).select(buildMangaSelect),
+    Manga.find(Manga.getDiscoveryFilter()).sort({ createdAt: -1 }).limit(8).select(buildMangaSelect),
   ]);
 
   const payload = {
@@ -556,7 +556,7 @@ const recommendations = catchAsync(async (req, res) => {
   if (cached) return success(res, cached);
 
   // Rekomendasi = highly rated + many views
-  const mangas = await Manga.find({ rating: { $gt: 0 } })
+  const mangas = await Manga.find({ ...Manga.getDiscoveryFilter(), rating: { $gt: 0 } })
     .sort({ rating: -1, views: -1 })
     .limit(limit)
     .select(buildMangaSelect);
