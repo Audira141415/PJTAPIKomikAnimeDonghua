@@ -17,8 +17,8 @@ const invalidateTrendingCaches = async () => {
  * @param {number} limit - Number of results
  * @returns {Promise<Array>}
  */
-const getTrendingByBookmarks = async (period = 'week', limit = 10) => {
-  const cacheKey = `trending:bookmarks:${period}:${limit}`;
+const getTrendingByBookmarks = async (period = 'week', limit = 10, type = null) => {
+  const cacheKey = `trending:bookmarks:${type || 'all'}:${period}:${limit}`;
   const cached = await cache.get(cacheKey);
   if (cached) return cached;
 
@@ -41,7 +41,13 @@ const getTrendingByBookmarks = async (period = 'week', limit = 10) => {
     { $limit: limit },
     { $lookup: { from: 'mangas', localField: '_id', foreignField: '_id', as: 'mangaData' } },
     { $unwind: '$mangaData' },
-    { $match: { 'mangaData.title': { $exists: true, $ne: '', $nin: ['Unknown', 'unknown', 'null', 'Null'] }, 'mangaData.coverImage': { $exists: true, $ne: '', $ne: null } } },
+    {
+      $match: {
+        'mangaData.title': { $exists: true, $ne: '', $nin: ['Unknown', 'unknown', 'null', 'Null'] },
+        'mangaData.coverImage': { $exists: true, $ne: '', $ne: null },
+        ...(type ? { 'mangaData.contentCategory': type } : {}),
+      },
+    },
     {
       $project: {
         _id: 1,
@@ -69,8 +75,8 @@ const getTrendingByBookmarks = async (period = 'week', limit = 10) => {
  * @param {number} limit - Number of results
  * @returns {Promise<Array>}
  */
-const getPopularByMetric = async (metric = 'bookmarks', limit = 10) => {
-  const cacheKey = `popular:${metric}:${limit}`;
+const getPopularByMetric = async (metric = 'bookmarks', limit = 10, type = null) => {
+  const cacheKey = `popular:${type || 'all'}:${metric}:${limit}`;
   const cached = await cache.get(cacheKey);
   if (cached) return cached;
 
@@ -88,6 +94,7 @@ const getPopularByMetric = async (metric = 'bookmarks', limit = 10) => {
         $match: {
           'mangaData.title': { $exists: true, $ne: '', $nin: ['Unknown', 'unknown', 'null', 'Null'] },
           'mangaData.coverImage': { $exists: true, $ne: '', $ne: null },
+          ...(type ? { 'mangaData.contentCategory': type } : {}),
         },
       },
       {
@@ -117,6 +124,7 @@ const getPopularByMetric = async (metric = 'bookmarks', limit = 10) => {
         $match: {
           'mangaData.title': { $exists: true, $ne: '', $nin: ['Unknown', 'unknown', 'null', 'Null'] },
           'mangaData.coverImage': { $exists: true, $ne: '', $ne: null },
+          ...(type ? { 'mangaData.contentCategory': type } : {}),
         },
       },
       {
@@ -137,13 +145,17 @@ const getPopularByMetric = async (metric = 'bookmarks', limit = 10) => {
     ]);
   } else if (metric === 'views') {
     // Top by views (direct from Manga model)
-    result = await Manga.find(Manga.getDiscoveryFilter())
+    const filter = Manga.getDiscoveryFilter();
+    if (type) filter.contentCategory = type;
+    result = await Manga.find(filter)
       .sort({ views: -1 })
       .limit(limit)
       .select('title slug type contentCategory coverImage status rating views');
   } else if (metric === 'avg_rating') {
     // Top by average rating
-    result = await Manga.find({ ...Manga.getDiscoveryFilter(), ratingCount: { $gt: 0 } })
+    const filter = { ...Manga.getDiscoveryFilter(), ratingCount: { $gt: 0 } };
+    if (type) filter.contentCategory = type;
+    result = await Manga.find(filter)
       .sort({ rating: -1 })
       .limit(limit)
       .select('title slug type contentCategory coverImage status rating views ratingCount');
@@ -160,12 +172,14 @@ const getPopularByMetric = async (metric = 'bookmarks', limit = 10) => {
  * @param {number} limit
  * @returns {Promise<Array>}
  */
-const getLatestManga = async (limit = 10) => {
-  const cacheKey = `latest:manga:${limit}`;
+const getLatestManga = async (limit = 10, type = null) => {
+  const cacheKey = `latest:${type || 'all'}:${limit}`;
   const cached = await cache.get(cacheKey);
   if (cached) return cached;
 
-  const latest = await Manga.find(Manga.getDiscoveryFilter())
+  const filter = Manga.getDiscoveryFilter();
+  if (type) filter.contentCategory = type;
+  const latest = await Manga.find(filter)
     .sort({ createdAt: -1 })
     .limit(limit)
     .select('title slug type contentCategory coverImage status rating views createdAt');

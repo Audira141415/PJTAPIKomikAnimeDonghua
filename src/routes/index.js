@@ -87,6 +87,7 @@ router.use('/image',       proxyRoutes);   // ← Image proxy endpoint
 router.use('/anilist',     anilistRoutes); // ← AniList compatibility routes
 router.use('/admin',       adminRoutes);   // ← Admin maintenance & audit
 router.use('/seo',         seoRoutes);     // ← SEO & Sitemap
+router.use('/scraper',     require('../modules/comic/scrapers/aggregator/aggregator.routes')); // ← Legacy compatibility
 
 // ── Per-type DB routes ────────────────────────────────────────────────────────
 router.use('/manga-db',   createContentRouter('manga'));
