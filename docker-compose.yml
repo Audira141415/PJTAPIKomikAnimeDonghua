@@ -5,7 +5,7 @@ services:
       dockerfile: Dockerfile
     container_name: comic-api
     dns:
-      - 172.18.0.100
+      - 10.88.0.100
       - 1.1.1.1
     restart: unless-stopped
     ports:
@@ -73,7 +73,7 @@ services:
       dockerfile: Dockerfile
     container_name: comic-scheduler
     dns:
-      - 172.18.0.100
+      - 10.88.0.100
       - 1.1.1.1
     restart: unless-stopped
     command: ["node", "scripts/scheduler.js"]
@@ -149,7 +149,7 @@ services:
     command: proxy-dns --address 0.0.0.0 --port 53 --upstream https://1.1.1.1/dns-query --upstream https://1.0.0.1/dns-query
     networks:
       comic-net:
-        ipv4_address: 172.18.0.100
+        ipv4_address: 10.88.0.100
     restart: unless-stopped
 
   # ── Local dev only ─────────────────────────────────────────────────────────
@@ -193,5 +193,5 @@ networks:
     ipam:
       driver: default
       config:
-        - subnet: 172.18.0.0/16
-          gateway: 172.18.0.1
+        - subnet: 10.88.0.0/16
+          gateway: 10.88.0.1
