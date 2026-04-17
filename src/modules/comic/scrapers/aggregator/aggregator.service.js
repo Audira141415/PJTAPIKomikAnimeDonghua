@@ -71,67 +71,67 @@ const SOURCES = {
   bacakomik: {
     label:  'BacaKomik',
     latest: (p) => bakkomik.latest(p),
-    search: (q)  => bakkomik.search(q),
+    search: (q, p) => bakkomik.search(q, p),
   },
   komikstation: {
     label:  'KomikStation',
     latest: (p) => komikstation.list(p),
-    search: (q)  => komikstation.search(q),
+    search: (q, p) => komikstation.searchComics(q, p),
   },
   mangakita: {
     label:  'MangaKita',
     latest: (p) => mangakita.home(p),
-    search: (q)  => mangakita.search(q),
+    search: (q, p) => mangakita.search(q, p),
   },
   maid: {
     label:  'Maid Comic',
     latest: (p) => maid.latest(p),
-    search: (q)  => maid.search(q),
+    search: (q, p) => maid.search(q, p),
   },
   komikindo: {
     label:  'Komikindo',
     latest: (p) => komikindo.latest(p),
-    search: (q)  => komikindo.search(q),
+    search: (q, p) => komikindo.search(q, p),
   },
   soulscan: {
     label:  'SoulScans',
     latest: (p) => soulscan.latest(p),
-    search: (q)  => soulscan.search(q),
+    search: (q, p) => soulscan.search(q, p),
   },
   bacaman: {
     label:  'Bacaman',
     latest: (p) => bacaman.latest(p),
-    search: (q)  => bacaman.search(q),
+    search: (q, p) => bacaman.search(q, p),
   },
   meganei: {
     label:  'Meganei',
     latest: (p) => meganei.latest(p),
-    search: (q)  => meganei.search(q),
+    search: (q, p) => meganei.search(q, p),
   },
   softkomik: {
     label:  'Softkomik',
     latest: (p) => softkomik.latest(p),
-    search: (q)  => softkomik.search(q),
+    search: (q, p) => softkomik.search(q, p),
   },
   westmanga: {
     label:  'Westmanga',
     latest: (p) => westmanga.latest(p),
-    search: (q)  => westmanga.search(q),
+    search: (q, p) => westmanga.search(q, p),
   },
   mangasusuku: {
     label:  'MangaSusuku',
     latest: (p) => mangasusuku.latest(p),
-    search: (q)  => mangasusuku.search(q),
+    search: (q, p) => mangasusuku.search(q, p),
   },
   kiryuu: {
     label:  'Kiryuu',
     latest: (p) => kiryuu.latest(p),
-    search: (q)  => kiryuu.search(q),
+    search: (q, p) => kiryuu.search(q, p),
   },
   cosmic: {
     label:  'Cosmic Scans',
     latest: (p) => cosmic.latest(p),
-    search: (q)  => cosmic.search(q),
+    search: (q, p) => cosmic.search(q, p),
   },
 };
 
