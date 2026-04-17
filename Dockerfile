@@ -15,6 +15,20 @@ FROM node:20-alpine
 
 WORKDIR /app
 
+# Install Chromium and required dependencies for Playwright on Alpine
+RUN apk add --no-cache \
+    chromium \
+    nss \
+    freetype \
+    harfbuzz \
+    ca-certificates \
+    ttf-freefont \
+    libstdc++
+
+# Tell Playwright to skip browser download and use the system chromium
+ENV PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD=1
+ENV PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH=/usr/bin/chromium-browser
+
 # non-root user for security
 RUN addgroup -S appgroup && adduser -S appuser -G appgroup
 

@@ -4,6 +4,9 @@ services:
       context: .
       dockerfile: Dockerfile
     container_name: comic-api
+    dns:
+      - 172.18.0.100
+      - 1.1.1.1
     restart: unless-stopped
     ports:
       - '3000:5000'
@@ -69,6 +72,9 @@ services:
       context: .
       dockerfile: Dockerfile
     container_name: comic-scheduler
+    dns:
+      - 172.18.0.100
+      - 1.1.1.1
     restart: unless-stopped
     command: ["node", "scripts/scheduler.js"]
     env_file:
@@ -80,10 +86,10 @@ services:
       SCRAPER_API_BASE_URL: ${SCRAPER_API_BASE_URL_DOCKER:-http://api:5000/api/v1}
       # Jadwal (cron syntax)
       SCRAPER_ANIME_ALL_CRON: "0 2 * * *"   # Anime/donghua all-source sync: tiap hari jam 02:00 WIB
-      SCRAPER_COMIC_DAILY_CRON: "0 4 * * *" # Manga/manhwa/manhua sync: tiap hari jam 04:00 WIB
-      SCRAPER_FULL_IMPORT_CRON: "0 6 * * *" # Full local import reset: tiap hari jam 06:00 WIB
+      SCRAPER_COMIC_DAILY_CRON: "30 3 * * *" # Manga/manhwa/manhua sync: tiap hari jam 03:30 WIB
+      SCRAPER_FULL_IMPORT_CRON: "0 5 * * *" # Full local import reset: tiap hari jam 05:00 WIB
       SCRAPER_SERIES_CRON: "0 3 * * *"      # Series sync: tiap hari jam 03:00 WIB
-      SCRAPER_EPISODE_CRON: "0 */6 * * *"   # Episode sync: tiap 6 jam
+      SCRAPER_EPISODE_CRON: "0 * * * *"   # Episode sync: tiap jam
       SCRAPER_FULL_EPISODE_CRON: "0 1 * * 0" # Full sync: Minggu 01:00 WIB
       SCRAPER_TZ: "Asia/Jakarta"
       SCRAPER_DELAY_MS: "1000"
@@ -109,6 +115,9 @@ services:
       context: .
       dockerfile: Dockerfile
     container_name: comic-worker
+    dns:
+      - 172.18.0.100
+      - 1.1.1.1
     restart: unless-stopped
     command: ["node", "src/jobs/worker.js"]
     env_file:
@@ -132,6 +141,16 @@ services:
         condition: service_healthy
     networks:
       - comic-net
+
+  # ── DNS Over HTTPS Proxy (Bypass Internet Positif) ─────────────────────
+  dns-proxy:
+    image: cloudflare/cloudflared:2024.12.0
+    container_name: comic-dns-proxy
+    command: proxy-dns --address 0.0.0.0 --port 53 --upstream https://1.1.1.1/dns-query --upstream https://1.0.0.1/dns-query
+    networks:
+      comic-net:
+        ipv4_address: 172.18.0.100
+    restart: unless-stopped
 
   # ── Local dev only ─────────────────────────────────────────────────────────
   api-dev:
@@ -171,3 +190,8 @@ volumes:
 networks:
   comic-net:
     driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.18.0.0/16
+          gateway: 172.18.0.1

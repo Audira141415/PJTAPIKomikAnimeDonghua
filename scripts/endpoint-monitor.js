@@ -9,6 +9,20 @@ const NOTIFY_ON_SUCCESS = process.env.ENDPOINT_MONITOR_NOTIFY_ON_SUCCESS === 'tr
 const MAX_FAIL_LINES = parseInt(process.env.ENDPOINT_MONITOR_MAX_FAIL_LINES || '20', 10);
 const MAX_TARGETS = parseInt(process.env.ENDPOINT_MONITOR_MAX_TARGETS || '50', 10);
 const ALLOW_PRIVATE_BASE_URL = process.env.ENDPOINT_MONITOR_ALLOW_PRIVATE_BASE_URL !== 'false';
+const REDIS_URL = process.env.REDIS_URL || 'redis://localhost:6379';
+
+const Redis = require('ioredis');
+let redis = null;
+
+function getRedis() {
+  if (redis) return redis;
+  redis = new Redis(REDIS_URL, {
+    maxRetriesPerRequest: 1,
+    retryStrategy: (times) => (times <= 3 ? 1000 : null),
+  });
+  redis.on('error', (err) => console.error('[endpoint-monitor] Redis Error:', err.message));
+  return redis;
+}
 
 const DEFAULT_TARGETS = [
   { method: 'GET', path: '/health', expectedStatus: [200] },
@@ -135,24 +149,30 @@ async function checkEndpoint(target) {
   }
 }
 
-function buildTelegramMessage(summary) {
+function buildTelegramMessage(summary, { type = 'alert' } = {}) {
   const lines = [];
-  lines.push('Audira API Endpoint Monitor');
-  lines.push(`Time: ${nowIso()}`);
-  lines.push(`Base URL: ${BASE_URL}`);
-  lines.push(`Result: ${summary.failedCount === 0 ? 'OK' : 'FAILED'}`);
-  lines.push(`Checked: ${summary.total} | Success: ${summary.successCount} | Failed: ${summary.failedCount}`);
+  const emoji = type === 'recovery' ? '✅' : '🚨';
+  const title = type === 'recovery' ? 'RECOVERY: Audira API Services' : 'ALERT: Audira API Services';
+
+  lines.push(`${emoji} *${title}*`);
+  lines.push(`*Time:* ${nowIso()}`);
+  lines.push(`*Base URL:* \`${BASE_URL}\``);
+  lines.push(`*Status:* ${summary.failedCount === 0 ? 'ALL OK' : 'ISSUES DETECTED'}`);
+  lines.push(`*Checks:* ${summary.total} (Success: ${summary.successCount}, Failed: ${summary.failedCount})`);
 
   if (summary.failedCount > 0) {
     lines.push('');
-    lines.push('Failed endpoints:');
+    lines.push('*Failed endpoints:*');
     summary.failed.slice(0, MAX_FAIL_LINES).forEach((item) => {
       const detail = item.error ? item.error : `status=${item.status}`;
-      lines.push(`- ${item.method} ${item.path} (${detail}, ${item.latencyMs}ms)`);
+      lines.push(`• \`${item.method} ${item.path}\` (${detail}, ${item.latencyMs}ms)`);
     });
     if (summary.failed.length > MAX_FAIL_LINES) {
-      lines.push(`- ... and ${summary.failed.length - MAX_FAIL_LINES} more`);
+      lines.push(`• ... and ${summary.failed.length - MAX_FAIL_LINES} more`);
     }
+  } else if (type === 'recovery') {
+    lines.push('');
+    lines.push('Semua layanan target kembali berfungsi normal.');
   }
 
   return lines.join('\n');
@@ -170,6 +190,7 @@ async function sendTelegram(text) {
     body: JSON.stringify({
       chat_id: CHAT_ID,
       text,
+      parse_mode: 'Markdown',
       disable_web_page_preview: true,
     }),
   });
@@ -186,7 +207,6 @@ async function main() {
   const checks = [];
 
   for (const target of targets) {
-    // Sequential check to keep pressure low on the API server.
     const result = await checkEndpoint(target);
     checks.push(result);
   }
@@ -201,16 +221,75 @@ async function main() {
     checks,
   };
 
-  const shouldNotify = summary.failedCount > 0 || NOTIFY_ON_SUCCESS;
-  let telegram = { sent: false, reason: 'not_required' };
+  // --- STATEFUL LOGIC ---
+  const client = getRedis();
+  const STATE_KEY = 'endpoint-monitor:last-failed-count';
+  const DETAIL_KEY = 'endpoint-monitor:last-states';
+
+  let lastFailedCount = 0;
+  let lastStates = {};
+  try {
+    const rawCount = await client.get(STATE_KEY);
+    lastFailedCount = rawCount !== null ? parseInt(rawCount, 10) : 0;
+    const rawStates = await client.get(DETAIL_KEY);
+    lastStates = rawStates ? JSON.parse(rawStates) : {};
+  } catch (err) {
+    console.warn('[endpoint-monitor] Redis read failed, falling back to stateless:', err.message);
+  }
+
+  // Calculate if anything changed
+  const currentStates = {};
+  checks.forEach((c) => {
+    currentStates[`${c.method}:${c.path}`] = c.ok ? 'UP' : 'DOWN';
+  });
+
+  let hasChanged = false;
+  let isRecovery = false;
+
+  // 1. Check for new failures or recoveries
+  for (const key of Object.keys(currentStates)) {
+    if (currentStates[key] !== lastStates[key]) {
+      hasChanged = true;
+      if (currentStates[key] === 'UP' && lastStates[key] === 'DOWN') {
+        // We only mark as recovery if the WHOLE system becomes cleaner or specific criticals return
+        // but for simplicity, any change in status is a prompt for notification.
+      }
+    }
+  }
+
+  // If ALL were failed and now ALL are OK -> Recovery
+  if (lastFailedCount > 0 && summary.failedCount === 0) {
+    isRecovery = true;
+    hasChanged = true;
+  }
+
+  // If it was OK and now it's FAILED -> Alert
+  if (lastFailedCount === 0 && summary.failedCount > 0) {
+    hasChanged = true;
+  }
+
+  // Professional Rule: Only notify on status CHANGE, unless NOTIFY_ON_SUCCESS is true
+  const shouldNotify = NOTIFY_ON_SUCCESS || hasChanged;
+  let telegram = { sent: false, reason: 'no_change' };
 
   if (shouldNotify) {
-    const message = buildTelegramMessage(summary);
+    // If it's a recovery (failedCount 0 but last count > 0)
+    const msgType = isRecovery ? 'recovery' : 'alert';
+    const message = buildTelegramMessage(summary, { type: msgType });
+    
     try {
       telegram = await sendTelegram(message);
     } catch (error) {
       telegram = { sent: false, reason: error.message };
     }
+  }
+
+  // Persist state
+  try {
+    await client.set(STATE_KEY, summary.failedCount);
+    await client.set(DETAIL_KEY, JSON.stringify(currentStates));
+  } catch (err) {
+    console.error('[endpoint-monitor] Redis write failed:', err.message);
   }
 
   const output = {
@@ -219,18 +298,18 @@ async function main() {
       total: summary.total,
       successCount: summary.successCount,
       failedCount: summary.failedCount,
+      hasChanged,
+      isRecovery,
     },
-    failed: summary.failed.map((item) => ({
-      method: item.method,
-      path: item.path,
-      status: item.status,
-      latencyMs: item.latencyMs,
-      error: item.error,
-    })),
     telegram,
   };
 
   console.log(JSON.stringify(output, null, 2));
+
+  // Exit with cleanup
+  if (redis) {
+    await redis.quit().catch(() => {});
+  }
 
   if (summary.failedCount > 0) {
     process.exitCode = 1;

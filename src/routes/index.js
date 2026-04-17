@@ -37,6 +37,7 @@ const trendingRoutes = require('../modules/trending/trending.routes');
 const collectionRoutes = require('../modules/collection/collection.routes');
 const comicRoutes = require('../modules/comic/comic.routes');
 const collectionController = require('../modules/collection/collection.controller');
+const proxyRoutes = require('../modules/proxy/proxy.routes');
 
 // Controllers needed for convenience nested routes
 const chapterController = require('../modules/chapter/chapter.controller');
@@ -79,6 +80,7 @@ router.use('/jobs',      jobsRoutes);
 router.use('/client-usage', clientUsageRoutes);
 router.use('/collections', collectionRoutes);
 router.use('/comic',       comicRoutes);   // ← /api/v1/comic/* unified comic endpoints
+router.use('/image',       proxyRoutes);   // ← Image proxy endpoint
 
 // ── Per-type DB routes ────────────────────────────────────────────────────────
 router.use('/manga-db',   createContentRouter('manga'));

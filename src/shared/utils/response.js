@@ -1,6 +1,39 @@
 'use strict';
 
 const CREATOR = process.env.SITE_CREATOR || 'Audira';
+const { env } = require('../../config/env');
+
+const PROXY_DOMAIN_PATTERNS = [
+  /mangadex\.org/i,
+  /animepahe\./i,
+  /pahe\./i,
+  /hianime\./i,
+  /aniwatch\./i,
+  /akamaized\.net/i,
+];
+
+const PROXY_BASE_URL = `${env.APP_URL}/api/v1/image/proxy?url=`;
+
+const wrapImageWithProxy = (url) => {
+  if (!url || typeof url !== 'string' || url.startsWith('data:') || url.startsWith('blob:')) {
+    return url;
+  }
+
+  // Already proxied or internal
+  if (url.includes('/image/proxy')) return url;
+  if (!url.startsWith('http')) return url;
+
+  try {
+    const hostname = new URL(url).hostname;
+    const shouldProxy = PROXY_DOMAIN_PATTERNS.some((pattern) => pattern.test(hostname));
+    if (shouldProxy) {
+      return `${PROXY_BASE_URL}${encodeURIComponent(url)}`;
+    }
+  } catch {
+    // Leave invalid URLs alone
+  }
+  return url;
+};
 
 const STATUS_MESSAGES = {
   200: 'OK',
@@ -67,6 +100,29 @@ const normalizeCreator = (value, seen = new WeakSet()) => {
     if (key === 'creator') {
       normalized[key] = CREATOR;
       return;
+    }
+
+    if (key === 'coverImage' || key === 'poster' || key === 'bannerImage' || key === 'image' || key === 'thumbnail' || (key === 'url' && (value.type === 'poster' || value.type === 'image'))) {
+      normalized[key] = wrapImageWithProxy(value[key]);
+      return;
+    }
+
+    // Deep handle arrays of images (like chapters or episode metadata)
+    const val = value[key];
+    if (Array.isArray(val) && (key === 'images' || key === 'episodeMetadata' || key === 'streamingEpisodes')) {
+       normalized[key] = val.map(item => {
+          if (typeof item === 'string') return wrapImageWithProxy(item);
+          if (item && typeof item === 'object') {
+             const newObj = { ...item };
+             if (newObj.url) newObj.url = wrapImageWithProxy(newObj.url);
+             if (newObj.image_url) newObj.image_url = wrapImageWithProxy(newObj.image_url);
+             if (newObj.large_image_url) newObj.large_image_url = wrapImageWithProxy(newObj.large_image_url);
+             if (newObj.thumbnail) newObj.thumbnail = wrapImageWithProxy(newObj.thumbnail);
+             return newObj;
+          }
+          return item;
+       });
+       return;
     }
 
     normalized[key] = normalizeCreator(value[key], seen);
