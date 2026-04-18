@@ -661,9 +661,12 @@ const searchInput = document.getElementById('searchInput');
 const presetCategory = document.getElementById('presetCategory');
 const presetEndpoint = document.getElementById('presetEndpoint');
 const copyPlaygroundResponse = document.getElementById('copyPlaygroundResponse');
-const carouselCategory = document.getElementById('carouselCategory');
 const headerDot = document.getElementById('headerDot');
 const themeToggle = document.getElementById('themeToggle');
+const spotlightTrack = document.getElementById('spotlightTrack');
+const hudLatency = document.getElementById('hudLatency');
+const hudRequests = document.getElementById('hudRequests');
+const hudSecurity = document.getElementById('hudSecurity');
 const topNetworkCards = document.getElementById('topNetworkCards');
 const distributionTableBody = document.getElementById('distributionTableBody');
 const distributionEmpty = document.getElementById('distributionEmpty');
@@ -913,14 +916,24 @@ const renderStatus = (payload, auditPayload = null) => {
 
   const dbOnline = info.database.connected;
   stateEls.dbBanner.classList.toggle('hidden', dbOnline);
-  carouselRoot.classList.toggle('hidden', dbOnline);
+  
+  // Update Telemetry HUD
+  if (hudRequests) hudRequests.textContent = info.server.totalRequestsFormatted || info.server.uptimeSeconds % 1000;
+  if (hudSecurity) hudSecurity.textContent = 'Active';
 };
 
 const loadStatus = async () => {
   try {
+    const start = Date.now();
     const res = await fetch('/dashboard/status');
     const data = await res.json();
+    const latency = Date.now() - start;
     
+    if (hudLatency) {
+      hudLatency.textContent = `${latency}ms`;
+      hudLatency.style.color = latency < 100 ? 'var(--green)' : latency < 300 ? 'var(--yellow)' : 'var(--red)';
+    }
+
     let auditData = null;
     if (adminToken) {
        try {
@@ -929,6 +942,13 @@ const loadStatus = async () => {
     }
     
     renderStatus(data, auditData);
+    
+    // Fetch Trending for Spotlight
+    try {
+      const trendRes = await fetch(`${API_BASE}/comic/trending?limit=5`);
+      const trendData = await trendRes.json();
+      if (trendData.success) renderSpotlight(trendData.data);
+    } catch (e) { /* fallback spotlight already exists in index.html */ }
   } catch {
     setHealthItem(stateEls.serverDot, stateEls.serverText, 'Server', false, 'unreachable');
     setHealthItem(stateEls.mongoDot, stateEls.mongoText, 'MongoDB', false, 'unreachable');
@@ -1394,22 +1414,68 @@ const attachEndpointCopyButtons = () => {
 };
 
 /* ══════════════════════════════════════════════════════════════
-   CAROUSEL
+   ULTIMATE SPOTLIGHT ENGINE
    ══════════════════════════════════════════════════════════ */
-const updateCarousel = () => {
-  carouselTrack.style.transform = `translateX(-${carouselIndex * 100}%)`;
-  carouselDots.querySelectorAll('.dot').forEach((dot, idx) => {
-    dot.classList.toggle('active', idx === carouselIndex);
-  });
+let spotlightIndex = 0;
+let spotlightTimer = null;
+
+const renderSpotlight = (items = []) => {
+  if (!spotlightTrack) return;
+  if (!items.length) return; // Fallback to static if no trending data
+
+  spotlightTrack.innerHTML = items.map((item, idx) => `
+    <div class="spotlight-slide ${idx === 0 ? 'active' : ''}">
+      <div class="spotlight-bg" style="background-image: url('${item.cover || 'https://images.unsplash.com/photo-1578632767115-351597cf2477?auto=format&fit=crop&w=1280&q=80'}')"></div>
+      <div class="spotlight-overlay"></div>
+      <div class="spotlight-content">
+        <span class="spotlight-badge">${item.type || 'Trending'}</span>
+        <h2 class="spotlight-title">${item.title}</h2>
+        <p class="spotlight-desc">${item.synopsis ? item.synopsis.substring(0, 160) + '...' : 'Explore this premium title on Audira Intelligence Node.'}</p>
+      </div>
+    </div>
+  `).join('');
+
+  startSpotlight(items.length);
 };
 
-const startCarousel = () => {
-  if (carouselSlides.length <= 1) return;
-  if (carouselTimer) clearInterval(carouselTimer);
-  carouselTimer = setInterval(() => {
-    carouselIndex = (carouselIndex + 1) % carouselSlides.length;
-    updateCarousel();
-  }, 4500);
+const startSpotlight = (count) => {
+  if (spotlightTimer) clearInterval(spotlightTimer);
+  spotlightTimer = setInterval(() => {
+    spotlightIndex = (spotlightIndex + 1) % count;
+    spotlightTrack.style.transform = `translateX(-${spotlightIndex * 100}%)`;
+    
+    document.querySelectorAll('.spotlight-slide').forEach((s, idx) => {
+      s.classList.toggle('active', idx === spotlightIndex);
+    });
+  }, 6000);
+};
+
+/* ══════════════════════════════════════════════════════════════
+   ULTIMATE TILT ENGINE
+   ══════════════════════════════════════════════════════════ */
+const initTiltEffect = () => {
+  const cards = document.querySelectorAll('.card, .glass-card, .stat-box');
+  cards.forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      
+      const xc = rect.width / 2;
+      const yc = rect.height / 2;
+      
+      const dx = x - xc;
+      const dy = y - yc;
+      
+      card.style.setProperty('--x', `${x}px`);
+      card.style.setProperty('--y', `${y}px`);
+      card.style.transform = `perspective(1000px) rotateX(${-dy / 20}deg) rotateY(${dx / 20}deg) translateY(-5px)`;
+    });
+    
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = '';
+    });
+  });
 };
 
 const renderCarousel = () => {
@@ -2790,10 +2856,8 @@ const boot = async () => {
   attachExamplesToCards();
   attachEndpointCopyButtons();
   renderQuickLinks();
-  initCarouselFilter();
-  renderCarousel();
-  startCarousel();
   initTesterPresets();
+  initTiltEffect();
 
   if (copyPlaygroundResponse) {
     copyPlaygroundResponse.addEventListener('click', () => {

@@ -138,6 +138,22 @@
 
   <!-- ── SECTION: Overview (stats) ──────────────────────────── -->
   <section id="section-overview" class="animate-in">
+    
+    <!-- 🚀 ULTIMATE Hero Spotlight -->
+    <div id="hero-spotlight" class="hero-spotlight">
+      <div class="spotlight-track" id="spotlightTrack">
+        <!-- Injected by dashboard.js -->
+        <div class="spotlight-slide active">
+          <div class="spotlight-bg" style="background-image: url('https://images.unsplash.com/photo-1578632767115-351597cf2477?auto=format&fit=crop&w=1280&q=80')"></div>
+          <div class="spotlight-overlay"></div>
+          <div class="spotlight-content">
+            <span class="spotlight-badge">Intelligence Node Alpha</span>
+            <h2 class="spotlight-title">Audira Command Center</h2>
+            <p class="spotlight-desc">Sistem monitoring premium dengan kecerdasan buatan untuk mengelola ekosistem konten animasi Anda secara real-time.</p>
+          </div>
+        </div>
+      </div>
+    </div>
     <div class="section-label">Technical Telemetry</div>
     <h1 class="ultimate-title">Core Content Matrix</h1>
 
@@ -401,19 +417,21 @@
     </article>
   </section>
 
-  <!-- ── SECTION: Demo Carousel ─────────────────────────────── -->
-  <section id="demoCarousel" class="demo-carousel hidden">
-    <div class="carousel-toolbar">
-      <label for="carouselCategory">Carousel Filter</label>
-      <select id="carouselCategory">
-        <option value="all">Semua Kategori</option>
-      </select>
+  <!-- ── ULTIMATE Telemetry HUD ────────────────────────────── -->
+  <div id="telemetry-hud" class="telemetry-hud">
+    <div class="hud-item">
+      <span class="hud-label">Latency</span>
+      <span class="hud-value" id="hudLatency">-- ms</span>
     </div>
-    <div class="carousel-shell">
-      <div id="demoTrack" class="track"></div>
-      <div id="demoDots" class="dots"></div>
+    <div class="hud-item">
+      <span class="hud-label">Requests/Hr</span>
+      <span class="hud-value" id="hudRequests">0</span>
     </div>
-  </section>
+    <div class="hud-item">
+      <span class="hud-label">Security</span>
+      <span class="hud-value" id="hudSecurity">Active</span>
+    </div>
+  </div>
 
   <div class="section-divider"></div>
 

@@ -12,15 +12,15 @@
   --bg-sidebar:   rgba(8, 10, 16, 0.7);
   --text-main:    #f8fafc;
   --text-muted:   #94a3b8;
-  --border-glass: rgba(255, 255, 255, 0.08);
+  --border-glass: rgba(255, 255, 255, 0.1);
   --accent:       #6366f1; /* Indigo */
-  --accent-glow:  rgba(99, 102, 241, 0.4);
-  --glass-blur:   40px;
+  --accent-glow:  rgba(99, 102, 241, 0.5);
+  --glass-blur:   60px;
   --glass-saturate: 180%;
   --ease:         cubic-bezier(0.16, 1, 0.3, 1);
-  --shadow-lux:   0 20px 50px -12px rgba(0, 0, 0, 0.5), inset 0 1px 1px rgba(255, 255, 255, 0.1);
-  --card-radius:  32px;
-  --transition:   all 0.4s var(--ease);
+  --shadow-lux:   0 25px 60px -12px rgba(0, 0, 0, 0.6), inset 0 1px 1px rgba(255, 255, 255, 0.1);
+  --card-radius:  28px;
+  --transition:   all 0.5s var(--ease);
 
   /* Status Colors */
   --green:  #10b981;
@@ -57,22 +57,24 @@ body {
   transition: background-color 0.5s var(--ease), color 0.5s var(--ease);
 }
 
-/* 🚀 AudiraBot Dynamic Background */
+/* 🚀 AudiraBot Dynamic Aurora Background */
 body::before {
   content: '';
   position: fixed;
   inset: 0;
   z-index: -1;
+  background-size: 200% 200%;
   background-image: 
-    radial-gradient(circle at 0% 0%, var(--accent-glow) 0%, transparent 40%),
-    radial-gradient(circle at 100% 100%, rgba(14, 165, 233, 0.05) 0%, transparent 40%),
-    radial-gradient(circle at 50% 50%, rgba(99, 102, 241, 0.03) 0%, transparent 60%);
-  animation: bgPulse 20s infinite alternate;
+    radial-gradient(circle at 10% 20%, rgba(99, 102, 241, 0.08) 0%, transparent 40%),
+    radial-gradient(circle at 90% 80%, rgba(236, 72, 153, 0.05) 0%, transparent 40%),
+    radial-gradient(circle at 50% 50%, rgba(14, 165, 233, 0.03) 0%, transparent 60%);
+  animation: auroraMesh 30s infinite alternate linear;
 }
 
-@keyframes bgPulse {
-  0%   { transform: scale(1) translate(0, 0); }
-  100% { transform: scale(1.1) translate(20px, 10px); }
+@keyframes auroraMesh {
+  0%   { background-position: 0% 50%; filter: hue-rotate(0deg); }
+  50%  { background-position: 100% 50%; filter: hue-rotate(30deg); }
+  100% { background-position: 50% 0%; filter: hue-rotate(0deg); }
 }
 
 /* ── Layout Hierarchy ──────────────────────────────────────── */
@@ -1421,3 +1423,150 @@ pre, code {
 .consumer-hits { font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; opacity: 0.7; }
 
 .registry-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; }
+
+/* ── ULTIMATE UI COMPONENTS ────────────────────────────── */
+
+/* 1. Hero Spotlight */
+.hero-spotlight {
+  position: relative;
+  width: 100%;
+  height: 420px;
+  border-radius: var(--card-radius);
+  overflow: hidden;
+  margin-bottom: 48px;
+  background: #000;
+  box-shadow: 0 40px 100px -20px rgba(0,0,0,0.8);
+}
+
+.spotlight-track {
+  display: flex;
+  height: 100%;
+  transition: transform 0.8s var(--ease);
+}
+
+.spotlight-slide {
+  min-width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  padding: 60px;
+}
+
+.spotlight-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.5) scale(1.1);
+  transition: transform 10s linear;
+}
+
+.spotlight-slide.active .spotlight-bg {
+  transform: scale(1);
+}
+
+.spotlight-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(0deg, rgba(2,6,23,0.9) 0%, transparent 60%);
+}
+
+.spotlight-content {
+  position: relative;
+  z-index: 10;
+  max-width: 600px;
+  animation: slideUp 0.8s var(--ease) both;
+}
+
+.spotlight-badge {
+  display: inline-block;
+  padding: 6px 12px;
+  background: var(--accent);
+  color: #fff;
+  border-radius: 8px;
+  font-weight: 800;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  box-shadow: 0 0 15px var(--accent-glow);
+}
+
+.spotlight-title {
+  font-family: 'Outfit';
+  font-size: 3.5rem;
+  font-weight: 800;
+  line-height: 1;
+  margin-bottom: 16px;
+  text-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.spotlight-desc {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  margin-bottom: 32px;
+}
+
+/* 2. Telemetry HUD */
+.telemetry-hud {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  background: rgba(8, 10, 16, 0.7);
+  backdrop-filter: blur(20px) saturate(200%);
+  border: 1px solid var(--border-glass);
+  border-radius: 20px;
+  padding: 16px 24px;
+  display: flex;
+  gap: 24px;
+  z-index: 2000;
+  box-shadow: var(--shadow-lux);
+  animation: slideInRight 0.8s var(--ease);
+}
+
+.hud-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.hud-label {
+  font-size: 0.6rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  letter-spacing: 0.1em;
+}
+
+.hud-value {
+  font-family: 'JetBrains Mono';
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+/* 3. Skeleton Loaders */
+.skeleton {
+  background: linear-gradient(90deg, 
+    rgba(255,255,255,0.03) 25%, 
+    rgba(255,255,255,0.08) 50%, 
+    rgba(255,255,255,0.03) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite linear;
+  border-radius: 4px;
+}
+
+@keyframes shimmer {
+  from { background-position: -200% 0; }
+  to { background-position: 200% 0; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(100px); }
+  to { opacity: 1; transform: translateX(0); }
+}
