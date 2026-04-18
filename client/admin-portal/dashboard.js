@@ -2162,9 +2162,9 @@ const loadContentStats = async () => {
     summary.className = 'overview-breakdown-summary';
     summary.innerHTML = '';
     const summaryItems = [
-      { label: 'Animation total', value: total },
-      { label: 'Animation sources', value: sourceCount },
-      { label: 'Anime sources', value: animeSources.length },
+      { label: 'Global Animation Hub', value: total },
+      { label: 'Active Source Nodes', value: sourceCount },
+      { label: 'Anime Sources', value: animeSources.length },
       { label: 'Donghua sources', value: donghuaSources.length },
       { label: 'Manga sources', value: mangaSources.length },
     ];

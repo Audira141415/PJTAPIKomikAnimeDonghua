@@ -53,6 +53,9 @@
       <span class="nav-icon">🎌</span> Anime
       <span class="nav-badge" style="background: var(--accent); color: #fff;">NEW</span>
     </a>
+    <a href="#section-anime-episodes" class="nav-item" data-nav="section-anime-episodes">
+      <span class="nav-icon">🍿</span> Anime Episodes
+    </a>
     <a href="#section-donghua" class="nav-item" data-nav="section-donghua">
       <span class="nav-icon">🎬</span> Donghua
     </a>
@@ -185,7 +188,7 @@
         <div class="value" id="statManhua">...</div>
       </div>
       <div class="stat-box" style="--accent: #3b82f6;">
-        <div class="label">Universal Animation</div>
+        <div class="label">Anime Index</div>
         <div class="value" id="statAnime">...</div>
       </div>
       <div class="stat-box" style="--accent: #06b6d4;">
@@ -197,7 +200,7 @@
         <div class="value" id="statMovie">...</div>
       </div>
       <div class="stat-box" style="--accent: #8b5cf6;">
-        <div class="label">Proxy Adapters</div>
+        <div class="label">Anime Source Nodes</div>
         <div class="value" id="statAnimeProxy">...</div>
       </div>
     </div>
@@ -679,6 +682,25 @@
         <div class="card-desc">Detail lengkap anime: sinopsis, genre, jumlah episode, status, dan daftar link streaming.</div>
       </div>
 
+      <div class="card" style="--card-accent:#10b981" data-tags="anime search cari">
+        <div class="card-header">
+          <span class="card-icon">🔍</span>
+          <span class="card-title">Pencarian Anime</span>
+          <span class="badge badge-green">Working</span>
+        </div>
+        <div class="endpoint"><span class="method get">GET</span>/api/v1/animesail/search/:query</div>
+        <div class="card-desc">Cari anime berdasarkan judul menggunakan provider AnimeSail.</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── SECTION: Anime Episodes ───────────────────────────── -->
+  <section id="section-anime-episodes">
+    <div class="section-label">🍿 Streaming Services</div>
+    <h1 class="ultimate-title" style="font-size: 1.5rem;">Anime Episodes & Mirror</h1>
+    <div class="ultimate-grid" id="anime-episodes">
+
       <div class="card" style="--card-accent:#f59e0b" data-tags="anime episode nonton">
         <div class="card-header">
           <span class="card-icon">🍿</span>
@@ -689,14 +711,14 @@
         <div class="card-desc">Data streaming episode anime. Termasuk navigasi antar episode dan info series terkait.</div>
       </div>
 
-      <div class="card" style="--card-accent:#10b981" data-tags="anime search cari">
+      <div class="card" style="--card-accent:#8b5cf6" data-tags="anime stream mirror">
         <div class="card-header">
-          <span class="card-icon">🔍</span>
-          <span class="card-title">Pencarian Anime</span>
+          <span class="card-icon">🔗</span>
+          <span class="card-title">Mirror Stream</span>
           <span class="badge badge-green">Working</span>
         </div>
-        <div class="endpoint"><span class="method get">GET</span>/api/v1/animesail/search/:query</div>
-        <div class="card-desc">Cari anime berdasarkan judul menggunakan provider AnimeSail.</div>
+        <div class="endpoint"><span class="method get">GET</span>/api/v1/animesail/episode/:slug?mirror=true</div>
+        <div class="card-desc">Ambil link mirror alternatif untuk streaming jika link utama bermasalah.</div>
       </div>
 
     </div>
