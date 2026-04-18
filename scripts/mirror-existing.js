@@ -5,6 +5,7 @@ require('dotenv').config();
 const mongoose = require('mongoose');
 const { mirrorImage } = require('@core/utils/imageDownloader');
 const { Manga } = require('@models');
+const telegram = require('@core/utils/telegram');
 
 const CONCURRENCY = 10; // Download 10 gambar bersamaan
 const BATCH_SIZE = 100;
@@ -75,6 +76,8 @@ async function run() {
   console.log('\n--- PARALLEL MIRROR COMPLETE ---');
   console.log(`Total Success: ${totalSuccess}`);
   console.log(`Total Failed : ${totalFail}`);
+  await telegram.sendAlert('Image Mirroring Complete', '? Success: ' + totalSuccess + '
+? Failed: ' + totalFail, 'success');
   await mongoose.disconnect();
   process.exit(0);
 }

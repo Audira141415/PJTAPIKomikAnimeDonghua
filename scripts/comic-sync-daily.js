@@ -10,6 +10,7 @@ const slugify = require('slugify');
 const { env } = require('@core/config/env');
 const { Manga } = require('@models');
 const { User } = require('@models');
+const telegram = require('@core/utils/telegram');
 const aggregator = require('../src/modules/comic/scrapers/aggregator/aggregator.service');
 
 const args = process.argv.slice(2);
@@ -164,13 +165,15 @@ async function run() {
   console.log(`Page      : ${PAGE}`);
   console.log(`Sources   : ${SOURCES}`);
 
+  await telegram.sendSyncReport('Comic Aggregator', { inserted: summary.inserted, updated: summary.updated, skipped: summary.skipped, failed: summary.conflicted });
   await mongoose.disconnect();
 }
 
 run().catch(async (err) => {
   console.error('FATAL:', err.message);
   try {
-    await mongoose.disconnect();
+    await telegram.sendSyncReport('Comic Aggregator', { inserted: summary.inserted, updated: summary.updated, skipped: summary.skipped, failed: summary.conflicted });
+  await mongoose.disconnect();
   } catch (_err) {
     // noop
   }

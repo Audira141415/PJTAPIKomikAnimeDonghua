@@ -28,6 +28,7 @@ const mongoose = require('mongoose');
 const slugify  = require('slugify');
 
 const { env } = require('@core/config/env');
+const telegram = require('@core/utils/telegram');
 const { Manga } = require('@models');
 const { Episode } = require('@models');
 const { User } = require('@models');
@@ -440,6 +441,7 @@ async function main() {
   }
   console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n');
 
+  await telegram.sendSyncReport('Anichin Anime', { inserted: created, updated: updated, skipped: skipped, failed: errors });
   await mongoose.disconnect();
   process.exit(errors > 0 ? 1 : 0);
 }
