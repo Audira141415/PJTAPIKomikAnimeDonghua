@@ -16,12 +16,16 @@ const { apiLimiter, dashboardLimiter } = require('@middlewares/rateLimiter.middl
 const { clientUsageTracker } = require('@middlewares/clientUsage.middleware');
 const requestId = require('@middlewares/requestId.middleware').requestId;
 const { pushActivity, getActivity } = require('@core/utils/dashboardMonitor');
+const shieldMiddleware = require('@middlewares/shield.middleware');
 
 const app = express();
 
 if (env.TRUST_PROXY) {
   app.set('trust proxy', 1);
 }
+
+// 1. Security Shield (IP Banning)
+app.use(shieldMiddleware);
 
 // Attach X-Request-ID to every request/response
 app.use(requestId);

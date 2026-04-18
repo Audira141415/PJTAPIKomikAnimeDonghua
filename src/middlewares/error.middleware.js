@@ -2,6 +2,7 @@ const { ZodError } = require('zod');
 const ApiError = require('@core/errors/ApiError');
 const logger = require('@core/utils/logger');
 const { error: errorResponse } = require('@core/utils/response');
+const shield = require('@core/utils/shield');
 
 // eslint-disable-next-line no-unused-vars
 const errorHandler = (err, req, res, _next) => {
@@ -51,11 +52,20 @@ const errorHandler = (err, req, res, _next) => {
       ? 'Internal Server Error'
       : message;
 
+  // --- Shield Logic: Track Suspicious Activity ---
+  if (statusCode === 401) shield.addSuspicionPoints(req.ip, 2, 'Unauthorized access attempt');
+  if (statusCode === 403) shield.addSuspicionPoints(req.ip, 5, 'Forbidden access attempt');
+
   errorResponse(res, { statusCode, message: responseMessage });
 };
 
 const notFound = (req, res) => {
-  errorResponse(res, { statusCode: 404, message: `Route not found: ${req.originalUrl}` });
+  const path = req.originalUrl;
+  
+  // Track suspicion for 404s (potential probing)
+  shield.addSuspicionPoints(req.ip, 1, `Route not found: ${path}`);
+  
+  errorResponse(res, { statusCode: 404, message: `Route not found: ${path}` });
 };
 
 module.exports = { errorHandler, notFound };
