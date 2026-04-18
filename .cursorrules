@@ -1,4 +1,4 @@
-# Audira Comic API — GitHub Copilot Instructions
+# Audira Comic API — Cursor Rules
 # Last Updated: 2026-04-18
 
 ## Project Context
@@ -26,7 +26,7 @@
 - Error handling: wrap service logic in try/catch; let the global `error.middleware.js` handle Express-level errors.
 - Response format is always `{ success: true/false, data: ..., message: ... }`. Use `src/core/utils/response.js` helpers.
 - Logger: Use `require('@core/utils/logger')` (Winston). Never use `console.log` in production code.
-- All scraper services live in `src/infrastructure/scraper/services/`. Each scraper is a self-contained module.
+- All scraper services live in `src/infrastructure/scraper/services/`. Each scraper is a self-contained module (e.g., `otakudesu.service.js`, `donghub.service.js`).
 - BullMQ jobs are defined in `src/jobs/`. The **worker** processes jobs; the **scheduler** enqueues repeatable jobs.
 - Telegram notifications go through `require('@core/utils/telegram')`. Use `sendAlert(title, htmlBody, severity)`.
 - Security middleware stack order in `app.js`: Helmet → CORS → Shield → RateLimiter → ClientUsage → Routes → ErrorHandler.
@@ -36,7 +36,7 @@
 - CSS design system uses CSS custom properties (variables) in `:root`. Always use these variables — never hardcode colors.
 - Font stack: `'Outfit'` for headings, `'Inter'` for body, `'JetBrains Mono'` for code/metrics.
 - All API calls from the dashboard use relative paths (e.g., `/api/v1/...`, `/dashboard/status`).
-- The `copyText()` function in `dashboard.js` has a **fallback for non-HTTPS contexts**. Always maintain this fallback.
+- The `copyText()` function in `dashboard.js` has a **fallback for non-HTTPS contexts** (clipboard API doesn't work on plain HTTP IP addresses). Always maintain this fallback.
 - Theme toggle: dark/light via `data-theme` attribute on `<html>`. All CSS must respect `[data-theme="light"]` overrides.
 
 ## 4. File Reading Efficiency

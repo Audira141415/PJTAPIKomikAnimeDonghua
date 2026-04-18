@@ -49,6 +49,10 @@
     <a href="#section-chapters" class="nav-item" data-nav="section-chapters">
       <span class="nav-icon">📄</span> Chapters
     </a>
+    <a href="#section-anime" class="nav-item" data-nav="section-anime">
+      <span class="nav-icon">🎌</span> Anime
+      <span class="nav-badge" style="background: var(--accent); color: #fff;">NEW</span>
+    </a>
     <a href="#section-donghua" class="nav-item" data-nav="section-donghua">
       <span class="nav-icon">🎬</span> Donghua
     </a>
@@ -638,6 +642,67 @@
 
     </div>
   </section>
+
+  <!-- ── SECTION: Anime ────────────────────────────────────── -->
+  <section id="section-anime">
+    <div class="section-label">🎌 Nippon Animation</div>
+    <h1 class="ultimate-title" style="font-size: 1.5rem;">Anime Core Services</h1>
+    <div class="ultimate-grid" id="anime">
+
+      <div class="card" style="--card-accent:#6366f1" data-tags="anime home beranda">
+        <div class="card-header">
+          <span class="card-icon">🏠</span>
+          <span class="card-title">Home Anime</span>
+          <span class="badge badge-green">Working</span>
+        </div>
+        <div class="endpoint"><span class="method get">GET</span>/api/v1/anime/home</div>
+        <div class="card-desc">Beranda anime dari Otakudesu: <code>latest_release</code>, <code>popular</code>, dan <code>featured_anime</code>.</div>
+      </div>
+
+      <div class="card" style="--card-accent:#8b5cf6" data-tags="anime terbaru ongoing">
+        <div class="card-header">
+          <span class="card-icon">🆕</span>
+          <span class="card-title">Anime Terbaru</span>
+          <span class="badge badge-green">Working</span>
+        </div>
+        <div class="endpoint"><span class="method get">GET</span>/api/v1/animesail/terbaru</div>
+        <div class="card-desc">Daftar rilis anime terbaru (ongoing) dengan pagination. Diupdate secara real-time.</div>
+      </div>
+
+      <div class="card" style="--card-accent:#ec4899" data-tags="anime detail slug">
+        <div class="card-header">
+          <span class="card-icon">🎞️</span>
+          <span class="card-title">Detail Anime</span>
+          <span class="badge badge-green">Working</span>
+        </div>
+        <div class="endpoint"><span class="method get">GET</span>/api/v1/animesail/detail/:slug</div>
+        <div class="card-desc">Detail lengkap anime: sinopsis, genre, jumlah episode, status, dan daftar link streaming.</div>
+      </div>
+
+      <div class="card" style="--card-accent:#f59e0b" data-tags="anime episode nonton">
+        <div class="card-header">
+          <span class="card-icon">🍿</span>
+          <span class="card-title">Nonton Episode</span>
+          <span class="badge badge-green">Working</span>
+        </div>
+        <div class="endpoint"><span class="method get">GET</span>/api/v1/animesail/episode/:slug</div>
+        <div class="card-desc">Data streaming episode anime. Termasuk navigasi antar episode dan info series terkait.</div>
+      </div>
+
+      <div class="card" style="--card-accent:#10b981" data-tags="anime search cari">
+        <div class="card-header">
+          <span class="card-icon">🔍</span>
+          <span class="card-title">Pencarian Anime</span>
+          <span class="badge badge-green">Working</span>
+        </div>
+        <div class="endpoint"><span class="method get">GET</span>/api/v1/animesail/search/:query</div>
+        <div class="card-desc">Cari anime berdasarkan judul menggunakan provider AnimeSail.</div>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
 
   <!-- ── SECTION: Donghua ───────────────────────────────────── -->
   <section id="section-donghua">
