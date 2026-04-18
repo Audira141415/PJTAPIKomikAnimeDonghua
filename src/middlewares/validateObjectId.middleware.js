@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const ApiError = require('../shared/errors/ApiError');
+const ApiError = require('@core/errors/ApiError');
 
 /**
  * Express middleware factory that validates one or more route params

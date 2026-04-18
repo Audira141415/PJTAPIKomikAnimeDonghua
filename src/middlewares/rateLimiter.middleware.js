@@ -1,6 +1,6 @@
 const rateLimit = require('express-rate-limit');
-const { env } = require('../config/env');
-const { getRedisClient } = require('../config/redis');
+const { env } = require('@core/config/env');
+const { getRedisClient } = require('@core/database/redis');
 
 /**
  * Build a Redis-backed store with a unique prefix for each rate limiter.

@@ -1,7 +1,7 @@
 'use strict';
 
 const { randomUUID } = require('crypto');
-const { requestContext } = require('../config/context');
+const { requestContext } = require('@core/config/context');
 
 /**
  * Attaches a unique X-Request-ID to every request and response.

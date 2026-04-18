@@ -1,11 +1,12 @@
 'use strict';
+require('module-alias/register');
 
 require('dotenv').config();
 
 const { Worker } = require('bullmq');
 const { connection, SCRAPER_QUEUE_NAME } = require('./queue');
 const { buildScraperArgs, runNodeJob, getProjectRoot } = require('./jobRunner');
-const logger = require('../config/logger');
+const logger = require('@core/utils/logger');
 
 const JOB_TIMEOUT_MS = parseInt(process.env.SCRAPER_JOB_TIMEOUT_MS || String(60 * 60 * 1000), 10);
 const CONCURRENCY = parseInt(process.env.SCRAPER_WORKER_CONCURRENCY || '1', 10);

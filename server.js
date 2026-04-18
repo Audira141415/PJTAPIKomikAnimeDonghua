@@ -1,9 +1,10 @@
+require('module-alias/register');
 require('dotenv').config();
 const mongoose = require('mongoose');
 const app = require('./src/app');
-const { connectDB } = require('./src/config/db');
-const { env } = require('./src/config/env');
-const logger = require('./src/config/logger');
+const { connectDB } = require('@core/database/db');
+const { env } = require('@core/config/env');
+const logger = require('@core/utils/logger');
 
 const start = async () => {
   const dbConnected = await connectDB();

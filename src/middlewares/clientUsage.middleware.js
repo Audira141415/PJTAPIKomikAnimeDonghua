@@ -1,9 +1,9 @@
 'use strict';
 
 const mongoose = require('mongoose');
-const logger = require('../config/logger');
-const { env } = require('../config/env');
-const clientUsageService = require('../modules/client-usage/clientUsage.service');
+const logger = require('@core/utils/logger');
+const { env } = require('@core/config/env');
+const clientUsageService = require('@metrics/Usage/clientUsage.service');
 
 const HOSTNAME_PATTERN = /^(?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?\.)+[a-z]{2,}$/i;
 

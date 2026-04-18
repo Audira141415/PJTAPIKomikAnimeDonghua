@@ -3,7 +3,7 @@
 require('dotenv').config();
 
 const { scraperQueue, connection } = require('./queue');
-const logger = require('../config/logger');
+const logger = require('@core/utils/logger');
 
 const SERIES_CRON = process.env.SCRAPER_SERIES_CRON || '0 3 * * *';
 const EPISODE_CRON = process.env.SCRAPER_EPISODE_CRON || '0 */6 * * *';

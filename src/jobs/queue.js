@@ -1,7 +1,7 @@
 'use strict';
 
 const { Queue } = require('bullmq');
-const { env } = require('../config/env');
+const { env } = require('@core/config/env');
 
 let Redis;
 try {

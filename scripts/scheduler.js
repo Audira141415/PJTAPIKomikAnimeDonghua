@@ -1,4 +1,5 @@
 'use strict';
+require('module-alias/register');
 
 // Backward-compat entrypoint. Queue-based scheduler now lives in src/jobs.
 const { bootstrap } = require('../src/jobs/scheduler');

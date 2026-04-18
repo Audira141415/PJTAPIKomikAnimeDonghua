@@ -7,15 +7,15 @@ const os = require('os');
 const mongoose = require('mongoose');
 const swaggerUi = require('swagger-ui-express');
 
-const { env } = require('./config/env');
-const swaggerSpec = require('./config/swagger').swaggerSpec;
+const { env } = require('@core/config/env');
+const swaggerSpec = require('@core/config/swagger').swaggerSpec;
 const routes = require('./routes');
-const { getRedisClient } = require('./config/redis');
-const { errorHandler, notFound } = require('./middlewares/error.middleware');
-const { apiLimiter, dashboardLimiter } = require('./middlewares/rateLimiter.middleware');
-const { clientUsageTracker } = require('./middlewares/clientUsage.middleware');
-const requestId = require('./middlewares/requestId.middleware').requestId;
-const { pushActivity, getActivity } = require('./shared/utils/dashboardMonitor');
+const { getRedisClient } = require('@core/database/redis');
+const { errorHandler, notFound } = require('@middlewares/error.middleware');
+const { apiLimiter, dashboardLimiter } = require('@middlewares/rateLimiter.middleware');
+const { clientUsageTracker } = require('@middlewares/clientUsage.middleware');
+const requestId = require('@middlewares/requestId.middleware').requestId;
+const { pushActivity, getActivity } = require('@core/utils/dashboardMonitor');
 
 const app = express();
 
@@ -118,9 +118,9 @@ if (env.NODE_ENV === 'development') {
 app.use('/uploads', express.static(path.join(process.cwd(), env.UPLOAD_DIR)));
 
 // Landing page (endpoint explorer)
-app.use(express.static(path.join(process.cwd(), 'public')));
+app.use(express.static(path.join(process.cwd(), 'client/admin-portal')));
 app.get('/', (req, res) => {
-  res.sendFile(path.join(process.cwd(), 'public', 'index.html'));
+  res.sendFile(path.join(process.cwd(), 'client/admin-portal', 'index.html'));
 });
 
 // API documentation

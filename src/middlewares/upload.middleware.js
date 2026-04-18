@@ -1,8 +1,8 @@
 const multer = require('multer');
 const path = require('path');
 const fs = require('fs');
-const ApiError = require('../shared/errors/ApiError');
-const { env } = require('../config/env');
+const ApiError = require('@core/errors/ApiError');
+const { env } = require('@core/config/env');
 
 const ALLOWED_MIMES = ['image/jpeg', 'image/png', 'image/webp', 'image/gif'];
 const MAX_FILE_SIZE = 10 * 1024 * 1024; // 10 MB
