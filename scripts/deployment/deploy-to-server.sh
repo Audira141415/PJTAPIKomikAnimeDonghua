@@ -2,7 +2,7 @@
 # Deploy Endpoint Monitor to Server
 # ════════════════════════════════════════════════════════════════════════════
 # Run this script setelah SSH ke server:
-#   ssh audira@192.168.100.158
+#   ssh audira@192.168.100.161
 #   bash deploy-to-server.sh
 # ════════════════════════════════════════════════════════════════════════════
 

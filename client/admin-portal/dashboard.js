@@ -825,17 +825,36 @@ const relativeTime = (isoString) => {
    UTILITIES
    ══════════════════════════════════════════════════════════ */
 const copyText = async (text, buttonEl) => {
+  const prev = buttonEl.textContent;
   try {
-    await navigator.clipboard.writeText(text);
-    const prev = buttonEl.textContent;
+    if (navigator.clipboard && window.isSecureContext) {
+      await navigator.clipboard.writeText(text);
+    } else {
+      // Fallback for non-secure contexts (HTTP IP addresses)
+      const textArea = document.createElement("textarea");
+      textArea.value = text;
+      // Move textarea out of the viewport
+      textArea.style.position = "fixed";
+      textArea.style.left = "-999999px";
+      textArea.style.top = "-999999px";
+      document.body.appendChild(textArea);
+      textArea.focus();
+      textArea.select();
+      
+      const successful = document.execCommand('copy');
+      textArea.remove();
+      if (!successful) throw new Error('execCommand failed');
+    }
+    
     buttonEl.textContent = 'Copied';
     setTimeout(() => {
       buttonEl.textContent = prev;
     }, 1000);
-  } catch {
+  } catch (err) {
+    console.error('Copy failed', err);
     buttonEl.textContent = 'Copy Failed';
     setTimeout(() => {
-      buttonEl.textContent = 'Copy';
+      buttonEl.textContent = prev;
     }, 1000);
   }
 };
