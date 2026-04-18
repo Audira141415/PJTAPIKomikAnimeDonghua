@@ -6,6 +6,7 @@ const { authenticate, authorize } = require('@auth/auth.middleware');
 const { uploadCover } = require('@middlewares/upload.middleware');
 const { validateObjectId } = require('@middlewares/validateObjectId.middleware');
 const { userActionLimiter } = require('@middlewares/rateLimiter.middleware');
+const cacheMiddleware = require('@middlewares/cache.middleware');
 
 const router = Router();
 
@@ -28,13 +29,13 @@ router.use('/kiryuu',       require('./scrapers/kiryuu/kiryuu.routes'));
 router.use('/cosmic',       require('./scrapers/cosmic/cosmic.routes'));
 
 // ── Discovery & listing ───────────────────────────────────────────────────────
-router.get('/terbaru',        c.terbaru);          // GET /comic/terbaru
-router.get('/populer',        c.populer);          // GET /comic/populer
-router.get('/trending',       c.trending);         // GET /comic/trending
-router.get('/latest',         c.latest);           // GET /comic/latest
-router.get('/random',         c.random);           // GET /comic/random
-router.get('/homepage',       c.homepage);         // GET /comic/homepage
-router.get('/recommendations',c.recommendations);  // GET /comic/recommendations
+router.get('/terbaru',        cacheMiddleware(300), c.terbaru);
+router.get('/populer',        cacheMiddleware(300), c.populer);
+router.get('/trending',       cacheMiddleware(300), c.trending);
+router.get('/latest',         cacheMiddleware(300), c.latest);
+router.get('/random',         c.random); // Don't cache random
+router.get('/homepage',       cacheMiddleware(300), c.homepage);
+router.get('/recommendations',cacheMiddleware(300), c.recommendations);
 
 // ── Browse & filter ───────────────────────────────────────────────────────────
 router.get('/browse',         c.browse);           // GET /comic/browse?type=&genre=&order=
@@ -45,8 +46,8 @@ router.get('/berwarna/:page', c.berwarna);         // GET /comic/berwarna/1
 router.get('/pustaka/:page',  c.pustaka);          // GET /comic/pustaka/1
 
 // ── Search ────────────────────────────────────────────────────────────────────
-router.get('/search',         c.search);           // GET /comic/search?q=naruto
-router.get('/advanced-search',c.advancedSearch);   // GET /comic/advanced-search
+router.get('/search',         cacheMiddleware(120), c.search);
+router.get('/advanced-search',cacheMiddleware(120), c.advancedSearch);
 
 // ── Pagination variants ───────────────────────────────────────────────────────
 router.get('/unlimited',      c.unlimited);        // GET /comic/unlimited
