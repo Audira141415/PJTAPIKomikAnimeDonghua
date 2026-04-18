@@ -1,7 +1,7 @@
 'use strict';
 
 const mongoose = require('mongoose');
-const {             Manga, RefreshToken, User             } = require('@models');
+const {              Manga, RefreshToken, User              } = require('@models');
 const cache = require('@core/utils/cache');
 
 /**

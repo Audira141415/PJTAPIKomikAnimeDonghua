@@ -1,6 +1,6 @@
 'use strict';
 
-const {            Review            } = require('@models');
+const {             Review             } = require('@models');
 
 const create = (data) => Review.create(data);
 

@@ -1,3 +1,5 @@
+'use strict';
+require('module-alias/register');
 #!/usr/bin/env node
 /**
  * Test Endpoint Monitor - Manual Trigger

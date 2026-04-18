@@ -1,6 +1,6 @@
 'use strict';
 
-const {             Manga             } = require('@models');
+const {              Manga              } = require('@models');
 const cache = require('@core/utils/cache');
 const catchAsync = require('@core/utils/catchAsync');
 const { success } = require('@core/utils/response');

@@ -1,4 +1,6 @@
 'use strict';
+require('module-alias/register');
+
 
 /**
  * Anichin Importer — membaca file JSON hasil scraping anichin.cafe dan mengimpor
@@ -23,9 +25,9 @@ const path     = require('path');
 const mongoose = require('mongoose');
 const slugify  = require('slugify');
 
-const { env } = require('../src/config/env');
-const Manga = require('../src/models/Manga');
-const User  = require('../src/models/User');
+const { env } = require('@core/config/env');
+const { Manga } = require('@models');
+const { User } = require('@models');
 
 // ── CLI args ──────────────────────────────────────────────────────────────────
 const args    = process.argv.slice(2);

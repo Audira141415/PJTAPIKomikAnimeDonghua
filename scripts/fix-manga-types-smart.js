@@ -1,3 +1,5 @@
+'use strict';
+require('module-alias/register');
 /**
  * fix-manga-types-smart.js
  * ========================
@@ -15,8 +17,8 @@
 require('dotenv').config();
 const axios    = require('axios');
 const mongoose = require('mongoose');
-const { env }  = require('../src/config/env');
-const Manga    = require('../src/models/Manga');
+const { env }  = require('@core/config/env');
+const { Manga } = require('@models');
 
 const MANGADEX_API = 'https://api.mangadex.org';
 const APPLY        = process.argv.includes('--apply');

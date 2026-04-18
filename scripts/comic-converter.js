@@ -1,4 +1,6 @@
 'use strict';
+require('module-alias/register');
+
 
 /**
  * comic-converter.js — Konverter data Endpoints Comic/ → format internal comic-seed.js

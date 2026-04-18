@@ -1,4 +1,4 @@
-const {             History             } = require('@models');
+const {              History              } = require('@models');
 
 /**
  * Upsert a history entry.

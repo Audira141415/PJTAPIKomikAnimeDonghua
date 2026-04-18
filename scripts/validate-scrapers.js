@@ -1,4 +1,6 @@
 'use strict';
+require('module-alias/register');
+
 
 const { samehadaku, oploverz } = require('../src/shared/scrapers');
 

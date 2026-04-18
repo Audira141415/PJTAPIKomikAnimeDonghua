@@ -1,10 +1,12 @@
 'use strict';
+require('module-alias/register');
+
 
 require('dotenv').config();
 
 const mongoose = require('mongoose');
-const Manga = require('../src/models/Manga');
-const { env } = require('../src/config/env');
+const { Manga } = require('@models');
+const { env } = require('@core/config/env');
 
 const args = process.argv.slice(2);
 const hasFlag = (flag) => args.includes(flag);

@@ -1,6 +1,6 @@
 'use strict';
 
-const {             Manga, Episode             } = require('@models');
+const {              Manga, Episode              } = require('@models');
 const { success } = require('@core/utils/response');
 const ApiError = require('@core/errors/ApiError');
 

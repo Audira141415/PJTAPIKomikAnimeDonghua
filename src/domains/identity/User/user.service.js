@@ -1,5 +1,5 @@
 const { userRepository: userRepo } = require('@repositories');
-const {             Review, Comment, Collection             } = require('@models');
+const {              Review, Comment, Collection              } = require('@models');
 const { reviewRepository: reviewRepo } = require('@repositories');
 const { commentRepository: commentRepo } = require('@repositories');
 const ApiError = require('@core/errors/ApiError');

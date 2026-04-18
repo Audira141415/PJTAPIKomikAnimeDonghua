@@ -1,5 +1,5 @@
 const slugify = require('slugify');
-const {             Manga, Episode, Season             } = require('@models');
+const {              Manga, Episode, Season              } = require('@models');
 const cache = require('@core/utils/cache');
 const { env } = require('@core/config/env');
 const ApiError = require('@core/errors/ApiError');

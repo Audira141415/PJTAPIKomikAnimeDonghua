@@ -1,7 +1,7 @@
 const path = require('path');
 const fs = require('fs/promises');
 const axios = require('axios');
-const {             Manga, History             } = require('@models');
+const {              Manga, History              } = require('@models');
 const { chapterRepository: chapterRepo } = require('@repositories');
 const ApiError = require('@core/errors/ApiError');
 const { paginate, paginateMeta } = require('@core/utils/paginate');

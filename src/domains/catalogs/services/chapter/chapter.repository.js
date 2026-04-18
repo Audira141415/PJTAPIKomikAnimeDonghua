@@ -1,4 +1,4 @@
-const {             Chapter             } = require('@models');
+const {              Chapter              } = require('@models');
 
 const create = (data) => Chapter.create(data);
 

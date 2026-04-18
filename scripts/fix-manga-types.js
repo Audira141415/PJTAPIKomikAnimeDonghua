@@ -1,4 +1,6 @@
 'use strict';
+require('module-alias/register');
+
 /**
  * fix-manga-types.js
  * 
@@ -10,8 +12,8 @@
 
 require('dotenv').config();
 const mongoose = require('mongoose');
-const { env }  = require('../src/config/env');
-const Manga    = require('../src/models/Manga');
+const { env }  = require('@core/config/env');
+const { Manga } = require('@models');
 
 // ── Daftar koreksi berdasarkan keyword judul ──────────────────────────────────
 const MANHWA_KEYWORDS = [

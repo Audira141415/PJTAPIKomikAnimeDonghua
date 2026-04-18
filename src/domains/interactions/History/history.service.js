@@ -1,4 +1,4 @@
-const {             Manga, Chapter, Episode             } = require('@models');
+const {              Manga, Chapter, Episode              } = require('@models');
 const { historyRepository: historyRepo } = require('@repositories');
 const ApiError    = require('@core/errors/ApiError');
 const { paginate, paginateMeta } = require('@core/utils/paginate');

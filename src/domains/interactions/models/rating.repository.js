@@ -1,4 +1,4 @@
-const {             Rating, Manga             } = require('@models');
+const {              Rating, Manga              } = require('@models');
 
 /**
  * Upsert a user's rating for a series.

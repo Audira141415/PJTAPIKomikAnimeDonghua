@@ -1,3 +1,5 @@
+'use strict';
+require('module-alias/register');
 /**
  * MangaDex Importer — Bahasa Indonesia
  * =====================================
@@ -18,12 +20,12 @@ require('dotenv').config();
 const axios    = require('axios');
 const mongoose = require('mongoose');
 const slugify  = require('slugify');
-const { env }  = require('../src/config/env');
+const { env }  = require('@core/config/env');
 
 // ── Models ────────────────────────────────────────────────────────────────────
-const User    = require('../src/models/User');
-const Manga   = require('../src/models/Manga');
-const Chapter = require('../src/models/Chapter');
+const { User } = require('@models');
+const { Manga } = require('@models');
+const { Chapter } = require('@models');
 
 // ── Config ────────────────────────────────────────────────────────────────────
 const MANGADEX_API   = 'https://api.mangadex.org';

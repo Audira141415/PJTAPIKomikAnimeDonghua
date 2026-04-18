@@ -1,6 +1,6 @@
 'use strict';
 
-const {            Comment            } = require('@models');
+const {             Comment             } = require('@models');
 
 const create = (data) => Comment.create(data);
 

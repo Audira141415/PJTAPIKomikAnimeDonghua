@@ -1,6 +1,6 @@
 'use strict';
 
-const {             Manga, Bookmark, Rating             } = require('@models');
+const {              Manga, Bookmark, Rating              } = require('@models');
 const cache = require('@core/utils/cache');
 
 const invalidateTrendingCaches = async () => {

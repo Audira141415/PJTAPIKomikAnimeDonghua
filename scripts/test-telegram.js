@@ -1,7 +1,8 @@
 'use strict';
+require('module-alias/register');
 
 require('dotenv').config();
-const telegram = require('../src/shared/utils/telegram');
+const telegram = require('@core/utils/telegram');
 
 async function test() {
   console.log('--- TESTING TELEGRAM NOTIFICATION ---');

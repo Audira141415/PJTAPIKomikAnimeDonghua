@@ -1,4 +1,6 @@
 'use strict';
+require('module-alias/register');
+
 
 /**
  * comic-seed.js — Importer data komik dari file JSON format internal.
@@ -48,8 +50,8 @@ const path     = require('path');
 const mongoose = require('mongoose');
 const slugify  = require('slugify');
 
-const { env }  = require('../src/config/env');
-const Manga    = require('../src/models/Manga');
+const { env }  = require('@core/config/env');
+const { Manga } = require('@models');
 
 // ── CLI args ──────────────────────────────────────────────────────────────────
 const args    = process.argv.slice(2);

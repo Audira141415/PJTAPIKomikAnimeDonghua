@@ -1,9 +1,10 @@
 'use strict';
+require('module-alias/register');
 
 require('dotenv').config();
 const mongoose = require('mongoose');
-const { mirrorImage } = require('../src/shared/utils/imageDownloader');
-const Manga = require('../src/models/Manga');
+const { mirrorImage } = require('@core/utils/imageDownloader');
+const { Manga } = require('@models');
 
 const CONCURRENCY = 10; // Download 10 gambar bersamaan
 const BATCH_SIZE = 100;

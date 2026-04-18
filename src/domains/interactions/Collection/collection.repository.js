@@ -1,4 +1,4 @@
-const {             Collection             } = require('@models');
+const {              Collection              } = require('@models');
 
 const create = (payload) => Collection.create(payload);
 

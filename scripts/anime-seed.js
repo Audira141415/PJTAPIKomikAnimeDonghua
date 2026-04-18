@@ -1,13 +1,15 @@
 'use strict';
+require('module-alias/register');
+
 
 require('dotenv').config();
 
 const mongoose = require('mongoose');
 const slugify = require('slugify');
 
-const { env } = require('../src/config/env');
-const Manga = require('../src/models/Manga');
-const User = require('../src/models/User');
+const { env } = require('@core/config/env');
+const { Manga } = require('@models');
+const { User } = require('@models');
 
 const SAMPLE_ANIME = [
   {

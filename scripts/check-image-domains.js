@@ -1,7 +1,8 @@
 'use strict';
+require('module-alias/register');
 require('dotenv').config();
 const mongoose = require('mongoose');
-const Manga = require('../src/models/Manga');
+const { Manga } = require('@models');
 
 async function run() {
   await mongoose.connect(process.env.MONGO_URI);

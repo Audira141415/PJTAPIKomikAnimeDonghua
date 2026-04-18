@@ -1,18 +1,20 @@
 const fs = require('fs');
 const path = require('path');
 
-const targetDirs = ['src', 'apps'];
+const targetDirs = ['scripts', 'src', 'apps'];
 
 function walk(dir) {
     let results = [];
     const list = fs.readdirSync(dir);
     list.forEach(file => {
-        file = path.join(dir, file);
-        const stat = fs.statSync(file);
+        const fullPath = path.join(dir, file);
+        const stat = fs.statSync(fullPath);
         if (stat && stat.isDirectory()) {
-            results = results.concat(walk(file));
+            if (file !== 'research' && file !== 'windows' && file !== 'deployment') {
+               results = results.concat(walk(fullPath));
+            }
         } else if (file.endsWith('.js')) {
-            results.push(file);
+            results.push(fullPath);
         }
     });
     return results;
@@ -40,19 +42,14 @@ const replacements = [
     { pattern: /require\(['"]\.\/context['"]\)/g, replacement: "require('@core/config/context')" },
     { pattern: /require\(['"].*config\/logger['"]\)/g, replacement: "require('@core/utils/logger')" },
     { pattern: /require\(['"].*config\/mailer['"]\)/g, replacement: "require('@core/utils/mailer')" },
-    { pattern: /require\(['"]\.\.\/\.\.\/\.\.\/\.\.\/utils\/([^'" ]+)['"]\)/g, replacement: "require('@core/utils/$1')" },
-    { pattern: /require\(['"]\.\.\/\.\.\/\.\.\/utils\/([^'" ]+)['"]\)/g, replacement: "require('@core/utils/$1')" },
-    { pattern: /require\(['"]\.\.\/\.\.\/utils\/([^'" ]+)['"]\)/g, replacement: "require('@core/utils/$1')" },
-    { pattern: /require\(['"]\.\.\/utils\/([^'" ]+)['"]\)/g, replacement: "require('@core/utils/$1')" },
-    { pattern: /require\(['"]\.\.\/\.\.\/\.\.\/\.\.\/config\/env['"]\)/g, replacement: "require('@core/config/env')" },
-    { pattern: /require\(['"]\.\.\/\.\.\/\.\.\/config\/env['"]\)/g, replacement: "require('@core/config/env')" },
-    { pattern: /require\(['"]\.\.\/\.\.\/config\/env['"]\)/g, replacement: "require('@core/config/env')" },
-    { pattern: /require\(['"]\.\.\/config\/env['"]\)/g, replacement: "require('@core/config/env')" },
-    { pattern: /require\(['"]\.\.\/config\/redis['"]\)/g, replacement: "require('@core/database/redis')" },
-    { pattern: /require\(['"]\.\.\/\.\.\/config\/redis['"]\)/g, replacement: "require('@core/database/redis')" },
-    { pattern: /require\(['"].*config\/swagger['"]\)/g, replacement: "require('@core/config/swagger')" },
-    { pattern: /require\(['"].*config\/context['"]\)/g, replacement: "require('@core/config/context')" },
     
+    // Deep relative paths cleanups
+    { pattern: /require\(['"]\.{2,}\/src\/config\/env['"]\)/g, replacement: "require('@core/config/env')" },
+    { pattern: /require\(['"]\.{2,}\/src\/shared\/utils\/telegram['"]\)/g, replacement: "require('@core/utils/telegram')" },
+    { pattern: /require\(['"]\.{2,}\/src\/shared\/utils\/cache['"]\)/g, replacement: "require('@core/utils/cache')" },
+    { pattern: /require\(['"]\.{2,}\/src\/shared\/utils\/response['"]\)/g, replacement: "require('@core/utils/response')" },
+    { pattern: /require\(['"]\.{2,}\/src\/shared\/utils\/catchAsync['"]\)/g, replacement: "require('@core/utils/catchAsync')" },
+
     // 3. Models Registry (Centralized)
     { pattern: /const\s+\{?([A-Za-z0-9_,\s]+)\}?\s*=\s*require\(['"].*models(\/index)?['"]\);?/g, replacement: "const { $1 } = require('@models');" },
     { pattern: /const\s+([A-Za-z0-9_]+)\s*=\s*require\(['"].*models\/([^'\" ]+)['"]\);?/g, replacement: "const { $1 } = require('@models');" },
@@ -64,10 +61,6 @@ const replacements = [
 
     // 5. Centralized Repositories
     { pattern: /const\s+([A-Za-z0-9_]+)\s*=\s*require\(['"].*repositories\/([^'\" ]+?)(\.repository)?['"]\);?/g, replacement: (match, p1, p2) => `const { ${p2.replace(/\./g, '')}Repository: ${p1} } = require('@repositories');` },
-    { pattern: /const\s+([A-Za-z0-9_]+)\s*=\s*require\(['"]\.\/([^'\" ]+?)\.repository['"]\);?/g, replacement: (match, p1, p2) => `const { ${p2.replace(/\./g, '')}Repository: ${p1} } = require('@repositories');` },
-    
-    // 6. Local Repositories fallback (if any left)
-    { pattern: /require\(['"].*repositories\/([^'" ]+)['"]\)/g, replacement: "require('@repositories')" },
 ];
 
 targetDirs.forEach(root => {
@@ -76,6 +69,8 @@ targetDirs.forEach(root => {
     files.forEach(file => {
         if (file.includes('modelRegistry.js')) return;
         if (file.includes('repositoryRegistry.js')) return;
+        if (file.includes('module-alias')) return;
+        
         let content = fs.readFileSync(file, 'utf8');
         let changed = false;
         
@@ -85,6 +80,12 @@ targetDirs.forEach(root => {
                 changed = true;
             }
         });
+
+        // Add module-alias/register to scripts folder files
+        if (file.startsWith('scripts' + path.sep) && !content.includes('module-alias/register')) {
+            content = "'use strict';\nrequire('module-alias/register');\n" + content.replace(/^['"]use strict['"];?\n?/, '');
+            changed = true;
+        }
         
         if (changed) {
             fs.writeFileSync(file, content, 'utf8');

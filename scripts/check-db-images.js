@@ -1,9 +1,11 @@
+'use strict';
+require('module-alias/register');
 require('dotenv').config();
 const mongoose = require('mongoose');
 
 async function check() {
   await mongoose.connect(process.env.MONGO_URI);
-  const Manga = require('../src/models/Manga');
+  const { Manga } = require('@models');
   
   // Cek record yang sudah ter-mirror (ada /uploads di coverImage)
   const mirrored = await Manga.findOne({ coverImage: /^\/uploads/ }, 'title coverImage type');

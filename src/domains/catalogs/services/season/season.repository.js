@@ -1,4 +1,4 @@
-const {             Season             } = require('@models');
+const {              Season              } = require('@models');
 
 const create = (data) => Season.create(data);
 

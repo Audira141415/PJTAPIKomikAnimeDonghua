@@ -1,5 +1,5 @@
-const {            Tag            } = require('@models');
-const {            Manga            } = require('@models');
+const {             Tag             } = require('@models');
+const {             Manga             } = require('@models');
 
 /**
  * Find all tags sorted by name, with optional name prefix filter.

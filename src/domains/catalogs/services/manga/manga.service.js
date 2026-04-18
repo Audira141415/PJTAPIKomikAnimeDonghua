@@ -3,7 +3,7 @@ const { ratingRepository: ratingRepo } = require('@repositories');
 const ApiError   = require('@core/errors/ApiError');
 const { SERIES_TYPE_CATEGORY } = require('@core/constants/status');
 const { paginate, paginateMeta } = require('@core/utils/paginate');
-const {             Bookmark, History, Chapter, Episode, Season, Review             } = require('@models');
+const {              Bookmark, History, Chapter, Episode, Season, Review              } = require('@models');
 const { invalidateTrendingCaches } = require('../trending/trending.service');
 
 const triggerTrendingInvalidation = () => {

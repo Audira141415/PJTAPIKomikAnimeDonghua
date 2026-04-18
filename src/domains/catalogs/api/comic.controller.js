@@ -1,6 +1,6 @@
 'use strict';
 
-const {             Manga             } = require('@models');
+const {              Manga              } = require('@models');
 const catchAsync = require('@core/utils/catchAsync');
 const { success } = require('@core/utils/response');
 const ApiError = require('@core/errors/ApiError');
@@ -316,7 +316,7 @@ const byGenre = catchAsync(async (req, res) => {
 //  GET /comic/genres  — Daftar semua genre/tag
 // ============================================================================
 const genres = catchAsync(async (req, res) => {
-  const {            Manga            } = require('@models');
+  const {             Manga             } = require('@models');
   const result = await Manga.aggregate([
     { $unwind: '$genres' },
     { $group: { _id: '$genres', count: { $sum: 1 } } },
@@ -1054,7 +1054,7 @@ const fullstats = catchAsync(async (req, res) => {
   const cached = await cache.get(cacheKey);
   if (cached) return success(res, cached);
 
-  const {             Chapter, Tag, Bookmark, Review             } = require('@models');
+  const {              Chapter, Tag, Bookmark, Review              } = require('@models');
 
   const [totalManga, totalChapters, totalTags, totalBookmarks, totalReviews, topRated, mostViewed] =
     await Promise.all([

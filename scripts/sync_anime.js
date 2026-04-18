@@ -1,9 +1,10 @@
 'use strict';
+require('module-alias/register');
 
 require('dotenv').config();
 const mongoose = require('mongoose');
-const logger = require('../src/config/logger');
-const { Manga } = require('../src/models');
+const logger = require('@core/utils/logger');
+const {  Manga  } = require('@models');
 const axios = require('axios');
 
 async function syncAnime() {

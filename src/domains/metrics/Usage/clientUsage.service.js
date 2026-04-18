@@ -3,8 +3,8 @@
 const crypto = require('crypto');
 const bcrypt = require('bcrypt');
 const mongoose = require('mongoose');
-const {            ClientApp            } = require('@models');
-const {            UsageLog            } = require('@models');
+const {             ClientApp             } = require('@models');
+const {             UsageLog             } = require('@models');
 const ApiError = require('@core/errors/ApiError');
 const { env } = require('@core/config/env');
 

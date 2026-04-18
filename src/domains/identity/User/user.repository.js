@@ -1,4 +1,4 @@
-const {             User             } = require('@models');
+const {              User              } = require('@models');
 
 const findById = (id) => User.findById(id).lean();
 

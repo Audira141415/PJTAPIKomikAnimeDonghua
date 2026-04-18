@@ -1,4 +1,4 @@
-const {             Bookmark             } = require('@models');
+const {              Bookmark              } = require('@models');
 
 const findOne = (userId, mangaId) =>
   Bookmark.findOne({ user: userId, manga: mangaId });

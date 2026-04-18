@@ -1,3 +1,5 @@
+'use strict';
+require('module-alias/register');
 #!/usr/bin/env node
 /**
  * Verify Endpoint Monitor Setup

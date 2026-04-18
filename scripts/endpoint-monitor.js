@@ -1,9 +1,10 @@
 'use strict';
+require('module-alias/register');
 
 require('dotenv').config();
 const os = require('os');
 const { execSync } = require('child_process');
-const telegram = require('../src/shared/utils/telegram');
+const telegram = require('@core/utils/telegram');
 const Redis = require('ioredis');
 
 const BASE_URL = (process.env.ENDPOINT_MONITOR_BASE_URL || 'http://localhost:3000').replace(/\/$/, '');

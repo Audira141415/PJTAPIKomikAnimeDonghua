@@ -1,4 +1,6 @@
 'use strict';
+require('module-alias/register');
+
 
 require('dotenv').config();
 
@@ -6,7 +8,7 @@ const fs = require('fs');
 const path = require('path');
 const mongoose = require('mongoose');
 
-const { env } = require('../src/config/env');
+const { env } = require('@core/config/env');
 const { syncAnimeSnapshot } = require('../src/modules/jobs/animeImport.service');
 const {
   createEmptyCheckpoint,

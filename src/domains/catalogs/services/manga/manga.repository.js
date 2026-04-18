@@ -1,4 +1,4 @@
-const {             Manga             } = require('@models');
+const {              Manga              } = require('@models');
 const slugify = require('slugify');
 const cache = require('@core/utils/cache');
 
