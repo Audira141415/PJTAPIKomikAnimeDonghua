@@ -14,7 +14,7 @@ const cacheMiddleware = (ttl = 300) => {
 
     // Bypass cache if Cache-Control: no-cache is present
     if (req.header('Cache-Control') === 'no-cache') {
-      logger.debug(`[Cache] Bypass requested for ${req.originalUrl}`);
+      logger.info(`[Cache] Bypass requested for ${req.originalUrl}`);
       return next();
     }
 
@@ -27,14 +27,14 @@ const cacheMiddleware = (ttl = 300) => {
       const cachedResponse = await redis.get(key);
 
       if (cachedResponse) {
-        logger.debug(`[Cache] HIT: ${key}`);
+        logger.info(`[Cache] HIT: ${key}`);
         res.setHeader('X-Cache', 'HIT');
         res.setHeader('Content-Type', 'application/json');
         return res.send(cachedResponse);
       }
 
       // If MISS, intercept res.json to store the result
-      logger.debug(`[Cache] MISS: ${key}`);
+      logger.info(`[Cache] MISS: ${key}`);
       res.setHeader('X-Cache', 'MISS');
 
       const originalJson = res.json;
@@ -47,6 +47,7 @@ const cacheMiddleware = (ttl = 300) => {
           setImmediate(async () => {
             try {
               await redis.set(key, JSON.stringify(data), 'EX', ttl);
+              logger.info(`[Cache] STORED: ${key} (TTL: ${ttl}s)`);
             } catch (err) {
               logger.warn(`[Cache] Failed to store ${key}: ${err.message}`);
             }
