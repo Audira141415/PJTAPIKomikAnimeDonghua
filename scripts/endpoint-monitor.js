@@ -12,13 +12,16 @@ const REDIS_URL = process.env.REDIS_URL || 'redis://localhost:6379';
 
 const redis = new Redis(REDIS_URL);
 
+// --- ARGS ---
+const args = process.argv.slice(2);
+const IS_HEARTBEAT = args.includes('--heartbeat');
+
 /**
- * 🕵️ SYSTEM SENTINEL (Hidden Features Implementation)
+ * 🕵️ SYSTEM SENTINEL (Enhanced)
  */
 
 async function getDiskUsage() {
   try {
-    // Linux/Unix command for disk usage
     const stdout = execSync("df -h / | tail -1 | awk '{print $5}'").toString().trim();
     return parseInt(stdout.replace('%', ''), 10);
   } catch (e) {
@@ -29,11 +32,9 @@ async function getDiskUsage() {
 async function getTrafficStats() {
   const currentHits = await redis.get('stats:total_requests') || 0;
   const lastHourHits = await redis.get('stats:last_hour_requests') || 0;
-  await redis.set('stats:last_hour_requests', currentHits, 'EX', 3600);
-  
   return {
-    total: currentHits,
-    increase: currentHits - lastHourHits
+    total: parseInt(currentHits, 10),
+    increase: parseInt(currentHits, 10) - parseInt(lastHourHits, 10)
   };
 }
 
@@ -44,43 +45,72 @@ const TARGETS = [
 ];
 
 async function runSentinel() {
-  console.log('--- SENTINEL MONITOR STARTING ---');
+  console.log(`--- SENTINEL MONITOR STARTING (Heartbeat: ${IS_HEARTBEAT}) ---`);
+  
   let issues = [];
   let systemAlerts = [];
+  let recoveryNotifs = [];
 
   // 1. Endpoint Checking
   for (const target of TARGETS) {
+    const redisKey = `monitor:status:${target.name.toLowerCase().replace(/\s/g, '_')}`;
+    const lastStatus = await redis.get(redisKey); // 'ok' or 'fail'
+    
+    let currentStatus = 'ok';
+    let errorMsg = '';
+
     try {
       const start = Date.now();
-      const res = await fetch(`${BASE_URL}${target.path}`, { timeout: 8000 });
+      const res = await fetch(`${BASE_URL}${target.path}`, { signal: AbortSignal.timeout(8000) });
       const latency = Date.now() - start;
 
       if (!res.ok) {
-        issues.push(`❌ <b>${target.name}</b>: Status ${res.status}`);
-      } else if (latency > 2000) {
-        systemAlerts.push(`🐢 <b>Latency Warning</b>: ${target.name} lambat (${latency}ms)`);
+        currentStatus = 'fail';
+        errorMsg = `Status ${res.status}`;
+      } else if (latency > 3000) {
+        systemAlerts.push(`🐢 <b>Latency Warning</b>: ${target.name} slow (${latency}ms)`);
       }
     } catch (err) {
-      issues.push(`❌ <b>${target.name}</b>: UNREACHABLE (${err.message})`);
+      currentStatus = 'fail';
+      errorMsg = `UNREACHABLE (${err.message})`;
+    }
+
+    // Logic: State Transition
+    if (currentStatus === 'fail') {
+      issues.push(`❌ <b>${target.name}</b>: ${errorMsg}`);
+      await redis.set(redisKey, 'fail', 'EX', 86400);
+    } else {
+      if (lastStatus === 'fail') {
+        recoveryNotifs.push(`✅ <b>${target.name}</b>: RESTORED (Running normally)`);
+      }
+      await redis.set(redisKey, 'ok', 'EX', 86400);
     }
   }
 
-  // 2. Disk Usage Check (Hidden Feature)
+  // 2. System Metrics
   const disk = await getDiskUsage();
   if (disk > 85) {
-    systemAlerts.push(`💾 <b>Disk Full Warning</b>: Hardisk server sudah ${disk}%! Bersihkan logs segera.`);
+    systemAlerts.push(`💾 <b>Disk Full Warning</b>: Hardisk server sudah ${disk}%!`);
   }
 
-  // 3. Traffic Anomaly Detection (Hidden Feature)
   const traffic = await getTrafficStats();
-  if (traffic.increase > 5000) { // Threshold ledakan traffic
-    systemAlerts.push(`🚀 <b>Traffic Surge</b>: Ada lonjakan ${traffic.increase} request dalam 1 jam terakhir!`);
+
+  // --- NOTIFICATION LOGIC ---
+  
+  // A. Recovery Notification (Send immediately if something is fixed)
+  if (recoveryNotifs.length > 0) {
+    await telegram.sendAlert(
+      'System Restored',
+      `<b>Layanan kembali normal:</b>\n${recoveryNotifs.join('\n')}`,
+      'success'
+    );
   }
 
-  // --- LOGIC NOTIFIKASI ---
-  
-  // Jika ada masalah fatal
+  // B. Failure Notification (Send if currently failing)
   if (issues.length > 0) {
+    // We send every time it fails (up to scheduler frequency) 
+    // but maybe we should throttle it? 
+    // To keep it simple for now, we send if issues found.
     await telegram.sendAlert(
       'System Alert: Issues Detected',
       `<b>Masalah ditemukan pada:</b>\n${issues.join('\n')}`,
@@ -88,11 +118,25 @@ async function runSentinel() {
     );
   } 
   
-  // Jika ada peringatan sistem (tapi masih hidup)
-  if (systemAlerts.length > 0 && issues.length === 0) {
+  // C. Heartbeat / Morning Report
+  if (IS_HEARTBEAT && issues.length === 0) {
+    const message = [
+      `🌟 <b>System Health:</b> <code>Perfectly Normal</code>`,
+      `📦 <b>Endpoints:</b> <code>${TARGETS.length} OK</code>`,
+      `💾 <b>Disk Usage:</b> <code>${disk}%</code>`,
+      `📈 <b>Total Traffic:</b> <code>${traffic.total} req</code>`,
+      `📊 <b>Hourly Growth:</b> <code>${traffic.increase > 0 ? '+' : ''}${traffic.increase} req/h</code>`
+    ].join('\n');
+
+    await telegram.sendAlert('System Heartbeat', message, 'info');
+  }
+
+  // D. System Alerts (Performance warnings etc.)
+  if (systemAlerts.length > 0 && issues.length === 0 && !IS_HEARTBEAT) {
+    // Only send performance alerts if no heartbeat (heartbeat already includes disk etc)
     await telegram.sendAlert(
-      'System Warning: Performance',
-      `<b>Optimasi diperlukan:</b>\n${systemAlerts.join('\n')}`,
+      'System Performance Warning',
+      `${systemAlerts.join('\n')}`,
       'warning'
     );
   }

@@ -57,6 +57,10 @@ function buildScraperArgs(jobName, jobData = {}) {
     args.push('--dry-run');
   }
 
+  if (jobData.isHeartbeat) {
+    args.push('--heartbeat');
+  }
+
   return args;
 }
 
