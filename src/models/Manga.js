@@ -245,11 +245,20 @@ mangaSchema.index(
   }
 );
 
-mangaSchema.statics.getDiscoveryFilter = function () {
-  return {
+mangaSchema.statics.getDiscoveryFilter = function (opts = {}) {
+  const filter = {
     title: { $exists: true, $ne: '', $nin: ['Unknown', 'unknown', 'null', 'Null'] },
     coverImage: { $exists: true, $ne: '', $ne: null },
   };
+
+  if (opts.category) {
+    filter.contentCategory = opts.category;
+  }
+  if (opts.type) {
+    filter.type = opts.type;
+  }
+
+  return filter;
 };
 
 const ANIMATION_TYPES = ['anime', 'donghua', 'movie', 'ona'];

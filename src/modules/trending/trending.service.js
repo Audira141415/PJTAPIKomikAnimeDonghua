@@ -7,7 +7,7 @@ const invalidateTrendingCaches = async () => {
   await Promise.all([
     cache.delPattern('trending:bookmarks:*'),
     cache.delPattern('popular:*'),
-    cache.delPattern('latest:manga:*'),
+    cache.delPattern('latest:*'),
   ]);
 };
 
@@ -15,21 +15,27 @@ const invalidateTrendingCaches = async () => {
  * Get trending manga by bookmarks in a given period
  * @param {string} period - 'week', 'month', 'all'
  * @param {number} limit - Number of results
- * @returns {Promise<Array>}
+ * @param {string} type - Original requested type or category
+ * @returns {Promise<Object>}
  */
 const getTrendingByBookmarks = async (period = 'week', limit = 10, type = null) => {
   // Resolve category aliases
   let categoryFilter = type;
   let typeFilter = null;
+  let exclusions = null;
+
   if (type === 'anime') {
     categoryFilter = 'animation';
-    typeFilter = { $ne: 'donghua' };
+    typeFilter = { $nin: ['donghua'] };
+    exclusions = { slug: { $not: /donghua|anichin|anix|dong-hua|china|chinese/ } };
   } else if (type === 'donghua') {
     categoryFilter = 'animation';
     typeFilter = 'donghua';
-  } else if (type === 'manga' || type === 'manhwa' || type === 'manhua') {
+  } else if (type === 'manga' || type === 'manhwa' || type === 'manhua' || type === 'comic') {
     categoryFilter = 'comic';
-    if (type !== 'manga') typeFilter = type;
+    if (type === 'manhwa' || type === 'manhua') typeFilter = type;
+  } else if (type === 'animation') {
+    categoryFilter = 'animation';
   }
 
   const cacheKey = `trending:bookmarks:${type || 'all'}:${period}:${limit}`;
@@ -44,7 +50,7 @@ const getTrendingByBookmarks = async (period = 'week', limit = 10, type = null) 
   } else if (period === 'month') {
     cutoffDate.setMonth(cutoffDate.getMonth() - 1);
   } else if (period === 'all') {
-    cutoffDate = new Date('2000-01-01'); // Very old date
+    cutoffDate = new Date('2000-01-01');
   }
 
   // Aggregate trending by recent bookmarks
@@ -60,6 +66,7 @@ const getTrendingByBookmarks = async (period = 'week', limit = 10, type = null) 
         'mangaData.coverImage': { $exists: true, $ne: '', $ne: null },
         ...(categoryFilter ? { 'mangaData.contentCategory': categoryFilter } : {}),
         ...(typeFilter ? { 'mangaData.type': typeFilter } : {}),
+        ...(exclusions ? { 'mangaData.slug': exclusions.slug } : {}),
       },
     },
     {
@@ -80,9 +87,8 @@ const getTrendingByBookmarks = async (period = 'week', limit = 10, type = null) 
 
   // FALLBACK: If fresh install has no bookmarks, fallback to top by views
   if (trending.length === 0) {
-    const filter = Manga.getDiscoveryFilter();
-    if (categoryFilter) filter.contentCategory = categoryFilter;
-    if (typeFilter)     filter.type = typeFilter;
+    const filter = Manga.getDiscoveryFilter({ category: categoryFilter, type: typeFilter });
+    if (exclusions?.slug) filter.slug = exclusions.slug;
     const fallback = await Manga.find(filter)
       .sort({ views: -1 })
       .limit(limit)
@@ -94,7 +100,7 @@ const getTrendingByBookmarks = async (period = 'week', limit = 10, type = null) 
   }
 
   const result = { data: trending, meta: { period, limit, count: trending.length } };
-  await cache.set(cacheKey, result, 60 * 60); // 1 hour cache for trending
+  await cache.set(cacheKey, result, 60 * 60);
   return result;
 };
 
@@ -102,21 +108,27 @@ const getTrendingByBookmarks = async (period = 'week', limit = 10, type = null) 
  * Get most popular manga by a given metric
  * @param {string} metric - 'bookmarks', 'ratings', 'views', 'avg_rating'
  * @param {number} limit - Number of results
- * @returns {Promise<Array>}
+ * @param {string} type - Original requested type or category
+ * @returns {Promise<Object>}
  */
 const getPopularByMetric = async (metric = 'bookmarks', limit = 10, type = null) => {
   // Resolve category aliases
   let categoryFilter = type;
   let typeFilter = null;
+  let exclusions = null;
+
   if (type === 'anime') {
     categoryFilter = 'animation';
-    typeFilter = { $ne: 'donghua' };
+    typeFilter = { $nin: ['donghua'] };
+    exclusions = { slug: { $not: /donghua|anichin|anix|dong-hua|china|chinese/ } };
   } else if (type === 'donghua') {
     categoryFilter = 'animation';
     typeFilter = 'donghua';
-  } else if (type === 'manga' || type === 'manhwa' || type === 'manhua') {
+  } else if (type === 'manga' || type === 'manhwa' || type === 'manhua' || type === 'comic') {
     categoryFilter = 'comic';
-    if (type !== 'manga') typeFilter = type;
+    if (type === 'manhwa' || type === 'manhua') typeFilter = type;
+  } else if (type === 'animation') {
+    categoryFilter = 'animation';
   }
 
   const cacheKey = `popular:${type || 'all'}:${metric}:${limit}`;
@@ -126,7 +138,6 @@ const getPopularByMetric = async (metric = 'bookmarks', limit = 10, type = null)
   let result;
 
   if (metric === 'bookmarks') {
-    // Count bookmarks per manga
     result = await Bookmark.aggregate([
       { $group: { _id: '$manga', bookmarkCount: { $sum: 1 } } },
       { $sort: { bookmarkCount: -1 } },
@@ -138,6 +149,7 @@ const getPopularByMetric = async (metric = 'bookmarks', limit = 10, type = null)
           'mangaData.coverImage': { $exists: true, $ne: '', $ne: null },
           ...(categoryFilter ? { 'mangaData.contentCategory': categoryFilter } : {}),
           ...(typeFilter ? { 'mangaData.type': typeFilter } : {}),
+          ...(exclusions ? { 'mangaData.slug': exclusions.slug } : {}),
         },
       },
       {
@@ -156,7 +168,6 @@ const getPopularByMetric = async (metric = 'bookmarks', limit = 10, type = null)
       },
     ]);
   } else if (metric === 'ratings') {
-    // Count ratings per manga
     result = await Rating.aggregate([
       { $group: { _id: '$series', ratingCount: { $sum: 1 }, avgScore: { $avg: '$score' } } },
       { $sort: { ratingCount: -1 } },
@@ -165,10 +176,10 @@ const getPopularByMetric = async (metric = 'bookmarks', limit = 10, type = null)
       { $unwind: '$mangaData' },
       {
         $match: {
-          'mangaData.title': { $exists: true, $ne: '', $nin: ['Unknown', 'unknown', 'null', 'Null'] },
           'mangaData.coverImage': { $exists: true, $ne: '', $ne: null },
-        ...(categoryFilter ? { 'mangaData.contentCategory': categoryFilter } : {}),
-        ...(typeFilter ? { 'mangaData.type': typeFilter } : {}),
+          ...(categoryFilter ? { 'mangaData.contentCategory': categoryFilter } : {}),
+          ...(typeFilter ? { 'mangaData.type': typeFilter } : {}),
+          ...(exclusions ? { 'mangaData.slug': exclusions.slug } : {}),
         },
       },
       {
@@ -188,19 +199,16 @@ const getPopularByMetric = async (metric = 'bookmarks', limit = 10, type = null)
       },
     ]);
   } else if (metric === 'views') {
-    // Top by views (direct from Manga model)
-    const filter = Manga.getDiscoveryFilter();
-    if (categoryFilter) filter.contentCategory = categoryFilter;
-    if (typeFilter) filter.type = typeFilter;
+    const filter = Manga.getDiscoveryFilter({ category: categoryFilter, type: typeFilter });
+    if (exclusions?.slug) filter.slug = exclusions.slug;
     result = await Manga.find(filter)
       .sort({ views: -1 })
       .limit(limit)
       .select('title slug type contentCategory coverImage status rating views');
   } else if (metric === 'avg_rating') {
-    // Top by average rating
-    const filter = { ...Manga.getDiscoveryFilter(), ratingCount: { $gt: 0 } };
-    if (categoryFilter) filter.contentCategory = categoryFilter;
-    if (typeFilter) filter.type = typeFilter;
+    const filter = Manga.getDiscoveryFilter({ category: categoryFilter, type: typeFilter });
+    filter.ratingCount = { $gt: 0 };
+    if (exclusions?.slug) filter.slug = exclusions.slug;
     result = await Manga.find(filter)
       .sort({ rating: -1 })
       .limit(limit)
@@ -209,9 +217,8 @@ const getPopularByMetric = async (metric = 'bookmarks', limit = 10, type = null)
 
   // FALLBACK: If fresh install has no bookmarks/ratings, fallback to top by views
   if ((metric === 'bookmarks' || metric === 'ratings') && (!result || result.length === 0)) {
-    const filter = Manga.getDiscoveryFilter();
-    if (categoryFilter) filter.contentCategory = categoryFilter;
-    if (typeFilter) filter.type = typeFilter;
+    const filter = Manga.getDiscoveryFilter({ category: categoryFilter, type: typeFilter });
+    if (exclusions?.slug) filter.slug = exclusions.slug;
     result = await Manga.find(filter)
       .sort({ views: -1 })
       .limit(limit)
@@ -220,44 +227,49 @@ const getPopularByMetric = async (metric = 'bookmarks', limit = 10, type = null)
 
   const data = result || [];
   const payload = { data, meta: { metric, limit, count: data.length, isFallback: data.length > 0 && (!result || result.length === 0) } };
-  await cache.set(cacheKey, payload, 60 * 60); // 1 hour cache
+  await cache.set(cacheKey, payload, 60 * 60);
   return payload;
 };
 
 /**
  * Get latest manga (recently added or newly updated)
  * @param {number} limit
- * @returns {Promise<Array>}
+ * @param {string} type - Original requested type or category
+ * @returns {Promise<Object>}
  */
 const getLatestManga = async (limit = 10, type = null) => {
   // Resolve category aliases
   let categoryFilter = type;
   let typeFilter = null;
+  let exclusions = null;
+
   if (type === 'anime') {
     categoryFilter = 'animation';
-    typeFilter = { $ne: 'donghua' };
+    typeFilter = { $nin: ['donghua'] };
+    exclusions = { slug: { $not: /donghua|anichin|anix|dong-hua|china|chinese/ } };
   } else if (type === 'donghua') {
     categoryFilter = 'animation';
     typeFilter = 'donghua';
-  } else if (type === 'manga' || type === 'manhwa' || type === 'manhua') {
+  } else if (type === 'manga' || type === 'manhwa' || type === 'manhua' || type === 'comic') {
     categoryFilter = 'comic';
-    if (type !== 'manga') typeFilter = type;
+    if (type === 'manhwa' || type === 'manhua') typeFilter = type;
+  } else if (type === 'animation') {
+    categoryFilter = 'animation';
   }
 
   const cacheKey = `latest:${type || 'all'}:${limit}`;
   const cached = await cache.get(cacheKey);
   if (cached) return cached;
 
-  const filter = Manga.getDiscoveryFilter();
-  if (categoryFilter) filter.contentCategory = categoryFilter;
-  if (typeFilter) filter.type = typeFilter;
+  const filter = Manga.getDiscoveryFilter({ category: categoryFilter, type: typeFilter });
+  if (exclusions?.slug) filter.slug = exclusions.slug;
   const latest = await Manga.find(filter)
     .sort({ createdAt: -1 })
     .limit(limit)
     .select('title slug type contentCategory coverImage status rating views createdAt');
 
   const payload = { data: latest, meta: { type: 'latest', limit, count: latest.length } };
-  await cache.set(cacheKey, payload, 30 * 60); // 30 min cache for latest
+  await cache.set(cacheKey, payload, 30 * 60);
   return payload;
 };
 
@@ -267,3 +279,4 @@ module.exports = {
   getLatestManga,
   invalidateTrendingCaches,
 };
+

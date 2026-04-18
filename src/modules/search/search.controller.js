@@ -9,7 +9,7 @@ const { paginate, paginateMeta } = require('../../shared/utils/paginate');
 const { searchQuery: searchQuerySchema } = require('./search.validation');
 
 const search = catchAsync(async (req, res) => {
-  const { q, type, genre, status, year_from, year_to, page, limit: limitVal } = searchQuerySchema.parse(req.query);
+  const { q, type, category, genre, status, year_from, year_to, page, limit: limitVal } = searchQuerySchema.parse(req.query);
 
   const { skip, limit: perPage, page: currentPage } = paginate(page, limitVal);
 
@@ -17,6 +17,7 @@ const search = catchAsync(async (req, res) => {
   const cacheKeyParts = [
     `search:${q.toLowerCase().trim()}`,
     type || 'all-types',
+    category || 'all-categories',
     genre || 'all-genres',
     status || 'all-status',
     year_from ? `from${year_from}` : 'from-any',
@@ -30,9 +31,28 @@ const search = catchAsync(async (req, res) => {
 
   // Build MongoDB filter
   const filter = { $text: { $search: q } };
-  if (type) filter.type = type;
+  
+  // Resolve category and type filters
+  if (category === 'comic' || category === 'manga') {
+    filter.contentCategory = 'comic';
+  } else if (category === 'animation' || category === 'anime' || category === 'donghua') {
+    filter.contentCategory = 'animation';
+  }
+
+  if (type) {
+    filter.type = type;
+  }
+
+  // Refine Anime/Donghua separation in search
+  if (type === 'anime' || category === 'anime') {
+    filter.type = { $nin: ['donghua'] };
+    filter.slug = { $not: /donghua|anichin|anix|dong-hua|china|chinese/ };
+  } else if (type === 'donghua' || category === 'donghua') {
+    filter.type = 'donghua';
+  }
+
   if (status) filter.status = status;
-  if (genre) filter.genres = genre; // genres is an array, so this checks array contains
+  if (genre) filter.genres = genre; 
   
   // Year range filter via releasedOn date
   if (year_from || year_to) {

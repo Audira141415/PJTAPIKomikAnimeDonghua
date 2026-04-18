@@ -93,7 +93,7 @@ const terbaru = catchAsync(async (req, res) => {
   if (cached) return success(res, cached);
 
   const { skip, limit: perPage, page: currentPage } = paginate(page, limit);
-  const filter = Manga.getDiscoveryFilter();
+  const filter = Manga.getDiscoveryFilter({ category: 'comic' });
   const [mangas, total] = await Promise.all([
     Manga.find(filter).sort({ createdAt: -1 }).skip(skip).limit(perPage).select(buildMangaSelect),
     Manga.countDocuments(filter),
@@ -108,7 +108,7 @@ const terbaru = catchAsync(async (req, res) => {
 // ============================================================================
 const populer = catchAsync(async (req, res) => {
   const { limit } = pageSchema.parse(req.query);
-  const payload = await trendingService.getPopularByMetric('views', limit);
+  const payload = await trendingService.getPopularByMetric('views', limit, 'comic');
   return success(res, payload);
 });
 
@@ -118,7 +118,7 @@ const populer = catchAsync(async (req, res) => {
 const trending = catchAsync(async (req, res) => {
   const period = z.enum(['week', 'month', 'all']).default('week').parse(req.query.period);
   const limit  = z.coerce.number().int().min(1).max(50).default(10).parse(req.query.limit);
-  const payload = await trendingService.getTrendingByBookmarks(period, limit);
+  const payload = await trendingService.getTrendingByBookmarks(period, limit, 'comic');
   return success(res, payload);
 });
 
@@ -127,7 +127,7 @@ const trending = catchAsync(async (req, res) => {
 // ============================================================================
 const latest = catchAsync(async (req, res) => {
   const limit = z.coerce.number().int().min(1).max(50).default(20).parse(req.query.limit);
-  const payload = await trendingService.getLatestManga(limit);
+  const payload = await trendingService.getLatestManga(limit, 'comic');
   return success(res, payload);
 });
 
@@ -146,7 +146,7 @@ const search = catchAsync(async (req, res) => {
   let results = [];
   let total = 0;
   try {
-    const filter = { $text: { $search: q } };
+    const filter = { $text: { $search: q }, contentCategory: 'comic' };
     if (type)   filter.type   = type;
     if (status) filter.status = status;
     if (genre)  filter.genres = genre;
@@ -163,7 +163,7 @@ const search = catchAsync(async (req, res) => {
 
   // Method 2 — regex fallback if full-text returns nothing
   if (results.length === 0) {
-    const filter = { title: { $regex: q, $options: 'i' } };
+    const filter = { title: { $regex: q, $options: 'i' }, contentCategory: 'comic' };
     if (type)   filter.type   = type;
     if (status) filter.status = status;
     if (genre)  filter.genres = genre;
@@ -176,7 +176,7 @@ const search = catchAsync(async (req, res) => {
 
   // Method 3 — genre-only fallback if still nothing
   if (results.length === 0 && genre) {
-    const filter = { genres: genre };
+    const filter = { genres: genre, contentCategory: 'comic' };
     [results, total] = await Promise.all([
       Manga.find(filter).sort({ rating: -1 }).skip(skip).limit(perPage).select(buildMangaSelect),
       Manga.countDocuments(filter),
@@ -209,7 +209,7 @@ const advancedSearch = catchAsync(async (req, res) => {
   const params = schema.parse(req.query);
   const { skip, limit: perPage, page: currentPage } = paginate(params.page, params.limit);
 
-  const filter = {};
+  const filter = { contentCategory: 'comic' };
   if (params.q)      filter.$text  = { $search: params.q };
   if (params.type)   filter.type   = params.type;
   if (params.status) filter.status = params.status;
@@ -245,7 +245,7 @@ const browse = catchAsync(async (req, res) => {
   const { type, genre, status, order, page, limit } = schema.parse(req.query);
   const { skip, limit: perPage, page: currentPage } = paginate(page, limit);
 
-  const filter = {};
+  const filter = { contentCategory: 'comic' };
   if (type)   filter.type   = type;
   if (genre)  filter.genres = genre;
   if (status) filter.status = status;
@@ -387,7 +387,8 @@ const random = catchAsync(async (req, res) => {
   if (total === 0) return success(res, { data: [] });
 
   const skip = Math.max(0, Math.floor(Math.random() * total) - limit);
-  const mangas = await Manga.find(Manga.getDiscoveryFilter()).skip(skip).limit(limit).select(buildMangaSelect);
+  const filter = Manga.getDiscoveryFilter({ category: 'comic' });
+  const mangas = await Manga.find(filter).skip(skip).limit(limit).select(buildMangaSelect);
   return success(res, { data: mangas });
 });
 
@@ -528,10 +529,10 @@ const homepage = catchAsync(async (req, res) => {
   if (cached) return success(res, cached);
 
   const [popular, latest, trending, newlyAdded] = await Promise.all([
-    trendingService.getPopularByMetric('views', 10),
-    trendingService.getLatestManga(10),
-    trendingService.getTrendingByBookmarks('week', 10),
-    Manga.find(Manga.getDiscoveryFilter()).sort({ createdAt: -1 }).limit(8).select(buildMangaSelect),
+    trendingService.getPopularByMetric('views', 10, 'comic'),
+    trendingService.getLatestManga(10, 'comic'),
+    trendingService.getTrendingByBookmarks('week', 10, 'comic'),
+    Manga.find(Manga.getDiscoveryFilter({ category: 'comic' })).sort({ createdAt: -1 }).limit(8).select(buildMangaSelect),
   ]);
 
   const payload = {
@@ -555,8 +556,11 @@ const recommendations = catchAsync(async (req, res) => {
   const cached = await cache.get(cacheKey);
   if (cached) return success(res, cached);
 
-  // Rekomendasi = highly rated + many views
-  const mangas = await Manga.find({ ...Manga.getDiscoveryFilter(), rating: { $gt: 0 } })
+  // Rekomendasi = highly rated + many views (comics only)
+  const filter = Manga.getDiscoveryFilter({ category: 'comic' });
+  filter.rating = { $gt: 0 };
+  
+  const mangas = await Manga.find(filter)
     .sort({ rating: -1, views: -1 })
     .limit(limit)
     .select(buildMangaSelect);
