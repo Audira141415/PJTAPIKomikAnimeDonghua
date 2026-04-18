@@ -70,7 +70,7 @@ const shield = {
       ip === '127.0.0.1' || 
       ip === '::1' || 
       ip.includes('192.168.100.158') || 
-      ip.startsWith('192.168.100.') // Whitelist all 158 subnet
+      ip.includes('192.168.100.') // Whitelist all 158 subnet (handles ::ffff: prefix)
     );
   }
 };
