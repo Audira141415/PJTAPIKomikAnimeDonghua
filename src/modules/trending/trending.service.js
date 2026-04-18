@@ -18,6 +18,20 @@ const invalidateTrendingCaches = async () => {
  * @returns {Promise<Array>}
  */
 const getTrendingByBookmarks = async (period = 'week', limit = 10, type = null) => {
+  // Resolve category aliases
+  let categoryFilter = type;
+  let typeFilter = null;
+  if (type === 'anime') {
+    categoryFilter = 'animation';
+    typeFilter = { $ne: 'donghua' };
+  } else if (type === 'donghua') {
+    categoryFilter = 'animation';
+    typeFilter = 'donghua';
+  } else if (type === 'manga' || type === 'manhwa' || type === 'manhua') {
+    categoryFilter = 'comic';
+    if (type !== 'manga') typeFilter = type;
+  }
+
   const cacheKey = `trending:bookmarks:${type || 'all'}:${period}:${limit}`;
   const cached = await cache.get(cacheKey);
   if (cached) return cached;
@@ -43,9 +57,9 @@ const getTrendingByBookmarks = async (period = 'week', limit = 10, type = null) 
     { $unwind: '$mangaData' },
     {
       $match: {
-        'mangaData.title': { $exists: true, $ne: '', $nin: ['Unknown', 'unknown', 'null', 'Null'] },
         'mangaData.coverImage': { $exists: true, $ne: '', $ne: null },
-        ...(type ? { 'mangaData.contentCategory': type } : {}),
+        ...(categoryFilter ? { 'mangaData.contentCategory': categoryFilter } : {}),
+        ...(typeFilter ? { 'mangaData.type': typeFilter } : {}),
       },
     },
     {
@@ -64,6 +78,21 @@ const getTrendingByBookmarks = async (period = 'week', limit = 10, type = null) 
     },
   ]);
 
+  // FALLBACK: If fresh install has no bookmarks, fallback to top by views
+  if (trending.length === 0) {
+    const filter = Manga.getDiscoveryFilter();
+    if (categoryFilter) filter.contentCategory = categoryFilter;
+    if (typeFilter)     filter.type = typeFilter;
+    const fallback = await Manga.find(filter)
+      .sort({ views: -1 })
+      .limit(limit)
+      .select('title slug type contentCategory coverImage status rating views');
+    
+    const result = { data: fallback, meta: { period, limit, count: fallback.length, isFallback: true } };
+    await cache.set(cacheKey, result, 60 * 60);
+    return result;
+  }
+
   const result = { data: trending, meta: { period, limit, count: trending.length } };
   await cache.set(cacheKey, result, 60 * 60); // 1 hour cache for trending
   return result;
@@ -76,6 +105,20 @@ const getTrendingByBookmarks = async (period = 'week', limit = 10, type = null) 
  * @returns {Promise<Array>}
  */
 const getPopularByMetric = async (metric = 'bookmarks', limit = 10, type = null) => {
+  // Resolve category aliases
+  let categoryFilter = type;
+  let typeFilter = null;
+  if (type === 'anime') {
+    categoryFilter = 'animation';
+    typeFilter = { $ne: 'donghua' };
+  } else if (type === 'donghua') {
+    categoryFilter = 'animation';
+    typeFilter = 'donghua';
+  } else if (type === 'manga' || type === 'manhwa' || type === 'manhua') {
+    categoryFilter = 'comic';
+    if (type !== 'manga') typeFilter = type;
+  }
+
   const cacheKey = `popular:${type || 'all'}:${metric}:${limit}`;
   const cached = await cache.get(cacheKey);
   if (cached) return cached;
@@ -92,9 +135,9 @@ const getPopularByMetric = async (metric = 'bookmarks', limit = 10, type = null)
       { $unwind: '$mangaData' },
       {
         $match: {
-          'mangaData.title': { $exists: true, $ne: '', $nin: ['Unknown', 'unknown', 'null', 'Null'] },
           'mangaData.coverImage': { $exists: true, $ne: '', $ne: null },
-          ...(type ? { 'mangaData.contentCategory': type } : {}),
+          ...(categoryFilter ? { 'mangaData.contentCategory': categoryFilter } : {}),
+          ...(typeFilter ? { 'mangaData.type': typeFilter } : {}),
         },
       },
       {
@@ -124,7 +167,8 @@ const getPopularByMetric = async (metric = 'bookmarks', limit = 10, type = null)
         $match: {
           'mangaData.title': { $exists: true, $ne: '', $nin: ['Unknown', 'unknown', 'null', 'Null'] },
           'mangaData.coverImage': { $exists: true, $ne: '', $ne: null },
-          ...(type ? { 'mangaData.contentCategory': type } : {}),
+        ...(categoryFilter ? { 'mangaData.contentCategory': categoryFilter } : {}),
+        ...(typeFilter ? { 'mangaData.type': typeFilter } : {}),
         },
       },
       {
@@ -146,7 +190,8 @@ const getPopularByMetric = async (metric = 'bookmarks', limit = 10, type = null)
   } else if (metric === 'views') {
     // Top by views (direct from Manga model)
     const filter = Manga.getDiscoveryFilter();
-    if (type) filter.contentCategory = type;
+    if (categoryFilter) filter.contentCategory = categoryFilter;
+    if (typeFilter) filter.type = typeFilter;
     result = await Manga.find(filter)
       .sort({ views: -1 })
       .limit(limit)
@@ -154,15 +199,27 @@ const getPopularByMetric = async (metric = 'bookmarks', limit = 10, type = null)
   } else if (metric === 'avg_rating') {
     // Top by average rating
     const filter = { ...Manga.getDiscoveryFilter(), ratingCount: { $gt: 0 } };
-    if (type) filter.contentCategory = type;
+    if (categoryFilter) filter.contentCategory = categoryFilter;
+    if (typeFilter) filter.type = typeFilter;
     result = await Manga.find(filter)
       .sort({ rating: -1 })
       .limit(limit)
       .select('title slug type contentCategory coverImage status rating views ratingCount');
   }
 
+  // FALLBACK: If fresh install has no bookmarks/ratings, fallback to top by views
+  if ((metric === 'bookmarks' || metric === 'ratings') && (!result || result.length === 0)) {
+    const filter = Manga.getDiscoveryFilter();
+    if (categoryFilter) filter.contentCategory = categoryFilter;
+    if (typeFilter) filter.type = typeFilter;
+    result = await Manga.find(filter)
+      .sort({ views: -1 })
+      .limit(limit)
+      .select('title slug type contentCategory coverImage status rating views');
+  }
+
   const data = result || [];
-  const payload = { data, meta: { metric, limit, count: data.length } };
+  const payload = { data, meta: { metric, limit, count: data.length, isFallback: data.length > 0 && (!result || result.length === 0) } };
   await cache.set(cacheKey, payload, 60 * 60); // 1 hour cache
   return payload;
 };
@@ -173,12 +230,27 @@ const getPopularByMetric = async (metric = 'bookmarks', limit = 10, type = null)
  * @returns {Promise<Array>}
  */
 const getLatestManga = async (limit = 10, type = null) => {
+  // Resolve category aliases
+  let categoryFilter = type;
+  let typeFilter = null;
+  if (type === 'anime') {
+    categoryFilter = 'animation';
+    typeFilter = { $ne: 'donghua' };
+  } else if (type === 'donghua') {
+    categoryFilter = 'animation';
+    typeFilter = 'donghua';
+  } else if (type === 'manga' || type === 'manhwa' || type === 'manhua') {
+    categoryFilter = 'comic';
+    if (type !== 'manga') typeFilter = type;
+  }
+
   const cacheKey = `latest:${type || 'all'}:${limit}`;
   const cached = await cache.get(cacheKey);
   if (cached) return cached;
 
   const filter = Manga.getDiscoveryFilter();
-  if (type) filter.contentCategory = type;
+  if (categoryFilter) filter.contentCategory = categoryFilter;
+  if (typeFilter) filter.type = typeFilter;
   const latest = await Manga.find(filter)
     .sort({ createdAt: -1 })
     .limit(limit)

@@ -19,7 +19,7 @@ const getCategoriesConfig = (req, res) => {
     updatedBy: 'system',
   };
 
-  return success(res, config);
+  return success(res, { data: config });
 };
 
 /**

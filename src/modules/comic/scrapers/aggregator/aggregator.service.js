@@ -176,13 +176,13 @@ const sources = () => ({
  * Fetch latest comics from requested sources in parallel.
  * Returns merged list grouped by source with per-source status.
  */
-const latest = async (sourceParam, page = 1) => {
+const latest = async (sourceParam, page = 1, type = null) => {
   const keys   = parseSources(sourceParam);
   const tasks  = keys.map(k => SOURCES[k].latest(page));
   const settled = await settleAll(tasks);
 
   const perSource = [];
-  const merged    = [];
+  let merged      = [];
 
   for (let i = 0; i < keys.length; i++) {
     const key    = keys[i];
@@ -201,6 +201,12 @@ const latest = async (sourceParam, page = 1) => {
     merged.push(...cards);
   }
 
+  // Post-fetch filtering by type
+  if (type) {
+    const filterType = type.toLowerCase();
+    merged = merged.filter(c => c.type === filterType);
+  }
+
   return {
     page:      +page,
     sources:   perSource,
@@ -212,7 +218,7 @@ const latest = async (sourceParam, page = 1) => {
 /**
  * Search across requested sources in parallel.
  */
-const search = async (q, sourceParam, page = 1) => {
+const search = async (q, sourceParam, page = 1, type = null) => {
   if (!q) return { query: q, sources: [], total: 0, komikList: [] };
 
   const keys    = parseSources(sourceParam);
@@ -220,7 +226,7 @@ const search = async (q, sourceParam, page = 1) => {
   const settled = await settleAll(tasks);
 
   const perSource = [];
-  const merged    = [];
+  let merged      = [];
 
   for (let i = 0; i < keys.length; i++) {
     const key    = keys[i];
@@ -237,6 +243,12 @@ const search = async (q, sourceParam, page = 1) => {
       count:  cards.length,
     });
     merged.push(...cards);
+  }
+
+  // Post-fetch filtering by type
+  if (type) {
+    const filterType = type.toLowerCase();
+    merged = merged.filter(c => c.type === filterType);
   }
 
   return {

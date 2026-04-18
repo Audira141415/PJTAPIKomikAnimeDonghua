@@ -12,7 +12,7 @@ const { trendingQuery: trendingQuerySchema, popularQuery: popularQuerySchema, la
 const getTrending = catchAsync(async (req, res) => {
   const { period, limit, type } = trendingQuerySchema.parse(req.query);
   const payload = await trendingService.getTrendingByBookmarks(period, limit, type);
-  return success(res, payload);
+  return success(res, { data: payload });
 });
 
 /**
@@ -22,7 +22,7 @@ const getTrending = catchAsync(async (req, res) => {
 const getPopular = catchAsync(async (req, res) => {
   const { metric, limit, type } = popularQuerySchema.parse(req.query);
   const payload = await trendingService.getPopularByMetric(metric, limit, type);
-  return success(res, payload);
+  return success(res, { data: payload });
 });
 
 /**
@@ -32,7 +32,7 @@ const getPopular = catchAsync(async (req, res) => {
 const getLatest = catchAsync(async (req, res) => {
   const { limit, type } = latestQuerySchema.parse(req.query);
   const payload = await trendingService.getLatestManga(limit, type); // Service method name kept but logic will be generic
-  return success(res, payload);
+  return success(res, { data: payload });
 });
 
 module.exports = {
