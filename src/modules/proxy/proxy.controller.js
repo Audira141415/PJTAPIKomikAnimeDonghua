@@ -54,7 +54,7 @@ exports.proxyImage = async (req, res) => {
     const cacheControl = response.headers['cache-control'] || 'public, max-age=86400'; // Default 1 day cache
 
     if (contentType) res.setHeader('Content-Type', contentType);
-    if (contentLength) res.setHeader('Content-Length', contentLength);
+    // Remove Content-Length to avoid ERR_CONTENT_LENGTH_MISMATCH if upstream differs
     res.setHeader('Cache-Control', cacheControl);
     res.setHeader('Access-Control-Allow-Origin', '*'); // Allow cross-origin for images
 
