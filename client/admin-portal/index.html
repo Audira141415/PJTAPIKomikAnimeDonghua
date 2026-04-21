@@ -16,7 +16,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@400;700;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="dashboard.css?v=1.0.5" />
+  <link rel="stylesheet" href="dashboard.css?v=1.0.6" />
 </head>
 
 <body>
@@ -91,16 +91,30 @@
   <section id="section-overview" class="content-section animate-in active">
     
     <!-- 🚀 ULTIMATE Hero Spotlight -->
-    <div id="hero-spotlight" class="hero-spotlight">
+    <div id="hero-spotlight" class="hero-spotlight premium-hero">
+      <!-- Animated Scanner Overlay -->
+      <div class="hero-scanner-grid"></div>
+      <div class="hero-noise"></div>
+      
       <div class="spotlight-track" id="spotlightTrack">
         <!-- Injected by dashboard.js -->
         <div class="spotlight-slide active">
-          <div class="spotlight-bg" style="background-image: url('https://images.unsplash.com/photo-1578632767115-351597cf2477?auto=format&fit=crop&w=1280&q=80')"></div>
+          <div class="spotlight-bg" style="background-image: url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1920&q=80')"></div>
           <div class="spotlight-overlay"></div>
           <div class="spotlight-content">
-            <span class="spotlight-badge">Intelligence Node Alpha</span>
-            <h2 class="spotlight-title">Audira Command Center</h2>
-            <p class="spotlight-desc">Sistem monitoring premium dengan kecerdasan buatan untuk mengelola ekosistem konten animasi Anda secara real-time.</p>
+            <div class="spotlight-meta-info">
+              <span class="spotlight-badge">GENESIS CORE ALPHA</span>
+              <span class="spotlight-status-pip pulse">LIVE</span>
+            </div>
+            <h2 class="spotlight-title">Audira Gateway <span class="text-accent">Protocol</span></h2>
+            <p class="spotlight-desc">Next-generation infrastructure for content orchestration. Processing millions of data pips across global scraper nodes with neural precision.</p>
+            <div class="hero-actions">
+              <button class="btn-hero-prime" onclick="location.hash='#section-discovery'">INITIATE TELEMETRY</button>
+              <div class="hero-stats-chips">
+                <div class="hero-chip"><span>LOAD</span> <strong>2.4%</strong></div>
+                <div class="hero-chip"><span>NODES</span> <strong>158</strong></div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -245,8 +259,6 @@
         <button type="button" id="mangaNextBtn" class="insight-btn">Next</button>
       </div>
     </article>
-  </section>
-
   </section>
 
   <!-- ── SECTION: Data Insights ────────────────────────────── -->
@@ -404,7 +416,7 @@
   </div>
 
 
-  <main id="main-content" style="max-width: 1400px; margin: 80px auto 0; padding: 0 25px; display: block !important;">
+  <div id="main-content">
     <!-- ── SEARCH SYSTEM ── -->
     <div class="search-bar" style="margin-bottom: 20px;">
       <input type="text" id="searchInput" placeholder="🔍 SEARCH ENDPOINTS (e.g. manga, anime...)" />
@@ -1250,7 +1262,7 @@
     </div>
   </section>
 
-</main><!-- /main -->
+</div><!-- /main-content -->
 
 <!-- ── Mega Footer (Rebranding) ────────────────────────────── -->
 <footer class="mega-footer">
@@ -1317,7 +1329,7 @@
   </div>
 </footer>
 
-<script src="/dashboard.js?v=1.0.5"></script>
+<script src="/dashboard.js?v=1.0.6"></script>
 
 <!-- ── Admin Login Modal ────────────────────────────────────── -->
 <div id="loginModal" class="modal-backdrop" style="display: none;">
@@ -1341,6 +1353,6 @@
   </div>
 </div>
 
-  </main>
+</main>
 </body>
 </html>

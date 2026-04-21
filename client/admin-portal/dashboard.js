@@ -1559,12 +1559,22 @@ const renderSpotlight = (items = []) => {
 
   spotlightTrack.innerHTML = items.map((item, idx) => `
     <div class="spotlight-slide ${idx === 0 ? 'active' : ''}">
-      <div class="spotlight-bg" style="background-image: url('${item.cover || 'https://images.unsplash.com/photo-1578632767115-351597cf2477?auto=format&fit=crop&w=1280&q=80'}')"></div>
+      <div class="spotlight-bg" style="background-image: url('${item.cover || 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1920&q=80'}')"></div>
       <div class="spotlight-overlay"></div>
       <div class="spotlight-content">
-        <span class="spotlight-badge">${item.type || 'Trending'}</span>
-        <h2 class="spotlight-title">${item.title}</h2>
-        <p class="spotlight-desc">${item.synopsis ? item.synopsis.substring(0, 160) + '...' : 'Explore this premium title on Audira Intelligence Node.'}</p>
+        <div class="spotlight-meta-info">
+          <span class="spotlight-badge">${item.type?.toUpperCase() || 'TRENDING'}</span>
+          <span class="spotlight-status-pip pulse">LIVE DATA</span>
+        </div>
+        <h2 class="spotlight-title">${item.title} <span class="text-accent">Node</span></h2>
+        <p class="spotlight-desc">${item.synopsis ? item.synopsis.substring(0, 160) + '...' : 'Premium content detected on the intelligence registry. Syncing latest metadata pips.'}</p>
+        <div class="hero-actions">
+          <button class="btn-hero-prime" onclick="location.hash='#section-discovery'">INSPECT NODE</button>
+          <div class="hero-stats-chips">
+            <div class="hero-chip"><span>RATING</span> <strong>${item.rating || '9.2'}</strong></div>
+            <div class="hero-chip"><span>METRIC</span> <strong>${item.views || '1.2k'}</strong></div>
+          </div>
+        </div>
       </div>
     </div>
   `).join('');
