@@ -19,6 +19,7 @@ services:
       REDIS_URL: ${REDIS_URL_DOCKER:-redis://redis:6379}
     volumes:
       - ./public:/app/public:ro
+      - ./client/admin-portal:/app/client/admin-portal:ro
       - uploads_data:/app/uploads
       - logs_data:/app/logs
     depends_on:
@@ -170,6 +171,7 @@ services:
       REDIS_URL: ${REDIS_URL_DOCKER:-redis://redis:6379}
     volumes:
       - ./src:/app/src:ro
+      - ./client/admin-portal:/app/client/admin-portal:ro
       - uploads_data:/app/uploads
     depends_on:
       mongo:
