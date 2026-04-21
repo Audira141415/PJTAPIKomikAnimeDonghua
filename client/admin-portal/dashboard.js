@@ -3,8 +3,8 @@
  * @purpose UI Engine for Audira Gateway Admin Portal (API Infrastructure Monitoring)
  * @caller index.html
  * @dependencies Audira API v1 (/api/v1), LocalStorage, DOM API
- * @public_functions boot(), initDiscovery(), adminFetch(), renderDataGrid(), filterCards()
- * @side_effects Fetches real-time telemetry, Manages auth tokens, Interacts with Scraper Nodes, DOM modification
+ * @public_functions boot(), initDiscovery(), adminFetch(), renderDataGrid(), filterCards(), renderSpotlight()
+ * @side_effects Fetches real-time telemetry, Manages auth tokens, Interacts with Scraper Nodes, DOM modification, Event Delegation
  */
 
 const API_BASE = '/api/v1';
@@ -1580,7 +1580,7 @@ const renderSpotlight = (items = []) => {
         <h2 class="spotlight-title">${item.title} <span class="text-accent">Node</span></h2>
         <p class="spotlight-desc">${item.synopsis ? item.synopsis.substring(0, 160) + (item.synopsis.length > 160 ? '...' : '') : 'Premium content detected on the intelligence registry. Syncing latest metadata pips.'}</p>
         <div class="hero-actions">
-          <button class="btn-hero-prime" onclick="location.hash='#section-discovery'">INSPECT NODE</button>
+          <button class="btn-hero-prime" data-action="inspect-node">INSPECT NODE</button>
           <div class="hero-stats-chips">
             <div class="hero-chip"><span>RATING</span> <strong>${item.rating || '9.2'}</strong></div>
             <div class="hero-chip"><span>METRIC</span> <strong>${item.views || '1.2k'}</strong></div>
@@ -1589,6 +1589,16 @@ const renderSpotlight = (items = []) => {
       </div>
     </div>
   `).join('');
+
+  // ── CSP Compliance (Event Delegation for Spotlight) ──
+  if (spotlightTrack) {
+    spotlightTrack.onclick = (e) => {
+      const btn = e.target.closest('[data-action="inspect-node"]');
+      if (btn) {
+        window.location.hash = '#section-discovery';
+      }
+    };
+  }
 
   startSpotlight(items.length);
 };
