@@ -273,33 +273,24 @@ code { font-family: 'JetBrains Mono', monospace; font-size: 0.9em; }
 .section-hero {
   position: relative;
   width: 100%;
-  height: 380px;
-  background-color: #050505;
+  height: 360px;
   background-size: cover;
   background-position: center;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  background-repeat: no-repeat;
+  border: 1px solid rgba(0,0,0,0.1);
+  box-shadow: 10px 10px 0px #000;
   margin-bottom: 30px;
   display: flex;
   align-items: center;
   overflow: hidden;
   border-radius: 12px;
-  background-blend-mode: overlay;
 }
 
 .section-hero::after {
   content: "";
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
-  background: linear-gradient(90deg, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.6) 50%, rgba(0,0,0,0) 100%);
-  z-index: 1;
-}
-
-.section-hero::before {
-  content: "";
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: radial-gradient(circle at 70% 30%, rgba(6, 182, 212, 0.15) 0%, transparent 70%);
+  background: linear-gradient(90deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0) 100%);
   z-index: 1;
 }
 
