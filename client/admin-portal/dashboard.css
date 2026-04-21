@@ -1903,10 +1903,14 @@ tr:hover td {
 }
 
 .technical-monitor {
-  height: 300px !important;
-  background: #0F172A !important; /* Deep dark for technical feel */
+  min-height: 380px !important;
+  background: #0F172A !important;
   border: 4px solid #000 !important;
   box-shadow: 10px 10px 0px #000 !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px 0;
 }
 
 .terminal-box {
