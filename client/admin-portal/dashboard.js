@@ -3,8 +3,8 @@
  * @purpose UI Engine for Audira Gateway Admin Portal (API Infrastructure Monitoring)
  * @caller index.html
  * @dependencies Audira API v1 (/api/v1), LocalStorage, DOM API
- * @public_functions boot(), initDiscovery(), adminFetch(), renderDataGrid()
- * @side_effects Fetches real-time telemetry, Manages auth tokens, Interacts with Scraper Nodes
+ * @public_functions boot(), initDiscovery(), adminFetch(), renderDataGrid(), filterCards()
+ * @side_effects Fetches real-time telemetry, Manages auth tokens, Interacts with Scraper Nodes, DOM modification
  */
 
 const API_BASE = '/api/v1';
@@ -3096,8 +3096,17 @@ const boot = async () => {
   updateAdminUI(!!adminToken);
   if (adminToken) refreshAdminData();
 
-  searchInput.addEventListener('input', filterCards);
-  playgroundForm.addEventListener('submit', runPlayground);
+
+  // ── CSP Compliance (Button Listeners) ──────────
+  const btnTele = document.getElementById('btn-initiate-telemetry');
+  if (btnTele) btnTele.addEventListener('click', () => { window.location.hash = '#section-discovery'; });
+
+  const btnScan = document.getElementById('btn-initiate-scan');
+  if (btnScan) btnScan.addEventListener('click', () => { alert('Initiating Neural Scan...'); });
+
+  // ── Event Safety Checks ───────────────────────
+  if (searchInput) searchInput.addEventListener('input', filterCards);
+  if (playgroundForm) playgroundForm.addEventListener('submit', runPlayground);
   // Filter bubbles handle their own click events to load insights instantly
 
   await loadStatus();
