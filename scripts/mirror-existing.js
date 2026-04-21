@@ -76,8 +76,7 @@ async function run() {
   console.log('\n--- PARALLEL MIRROR COMPLETE ---');
   console.log(`Total Success: ${totalSuccess}`);
   console.log(`Total Failed : ${totalFail}`);
-  await telegram.sendAlert('Image Mirroring Complete', '? Success: ' + totalSuccess + '
-? Failed: ' + totalFail, 'success');
+  await telegram.sendAlert('Image Mirroring Complete', `✅ Success: ${totalSuccess}\n❌ Failed: ${totalFail}`, 'success');
   await mongoose.disconnect();
   process.exit(0);
 }

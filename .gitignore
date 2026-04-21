@@ -5,3 +5,6 @@ uploads/
 logs/
 coverage/
 .app.pid
+claude-skills-main/
+.cursor/
+scratch/

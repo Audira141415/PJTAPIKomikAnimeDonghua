@@ -1,9 +1,44 @@
+/**
+ * @module AudiraAdminCore
+ * @purpose UI Engine for Audira Gateway Admin Portal (API Infrastructure Monitoring)
+ * @caller index.html
+ * @dependencies Audira API v1 (/api/v1), LocalStorage, DOM API
+ * @public_functions boot(), initDiscovery(), adminFetch(), renderDataGrid()
+ * @side_effects Fetches real-time telemetry, Manages auth tokens, Interacts with Scraper Nodes
+ */
+
 const API_BASE = '/api/v1';
 const FALLBACK_DATA_PATH = '/data/dashboard-fallback.json';
 
+/* ── Toast Engine ─────────────────────────────────────────── */
+const showToast = (message, type = 'info', duration = 4000) => {
+  let container = document.querySelector('.toast-container');
+  if (!container) {
+    container = document.createElement('div');
+    container.className = 'toast-container';
+    document.body.appendChild(container);
+  }
+
+  const toast = document.createElement('div');
+  const icons = { success: '✅', error: '❌', info: 'ℹ️', warn: '⚠️' };
+  toast.className = `toast ${type}`;
+  toast.innerHTML = `
+    <span class="toast-icon">${icons[type] || '🔔'}</span>
+    <div class="toast-body">${message}</div>
+  `;
+
+  container.appendChild(toast);
+
+  // Auto remove
+  setTimeout(() => {
+    toast.classList.add('removing');
+    toast.addEventListener('animationend', () => toast.remove());
+  }, duration);
+};
+
 /* ── Theme Engine ─────────────────────────────────────────── */
 const initTheme = () => {
-  const savedTheme = localStorage.getItem('audira-theme') || 'dark';
+  const savedTheme = localStorage.getItem('audira-theme') || 'light';
   document.documentElement.setAttribute('data-theme', savedTheme);
   updateThemeIcon(savedTheme);
 };
@@ -50,9 +85,10 @@ const loginAdmin = async (email, password) => {
       hideLoginModal();
       updateAdminUI(true);
       refreshAdminData();
+      showToast('Authentication Successful. Genesis Node Linked.', 'success');
       return true;
     }
-    throw new Error(result.message || 'Login failed');
+    throw new Error(result.message || 'Access Denied');
   } catch (err) {
     const errEl = document.getElementById('loginError');
     if (errEl) {
@@ -67,22 +103,28 @@ const logoutAdmin = () => {
   adminToken = null;
   localStorage.removeItem('audira-admin-token');
   updateAdminUI(false);
-  // Hide admin sections
+  // Hide admin sections and links
   ['section-intelligence', 'section-operations', 'section-registry'].forEach(id => {
-    document.getElementById(id).style.display = 'none';
+    const el = document.getElementById(id);
+    if (el) el.style.display = 'none';
   });
+  document.querySelectorAll('.admin-only').forEach(el => el.style.display = 'none');
   window.location.hash = '#section-overview';
 };
 
 const updateAdminUI = (isAuthenticated) => {
   const badge = document.getElementById('adminBadge');
   const authBtn = document.getElementById('adminAuthBtn');
+  const adminLinks = document.querySelectorAll('.admin-only');
+  
   if (badge) badge.style.display = isAuthenticated ? 'block' : 'none';
   if (authBtn) {
-    authBtn.innerHTML = isAuthenticated 
-      ? '<span class="nav-icon">🔓</span> Admin Logout' 
-      : '<span class="nav-icon">🔐</span> Admin Login';
+    authBtn.innerHTML = isAuthenticated ? 'Admin Logout' : 'Admin Login';
   }
+  
+  adminLinks.forEach(link => {
+    link.style.display = isAuthenticated ? 'inline-block' : 'none';
+  });
 };
 
 const showLoginModal = () => {
@@ -181,6 +223,7 @@ const triggerSync = async (source) => {
   try {
     const res = await adminFetch(`/jobs/anime-sync/${source}`, { method: 'POST' });
     if (res.success) {
+      showToast(`Sync for ${source} triggered successfully.`, 'success');
       if (btn) {
         btn.classList.remove('syncing');
         btn.classList.add('success');
@@ -194,7 +237,7 @@ const triggerSync = async (source) => {
       loadOperationsData();
     }
   } catch (err) {
-    alert(`Sync failed: ${err.message}`);
+    showToast(`Sync Critical Failure: ${err.message}`, 'error');
     if (btn) {
       btn.disabled = false;
       btn.classList.remove('syncing');
@@ -204,11 +247,14 @@ const triggerSync = async (source) => {
 };
 
 const retryFailedJobs = async () => {
-  if (!confirm('Retry all failed scraper tasks?')) return;
+  if (!confirm('PROTOCOL ALERT: Retry all failed scraper tasks?')) return;
   try {
     const res = await adminFetch('/jobs/retry', { method: 'POST' });
-    if (res.success) loadOperationsData();
-  } catch (err) { alert(err.message); }
+    if (res.success) {
+       showToast('Retry command broadcasted to all workers.', 'info');
+       loadOperationsData();
+    }
+  } catch (err) { showToast(err.message, 'error'); }
 };
 
 const renderIntelligence = (data) => {
@@ -746,21 +792,20 @@ const switchSection = (targetId) => {
     return;
   }
 
-  // Show/Hide admin sections vs normal sections
-  document.querySelectorAll('section[id^="section-"]').forEach((sec) => {
-    if (adminSections.includes(sec.id)) {
-      sec.style.display = sec.id === targetId ? 'block' : 'none';
+  // Show/Hide sections
+  document.querySelectorAll('.content-section').forEach((sec) => {
+    if (sec.id === targetId) {
+      sec.style.display = 'block';
+      sec.classList.add('active');
     } else {
-      // Normal sections are always display block (or as per CSS), 
-      // but we hide them if an admin section is active AND we want a clean view.
-      // Actually, standard behavior is scrolling. For Admin, we'll use clean view.
-      sec.style.display = isTargetAdmin ? 'none' : 'block';
+      sec.style.display = 'none';
+      sec.classList.remove('active');
     }
   });
 
   // Update nav active state
-  document.querySelectorAll('.nav-item').forEach((n) => n.classList.remove('active'));
-  const activeNav = document.querySelector(`.nav-item[data-nav="${targetId}"]`);
+  document.querySelectorAll('.nav-link').forEach((n) => n.classList.remove('active'));
+  const activeNav = document.querySelector(`.nav-link[data-nav="${targetId}"]`);
   if (activeNav) activeNav.classList.add('active');
 
   // Trigger data load if admin
@@ -770,21 +815,91 @@ const switchSection = (targetId) => {
 };
 
 // Handle nav clicks
-document.querySelectorAll('.nav-item[data-nav]').forEach((navItem) => {
+document.querySelectorAll('.nav-link[data-nav]').forEach((navItem) => {
   navItem.addEventListener('click', (e) => {
     const targetId = navItem.getAttribute('data-nav');
     if (targetId) {
+      e.preventDefault();
       switchSection(targetId);
-      if (window.innerWidth <= 768) closeSidebar();
+      window.location.hash = targetId;
     }
   });
 });
 
-// Handle hash changes for direct linking
-window.addEventListener('hashchange', () => {
+// Handle initial hash
+const initNavFromHash = () => {
   const hash = window.location.hash.replace('#', '');
-  if (hash.startsWith('section-')) switchSection(hash);
-});
+  if (hash && document.getElementById(hash)) {
+    switchSection(hash);
+  } else {
+    switchSection('section-overview');
+  }
+};
+
+// Consolidated Dropdown & Navigation Logic
+const initNavigationEvents = () => {
+  console.log("[NAV] Initializing UI Interactions...");
+
+  // 1. Dropdown Toggle (Stable Click)
+  document.querySelectorAll('.nav-group-toggle').forEach(toggle => {
+    toggle.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      const parent = toggle.closest('.nav-group');
+      const wasActive = parent.classList.contains('active');
+      
+      // Close others
+      document.querySelectorAll('.nav-group').forEach(g => g.classList.remove('active'));
+      
+      // Toggle current
+      if (!wasActive) parent.classList.add('active');
+    });
+  });
+
+  // 2. All Dropdown Links (Sub-links)
+  document.querySelectorAll('.nav-link-sub').forEach(link => {
+     link.addEventListener('click', (e) => {
+        const href = link.getAttribute('href');
+        if (href && href.startsWith('#')) {
+           e.preventDefault();
+           const targetId = href.substring(1);
+           switchSection(targetId);
+           window.location.hash = targetId;
+           
+           // Close dropdown manually for better UX
+           document.querySelectorAll('.nav-group').forEach(g => g.classList.remove('active'));
+        }
+     });
+  });
+
+  // 3. Emergency/Global Nav Links (by ID)
+  const emergencyMap = {
+    'nav-manga-btn': 'section-manga',
+    'nav-anime-btn': 'section-anime',
+    'nav-donghua-btn': 'section-donghua',
+    'nav-home-btn': 'section-overview'
+  };
+  
+  Object.keys(emergencyMap).forEach(btnId => {
+    const btn = document.getElementById(btnId);
+    if (btn) btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      switchSection(emergencyMap[btnId]);
+      window.location.hash = emergencyMap[btnId];
+    });
+  });
+
+  // 4. Close on outside click
+  document.addEventListener('click', () => {
+    document.querySelectorAll('.nav-group').forEach(g => g.classList.remove('active'));
+  });
+
+  // Initialize from Hash
+  initNavFromHash();
+};
+
+window.addEventListener('DOMContentLoaded', initNavigationEvents);
+window.addEventListener('hashchange', initNavFromHash);
 
 // Intersection Observer for active nav highlighting
 const navObserver = new IntersectionObserver(
@@ -1817,7 +1932,10 @@ const renderAnimationSourceItems = (payload = {}) => {
     viewsTd.textContent = String(Number(item.views || 0));
 
     const statusTd = document.createElement('td');
-    statusTd.textContent = item.status || '-';
+    const statusSpan = document.createElement('span');
+    statusSpan.className = 'status-pill';
+    statusSpan.textContent = item.status || '-';
+    statusTd.appendChild(statusSpan);
 
     tr.appendChild(titleTd);
     tr.appendChild(typeTd);
@@ -1885,6 +2003,8 @@ const renderMangaExplorerRows = (rows = []) => {
   if (!mangaExplorerBody) return;
   mangaExplorerBody.innerHTML = '';
 
+
+
   if (!rows.length) {
     const tr = document.createElement('tr');
     const td = document.createElement('td');
@@ -1920,7 +2040,10 @@ const renderMangaExplorerRows = (rows = []) => {
     viewsTd.textContent = String(Number(item.views || 0));
 
     const statusTd = document.createElement('td');
-    statusTd.textContent = item.status || '-';
+    const statusSpan = document.createElement('span');
+    statusSpan.className = 'status-pill';
+    statusSpan.textContent = item.status || '-';
+    statusTd.appendChild(statusSpan);
 
     tr.appendChild(titleTd);
     tr.appendChild(typeTd);
@@ -2028,7 +2151,7 @@ const loadContentStats = async () => {
     container.innerHTML = '';
 
     const section = document.createElement('div');
-    section.className = 'overview-source-section';
+    section.className = 'panel overview-source-section';
 
     const header = document.createElement('div');
     header.className = 'overview-source-section-head';
@@ -2050,12 +2173,12 @@ const loadContentStats = async () => {
     header.appendChild(meta);
 
     const grid = document.createElement('div');
-    grid.className = 'overview-source-grid';
+    grid.className = 'ultimate-grid overview-source-grid';
 
     const visibleRows = rows.slice(0, 10);
     visibleRows.forEach((row) => {
       const card = document.createElement('article');
-      card.className = 'overview-source-card';
+      card.className = 'card overview-source-card';
 
       const source = row.source || row._id || 'unknown';
       const primaryType = inferPrimaryType(row);
@@ -2068,7 +2191,7 @@ const loadContentStats = async () => {
         .slice(0, 3);
 
       const badge = document.createElement('div');
-      badge.className = 'overview-source-badge';
+      badge.className = 'card-thumb overview-source-badge';
       badge.textContent = emoji;
 
       const body = document.createElement('div');
@@ -2207,10 +2330,10 @@ const loadContentStats = async () => {
     topHead.appendChild(topMeta);
 
     const topGrid = document.createElement('div');
-    topGrid.className = 'overview-source-card-grid';
+    topGrid.className = 'ultimate-grid overview-source-card-grid';
     topSources.slice(0, 10).forEach((row) => {
       const card = document.createElement('article');
-      card.className = 'overview-top-source-card';
+      card.className = 'card overview-top-source-card';
       const source = row.source || 'unknown';
       const primaryType = inferPrimaryType(row);
       const emoji = getSourceEmoji(source, primaryType);
@@ -2222,7 +2345,7 @@ const loadContentStats = async () => {
         .slice(0, 3);
 
       const badge = document.createElement('div');
-      badge.className = 'overview-top-source-badge';
+      badge.className = 'card-thumb overview-top-source-badge';
       badge.textContent = emoji;
 
       const content = document.createElement('div');
@@ -2700,6 +2823,79 @@ const _applyStatusEl = (el, state) => {
   el.title = `${state.ok ? 'OK' : 'Gagal'} · ${state.ts}${state.msg ? ' · ' + state.msg : ''}`;
 };
 
+const renderQuickLinks = (filterText = '') => {
+  const container = document.getElementById('quickLinksGrid');
+  if (!container) return;
+
+  const origin = window.location.origin;
+  const searchTerm = filterText.toLowerCase();
+
+  container.innerHTML = `
+    <div class="ql-search-container" style="margin-bottom: 30px;">
+      <input type="text" id="qlSearchInput" placeholder="🔍 SEARCH ENDPOINTS (e.g. proxy, search, trending...)" 
+             value="${filterText}"
+             style="width: 100%; padding: 15px 20px; border: 3px solid #000; box-shadow: 6px 6px 0px #000; font-family: 'JetBrains Mono', monospace; font-size: 0.9rem; font-weight: 800; outline: none;">
+    </div>
+    <div id="qlContent"></div>
+  `;
+
+  const qlContent = document.getElementById('qlContent');
+  const searchInput = document.getElementById('qlSearchInput');
+
+  // Handle live search
+  searchInput.addEventListener('input', (e) => {
+    renderQuickLinks(e.target.value);
+    document.getElementById('qlSearchInput').focus();
+  });
+
+  QUICK_LINKS.forEach((group) => {
+    const filteredItems = group.items.filter(it => 
+      it.label.toLowerCase().includes(searchTerm) || 
+      it.path.toLowerCase().includes(searchTerm) ||
+      group.group.toLowerCase().includes(searchTerm)
+    );
+
+    if (filteredItems.length === 0) return;
+
+    const groupSection = document.createElement('div');
+    groupSection.className = 'ql-group-section';
+    groupSection.innerHTML = `<h3 class="section-group-title">${group.group}</h3>`;
+
+    const grid = document.createElement('div');
+    grid.className = 'tech-grid-compact';
+
+    filteredItems.forEach((item) => {
+      const fullUrl = `${origin}${item.path}`;
+      const card = document.createElement('div');
+      card.className = 'endpoint-card';
+      card.innerHTML = `
+        <div class="endpoint-header">
+           <span class="method-tag ${item.tagClass}">${item.tag}</span>
+           <button class="action-btn-mini" data-copy-url="${fullUrl}">COPY</button>
+        </div>
+        <div class="endpoint-path">${item.path}</div>
+        <div class="endpoint-desc">${item.label}</div>
+      `;
+      
+      card.onclick = (e) => {
+        if(e.target.dataset.copyUrl) {
+          navigator.clipboard.writeText(e.target.dataset.copyUrl);
+          const oldText = e.target.textContent;
+          e.target.textContent = 'COPIED!';
+          setTimeout(() => e.target.textContent = oldText, 1000);
+          return;
+        }
+        window.open(fullUrl, '_blank');
+      };
+
+      grid.appendChild(card);
+    });
+
+    groupSection.appendChild(grid);
+    qlContent.appendChild(groupSection);
+  });
+};
+
 const executeQuickLink = async ({ method = 'GET', path, body = null, statusEl = null }) => {
   responseMeta.textContent = 'Loading...';
   responseBox.textContent = '';
@@ -2760,116 +2956,74 @@ const executeQuickLink = async ({ method = 'GET', path, body = null, statusEl = 
   }
 };
 
-const renderQuickLinks = () => {
-  const grid = document.getElementById('quickLinksGrid');
-  const baseEl = document.getElementById('qlBaseUrl');
-  if (!grid) return;
 
-  const origin = window.location.origin;
-  if (baseEl) baseEl.textContent = origin;
+/* ── Clean Section Gap ── */
 
-  grid.innerHTML = '';
+/* ── NAVIGATION SYSTEM (BULLETPROOF) ───────────────── */
+/* ── NAVIGATION SYSTEM (BULLETPROOF) ───────────────── */
+const initNavigation = () => {
+  // Always start with current hash or Overview
+  const initialHash = window.location.hash.substring(1) || 'section-overview';
+  if (window.showSection) window.showSection(initialHash);
 
-  QUICK_LINKS.forEach((group) => {
-    const groupEl = document.createElement('div');
-    groupEl.className = 'ql-group';
+  // Global Click Delegate
+  document.body.addEventListener('click', (e) => {
+    const link = e.target.closest('.nav-link, .nav-link-sub');
+    if (!link) return;
 
-    const titleEl = document.createElement('div');
-    titleEl.className = 'ql-group-title';
-    titleEl.textContent = group.group;
-    groupEl.appendChild(titleEl);
+    const href = link.getAttribute('href');
+    if (!href || !href.startsWith('#')) return;
 
-    // ── Bulk hero button (groups with bulkAction) ──────────────
-    if (group.bulkAction) {
-      const ba = group.bulkAction;
-      const bulkWrap = document.createElement('div');
-      bulkWrap.className = 'ql-bulk-wrap';
+    e.preventDefault();
+    const sectionId = href.substring(1);
+    if (window.showSection) window.showSection(sectionId);
+    history.pushState(null, null, href);
 
-      const bulkBtn = document.createElement('button');
-      bulkBtn.type = 'button';
-      bulkBtn.className = 'ql-bulk-btn';
-      bulkBtn.textContent = ba.label;
+    // Close any open dropdowns immediately
+    document.querySelectorAll('.nav-dropdown').forEach(d => {
+       d.style.display = 'none';
+       setTimeout(() => d.style.removeProperty('display'), 500);
+    });
+  });
+};
 
-      const bulkStatusEl = document.createElement('span');
-      bulkStatusEl.className = 'ql-status ql-bulk-status';
-      const savedBulk = getQlStatus(ba.path);
-      if (savedBulk) _applyStatusEl(bulkStatusEl, savedBulk);
-
-      bulkBtn.addEventListener('click', async () => {
-        bulkBtn.disabled = true;
-        await executeQuickLink({ method: ba.method, path: ba.path, statusEl: bulkStatusEl });
-        bulkBtn.disabled = false;
-      });
-
-      bulkWrap.appendChild(bulkBtn);
-      bulkWrap.appendChild(bulkStatusEl);
-      groupEl.appendChild(bulkWrap);
+window.showSection = (sectionId) => {
+    const sections = document.querySelectorAll('.content-section');
+    const target = document.getElementById(sectionId);
+    
+    if (!target) {
+        console.warn(`SECTION NOT FOUND: ${sectionId}`);
+        return;
     }
 
-    const itemsEl = document.createElement('div');
-    itemsEl.className = 'ql-items';
-
-    group.items.forEach((item) => {
-      const fullUrl = `${origin}${item.path}`;
-
-      const row = document.createElement('div');
-      row.className = 'ql-item';
-      row.title = fullUrl;
-
-      const tag = document.createElement('span');
-      tag.className = `ql-tag ${item.tagClass}`;
-      tag.textContent = item.tag;
-
-      const isAction = String(item.method || 'GET').toUpperCase() !== 'GET';
-
-      // ── per-item status badge ──────────────────────────────────
-      const statusEl = document.createElement('span');
-      statusEl.className = 'ql-status';
-      const saved = getQlStatus(item.path);
-      if (saved) _applyStatusEl(statusEl, saved);
-
-      const label = isAction ? document.createElement('button') : document.createElement('a');
-      label.className = 'ql-label';
-      if (isAction) {
-        label.type = 'button';
-        label.textContent = item.label;
-        label.addEventListener('click', () => executeQuickLink({ method: item.method, path: item.path, body: item.body || null, statusEl }));
-      } else {
-        label.href = fullUrl;
-        label.target = '_blank';
-        label.rel = 'noopener noreferrer';
-        label.textContent = item.label;
-      }
-
-      const copyBtn = document.createElement('button');
-      copyBtn.type = 'button';
-      copyBtn.className = 'ql-copy-btn';
-      copyBtn.textContent = isAction ? 'Run' : 'Copy';
-      copyBtn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        if (isAction) {
-          executeQuickLink({ method: item.method, path: item.path, body: item.body || null, statusEl });
-        } else {
-          copyText(fullUrl, copyBtn);
-        }
-      });
-
-      row.appendChild(tag);
-      row.appendChild(label);
-      row.appendChild(statusEl);
-      row.appendChild(copyBtn);
-      itemsEl.appendChild(row);
+    // Strict UI Locking
+    sections.forEach(sec => {
+        sec.style.cssText = 'display: none !important; opacity: 0;';
     });
 
-    groupEl.appendChild(itemsEl);
-    grid.appendChild(groupEl);
-  });
+    target.style.display = 'block';
+    target.style.setProperty('display', 'block', 'important');
+    
+    setTimeout(() => {
+        target.style.opacity = '1';
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 50);
+
+    // Active Tab Styling
+    document.querySelectorAll('.nav-link, .nav-link-sub').forEach(l => {
+        l.classList.toggle('active', l.getAttribute('href') === `#${sectionId}`);
+    });
+
+    if (sectionId === 'section-discovery' && typeof renderNodeMap === 'function') {
+        renderNodeMap();
+    }
 };
 
 /* ══════════════════════════════════════════════════════════════
    BOOT
    ══════════════════════════════════════════════════════════ */
 const boot = async () => {
+  initNavigation();
   await loadDashboardData();
 
   attachExamplesToCards();
@@ -2955,3 +3109,194 @@ const boot = async () => {
 };
 
 boot();
+/* ── Strategic API Monitor Logic ───────────────────────── */
+/**
+ * Initializing the Technical API Monitor section
+ */
+function initDiscovery() {
+  renderDiscoveryCarousel();
+  renderScraperLogs();
+  renderEndpointMonitor();
+  renderNodeMap();
+}
+
+function renderDiscoveryCarousel() {
+  const track = document.getElementById('carouselTrack');
+  if (!track) return;
+
+  const metrics = [
+    { label: "SYSTEM UPTIME", value: "99.98%", sub: "Last 30 Days", color: "#10B981" },
+    { label: "AVG LATENCY", value: "142ms", sub: "Global Average", color: "#3B82F6" },
+    { label: "TOTAL REQUESTS", value: "4.2M", sub: "Last 24 Hours", color: "#FFDA00" }
+  ];
+
+  track.innerHTML = metrics.map(m => `
+    <div class="carousel-slide" style="flex-direction: column; align-items: center; justify-content: center; text-align: center;">
+      <div style="font-size: 0.75rem; font-weight: 900; letter-spacing: 0.2em; color: rgba(255,255,255,0.6); margin-bottom: 15px;">${m.label}</div>
+      <div style="font-size: 5rem; font-weight: 900; line-height: 1; color: ${m.color}; text-shadow: 4px 4px 0px #000;">${m.value}</div>
+      <div style="font-size: 1rem; font-weight: 700; color: #FFF; margin-top: 10px;">${m.sub}</div>
+    </div>
+  `).join('');
+
+  let currentIdx = 0;
+  setInterval(() => {
+    currentIdx = (currentIdx + 1) % metrics.length;
+    track.style.transform = `translateX(-${currentIdx * 100}%)`;
+  }, 5000);
+}
+
+function renderScraperLogs() {
+  const logContainer = document.getElementById('scraperLog');
+  if (!logContainer) return;
+
+  const logs = [
+    "Scraper-Node-1: Fetching manga metadata from Komiku.id...",
+    "Scraper-Node-2: Connection established to HiAnime secure gateway.",
+    "Bilibili-Adapter: Parsing JSON schema for 'Donghua Seasonal'...",
+    "Cache-Manager: 1.2k entries flushed to Redis successfully.",
+    "Load-Balancer: Shifting traffic from node-03 to node-04 (High Latency Detected).",
+    "Internal-Audit: Scanning database for corrupt poster URLs...",
+    "Audit-Brain: Neural summary generated for 'Solo Leveling' (v2.1.0).",
+    "API-Gateway: Token validation successful for client 'Audira-Web-v4'."
+  ];
+
+  let i = 0;
+  setInterval(() => {
+    const line = document.createElement('div');
+    line.className = 'log-line';
+    line.textContent = `[${new Date().toLocaleTimeString()}] ${logs[i]}`;
+    logContainer.appendChild(line);
+    logContainer.scrollTop = logContainer.scrollHeight;
+    i = (i + 1) % logs.length;
+    if (logContainer.childNodes.length > 50) logContainer.removeChild(logContainer.firstChild);
+  }, 2500);
+}
+
+function renderEndpointMonitor() {
+  const container = document.getElementById('endpointMonitor');
+  if (!container) return;
+
+  const endpoints = [
+    { name: "/mangaDiscovery", load: 85, latency: 120 },
+    { name: "/animeStream", load: 60, latency: 240 },
+    { name: "/donghuaList", load: 45, latency: 180 },
+    { name: "/searchNeural", load: 95, latency: 450 },
+    { name: "/authSession", load: 20, latency: 45 }
+  ];
+
+  container.innerHTML = endpoints.map(e => `
+    <div class="latency-item">
+      <div style="font-size: 0.75rem; font-weight: 800; min-width: 120px;">${e.name}</div>
+      <div class="latency-bar-wrap">
+        <div class="latency-bar" style="width: ${e.load}%"></div>
+      </div>
+      <div style="font-size: 0.7rem; font-weight: 900;">${e.latency}ms</div>
+    </div>
+  `).join('');
+}
+
+function renderNodeMap() {
+  const container = document.getElementById('nodeMapGrid');
+  if (!container) return;
+
+  const nodes = [
+    { id: "NODE-SG-01", type: "SCRAPER", load: "High", uptime: "14d", status: "online" },
+    { id: "NODE-US-04", type: "API-GW", load: "Optimal", uptime: "42d", status: "online" },
+    { id: "NODE-ID-158", type: "STRAT-OPS", load: "Active", uptime: "2d", status: "online" },
+    { id: "NODE-JP-02", type: "DB-SHARD", load: "Low", uptime: "128d", status: "online", state: "warning" }
+  ];
+
+  container.innerHTML = nodes.map(n => `
+    <div class="node-card ${n.state || ''} animate-in">
+      <div class="node-header">
+        <span class="node-id">${n.id}</span>
+        <span class="badge badge-blue" style="font-size: 0.55rem;">${n.type}</span>
+      </div>
+      <div style="display: flex; justify-content: space-between; align-items: baseline;">
+        <span class="node-load">Load: <b style="color: #000;">${n.load}</b></span>
+        <span style="font-size: 0.65rem; color: var(--text-muted);">UP: ${n.uptime}</span>
+      </div>
+      <div class="node-actions">
+        <button class="action-btn-mini" data-node-action="restart" data-node-id="${n.id}">🔄 RESTART</button>
+        <button class="action-btn-mini" data-node-action="flush" data-node-id="${n.id}">🧹 FLUSH</button>
+        <button class="action-btn-mini" data-node-action="stop" data-node-id="${n.id}">⏹ STOP</button>
+        <button class="action-btn-mini" data-node-action="inspect" data-node-id="${n.id}">🔍 INSPECT</button>
+      </div>
+    </div>
+  `).join('');
+
+  // Delegation for Node Actions to avoid CSP issues
+  container.onclick = (e) => {
+    const btn = e.target.closest('[data-node-action]');
+    if (!btn) return;
+    const action = btn.dataset.nodeAction;
+    const id = btn.dataset.nodeId;
+    if (action === 'restart') tech_restartNode(id);
+    if (action === 'flush') tech_flushNodeCache(id);
+    if (action === 'stop') tech_toggleNode(id);
+    if (action === 'inspect') tech_inspectNode(id);
+  };
+}
+
+// ── ORCHESTRATION HANDLERS ──────────────────────────────
+
+window.tech_restartNode = (id) => {
+  addLog(`Initiating cold reboot sequence for ${id}...`);
+  setTimeout(() => addLog(`${id} rebooting. Signal sent to Docker-Daemon.`), 800);
+  setTimeout(() => addLog(`${id} is back online. Re-joining cluster.`), 3000);
+};
+
+window.tech_flushNodeCache = (id) => {
+  addLog(`Flushing L1/L2 cache for ${id}...`);
+  setTimeout(() => addLog(`${id} cache cleared. Re-indexing metadata...`), 1200);
+};
+
+window.tech_toggleNode = (id) => {
+  addLog(`Toggle command sent to ${id}. Changing state...`);
+};
+
+window.tech_inspectNode = (id) => {
+  addLog(`Fetching deep-inspect telemetry for ${id}...`);
+  setTimeout(() => addLog(`[INSPECT] ${id}: Memory 4.2GB/8GB, CPU 12%, Redis-Conn: Healthy`), 1000);
+};
+
+window.tech_flushAllCache = () => {
+  if(!confirm("ARE YOU SURE? This will flush the entire Global Redis Cache Cluster.")) return;
+  addLog(">>> GLOBAL CACHE FLUSH INITIATED <<<");
+  setTimeout(() => addLog("Clearing 12,450 keys from Redis-Main..."), 500);
+  setTimeout(() => addLog("Global cache cleared. Platform indexing will re-populate upon next request."), 2000);
+};
+
+window.tech_restartAllNodes = () => {
+  if(!confirm("DANGER: This will reboot the entire Audira Cluster. Service downtime expected.")) return;
+  addLog("CRITICAL: Executing CLUSTER REBOOT...");
+  setTimeout(() => addLog("Node-SG-01: Offline"), 500);
+  setTimeout(() => addLog("Node-US-04: Offline"), 700);
+  setTimeout(() => addLog("All nodes offline. Restarting services..."), 2000);
+  setTimeout(() => {
+    addLog("Cluster operational. Health: 100%");
+    initDiscovery();
+  }, 5000);
+};
+
+function addLog(msg) {
+  const logContainer = document.getElementById('scraperLog');
+  if (!logContainer) return;
+  const line = document.createElement('div');
+  line.className = 'log-line';
+  line.textContent = `[CMD] ${msg}`;
+  logContainer.appendChild(line);
+  logContainer.scrollTop = logContainer.scrollHeight;
+}
+
+// ── GLOBAL OPS LISTENERS ──────────────────────────────
+setTimeout(() => {
+  const flushAll = document.getElementById('btnFlushAll');
+  const rebootAll = document.getElementById('btnRebootCluster');
+  if (flushAll) flushAll.onclick = tech_flushAllCache;
+  if (rebootAll) rebootAll.onclick = tech_restartAllNodes;
+}, 1000);
+
+// Start API Monitoring & Navigation
+initNavigation();
+initDiscovery();

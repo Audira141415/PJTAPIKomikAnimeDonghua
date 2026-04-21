@@ -1,5 +1,11 @@
+<!--
+  @purpose: Strategic Monitor UI for Audira Gateway (Infrastructure Hub)
+  @caller: Browser (User Admin)
+  @dependencies: dashboard.css, dashboard.js, Google Fonts
+  @side_effects: Provides interface for API management and scraper monitoring
+-->
 <!DOCTYPE html>
-<html lang="id">
+<html lang="id" data-theme="light">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -10,133 +16,69 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@400;700;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="dashboard.css" />
+  <link rel="stylesheet" href="dashboard.css?v=1.0.5" />
 </head>
+
 <body>
 
-<!-- ═══════════════════════════════════════════════════════════════
-     SIDEBAR
-     ═══════════════════════════════════════════════════════════ -->
-<div class="sidebar-overlay" id="sidebarOverlay"></div>
-<aside class="sidebar" id="sidebar">
-  <div class="sidebar-brand">
-    <div class="sidebar-brand-icon">📚</div>
-    <div>
-      <h1 class="ultimate-title" style="font-size: 1.2rem; margin: 0;">Audira Comic</h1>
-      <small style="font-size: 0.65rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.1em;">REST Intelligence Node</small>
-    </div>
-  </div>
-  <nav class="sidebar-nav">
-    <div class="nav-section-label">Overview</div>
-    <a href="#section-overview" class="nav-item active" data-nav="section-overview">
-      <span class="nav-icon">📊</span> Dashboard
-    </a>
-    <a href="#section-status" class="nav-item" data-nav="section-status">
-      <span class="nav-icon">💓</span> System Status
-    </a>
-    <a href="#section-insights" class="nav-item" data-nav="section-insights">
-      <span class="nav-icon">🧭</span> Data Insights
-      <span class="nav-badge" style="background: var(--accent); color: #fff;">NEW</span>
-    </a>
 
-    <div class="nav-section-label">API Endpoints</div>
-    <a href="#section-discovery" class="nav-item" data-nav="section-discovery">
-      <span class="nav-icon">🔥</span> Discovery
-    </a>
-    <a href="#section-manga" class="nav-item" data-nav="section-manga">
-      <span class="nav-icon">📖</span> Manga / Komik
-    </a>
-    <a href="#section-chapters" class="nav-item" data-nav="section-chapters">
-      <span class="nav-icon">📄</span> Chapters
-    </a>
-    <a href="#section-anime" class="nav-item" data-nav="section-anime">
-      <span class="nav-icon">🎌</span> Anime
-      <span class="nav-badge" style="background: var(--accent); color: #fff;">NEW</span>
-    </a>
-    <a href="#section-anime-episodes" class="nav-item" data-nav="section-anime-episodes">
-      <span class="nav-icon">🍿</span> Anime Episodes
-    </a>
-    <a href="#section-donghua" class="nav-item" data-nav="section-donghua">
-      <span class="nav-icon">🎬</span> Donghua
-    </a>
-    <a href="#section-episodes" class="nav-item" data-nav="section-episodes">
-      <span class="nav-icon">📺</span> Episodes
-    </a>
-    <a href="#section-search" class="nav-item" data-nav="section-search">
-      <span class="nav-icon">🔍</span> Search
-    </a>
-    <a href="#section-auth" class="nav-item" data-nav="section-auth">
-      <span class="nav-icon">👤</span> Auth & User
-    </a>
-    <a href="#section-bookmarks" class="nav-item" data-nav="section-bookmarks">
-      <span class="nav-icon">🔖</span> Bookmarks
-    </a>
-    <a href="#section-collections" class="nav-item" data-nav="section-collections">
-      <span class="nav-icon">📁</span> Collections
-    </a>
-    <a href="#section-comments" class="nav-item" data-nav="section-comments">
-      <span class="nav-icon">💬</span> Comments
-    </a>
-    <a href="#section-tags" class="nav-item" data-nav="section-tags">
-      <span class="nav-icon">🏷️</span> Tags
-    </a>
 
-    <div class="nav-section-label">Tools</div>
-    <a href="#section-playground" class="nav-item" data-nav="section-playground">
-      <span class="nav-icon">🧪</span> Playground
-    </a>
-    <a href="#section-quicklinks" class="nav-item" data-nav="section-quicklinks">
-      <span class="nav-icon">🔗</span> Quick Links
-    </a>
-    <a href="#section-activity" class="nav-item" data-nav="section-activity">
-      <span class="nav-icon">📡</span> Activity Log
-    </a>
+<div class="infra-status-bar">
+  <div class="infra-dot"></div>
+  <span>Platform Integrity: Operational &bull; Audira Gateway Node-158 &bull; 0ms Delay</span>
+</div>
 
-    <div class="nav-section-label">MANAGERIA (ADMIN)</div>
-    <a href="#section-intelligence" class="nav-item" data-nav="section-intelligence" id="navIntelligence">
-      <span class="nav-icon">💡</span> Intelligence Hub
-      <span class="nav-badge" style="background: var(--accent); color: #fff;">NEW</span>
-    </a>
-    <a href="#section-operations" class="nav-item" data-nav="section-operations" id="navOperations">
-      <span class="nav-icon">⚙️</span> Scraper Console
-    </a>
-    <a href="#section-registry" class="nav-item" data-nav="section-registry" id="navRegistry">
-      <span class="nav-icon">🔑</span> Client Registry
-    </a>
-    <a href="#" class="nav-item" id="adminAuthBtn">
-      <span class="nav-icon">🔐</span> Admin Login
-    </a>
-    <a href="/api/v1/docs" class="nav-item" target="_blank">
-      <span class="nav-icon">📖</span> Swagger Docs
-      <span class="nav-badge">API</span>
-    </a>
-  </nav>
-  <div class="sidebar-footer">
-    © Audira · <a href="/api/v1/docs">Swagger</a> · <a href="/health">Health</a>
-  </div>
-</aside>
-
-<!-- ═══════════════════════════════════════════════════════════════
-     HEADER BAR
-     ═══════════════════════════════════════════════════════════ -->
 <header class="header">
   <div class="header-left">
-    <button class="hamburger" id="hamburgerBtn" aria-label="Toggle sidebar">☰</button>
-    <div style="display: flex; flex-direction: column;">
-      <span class="section-label" style="margin: 0; font-size: 0.6rem;">Operational Status</span>
-      <span class="header-title" style="font-family: 'Outfit'; font-weight: 800; text-transform: uppercase;">Command Center</span>
+    <div class="header-logo">
+      <img src="logo-premium.png" alt="Audira Logo" style="width: 38px; height: 38px; border: 3px solid #000; box-shadow: 4px 4px 0px #000; border-radius: 6px; object-fit: cover;">
+      <span class="logo-text" style="font-size: 1.3rem; font-weight: 900; letter-spacing: -0.02em;">Audira Gateway</span>
     </div>
+    <nav class="header-nav">
+        <!-- GROUP 1: STRATEGIC -->
+        <div class="nav-group">
+          <button class="nav-link nav-group-toggle">📡 STRATEGIC <span>▾</span></button>
+          <div class="nav-dropdown">
+            <a href="#section-overview" class="nav-link-sub">Strategic Overview</a>
+            <a href="#section-discovery" class="nav-link-sub">Infrastructure Monitor</a>
+            <a href="#section-status" class="nav-link-sub">Node Health Status</a>
+          </div>
+        </div>
+
+        <!-- GROUP 2: DOMAINS -->
+        <div class="nav-group">
+          <button class="nav-link nav-group-toggle">📚 DOMAINS <span>▾</span></button>
+          <div class="nav-dropdown">
+            <a href="#section-manga" class="nav-link-sub">Index: Manga</a>
+            <a href="#section-anime" class="nav-link-sub">Index: Anime</a>
+            <a href="#section-donghua" class="nav-link-sub">Index: Donghua</a>
+          </div>
+        </div>
+
+        <!-- GROUP 3: GATEWAY -->
+        <div class="nav-group">
+          <button class="nav-group-toggle">⚙️ GATEWAY <span class="nav-arrow">▾</span></button>
+          <div class="nav-dropdown">
+            <a href="#section-playground" class="nav-link-sub">API Playground Lab</a>
+            <a href="#section-insights" class="nav-link-sub">Network Intelligence</a>
+            <a href="#section-chapters" class="nav-link-sub">Data Feed Index</a>
+            <a href="#section-auth" class="nav-link-sub">Security & Auth</a>
+            <a href="#section-status" class="nav-link-sub">Infrastructure Node</a>
+          </div>
+        </div>
+      </nav>
   </div>
   <div class="header-right">
-    <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme">
-      <span class="theme-toggle-icon" id="themeIcon">🌓</span>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme" style="background: none; border: none; font-size: 1.2rem; cursor: pointer;">
+      <span id="themeIcon">☀️</span>
     </button>
-    <div class="health-badge">
-       <div class="dot connected" id="headerDot"></div>
-       <span id="headerEnv" style="text-transform: uppercase; font-size: 0.7rem; font-weight: 800;">development</span>
+    <div class="health-meta">
+      <div class="health-badge" style="background: #E8F5E9; color: #1B5E20; padding: 6px 12px; border-radius: 20px; font-size: 0.7rem; font-weight: 800; display: flex; align-items: center; gap: 6px;">
+         <div style="width: 8px; height: 8px; background: #2E7D32; border-radius: 50%;"></div>
+         PROD
+      </div>
     </div>
-    <div id="adminBadge" class="admin-badge" style="display: none;">ADMIN</div>
-  </div>
+    <button class="btn-login" id="adminAuthBtn">Admin Space</button>
   </div>
 </header>
 
@@ -145,8 +87,8 @@
      ═══════════════════════════════════════════════════════════ -->
 <main class="main">
 
-  <!-- ── SECTION: Overview (stats) ──────────────────────────── -->
-  <section id="section-overview" class="animate-in">
+  <!-- ── SECTION: Overview ──────────────────────────── -->
+  <section id="section-overview" class="content-section animate-in active">
     
     <!-- 🚀 ULTIMATE Hero Spotlight -->
     <div id="hero-spotlight" class="hero-spotlight">
@@ -167,39 +109,39 @@
     <h1 class="ultimate-title">Core Content Matrix</h1>
 
     <div class="stats-matrix ultimate-grid">
-      <div class="stat-box" style="--accent: #6366f1;">
+      <div class="stat-box">
         <div class="label">Total Registry</div>
         <div class="value" id="statTotal">...</div>
       </div>
-      <div class="stat-box" style="--accent: #ec4899;">
+      <div class="stat-box">
         <div class="label">Donghua Node</div>
         <div class="value" id="statDonghua">...</div>
       </div>
-      <div class="stat-box" style="--accent: #818cf8;">
+      <div class="stat-box">
         <div class="label">Manga Index</div>
         <div class="value" id="statManga">...</div>
       </div>
-      <div class="stat-box" style="--accent: #10b981;">
+      <div class="stat-box">
         <div class="label">Manhwa Flow</div>
         <div class="value" id="statManhwa">...</div>
       </div>
-      <div class="stat-box" style="--accent: #f59e0b;">
+      <div class="stat-box">
         <div class="label">Manhua Index</div>
         <div class="value" id="statManhua">...</div>
       </div>
-      <div class="stat-box" style="--accent: #3b82f6;">
+      <div class="stat-box">
         <div class="label">Anime Index</div>
         <div class="value" id="statAnime">...</div>
       </div>
-      <div class="stat-box" style="--accent: #06b6d4;">
+      <div class="stat-box">
         <div class="label">ONA Database</div>
         <div class="value" id="statOna">...</div>
       </div>
-      <div class="stat-box" style="--accent: #f97316;">
+      <div class="stat-box">
         <div class="label">Cinema Records</div>
         <div class="value" id="statMovie">...</div>
       </div>
-      <div class="stat-box" style="--accent: #8b5cf6;">
+      <div class="stat-box">
         <div class="label">Anime Source Nodes</div>
         <div class="value" id="statAnimeProxy">...</div>
       </div>
@@ -234,7 +176,7 @@
         </div>
         <div id="animationSourceMeta" class="source-items-meta">Menunggu data source...</div>
       </div>
-      <div class="source-items-table-wrap">
+      <div class="table-container">
         <table class="source-items-table">
           <thead>
             <tr>
@@ -279,7 +221,7 @@
           <button type="button" id="mangaResetBtn" class="insight-btn secondary">Reset</button>
         </div>
       </div>
-      <div class="source-items-table-wrap">
+      <div class="table-container">
         <table class="source-items-table">
           <thead>
             <tr>
@@ -305,65 +247,19 @@
     </article>
   </section>
 
-  <!-- ── SECTION: System Status ─────────────────────────────── -->
-  <section id="section-status" class="animate-in delay-1 glass-card">
-    <div class="section-label">Server Pulse</div>
-    <h2 class="ultimate-title" style="font-size: 1.5rem;">System Health Registry</h2>
-    <div class="status-grid">
-      <div class="status-card">
-        <div class="status-icon-wrap server">🖥️</div>
-        <div class="status-info">
-          <div class="status-name">Server</div>
-          <div class="status-state">
-            <span class="status-dot warn" id="serverDot"></span>
-            <span id="serverText">Checking...</span>
-          </div>
-        </div>
-      </div>
-      <div class="status-card">
-        <div class="status-icon-wrap mongo">🍃</div>
-        <div class="status-info">
-          <div class="status-name">MongoDB</div>
-          <div class="status-state">
-            <span class="status-dot warn" id="mongoDot"></span>
-            <span id="mongoText">Checking...</span>
-          </div>
-        </div>
-      </div>
-      <div class="status-card">
-        <div class="status-icon-wrap redis">⚡</div>
-        <div class="status-info">
-          <div class="status-name">Redis</div>
-          <div class="status-state">
-            <span class="status-dot warn" id="redisDot"></span>
-            <span id="redisText">Checking...</span>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="metrics-row">
-      <div class="metric-card">
-        <div class="metric-label">⏱️ Uptime</div>
-        <div class="metric-value" id="uptimeValue">—</div>
-      </div>
-      <div class="metric-card">
-        <div class="metric-label">🧠 Memory</div>
-        <div class="metric-value" id="memValue">—</div>
-      </div>
-      <div class="metric-card">
-        <div class="metric-label">💎 Quality</div>
-        <div class="metric-value" id="qualityValue">—</div>
-      </div>
-    </div>
-    <div id="dbOfflineBanner" class="offline-banner hidden">
-      Database sedang offline. Dashboard menampilkan demo carousel agar frontend tetap bisa dipreview.
-    </div>
   </section>
 
   <!-- ── SECTION: Data Insights ────────────────────────────── -->
-  <section id="section-insights" class="animate-in delay-1 glass-card">
+  <section id="section-insights" class="content-section animate-in delay-1 glass-card">
+    <div id="hero-network" class="section-hero">
+      <div class="hero-content">
+        <span class="hero-label">Telemetry Lab</span>
+        <h1 class="hero-title">Network Insights</h1>
+        <p class="hero-desc">Analyzing global node distribution and confidence scoring across multi-origin scrapers.</p>
+      </div>
+    </div>
     <div class="section-label">Data Analytics</div>
-    <h2 class="ultimate-title" style="font-size: 1.5rem;">Network Intelligence</h2>
+    <h2 class="ultimate-title" style="font-size: 1.5rem;">Network Intelligence Dashboard</h2>
     <div class="insight-toolbar">
       <div class="insight-filter-group">
         <label>Network Analytics</label>
@@ -427,291 +323,464 @@
   </section>
 
   <!-- ── ULTIMATE Telemetry HUD ────────────────────────────── -->
-  <div id="telemetry-hud" class="telemetry-hud">
-    <div class="hud-item">
-      <span class="hud-label">Latency</span>
-      <span class="hud-value" id="hudLatency">-- ms</span>
+  <section id="section-telemetry" class="content-section">
+    <div id="telemetry-hud" class="telemetry-hud">
+      <div class="hud-item">
+        <span class="hud-label">Latency</span>
+        <span class="hud-value" id="hudLatency">-- ms</span>
+      </div>
+      <div class="hud-item">
+        <span class="hud-label">Requests/Hr</span>
+        <span class="hud-value" id="hudRequests">0</span>
+      </div>
+      <div class="hud-item">
+        <span class="hud-label">Security</span>
+        <span class="hud-value" id="hudSecurity">Active</span>
+      </div>
     </div>
-    <div class="hud-item">
-      <span class="hud-label">Requests/Hr</span>
-      <span class="hud-value" id="hudRequests">0</span>
-    </div>
-    <div class="hud-item">
-      <span class="hud-label">Security</span>
-      <span class="hud-value" id="hudSecurity">Active</span>
-    </div>
-  </div>
+  </section>
 
   <div class="section-divider"></div>
 
-  <!-- ── SECTION: Playground + Activity ─────────────────────── -->
-    <div class="ops-grid">
-      <div class="glass-card" id="section-playground">
-        <div class="section-label">Interaction Lab</div>
-        <h2 class="ultimate-title" style="font-size: 1.5rem;">API Playground</h2>
-        <form id="playgroundForm" class="playground-form">
-          <div class="playground-row">
-            <select id="playMethod">
-              <option>GET</option>
-              <option>POST</option>
-              <option>PATCH</option>
-              <option>DELETE</option>
-            </select>
-            <input id="playPath" type="text" value="/donghua/home" placeholder="/donghua/home" />
-          </div>
-          <div class="preset-row">
-            <select id="presetCategory">
-              <option value="">Preset Category...</option>
-            </select>
-            <select id="presetEndpoint" disabled>
-              <option value="">Preset Endpoint...</option>
-            </select>
-          </div>
-          <input id="playToken" type="password" placeholder="Bearer token (optional)" autocomplete="off" />
-          <textarea id="playBody" placeholder='Body JSON (optional), contoh: {"title":"Example"}'></textarea>
-          <button type="submit">▶ Run Request</button>
-        </form>
-        <div id="responseMeta" class="response-meta">Ready</div>
-        <div class="response-tools">
-          <button id="copyPlaygroundResponse" type="button" class="copy-btn">Copy Response</button>
-        </div>
-        <pre id="responseBox" class="response-box">Response akan tampil di sini...</pre>
-      </div>
-
-      <div class="glass-card" id="section-activity">
-        <div class="section-label">Traffic Monitor</div>
-        <h2 class="ultimate-title" style="font-size: 1.5rem;">Live Activity Stream</h2>
-        <div class="activity-table-wrap" style="max-height: 420px;">
-          <table class="activity-table">
-            <thead>
-              <tr>
-                <th>Time</th>
-                <th>Request</th>
-                <th>Status</th>
-                <th>Latency</th>
-              </tr>
-            </thead>
-            <tbody id="activityBody"></tbody>
-          </table>
-          <div id="activityEmpty" class="empty-state">Belum ada traffic masuk. Coba akses endpoint dari browser atau Postman.</div>
+  <!-- ── SECTION: Operations ───────────────────────────────── -->
+  <div class="ops-grid">
+    <section id="section-playground" class="content-section">
+      <div id="hero-playground" class="section-hero">
+        <div class="hero-content">
+          <span class="hero-label">Development Sandbox</span>
+          <h1 class="hero-title">API Playground Lab</h1>
+          <p class="hero-desc">Interactive environment for real-time endpoint testing, response debugging, and schema validation.</p>
         </div>
       </div>
-    </div>
+      <div class="section-label">Interaction Lab</div>
+      <h2 class="ultimate-title" style="font-size: 1.5rem;">API Playground</h2>
+      <form id="playgroundForm" class="playground-form">
+        <div class="playground-row">
+          <select id="playMethod">
+            <option>GET</option>
+            <option>POST</option>
+            <option>PATCH</option>
+            <option>DELETE</option>
+          </select>
+          <input id="playPath" type="text" value="/donghua/home" placeholder="/donghua/home" />
+        </div>
+        <div class="preset-row">
+          <select id="presetCategory">
+            <option value="">Preset Category...</option>
+          </select>
+          <select id="presetEndpoint" disabled>
+            <option value="">Preset Endpoint...</option>
+          </select>
+        </div>
+        <input id="playToken" type="password" placeholder="Bearer token (optional)" autocomplete="off" />
+        <textarea id="playBody" placeholder='Body JSON (optional), contoh: {"title":"Example"}'></textarea>
+        <button type="submit">▶ Run Request</button>
+      </form>
+      <div id="responseMeta" class="response-meta">Ready</div>
+      <div class="response-tools">
+        <button id="copyPlaygroundResponse" type="button" class="copy-btn">Copy Response</button>
+      </div>
+      <pre id="responseBox" class="response-box">Response akan tampil di sini...</pre>
+    </section>
 
-
-  <div class="section-divider"></div>
-
-  <!-- ── Search bar ─────────────────────────────────────────── -->
-  <div class="search-bar">
-    <input type="text" id="searchInput" placeholder="Cari endpoint... (contoh: manga, donghua, search)" />
+    <section id="section-activity" class="content-section glass-card" style="margin:0;">
+      <div class="section-label">Traffic Monitor</div>
+      <h2 class="ultimate-title" style="font-size: 1.5rem;">Live Activity Stream</h2>
+      <div class="table-container" style="max-height: 420px;">
+        <table class="activity-table">
+          <thead>
+            <tr>
+              <th>Time</th>
+              <th>Request</th>
+              <th>Status</th>
+              <th>Latency</th>
+            </tr>
+          </thead>
+          <tbody id="activityBody"></tbody>
+        </table>
+        <div id="activityEmpty" class="empty-state">Belum ada traffic masuk. Coba akses endpoint dari browser atau Postman.</div>
+      </div>
+    </section>
   </div>
+
+
+  <main id="main-content" style="max-width: 1400px; margin: 80px auto 0; padding: 0 25px; display: block !important;">
+    <!-- ── SEARCH SYSTEM ── -->
+    <div class="search-bar" style="margin-bottom: 20px;">
+      <input type="text" id="searchInput" placeholder="🔍 SEARCH ENDPOINTS (e.g. manga, anime...)" />
+    </div>
 
   <!-- ── SECTION: Discovery ─────────────────────────────────── -->
-  <section id="section-discovery">
-    <div class="section-label">🔥 Discovery &amp; Trending</div>
-    <h1 class="ultimate-title" style="font-size: 1.5rem;">Pulse of the Platform</h1>
-    <div class="ultimate-grid" id="discovery">
-
-      <div class="card" style="--card-accent:#f97316" data-tags="trending popular">
-        <div class="card-header">
-          <span class="card-icon">🔥</span>
-          <span class="card-title">Trending Manga</span>
-          <span class="badge badge-green">Working</span>
+  <section id="section-discovery" class="content-section animate-in">
+    <div class="section-label">📡 Strategic API Monitor</div>
+    <h1 class="ultimate-title tech-title">Infrastructure Telemetry</h1>
+    
+    <div class="discovery-container">
+      
+      <!-- 1. API Performance Spotlight -->
+      <div class="discovery-hero-wrap">
+        <div class="discovery-carousel technical-monitor" id="discoveryCarousel">
+          <div class="carousel-track" id="carouselTrack">
+            <!-- Full-width metrics rendered by dashboard.js -->
+          </div>
+          <div class="carousel-nav">
+             <button id="carouselPrev" class="nav-btn">←</button>
+             <button id="carouselNext" class="nav-btn">→</button>
+          </div>
         </div>
-        <div class="endpoint"><span class="method get">GET</span>/api/v1/trending?period=week&limit=10</div>
-        <div class="card-desc">Manga/manhwa trending berdasarkan bookmark dalam periode waktu. Period: <code>day</code>, <code>week</code>, <code>month</code>, <code>all</code>.</div>
       </div>
 
-      <div class="card" style="--card-accent:#ec4899" data-tags="popular views ratings">
-        <div class="card-header">
-          <span class="card-icon">⭐</span>
-          <span class="card-title">Popular Content</span>
-          <span class="badge badge-green">Working</span>
+      <!-- 2. Technical Middle Row: Logs & Endpoints -->
+      <div class="discovery-middle-row">
+        <div class="discovery-genres terminal-box">
+          <h3 class="tech-sub-title">REAL-TIME SCRAPER LOGS</h3>
+          <div class="terminal-body" id="scraperLog">
+             <!-- Simulated stream -->
+          </div>
         </div>
-        <div class="endpoint"><span class="method get">GET</span>/api/v1/popular?metric=bookmarks&limit=10</div>
-        <div class="card-desc">Konten populer berdasarkan metric. Metric: <code>bookmarks</code>, <code>views</code>, <code>ratings</code>, <code>avg_rating</code>.</div>
+        
+        <div class="discovery-rankings stats-box">
+          <div class="ranking-header">
+            <h3 class="tech-sub-title">API ENDPOINTS</h3>
+            <span class="badge badge-green tech-badge">HEALTHY</span>
+          </div>
+          <div class="ranking-list" id="endpointMonitor">
+            <!-- Dynamically Rendered -->
+          </div>
+        </div>
       </div>
 
-      <div class="card" style="--card-accent:#6366f1" data-tags="latest newest manga">
-        <div class="card-header">
-          <span class="card-icon">🆕</span>
-          <span class="card-title">Latest Manga</span>
-          <span class="badge badge-green">Working</span>
+      <!-- 3. Final Content Grid: Node Map & Global Ops -->
+      <div class="discovery-feed-header">
+        <h3 class="tech-sub-title">ACTIVE WORKER NODES</h3>
+        <div class="header-actions">
+          <button class="nav-btn tech-btn-sm" id="btnFlushAll">🧹 FLUSH GLOBAL CACHE</button>
+          <button class="nav-btn tech-btn-sm" id="btnRebootCluster">🔄 REBOOT CLUSTER</button>
         </div>
-        <div class="endpoint"><span class="method get">GET</span>/api/v1/latest?limit=20</div>
-        <div class="card-desc">Manga/manhwa terbaru yang ditambahkan ke platform, diurutkan berdasarkan tanggal tambah.</div>
+      </div>
+      <div class="ultimate-grid" id="nodeMapGrid">
+        <!-- Rendered with orchestration controls by dashboard.js -->
       </div>
 
     </div>
   </section>
 
-  <!-- ── SECTION: Manga ─────────────────────────────────────── -->
-  <section id="section-manga">
+  <!-- ── SECTION: Manga ────────────────────────────────────── -->
+  <section id="section-manga" class="content-section">
+    <div id="hero-manga" class="section-hero">
+      <div class="hero-content">
+        <span class="hero-label">Strategic Domain</span>
+        <h1 class="hero-title">Manga Explorer</h1>
+        <p class="hero-desc">Access 150,000+ digital manuscripts. Global synchronization across multi-origin nodes.</p>
+      </div>
+    </div>
+    
     <div class="section-label">📖 Media Repository</div>
     <h1 class="ultimate-title" style="font-size: 1.5rem;">Manga / Komik Database</h1>
     <div class="ultimate-grid" id="manga">
 
-      <div class="card" style="--card-accent:#6366f1" data-tags="manga list semua">
-        <div class="card-header">
-          <span class="card-icon">📚</span>
-          <span class="card-title">Semua Manga</span>
-          <span class="badge badge-green">Working</span>
+      <div class="card" data-tags="manga list semua">
+        <div class="card-thumb" style="background:#F1F5F9; display:flex; align-items:center; justify-content:center; font-size:2rem;">📚</div>
+        <div class="card-body">
+          <div class="card-header">
+            <h3 class="card-title">Semua Manga</h3>
+            <div class="card-meta">
+               <span class="badge badge-yellow">📂 1.5k Items</span>
+               <span class="badge badge-blue">📑 Paged</span>
+               <span class="badge-label">INDEX</span>
+            </div>
+          </div>
+          <p class="card-desc">Daftar semua manga/manhwa/manhua dengan filter advance.</p>
         </div>
-        <div class="endpoint"><span class="method get">GET</span>/api/v1/mangas?page=1&limit=20&type=manga</div>
-        <div class="card-desc">Daftar semua manga/manhwa/manhua dengan filter <code>type</code>, <code>status</code>, <code>genre</code>, <code>tags</code>, sortir <code>rating</code>, <code>views</code>, dll.</div>
       </div>
 
-      <div class="card" style="--card-accent:#8b5cf6" data-tags="manga detail slug">
-        <div class="card-header">
-          <span class="card-icon">🔎</span>
-          <span class="card-title">Detail Manga</span>
-          <span class="badge badge-green">Working</span>
+      <div class="card" data-tags="manga detail slug">
+        <div class="card-thumb" style="background:#F1F5F9; display:flex; align-items:center; justify-content:center; font-size:2rem;">🔎</div>
+        <div class="card-body">
+          <div class="card-header">
+            <h3 class="card-title">Detail Manga</h3>
+            <div class="card-meta">
+               <span class="badge badge-yellow">🔗 Slug Based</span>
+               <span class="badge badge-blue">🧬 Metadata</span>
+               <span class="badge-label">GET-ID</span>
+            </div>
+          </div>
+          <p class="card-desc">Detail lengkap manga berdasarkan slug unik.</p>
         </div>
-        <div class="endpoint"><span class="method get">GET</span>/api/v1/mangas/:slug</div>
-        <div class="card-desc">Detail lengkap manga berdasarkan slug. Termasuk daftar chapter, rating, tags, dan metadata.</div>
       </div>
 
-      <div class="card" style="--card-accent:#10b981" data-tags="manga create buat">
-        <div class="card-header">
-          <span class="card-icon">➕</span>
-          <span class="card-title">Tambah Manga</span>
-          <span class="badge badge-purple">Admin</span>
+      <div class="card" data-tags="manga create buat">
+        <div class="card-thumb" style="background:#F1F5F9; display:flex; align-items:center; justify-content:center; font-size:2rem;">➕</div>
+        <div class="card-body">
+          <div class="card-header">
+            <h3 class="card-title">Tambah Manga</h3>
+            <div class="card-meta">
+               <span class="badge badge-yellow">🔒 Auth Required</span>
+               <span class="badge badge-blue">🛡️ Admin</span>
+               <span class="badge-label">POST</span>
+            </div>
+          </div>
+          <p class="card-desc">Operasi write untuk menambahkan entri baru ke database.</p>
         </div>
-        <div class="endpoint"><span class="method post">POST</span>/api/v1/mangas</div>
-        <div class="card-desc">Tambah manga baru ke platform. Butuh autentikasi role admin/moderator.</div>
-        <div class="auth-note">Butuh Bearer Token (admin)</div>
       </div>
 
-      <div class="card" style="--card-accent:#f59e0b" data-tags="manga rating bintang">
+      <div class="card" data-tags="manga rating bintang">
+        <div class="card-thumb" style="background:#F1F5F9; display:flex; align-items:center; justify-content:center; font-size:2rem;">⭐</div>
+        <div class="card-body">
+          <div class="card-header">
+            <h3 class="card-title">Rating Manga</h3>
+            <div class="card-meta">
+               <span class="badge badge-yellow">📈 Analytics</span>
+               <span class="badge badge-blue">⭐ 1-10</span>
+               <span class="badge-label">USER-ACTION</span>
+            </div>
+          </div>
+          <p class="card-desc">Sistem voting dan rating untuk menentukan kualitas konten.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── SECTION: Chapters (Data Feed Index) ────────────────── -->
+  <section id="section-chapters" class="content-section">
+    <div id="hero-feed" class="section-hero">
+      <div class="hero-content">
+        <span class="hero-label">Central Exchange</span>
+        <h1 class="hero-title">Data Feed Index</h1>
+        <p class="hero-desc">Global retrieval pipelines for multi-format media. Orchestrating thousands of daily content updates.</p>
+      </div>
+    </div>
+    <div class="section-label">📄 Reading Engine</div>
+    <h1 class="ultimate-title" style="font-size: 1.5rem;">Chapters & Navigation</h1>
+    <div class="ultimate-grid">
+      <div class="card">
+        <div class="card-header"><span class="card-icon">📖</span><span class="card-title">Baca Chapter</span></div>
+        <div class="endpoint"><span class="method get">GET</span>/api/v1/chapters/:slug</div>
+        <p class="card-desc">Mengambil array gambar untuk satu chapter spesifik.</p>
+      </div>
+      <div class="card">
+        <div class="card-header"><span class="card-icon">⬅️</span><span class="card-title">Navigasi Next/Prev</span></div>
+        <div class="endpoint"><span class="method get">GET</span>/api/v1/chapters/:slug/navigation</div>
+        <p class="card-desc">Navigasi antar chapter dalam satu judul.</p>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- ── SECTION: Node Status ──────────────────────────────── -->
+  <section id="section-status" class="content-section">
+    <div id="hero-infra" class="section-hero">
+      <div class="hero-content">
+        <span class="hero-label">Hardware Backbone</span>
+        <h1 class="hero-title">Infrastructure Node</h1>
+        <p class="hero-desc">Real-time status of backend clusters, persistence nodes, and memory cache replications. Maintaining 99.9% uptime.</p>
+      </div>
+    </div>
+    <div class="section-label">🔌 Infrastructure Status</div>
+    <h1 class="ultimate-title" style="font-size: 1.5rem;">System Health Registry</h1>
+    
+    <div class="status-grid">
+      <div class="status-card">
+        <div class="status-icon-wrap server">🖥️</div>
+        <div class="status-info">
+          <div class="status-name">Server Node</div>
+          <div class="status-state">
+            <span class="status-dot warn" id="serverDot"></span>
+            <span id="serverText">Checking...</span>
+          </div>
+        </div>
+      </div>
+      <div class="status-card">
+        <div class="status-icon-wrap mongo">🍃</div>
+        <div class="status-info">
+          <div class="status-name">Persistence (Mongo)</div>
+          <div class="status-state">
+            <span class="status-dot warn" id="mongoDot"></span>
+            <span id="mongoText">Checking...</span>
+          </div>
+        </div>
+      </div>
+      <div class="status-card">
+        <div class="status-icon-wrap redis">⚡</div>
+        <div class="status-info">
+          <div class="status-name">Hot Cache (Redis)</div>
+          <div class="status-state">
+            <span class="status-dot warn" id="redisDot"></span>
+            <span id="redisText">Checking...</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="metrics-row">
+      <div class="metric-card">
+        <div class="metric-label">⏱️ Uptime</div>
+        <div class="metric-value" id="uptimeValue">—</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">🧠 Memory</div>
+        <div class="metric-value" id="memValue">—</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">💎 Quality</div>
+        <div class="metric-value" id="qualityValue">—</div>
+      </div>
+    </div>
+    <div id="dbOfflineBanner" class="offline-banner hidden">
+      Database sedang offline. Dashboard menampilkan demo carousel agar frontend tetap bisa dipreview.
+    </div>
+  </section>
+  <div class="section-divider"></div>
+  <!-- ── SECTION: Anime ────────────────────────────────────── -->
+  <section id="section-anime" class="content-section">
+    <div id="hero-anime" class="section-hero">
+      <div class="hero-content">
+        <span class="hero-label">Entertainment Node</span>
+        <h1 class="hero-title">Anime Terminal</h1>
+        <p class="hero-desc">Direct uplink to global anime repositories. Real-time metadata and streaming metadata indexing.</p>
+      </div>
+    </div>
+    <div class="section-label">📺 Streaming Hub</div>
+    <h1 class="ultimate-title" style="font-size: 1.5rem;">Anime / TV Database</h1>
+    <div class="ultimate-grid" id="anime">
+
+      <div class="card" data-tags="anime home beranda">
+        <div class="card-thumb" style="background:#FFF9C4; display:flex; align-items:center; justify-content:center; font-size:2rem;">🏠</div>
+        <div class="card-body">
+          <div class="card-header">
+            <h3 class="card-title">Home Anime</h3>
+            <div class="card-meta">
+               <span class="badge badge-yellow">🏠 Landing</span>
+               <span class="badge badge-blue">📺 Featured</span>
+               <span class="badge-label">OTAKUDESU</span>
+            </div>
+          </div>
+          <p class="card-desc">Beranda anime: latest release dan anime pilihan.</p>
+        </div>
+      </div>
+
+      <div class="card" data-tags="anime terbaru ongoing">
+        <div class="card-thumb" style="background:#FFF9C4; display:flex; align-items:center; justify-content:center; font-size:2rem;">🆕</div>
+        <div class="card-body">
+          <div class="card-header">
+            <h3 class="card-title">Anime Terbaru</h3>
+            <div class="card-meta">
+               <span class="badge badge-yellow">🕒 Live</span>
+               <span class="badge badge-blue">📡 Ongoing</span>
+               <span class="badge-label">STREAM</span>
+            </div>
+          </div>
+          <p class="card-desc">Series anime yang sedang tayang minggu ini.</p>
+        </div>
+      </div>
+
+      <div class="card" data-tags="anime detail slug">
+        <div class="card-thumb" style="background:#FFF9C4; display:flex; align-items:center; justify-content:center; font-size:2rem;">🎞️</div>
+        <div class="card-body">
+          <div class="card-header">
+            <h3 class="card-title">Detail Anime</h3>
+            <div class="card-meta">
+               <span class="badge badge-yellow">🔗 Slug</span>
+               <span class="badge badge-blue">📜 Info</span>
+               <span class="badge-label">METADATA</span>
+            </div>
+          </div>
+          <p class="card-desc">Sinopsis dan daftar link streaming series.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── SECTION: Security & Auth ───────────────────────────── -->
+  <section id="section-auth" class="content-section">
+    <div id="hero-security" class="section-hero">
+      <div class="hero-content">
+        <span class="hero-label">Shield Protocol</span>
+        <h1 class="hero-title">Security & Auth</h1>
+        <p class="hero-desc">Encrypted credential management, JWT orchestration, and multi-factor authentication node telemetry.</p>
+      </div>
+    </div>
+    <div class="section-label">🔒 Protection Hub</div>
+    <h1 class="ultimate-title" style="font-size: 1.5rem;">Access Control System</h1>
+    <div class="ultimate-grid">
+       <div class="card" data-tags="auth register daftar">
         <div class="card-header">
-          <span class="card-icon">⭐</span>
-          <span class="card-title">Rating Manga</span>
+          <span class="card-icon">📝</span>
+          <span class="card-title">Register</span>
           <span class="badge badge-green">Working</span>
         </div>
-        <div class="endpoint"><span class="method post">POST</span>/api/v1/mangas/:id/rate</div>
-        <div class="card-desc">Beri rating 1-10 untuk manga. Satu user satu rating, bisa diupdate.</div>
+        <div class="endpoint"><span class="method post">POST</span>/api/v1/auth/register</div>
+        <div class="card-desc">Daftarkan akun baru. Body: <code>username</code>, <code>email</code>, <code>password</code>. Kirim email verifikasi otomatis.</div>
+      </div>
+
+      <div class="card" data-tags="auth login masuk token">
+        <div class="card-header">
+          <span class="card-icon">🔑</span>
+          <span class="card-title">Login</span>
+          <span class="badge badge-green">Working</span>
+        </div>
+        <div class="endpoint"><span class="method post">POST</span>/api/v1/auth/login</div>
+        <div class="card-desc">Login dan dapatkan <code>accessToken</code> + <code>refreshToken</code>. Access token berlaku 15 menit.</div>
+      </div>
+
+      <div class="card" data-tags="auth refresh token renew">
+        <div class="card-header">
+          <span class="card-icon">🔄</span>
+          <span class="card-title">Refresh Token</span>
+          <span class="badge badge-green">Working</span>
+        </div>
+        <div class="endpoint"><span class="method post">POST</span>/api/v1/auth/refresh</div>
+        <div class="card-desc">Perbarui access token menggunakan refresh token. Tidak perlu login ulang.</div>
+      </div>
+
+      <div class="card" data-tags="user profil profile me">
+        <div class="card-header">
+          <span class="card-icon">👤</span>
+          <span class="card-title">Profil Saya</span>
+          <span class="badge badge-green">Working</span>
+        </div>
+        <div class="endpoint"><span class="method get">GET</span>/api/v1/users/me</div>
+        <div class="card-desc">Data profil user yang sedang login. Termasuk statistik bookmark, reading history, dsb.</div>
         <div class="auth-note">Butuh Bearer Token</div>
       </div>
 
-      <div class="card" style="--card-accent:#3b82f6" data-tags="chapter daftar manga">
+      <div class="card" data-tags="user public profil publik">
         <div class="card-header">
-          <span class="card-icon">📄</span>
-          <span class="card-title">Chapter List</span>
+          <span class="card-icon">🌐</span>
+          <span class="card-title">Public User Profile</span>
           <span class="badge badge-green">Working</span>
         </div>
-        <div class="endpoint"><span class="method get">GET</span>/api/v1/mangas/:id/chapters</div>
-        <div class="card-desc">Daftar semua chapter untuk manga tertentu. Diurutkan berdasarkan nomor chapter.</div>
+        <div class="endpoint"><span class="method get">GET</span>/api/v1/users/:userId/public</div>
+        <div class="card-desc">Profil publik user lain: username, bio, avatar, stats. Data sensitif disembunyikan.</div>
       </div>
-
-    </div>
-  </section>
-
-  <!-- ── SECTION: Chapters ──────────────────────────────────── -->
-  <section id="section-chapters">
-    <div class="section-label">📄 Reading Engine</div>
-    <h1 class="ultimate-title" style="font-size: 1.5rem;">Chapters &amp; Navigation</h1>
-    <div class="ultimate-grid" id="chapters">
-
-      <div class="card" style="--card-accent:#06b6d4" data-tags="chapter baca gambar read">
-        <div class="card-header">
-          <span class="card-icon">📖</span>
-          <span class="card-title">Baca Chapter</span>
-          <span class="badge badge-green">Working</span>
-        </div>
-        <div class="endpoint"><span class="method get">GET</span>/api/v1/chapters/:slug</div>
-        <div class="card-desc">Gambar-gambar chapter untuk dibaca. Mengembalikan array URL gambar / server mirror.</div>
-      </div>
-
-      <div class="card" style="--card-accent:#8b5cf6" data-tags="chapter navigasi prev next">
-        <div class="card-header">
-          <span class="card-icon">⬅️</span>
-          <span class="card-title">Navigasi Chapter</span>
-          <span class="badge badge-green">Working</span>
-        </div>
-        <div class="endpoint"><span class="method get">GET</span>/api/v1/chapters/:slug/navigation</div>
-        <div class="card-desc">Navigasi prev/next chapter untuk manga. Memudahkan implementasi tombol lanjut/kembali.</div>
-      </div>
-
-      <div class="card" style="--card-accent:#10b981" data-tags="chapter tambah buat">
-        <div class="card-header">
-          <span class="card-icon">➕</span>
-          <span class="card-title">Tambah Chapter</span>
-          <span class="badge badge-purple">Admin</span>
-        </div>
-        <div class="endpoint"><span class="method post">POST</span>/api/v1/chapters</div>
-        <div class="card-desc">Tambah chapter baru dengan gambar-gambar. Mendukung upload multi-file.</div>
-        <div class="auth-note">Butuh Bearer Token (admin)</div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ── SECTION: Anime ────────────────────────────────────── -->
-  <section id="section-anime">
-    <div class="section-label">🎌 Nippon Animation</div>
-    <h1 class="ultimate-title" style="font-size: 1.5rem;">Anime Core Services</h1>
-    <div class="ultimate-grid" id="anime">
-
-      <div class="card" style="--card-accent:#6366f1" data-tags="anime home beranda">
-        <div class="card-header">
-          <span class="card-icon">🏠</span>
-          <span class="card-title">Home Anime</span>
-          <span class="badge badge-green">Working</span>
-        </div>
-        <div class="endpoint"><span class="method get">GET</span>/api/v1/anime/home</div>
-        <div class="card-desc">Beranda anime dari Otakudesu: <code>latest_release</code>, <code>popular</code>, dan <code>featured_anime</code>.</div>
-      </div>
-
-      <div class="card" style="--card-accent:#8b5cf6" data-tags="anime terbaru ongoing">
-        <div class="card-header">
-          <span class="card-icon">🆕</span>
-          <span class="card-title">Anime Terbaru</span>
-          <span class="badge badge-green">Working</span>
-        </div>
-        <div class="endpoint"><span class="method get">GET</span>/api/v1/animesail/terbaru</div>
-        <div class="card-desc">Daftar rilis anime terbaru (ongoing) dengan pagination. Diupdate secara real-time.</div>
-      </div>
-
-      <div class="card" style="--card-accent:#ec4899" data-tags="anime detail slug">
-        <div class="card-header">
-          <span class="card-icon">🎞️</span>
-          <span class="card-title">Detail Anime</span>
-          <span class="badge badge-green">Working</span>
-        </div>
-        <div class="endpoint"><span class="method get">GET</span>/api/v1/animesail/detail/:slug</div>
-        <div class="card-desc">Detail lengkap anime: sinopsis, genre, jumlah episode, status, dan daftar link streaming.</div>
-      </div>
-
-      <div class="card" style="--card-accent:#10b981" data-tags="anime search cari">
-        <div class="card-header">
-          <span class="card-icon">🔍</span>
-          <span class="card-title">Pencarian Anime</span>
-          <span class="badge badge-green">Working</span>
-        </div>
-        <div class="endpoint"><span class="method get">GET</span>/api/v1/animesail/search/:query</div>
-        <div class="card-desc">Cari anime berdasarkan judul menggunakan provider AnimeSail.</div>
-      </div>
-
     </div>
   </section>
 
   <!-- ── SECTION: Anime Episodes ───────────────────────────── -->
-  <section id="section-anime-episodes">
+  <section id="section-anime-episodes" class="content-section">
     <div class="section-label">🍿 Streaming Services</div>
     <h1 class="ultimate-title" style="font-size: 1.5rem;">Anime Episodes & Mirror</h1>
     <div class="ultimate-grid" id="anime-episodes">
 
-      <div class="card" style="--card-accent:#f59e0b" data-tags="anime episode nonton">
-        <div class="card-header">
-          <span class="card-icon">🍿</span>
-          <span class="card-title">Nonton Episode</span>
-          <span class="badge badge-green">Working</span>
+      <div class="card" data-tags="anime episode nonton">
+        <div class="card-thumb" style="background:#FFF9C4; display:flex; align-items:center; justify-content:center; font-size:2rem;">🍿</div>
+        <div class="card-body">
+          <div class="card-header">
+            <h3 class="card-title">Nonton Episode</h3>
+            <div class="card-meta">
+               <span class="badge badge-yellow">🎬 Watch</span>
+               <span class="badge badge-blue">📡 HD</span>
+               <span class="badge-label">PLAYER</span>
+            </div>
+          </div>
+          <p class="card-desc">Streaming player dengan subtitle bahasa Indonesia.</p>
         </div>
-        <div class="endpoint"><span class="method get">GET</span>/api/v1/animesail/episode/:slug</div>
-        <div class="card-desc">Data streaming episode anime. Termasuk navigasi antar episode dan info series terkait.</div>
       </div>
 
-      <div class="card" style="--card-accent:#8b5cf6" data-tags="anime stream mirror">
+      <div class="card" data-tags="anime stream mirror">
         <div class="card-header">
           <span class="card-icon">🔗</span>
           <span class="card-title">Mirror Stream</span>
@@ -727,7 +796,14 @@
   <div class="section-divider"></div>
 
   <!-- ── SECTION: Donghua ───────────────────────────────────── -->
-  <section id="section-donghua">
+  <section id="section-donghua" class="content-section">
+    <div id="hero-donghua" class="section-hero">
+      <div class="hero-content">
+        <span class="hero-label">Eastern Domain</span>
+        <h1 class="hero-title">Donghua Center</h1>
+        <p class="hero-desc">Specialized portal for high-fidelity Eastern animation. Managing mystical data streams with 8K precision.</p>
+      </div>
+    </div>
     <div class="section-label">🎬 Animation API</div>
     <h1 class="ultimate-title" style="font-size: 1.5rem;">Donghua Core Services</h1>
     <div class="ultimate-grid" id="donghua">
@@ -826,7 +902,7 @@
   </section>
 
   <!-- ── SECTION: Episodes ──────────────────────────────────── -->
-  <section id="section-episodes">
+  <section id="section-episodes" class="content-section">
     <div class="section-label">🎬 Series Telemetry</div>
     <h1 class="ultimate-title" style="font-size: 1.5rem;">Episodes &amp; Seasons</h1>
     <div class="ultimate-grid" id="episodes">
@@ -865,7 +941,7 @@
   </section>
 
   <!-- ── SECTION: Search ────────────────────────────────────── -->
-  <section id="section-search">
+  <section id="section-search" class="content-section">
     <div class="section-label">🔍 Search Intelligence</div>
     <h1 class="ultimate-title" style="font-size: 1.5rem;">Discovery Filters</h1>
     <div class="ultimate-grid" id="search">
@@ -883,65 +959,7 @@
     </div>
   </section>
 
-  <!-- ── SECTION: Auth ──────────────────────────────────────── -->
-  <section id="section-auth">
-    <div class="section-label">👤 User Verification</div>
-    <h1 class="ultimate-title" style="font-size: 1.5rem;">Auth &amp; Account</h1>
-    <div class="ultimate-grid" id="auth">
 
-      <div class="card" style="--card-accent:#10b981" data-tags="auth register daftar">
-        <div class="card-header">
-          <span class="card-icon">📝</span>
-          <span class="card-title">Register</span>
-          <span class="badge badge-green">Working</span>
-        </div>
-        <div class="endpoint"><span class="method post">POST</span>/api/v1/auth/register</div>
-        <div class="card-desc">Daftarkan akun baru. Body: <code>username</code>, <code>email</code>, <code>password</code>. Kirim email verifikasi otomatis.</div>
-      </div>
-
-      <div class="card" style="--card-accent:#3b82f6" data-tags="auth login masuk token">
-        <div class="card-header">
-          <span class="card-icon">🔑</span>
-          <span class="card-title">Login</span>
-          <span class="badge badge-green">Working</span>
-        </div>
-        <div class="endpoint"><span class="method post">POST</span>/api/v1/auth/login</div>
-        <div class="card-desc">Login dan dapatkan <code>accessToken</code> + <code>refreshToken</code>. Access token berlaku 15 menit.</div>
-      </div>
-
-      <div class="card" style="--card-accent:#8b5cf6" data-tags="auth refresh token renew">
-        <div class="card-header">
-          <span class="card-icon">🔄</span>
-          <span class="card-title">Refresh Token</span>
-          <span class="badge badge-green">Working</span>
-        </div>
-        <div class="endpoint"><span class="method post">POST</span>/api/v1/auth/refresh</div>
-        <div class="card-desc">Perbarui access token menggunakan refresh token. Tidak perlu login ulang.</div>
-      </div>
-
-      <div class="card" style="--card-accent:#f59e0b" data-tags="user profil profile me">
-        <div class="card-header">
-          <span class="card-icon">👤</span>
-          <span class="card-title">Profil Saya</span>
-          <span class="badge badge-green">Working</span>
-        </div>
-        <div class="endpoint"><span class="method get">GET</span>/api/v1/users/me</div>
-        <div class="card-desc">Data profil user yang sedang login. Termasuk statistik bookmark, reading history, dsb.</div>
-        <div class="auth-note">Butuh Bearer Token</div>
-      </div>
-
-      <div class="card" style="--card-accent:#06b6d4" data-tags="user public profil publik">
-        <div class="card-header">
-          <span class="card-icon">🌐</span>
-          <span class="card-title">Public User Profile</span>
-          <span class="badge badge-green">Working</span>
-        </div>
-        <div class="endpoint"><span class="method get">GET</span>/api/v1/users/:userId/public</div>
-        <div class="card-desc">Profil publik user lain: username, bio, avatar, stats. Data sensitif disembunyikan.</div>
-      </div>
-
-    </div>
-  </section>
 
   <!-- ── SECTION: Bookmarks ─────────────────────────────────── -->
   <section id="section-bookmarks">
@@ -949,7 +967,7 @@
     <h1 class="ultimate-title" style="font-size: 1.5rem;">Bookmarks &amp; History</h1>
     <div class="ultimate-grid" id="bookmarks">
 
-      <div class="card" style="--card-accent:#ec4899" data-tags="bookmark koleksi list saya">
+      <div class="card" data-tags="bookmark koleksi list saya">
         <div class="card-header">
           <span class="card-icon">🔖</span>
           <span class="card-title">Bookmark Saya</span>
@@ -960,7 +978,7 @@
         <div class="auth-note">Butuh Bearer Token</div>
       </div>
 
-      <div class="card" style="--card-accent:#f97316" data-tags="bookmark toggle tambah hapus">
+      <div class="card" data-tags="bookmark toggle tambah hapus">
         <div class="card-header">
           <span class="card-icon">➕</span>
           <span class="card-title">Toggle Bookmark</span>
@@ -971,7 +989,7 @@
         <div class="auth-note">Butuh Bearer Token</div>
       </div>
 
-      <div class="card" style="--card-accent:#6366f1" data-tags="history riwayat baca">
+      <div class="card" data-tags="history riwayat baca">
         <div class="card-header">
           <span class="card-icon">📜</span>
           <span class="card-title">Reading History</span>
@@ -991,7 +1009,7 @@
     <h1 class="ultimate-title" style="font-size: 1.5rem;">Topic Collections</h1>
     <div class="ultimate-grid" id="collections">
 
-      <div class="card" style="--card-accent:#14b8a6" data-tags="collection list daftar">
+      <div class="card" data-tags="collection list daftar">
         <div class="card-header">
           <span class="card-icon">📁</span>
           <span class="card-title">Koleksi Saya</span>
@@ -1002,7 +1020,7 @@
         <div class="auth-note">Butuh Bearer Token</div>
       </div>
 
-      <div class="card" style="--card-accent:#8b5cf6" data-tags="collection buat create baru">
+      <div class="card" data-tags="collection buat create baru">
         <div class="card-header">
           <span class="card-icon">📂</span>
           <span class="card-title">Buat Koleksi</span>
@@ -1013,7 +1031,7 @@
         <div class="auth-note">Butuh Bearer Token</div>
       </div>
 
-      <div class="card" style="--card-accent:#f59e0b" data-tags="collection public trending discovery">
+      <div class="card" data-tags="collection public trending discovery">
         <div class="card-header">
           <span class="card-icon">📊</span>
           <span class="card-title">Trending Collections</span>
@@ -1032,7 +1050,7 @@
     <h1 class="ultimate-title" style="font-size: 1.5rem;">Comments &amp; Reviews</h1>
     <div class="ultimate-grid" id="comments">
 
-      <div class="card" style="--card-accent:#3b82f6" data-tags="comment komentar manga">
+      <div class="card" data-tags="comment komentar manga">
         <div class="card-header">
           <span class="card-icon">💬</span>
           <span class="card-title">Komentar Manga</span>
@@ -1042,7 +1060,7 @@
         <div class="card-desc">Daftar komentar untuk manga tertentu. Support pagination dan sortir.</div>
       </div>
 
-      <div class="card" style="--card-accent:#10b981" data-tags="comment tambah tulis post">
+      <div class="card" data-tags="comment tambah tulis post">
         <div class="card-header">
           <span class="card-icon">✍️</span>
           <span class="card-title">Tulis Komentar</span>
@@ -1053,7 +1071,7 @@
         <div class="auth-note">Butuh Bearer Token</div>
       </div>
 
-      <div class="card" style="--card-accent:#ec4899" data-tags="review ulasan manga rating">
+      <div class="card" data-tags="review ulasan manga rating">
         <div class="card-header">
           <span class="card-icon">📝</span>
           <span class="card-title">Reviews Manga</span>
@@ -1072,7 +1090,7 @@
     <h1 class="ultimate-title" style="font-size: 1.5rem;">API Tags Registry</h1>
     <div class="ultimate-grid" id="tags">
 
-      <div class="card" style="--card-accent:#06b6d4" data-tags="tag genre daftar list">
+      <div class="card" data-tags="tag genre daftar list">
         <div class="card-header">
           <span class="card-icon">🏷️</span>
           <span class="card-title">Daftar Tag</span>
@@ -1091,7 +1109,7 @@
     <h1 class="ultimate-title" style="font-size: 1.5rem;">Info &amp; Documentation</h1>
     <div class="ultimate-grid">
 
-      <div class="card" style="--card-accent:#6366f1" data-tags="docs swagger dokumentasi">
+      <div class="card" data-tags="docs swagger dokumentasi">
         <div class="card-header">
           <span class="card-icon">📖</span>
           <span class="card-title">Swagger / OpenAPI Docs</span>
@@ -1101,7 +1119,7 @@
         <div class="card-desc">Dokumentasi API interaktif dengan Swagger UI. Bisa langsung mencoba endpoint dari browser.</div>
       </div>
 
-      <div class="card" style="--card-accent:#10b981" data-tags="health status server">
+      <div class="card" data-tags="health status server">
         <div class="card-header">
           <span class="card-icon">💓</span>
           <span class="card-title">Health Check</span>
@@ -1111,7 +1129,7 @@
         <div class="card-desc">Cek status server. Mengembalikan <code>status: ok</code>, versi API, dan timestamp.</div>
       </div>
 
-      <div class="card" style="--card-accent:#f59e0b" data-tags="base url endpoint api root">
+      <div class="card" data-tags="base url endpoint api root">
         <div class="card-header">
           <span class="card-icon">🌐</span>
           <span class="card-title">Base URL</span>
@@ -1234,13 +1252,72 @@
 
 </main><!-- /main -->
 
-<!-- ── Footer ────────────────────────────────────────────────── -->
-<footer>
-  <p>Audira Comic API &nbsp;© Audira&nbsp;&nbsp;·&nbsp;&nbsp;<a href="/api/v1/docs">Swagger Docs</a> &nbsp;·&nbsp; <a href="/health">Health</a></p>
-  <p style="margin-top:6px; color:#3a4259;">Base URL: <code style="color:#a5b4fc">/api/v1/</code> &nbsp;·&nbsp; Auth: <code style="color:#a5b4fc">Authorization: Bearer &lt;token&gt;</code></p>
+<!-- ── Mega Footer (Rebranding) ────────────────────────────── -->
+<footer class="mega-footer">
+  <div class="footer-main">
+    <div class="footer-col branding-col">
+      <div class="footer-logo">
+        <div class="logo-box">A</div>
+        <div class="logo-text">
+          <span class="audira">AUDIRA</span>
+          <span class="universe">GATEWAY</span>
+        </div>
+      </div>
+      <p class="footer-tagline">
+        THE ULTIMATE NEURAL GATEWAY FOR EASTERN MEDIA. SYNCHRONIZING HIGH-FIDELITY STREAMING WITH DECENTRALIZED INTELLIGENCE. BUILT FOR THE MODERN OTAKU GENERATION.
+      </p>
+      <div class="footer-socials">
+        <a href="#" class="social-icon">🌐</a>
+        <a href="#" class="social-icon">↗️</a>
+        <a href="#" class="social-icon">💬</a>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <h4>NAVIGATION</h4>
+      <ul class="footer-links">
+        <li><a href="#section-anime">ANIME HUB</a></li>
+        <li><a href="#section-manga">MANGA TERMINAL</a></li>
+        <li><a href="#section-donghua">DONGHUA NODE</a></li>
+        <li><a href="#section-chapters">CHAPTER BRIDGE</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>PLATFORM</h4>
+      <ul class="footer-links">
+        <li><a href="#"><span class="icon">🛡️</span> SAFETY GUIDELINES</a></li>
+        <li><a href="#"><span class="icon">🕸️</span> NEURAL LINK API</a></li>
+        <li><a href="#"><span class="icon">⚡</span> OTAKU RANKING</a></li>
+        <li><a href="#"><span class="icon">🌍</span> GLOBAL NODE MAP</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col manifesto-col">
+      <h4>MANIFESTO</h4>
+      <div class="manifesto-card">
+        <p>"THIS PLATFORM IS A TESTAMENT TO THE CONVERGENCE OF TECHNOLOGY AND ART. DEVELOPED WITH PASSION BY THE **AUDIRA STRATEGIC OPERATIONS TEAM**."</p>
+        <div class="manifesto-author">
+          <div class="author-avatar" style="background: linear-gradient(135deg, #FF6B6B, #FFD93D);"></div>
+          <div class="author-info">
+            <strong>AUDIRA DEV CORE</strong>
+            <span>LEAD ARCHITECTS</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="copyright">© 2026 AUDIRA GATEWAY. ZENITH EDITION V4.2.0. ALL RIGHTS RESERVED.</div>
+    <div class="system-status">
+      <span class="status-dot green"></span> ALL SYSTEMS NOMINAL
+    </div>
+    <div class="culture-tag">MADE WITH ❤️ FOR THE CULTURE</div>
+  </div>
 </footer>
 
-<script src="/dashboard.js"></script>
+<script src="/dashboard.js?v=1.0.5"></script>
 
 <!-- ── Admin Login Modal ────────────────────────────────────── -->
 <div id="loginModal" class="modal-backdrop" style="display: none;">
@@ -1264,5 +1341,6 @@
   </div>
 </div>
 
+  </main>
 </body>
 </html>

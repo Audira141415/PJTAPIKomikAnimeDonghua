@@ -7,70 +7,46 @@
 - **Deployment**: Docker Compose → Production server 192.168.100.158
 - **Frontend**: Vanilla HTML/CSS/JS admin dashboard (client/admin-portal/)
 
-## 1. Architecture & Module Boundaries (MANDATORY)
-- This project uses **module aliases** defined in `package.json` under `_moduleAliases`. Always import using aliases:
-  - `@core` → `src/core` (database, utils, shared services)
-  - `@domains` → `src/domains` (catalogs, identity, interactions, metrics)
-  - `@middlewares` → `src/middlewares`
-  - `@scrapers` → `src/infrastructure/scraper/services`
-  - `@models` → `src/core/database/modelRegistry`
-  - `@repositories` → `src/core/database/repositoryRegistry`
-- **Domain structure**: Each domain folder follows `domain/{feature}/api/`, `domain/{feature}/services/`, `domain/{feature}/models/`.
-- The **model registry** (`src/core/database/modelRegistry.js`) and **repository registry** (`src/core/database/repositoryRegistry.js`) are the SINGLE source of truth for all Mongoose models and data-access layers. Never import models directly from their file — always go through the registry.
-- Redis client is accessed via `require('@core/database/redis').getRedisClient()`. Never create a new Redis connection.
+## Personalization & Technical Rules
 
-## 2. Coding Standards & Patterns (MANDATORY)
-- Use `'use strict';` at the top of every backend JS file.
-- Use `const` by default; `let` only when reassignment is required. Never use `var`.
-- Async/await everywhere. No raw `.then()/.catch()` chains.
-- Error handling: wrap service logic in try/catch; let the global `error.middleware.js` handle Express-level errors.
-- Response format is always `{ success: true/false, data: ..., message: ... }`. Use `src/core/utils/response.js` helpers.
-- Logger: Use `require('@core/utils/logger')` (Winston). Never use `console.log` in production code.
-- All scraper services live in `src/infrastructure/scraper/services/`. Each scraper is a self-contained module (e.g., `otakudesu.service.js`, `donghub.service.js`).
-- BullMQ jobs are defined in `src/jobs/`. The **worker** processes jobs; the **scheduler** enqueues repeatable jobs.
-- Telegram notifications go through `require('@core/utils/telegram')`. Use `sendAlert(title, htmlBody, severity)`.
-- Security middleware stack order in `app.js`: Helmet → CORS → Shield → RateLimiter → ClientUsage → Routes → ErrorHandler.
+1. **Registry-First Data Access**: Selalu gunakan `@models` dan `@repositories` sebagai entry point data access. Dilarang mengimpor file model individu secara langsung untuk menjaga konsistensi registry dan skema Mongoose.
+2. **Infrastructure Synergy (Scraper & Jobs)**: Setiap penambahan scraper baru wajib terintegrasi dengan `BullMQ` di `src/jobs/` dan wajib menyertakan monitoring via `Telegram Bot` (`sendAlert`) untuk update status real-time.
+3. **Domain-Driven Modularization**: Patuhi struktur `domain/{feature}/` (api, services, models). Logika domain tidak boleh bocor antar domain; gunakan Service Layer atau Repository Registry untuk interaksi antar-modul.
+4. Hindari membaca keseluruhan file besar jika tidak diperlukan; baca blok fungsi terkait saja.
+5. Proses harus super efisien: minim command, minim file read, langsung ke target.
+6. Jangan mencampur banyak fungsi/logic dalam satu file; pecah ke module kecil yang jelas tanggung jawabnya.
+7. Jika ada inisiatif di luar request user, **wajib minta persetujuan dulu** sebelum eksekusi.
 
-## 3. Frontend (Admin Dashboard) Rules
-- Dashboard files are in `client/admin-portal/` — pure HTML, CSS, JS. No build tools, no bundler.
-- CSS design system uses CSS custom properties (variables) in `:root`. Always use these variables — never hardcode colors.
-- Font stack: `'Outfit'` for headings, `'Inter'` for body, `'JetBrains Mono'` for code/metrics.
-- All API calls from the dashboard use relative paths (e.g., `/api/v1/...`, `/dashboard/status`).
-- The `copyText()` function in `dashboard.js` has a **fallback for non-HTTPS contexts** (clipboard API doesn't work on plain HTTP IP addresses). Always maintain this fallback.
-- Theme toggle: dark/light via `data-theme` attribute on `<html>`. All CSS must respect `[data-theme="light"]` overrides.
+## Hard Instruction: Dokumentasi (WAJIB)
+8. Setiap file yang dibuat atau diubah **wajib** memiliki header doc singkat di bagian paling atas file.
+9. Header doc **wajib** berisi minimal:
+   - tujuan file/module,
+   - dipakai oleh siapa (caller/route/controller),
+   - dependensi utama (service/repo/API),
+   - daftar fungsi public/utama,
+   - side effect penting (DB read/write, HTTP call, file I/O).
+10. Jika file sudah punya header doc, **wajib update** agar tetap akurat setelah perubahan.
+11. Dilarang menambah/mengubah logic tanpa menyesuaikan header doc.
+12. Format header harus ringkas, konsisten, dan mudah dipindai cepat (maksimal efisien untuk tracing).
 
-## 4. File Reading Efficiency
-- Avoid reading entire large files if not needed; read only the relevant function block.
+## Standar Query/Database (WAJIB - Senior DBA Level)
+13. Rancang query dengan prinsip **minimum cost, minimum I/O, minimum lock contention**.
+14. Selalu evaluasi:
+   - cardinality/selectivity filter,
+   - pemakaian index yang tepat,
+   - join order & join strategy,
+   - dampak ke CPU, memory, disk, dan network.
+15. Hindari pola boros resource (proses berulang, temp table tidak perlu, write berlapis, N+1 query) jika bisa diselesaikan dengan rencana query yang lebih ringkas.
+16. Pilih strategi paling efisien sesuai konteks (upsert/merge/batch/incremental/query rewrite), bukan template tunggal.
+17. Pastikan aman untuk skala besar: transactional consistency tepat, locking minimal, dan tetap cepat saat data tumbuh.
+18. Sebelum finalize perubahan DB-heavy, jelaskan singkat alasan efisiensi, trade-off, dan risiko performa yang dihindari (explain efficiency, trade-offs, and performance risks avoided).
 
-## 5. Execution Efficiency
-- Process must be super efficient: minimal commands, minimal file reads, go straight to the target.
+## Claude Skills Framework (Specialized)
 
-## 6. Module Separation
-- Do not mix many functions/logic in a single file; split into small modules with clear responsibilities.
-
-## 7. Initiative Policy
-- If there is any initiative outside the user's request, **approval must be requested first** before execution.
-
-## Hard Instruction: Documentation (MANDATORY)
-8. Every file created or modified **must** have a short header doc at the very top of the file.
-9. The header doc **must** contain at minimum:
-   - Purpose of the file/module,
-   - Used by whom (caller/route/controller),
-   - Main dependencies (service/repo/API),
-   - List of public/main functions,
-   - Important side effects (DB read/write, HTTP call, file I/O).
-10. If a file already has a header doc, it **must be updated** to remain accurate after changes.
-11. Adding/modifying logic without updating the header doc is forbidden.
-12. Header format must be concise, consistent, and easy to scan quickly (maximum efficiency for tracing).
-
-## Database Standards (MANDATORY — Senior DBA Level)
-13. Design queries with the principle of **minimum cost, minimum I/O, minimum lock contention**.
-14. Always evaluate:
-   - Cardinality/selectivity of filters,
-   - Proper index usage,
-   - Join order & join strategy,
-   - Impact on CPU, memory, disk, and network.
-15. Avoid resource-wasteful patterns (repeated processing, unnecessary temp tables, layered writes, N+1 queries) if solvable with a more concise query plan.
-16. Choose the most efficient strategy for the context (upsert/merge/batch/incremental/query rewrite), not a single template approach.
-17. Ensure safety at scale: proper transactional consistency, minimal locking, and fast execution even as data grows.
-18. Before finalizing DB-heavy changes, briefly explain the efficiency rationale, trade-offs, and the performance risks being avoided.
+19. **Specialized Agent Skills**: Proyek ini telah dilengkapi dengan 17 skill spesialis dari library `claude-skills-main` yang tersimpan di `.cursor/rules/`. Skill ini mencakup:
+    - **Architecture & Backend**: `senior-architect`, `senior-backend`.
+    - **Database & Schema**: `database-designer`, `database-schema-designer`.
+    - **Security & API**: `api-design-reviewer`, `api-test-suite-builder`, `senior-security`.
+    - **DevOps & Quality**: `docker-development`, `ci-cd-pipeline-builder`, `senior-qa`.
+    - **Automation**: `self-improving-agent`, `runbook-generator`.
+20. **Activation**: Gunakan `@name-skill` (misal `@api-design-reviewer`) saat meminta bantuan spesifik untuk memicu konteks instruksi yang lebih mendalam dari framework tersebut.
