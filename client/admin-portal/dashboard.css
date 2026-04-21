@@ -91,9 +91,10 @@ body {
 
 /* ── Content Isolation (The Fix) ── */
 .content-section {
-  display: none !important; /* TOTAL LOCK */
+  display: none;
   opacity: 0;
   margin: 0 auto;
+  padding: 0;
   max-width: 1400px;
 }
 
@@ -519,13 +520,7 @@ code { font-family: 'JetBrains Mono', monospace; font-size: 0.9em; }
   animation: fadeIn 0.6s ease-out;
 }
 
-.content-section {
-  display: none;
-}
-
-.content-section.active {
-  display: block;
-}
+/* .content-section styles consolidated at Line 93 */
 
 /* ── Section Typography ─────────────────────────────────────── */
 .section-label {
@@ -1386,10 +1381,17 @@ code { font-family: 'JetBrains Mono', monospace; font-size: 0.9em; }
 
 /* ── Universal Premium Hero Spacing Fix ────────────────────────── */
 /* Mencegah spasi liar di atas hero pada modul apa pun */
-.content-section:has(.premium-hero),
-.content-section:has(.section-hero) {
-    padding-top: 0 !important;
+/* Menggunakan selector langsung karena :has() mungkin tidak didukung di semua browser */
+.content-section > .premium-hero:first-child,
+.content-section > .hero-spotlight:first-child,
+.content-section > .section-hero:first-child {
     margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+
+/* Memastikan content-section tidak punya padding atas default jika isinya adalah hero */
+.content-section {
+    padding-top: 0 !important;
 }
 
 /* Premium hero styling already defined above */
