@@ -138,7 +138,7 @@ code { font-family: 'JetBrains Mono', monospace; font-size: 0.9em; }
     border-bottom: 4px solid #000;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start; /* Ensure left alignment for better control */
 }
 
 .infra-status-bar {
@@ -1267,8 +1267,21 @@ code { font-family: 'JetBrains Mono', monospace; font-size: 0.9em; }
   pointer-events: none;
 }
 
-.spotlight-track { display: flex; height: 100%; transition: transform 0.8s var(--ease); }
-.spotlight-slide { min-width: 100%; height: 100%; position: relative; display: flex; align-items: center; padding: 40px 80px; } /* Center items vertically */
+.spotlight-track { 
+    display: flex; 
+    height: 100%; 
+    width: 100%; /* Force track width */
+    transition: transform 0.8s var(--ease); 
+}
+.spotlight-slide { 
+    min-width: 100%; 
+    height: 100%; 
+    position: relative; 
+    display: flex; 
+    align-items: center; 
+    padding: 60px 140px; /* Highly increased horizontal padding to prevent clipping */
+    box-sizing: border-box;
+}
 .spotlight-bg {
   position: absolute; inset: 0;
   background-size: cover; background-position: center;
