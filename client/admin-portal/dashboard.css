@@ -5,7 +5,8 @@
    @purpose: Design System & Layout for API Strategic Monitor
    @caller: index.html
    @dependencies: Google Fonts (Outfit, Inter, JetBrains Mono)
-   @key_components: .header, .card, .terminal-box, .mega-footer
+   @key_components: .header, .card, .terminal-box, .premium-hero, .section-hero, .mega-footer
+   @side_effects: Visual layout rendering, animations, global theme state
    ══════════════════════════════════════════════════════════ */
 
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&family=JetBrains+Mono:wght@700&family=Inter:wght@400;700;900&display=swap');
