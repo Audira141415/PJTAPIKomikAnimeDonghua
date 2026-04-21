@@ -1555,9 +1555,20 @@ let spotlightTimer = null;
 
 const renderSpotlight = (items = []) => {
   if (!spotlightTrack) return;
-  if (!items.length) return; // Fallback to static if no trending data
+  
+  // Prepend a premium static slide
+  const staticSlide = {
+    title: 'Audira Gateway Protocol',
+    cover: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1920&q=80',
+    type: 'Genesis Core Alpha',
+    synopsis: 'Next-generation infrastructure for content orchestration. Processing millions of data pips across global scraper nodes with neural precision.',
+    rating: '9.9',
+    views: 'CORE'
+  };
+  
+  const allItems = [staticSlide, ...items];
 
-  spotlightTrack.innerHTML = items.map((item, idx) => `
+  spotlightTrack.innerHTML = allItems.map((item, idx) => `
     <div class="spotlight-slide ${idx === 0 ? 'active' : ''}">
       <div class="spotlight-bg" style="background-image: url('${item.cover || 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1920&q=80'}')"></div>
       <div class="spotlight-overlay"></div>
@@ -1567,7 +1578,7 @@ const renderSpotlight = (items = []) => {
           <span class="spotlight-status-pip pulse">LIVE DATA</span>
         </div>
         <h2 class="spotlight-title">${item.title} <span class="text-accent">Node</span></h2>
-        <p class="spotlight-desc">${item.synopsis ? item.synopsis.substring(0, 160) + '...' : 'Premium content detected on the intelligence registry. Syncing latest metadata pips.'}</p>
+        <p class="spotlight-desc">${item.synopsis ? item.synopsis.substring(0, 160) + (item.synopsis.length > 160 ? '...' : '') : 'Premium content detected on the intelligence registry. Syncing latest metadata pips.'}</p>
         <div class="hero-actions">
           <button class="btn-hero-prime" onclick="location.hash='#section-discovery'">INSPECT NODE</button>
           <div class="hero-stats-chips">
