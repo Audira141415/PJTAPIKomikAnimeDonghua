@@ -262,6 +262,8 @@
     </article>
   </section>
 
+  </section>
+
   <!-- ── SECTION: Data Insights ────────────────────────────── -->
   <section id="section-insights" class="content-section animate-in delay-1 glass-card">
     <div id="hero-network" class="section-hero">
@@ -353,71 +355,65 @@
     </div>
   </section>
 
-  <div class="section-divider"></div>
-
   <!-- ── SECTION: Operations ───────────────────────────────── -->
-  <div class="ops-grid">
-    <section id="section-playground" class="content-section">
-      <div id="hero-playground" class="section-hero">
-        <div class="hero-content">
-          <span class="hero-label">Development Sandbox</span>
-          <h1 class="hero-title">API Playground Lab</h1>
-          <p class="hero-desc">Interactive environment for real-time endpoint testing, response debugging, and schema validation.</p>
-        </div>
+  <section id="section-playground" class="content-section">
+    <div id="hero-playground" class="section-hero">
+      <div class="hero-content">
+        <span class="hero-label">Development Sandbox</span>
+        <h1 class="hero-title">API Playground Lab</h1>
+        <p class="hero-desc">Interactive environment for real-time endpoint testing, response debugging, and schema validation.</p>
       </div>
-      <div class="section-label">Interaction Lab</div>
-      <h2 class="ultimate-title" style="font-size: 1.5rem;">API Playground</h2>
-      <form id="playgroundForm" class="playground-form">
-        <div class="playground-row">
-          <select id="playMethod">
-            <option>GET</option>
-            <option>POST</option>
-            <option>PATCH</option>
-            <option>DELETE</option>
-          </select>
-          <input id="playPath" type="text" value="/donghua/home" placeholder="/donghua/home" />
-        </div>
-        <div class="preset-row">
-          <select id="presetCategory">
-            <option value="">Preset Category...</option>
-          </select>
-          <select id="presetEndpoint" disabled>
-            <option value="">Preset Endpoint...</option>
-          </select>
-        </div>
-        <input id="playToken" type="password" placeholder="Bearer token (optional)" autocomplete="off" />
-        <textarea id="playBody" placeholder='Body JSON (optional), contoh: {"title":"Example"}'></textarea>
-        <button type="submit">▶ Run Request</button>
-      </form>
-      <div id="responseMeta" class="response-meta">Ready</div>
-      <div class="response-tools">
-        <button id="copyPlaygroundResponse" type="button" class="copy-btn">Copy Response</button>
+    </div>
+    <div class="section-label">Interaction Lab</div>
+    <h2 class="ultimate-title" style="font-size: 1.5rem;">API Playground</h2>
+    <form id="playgroundForm" class="playground-form">
+      <div class="playground-row">
+        <select id="playMethod">
+          <option>GET</option>
+          <option>POST</option>
+          <option>PATCH</option>
+          <option>DELETE</option>
+        </select>
+        <input id="playPath" type="text" value="/donghua/home" placeholder="/donghua/home" />
       </div>
-      <pre id="responseBox" class="response-box">Response akan tampil di sini...</pre>
-    </section>
-
-    <section id="section-activity" class="content-section glass-card" style="margin:0;">
-      <div class="section-label">Traffic Monitor</div>
-      <h2 class="ultimate-title" style="font-size: 1.5rem;">Live Activity Stream</h2>
-      <div class="table-container" style="max-height: 420px;">
-        <table class="activity-table">
-          <thead>
-            <tr>
-              <th>Time</th>
-              <th>Request</th>
-              <th>Status</th>
-              <th>Latency</th>
-            </tr>
-          </thead>
-          <tbody id="activityBody"></tbody>
-        </table>
-        <div id="activityEmpty" class="empty-state">Belum ada traffic masuk. Coba akses endpoint dari browser atau Postman.</div>
+      <div class="preset-row">
+        <select id="presetCategory">
+          <option value="">Preset Category...</option>
+        </select>
+        <select id="presetEndpoint" disabled>
+          <option value="">Preset Endpoint...</option>
+        </select>
       </div>
-    </section>
-  </div>
+      <input id="playToken" type="password" placeholder="Bearer token (optional)" autocomplete="off" />
+      <textarea id="playBody" placeholder='Body JSON (optional), contoh: {"title":"Example"}'></textarea>
+      <button type="submit">▶ Run Request</button>
+    </form>
+    <div id="responseMeta" class="response-meta">Ready</div>
+    <div class="response-tools">
+      <button id="copyPlaygroundResponse" type="button" class="copy-btn">Copy Response</button>
+    </div>
+    <pre id="responseBox" class="response-box">Response akan tampil di sini...</pre>
+  </section>
 
+  <section id="section-activity" class="content-section glass-card">
+    <div class="section-label">Traffic Monitor</div>
+    <h2 class="ultimate-title" style="font-size: 1.5rem;">Live Activity Stream</h2>
+    <div class="table-container" style="max-height: 420px;">
+      <table class="activity-table">
+        <thead>
+          <tr>
+            <th>Time</th>
+            <th>Request</th>
+            <th>Status</th>
+            <th>Latency</th>
+          </tr>
+        </thead>
+        <tbody id="activityBody"></tbody>
+      </table>
+      <div id="activityEmpty" class="empty-state">Belum ada traffic masuk. Coba akses endpoint dari browser atau Postman.</div>
+    </div>
+  </section>
 
-  <div id="main-content">
   <!-- ── SECTION: Discovery ─────────────────────────────────── -->
   <section id="section-discovery" class="content-section animate-in">
     <!-- 🚀 ULTIMATE Discovery Hero -->
@@ -456,7 +452,6 @@
        <p style="color: var(--text-muted); font-family: 'JetBrains Mono', monospace;">WAITING FOR SCAN INITIATION...</p>
     </div>
   </section>
-
 
   <!-- ── SECTION: Manga ────────────────────────────────────── -->
   <section id="section-manga" class="content-section">
@@ -625,7 +620,11 @@
       Database sedang offline. Dashboard menampilkan demo carousel agar frontend tetap bisa dipreview.
     </div>
   </section>
-  <div class="section-divider"></div>
+  </section>
+  
+  <section id="section-global-divider" class="content-section">
+    <div class="section-divider"></div>
+  </section>
   <!-- ── SECTION: Anime ────────────────────────────────────── -->
   <section id="section-anime" class="content-section">
     <div id="hero-anime" class="section-hero">

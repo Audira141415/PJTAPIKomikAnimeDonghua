@@ -15,12 +15,12 @@ title Comic Platform API - Start
 set "APP_NAME=Comic Platform API"
 set "DEFAULT_PORT=5000"
 set "PORT_RANGE_MAX=5020"
-set "SCRIPT_DIR=%~dp0"
-set "PID_FILE=%SCRIPT_DIR%.app.pid"
-set "LOG_DIR=%SCRIPT_DIR%logs"
+set "PRJ_ROOT=%~dp0..\..\"
+set "PID_FILE=%PRJ_ROOT%.app.pid"
+set "LOG_DIR=%PRJ_ROOT%logs"
 set "LOG_FILE=%LOG_DIR%\combined.log"
-set "ENV_FILE=%SCRIPT_DIR%.env"
-set "ENV_EXAMPLE=%SCRIPT_DIR%.env.example"
+set "ENV_FILE=%PRJ_ROOT%.env"
+set "ENV_EXAMPLE=%PRJ_ROOT%.env.example"
 set "MODE=local"
 set "CUSTOM_PORT="
 
@@ -199,7 +199,7 @@ echo   Log    : !LOG_FILE!
 echo  +--------------------------------------------------+
 echo.
 
-cd /d "%SCRIPT_DIR%"
+cd /d "%PRJ_ROOT%"
 start "Comic API Server" /B cmd /C "set PORT=!FINAL_PORT!&& node server.js"
 timeout /T 2 /NOBREAK >nul
 
