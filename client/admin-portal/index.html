@@ -2,7 +2,7 @@
   @purpose: Strategic Monitor UI for Audira Gateway (Infrastructure Hub)
   @caller: Browser (User Admin)
   @dependencies: dashboard.css, dashboard.js, Google Fonts
-  @side_effects: Provides interface for API management and scraper monitoring
+  @side_effects: Provides interface for API management and scraper monitoring. Security: CSP Compliant (No Inline Handlers).
 -->
 <!DOCTYPE html>
 <html lang="id" data-theme="light">
@@ -16,7 +16,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@400;700;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="dashboard.css?v=1.0.9" />
+  <link rel="stylesheet" href="dashboard.css?v=1.1.0" />
 </head>
 
 <body>
@@ -1313,7 +1313,7 @@
   </div>
 </footer>
 
-<script src="/dashboard.js?v=1.0.9"></script>
+<script src="dashboard.js?v=1.1.0"></script>
 
 <!-- ── Admin Login Modal ────────────────────────────────────── -->
 <div id="loginModal" class="modal-backdrop" style="display: none;">
