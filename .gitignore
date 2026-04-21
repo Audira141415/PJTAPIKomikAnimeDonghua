@@ -8,3 +8,6 @@ coverage/
 claude-skills-main/
 .cursor/
 scratch/
+
+# Local Utilities
+/*.bat
