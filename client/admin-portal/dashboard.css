@@ -75,7 +75,8 @@ body {
   overflow-x: hidden;
 }
 
-/* ── Content.live-pulse {
+/* ── Content Isolation & Animation ── */
+.live-pulse {
   width: 8px;
   height: 8px;
   background: #10B981;
