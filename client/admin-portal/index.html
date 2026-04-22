@@ -1175,19 +1175,33 @@
     <div class="intelligence-grid ultimate-grid">
        <div class="glass-card chart-card">
           <div class="card-header">
-             <span class="card-title">Traffic Overview (24h)</span>
+             <span class="card-title">Global Node Map (Real-time)</span>
           </div>
-          <div class="chart-container" id="trafficChart">
-             <!-- Rendered by intelligence.js -->
-             <div class="loading-shimmer" style="height: 200px;"></div>
+          <div class="node-map-container" id="nodeMap">
+             <!-- SVG Map with animated pips -->
+             <svg viewBox="0 0 1000 500" class="neural-map">
+                <path d="M150,100 Q400,50 850,150 T900,400 Q600,450 100,350 Z" fill="none" stroke="rgba(15,23,42,0.1)" stroke-width="1" />
+                <circle class="node-pip jp" cx="800" cy="180" r="6" fill="var(--accent)" />
+                <circle class="node-pip us" cx="200" cy="150" r="6" fill="var(--accent-blue)" />
+                <circle class="node-pip id" cx="750" cy="350" r="6" fill="var(--accent-green)" />
+                <path class="connection-line" d="M800,180 L750,350" stroke="var(--accent)" stroke-width="1" stroke-dasharray="5,5" />
+                <path class="connection-line" d="M200,150 L750,350" stroke="var(--accent-blue)" stroke-width="1" stroke-dasharray="5,5" />
+             </svg>
+             <div class="map-overlay">
+                <div class="map-stat"><span>ACTIVE NODES:</span> <strong>3</strong></div>
+                <div class="map-stat"><span>LATENCY:</span> <strong>24ms</strong></div>
+             </div>
           </div>
        </div>
        <div class="glass-card stat-detail-card">
           <div class="card-header">
-             <span class="card-title">Top Consumers</span>
+             <span class="card-title">Live Traffic Stream</span>
           </div>
-          <div class="consumer-list" id="topClientsList">
-             <!-- Rendered by intelligence.js -->
+          <div class="terminal-mini" id="liveLogTerminal">
+             <div class="terminal-line">> INITIALIZING NEURAL LINK...</div>
+             <div class="terminal-line">> CONNECTION ESTABLISHED: NODE_SEA_01</div>
+             <div class="terminal-line ok">> DB_SYNC: SUCCESS (420ms)</div>
+             <div class="terminal-line">> FETCHING MANGA_REGISTRY...</div>
           </div>
        </div>
     </div>
@@ -1334,6 +1348,34 @@
        <button type="submit" class="btn btn-primary btn-block" style="margin-top: 20px;">AUTHENTICATE</button>
      </form>
      <div id="loginError" class="error-text" style="color: #ef4444; margin-top: 15px; font-size: 0.8rem; display: none;"></div>
+  </div>
+</div>
+
+<!-- ── Floating HUD: Command Palette & Terminal ── -->
+<div id="commandPalette" class="palette-backdrop" style="display: none;">
+  <div class="palette-box">
+    <input type="text" id="paletteSearch" placeholder="SEARCH COMMANDS... (e.g. sync anime, open logs, health)">
+    <div class="palette-results" id="paletteResults">
+       <div class="palette-item active"><span>🚀</span> QUICK SYNC ALL</div>
+       <div class="palette-item"><span>📑</span> OPEN DOCS</div>
+       <div class="palette-item"><span>🛡️</span> SYSTEM AUDIT</div>
+    </div>
+    <div class="palette-footer">PRESS <span>ESC</span> TO CLOSE</div>
+  </div>
+</div>
+
+<div class="hud-terminal" id="mainHudTerminal">
+  <div class="terminal-header">
+    <span>SYSTEM TELEMETRY</span>
+    <div class="terminal-controls">
+      <span class="ctrl min">_</span>
+      <span class="ctrl max">□</span>
+      <span class="ctrl close">×</span>
+    </div>
+  </div>
+  <div class="terminal-body" id="hudLogBody">
+    <div class="log-row">[SYS] Audira Kernel v4.2.0 loaded.</div>
+    <div class="log-row">[NET] Listening on port 5000...</div>
   </div>
 </div>
 

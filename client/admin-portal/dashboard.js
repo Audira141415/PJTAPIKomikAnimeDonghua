@@ -3338,5 +3338,69 @@ setTimeout(() => {
 }, 1000);
 
 // Start API Monitoring & Navigation
+// ── ELITE FEATURES: COMMAND PALETTE & TELEMETRY ──────────
+const palette = document.getElementById('commandPalette');
+const paletteSearch = document.getElementById('paletteSearch');
+const hudLogBody = document.getElementById('hudLogBody');
+
+// Command Palette Logic
+document.addEventListener('keydown', (e) => {
+  if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+    e.preventDefault();
+    if (palette) {
+      palette.style.display = 'flex';
+      paletteSearch.focus();
+    }
+  }
+  if (e.key === 'Escape') {
+    if (palette) palette.style.display = 'none';
+  }
+});
+
+// Mock Telemetry Stream
+const mockLogs = [
+  "[NET] Scraper Node JP-01 responding (latency: 18ms)",
+  "[DB] Cache Hit: MANGA_ID_29401",
+  "[SEC] API Key 'PARTNER_ELITE' authenticated",
+  "[SYS] Memory Cleanup: 42MB freed",
+  "[IO] Writing snapshot to disk...",
+  "[NET] Scraper Node US-04 sync complete",
+  "[SYNC] 12 new anime titles indexed",
+  "[WARN] High latency detected on Node-SEA-03"
+];
+
+function addHudLog(msg) {
+  if (!hudLogBody) return;
+  const row = document.createElement('div');
+  row.className = 'log-row';
+  row.textContent = `[${new Date().toLocaleTimeString()}] ${msg}`;
+  hudLogBody.appendChild(row);
+  hudLogBody.scrollTop = hudLogBody.scrollHeight;
+  if (hudLogBody.children.length > 50) hudLogBody.removeChild(hudLogBody.children[0]);
+}
+
+setInterval(() => {
+  if (Math.random() > 0.6) {
+    const log = mockLogs[Math.floor(Math.random() * mockLogs.length)];
+    addHudLog(log);
+  }
+}, 3000);
+
+if (paletteSearch) {
+  paletteSearch.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') {
+      const cmd = paletteSearch.value.toLowerCase();
+      palette.style.display = 'none';
+      if (typeof showToast === 'function') showToast(`EXECUTING: ${cmd.toUpperCase()}`, 'info');
+      if (cmd.includes('sync')) tech_flushAllCache();
+      if (cmd.includes('logs')) {
+        const terminal = document.getElementById('mainHudTerminal');
+        if (terminal) terminal.style.display = 'flex';
+      }
+      paletteSearch.value = '';
+    }
+  });
+}
+
 initNavigation();
 initDiscovery();
