@@ -131,6 +131,7 @@ const updateAdminUI = (isAuthenticated) => {
   adminLinks.forEach(link => {
     link.style.display = isAuthenticated ? 'inline-block' : 'none';
   });
+
 };
 
 const showLoginModal = () => {
@@ -2550,15 +2551,20 @@ const loadContentStats = async () => {
     const byType = d.byType || {};
     latestStatsSnapshot = d;
 
-    set('statTotal',   d.total);
-    set('statDonghua', byType.donghua || 0);
-    set('statManga',   byType.manga   || 0);
-    set('statManhwa',  byType.manhwa  || 0);
-    set('statManhua',  byType.manhua  || 0);
-    set('statAnime',   d.animationTotal || byType.anime || 0);
-    set('statOna',     byType.ona     || 0);
-    set('statMovie',   byType.movie   || 0);
-    set('statAnimeProxy', d.animationSources || d.proxySources || 0);
+    const formatNum = (num) => {
+      if (typeof num !== 'number') return num || '0';
+      return new Intl.NumberFormat('id-ID').format(num);
+    };
+
+    set('statTotal',   formatNum(d.total));
+    set('statDonghua', formatNum(byType.donghua || 0));
+    set('statManga',   formatNum(byType.manga   || 0));
+    set('statManhwa',  formatNum(byType.manhwa  || 0));
+    set('statManhua',  formatNum(byType.manhua  || 0));
+    set('statAnime',   formatNum(d.animationTotal || byType.anime || 0));
+    set('statOna',     formatNum(byType.ona     || 0));
+    set('statMovie',   formatNum(byType.movie   || 0));
+    set('statAnimeProxy', formatNum(d.animationSources || d.proxySources || 0));
     renderOverviewSourceBreakdown(d);
     populateAnimationSourceSelect(d.animationSourceList || []);
     await loadAnimationSourceItems();
@@ -3174,9 +3180,14 @@ const boot = async () => {
     });
   }
 
-  // Initial Admin UI Check
-  updateAdminUI(!!adminToken);
-  if (adminToken) refreshAdminData();
+  // Initial Admin UI Check (Strict)
+  if (!adminToken) {
+    updateAdminUI(false);
+  } else {
+    // If token exists, verify UI state
+    updateAdminUI(true);
+    refreshAdminData();
+  }
 
 
   // ── CSP Compliance (Button Listeners) ──────────
@@ -3441,38 +3452,6 @@ const mockLogs = [
   "[WARN] High latency detected on Node-SEA-03"
 ];
 
-function addHudLog(msg) {
-  if (!hudLogBody) return;
-  const row = document.createElement('div');
-  row.className = 'log-row';
-  row.textContent = `[${new Date().toLocaleTimeString()}] ${msg}`;
-  hudLogBody.appendChild(row);
-  hudLogBody.scrollTop = hudLogBody.scrollHeight;
-  if (hudLogBody.children.length > 50) hudLogBody.removeChild(hudLogBody.children[0]);
-}
-
-setInterval(() => {
-  if (Math.random() > 0.6) {
-    const log = mockLogs[Math.floor(Math.random() * mockLogs.length)];
-    addHudLog(log);
-  }
-}, 3000);
-
-if (paletteSearch) {
-  paletteSearch.addEventListener('keydown', (e) => {
-    if (e.key === 'Enter') {
-      const cmd = paletteSearch.value.toLowerCase();
-      palette.style.display = 'none';
-      if (typeof showToast === 'function') showToast(`EXECUTING: ${cmd.toUpperCase()}`, 'info');
-      if (cmd.includes('sync')) tech_flushAllCache();
-      if (cmd.includes('logs')) {
-        const terminal = document.getElementById('mainHudTerminal');
-        if (terminal) terminal.style.display = 'flex';
-      }
-      paletteSearch.value = '';
-    }
-  });
-}
 
 initNavigation();
 initDiscovery();

@@ -16,7 +16,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@400;700;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="dashboard.css?v=1.1.0" />
+  <link rel="stylesheet" href="dashboard.css?v=1.2.0" />
 </head>
 
 <body>
@@ -122,31 +122,31 @@
 
     <div class="stats-matrix ultimate-grid">
       <div class="stat-box">
-        <div class="label">Total Registry</div>
+        <div class="label">Aggregated Data Assets</div>
         <div class="value" id="statTotal">...</div>
       </div>
       <div class="stat-box">
-        <div class="label">Donghua Node</div>
+        <div class="label">Infrastructure: Donghua</div>
         <div class="value" id="statDonghua">...</div>
       </div>
       <div class="stat-box">
-        <div class="label">Manga Index</div>
+        <div class="label">Content Database: Manga</div>
         <div class="value" id="statManga">...</div>
       </div>
       <div class="stat-box">
-        <div class="label">Manhwa Flow</div>
+        <div class="label">Data Stream: Manhwa</div>
         <div class="value" id="statManhwa">...</div>
       </div>
       <div class="stat-box">
-        <div class="label">Manhua Index</div>
+        <div class="label">Database: Manhua</div>
         <div class="value" id="statManhua">...</div>
       </div>
       <div class="stat-box">
-        <div class="label">Anime Index</div>
+        <div class="label">Infrastructure: Anime</div>
         <div class="value" id="statAnime">...</div>
       </div>
       <div class="stat-box">
-        <div class="label">ONA Database</div>
+        <div class="label">Virtual Asset: ONA</div>
         <div class="value" id="statOna">...</div>
       </div>
       <div class="stat-box">
@@ -1324,7 +1324,7 @@
   </div>
 </footer>
 
-<script src="dashboard.js?v=1.1.0"></script>
+<script src="dashboard.js?v=1.2.0"></script>
 
 <!-- ── Admin Login Modal ────────────────────────────────────── -->
 <div id="loginModal" class="modal-backdrop" style="display: none;">
@@ -1386,20 +1386,6 @@
   </div>
 </div>
 
-<div class="hud-terminal" id="mainHudTerminal">
-  <div class="terminal-header">
-    <span>SYSTEM TELEMETRY</span>
-    <div class="terminal-controls">
-      <span class="ctrl min">_</span>
-      <span class="ctrl max">□</span>
-      <span class="ctrl close">×</span>
-    </div>
-  </div>
-  <div class="terminal-body" id="hudLogBody">
-    <div class="log-row">[SYS] Audira Kernel v4.2.0 loaded.</div>
-    <div class="log-row">[NET] Listening on port 5000...</div>
-  </div>
-</div>
 
 </main>
 </body>

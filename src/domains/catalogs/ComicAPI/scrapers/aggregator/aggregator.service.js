@@ -32,6 +32,7 @@ const westmanga   = require('../westmanga/westmanga.service');
 const mangasusuku = require('../mangasusuku/mangasusuku.service');
 const kiryuu      = require('../kiryuu/kiryuu.service');
 const cosmic      = require('../cosmic/cosmic.service');
+const shinigami    = require('../shinigami/shinigami.service');
 const { normalizeCard } = require('./cardNormalizer');
 
 /**
@@ -132,6 +133,11 @@ const SOURCES = {
     label:  'Cosmic Scans',
     latest: (p) => cosmic.latest(p),
     search: (q, p) => cosmic.search(q, p),
+  },
+  shinigami: {
+    label:  'Shinigami ID',
+    latest: (p) => shinigami.latest(p),
+    search: (q, p) => shinigami.search(q, p),
   },
 };
 

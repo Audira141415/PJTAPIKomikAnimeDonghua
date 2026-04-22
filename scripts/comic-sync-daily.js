@@ -1,17 +1,15 @@
 'use strict';
 require('module-alias/register');
 
-
 require('dotenv').config();
 
 const mongoose = require('mongoose');
 const slugify = require('slugify');
 
 const { env } = require('@core/config/env');
-const { Manga } = require('@models');
-const { User } = require('@models');
+const { Manga, User } = require('@models');
 const telegram = require('@core/utils/telegram');
-const aggregator = require('../src/modules/comic/scrapers/aggregator/aggregator.service');
+const aggregator = require('../src/domains/catalogs/ComicAPI/scrapers/aggregator/aggregator.service');
 
 const args = process.argv.slice(2);
 const hasFlag = (flag) => args.includes(flag);
@@ -71,7 +69,7 @@ function buildComicDoc(card) {
     releasedOn: null,
     coverImage: card.cover || null,
     status: 'ongoing',
-    rating: typeof card.rating === 'number' ? card.rating : 0,
+    rating: typeof card.rating === 'number' ? Math.min(10, Math.max(0, card.rating)) : 0,
     ratingCount: 0,
     views: 0,
     sourceUrl: card.link || null,
@@ -93,7 +91,10 @@ function buildComicDoc(card) {
 async function ensureAdminUser() {
   const admin = await User.findOne({ role: 'admin' });
   if (!admin) {
-    throw new Error('Admin user tidak ditemukan. Buat admin lebih dulu sebelum menjalankan comic-sync-daily.');
+    // If no admin, try to find any user or throw
+    const anyUser = await User.findOne();
+    if (!anyUser) throw new Error('No user found in DB. Please create an admin first.');
+    return anyUser;
   }
   return admin;
 }
@@ -145,13 +146,16 @@ async function upsertComicDocs(cards, adminId) {
 }
 
 async function run() {
+  console.log(`Connecting to MongoDB...`);
   await mongoose.connect(env.MONGO_URI);
   const admin = await ensureAdminUser();
 
+  console.log(`Fetching latest comics (Sources: ${SOURCES}, Page: ${PAGE})...`);
   const result = await aggregator.latest(SOURCES, PAGE);
   const cards = Array.isArray(result?.komikList) ? result.komikList : [];
   const perSource = Array.isArray(result?.sources) ? result.sources : [];
 
+  console.log(`Processing ${cards.length} cards...`);
   const summary = await upsertComicDocs(cards, admin._id);
 
   console.log('----------------------------------------');
@@ -165,17 +169,19 @@ async function run() {
   console.log(`Page      : ${PAGE}`);
   console.log(`Sources   : ${SOURCES}`);
 
-  await telegram.sendSyncReport('Comic Aggregator', { inserted: summary.inserted, updated: summary.updated, skipped: summary.skipped, failed: summary.conflicted });
+  try {
+    await telegram.sendSyncReport('Comic Aggregator', { inserted: summary.inserted, updated: summary.updated, skipped: summary.skipped, failed: summary.conflicted });
+  } catch (e) {
+    console.log('Telegram report skipped (not configured)');
+  }
+  
   await mongoose.disconnect();
 }
 
 run().catch(async (err) => {
   console.error('FATAL:', err.message);
   try {
-    await telegram.sendSyncReport('Comic Aggregator', { inserted: summary.inserted, updated: summary.updated, skipped: summary.skipped, failed: summary.conflicted });
-  await mongoose.disconnect();
-  } catch (_err) {
-    // noop
-  }
+    await mongoose.disconnect();
+  } catch (_err) {}
   process.exit(1);
 });
