@@ -28,81 +28,93 @@
   <span>Platform Integrity: Operational &bull; Audira Gateway Node-158 &bull; 0ms Delay</span>
 </div>
 
-<header class="header">
-  <div class="header-left">
-    <div class="header-logo">
-      <img src="logo-premium.png" alt="Audira Logo" style="width: 38px; height: 38px; border: 3px solid #000; box-shadow: 4px 4px 0px #000; border-radius: 6px; object-fit: cover;">
-      <span class="logo-text" style="font-size: 1.3rem; font-weight: 900; letter-spacing: -0.02em;">Audira Gateway</span>
+<header class="top-bar">
+  <div class="top-bar-left">
+    <div class="search-box">
+      <span class="search-icon">🔍</span>
+      <input type="text" id="globalSearch" placeholder="Search commands, users, or scrapers... (Alt+K)">
     </div>
-    <nav class="header-nav">
-        <!-- GROUP 1: STRATEGIC -->
-        <div class="nav-group">
-          <button class="nav-link nav-group-toggle">📡 STRATEGIC <span>▾</span></button>
-          <div class="nav-dropdown">
-            <a href="#section-overview" class="nav-link-sub">Strategic Overview</a>
-            <a href="#section-discovery" class="nav-link-sub">Infrastructure Monitor</a>
-            <a href="#section-status" class="nav-link-sub">Node Health Status</a>
-          </div>
-        </div>
-
-        <!-- GROUP 2: DOMAINS -->
-        <div class="nav-group">
-          <button class="nav-link nav-group-toggle">📚 DOMAINS <span>▾</span></button>
-          <div class="nav-dropdown">
-            <a href="#section-manga" class="nav-link-sub">Index: Manga</a>
-            <a href="#section-anime" class="nav-link-sub">Index: Anime</a>
-            <a href="#section-donghua" class="nav-link-sub">Index: Donghua</a>
-          </div>
-        </div>
-
-        <!-- GROUP 3: GATEWAY -->
-        <div class="nav-group">
-          <button class="nav-link nav-group-toggle">⚙️ GATEWAY <span>▾</span></button>
-          <div class="nav-dropdown">
-            <a href="#section-playground" class="nav-link-sub">API Playground Lab</a>
-            <a href="#section-insights" class="nav-link-sub">Network Intelligence</a>
-            <a href="#section-chapters" class="nav-link-sub">Data Feed Index</a>
-            <a href="#section-registry" class="nav-link-sub">Security & Auth</a>
-            <a href="#section-status" class="nav-link-sub">Infrastructure Node</a>
-          </div>
-        </div>
-      </nav>
   </div>
-  <div class="header-right">
-    <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme" style="background: none; border: none; font-size: 1.2rem; cursor: pointer;">
+  
+  <div class="top-bar-right">
+    <button class="theme-toggle" id="themeToggle" title="Toggle Light/Dark Mode">
       <span id="themeIcon">☀️</span>
     </button>
+    
     <div class="auth-header-group">
-      <!-- Public Buttons -->
-      <div id="publicHeaderBtns" style="display: flex; gap: 10px;">
-        <button class="btn-login" id="adminAuthBtn" style="padding: 8px 16px; border: 1px solid #E2E8F0; border-radius: 6px; font-weight: 700; cursor: pointer; background: #2563EB; color: #FFF;">Login</button>
+      <div id="publicHeaderBtns">
+        <button class="btn-login" id="adminAuthBtn">SIGN IN</button>
       </div>
       
-      <!-- Professional Admin Dropdown -->
-      <div id="adminProfileWrapper" class="profile-dropdown-wrapper" style="display: none; position: relative;">
-        <div id="adminProfileInfo" class="profile-trigger" style="display: flex; align-items: center; gap: 12px; background: #FFFFFF; padding: 4px 12px; border: 1px solid #E2E8F0; border-radius: 50px; cursor: pointer; transition: all 0.2s;">
-          <div class="admin-avatar" style="width: 28px; height: 28px; background: #2563EB; color: #FFF; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.7rem;">AD</div>
-          <div class="admin-meta" style="display: flex; flex-direction: column;">
-            <span id="headerAdminName" style="font-size: 0.75rem; font-weight: 700; color: #1E293B; line-height: 1;">Administrator</span>
-            <span style="font-size: 0.55rem; font-weight: 600; color: #64748B; text-transform: uppercase;">Master Node</span>
+      <div id="adminProfileWrapper" class="profile-dropdown-wrapper" style="display: none;">
+        <div id="adminProfileInfo" class="profile-trigger">
+          <div class="admin-avatar">AD</div>
+          <div class="admin-meta">
+            <span id="headerAdminName">Administrator</span>
+            <span class="admin-status">MASTER NODE</span>
           </div>
-          <span style="font-size: 0.6rem; color: #94A3B8;">▼</span>
         </div>
-
-        <!-- Dropdown Menu -->
-        <div id="profileDropdown" class="profile-dropdown-menu" style="display: none; position: absolute; top: calc(100% + 10px); right: 0; width: 180px; background: #FFF; border: 1px solid #E2E8F0; border-radius: 8px; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); z-index: 9999; overflow: hidden;">
-          <a href="#section-registry" class="dropdown-item" style="display: flex; align-items: center; gap: 10px; padding: 12px 15px; color: #1E293B; text-decoration: none; font-size: 0.8rem; font-weight: 600; transition: background 0.2s;">
-            <span>⚙️</span> Admin Settings
-          </a>
-          <div style="height: 1px; background: #F1F5F9;"></div>
-          <a href="#" id="headerLogoutBtn" class="dropdown-item logout" style="display: flex; align-items: center; gap: 10px; padding: 12px 15px; color: #EF4444; text-decoration: none; font-size: 0.8rem; font-weight: 700; transition: background 0.2s;">
-            <span>📤</span> Logout Session
-          </a>
+        <div id="profileDropdown" class="profile-dropdown-menu">
+          <a href="#section-registry" class="dropdown-item">⚙️ Settings</a>
+          <div class="divider"></div>
+          <a href="#" id="headerLogoutBtn" class="dropdown-item logout">📤 Logout</a>
         </div>
       </div>
     </div>
   </div>
 </header>
+
+<aside class="sidebar">
+  <div class="sidebar-logo">
+    <img src="logo-premium.png" alt="Audira">
+    <span>AUDI<strong>RA</strong></span>
+  </div>
+
+  <nav class="sidebar-nav">
+    <div class="nav-label">Core Protocol</div>
+    <a href="#section-overview" class="side-link active" data-section="section-overview">
+      <span class="side-icon">📊</span> Overview
+    </a>
+    <a href="#section-discovery" class="side-link" data-section="section-discovery">
+      <span class="side-icon">📡</span> Discovery
+    </a>
+
+    <div class="nav-label">Catalogs & Domains</div>
+    <a href="#section-manga" class="side-link" data-section="section-manga">
+      <span class="side-icon">📚</span> Manga Index
+    </a>
+    <a href="#section-anime" class="side-link" data-section="section-anime">
+      <span class="side-icon">📺</span> Anime Hub
+    </a>
+    <a href="#section-donghua" class="side-link" data-section="section-donghua">
+      <span class="side-icon">🎬</span> Donghua Center
+    </a>
+
+    <div class="nav-label">Gateway Operations</div>
+    <a href="#section-playground" class="side-link" data-section="section-playground">
+      <span class="side-icon">🧪</span> API Lab
+    </a>
+    <a href="#section-sources" class="side-link" data-section="section-sources">
+      <span class="side-icon">⚙️</span> Scraper Manager
+    </a>
+    <a href="#section-users" class="side-link" data-section="section-users">
+      <span class="side-icon">👤</span> User Management
+    </a>
+    <a href="#section-curation" class="side-link" data-section="section-curation">
+      <span class="side-icon">✨</span> Curation & Spotlight
+    </a>
+    <a href="#section-registry" class="side-link" data-section="section-registry">
+      <span class="side-icon">🛡️</span> Security & Auth
+    </a>
+    <a href="#section-status" class="side-link" data-section="section-status">
+      <span class="side-icon">🔌</span> Infra Status
+    </a>
+  </nav>
+
+  <div class="sidebar-footer">
+    <div class="version-chip">v6.4.2 ALPHA</div>
+  </div>
+</aside>
 
 <!-- ═══════════════════════════════════════════════════════════════
      MAIN CONTENT
@@ -247,6 +259,8 @@
             <option value="manga">Manga</option>
             <option value="manhwa">Manhwa</option>
             <option value="manhua">Manhua</option>
+            <option value="anime">Anime</option>
+            <option value="donghua">Donghua</option>
           </select>
         </div>
         <div class="source-items-picker" style="flex:1; min-width: 220px;">
@@ -256,6 +270,7 @@
         <div class="insight-filter-actions" style="margin-left:0;">
           <button type="button" id="mangaApplyBtn" class="insight-btn">Apply</button>
           <button type="button" id="mangaResetBtn" class="insight-btn secondary">Reset</button>
+          <button type="button" id="mangaAddBtn" class="insight-btn primary">+ Add New</button>
         </div>
       </div>
       <div class="table-container">
@@ -415,6 +430,105 @@
       <button id="copyPlaygroundResponse" type="button" class="copy-btn">Copy Response</button>
     </div>
     <pre id="responseBox" class="response-box">Response akan tampil di sini...</pre>
+  </section>
+
+  <!-- ── SECTION: Scraper Sources ──────────────────────────── -->
+  <section id="section-sources" class="content-section glass-card">
+    <div class="section-label">Source Management</div>
+    <div class="section-header-flex">
+      <h2 class="ultimate-title" style="font-size: 1.5rem;">Global Scraper Registry</h2>
+      <button id="btn-add-source" class="btn-prime-mini admin-only">➕ ADD SOURCE</button>
+    </div>
+    
+    <div class="table-container">
+      <table class="activity-table">
+        <thead>
+          <tr>
+            <th>Name / Key</th>
+            <th>Base URL</th>
+            <th>Category</th>
+            <th>Type</th>
+            <th>Status</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="sourceTableBody">
+          <!-- Injected by dashboard.js -->
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ── SECTION: User Management ─────────────────────────── -->
+  <section id="section-users" class="content-section glass-card">
+    <div class="section-label">Identity Management</div>
+    <div class="section-header-flex">
+      <h2 class="ultimate-title" style="font-size: 1.5rem;">User Access Control</h2>
+      <div class="header-tools">
+         <input type="text" id="userSearch" placeholder="Search users..." style="padding: 8px 12px; border: 1px solid var(--border); border-radius: 6px; background: rgba(255,255,255,0.05); color: var(--text); font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; min-width: 250px;" />
+      </div>
+    </div>
+    
+    <div class="table-container">
+      <table class="activity-table">
+        <thead>
+          <tr>
+            <th>User Info</th>
+            <th>Email</th>
+            <th>Joined</th>
+            <th>Role</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="userTableBody">
+          <!-- Injected by dashboard.js -->
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ── SECTION: Curation & Spotlight ────────────────────────── -->
+  <section id="section-curation" class="content-section glass-card">
+    <div class="section-label">Content Curation</div>
+    <div class="section-header-flex">
+      <h2 class="ultimate-title" style="font-size: 1.5rem;">Curation & Spotlight Manager</h2>
+      <div class="header-tools">
+         <button class="btn btn-primary" id="refreshCurationBtn">🔄 Refresh Lists</button>
+      </div>
+    </div>
+    
+    <div class="curation-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 20px;">
+       <div class="glass-card curation-sub-card">
+          <div class="card-header"><span class="card-title">Featured Content (Carousel)</span></div>
+          <div class="table-container" style="max-height: 400px;">
+             <table class="activity-table">
+                <thead>
+                   <tr>
+                      <th>Title</th>
+                      <th>Type</th>
+                      <th>Actions</th>
+                   </tr>
+                </thead>
+                <tbody id="featuredTableBody"></tbody>
+             </table>
+          </div>
+       </div>
+       <div class="glass-card curation-sub-card">
+          <div class="card-header"><span class="card-title">Hot & Trending Spotlight</span></div>
+          <div class="table-container" style="max-height: 400px;">
+             <table class="activity-table">
+                <thead>
+                   <tr>
+                      <th>Title</th>
+                      <th>Views</th>
+                      <th>Actions</th>
+                   </tr>
+                </thead>
+                <tbody id="hotTableBody"></tbody>
+             </table>
+          </div>
+       </div>
+    </div>
   </section>
 
   <section id="section-activity" class="content-section glass-card">
@@ -1191,6 +1305,9 @@
         <div class="label">Partner Apps</div>
         <div class="value" id="intelActiveClients">0</div>
       </div>
+      <div class="stat-box" style="display:flex; align-items:center; justify-content:center; background:var(--accent); cursor:pointer;" id="neuralScanBtn">
+        <div class="label" style="color:white; font-weight:800; letter-spacing:1px;">📡 NEURAL SCAN</div>
+      </div>
     </div>
 
     
@@ -1349,6 +1466,54 @@
   </div>
 </footer>
 
+<!-- ── Manga Management Modal ──────────────────────────────── -->
+<div id="mangaModal" class="modal-backdrop" style="display: none;">
+  <div class="modal-box glass-card" style="max-width: 800px;">
+    <div class="modal-header">
+      <h2 id="mangaModalTitle">Add/Edit Series</h2>
+      <button class="close-btn" id="closeMangaModal">&times;</button>
+    </div>
+    <form id="mangaForm" class="auth-form" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+      <input type="hidden" id="mangaId">
+      <div class="form-group" style="grid-column: span 2;">
+        <label>Title</label>
+        <input type="text" id="mangaTitle" required>
+      </div>
+      <div class="form-group">
+        <label>Type</label>
+        <select id="mangaType">
+          <option value="manga">Manga</option>
+          <option value="manhwa">Manhwa</option>
+          <option value="manhua">Manhua</option>
+          <option value="anime">Anime</option>
+          <option value="donghua">Donghua</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Status</label>
+        <select id="mangaStatus">
+          <option value="ongoing">Ongoing</option>
+          <option value="completed">Completed</option>
+          <option value="hiatus">Hiatus</option>
+          <option value="upcoming">Upcoming</option>
+        </select>
+      </div>
+      <div class="form-group" style="grid-column: span 2;">
+        <label>Cover Image URL</label>
+        <input type="text" id="mangaCover">
+      </div>
+      <div class="form-group" style="grid-column: span 2;">
+        <label>Synopsis / Description</label>
+        <textarea id="mangaDescription" style="width: 100%; height: 100px; padding: 10px;"></textarea>
+      </div>
+      <div class="form-group" style="grid-column: span 2; display: flex; justify-content: flex-end; gap: 10px; margin-top: 20px;">
+        <button type="button" class="btn btn-secondary" id="cancelMangaBtn">Cancel</button>
+        <button type="submit" class="btn btn-primary">Save Changes</button>
+      </div>
+    </form>
+  </div>
+</div>
+
 <script src="dashboard.js?v=1.2.0"></script>
 
 <!-- ── Admin Login Modal ────────────────────────────────────── -->
@@ -1411,5 +1576,71 @@
 
 
 </main>
+  <!-- ── MODAL: Source Manager ────────────────────────────── -->
+  <div id="sourceModal" class="modal-overlay" style="display: none;">
+    <div class="modal-card premium-modal">
+      <div class="modal-head">
+        <div class="modal-title-group">
+          <span class="modal-icon">⚙️</span>
+          <h2>Source Configuration</h2>
+        </div>
+        <button id="btn-close-source-modal" class="btn-close-modal">×</button>
+      </div>
+      <form id="sourceForm" class="modal-form">
+        <input type="hidden" id="sourceId" />
+        <div class="form-row">
+          <div class="form-group">
+            <label>Source Key (unique)</label>
+            <input type="text" id="sourceKey" placeholder="e.g. komikindo" required />
+          </div>
+          <div class="form-group">
+            <label>Display Name</label>
+            <input type="text" id="sourceName" placeholder="e.g. KomikIndo" required />
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Base URL</label>
+          <input type="url" id="sourceBaseUrl" placeholder="https://example.com" required />
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Category</label>
+            <select id="sourceCategory">
+              <option value="comic">Comic</option>
+              <option value="anime">Anime</option>
+              <option value="donghua">Donghua</option>
+              <option value="mixed">Mixed</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Default Type</label>
+            <select id="sourceDefaultType">
+              <option value="manga">Manga</option>
+              <option value="manhwa">Manhwa</option>
+              <option value="manhua">Manhua</option>
+              <option value="anime">Anime</option>
+              <option value="donghua">Donghua</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Priority</label>
+            <input type="number" id="sourcePriority" value="100" />
+          </div>
+          <div class="form-group">
+            <label>Sync Strategy</label>
+            <select id="sourceStrategy">
+              <option value="hybrid">Hybrid</option>
+              <option value="collection">Collection Only</option>
+              <option value="detail">Detail Only</option>
+            </select>
+          </div>
+        </div>
+        <button type="submit" class="btn-prime">SAVE CONFIGURATION</button>
+      </form>
+    </div>
+  </div>
+
 </body>
 </html>

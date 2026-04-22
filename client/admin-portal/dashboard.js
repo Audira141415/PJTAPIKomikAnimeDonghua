@@ -103,13 +103,21 @@ const logoutAdmin = () => {
   adminToken = null;
   localStorage.removeItem('audira-admin-token');
   updateAdminUI(false);
-  // Hide admin sections and links
-  ['section-intelligence', 'section-operations', 'section-registry'].forEach(id => {
+  
+  // Hide ALL admin sections from the view immediately
+  adminSections.forEach(id => {
     const el = document.getElementById(id);
-    if (el) el.style.display = 'none';
+    if (el) {
+      el.style.display = 'none';
+      el.classList.remove('active');
+    }
   });
+  
+  // Hide admin-only UI elements
   document.querySelectorAll('.admin-only').forEach(el => el.style.display = 'none');
+  
   window.location.hash = '#section-overview';
+  switchSection('section-overview');
 };
 
 const updateAdminUI = (isAuthenticated) => {
@@ -240,6 +248,15 @@ async function registerAdmin(email, password, name) {
 const hideLoginModal = () => {
   const modal = document.getElementById('loginModal');
   if (modal) modal.style.display = 'none';
+};
+
+/* ── Navigation Engine (Consolidated) ────────────────────── */
+window.showSection = (sectionId) => {
+  if (typeof switchSection === 'function') {
+    switchSection(sectionId);
+  } else {
+    console.warn("[NAV] switchSection not yet initialized");
+  }
 };
 
 const refreshAdminData = () => {
@@ -876,13 +893,21 @@ if (sidebarOverlay) {
 }
 
 // Section Management Logic
-const adminSections = ['section-intelligence', 'section-operations', 'section-registry'];
+const adminSections = ['section-intelligence', 'section-operations', 'section-registry', 'section-sources', 'section-users', 'section-curation'];
 
 const switchSection = (targetId) => {
   const isTargetAdmin = adminSections.includes(targetId);
   
-  if (isTargetAdmin && !adminToken) {
+  // Robust check: token must exist and not be 'null'/'undefined' strings
+  const hasValidToken = adminToken && adminToken !== 'null' && adminToken !== 'undefined';
+
+  if (isTargetAdmin && !hasValidToken) {
+    console.warn(`[SECURITY] Blocked unauthorized access to ${targetId}`);
+    showToast('Admin access required. Please sign in.', 'warn');
     showLoginModal();
+    
+    // Redirect to safe section
+    window.location.hash = 'section-overview';
     return;
   }
 
@@ -898,27 +923,19 @@ const switchSection = (targetId) => {
   });
 
   // Update nav active state
-  document.querySelectorAll('.nav-link').forEach((n) => n.classList.remove('active'));
-  const activeNav = document.querySelector(`.nav-link[data-nav="${targetId}"]`);
+  document.querySelectorAll('.side-link').forEach((n) => n.classList.remove('active'));
+  const activeNav = document.querySelector(`.side-link[data-section="${targetId}"]`);
   if (activeNav) activeNav.classList.add('active');
 
   // Trigger data load if admin
   if (targetId === 'section-operations') loadOperationsData();
   if (targetId === 'section-intelligence') loadIntelligenceData();
   if (targetId === 'section-registry') renderRegistry();
+  if (targetId === 'section-sources') fetchSources();
+  if (targetId === 'section-users') fetchUsers();
+  if (targetId === 'section-curation') fetchCuration();
 };
 
-// Handle nav clicks
-document.querySelectorAll('.nav-link[data-nav]').forEach((navItem) => {
-  navItem.addEventListener('click', (e) => {
-    const targetId = navItem.getAttribute('data-nav');
-    if (targetId) {
-      e.preventDefault();
-      switchSection(targetId);
-      window.location.hash = targetId;
-    }
-  });
-});
 
 // Handle initial hash
 const initNavFromHash = () => {
@@ -947,6 +964,21 @@ const initNavigationEvents = () => {
       
       // Toggle current
       if (!wasActive) parent.classList.add('active');
+    });
+  });
+
+  // 1.5 Sidebar Links (Main Navigation)
+  document.querySelectorAll('.side-link[data-section]').forEach((navItem) => {
+    navItem.addEventListener('click', (e) => {
+      const targetId = navItem.getAttribute('data-section');
+      if (targetId) {
+        e.preventDefault();
+        switchSection(targetId);
+        window.location.hash = targetId;
+        
+        // Mobile Sidebar: auto-close if open
+        if (typeof closeSidebar === 'function') closeSidebar();
+      }
     });
   });
 
@@ -992,7 +1024,11 @@ const initNavigationEvents = () => {
   initNavFromHash();
 };
 
-window.addEventListener('DOMContentLoaded', initNavigationEvents);
+if (document.readyState === 'loading') {
+  window.addEventListener('DOMContentLoaded', initNavigationEvents);
+} else {
+  initNavigationEvents();
+}
 window.addEventListener('hashchange', initNavFromHash);
 
 // Intersection Observer for active nav highlighting
@@ -2170,11 +2206,31 @@ const renderMangaExplorerRows = (rows = []) => {
     statusSpan.textContent = item.status || '-';
     statusTd.appendChild(statusSpan);
 
+    const actionsTd = document.createElement('td');
+    actionsTd.style.whiteSpace = 'nowrap';
+    
+    const editBtn = document.createElement('button');
+    editBtn.className = 'action-btn';
+    editBtn.innerHTML = '✏️';
+    editBtn.title = 'Edit Title';
+    editBtn.onclick = () => openMangaModal(item);
+    
+    const deleteBtn = document.createElement('button');
+    deleteBtn.className = 'action-btn';
+    deleteBtn.innerHTML = '🗑️';
+    deleteBtn.title = 'Delete Title';
+    deleteBtn.style.color = 'var(--accent-red)';
+    deleteBtn.onclick = () => deleteManga(item._id);
+
+    actionsTd.appendChild(editBtn);
+    actionsTd.appendChild(deleteBtn);
+
     tr.appendChild(titleTd);
     tr.appendChild(typeTd);
     tr.appendChild(ratingTd);
     tr.appendChild(viewsTd);
     tr.appendChild(statusTd);
+    tr.appendChild(actionsTd);
     mangaExplorerBody.appendChild(tr);
   });
 };
@@ -3156,7 +3212,7 @@ window.showSection = (sectionId) => {
    BOOT
    ══════════════════════════════════════════════════════════ */
 const boot = async () => {
-  initNavigation();
+  // initNavigation(); - Consolidated into initNavigationEvents
   await loadDashboardData();
 
   attachExamplesToCards();
@@ -3502,8 +3558,11 @@ const COMMANDS = [
   { icon: '🧠', label: 'Go to Intelligence', action: () => window.showSection('section-intelligence') },
   { icon: '⚙️', label: 'Go to Operations', action: () => window.showSection('section-operations') },
   { icon: '🛡️', label: 'Go to Registry', action: () => window.showSection('section-registry') },
+  { icon: '⚙️', label: 'Go to Sources', action: () => window.showSection('section-sources') },
+  { icon: '👤', label: 'Go to User Management', action: () => window.showSection('section-users') },
+  { icon: '✨', label: 'Go to Curation', action: () => window.showSection('section-curation') },
   { icon: '🌙', label: 'Toggle Dark Mode', action: () => toggleTheme() },
-  { icon: '🔄', label: 'Refresh Data', action: () => { loadStatus(); loadActivity(); showToast('Manual Sync Triggered', 'info'); } },
+  { icon: '🔄', label: 'Refresh Data', action: () => { loadStatus(); loadActivity(); fetchSources(); fetchUsers(); fetchCuration(); showToast('Manual Sync Triggered', 'info'); } },
   { icon: '🚪', label: 'Logout Admin', action: () => logoutAdmin() }
 ];
 
@@ -3574,4 +3633,480 @@ document.addEventListener('DOMContentLoaded', () => {
       logoutAdmin();
     });
   }
+
+  // Auto-fetch sources if admin is already logged in
+  if (adminToken) {
+    fetchSources();
+    fetchUsers();
+  }
 });
+
+/* ── Source Manager Engine ────────────────────────────────── */
+const sourceTableBody = document.getElementById('sourceTableBody');
+const sourceForm = document.getElementById('sourceForm');
+const sourceModal = document.getElementById('sourceModal');
+const btnAddSource = document.getElementById('btn-add-source');
+
+const fetchSources = async () => {
+  if (!adminToken) return;
+  try {
+    const res = await adminFetch('/sources');
+    if (res.success) renderSources(res.data);
+  } catch (err) {
+    console.error('Failed to fetch sources:', err);
+  }
+};
+
+const renderSources = (sources) => {
+  if (!sourceTableBody) return;
+  sourceTableBody.innerHTML = sources.map(source => `
+    <tr>
+      <td>
+        <div style="font-weight: 700;">${source.name}</div>
+        <div style="font-size: 0.65rem; color: var(--text-muted); font-family: monospace;">${source.key}</div>
+      </td>
+      <td><a href="${source.baseUrl}" target="_blank" style="color: var(--accent); font-size: 0.8rem;">${source.baseUrl}</a></td>
+      <td><span class="badge badge-blue">${source.category}</span></td>
+      <td><span class="badge-label">${source.defaultType}</span></td>
+      <td>
+        <span class="status-pill ${source.enabled ? 'online' : 'offline'}" data-action="toggle" data-id="${source._id}" style="cursor: pointer;">
+          ${source.enabled ? 'ACTIVE' : 'DISABLED'}
+        </span>
+      </td>
+      <td>
+        <div style="display: flex; gap: 8px;">
+          <button class="btn-action" data-action="edit" data-id="${source._id}" title="Edit">✏️</button>
+          <button class="btn-action" data-action="delete" data-id="${source._id}" title="Delete" style="color: #EF4444;">🗑️</button>
+        </div>
+      </td>
+    </tr>
+  `).join('');
+};
+
+window.toggleSourceStatus = async (id) => {
+  try {
+    const res = await adminFetch(`/sources/${id}/toggle`, { method: 'PATCH' });
+    if (res.success) {
+      showToast(res.message, 'success');
+      fetchSources();
+    }
+  } catch (err) {
+    showToast(err.message, 'error');
+  }
+};
+
+window.editSource = async (id) => {
+  try {
+    const res = await adminFetch(`/sources/${id}`);
+    if (res.success) {
+      const s = res.data;
+      document.getElementById('sourceId').value = s._id;
+      document.getElementById('sourceKey').value = s.key;
+      document.getElementById('sourceName').value = s.name;
+      document.getElementById('sourceBaseUrl').value = s.baseUrl;
+      document.getElementById('sourceCategory').value = s.category;
+      document.getElementById('sourceDefaultType').value = s.defaultType;
+      document.getElementById('sourcePriority').value = s.priority;
+      document.getElementById('sourceStrategy').value = s.syncStrategy;
+      
+      sourceModal.style.display = 'flex';
+    }
+  } catch (err) {
+    showToast(err.message, 'error');
+  }
+};
+
+window.deleteSource = async (id) => {
+  if (!confirm('Are you sure you want to delete this source node?')) return;
+  try {
+    const res = await adminFetch(`/sources/${id}`, { method: 'DELETE' });
+    if (res.success) {
+      showToast('Source node de-registered.', 'success');
+      fetchSources();
+    }
+  } catch (err) {
+    showToast(err.message, 'error');
+  }
+};
+
+if (btnAddSource) {
+  btnAddSource.addEventListener('click', () => {
+    sourceForm.reset();
+    document.getElementById('sourceId').value = '';
+    sourceModal.style.display = 'flex';
+  });
+}
+
+const btnCloseSourceModal = document.getElementById('btn-close-source-modal');
+if (btnCloseSourceModal) {
+  btnCloseSourceModal.addEventListener('click', () => {
+    sourceModal.style.display = 'none';
+  });
+}
+
+// Event Delegation for Source Table
+if (sourceTableBody) {
+  sourceTableBody.addEventListener('click', (e) => {
+    const target = e.target.closest('[data-action]');
+    if (!target) return;
+    
+    const action = target.dataset.action;
+    const id = target.dataset.id;
+    
+    if (action === 'toggle') toggleSourceStatus(id);
+    if (action === 'edit') editSource(id);
+    if (action === 'delete') deleteSource(id);
+  });
+}
+
+if (sourceForm) {
+  sourceForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const id = document.getElementById('sourceId').value;
+    const payload = {
+      key: document.getElementById('sourceKey').value,
+      name: document.getElementById('sourceName').value,
+      baseUrl: document.getElementById('sourceBaseUrl').value,
+      category: document.getElementById('sourceCategory').value,
+      defaultType: document.getElementById('sourceDefaultType').value,
+      priority: parseInt(document.getElementById('sourcePriority').value, 10),
+      syncStrategy: document.getElementById('sourceStrategy').value,
+    };
+
+    try {
+      const method = id ? 'PUT' : 'POST';
+      const url = id ? `/sources/${id}` : '/sources';
+      const res = await adminFetch(url, {
+        method,
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+
+      if (res.success) {
+        showToast(id ? 'Configuration Updated' : 'New Source Registered', 'success');
+        sourceModal.style.display = 'none';
+        fetchSources();
+      }
+    } catch (err) {
+      showToast(err.message, 'error');
+    }
+  });
+}
+
+/* ── User Manager Engine ──────────────────────────────────── */
+const userTableBody = document.getElementById('userTableBody');
+const userSearchInput = document.getElementById('userSearch');
+
+const fetchUsers = async (query = '') => {
+  if (!adminToken) return;
+  try {
+    const res = await adminFetch(`/admin/users?search=${query}`);
+    if (res.success) renderUsers(res.data);
+  } catch (err) {
+    console.error('Failed to fetch users:', err);
+  }
+};
+
+const renderUsers = (users) => {
+  if (!userTableBody) return;
+  userTableBody.innerHTML = users.map(user => `
+    <tr>
+      <td>
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <div class="user-avatar-mini" style="width: 32px; height: 32px; border-radius: 50%; background: var(--accent); color: #000; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 0.7rem;">
+            ${(user.username || 'U').charAt(0).toUpperCase()}
+          </div>
+          <div>
+            <div style="font-weight: 700;">${user.username}</div>
+            <div style="font-size: 0.65rem; color: var(--text-muted);">ID: ${user._id}</div>
+          </div>
+        </div>
+      </td>
+      <td style="font-size: 0.8rem;">${user.email}</td>
+      <td style="font-size: 0.8rem; color: var(--text-muted);">${new Date(user.createdAt).toLocaleDateString()}</td>
+      <td>
+        <select class="role-selector" data-id="${user._id}" style="background: rgba(255,255,255,0.05); border: 1px solid var(--border); color: var(--text); border-radius: 4px; padding: 2px 6px; font-size: 0.75rem;">
+          <option value="user" ${user.role === 'user' ? 'selected' : ''}>USER</option>
+          <option value="admin" ${user.role === 'admin' ? 'selected' : ''}>ADMIN</option>
+        </select>
+      </td>
+      <td>
+        <button class="btn-action" data-action="delete-user" data-id="${user._id}" style="color: #EF4444;" title="Delete User">🗑️</button>
+      </td>
+    </tr>
+  `).join('');
+};
+
+if (userSearchInput) {
+  let debounceTimer;
+  userSearchInput.addEventListener('input', (e) => {
+    clearTimeout(debounceTimer);
+    debounceTimer = setTimeout(() => fetchUsers(e.target.value), 500);
+  });
+}
+
+// Event Delegation for User Management
+document.addEventListener('change', async (e) => {
+  if (e.target.classList.contains('role-selector')) {
+    const userId = e.target.dataset.id;
+    const role = e.target.value;
+    try {
+      const res = await adminFetch(`/admin/users/${userId}/role`, {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ role })
+      });
+      if (res.success) showToast(`Role updated to ${role}`, 'success');
+    } catch (err) {
+      showToast(err.message, 'error');
+      fetchUsers(); // Revert UI
+    }
+  }
+});
+
+document.addEventListener('click', async (e) => {
+  const deleteBtn = e.target.closest('[data-action="delete-user"]');
+  if (deleteBtn) {
+    const userId = deleteBtn.dataset.id;
+    if (!confirm('Are you sure you want to PERMANENTLY delete this user?')) return;
+    try {
+      const res = await adminFetch(`/admin/users/${userId}`, { method: 'DELETE' });
+      if (res.success) {
+        showToast('User deleted', 'success');
+        fetchUsers();
+      }
+    } catch (err) {
+      showToast(err.message, 'error');
+    }
+  }
+});
+
+// ── CURATION & SPOTLIGHT MANAGER ─────────────────────────────
+async function fetchCuration() {
+  try {
+    const res = await adminFetch('/api/v1/curation');
+    if (res.success) {
+      renderCuration(res.data);
+    }
+  } catch (err) {
+    showToast('Failed to fetch curation data', 'error');
+  }
+}
+
+function renderCuration(data) {
+  const featuredBody = document.getElementById('featuredTableBody');
+  const hotBody = document.getElementById('hotTableBody');
+
+  if (!featuredBody || !hotBody) return;
+
+  featuredBody.innerHTML = data.featured.length ? data.featured.map(item => `
+    <tr>
+      <td>
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <img src="${item.coverImage}" style="width: 32px; height: 44px; object-fit: cover; border-radius: 4px; border: 1px solid #000;">
+          <strong>${item.title}</strong>
+        </div>
+      </td>
+      <td><span class="status-pill">${item.type}</span></td>
+      <td>
+        <button class="action-btn" data-action="toggle-featured" data-id="${item._id}" title="Remove from Featured">❌</button>
+      </td>
+    </tr>
+  `).join('') : '<tr><td colspan="3" class="empty-state">No featured content</td></tr>';
+
+  hotBody.innerHTML = data.hot.length ? data.hot.map(item => `
+    <tr>
+      <td><strong>${item.title}</strong></td>
+      <td>${item.views.toLocaleString()}</td>
+      <td>
+        <button class="action-btn" data-action="toggle-hot" data-id="${item._id}" title="Remove from Hot">🔥</button>
+      </td>
+    </tr>
+  `).join('') : '<tr><td colspan="3" class="empty-state">No hot content</td></tr>';
+}
+
+async function toggleFeatured(id) {
+  try {
+    const res = await adminFetch(`/api/v1/curation/${id}/feature`, { method: 'POST' });
+    if (res.success) {
+      showToast(res.message, 'success');
+      fetchCuration();
+    }
+  } catch (err) {
+    showToast('Failed to toggle featured status', 'error');
+  }
+}
+
+async function toggleHot(id) {
+  try {
+    const res = await adminFetch(`/api/v1/curation/${id}/hot`, { method: 'POST' });
+    if (res.success) {
+      showToast(res.message, 'success');
+      fetchCuration();
+    }
+  } catch (err) {
+    showToast('Failed to toggle hot status', 'error');
+  }
+}
+
+// Event Delegation for Curation Actions
+document.addEventListener('click', (e) => {
+  const featuredBtn = e.target.closest('[data-action="toggle-featured"]');
+  const hotBtn = e.target.closest('[data-action="toggle-hot"]');
+  const refreshBtn = e.target.closest('#refreshCurationBtn');
+
+  if (featuredBtn) toggleFeatured(featuredBtn.dataset.id);
+  if (hotBtn) toggleHot(hotBtn.dataset.id);
+  if (refreshBtn) fetchCuration();
+});
+
+// Attach to window for global access
+window.fetchCuration = fetchCuration;
+window.toggleFeatured = toggleFeatured;
+window.toggleHot = toggleHot;
+
+// ── MANGA CRUD LOGIC ──────────────────────────────────────────
+const mangaModal = document.getElementById('mangaModal');
+const mangaForm = document.getElementById('mangaForm');
+const closeMangaModalBtn = document.getElementById('closeMangaModal');
+const cancelMangaBtn = document.getElementById('cancelMangaBtn');
+const mangaAddBtn = document.getElementById('mangaAddBtn');
+
+function openMangaModal(item = null) {
+  if (!mangaModal || !mangaForm) return;
+  
+  const titleEl = document.getElementById('mangaModalTitle');
+  const idInput = document.getElementById('mangaId');
+  const titleInput = document.getElementById('mangaTitle');
+  const typeInput = document.getElementById('mangaType');
+  const statusInput = document.getElementById('mangaStatus');
+  const coverInput = document.getElementById('mangaCover');
+  const descInput = document.getElementById('mangaDescription');
+
+  if (item) {
+    titleEl.textContent = 'Edit Series';
+    idInput.value = item._id;
+    titleInput.value = item.title || '';
+    typeInput.value = item.type || 'manga';
+    statusInput.value = item.status || 'ongoing';
+    coverInput.value = item.coverImage || '';
+    descInput.value = item.description || '';
+  } else {
+    titleEl.textContent = 'Add New Series';
+    mangaForm.reset();
+    idInput.value = '';
+  }
+
+  mangaModal.style.display = 'flex';
+}
+
+if (mangaAddBtn) mangaAddBtn.onclick = () => openMangaModal();
+if (closeMangaModalBtn) closeMangaModalBtn.onclick = () => mangaModal.style.display = 'none';
+if (cancelMangaBtn) cancelMangaBtn.onclick = () => mangaModal.style.display = 'none';
+
+if (mangaForm) {
+  mangaForm.onsubmit = async (e) => {
+    e.preventDefault();
+    const id = document.getElementById('mangaId').value;
+    const payload = {
+      title: document.getElementById('mangaTitle').value,
+      type: document.getElementById('mangaType').value,
+      status: document.getElementById('mangaStatus').value,
+      coverImage: document.getElementById('mangaCover').value,
+      description: document.getElementById('mangaDescription').value,
+    };
+
+    try {
+      const url = id ? `/api/v1/mangas/${id}` : '/api/v1/mangas';
+      const method = id ? 'PUT' : 'POST';
+      const res = await adminFetch(url, {
+        method,
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+
+      if (res.success) {
+        showToast(id ? 'Manga updated' : 'Manga created', 'success');
+        mangaModal.style.display = 'none';
+        loadMangaExplorer();
+      }
+    } catch (err) {
+      showToast(err.message, 'error');
+    }
+// ── NEURAL SCAN & INTELLIGENCE LOGIC ─────────────────────────
+const neuralScanBtn = document.getElementById('neuralScanBtn');
+const liveLogTerminal = document.getElementById('liveLogTerminal');
+
+const NEURAL_LOGS = [
+  "UPLINK STABLE: NODE_JP_02 (18ms)",
+  "SYNCHRONIZING REPLICA_SET_B...",
+  "THREAT DETECTION: 0 MALICIOUS PAYLOADS",
+  "METRIC_SENT: CLIENT_USAGE_DASHBOARD",
+  "CACHE_HIT: MANGA_EXPLORER_V2 (98%)",
+  "NODE_SYNC: 142 TITLES INDEXED FROM OTAKUDESU",
+  "SECURITY_SCAN: JWT_INTEGRITY_OK",
+  "OPTIMIZING QUERY_PLAN: SEARCH_AGGREGATOR"
+];
+
+function addNeuralLog(msg, type = '') {
+  if (!liveLogTerminal) return;
+  const line = document.createElement('div');
+  line.className = `terminal-line ${type}`;
+  line.textContent = `> ${msg}`;
+  liveLogTerminal.appendChild(line);
+  liveLogTerminal.scrollTop = liveLogTerminal.scrollHeight;
+  
+  // Keep logs short
+  if (liveLogTerminal.children.length > 20) {
+    liveLogTerminal.children[0].remove();
+  }
+}
+
+function startNeuralScan() {
+  if (neuralScanBtn.classList.contains('scanning')) return;
+  
+  neuralScanBtn.classList.add('scanning');
+  neuralScanBtn.querySelector('.label').textContent = '🌀 SCANNING...';
+  
+  showToast('Initiating Neural Scan across global nodes...', 'info');
+  
+  let i = 0;
+  const interval = setInterval(() => {
+    addNeuralLog(NEURAL_LOGS[Math.floor(Math.random() * NEURAL_LOGS.length)]);
+    i++;
+    if (i > 8) {
+      clearInterval(interval);
+      neuralScanBtn.classList.remove('scanning');
+      neuralScanBtn.querySelector('.label').textContent = '📡 NEURAL SCAN';
+      showToast('Neural Scan Complete. Network Integrity Verified.', 'success');
+      loadIntelligenceData();
+    }
+  }, 400);
+}
+
+if (neuralScanBtn) {
+  neuralScanBtn.onclick = startNeuralScan;
+}
+
+// Auto-populate logs periodically
+setInterval(() => {
+  if (!document.hidden && document.getElementById('section-intelligence').style.display === 'block') {
+    addNeuralLog(NEURAL_LOGS[Math.floor(Math.random() * NEURAL_LOGS.length)]);
+  }
+}, 5000);
+  };
+}
+
+async function deleteManga(id) {
+  if (!confirm('Are you sure you want to delete this title? This action cannot be undone.')) return;
+  try {
+    const res = await adminFetch(`/api/v1/mangas/${id}`, { method: 'DELETE' });
+    if (res.success) {
+      showToast('Title deleted', 'success');
+      loadMangaExplorer();
+    }
+  } catch (err) {
+    showToast(err.message, 'error');
+  }
+}
+

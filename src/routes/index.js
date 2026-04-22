@@ -48,8 +48,9 @@ const jobsRoutes       = require('@apps/worker-scrapers/jobs.routes');
 const proxyRoutes      = require('@infrastructure/proxy/proxy.routes');
 const anilistRoutes    = require('@catalogs/services/anilist/anilist.routes');
 const seoRoutes        = require('@catalogs/services/seo/seo.routes');
+const sourceManagerRoutes = require('@source-manager/source.routes');
+const curationRoutes      = require('@catalogs/services/curation/curation.routes');
 
-// Controllers & Middlewares
 const chapterController = require('@catalogs/services/chapter/chapter.controller');
 const seasonController  = require('@catalogs/services/season/season.controller');
 const episodeController = require('@catalogs/services/episode/episode.controller');
@@ -95,6 +96,8 @@ router.use('/image',       proxyRoutes);   // ← Image proxy endpoint
 router.use('/anilist',     anilistRoutes); // ← AniList compatibility routes
 router.use('/admin',       adminRoutes);   // ← Admin maintenance & audit
 router.use('/seo',         seoRoutes);     // ← SEO & Sitemap
+router.use('/sources',     sourceManagerRoutes); // ← Source Management CRUD
+router.use('/curation',    curationRoutes);      // ← Content Curation & Spotlight
 router.use('/catalog/manga', mangaRoutes);
 router.use('/scraper',     require('@catalogs/ComicAPI/scrapers/aggregator/aggregator.routes')); // ← Re-mapped to new domain path
 

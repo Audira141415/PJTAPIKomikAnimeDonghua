@@ -30,4 +30,11 @@ router.post('/purge/cache', adminController.purgeCache);
  */
 router.post('/purge/sessions', adminController.purgeSessions);
 
+/**
+ * User Management
+ */
+router.get('/users', adminController.getUsers);
+router.patch('/users/:userId/role', adminController.updateUserRole);
+router.delete('/users/:userId', adminController.deleteUser);
+
 module.exports = router;

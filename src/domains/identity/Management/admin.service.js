@@ -64,9 +64,49 @@ const cleanupMetadata = async () => {
   return { message: 'Metadata cleanup logic ready but not executed' };
 };
 
+/**
+ * User Management
+ */
+const getUsers = async (query = {}) => {
+  const filter = {};
+  if (query.role) filter.role = query.role;
+  if (query.search) {
+    filter.$or = [
+      { username: { $regex: query.search, $options: 'i' } },
+      { email: { $regex: query.search, $options: 'i' } }
+    ];
+  }
+
+  const users = await User.find(filter)
+    .select('-__v')
+    .sort({ createdAt: -1 })
+    .limit(100);
+
+  return users;
+};
+
+const updateUserRole = async (userId, role) => {
+  const user = await User.findByIdAndUpdate(
+    userId,
+    { role },
+    { new: true, runValidators: true }
+  );
+  if (!user) throw new Error('User not found');
+  return user;
+};
+
+const deleteUser = async (userId) => {
+  const user = await User.findByIdAndDelete(userId);
+  if (!user) throw new Error('User not found');
+  return { id: userId };
+};
+
 module.exports = {
   getAuditStats,
   purgeCache,
   purgeSessions,
   cleanupMetadata,
+  getUsers,
+  updateUserRole,
+  deleteUser,
 };

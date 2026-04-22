@@ -93,6 +93,7 @@
     "@catalogs": "src/domains/catalogs",
     "@identity": "src/domains/identity",
     "@interactions": "src/domains/interactions",
-    "@metrics": "src/domains/metrics"
+    "@metrics": "src/domains/metrics",
+    "@source-manager": "src/domains/infrastructure/SourceManager"
   }
 }
