@@ -449,26 +449,48 @@ code { font-family: 'JetBrains Mono', monospace; font-size: 0.9em; }
   align-items: center;
 }
 
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(8px);
+  z-index: 20000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .auth-gateway-box {
+  width: 100%;
   max-width: 450px !important;
+  background: #FFF !important;
+  border: 4px solid #000 !important;
+  box-shadow: 20px 20px 0px #000 !important;
   padding: 0 !important;
   overflow: hidden;
+  position: relative;
+}
+
+.modal-header {
+  position: relative;
+  display: flex;
+  align-items: stretch;
 }
 
 .auth-tabs {
   display: flex;
   width: 100%;
-  border-bottom: 3px solid #000;
+  border-bottom: 4px solid #000;
   background: #F1F5F9;
 }
 
 .auth-tab {
   flex: 1;
-  padding: 15px;
+  padding: 18px;
   border: none;
   background: none;
   font-weight: 900;
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   letter-spacing: 0.1em;
   color: #64748B;
   cursor: pointer;
@@ -481,8 +503,22 @@ code { font-family: 'JetBrains Mono', monospace; font-size: 0.9em; }
   box-shadow: inset 0 -4px 0 #000;
 }
 
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  font-weight: 900;
+  color: #000;
+  cursor: pointer;
+  z-index: 10;
+  line-height: 1;
+}
+
 .auth-form {
-  padding: 30px;
+  padding: 35px;
 }
 
 .btn-login {
