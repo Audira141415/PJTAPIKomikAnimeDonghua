@@ -1327,24 +1327,49 @@
 <script src="dashboard.js?v=1.1.0"></script>
 
 <!-- ── Admin Login Modal ────────────────────────────────────── -->
-<div id="loginModal" class="modal-backdrop" style="display: none;">
-  <div class="glass-card login-card animate-in">
-     <div class="modal-close" id="closeLoginModal">×</div>
-     <h2 class="ultimate-title" style="font-size: 1.5rem;">ADMIN ACCESS</h2>
-     <p class="section-subtitle">Otentikasi diperlukan untuk mengakses fungsi manajerial.</p>
-     
-     <form id="loginForm" class="login-form">
-       <div class="form-group">
-         <label>Email Address</label>
-         <input type="email" id="loginEmail" placeholder="admin@comic.com" required>
-       </div>
-       <div class="form-group">
-         <label>Password</label>
-         <input type="password" id="loginPass" placeholder="••••••••" required>
-       </div>
-       <button type="submit" class="btn btn-primary btn-block" style="margin-top: 20px;">AUTHENTICATE</button>
-     </form>
-     <div id="loginError" class="error-text" style="color: #ef4444; margin-top: 15px; font-size: 0.8rem; display: none;"></div>
+<div id="loginModal" class="modal-backdrop">
+  <div class="modal-box auth-gateway-box">
+      <div class="modal-header">
+        <div class="auth-tabs">
+          <button class="auth-tab active" id="tabLogin">LOGIN</button>
+          <button class="auth-tab" id="tabSignup">SIGNUP</button>
+        </div>
+        <button class="close-btn" id="closeLoginModal">&times;</button>
+      </div>
+      
+      <!-- LOGIN FORM -->
+      <form id="loginForm" class="auth-form">
+        <h2 style="font-size: 1.5rem; font-weight: 900; margin-bottom: 20px; text-transform: uppercase;">Identity Verification</h2>
+        <div class="form-group">
+          <label>Administrator Email</label>
+          <input type="email" id="loginEmail" placeholder="admin@audira.com" required>
+        </div>
+        <div class="form-group">
+          <label>Security Key (Password)</label>
+          <input type="password" id="loginPass" placeholder="••••••••" required>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block" style="margin-top: 20px;">AUTHENTICATE</button>
+      </form>
+
+      <!-- SIGNUP FORM (Hidden by default) -->
+      <form id="signupForm" class="auth-form" style="display: none;">
+        <h2 style="font-size: 1.5rem; font-weight: 900; margin-bottom: 20px; text-transform: uppercase;">Register New Node</h2>
+        <div class="form-group">
+          <label>Full Name</label>
+          <input type="text" id="regName" placeholder="Admin Name" required>
+        </div>
+        <div class="form-group">
+          <label>Assigned Email</label>
+          <input type="email" id="regEmail" placeholder="new.admin@audira.com" required>
+        </div>
+        <div class="form-group">
+          <label>Set Security Key</label>
+          <input type="password" id="regPass" placeholder="••••••••" required>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block" style="margin-top: 20px; background: #FFDA00; color: #000;">INITIALIZE ACCOUNT</button>
+      </form>
+
+      <div id="loginError" class="error-text" style="color: #ef4444; margin-top: 15px; font-size: 0.8rem; display: none;"></div>
   </div>
 </div>
 
