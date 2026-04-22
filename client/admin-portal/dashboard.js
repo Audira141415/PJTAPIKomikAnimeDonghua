@@ -2950,7 +2950,10 @@ const renderQuickLinks = (filterText = '') => {
       card.className = 'endpoint-card';
       card.innerHTML = `
         <div class="endpoint-header">
-           <span class="method-tag ${item.tagClass}">${item.tag}</span>
+           <div style="display: flex; align-items: center; gap: 8px;">
+             <span class="method-tag ${item.tagClass}">${item.tag}</span>
+             <div class="live-pulse"></div>
+           </div>
            <button class="action-btn-mini" data-copy-url="${fullUrl}">COPY</button>
         </div>
         <div class="endpoint-path">${item.path}</div>
