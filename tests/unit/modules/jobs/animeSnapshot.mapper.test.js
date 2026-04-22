@@ -4,7 +4,7 @@ const {
   normalizeSnapshotEnvelope,
   detectSnapshotKind,
   buildImportPlan,
-} = require('../../../../src/modules/jobs/animeSnapshot.mapper');
+} = require('../../../../apps/worker-scrapers/animeSnapshot.mapper');
 
 describe('modules/jobs/animeSnapshot.mapper', () => {
   it('normalizes the outer envelope without losing pagination', () => {

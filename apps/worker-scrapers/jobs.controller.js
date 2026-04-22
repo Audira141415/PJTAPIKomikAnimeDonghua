@@ -10,7 +10,7 @@ const {
   retryAllBody,
   jobIdParam,
 } = require('./jobs.validation');
-const animeSyncService = require('./animeSync.service');
+const animeSyncService = require('./animeImport.service');
 
 const health = catchAsync(async (_req, res) => {
   const data = await jobsService.getQueueHealth();

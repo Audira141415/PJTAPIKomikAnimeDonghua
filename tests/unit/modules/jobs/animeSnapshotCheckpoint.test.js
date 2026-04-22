@@ -12,7 +12,7 @@ const {
   selectPendingSnapshots,
   recordSnapshotSuccess,
   saveCheckpointState,
-} = require('../../../../src/modules/jobs/animeSnapshotCheckpoint');
+} = require('../../../../apps/worker-scrapers/animeSnapshotCheckpoint');
 
 describe('modules/jobs/animeSnapshotCheckpoint', () => {
   it('skips unchanged successful files and retries failed files for the same source', () => {

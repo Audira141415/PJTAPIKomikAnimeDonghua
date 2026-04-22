@@ -3,7 +3,7 @@
 const { Router } = require('express');
 const jobsController = require('./jobs.controller');
 const { authenticate, authorize } = require('@auth/auth.middleware');
-const { SOURCE_ENDPOINTS } = require('./animeSync.service');
+const { SOURCE_ENDPOINTS } = require('./animeImport.service');
 
 const router = Router();
 

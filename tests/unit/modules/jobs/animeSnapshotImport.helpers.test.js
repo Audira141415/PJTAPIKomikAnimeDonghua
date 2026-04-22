@@ -4,7 +4,7 @@ const {
   normalizeSourceKeyFromDir,
   isLikelySnapshotDir,
   buildEndpointFromFile,
-} = require('../../../../src/modules/jobs/animeSnapshotImport.helpers');
+} = require('../../../../apps/worker-scrapers/animeSnapshotImport.helpers');
 
 describe('modules/jobs/animeSnapshotImport.helpers', () => {
   it('normalizes known source directory names into stable source keys', () => {

@@ -39,9 +39,9 @@ const RawSnapshot = require('../../../../src/models/RawSnapshot');
 const Manga = require('../../../../src/models/Manga');
 const Season = require('../../../../src/models/Season');
 const Episode = require('../../../../src/models/Episode');
-const animeSyncService = require('../../../../src/modules/jobs/animeSync.service');
+const animeSyncService = require('../../../../apps/worker-scrapers/animeImport.service');
 
-describe('modules/jobs/animeSync.service', () => {
+describe('apps/worker-scrapers/animeImport.service', () => {
   beforeEach(() => {
     jest.clearAllMocks();
     User.findOne.mockResolvedValue({ _id: 'admin-1' });

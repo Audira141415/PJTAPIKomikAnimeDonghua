@@ -1,7 +1,7 @@
 'use strict';
 
 const { z } = require('zod');
-const { SOURCE_ENDPOINTS } = require('./animeSync.service');
+const { SOURCE_ENDPOINTS } = require('./animeImport.service');
 
 const boolFromInput = z.preprocess((value) => {
   if (value === undefined || value === null || value === '') {
