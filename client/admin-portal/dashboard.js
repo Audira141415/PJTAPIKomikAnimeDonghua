@@ -115,11 +115,17 @@ const logoutAdmin = () => {
 const updateAdminUI = (isAuthenticated) => {
   const badge = document.getElementById('adminBadge');
   const authBtn = document.getElementById('adminAuthBtn');
+  const signupBtn = document.getElementById('adminSignupHeaderBtn');
   const adminLinks = document.querySelectorAll('.admin-only');
   
   if (badge) badge.style.display = isAuthenticated ? 'block' : 'none';
   if (authBtn) {
-    authBtn.innerHTML = isAuthenticated ? 'Admin Logout' : 'Admin Login';
+    authBtn.innerHTML = isAuthenticated ? 'Logout' : 'Login';
+  }
+  
+  // Hide signup when logged in
+  if (signupBtn) {
+    signupBtn.style.display = isAuthenticated ? 'none' : 'block';
   }
   
   adminLinks.forEach(link => {
@@ -130,7 +136,50 @@ const updateAdminUI = (isAuthenticated) => {
 const showLoginModal = () => {
   const modal = document.getElementById('loginModal');
   if (modal) modal.style.display = 'flex';
+
+  // Initialize tabs
+  const loginTab = document.getElementById('tabLogin');
+  const signupTab = document.getElementById('tabSignup');
+  const loginForm = document.getElementById('loginForm');
+  const signupForm = document.getElementById('signupForm');
+
+  if (loginTab && signupTab && loginForm && signupForm) {
+    loginTab.onclick = () => {
+      loginTab.classList.add('active');
+      signupTab.classList.remove('active');
+      loginForm.style.display = 'block';
+      signupForm.style.display = 'none';
+    };
+    signupTab.onclick = () => {
+      signupTab.classList.add('active');
+      loginTab.classList.remove('active');
+      signupForm.style.display = 'block';
+      loginForm.style.display = 'none';
+    };
+  }
 };
+
+async function registerAdmin(email, password, name) {
+    try {
+        const response = await fetch(`${API_BASE}/auth/register`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email, password, name })
+        });
+        const data = await response.json();
+        if (response.ok) {
+            showToast('Registration Successful! Please login.', 'success');
+            document.getElementById('tabLogin').click();
+            return true;
+        } else {
+            showToast(data.message || 'Registration failed', 'error');
+            return false;
+        }
+    } catch (err) {
+        showToast('Network error during registration', 'error');
+        return false;
+    }
+}
 const hideLoginModal = () => {
   const modal = document.getElementById('loginModal');
   if (modal) modal.style.display = 'none';
@@ -3100,6 +3149,26 @@ const boot = async () => {
 
   if (closeLoginModal) {
     closeLoginModal.addEventListener('click', hideLoginModal);
+  }
+
+  const signupHeaderBtn = document.getElementById('adminSignupHeaderBtn');
+  if (signupHeaderBtn) {
+    signupHeaderBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      showLoginModal();
+      document.getElementById('tabSignup').click();
+    });
+  }
+
+  const signupForm = document.getElementById('signupForm');
+  if (signupForm) {
+    signupForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const name = document.getElementById('regName').value;
+      const email = document.getElementById('regEmail').value;
+      const pass = document.getElementById('regPass').value;
+      await registerAdmin(email, pass, name);
+    });
   }
 
   // Initial Admin UI Check
