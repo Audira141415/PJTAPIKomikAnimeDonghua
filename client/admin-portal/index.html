@@ -57,12 +57,12 @@
 
         <!-- GROUP 3: GATEWAY -->
         <div class="nav-group">
-          <button class="nav-group-toggle">⚙️ GATEWAY <span class="nav-arrow">▾</span></button>
+          <button class="nav-link nav-group-toggle">⚙️ GATEWAY <span>▾</span></button>
           <div class="nav-dropdown">
             <a href="#section-playground" class="nav-link-sub">API Playground Lab</a>
             <a href="#section-insights" class="nav-link-sub">Network Intelligence</a>
             <a href="#section-chapters" class="nav-link-sub">Data Feed Index</a>
-            <a href="#section-auth" class="nav-link-sub">Security & Auth</a>
+            <a href="#section-registry" class="nav-link-sub">Security & Auth</a>
             <a href="#section-status" class="nav-link-sub">Infrastructure Node</a>
           </div>
         </div>
@@ -73,8 +73,33 @@
       <span id="themeIcon">☀️</span>
     </button>
     <div class="auth-header-group">
-      <button class="btn-login" id="adminAuthBtn">Login</button>
-      <button class="btn-signup" id="adminSignupHeaderBtn">Signup</button>
+      <!-- Public Buttons -->
+      <div id="publicHeaderBtns" style="display: flex; gap: 10px;">
+        <button class="btn-login" id="adminAuthBtn" style="padding: 8px 16px; border: 1px solid #E2E8F0; border-radius: 6px; font-weight: 700; cursor: pointer; background: #2563EB; color: #FFF;">Login</button>
+      </div>
+      
+      <!-- Professional Admin Dropdown -->
+      <div id="adminProfileWrapper" class="profile-dropdown-wrapper" style="display: none; position: relative;">
+        <div id="adminProfileInfo" class="profile-trigger" style="display: flex; align-items: center; gap: 12px; background: #FFFFFF; padding: 4px 12px; border: 1px solid #E2E8F0; border-radius: 50px; cursor: pointer; transition: all 0.2s;">
+          <div class="admin-avatar" style="width: 28px; height: 28px; background: #2563EB; color: #FFF; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.7rem;">AD</div>
+          <div class="admin-meta" style="display: flex; flex-direction: column;">
+            <span id="headerAdminName" style="font-size: 0.75rem; font-weight: 700; color: #1E293B; line-height: 1;">Administrator</span>
+            <span style="font-size: 0.55rem; font-weight: 600; color: #64748B; text-transform: uppercase;">Master Node</span>
+          </div>
+          <span style="font-size: 0.6rem; color: #94A3B8;">▼</span>
+        </div>
+
+        <!-- Dropdown Menu -->
+        <div id="profileDropdown" class="profile-dropdown-menu" style="display: none; position: absolute; top: calc(100% + 10px); right: 0; width: 180px; background: #FFF; border: 1px solid #E2E8F0; border-radius: 8px; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); z-index: 9999; overflow: hidden;">
+          <a href="#section-registry" class="dropdown-item" style="display: flex; align-items: center; gap: 10px; padding: 12px 15px; color: #1E293B; text-decoration: none; font-size: 0.8rem; font-weight: 600; transition: background 0.2s;">
+            <span>⚙️</span> Admin Settings
+          </a>
+          <div style="height: 1px; background: #F1F5F9;"></div>
+          <a href="#" id="headerLogoutBtn" class="dropdown-item logout" style="display: flex; align-items: center; gap: 10px; padding: 12px 15px; color: #EF4444; text-decoration: none; font-size: 0.8rem; font-weight: 700; transition: background 0.2s;">
+            <span>📤</span> Logout Session
+          </a>
+        </div>
+      </div>
     </div>
   </div>
 </header>
@@ -1076,7 +1101,7 @@
   </section>
 
   <!-- ── SECTION: Tags ──────────────────────────────────────── -->
-  <section id="section-tags">
+  <section id="section-tags" class="content-section" style="display: none;">
     <div class="section-label">🏷️ Taxonomy</div>
     <h1 class="ultimate-title" style="font-size: 1.5rem;">API Tags Registry</h1>
     <div class="ultimate-grid" id="tags">
@@ -1138,7 +1163,7 @@
   </section>
 
   <!-- ── SECTION: Quick Links ───────────────────────────────── -->
-  <section id="section-quicklinks">
+  <section id="section-quicklinks" class="content-section" style="display: none;">
     <div class="quick-links-head">
       <div class="quick-links-head-left">
         <span>🔗 Quick Links</span>
@@ -1378,9 +1403,7 @@
   <div class="palette-box">
     <input type="text" id="paletteSearch" placeholder="SEARCH COMMANDS... (e.g. sync anime, open logs, health)">
     <div class="palette-results" id="paletteResults">
-       <div class="palette-item active"><span>🚀</span> QUICK SYNC ALL</div>
-       <div class="palette-item"><span>📑</span> OPEN DOCS</div>
-       <div class="palette-item"><span>🛡️</span> SYSTEM AUDIT</div>
+       <!-- Dynamic content from dashboard.js -->
     </div>
     <div class="palette-footer">PRESS <span>ESC</span> TO CLOSE</div>
   </div>

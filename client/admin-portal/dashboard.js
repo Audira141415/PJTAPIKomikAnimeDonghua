@@ -113,25 +113,25 @@ const logoutAdmin = () => {
 };
 
 const updateAdminUI = (isAuthenticated) => {
-  const badge = document.getElementById('adminBadge');
-  const authBtn = document.getElementById('adminAuthBtn');
-  const signupBtn = document.getElementById('adminSignupHeaderBtn');
+  const profileWrapper = document.getElementById('adminProfileWrapper');
+  const publicBtns = document.getElementById('publicHeaderBtns');
+  const adminNameEl = document.getElementById('headerAdminName');
   const adminLinks = document.querySelectorAll('.admin-only');
   
-  if (badge) badge.style.display = isAuthenticated ? 'block' : 'none';
-  if (authBtn) {
-    authBtn.innerHTML = isAuthenticated ? 'Logout' : 'Login';
-  }
-  
-  // Hide signup when logged in
-  if (signupBtn) {
-    signupBtn.style.display = isAuthenticated ? 'none' : 'block';
+  if (isAuthenticated) {
+    if (publicBtns) publicBtns.style.display = 'none';
+    if (profileWrapper) profileWrapper.style.display = 'block';
+    
+    const savedName = localStorage.getItem('audira-admin-name') || 'Administrator';
+    if (adminNameEl) adminNameEl.textContent = savedName;
+  } else {
+    if (publicBtns) publicBtns.style.display = 'flex';
+    if (profileWrapper) profileWrapper.style.display = 'none';
   }
   
   adminLinks.forEach(link => {
     link.style.display = isAuthenticated ? 'inline-block' : 'none';
   });
-
 };
 
 const showLoginModal = () => {
@@ -143,6 +143,9 @@ const showLoginModal = () => {
   const signupTab = document.getElementById('tabSignup');
   const loginForm = document.getElementById('loginForm');
   const signupForm = document.getElementById('signupForm');
+  const loginError = document.getElementById('loginError');
+
+  if (loginError) loginError.style.display = 'none';
 
   if (loginTab && signupTab && loginForm && signupForm) {
     loginTab.onclick = () => {
@@ -158,6 +161,59 @@ const showLoginModal = () => {
       loginForm.style.display = 'none';
     };
   }
+};
+
+/* ── App Registry Modal Engine ────────────────────────────── */
+const showCreateAppModal = () => {
+  let modal = document.getElementById('createAppModal');
+  if (!modal) {
+    modal = document.createElement('div');
+    modal.id = 'createAppModal';
+    modal.className = 'modal-overlay';
+    modal.innerHTML = `
+      <div class="modal-content glass-card">
+        <div class="modal-header">
+          <h3>Create New Application</h3>
+          <button class="close-modal" id="closeCreateAppModal">×</button>
+        </div>
+        <form id="createAppForm">
+          <div class="form-group">
+            <label>Application Name</label>
+            <input type="text" id="newAppName" placeholder="e.g. Audira Mobile App" required>
+          </div>
+          <div class="form-group">
+            <label>Authorized Domain</label>
+            <input type="text" id="newAppDomain" placeholder="e.g. app.audira.com" required>
+          </div>
+          <button type="submit" class="btn-prime-alt" style="width:100%; margin-top:20px;">GENERATE API KEY</button>
+        </form>
+      </div>
+    `;
+    document.body.appendChild(modal);
+    
+    document.getElementById('closeCreateAppModal').onclick = () => modal.style.display = 'none';
+    document.getElementById('createAppForm').onsubmit = async (e) => {
+      e.preventDefault();
+      const name = document.getElementById('newAppName').value;
+      const domain = document.getElementById('newAppDomain').value;
+      await processCreateApp(name, domain);
+      modal.style.display = 'none';
+    };
+  }
+  modal.style.display = 'flex';
+};
+
+const processCreateApp = async (name, domain) => {
+  try {
+    const res = await adminFetch('/client-usage/clients', {
+      method: 'POST',
+      body: JSON.stringify({ name, domain })
+    });
+    if (res.success) {
+      alert(`App registered successfully!\nAPI Key: ${res.data.apiKey}\n\nPLEASE SAVE THIS KEY NOW.`);
+      renderRegistry();
+    }
+  } catch (err) { showToast(err.message, 'error'); }
 };
 
 async function registerAdmin(email, password, name) {
@@ -386,20 +442,8 @@ const rotateKey = async (id) => {
   } catch (err) { alert(err.message); }
 };
 
-const createNewApp = async () => {
-  const name = prompt('Enter Application Name:');
-  const domain = prompt('Enter Authorized Domain (e.g. example.com):');
-  if (!name || !domain) return;
-  try {
-    const res = await adminFetch('/client-usage/clients', {
-      method: 'POST',
-      body: JSON.stringify({ name, domain })
-    });
-    if (res.success) {
-      alert(`App registered successfully!\nAPI Key: ${res.data.apiKey}`);
-      renderRegistry();
-    }
-  } catch (err) { alert(err.message); }
+const createNewApp = () => {
+  showCreateAppModal();
 };
 
 const defaultDashboardData = {
@@ -3452,6 +3496,82 @@ const mockLogs = [
   "[WARN] High latency detected on Node-SEA-03"
 ];
 
+const COMMANDS = [
+  { icon: '🏠', label: 'Go to Overview', action: () => window.showSection('section-overview') },
+  { icon: '📡', label: 'Go to Discovery', action: () => window.showSection('section-discovery') },
+  { icon: '🧠', label: 'Go to Intelligence', action: () => window.showSection('section-intelligence') },
+  { icon: '⚙️', label: 'Go to Operations', action: () => window.showSection('section-operations') },
+  { icon: '🛡️', label: 'Go to Registry', action: () => window.showSection('section-registry') },
+  { icon: '🌙', label: 'Toggle Dark Mode', action: () => toggleTheme() },
+  { icon: '🔄', label: 'Refresh Data', action: () => { loadStatus(); loadActivity(); showToast('Manual Sync Triggered', 'info'); } },
+  { icon: '🚪', label: 'Logout Admin', action: () => logoutAdmin() }
+];
+
+const renderPalette = (filter = '') => {
+  const results = document.getElementById('paletteResults');
+  if (!results) return;
+
+  const filtered = COMMANDS.filter(c => c.label.toLowerCase().includes(filter.toLowerCase()));
+  results.innerHTML = filtered.map((c, i) => `
+    <div class="palette-item" data-idx="${i}">
+      <span class="palette-icon">${c.icon}</span>
+      <span class="palette-label">${c.label}</span>
+      <span class="palette-shortcut">↵</span>
+    </div>
+  `).join('');
+
+  results.querySelectorAll('.palette-item').forEach(item => {
+    item.onclick = () => {
+      const cmd = filtered[item.dataset.idx];
+      cmd.action();
+      if (palette) palette.style.display = 'none';
+    };
+  });
+};
+
+if (paletteSearch) {
+  paletteSearch.addEventListener('input', (e) => renderPalette(e.target.value));
+  paletteSearch.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') {
+      const first = document.querySelector('.palette-item');
+      if (first) first.click();
+    }
+  });
+}
+
+// Initialize Palette
+renderPalette();
+
 
 initNavigation();
 initDiscovery();
+
+// --- Profile Dropdown Toggle Logic ---
+document.addEventListener('DOMContentLoaded', () => {
+  const profileTrigger = document.getElementById('adminProfileInfo');
+  const dropdownMenu = document.getElementById('profileDropdown');
+  const logoutBtn = document.getElementById('headerLogoutBtn');
+
+  if (profileTrigger && dropdownMenu) {
+    profileTrigger.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isVisible = dropdownMenu.style.display === 'block';
+      dropdownMenu.style.display = isVisible ? 'none' : 'block';
+    });
+
+    document.addEventListener('click', () => {
+      dropdownMenu.style.display = 'none';
+    });
+
+    dropdownMenu.addEventListener('click', (e) => {
+      e.stopPropagation();
+    });
+  }
+
+  if (logoutBtn) {
+    logoutBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      logoutAdmin();
+    });
+  }
+});
