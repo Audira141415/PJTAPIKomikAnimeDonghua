@@ -23,8 +23,8 @@
   --sidebar-width: 260px;
   --topbar-height: 64px;
   --infra-height: 28px;
-  --sidebar-bg: #0F172A;
-  --sidebar-hover: rgba(255, 255, 255, 0.03);
+  --sidebar-bg: #FFFFFF;
+  --sidebar-hover: rgba(0, 0, 0, 0.05);
   --sidebar-active: var(--accent);
   --glass-bg: rgba(255, 255, 255, 0.85);
   --glass-border: rgba(255, 255, 255, 0.2);
@@ -81,12 +81,12 @@
   bottom: 0;
   width: var(--sidebar-width);
   background: var(--sidebar-bg);
-  color: #F1F5F9;
+  color: #0F172A;
   z-index: 1001;
   display: flex;
   flex-direction: column;
-  border-right: 1px solid rgba(255,255,255,0.05);
-  box-shadow: 10px 0 30px rgba(0,0,0,0.1);
+  border-right: 3px solid #000;
+  box-shadow: 4px 0 20px rgba(0,0,0,0.05);
 }
 
 .sidebar-logo {
@@ -95,13 +95,13 @@
   align-items: center;
   gap: 12px;
   padding: 0 24px;
-  border-bottom: 1px solid rgba(255,255,255,0.05);
+  border-bottom: 3px solid #000;
 }
 
 .sidebar-logo img {
   width: 30px;
   height: 30px;
-  border: 2px solid #FFF;
+  border: 2px solid #000;
   border-radius: 8px;
   box-shadow: 0 0 15px rgba(255, 218, 0, 0.2);
 }
@@ -110,7 +110,7 @@
   font-size: 1.1rem;
   font-weight: 900;
   letter-spacing: 1px;
-  color: #FFF;
+  color: #000;
 }
 
 .sidebar-logo span strong {
@@ -148,7 +148,7 @@
 
 .side-link:hover {
   background: var(--sidebar-hover);
-  color: #F8FAFC;
+  color: #000;
   transform: translateX(4px);
 }
 
@@ -162,7 +162,7 @@
 .side-icon { font-size: 1.2rem; opacity: 0.8; }
 .side-link.active .side-icon { opacity: 1; }
 
-.sidebar-footer { padding: 20px; border-top: 1px solid #1E293B; }
+.sidebar-footer { padding: 20px; border-top: 3px solid #000; }
 .version-chip { background: #1E293B; color: #64748B; font-size: 0.6rem; padding: 4px 10px; border-radius: 50px; font-weight: 700; }
 
 .search-box {
@@ -451,8 +451,8 @@ code { font-family: 'JetBrains Mono', monospace; font-size: 0.9em; }
   position: fixed;
   top: 0; left: 0; right: 0;
   height: var(--infra-height);
-  background: #0F172A;
-  color: #94A3B8;
+  background: #F1F5F9;
+  color: #475569;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -462,7 +462,7 @@ code { font-family: 'JetBrains Mono', monospace; font-size: 0.9em; }
   letter-spacing: 0.12em;
   text-transform: uppercase;
   z-index: 2000;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 3px solid #000;
 }
 
 .infra-dot {
