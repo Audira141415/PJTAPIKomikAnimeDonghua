@@ -15,7 +15,7 @@ const { errorHandler, notFound } = require('@middlewares/error.middleware');
 const { apiLimiter, dashboardLimiter } = require('@middlewares/rateLimiter.middleware');
 const { clientUsageTracker } = require('@middlewares/clientUsage.middleware');
 const requestId = require('@middlewares/requestId.middleware').requestId;
-const { pushActivity, getActivity } = require('@core/utils/dashboardMonitor');
+const { pushActivity, getActivity, getMetrics } = require('@core/utils/dashboardMonitor');
 const shieldMiddleware = require('@middlewares/shield.middleware');
 
 const app = express();
@@ -182,6 +182,7 @@ app.get('/dashboard/status', async (req, res) => {
           totalMb: Math.round(os.totalmem() / (1024 * 1024)),
         },
       },
+      metrics: getMetrics(),
     },
   });
 });

@@ -10,3 +10,12 @@ coverage/
 dist/
 .DS_Store
 *.log
+.git
+docs/
+tests/
+scripts/
+claude-skills-main/
+.github/
+.vscode/
+.codex/
+.gemini/

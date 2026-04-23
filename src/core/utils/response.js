@@ -173,23 +173,24 @@ const success = (res, { statusCode = 200, data = null, pagination = null, messag
  * @param {number}  [opts.statusCode=500]
  * @param {string}  [opts.message]
  */
-const error = (res, { statusCode = 500, message = 'Internal Server Error' } = {}) => {
+const error = (res, { statusCode = 500, message = 'Internal Server Error', details = [] } = {}) => {
+  const requestId = res.req ? res.req.id : null;
   return res.status(statusCode).json({
-    status: 'error',
     success: false,
     error: {
       code: STATUS_ERROR_CODES[statusCode] || 'error',
       message,
-      statusCode,
+      details,
+      requestId,
+      timestamp: new Date().toISOString(),
     },
-    meta: null,
-    data: null,
+    // Legacy fields for backward compatibility
+    status: 'error',
     message,
     ok: false,
     creator: CREATOR,
     statusCode,
     statusMessage: STATUS_MESSAGES[statusCode] || 'Error',
-    pagination: null,
   });
 };
 

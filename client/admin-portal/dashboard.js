@@ -426,9 +426,13 @@ const renderRegistry = async () => {
   const body = document.getElementById('registryBody');
   if (!body) return;
   try {
-    const data = await adminFetch('/client-usage/clients');
-    if (data.success) {
-      body.innerHTML = data.data.items.map(app => `
+    const res = await adminFetch('/client-usage/clients');
+    if (res.success) {
+      if (!res.data || res.data.length === 0) {
+        body.innerHTML = `<tr><td colspan="6" class="text-center" style="padding:40px; color:var(--text-muted)">Belum ada aplikasi yang terdaftar. Klik "Register New App" untuk memulai.</td></tr>`;
+        return;
+      }
+      body.innerHTML = res.data.map(app => `
         <tr>
           <td><strong style="color:var(--accent)">${app.name}</strong></td>
           <td><code>${app.domain}</code></td>
@@ -804,6 +808,10 @@ const stateEls = {
   uptime: document.getElementById('uptimeValue'),
   mem: document.getElementById('memValue'),
   dbBanner: document.getElementById('dbOfflineBanner'),
+  statRPM: document.getElementById('statRPM'),
+  statP95: document.getElementById('statP95'),
+  statErrorRate: document.getElementById('statErrorRate'),
+  statHealth: document.getElementById('statHealth'),
 };
 
 const activityBody = document.getElementById('activityBody');
@@ -927,13 +935,13 @@ const switchSection = (targetId) => {
   const activeNav = document.querySelector(`.side-link[data-section="${targetId}"]`);
   if (activeNav) activeNav.classList.add('active');
 
-  // Trigger data load if admin
   if (targetId === 'section-operations') loadOperationsData();
   if (targetId === 'section-intelligence') loadIntelligenceData();
   if (targetId === 'section-registry') renderRegistry();
   if (targetId === 'section-sources') fetchSources();
   if (targetId === 'section-users') fetchUsers();
   if (targetId === 'section-curation') fetchCuration();
+  if (targetId === 'section-discovery') initDiscovery();
 };
 
 
@@ -1184,6 +1192,25 @@ const renderStatus = (payload, auditPayload = null) => {
   // Update Telemetry HUD
   if (hudRequests) hudRequests.textContent = info.server.totalRequestsFormatted || info.server.uptimeSeconds % 1000;
   if (hudSecurity) hudSecurity.textContent = 'Active';
+
+  // Update Golden Signals
+  const m = info.metrics;
+  if (m) {
+    if (stateEls.statRPM) stateEls.statRPM.textContent = m.traffic.toFixed(1);
+    if (stateEls.statP95) {
+      stateEls.statP95.textContent = `${m.latency.p95}ms`;
+      stateEls.statP95.style.color = m.latency.p95 < 200 ? 'var(--green)' : m.latency.p95 < 500 ? 'var(--yellow)' : 'var(--red)';
+    }
+    if (stateEls.statErrorRate) {
+      stateEls.statErrorRate.textContent = `${m.errorRate}%`;
+      stateEls.statErrorRate.style.color = m.errorRate < 1 ? 'var(--green)' : m.errorRate < 5 ? 'var(--yellow)' : 'var(--red)';
+    }
+    if (stateEls.statHealth) {
+      const health = Math.max(0, 100 - m.errorRate);
+      stateEls.statHealth.textContent = `${health.toFixed(1)}%`;
+      stateEls.statHealth.style.color = health > 99 ? 'var(--green)' : health > 95 ? 'var(--yellow)' : 'var(--red)';
+    }
+  }
 };
 
 const loadStatus = async () => {
@@ -3614,12 +3641,11 @@ document.addEventListener('DOMContentLoaded', () => {
   if (profileTrigger && dropdownMenu) {
     profileTrigger.addEventListener('click', (e) => {
       e.stopPropagation();
-      const isVisible = dropdownMenu.style.display === 'block';
-      dropdownMenu.style.display = isVisible ? 'none' : 'block';
+      dropdownMenu.classList.toggle('active');
     });
 
     document.addEventListener('click', () => {
-      dropdownMenu.style.display = 'none';
+      dropdownMenu.classList.remove('active');
     });
 
     dropdownMenu.addEventListener('click', (e) => {
@@ -4110,3 +4136,37 @@ async function deleteManga(id) {
   }
 }
 
+
+// --- Manga Contextual Intelligence ---
+const initMangaContext = () => {
+  const mangaLogEl = document.getElementById('mangaScraperLog');
+  if (!mangaLogEl) return;
+
+  const mangaLogs = [
+    '> FETCHING: [comick.app] -> 20 new chapters found',
+    '> SYNC: [mangadex.org] -> Metadata updated for 12 titles',
+    '> CACHE: Refreshing Redis nodes for [MangaIndex]',
+    '> ANALYZING: [komikindo.id] -> Search relevance score: 0.98',
+    '> ALERT: Scraper Node #07 experienced 50ms jitter',
+    '> SUCCESS: Global Manga Matrix Synchronized'
+  ];
+
+  let logIndex = 0;
+  setInterval(() => {
+    const line = document.createElement('div');
+    line.className = 'log-line';
+    line.textContent = mangaLogs[logIndex % mangaLogs.length];
+    mangaLogEl.appendChild(line);
+    mangaLogEl.scrollTop = mangaLogEl.scrollHeight;
+    logIndex++;
+
+    if (mangaLogEl.children.length > 50) {
+      mangaLogEl.removeChild(mangaLogEl.firstChild);
+    }
+  }, 4000);
+};
+
+// Initialize manga context on page load
+document.addEventListener('DOMContentLoaded', () => {
+  initMangaContext();
+});

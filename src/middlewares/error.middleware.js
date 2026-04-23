@@ -9,27 +9,38 @@ const errorHandler = (err, req, res, _next) => {
   let statusCode = err.statusCode || 500;
   let message = err.message || 'Internal Server Error';
 
+  let details = [];
+
   if (err instanceof ZodError) {
     statusCode = 400;
-    const messages = err.errors.map((e) => `${e.path.join('.')}: ${e.message}`);
-    message = messages.join('; ');
+    details = err.errors.map((e) => ({
+      field: e.path.join('.'),
+      code: e.code,
+      message: e.message,
+    }));
+    message = details.map(d => `${d.field}: ${d.message}`).join('; ');
   }
 
   if (err.name === 'CastError') {
     statusCode = 400;
+    details = [{ field: err.path, value: err.value, message: `Invalid ${err.path}` }];
     message = `Invalid ${err.path}: ${err.value}`;
   }
 
   if (err.code === 11000) {
     statusCode = 409;
     const field = Object.keys(err.keyValue).join(', ');
+    details = [{ field, value: err.keyValue[field], message: 'Duplicate value' }];
     message = `Duplicate value for: ${field}`;
   }
 
   if (err.name === 'ValidationError') {
     statusCode = 400;
-    const messages = Object.values(err.errors).map((e) => e.message);
-    message = messages.join('; ');
+    details = Object.values(err.errors).map((e) => ({
+      field: e.path,
+      message: e.message,
+    }));
+    message = details.map(d => d.message).join('; ');
   }
 
   if (statusCode >= 500) {
@@ -56,7 +67,7 @@ const errorHandler = (err, req, res, _next) => {
   if (statusCode === 401) shield.addSuspicionPoints(req.ip, 2, 'Unauthorized access attempt');
   if (statusCode === 403) shield.addSuspicionPoints(req.ip, 5, 'Forbidden access attempt');
 
-  errorResponse(res, { statusCode, message: responseMessage });
+  errorResponse(res, { statusCode, message: responseMessage, details });
 };
 
 const notFound = (req, res) => {
