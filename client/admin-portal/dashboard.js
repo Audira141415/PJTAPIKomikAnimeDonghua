@@ -4166,7 +4166,67 @@ const initMangaContext = () => {
   }, 4000);
 };
 
-// Initialize manga context on page load
+// --- Anime Contextual Intelligence ---
+const initAnimeContext = () => {
+  const animeLogEl = document.getElementById('animeScraperLog');
+  if (!animeLogEl) return;
+
+  const animeLogs = [
+    '> STREAM_SCAN: [hianime.to] -> New sub/dub episodes found',
+    '> METADATA: [animepahe.com] -> Synced seasonal schedule',
+    '> RESOLVING: [GogoServer] -> Uplink quality 1080p verified',
+    '> PROXY: Distributing [cover_images] to sentinel nodes',
+    '> SYSTEM: Anime Neural Resolver updated to v2.4.2',
+    '> BROADCAST: Global Anime Uplink Active'
+  ];
+
+  let logIndex = 0;
+  setInterval(() => {
+    const line = document.createElement('div');
+    line.className = 'log-line';
+    line.textContent = animeLogs[logIndex % animeLogs.length];
+    animeLogEl.appendChild(line);
+    animeLogEl.scrollTop = animeLogEl.scrollHeight;
+    logIndex++;
+
+    if (animeLogEl.children.length > 50) {
+      animeLogEl.removeChild(animeLogEl.firstChild);
+    }
+  }, 4500);
+};
+
+// --- Donghua Contextual Intelligence ---
+const initDonghuaContext = () => {
+  const donghuaLogEl = document.getElementById('donghuaScraperLog');
+  if (!donghuaLogEl) return;
+
+  const donghuaLogs = [
+    '> CULTIVATION: [anichin.vip] -> Spiritual energy (data) levels 100%',
+    '> SYNC: [donghuastream.org] -> Metadata for 8 series updated',
+    '> DECRYPTION: Resolving Eastern [AES_Stream_Keys]',
+    '> INDEXING: [lucianime.com] -> 5 new ONA episodes indexed',
+    '> SENTINEL: Donghua persistence node healthy',
+    '> TRIUMPH: Eastern Domain Matrix Synchronized'
+  ];
+
+  let logIndex = 0;
+  setInterval(() => {
+    const line = document.createElement('div');
+    line.className = 'log-line';
+    line.textContent = donghuaLogs[logIndex % donghuaLogs.length];
+    donghuaLogEl.appendChild(line);
+    donghuaLogEl.scrollTop = donghuaLogEl.scrollHeight;
+    logIndex++;
+
+    if (donghuaLogEl.children.length > 50) {
+      donghuaLogEl.removeChild(donghuaLogEl.firstChild);
+    }
+  }, 5000);
+};
+
+// Initialize context on page load
 document.addEventListener('DOMContentLoaded', () => {
   initMangaContext();
+  initAnimeContext();
+  initDonghuaContext();
 });
