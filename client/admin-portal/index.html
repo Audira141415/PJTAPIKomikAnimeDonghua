@@ -30,6 +30,7 @@
 
 <header class="top-bar">
   <div class="top-bar-left">
+    <button class="hamburger-btn" id="hamburgerBtn">☰</button>
     <div class="search-box">
       <span class="search-icon">🔍</span>
       <input type="text" id="globalSearch" placeholder="Search commands, users, or scrapers... (Alt+K)">
@@ -61,7 +62,7 @@
   </div>
 </header>
 
-<aside class="sidebar">
+<aside class="sidebar" id="sidebar">
   <div class="sidebar-logo">
     <img src="logo-premium.png" alt="Audira">
     <span>AUDI<strong>RA</strong></span>
@@ -773,12 +774,12 @@
       </div>
     </div>
 
-    <article class="panel contextual-terminal" style="margin-top: 40px; border: 1px solid rgba(255, 218, 0, 0.2);">
-      <div class="panel-header" style="display: flex; justify-content: space-between; align-items: center; padding: 10px 15px; background: rgba(0,0,0,0.1);">
+    <article class="panel contextual-terminal" style="margin-top: 40px; border: 3px solid #000;">
+      <div class="panel-header" style="display: flex; justify-content: space-between; align-items: center; padding: 10px 15px; border-bottom: 3px solid #000;">
          <h2 style="font-size: 0.85rem; margin:0;"><span class="panel-icon">📟</span> MANGA DOMAIN LIVE FEED <span class="badge-new">NEW</span></h2>
          <div class="terminal-status" style="font-size: 0.6rem; font-weight: 800; color: var(--accent); text-transform: uppercase;">Filtered: MANGA_SCRAPERS</div>
       </div>
-      <div class="scraper-log-terminal" id="mangaScraperLog" style="height: 220px; background: #000; border-top: 1px solid rgba(255,255,255,0.05);">
+      <div class="scraper-log-terminal" id="mangaScraperLog" style="height: 220px; background: #F8FAFC; color: #0F172A; border-top: none;">
          <div class="log-line">> AUDIRA GATEWAY: MANGA PERSISTENCE NODE ONLINE</div>
          <div class="log-line">> ATTACHED TO STREAM: [comick.app, komikindo.id, mangadex.org]</div>
          <div class="log-line">> SYNC STATUS: OPERATIONAL</div>
@@ -1449,7 +1450,7 @@
   </div>
 </div>
 
-<script src="dashboard.js?v=1.2.0"></script>
+<script src="dashboard.js?v=1.2.1"></script>
 
 <!-- ── Admin Login Modal ────────────────────────────────────── -->
 <div id="loginModal" class="modal-backdrop" style="display: none;">

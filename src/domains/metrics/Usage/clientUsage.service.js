@@ -322,7 +322,7 @@ async function getTopWebsites({ days = 30, limit = 10 }) {
       },
       { $sort: { requestCount: -1, domain: 1 } },
       { $limit: limit },
-    ]).maxTimeMS(4000).allowDiskUse(true);
+    ]).option({ maxTimeMS: 4000, allowDiskUse: true });
   } catch (err) {
     console.error('Error in getTopWebsites:', err);
     return [];
@@ -364,7 +364,7 @@ async function getDailyDomainUsage({ days = 30, domain = null, limit = 200 }) {
     },
     { $sort: { day: -1, requestCount: -1, domain: 1 } },
     { $limit: limit },
-  ]).maxTimeMS(5000);
+  ]).option({ maxTimeMS: 5000 });
 }
 
 async function getDashboardSummary({ days = 7, includeUnknown = true }) {
@@ -386,7 +386,7 @@ async function getDashboardSummary({ days = 7, includeUnknown = true }) {
           },
         },
         { $sort: { day: 1 } },
-      ]).maxTimeMS(4000).allowDiskUse(true),
+      ]).option({ maxTimeMS: 4000, allowDiskUse: true }),
       getTopWebsites({ days, limit: 5 }),
       UsageLog.countDocuments(baseMatch),
       ClientApp.countDocuments({ status: 'active' }),

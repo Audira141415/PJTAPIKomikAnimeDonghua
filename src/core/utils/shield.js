@@ -66,11 +66,17 @@ const shield = {
    */
   isWhitelisted(ip) {
     if (!ip) return true;
+    
+    // Normalize IP (remove ::ffff: prefix if present)
+    const normalizedIp = ip.replace(/^::ffff:/, '');
+    
     return (
-      ip === '127.0.0.1' || 
-      ip === '::1' || 
-      ip.includes('192.168.100.158') || 
-      ip.includes('192.168.100.') // Whitelist all 158 subnet (handles ::ffff: prefix)
+      normalizedIp === '127.0.0.1' || 
+      normalizedIp === '::1' || 
+      normalizedIp === 'localhost' ||
+      normalizedIp.startsWith('192.168.') || // Local network
+      normalizedIp.startsWith('10.') ||      // Docker/Internal network
+      normalizedIp.startsWith('172.')        // Docker network
     );
   }
 };

@@ -23,6 +23,11 @@ const MALICIOUS_PATTERNS = [
 const shieldMiddleware = async (req, res, next) => {
   const ip = req.ip || req.connection.remoteAddress;
 
+  // 0. Whitelist bypass
+  if (shield.isWhitelisted(ip)) {
+    return next();
+  }
+
   // 1. Check if BANNED
   if (await shield.isBanned(ip)) {
     // Silence is golden — abort immediately without much info

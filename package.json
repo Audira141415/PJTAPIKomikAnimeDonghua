@@ -9,7 +9,7 @@
     "dev": "nodemon server.js",
     "dev:up": "dev-local.bat",
     "dev:down": "dev-stop.bat docker",
-    "dev:dockerdb": "set NODE_ENV=development&&set PORT=3000&&nodemon server.js",
+    "dev:dockerdb": "set NODE_ENV=development&&set PORT=5000&&nodemon server.js",
     "seed": "node scripts/seed.js",
     "import:mangadex": "node scripts/mangadex-import.js",
     "import:mangadex:all": "node scripts/mangadex-import.js --all",

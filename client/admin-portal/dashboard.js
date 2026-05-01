@@ -881,19 +881,23 @@ const sidebarOverlay = document.getElementById('sidebarOverlay');
 const hamburgerBtn = document.getElementById('hamburgerBtn');
 
 const openSidebar = () => {
-  sidebar.classList.add('open');
-  sidebarOverlay.classList.add('show');
+  if (sidebar) sidebar.classList.add('open');
+  if (sidebarOverlay) sidebarOverlay.classList.add('show');
   document.body.style.overflow = 'hidden';
 };
 const closeSidebar = () => {
-  sidebar.classList.remove('open');
-  sidebarOverlay.classList.remove('show');
+  if (sidebar) sidebar.classList.remove('open');
+  if (sidebarOverlay) sidebarOverlay.classList.remove('show');
   document.body.style.overflow = '';
 };
 
 if (hamburgerBtn) {
   hamburgerBtn.addEventListener('click', () => {
-    sidebar.classList.contains('open') ? closeSidebar() : openSidebar();
+    if (sidebar && sidebar.classList.contains('open')) {
+      closeSidebar();
+    } else {
+      openSidebar();
+    }
   });
 }
 if (sidebarOverlay) {
@@ -1228,7 +1232,7 @@ const loadStatus = async () => {
     let auditData = null;
     if (adminToken) {
        try {
-         auditData = await adminFetch('/admin/audit-stats');
+         auditData = await adminFetch('/admin/audit');
        } catch (e) { /* ignore */ }
     }
     
@@ -2356,7 +2360,6 @@ const loadContentStats = async () => {
 
   const renderSourceSection = (container, titleText, subtitleText, rows, accentClass) => {
     if (!container) return;
-    container.innerHTML = '';
 
     const section = document.createElement('div');
     section.className = 'panel overview-source-section';
@@ -2514,6 +2517,7 @@ const loadContentStats = async () => {
 
     const groupedWrapper = document.createElement('div');
     groupedWrapper.className = 'overview-source-groups';
+    groupedWrapper.innerHTML = '';
     renderSourceSection(groupedWrapper, 'Anime Sources', 'Source yang menyuplai katalog anime.', animeSources, 'accent-anime');
     renderSourceSection(groupedWrapper, 'Donghua Sources', 'Source untuk donghua, movie, dan ONA.', donghuaSources, 'accent-donghua');
     renderSourceSection(groupedWrapper, 'Manga Sources', 'Source untuk manga, manhwa, dan manhua.', mangaSources, 'accent-manga');

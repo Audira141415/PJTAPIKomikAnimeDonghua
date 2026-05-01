@@ -1602,6 +1602,55 @@ code { font-family: 'JetBrains Mono', monospace; font-size: 0.9em; }
 .overview-summary-chip span { color: var(--text-muted); font-size: 0.7rem; }
 .overview-summary-chip strong { color: var(--text-main); font-size: 1rem; font-weight: 800; }
 
+/* ── Source Breakdown Multi-Column ────────────────────────── */
+.overview-source-groups {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 24px;
+  margin-top: 20px;
+}
+
+.overview-source-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)) !important;
+  gap: 16px !important;
+}
+
+.overview-source-card {
+  flex-direction: row !important;
+  padding: 12px 16px !important;
+  gap: 12px !important;
+  min-height: 80px;
+}
+
+.overview-source-card .card-thumb {
+  width: 42px !important;
+  height: 42px !important;
+  font-size: 1.2rem !important;
+  flex-shrink: 0;
+}
+
+.overview-source-name-row strong {
+  font-size: 0.85rem !important;
+}
+
+.overview-source-name-row span {
+  font-size: 0.65rem !important;
+}
+
+.overview-source-type {
+  font-size: 0.6rem !important;
+}
+
+.overview-source-chips {
+  gap: 4px !important;
+}
+
+.overview-source-chip {
+  font-size: 0.55rem !important;
+  padding: 1px 4px !important;
+}
+
 /* ── Source Items ─────────────────────────────────────────── */
 .source-items-panel { margin-top: 8px; }
 .source-items-toolbar {
@@ -2235,7 +2284,54 @@ code { font-family: 'JetBrains Mono', monospace; font-size: 0.9em; }
   .ops-grid { grid-template-columns: 1fr; }
 }
 
-/* ── Compact Data Panels ────────────────────────────────── */
+/* ── Sidebar Mobile Toggle ──────────────────────────────── */
+.hamburger-btn {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  color: var(--text-main);
+  cursor: pointer;
+  padding: 10px;
+  margin-right: 15px;
+}
+
+.sidebar-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  z-index: 999;
+  display: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.sidebar-overlay.show {
+  display: block;
+  opacity: 1;
+}
+
+@media (max-width: 1024px) {
+  .hamburger-btn { display: block; }
+  .sidebar {
+    transform: translateX(-100%);
+    z-index: 1000;
+  }
+  .sidebar.open {
+    transform: translateX(0);
+  }
+  .main {
+    margin-left: 0 !important;
+  }
+  .top-bar {
+    left: 0 !important;
+    width: 100% !important;
+  }
+}
 .table-container {
   max-height: 480px;
   overflow-y: auto;
@@ -2691,18 +2787,22 @@ tr:hover td {
 }
 
 .action-btn-mini {
-  padding: 6px;
-  font-size: 0.6rem;
-  font-weight: 900;
+  padding: 6px 10px;
+  font-size: 0.65rem;
+  font-weight: 800;
   background: #F8FAFC;
+  color: #000;
   border: 2px solid #000;
   cursor: pointer;
   transition: var(--transition);
+  border-radius: 4px;
 }
 
 .action-btn-mini:hover {
-  background: #000;
-  color: #FFF;
+  background: var(--accent);
+  color: #000;
+  transform: translateY(-2px);
+  box-shadow: 4px 4px 0px #000;
 }
 .mega-footer {
   margin-top: 80px;
@@ -3310,21 +3410,10 @@ tr:hover td {
   margin-top: 15px;
 }
 
-.action-btn-mini {
+.node-actions .action-btn-mini {
   background: #f1f5f9;
-  border: 1px solid #e2e8f0;
-  padding: 4px;
-  font-size: 0.6rem;
-  font-weight: 800;
-  cursor: pointer;
-  border-radius: 4px;
-  text-transform: uppercase;
-}
-
-.action-btn-mini:hover {
-  background: var(--accent);
   color: #000;
-  border-color: #000;
+  border: 2px solid #000;
 }
 
 .scraper-log-terminal {
